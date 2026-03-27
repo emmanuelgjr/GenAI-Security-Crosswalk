@@ -7,6 +7,53 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+
+## [1.1.0] — 2026-03-26
+
+### Sprint completion — all three source lists fully mapped
+
+All planned framework mappings are now complete.
+
+#### New mapping files (19 added since v1.0.0)
+
+| File | Framework |
+|---|---|
+| `llm-top10/LLM_NISTCSF2.md` | NIST CSF 2.0 |
+| `llm-top10/LLM_ISO42001.md` | ISO/IEC 42001:2023 |
+| `llm-top10/LLM_ENISA.md` | ENISA Multilayer Framework |
+| `llm-top10/LLM_SAMM.md` | OWASP SAMM v2.0 |
+| `llm-top10/LLM_PCIDSS.md` | PCI DSS v4.0 |
+| `llm-top10/LLM_SOC2.md` | SOC 2 Trust Services Criteria |
+| `agentic-top10/Agentic_NISTCSF2.md` | NIST CSF 2.0 |
+| `agentic-top10/Agentic_ISO27001.md` | ISO/IEC 27001:2022 |
+| `agentic-top10/Agentic_ISO42001.md` | ISO/IEC 42001:2023 |
+| `agentic-top10/Agentic_CISControls.md` | CIS Controls v8.1 |
+| `agentic-top10/Agentic_ASVS.md` | OWASP ASVS 4.0.3 |
+| `agentic-top10/Agentic_AITG.md` | OWASP AI Testing Guide |
+| `agentic-top10/Agentic_AIVSS.md` | OWASP AIVSS |
+| `agentic-top10/Agentic_CWE_CVE.md` | CWE / CVE |
+| `dsgai-2026/DSGAI_NISTCSF2.md` | NIST CSF 2.0 |
+| `dsgai-2026/DSGAI_MITREATLAS.md` | MITRE ATLAS |
+| `dsgai-2026/DSGAI_ISA62443.md` | ISA/IEC 62443 |
+| `dsgai-2026/DSGAI_SOC2.md` | SOC 2 Trust Services Criteria |
+| `dsgai-2026/DSGAI_PCIDSS.md` | PCI DSS v4.0 |
+
+#### Infrastructure files added
+
+- `CODE_OF_CONDUCT.md` — Contributor Covenant 2.1
+- `SECURITY.md` — Vulnerability disclosure policy
+- `i18n/README.md` — Translation contribution guide
+
+#### Totals at v1.1.0
+
+| Metric | Count |
+|---|---|
+| Source lists | 3 |
+| Frameworks | 16 |
+| Mapping files | 37 |
+| Implementation recipes | 13 |
+| Tools catalogued | 40+ |
+
 ## [1.0.0] — 2026-03-24
 
 ### First public release — v1.0
@@ -168,3 +215,4 @@ Quick reference:
 
 *Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) —
 maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org)*
+
