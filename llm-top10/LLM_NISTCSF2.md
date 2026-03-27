@@ -7,37 +7,46 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 x NIST CSF 2.0
+# LLM Top 10 2025 × NIST CSF 2.0
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to the [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework)
-published February 2024.
-
-CSF 2.0 is the most widely adopted cybersecurity framework globally,
-used by organisations across all sectors and sizes. The 2.0 revision
-added a sixth function — GOVERN — making it the first version of the
-CSF to explicitly address organisational governance, risk management
-culture, and supply chain cybersecurity risk as first-class framework
-elements. All six are directly relevant to LLM application security.
-
-CSF 2.0 is framework-agnostic and outcome-oriented: it describes what
-to achieve, not prescriptively how. Use this mapping alongside the
-ISO 27001, NIST AI RMF, and CIS Controls mappings in this repo for
-implementation-level detail. CSF 2.0 is the governance layer; the
-other frameworks provide the technical controls.
+(CSF 2.0), published February 2024.
 
 ---
 
-## CSF 2.0 functions
+## Why CSF 2.0 for LLM security
+
+CSF 2.0 is the most widely adopted cybersecurity framework globally —
+used by governments, critical infrastructure operators, and enterprises
+across sectors. Three changes in CSF 2.0 make it significantly more
+relevant for LLM security than CSF 1.1:
+
+**GOVERN function (new in 2.0):** CSF 2.0 adds a sixth function —
+GOVERN — explicitly covering cybersecurity risk management strategy,
+supply chain risk, and organisational roles. LLM governance, acceptable
+use policy, and AI vendor management all map directly to GOVERN.
+
+**Supply chain elevation:** Supply chain risk management (GV.SC) is now
+a dedicated category. LLM model providers, dataset vendors, and plugin
+ecosystems are third-party technology suppliers under CSF 2.0 GV.SC.
+
+**Continuous improvement emphasis:** CSF 2.0 strengthens the feedback
+loop between IDENTIFY, DETECT, RESPOND, and RECOVER — critical for LLM
+systems where the threat surface evolves faster than traditional IT.
+
+---
+
+## CSF 2.0 structure
 
 | Function | Abbreviation | Core purpose |
 |---|---|---|
-| GOVERN | GV | Organisational context, risk strategy, roles, policy, supply chain |
+| GOVERN | GV | Cybersecurity risk management strategy, policies, roles, supply chain |
 | IDENTIFY | ID | Asset management, risk assessment, improvement |
-| PROTECT | PR | Access control, awareness, data security, platform security, resilience |
+| PROTECT | PR | Identity management, awareness, data security, platform security, resilience |
 | DETECT | DE | Continuous monitoring, adverse event analysis |
-| RESPOND | RS | Incident management, analysis, mitigation, communication |
-| RECOVER | RC | Incident recovery, communication, improvements |
+| RESPOND | RS | Incident management, analysis, mitigation, reporting |
+| RECOVER | RC | Incident recovery, communication |
 
 ---
 
@@ -45,27 +54,27 @@ other frameworks provide the technical controls.
 
 | ID | Name | Severity | Primary CSF 2.0 Categories | Tier |
 |---|---|---|---|---|
-| LLM01 | Prompt Injection | Critical | GV.RM-06, PR.PS-04, DE.CM-09, RS.MA-02 | Foundational-Advanced |
-| LLM02 | Sensitive Information Disclosure | High | PR.DS-01, PR.DS-02, PR.AA-05, DE.CM-01 | Foundational-Advanced |
-| LLM03 | Supply Chain Vulnerabilities | High | GV.SC-06, GV.SC-07, ID.RA-01, PR.PS-02 | Foundational-Hardening |
-| LLM04 | Data and Model Poisoning | Critical | PR.DS-01, PR.PS-04, DE.CM-09, RS.MA-02 | Hardening-Advanced |
-| LLM05 | Insecure Output Handling | High | PR.PS-04, PR.PS-02, DE.CM-01, RS.MA-01 | Foundational-Hardening |
-| LLM06 | Excessive Agency | High | GV.RM-06, PR.AA-05, PR.AA-02, DE.CM-01 | Foundational-Hardening |
-| LLM07 | System Prompt Leakage | High | PR.DS-01, PR.AA-05, DE.CM-01, ID.AM-01 | Foundational-Hardening |
-| LLM08 | Vector and Embedding Weaknesses | Medium | PR.DS-01, PR.DS-02, DE.CM-09, PR.AA-05 | Hardening-Advanced |
-| LLM09 | Misinformation | Medium | GV.RM-06, DE.CM-09, RS.MA-01, GV.OC-01 | Foundational-Hardening |
-| LLM10 | Unbounded Consumption | Medium | PR.IR-01, DE.CM-01, RS.MA-02, RC.RP-02 | Foundational-Hardening |
+| LLM01 | Prompt Injection | Critical | PR.PS-04, DE.CM-01, ID.RA-01, GV.OC-01 | Foundational–Advanced |
+| LLM02 | Sensitive Information Disclosure | High | PR.DS-01, PR.DS-02, DE.CM-01, GV.RM-06 | Foundational–Advanced |
+| LLM03 | Supply Chain Vulnerabilities | High | GV.SC-01, GV.SC-06, ID.AM-08, PR.PS-02 | Foundational–Hardening |
+| LLM04 | Data and Model Poisoning | Critical | PR.DS-01, DE.CM-09, ID.RA-01, RS.AN-03 | Hardening–Advanced |
+| LLM05 | Insecure Output Handling | High | PR.PS-04, PR.DS-02, DE.CM-01, ID.RA-01 | Foundational–Hardening |
+| LLM06 | Excessive Agency | High | PR.AA-05, PR.AA-01, DE.CM-01, GV.OC-01 | Foundational–Hardening |
+| LLM07 | System Prompt Leakage | High | PR.DS-01, PR.AA-05, DE.CM-01, GV.RM-06 | Foundational–Hardening |
+| LLM08 | Vector and Embedding Weaknesses | Medium | PR.DS-01, PR.DS-02, DE.CM-09, ID.AM-08 | Hardening–Advanced |
+| LLM09 | Misinformation | Medium | GV.OC-01, DE.CM-09, ID.RA-01, PR.AT-01 | Foundational–Hardening |
+| LLM10 | Unbounded Consumption | Medium | PR.IR-01, DE.CM-01, RS.MI-01, GV.RM-01 | Foundational–Hardening |
 
 ---
 
 ## Audience tags
 
-- **CISO / governance** — full file, CSF 2.0 organisational profile for LLM applications
-- **Risk manager** — GV and ID function categories
-- **Security engineer** — PR, DE, RS function categories
-- **Compliance officer** — GV.SC supply chain categories, regulatory alignment
-- **Executive / board** — GV.OC organisational context, GV.RM risk management
-- **OT engineer** — LLM01, LLM04, LLM10 with ISA 62443 crosswalk notes
+- **CISO / governance** — full file, CSF 2.0 integration for LLM programme
+- **Risk manager** — IDENTIFY and GOVERN entries per vulnerability
+- **Security operations** — DETECT and RESPOND entries
+- **Security engineer** — PROTECT entries per vulnerability
+- **Federal agency / FISMA** — CSF 2.0 as NIST reference framework
+- **OT engineer** — LLM01, LLM04, LLM10 with ISA 62443 crosswalk
 
 ---
 
@@ -78,51 +87,52 @@ other frameworks provide the technical controls.
 **Severity:** Critical
 
 Malicious instructions in user input or processed content manipulate
-LLM behaviour, bypassing safety controls and executing unauthorised
-actions. In CSF 2.0 terms this is a platform security failure (PR.PS)
-and a risk management governance gap (GV.RM) — organisations that
-have not identified prompt injection as a foreseeable risk cannot
-have appropriate controls in place.
+LLM behaviour. CSF 2.0 addresses this through platform security
+(PROTECT), continuous monitoring (DETECT), and risk assessment (IDENTIFY).
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Prompt injection documented as a foreseeable risk in the organisational risk register — treatment decisions made and owned |
-| Platform security — software integrity | PR.PS-04 | PROTECT | Secure software development practices applied to LLM integration code — input validation as a platform security control |
-| Continuous monitoring | DE.CM-09 | DETECT | Runtime monitoring for prompt injection indicators on all LLM input channels |
-| Incident analysis | RS.MA-02 | RESPOND | Prompt injection incidents analysed — indicators of compromise documented, root cause identified |
+| Platform Security | PR.PS-04 | PROTECT | Secure software development practices applied to LLM integrations — input validation as a platform security control |
+| Continuous Monitoring | DE.CM-01 | DETECT | Networks and assets monitored for anomalies — LLM input channels monitored for injection indicators |
+| Risk Assessment | ID.RA-01 | IDENTIFY | Vulnerabilities in assets identified and documented — prompt injection as a documented vulnerability class for all LLM deployments |
+| Organisational Context | GV.OC-01 | GOVERN | Mission and stakeholder expectations inform cybersecurity risk decisions — acceptable LLM use scope defines injection risk surface |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.RM-06: Add prompt injection to the organisational risk
-  register — document as a foreseeable risk for every LLM
-  integration, assign an owner and treatment decision
-- PR.PS-04: Establish secure development practice requiring
-  input validation for all LLM integrations — enforced
-  through code review, not just guidelines
-- Treat all external content processed by the LLM as
-  untrusted regardless of source — policy documented
+**GOVERN**
+- GV.OC-01: Define acceptable use policy for LLM applications —
+  specify which input channels are permitted, what content is
+  trusted, and what constitutes an injection attempt
+- GV.RM-06: Include prompt injection in enterprise risk register —
+  document risk owner, treatment, and review cadence
 
-**Hardening**
-- DE.CM-09: Deploy runtime monitoring for injection indicators
-  on all LLM input channels — alerts integrated into
-  security operations workflow
-- Include prompt injection in security testing programme —
-  direct, indirect via RAG, and jailbreak vectors tested
-  before each production release
-- RS.MA-02: Define incident response procedures for confirmed
-  prompt injection — containment, impact scoping, root cause
+**IDENTIFY**
+- ID.RA-01: Document prompt injection as a vulnerability in every
+  LLM asset's risk assessment — include indirect injection via
+  RAG, tool returns, and processed documents
+- ID.AM-08: Inventory all LLM systems and their input channels —
+  unknown input surfaces cannot be protected
 
-**Advanced**
-- Implement architectural separation between system prompt
-  and user input — structural control, not just policy
-- Extend DE.CM-09 monitoring to cover all indirect injection
-  surfaces specific to your deployment — RAG sources, tool
-  descriptors, document processing pipelines
-- Conduct adversarial testing quarterly — novel injection
-  techniques tested before they reach production
+**PROTECT**
+- PR.PS-04: Implement input validation as a platform security
+  control — treat all external content as untrusted before
+  entering LLM context
+- Deploy architectural separation between system prompt and
+  user input — structural control, not policy only
+
+**DETECT**
+- DE.CM-01: Monitor LLM input channels for injection indicators —
+  anomalous inputs detected and alerted in real time
+- DE.AE-02: Analyse detected events to understand attack targets —
+  injection attempts correlated across sessions
+
+**RESPOND**
+- RS.AN-03: Analyse incidents to determine root cause —
+  injection incidents investigated, IOCs documented
+- RS.MI-01: Contain injection incidents — session termination,
+  downstream action review
 
 #### Tools
 
@@ -130,12 +140,11 @@ have appropriate controls in place.
 |---|---|---|
 | Garak | Open-source | https://github.com/leondz/garak |
 | LLM Guard | Open-source | https://github.com/protectai/llm-guard |
-| Rebuff | Open-source | https://github.com/protectai/rebuff |
 
 #### Cross-references
 - Agentic Top 10: ASI01 Agent Goal Hijack
-- DSGAI 2026: DSGAI01 Sensitive Data Leakage
-- Other frameworks: ISO 27001 A.8.28 · NIST AI RMF MS-2.5 · CIS Controls CIS 16
+- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
+- Other frameworks: NIST AI RMF MS-2.5 · ISO 27001 A.8.28 · CIS Controls CIS 16
 
 ---
 
@@ -143,51 +152,50 @@ have appropriate controls in place.
 
 **Severity:** High
 
-LLMs expose PII, credentials, financial data, or proprietary content
-through outputs — from training data memorisation or over-permissive
-RAG retrieval. CSF 2.0 PR.DS (data security) is the primary function —
-data protection controls must extend to all LLM data assets including
-embeddings, caches, and derived content.
+LLMs expose PII, financial data, or confidential information through
+outputs. CSF 2.0 data security (PR.DS) and continuous monitoring
+(DE.CM) are the primary categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Data security — data at rest | PR.DS-01 | PROTECT | All LLM data assets encrypted at rest — training data, embeddings, RAG stores, prompt caches |
-| Data security — data in transit | PR.DS-02 | PROTECT | All LLM data flows encrypted in transit — API calls, RAG retrieval, observability pipelines |
-| Identity management — least privilege | PR.AA-05 | PROTECT | RAG retrieval access controls — users retrieve only data they are authorised to access |
-| Continuous monitoring | DE.CM-01 | DETECT | DLP monitoring on all LLM output channels — PII and sensitive patterns detected before delivery |
+| Data Security | PR.DS-01 | PROTECT | Data-at-rest protected — training data, embeddings, RAG stores containing sensitive information encrypted |
+| Data Security | PR.DS-02 | PROTECT | Data-in-transit protected — all LLM API calls and RAG retrieval paths encrypted |
+| Continuous Monitoring | DE.CM-01 | DETECT | LLM output channels monitored for sensitive data patterns — DLP coverage |
+| Risk Management Strategy | GV.RM-06 | GOVERN | Risk tolerance established — acceptable levels of sensitive data disclosure risk defined per use case |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.DS-01: Encrypt all LLM data assets at rest —
-  training corpora, embedding databases, RAG document
-  stores, prompt caches, and observability logs
+**GOVERN**
+- GV.RM-06: Establish risk tolerance for sensitive data disclosure
+  per LLM use case — what classifications are permitted in LLM
+  scope and what controls are required
+
+**IDENTIFY**
+- ID.AM-08: Inventory all data assets accessible by LLM systems —
+  training data, RAG sources, embedding stores, prompt caches
+- ID.RA-03: Identify threats to sensitive data via LLM exposure —
+  memorisation, over-retrieval, output reconstruction
+
+**PROTECT**
+- PR.DS-01: Encrypt all sensitive data at rest in LLM scope —
+  embedding stores, training datasets, RAG document stores,
+  prompt caches
+- PR.DS-02: Encrypt all LLM data flows in transit —
+  TLS 1.2 minimum on all API calls and RAG retrieval
 - PR.AA-05: Implement access controls on RAG data sources —
-  users retrieve only documents they are authorised to
-  access, enforced at the retrieval layer
-- ID.AM-01: Inventory all LLM data assets — training data,
-  embeddings, RAG sources, outputs — know what exists
-  before you can protect it
+  least-privilege retrieval aligned with user authorisation
 
-**Hardening**
-- PR.DS-02: Enforce encryption on all LLM data flows in
-  transit — API calls, RAG retrieval, embedding pipelines,
-  observability streams
-- DE.CM-01: Deploy DLP monitoring on all LLM output channels —
-  PII and sensitive patterns detected and alerted before
-  responses reach users
-- Apply output redaction for sensitive patterns — masking
-  before responses leave the LLM service boundary
+**DETECT**
+- DE.CM-01: Deploy DLP on all LLM output channels —
+  PII and sensitive patterns detected before delivery
 
-**Advanced**
-- Apply differential privacy in training and embedding
-  generation for sensitive corpora
-- Conduct model inversion red team exercises — validate
-  that sensitive training data cannot be reconstructed
-- Extend DE.CM-01 to cover all derived assets —
-  embeddings, summaries, cached retrievals
+**RESPOND**
+- RS.AN-03: Investigate sensitive data disclosure incidents —
+  determine scope, affected data subjects, regulatory obligations
+- RS.CO-03: Report incidents as required — data breach notification
+  per applicable regulation
 
 #### Tools
 
@@ -197,8 +205,8 @@ embeddings, caches, and derived content.
 | Nightfall AI | Commercial | https://nightfall.ai |
 
 #### Cross-references
-- Agentic Top 10: ASI03 Identity and Privilege Abuse
-- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI18 Inference and Data Reconstruction
+- Agentic Top 10: ASI03 Identity & Privilege Abuse
+- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI18 Inference & Data Reconstruction
 - Other frameworks: ISO 27001 A.8.11/A.8.12 · NIST AI RMF GV-1.6 · EU AI Act Art. 10
 
 ---
@@ -208,53 +216,52 @@ embeddings, caches, and derived content.
 **Severity:** High
 
 LLM applications depend on third-party model weights, datasets,
-libraries, and plugins. CSF 2.0 added GV.SC (supply chain risk
-management) as a new governance category in the 2.0 revision —
-it is the primary framework anchor for LLM component supply chain
-security.
+libraries, and plugins. CSF 2.0 GOVERN supply chain risk management
+(GV.SC) is the primary category — supply chain is now a first-class
+CSF concern.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Supply chain risk management — suppliers | GV.SC-06 | GOVERN | Security requirements applied to all LLM component vendors — provenance, integrity, disclosure obligations |
-| Supply chain risk management — due diligence | GV.SC-07 | GOVERN | Due diligence conducted on all LLM component vendors before use in production |
-| Risk assessment — threat identification | ID.RA-01 | IDENTIFY | Supply chain attack vectors identified and assessed for each LLM component source |
-| Platform security — approved software | PR.PS-02 | PROTECT | Only approved, integrity-verified LLM components permitted in production |
+| Supply Chain Risk Management | GV.SC-01 | GOVERN | Cybersecurity supply chain risk management programme — LLM component vendors in scope |
+| Supply Chain Risk Management | GV.SC-06 | GOVERN | Cybersecurity requirements included in contracts with suppliers — LLM model and data vendors |
+| Asset Management | ID.AM-08 | IDENTIFY | Systems and hardware managed — ML SBOM as asset inventory for LLM components |
+| Platform Security | PR.PS-02 | PROTECT | Software managed to reduce risk — LLM component vulnerability management and patching |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.SC-06: Establish supply chain security requirements
-  for all LLM component vendors — provenance documentation,
-  integrity guarantees, and vulnerability disclosure
-  obligations required before any component enters
-  production
-- PR.PS-02: Maintain approved component list for all LLM
-  deployments — only sourced from approved vendors,
-  cryptographic signatures verified before deployment
-- Maintain ML SBOM for every production LLM — model,
-  adapters, inference runtime, and libraries
+**GOVERN**
+- GV.SC-01: Establish cybersecurity supply chain risk management
+  programme covering LLM components — model providers, dataset
+  vendors, inference runtime suppliers
+- GV.SC-06: Include security requirements in all LLM vendor
+  contracts — provenance, integrity guarantees, vulnerability
+  disclosure obligations, incident notification SLA
 
-**Hardening**
-- GV.SC-07: Conduct security due diligence on all LLM
-  component vendors — assess security practices, incident
-  history, and vulnerability notification responsiveness
-- ID.RA-01: Identify supply chain attack vectors per
-  component — assess which components represent the
-  highest supply chain risk in your deployment
-- Pin all component versions — no automatic updates
-  in production without review and approval
+**IDENTIFY**
+- ID.AM-08: Maintain ML SBOM as part of asset inventory —
+  every LLM component (model, adapters, libraries) inventoried
+  with version, source, and hash
+- ID.RA-08: Receive threat intelligence about supply chain
+  threats — subscribe to feeds covering ML component
+  and model repository compromise
 
-**Advanced**
-- Operate isolated model evaluation environment —
-  backdoor detection testing before each production
-  promotion
-- Conduct adversarial supply chain testing — attempt
-  to introduce compromised components and verify detection
-- GV.SC-06: Establish responsible disclosure relationship
-  with LLM vendors — defined vulnerability notification
-  SLA, tested annually
+**PROTECT**
+- PR.PS-02: Implement vulnerability management for all LLM
+  components — scan SBOM against known CVEs, patch on schedule
+- Pin all LLM component versions — no automatic updates
+  without review and approval
+
+**DETECT**
+- DE.CM-09: Monitor for use of unauthorised software —
+  alert on LLM component changes outside approved change
+  management process
+
+**RESPOND**
+- RS.AN-03: Investigate supply chain incidents —
+  determine which deployments are affected by a compromised
+  LLM component
 
 #### Tools
 
@@ -262,12 +269,12 @@ security.
 |---|---|---|
 | CycloneDX | Open-source | https://cyclonedx.org |
 | ModelScan | Open-source | https://github.com/protectai/modelscan |
-| Syft | Open-source | https://github.com/anchore/syft |
+| Grype | Open-source | https://github.com/anchore/grype |
 
 #### Cross-references
 - Agentic Top 10: ASI04 Agentic Supply Chain Vulnerabilities
-- DSGAI 2026: DSGAI04 Data Model and Artifact Poisoning
-- Other frameworks: ISO 27001 A.5.19/A.5.21 · NIST AI RMF MP-5.1 · NIST SP 800-218A
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning
+- Other frameworks: NIST SP 800-218A · ISO 27001 A.5.19/A.5.21 · CIS Controls CIS 2
 
 ---
 
@@ -275,53 +282,54 @@ security.
 
 **Severity:** Critical
 
-Attackers corrupt training datasets or model weights to embed
-backdoors — effects baked into weights and invisible until a trigger
-condition is reached. CSF 2.0 PR.DS data security and DE.CM monitoring
-are the primary categories — poisoning is both a data integrity failure
-and a detection gap.
+Adversaries corrupt training data or model weights with embedded
+backdoors. CSF 2.0 data security (PR.DS), detection (DE.CM), and
+incident analysis (RS.AN) address this.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Data security — data at rest | PR.DS-01 | PROTECT | Training data integrity controls — cryptographic lineage, source allowlisting, tamper detection |
-| Platform security — software integrity | PR.PS-04 | PROTECT | Model integrity verification before each deployment — hash-based check against approved baseline |
-| Continuous monitoring | DE.CM-09 | DETECT | Anomaly detection on training data distributions and model outputs — poisoning indicators monitored |
-| Incident analysis | RS.MA-02 | RESPOND | Model rollback capability — approved baseline version available for immediate revert on poisoning detection |
+| Data Security | PR.DS-01 | PROTECT | Training data protected at rest — integrity verification, source allowlisting, provenance tracking |
+| Continuous Monitoring | DE.CM-09 | DETECT | Monitoring for unauthorised software and configuration changes — model integrity verification at deployment |
+| Risk Assessment | ID.RA-01 | IDENTIFY | Poisoning attack vectors identified and documented in risk assessment for each LLM deployment |
+| Incident Analysis | RS.AN-03 | RESPOND | Root cause analysis for poisoning incidents — identify affected deployments, assess physical impact |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
+**GOVERN**
+- GV.SC-01: Apply supply chain controls to training data
+  sources — same programme covering model weights extends
+  to dataset vendors and data pipeline components
+
+**IDENTIFY**
+- ID.RA-01: Document poisoning attack vectors in risk
+  assessment per LLM deployment — training data sources,
+  fine-tuning pipeline, model weights, supply chain
+- ID.AM-08: Maintain provenance records for all training
+  data sources as part of asset management
+
+**PROTECT**
 - PR.DS-01: Implement training data integrity controls —
-  source allowlisting, cryptographic lineage from source
-  to training dataset, anomaly detection on distributions
-- PR.PS-04: Implement model integrity verification before
-  each deployment — hash-based check against approved
-  baseline, deviation triggers rejection
+  hash-based provenance, source allowlisting, anomaly
+  detection on data distributions before training runs
 - Establish model rollback capability — approved clean
-  checkpoint always available, tested restoration procedure
+  checkpoint always available for revert
 
-**Hardening**
-- DE.CM-09: Deploy anomaly detection on training pipelines
-  and model outputs — statistical distribution shifts,
-  unexpected capability changes, and backdoor trigger
-  patterns monitored
-- Include poisoning detection in security testing —
-  backdoor trigger testing before every production
-  model promotion
-- GV.SC-06: Apply supply chain security requirements to
-  all training data sources — provenance and integrity
-  guarantees required
+**DETECT**
+- DE.CM-09: Verify model integrity at deployment —
+  hash-based check against approved baseline before any
+  production promotion
+- DE.AE-02: Detect anomalous model output patterns —
+  production monitoring for systematic recommendation
+  drift indicating poisoning
 
-**Advanced**
-- Conduct post-training backdoor detection as a mandatory
-  pre-deployment gate
-- Apply differential privacy during training — document
-  as PR.DS data protection measure
-- RS.MA-02: Define incident response for confirmed poisoning —
-  model rollback procedure, downstream impact assessment,
-  root cause investigation before redeployment
+**RESPOND**
+- RS.AN-03: Investigate poisoning incidents — identify
+  affected training runs, assess downstream deployments,
+  determine physical or operational impact
+- RS.MI-02: Remediate poisoning — rollback to clean
+  checkpoint, quarantine affected data sources
 
 #### Tools
 
@@ -329,11 +337,10 @@ and a detection gap.
 |---|---|---|
 | IBM Adversarial Robustness Toolbox | Open-source | https://github.com/Trusted-AI/adversarial-robustness-toolbox |
 | CleanLab | Open-source | https://github.com/cleanlab/cleanlab |
-| Great Expectations | Open-source | https://greatexpectations.io |
 
 #### Cross-references
-- Agentic Top 10: ASI06 Memory and Context Poisoning
-- DSGAI 2026: DSGAI04 Data Model and Artifact Poisoning, DSGAI21 Disinformation via Data Poisoning
+- Agentic Top 10: ASI06 Memory & Context Poisoning
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI21 Disinformation via Data Poisoning
 - Other frameworks: NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0032 · ISO 27001 A.8.27
 
 ---
@@ -343,49 +350,39 @@ and a detection gap.
 **Severity:** High
 
 LLM output passed to downstream systems without validation enables
-XSS, command injection, or SQL injection via AI-generated content.
-CSF 2.0 PR.PS platform security requires secure software development
-practices — output validation is a platform security control.
+injection attacks. CSF 2.0 platform security (PR.PS) and data
+security (PR.DS) are the primary PROTECT categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Platform security — software integrity | PR.PS-04 | PROTECT | Secure coding requirements mandating output encoding and validation before passing to downstream systems |
-| Platform security — approved software | PR.PS-02 | PROTECT | Allowlisted output formats enforced — only outputs conforming to defined safe structures passed downstream |
-| Continuous monitoring | DE.CM-01 | DETECT | Runtime monitoring for injection patterns in LLM output channels |
-| Incident analysis | RS.MA-01 | RESPOND | Incident response for output injection events — containment, affected system identification |
+| Platform Security | PR.PS-04 | PROTECT | Secure software development practices — output encoding and schema validation as platform security requirements |
+| Data Security | PR.DS-02 | PROTECT | Data in transit protected — LLM output validated before passing to downstream systems |
+| Continuous Monitoring | DE.CM-01 | DETECT | Networks and assets monitored — output injection patterns detected in LLM output channels |
+| Risk Assessment | ID.RA-01 | IDENTIFY | Output injection documented as vulnerability class in risk assessment for all LLM integrations |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.PS-04: Establish secure coding practice requiring that
-  all LLM output is treated as untrusted input to downstream
-  systems — encoding, validation, and sanitisation mandatory
-- Never pass raw LLM output to database queries, shell
-  commands, or eval functions — enforced through code review
-- DE.CM-01: Enable logging of all LLM outputs — injection
-  patterns in model responses detectable through log analysis
+**IDENTIFY**
+- ID.RA-01: Document output injection as a vulnerability in
+  all LLM integration risk assessments — cover XSS, SQL
+  injection, command injection via model output
 
-**Hardening**
-- PR.PS-02: Implement output schema validation — only
-  outputs conforming to predefined safe structures passed
-  to downstream consumers
-- Include output injection in security testing programme —
-  XSS, SQL injection, and command injection via LLM output
-  tested before each release
-- RS.MA-01: Define incident response for output injection —
-  which downstream systems are affected, containment steps,
-  forensic evidence preservation
+**PROTECT**
+- PR.PS-04: Implement output encoding and schema validation
+  as secure development requirements — treat LLM output as
+  untrusted input to all downstream systems
+- PR.DS-02: Validate all LLM outputs before they cross
+  system boundaries — schema enforcement at API gateway
 
-**Advanced**
-- Deploy dedicated output security layer independent of
-  the LLM — structural guarantee against output injection
-- Conduct DAST on all interfaces consuming LLM output —
-  test injection scenarios against your specific downstream
-  consumers
-- DE.CM-01: Extend monitoring to cover all LLM output
-  paths including background task queues and batch outputs
+**DETECT**
+- DE.CM-01: Monitor LLM output channels for injection patterns —
+  automated detection of dangerous content in model responses
+
+**RESPOND**
+- RS.MI-01: Contain output injection incidents — block
+  affected session, review downstream state changes
 
 #### Tools
 
@@ -396,8 +393,8 @@ practices — output validation is a platform security control.
 
 #### Cross-references
 - Agentic Top 10: ASI02 Tool Misuse, ASI05 Unexpected Code Execution
-- DSGAI 2026: DSGAI05 Data Integrity and Validation Failures, DSGAI12 Unsafe NL Data Gateways
-- Other frameworks: OWASP ASVS V5 · CIS Controls CIS 16 · CWE-79
+- DSGAI 2026: DSGAI05 Data Integrity & Validation Failures, DSGAI12 Unsafe NL Data Gateways
+- Other frameworks: OWASP ASVS V5 · CIS Controls CIS 16 · CWE-79/CWE-89
 
 ---
 
@@ -405,50 +402,48 @@ practices — output validation is a platform security control.
 
 **Severity:** High
 
-LLMs with excessive autonomy over tools and systems execute
-unintended or harmful actions when manipulated. CSF 2.0 GV.RM
-risk management strategy and PR.AA access management are the
-primary categories — excessive agency is simultaneously a governance
-failure and an access control failure.
+LLMs with excessive autonomy over tools execute unintended or harmful
+actions. CSF 2.0 identity management (PR.AA) and organisational
+context (GV.OC) are the primary categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Policy defining permissible LLM autonomous actions — documented as a risk management strategy decision |
-| Identity management — least privilege | PR.AA-05 | PROTECT | LLM tool access managed at minimum required scope — least privilege enforced and reviewed |
-| Access management — account management | PR.AA-02 | PROTECT | LLM tool permissions managed as privileged access — lifecycle management including regular review |
-| Continuous monitoring | DE.CM-01 | DETECT | All LLM tool invocations logged — anomalous patterns detected and alerted |
+| Identity Management, Authentication & Access Control | PR.AA-05 | PROTECT | Access permissions managed — LLM tool access managed as privileged access with least privilege enforcement |
+| Identity Management, Authentication & Access Control | PR.AA-01 | PROTECT | Identities managed — LLM service identities inventoried and managed, tool permissions scoped per identity |
+| Continuous Monitoring | DE.CM-01 | DETECT | Networks and assets monitored — all LLM tool invocations logged and monitored for anomalous scope |
+| Organisational Context | GV.OC-01 | GOVERN | Acceptable use of LLM autonomous actions defined — policy specifies what actions require human confirmation |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.RM-06: Document organisational policy on LLM autonomous
-  actions — what actions require human confirmation, what
-  tool access is permitted per deployment context
-- PR.AA-05: Enforce least privilege on all LLM tool access —
-  read-only by default, write access requires documented
-  justification and is scoped to minimum required operations
-- Require human confirmation for all irreversible actions —
-  separate confirmation interface, not the LLM chat itself
+**GOVERN**
+- GV.OC-01: Define acceptable scope for LLM autonomous
+  actions — which tool operations are permitted without
+  human confirmation, which are prohibited autonomously
+- GV.RM-01: Include LLM excessive agency in risk management
+  strategy — document blast radius per deployment
 
-**Hardening**
-- PR.AA-02: Manage LLM tool permissions as privileged access —
-  formal lifecycle management, regular reviews, any permission
-  not actively used is removed
-- DE.CM-01: Log all LLM tool invocations with full context —
-  tool identity, parameters, user session, timestamp —
-  immutable audit trail
-- Deploy action guardrails as an independent layer from
-  the model — structural enforcement of permitted scope
+**IDENTIFY**
+- ID.AM-08: Inventory all LLM tool integrations — what
+  each tool can do, what permissions it holds, what
+  systems it can affect
 
-**Advanced**
-- Formally specify permitted action graphs — only
-  pre-approved action sequences can execute in production
-- Conduct red team exercises testing excessive agency
-  through indirect prompt injection
-- GV.RM-06: Include LLM excessive agency in board-level
-  risk reporting — measurable governance objective
+**PROTECT**
+- PR.AA-05: Implement least-privilege access for all LLM
+  tool integrations — minimum permissions enforced,
+  reviewed on change and quarterly
+- PR.AA-01: Manage LLM service identities — unique identity
+  per deployment, permissions scoped to defined role
+
+**DETECT**
+- DE.CM-01: Log and monitor all LLM tool invocations —
+  anomalous scope, unusual parameters, or high frequency
+  detected and alerted
+
+**RESPOND**
+- RS.MI-01: Contain excessive agency incidents — suspend
+  agent, review all actions taken, reverse where possible
 
 #### Tools
 
@@ -459,8 +454,8 @@ failure and an access control failure.
 
 #### Cross-references
 - Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse
-- DSGAI 2026: DSGAI06 Tool Plugin and Agent Data Exchange
-- Other frameworks: AIUC-1 B006 · ISO 27001 A.8.2 · ISA/IEC 62443 SR 2.1 (OT)
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
+- Other frameworks: AIUC-1 B006 · EU AI Act Art. 14 · ISA/IEC 62443 SR 2.1 (OT)
 
 ---
 
@@ -468,52 +463,46 @@ failure and an access control failure.
 
 **Severity:** High
 
-System prompts containing internal instructions or security controls
-are extracted by adversaries — enabling targeted attacks. CSF 2.0
-PR.DS data security applies to system prompts as sensitive
-configuration data.
+System prompts containing security controls are extracted by
+adversaries. CSF 2.0 data security (PR.DS) and access control
+(PR.AA) are the primary categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Asset management | ID.AM-01 | IDENTIFY | System prompts inventoried as sensitive assets — classified and governed accordingly |
-| Data security — data at rest | PR.DS-01 | PROTECT | System prompts encrypted at rest — not stored in cleartext configuration files |
-| Identity management — least privilege | PR.AA-05 | PROTECT | System prompt access restricted to authorised personnel — version controlled, access logged |
-| Continuous monitoring | DE.CM-01 | DETECT | Access to system prompt storage logged — anomalous access attempts detectable |
+| Data Security | PR.DS-01 | PROTECT | System prompts classified as sensitive configuration and protected at rest — encrypted, access-controlled |
+| Identity Management, Authentication & Access Control | PR.AA-05 | PROTECT | Access to system prompt storage restricted to authorised personnel — least privilege enforced |
+| Continuous Monitoring | DE.CM-01 | DETECT | Access to system prompt storage logged and monitored — anomalous access detected |
+| Risk Management Strategy | GV.RM-06 | GOVERN | Risk tolerance defined for system prompt exposure — operational security value of prompt confidentiality assessed |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- ID.AM-01: Inventory all system prompts as sensitive assets —
-  classified at the same level as application secrets and
-  operational configuration
-- PR.DS-01: Encrypt all system prompts at rest — never stored
-  in cleartext source code, configuration files, or
-  environment variables without encryption
-- PR.AA-05: Restrict system prompt access — version controlled,
-  access controlled, all access logged
+**GOVERN**
+- GV.RM-06: Assess the security value of system prompt
+  confidentiality per deployment — prompts containing
+  operational details require higher protection level
 
-**Hardening**
-- DE.CM-01: Monitor and retain system prompt access logs —
-  detect and alert on anomalous access patterns
-- Conduct prompt extraction testing before each deployment —
-  verify extraction resistance under known attack techniques
-- Remove all secrets and sensitive identifiers from system
-  prompts — use runtime token resolution instead
+**PROTECT**
+- PR.DS-01: Encrypt system prompts at rest — not in cleartext
+  configuration files, source code, or environment variables
+- PR.AA-05: Restrict system prompt access to authorised
+  personnel — version controlled, access logged
 
-**Advanced**
-- Implement system prompt tokenisation — sensitive phrases
-  replaced with opaque tokens resolved at runtime
-- Deploy output classifier to detect and block responses
-  containing system prompt content
-- GV.RM-06: Include system prompt security in risk register —
-  formal risk with defined treatment and measurement criteria
+**DETECT**
+- DE.CM-01: Monitor access to system prompt storage —
+  alert on anomalous access patterns
+- Conduct prompt extraction testing — verify resistance
+  to known extraction techniques before deployment
+
+**RESPOND**
+- RS.AN-03: Investigate extraction incidents — assess
+  what operational intelligence an attacker gained
 
 #### Cross-references
 - Agentic Top 10: ASI01 Agent Goal Hijack
 - DSGAI 2026: DSGAI15 Over-Broad Context Windows
-- Other frameworks: AIUC-1 B003/B009 · CWE-200 · CIS Controls CIS 3
+- Other frameworks: AIUC-1 B003/B009 · ISO 27001 A.5.12 · CWE-200
 
 ---
 
@@ -521,60 +510,49 @@ configuration data.
 
 **Severity:** Medium
 
-Weaknesses in vector stores enable adversarial retrieval manipulation
-and inference of sensitive information from embeddings. CSF 2.0
-PR.DS data security covers the embedding stores as data assets
-requiring protection.
+Vector stores contain sensitive embeddings susceptible to adversarial
+retrieval and inference attacks. CSF 2.0 data security (PR.DS) and
+asset management (ID.AM) are the primary categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Data security — data at rest | PR.DS-01 | PROTECT | All vector store content encrypted at rest — embeddings require same protection as source documents |
-| Data security — data in transit | PR.DS-02 | PROTECT | All vector store communication encrypted in transit — query and response paths |
-| Continuous monitoring | DE.CM-09 | DETECT | Anomaly detection on vector store query patterns — bulk extraction and poisoning indicators |
-| Identity management — least privilege | PR.AA-05 | PROTECT | RBAC on all vector store collections — no unauthenticated access in any environment |
+| Data Security | PR.DS-01 | PROTECT | Vector store content encrypted at rest — embeddings treated as sensitive derived data |
+| Data Security | PR.DS-02 | PROTECT | Data in transit protected — vector store queries and results encrypted |
+| Asset Management | ID.AM-08 | IDENTIFY | Vector stores inventoried as AI data assets — RBAC status, encryption status, CVE patching status |
+| Continuous Monitoring | DE.CM-09 | DETECT | Monitoring for unauthorised software and anomalous access — vector store query anomalies detected |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.AA-05: Enable RBAC on all vector store collections —
-  no unauthenticated access in any environment including
-  development and staging
+**IDENTIFY**
+- ID.AM-08: Inventory all vector stores as AI data assets —
+  document RBAC status, encryption status, content
+  classification, and known CVE exposure
+
+**PROTECT**
 - PR.DS-01: Encrypt all vector store content at rest —
-  embeddings can leak source content through inversion
-  attacks if unencrypted
-- Patch all known vector database CVEs promptly —
-  CVE-2024-3584 class vulnerabilities treated as urgent
+  same protection as source documents
+- PR.AA-05: Enable RBAC on all vector stores —
+  no unauthenticated access in any environment
 
-**Hardening**
-- DE.CM-09: Implement anomaly detection on vector store
-  query patterns — alert on bulk extraction and unusual
-  retrieval volumes
-- Apply trust-tiered retrieval — weight results by source
-  provenance and trust score alongside semantic similarity
-- PR.DS-02: Enforce TLS on all vector store communication
-
-**Advanced**
-- Apply differential privacy in embedding generation for
-  sensitive corpora — document privacy budget
-- Conduct embedding inversion testing — validate source
-  content cannot be reconstructed from embeddings
-- DE.CM-09: Integrate vector store anomaly alerts into
-  SIEM — unusual patterns treated as potential reconnaissance
+**DETECT**
+- DE.CM-09: Monitor vector store query patterns —
+  bulk extraction, unusual query diversity detected
+- Patch all vector database CVEs promptly —
+  CVE-2024-3584 class as urgent findings
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
 | Weaviate | Open-source | https://weaviate.io |
-| Qdrant | Open-source | https://qdrant.tech |
 | ML Privacy Meter | Open-source | https://github.com/privacytrustlab/ml_privacy_meter |
 
 #### Cross-references
-- Agentic Top 10: ASI06 Memory and Context Poisoning
-- DSGAI 2026: DSGAI13 Vector Store Platform Security, DSGAI18 Inference and Data Reconstruction
-- Other frameworks: NIST AI RMF MS-2.5 · ISO 27001 A.8.3/A.8.24 · CWE-284
+- Agentic Top 10: ASI06 Memory & Context Poisoning
+- DSGAI 2026: DSGAI13 Vector Store Platform Security, DSGAI18 Inference & Data Reconstruction
+- Other frameworks: NIST AI RMF MS-2.5 · ISO 27001 A.8.3/A.8.24 · CIS Controls CIS 3
 
 ---
 
@@ -582,49 +560,40 @@ requiring protection.
 
 **Severity:** Medium
 
-LLMs generate plausible but incorrect content that users or downstream
-systems act upon. CSF 2.0 GV.OC organisational context and GV.RM
-risk management are the governance anchors — defining the acceptable
-accuracy threshold for LLM advisory outputs is a governance decision
-that must precede deployment.
+LLMs generate plausible but incorrect content. CSF 2.0 organisational
+context (GV.OC) and awareness training (PR.AT) address this as a
+governance and people risk, not only a technical risk.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Acceptable accuracy thresholds for LLM outputs defined per use case — low-confidence outputs require human verification |
-| Organisational context | GV.OC-01 | GOVERN | Stakeholders informed of LLM output limitations — users and deployers understand advisory nature |
-| Continuous monitoring | DE.CM-09 | DETECT | Production monitoring for hallucination patterns — accuracy metrics tracked per domain, drift detected |
-| Incident analysis | RS.MA-01 | RESPOND | Response for misinformation incidents — correction, notification, root cause investigation |
+| Organisational Context | GV.OC-01 | GOVERN | Acceptable use policy defines which LLM outputs require verification — high-stakes domains identified |
+| Continuous Monitoring | DE.CM-09 | DETECT | Production monitoring for accuracy degradation — hallucination rates tracked per domain |
+| Risk Assessment | ID.RA-01 | IDENTIFY | LLM misinformation risk assessed per use case — what decisions are influenced, what is the consequence |
+| Awareness and Training | PR.AT-01 | PROTECT | Users trained on LLM output limitations — verification requirements for each use case |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.OC-01: Communicate LLM output limitations to all
-  stakeholders — users, deployers, and operators trained
-  before access is granted
-- GV.RM-06: Define acceptable accuracy thresholds per
-  deployment context — use cases requiring high accuracy
-  require human verification before action
-- Display source citations alongside LLM responses —
-  users verify claims against cited sources before acting
+**GOVERN**
+- GV.OC-01: Define accuracy requirements per LLM use case —
+  which domains require human verification, which are
+  acceptable for advisory use without verification
 
-**Hardening**
-- DE.CM-09: Implement production monitoring for hallucination —
-  accuracy metrics per domain, drift detection, alert when
-  accuracy degrades beyond defined thresholds
+**IDENTIFY**
+- ID.RA-01: Assess misinformation risk per deployment —
+  what decisions are influenced by LLM output, what
+  is the consequence of incorrect recommendations
+
+**PROTECT**
+- PR.AT-01: Train all users of LLM decision-support tools
+  on output limitations — mandatory before access granted
 - Deploy RAG grounded on authoritative, version-controlled
-  sources — not uncontrolled web content
-- RS.MA-01: Define incident response for misinformation events —
-  who corrects the record, how affected users are notified
+  sources — citations displayed alongside responses
 
-**Advanced**
-- Build automated fact-checking for high-stakes output domains —
-  accuracy gate before responses reach regulated workflows
-- Conduct domain-specific accuracy testing before deployment —
-  hallucination rate measured per equipment type, domain, use case
-- GV.RM-06: Include misinformation risk in board-level AI
-  risk reporting — measurable accuracy objectives reviewed
+**DETECT**
+- DE.CM-09: Monitor production accuracy metrics —
+  hallucination rates per domain, alert on degradation
 
 #### Tools
 
@@ -632,11 +601,10 @@ that must precede deployment.
 |---|---|---|
 | TruLens | Open-source | https://github.com/truera/trulens |
 | RAGAS | Open-source | https://github.com/explodinggradients/ragas |
-| DeepEval | Open-source | https://github.com/confident-ai/deepeval |
 
 #### Cross-references
 - Agentic Top 10: ASI09 Human-Agent Trust Exploitation
-- DSGAI 2026: DSGAI21 Disinformation and Integrity Attacks
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
 - Other frameworks: EU AI Act Art. 13/50 · AIUC-1 F · NIST AI RMF GV-1.7
 
 ---
@@ -645,46 +613,42 @@ that must precede deployment.
 
 **Severity:** Medium
 
-Adversarial inputs trigger disproportionate resource consumption —
-causing denial of service or runaway API cost. CSF 2.0 PR.IR
-infrastructure resilience and DE.CM monitoring are the primary
-categories.
+Adversarial inputs trigger disproportionate resource consumption.
+CSF 2.0 infrastructure resilience (PR.IR) and risk management (GV.RM)
+are the primary categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Infrastructure resilience | PR.IR-01 | PROTECT | Rate limiting and resource controls implemented as resilience controls — LLM services protected against DoS |
-| Continuous monitoring | DE.CM-01 | DETECT | Real-time monitoring of LLM resource consumption — cost anomaly detection and alerting |
-| Incident analysis | RS.MA-02 | RESPOND | Automated response to consumption anomalies — rate limit tightening, session suspension, cost circuit breakers |
-| Incident recovery | RC.RP-02 | RECOVER | Defined recovery procedures for LLM availability events — tested failover and graceful degradation |
+| Infrastructure Resilience | PR.IR-01 | PROTECT | Networks and environments protected to achieve resilience — rate limiting and resource controls as resilience measures |
+| Continuous Monitoring | DE.CM-01 | DETECT | LLM resource consumption monitored — anomalous usage patterns detected and alerted |
+| Incident Mitigation | RS.MI-01 | RESPOND | Incidents contained — automated rate limiting, circuit breakers, cost budgets as containment controls |
+| Risk Management Strategy | GV.RM-01 | GOVERN | Risk management strategy established — LLM availability requirements and acceptable consumption risk defined |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.IR-01: Implement rate limiting as a resilience control —
-  hard caps per user, session, and API key enforced at
-  the gateway before requests reach the model
-- Set hard token limits on input and output per request —
-  reject requests exceeding thresholds before inference
+**GOVERN**
+- GV.RM-01: Include LLM availability in risk management
+  strategy — define acceptable consumption thresholds,
+  cost budgets, and DoS risk tolerance
+
+**PROTECT**
+- PR.IR-01: Implement rate limiting and resource controls
+  as resilience measures — hard token caps, per-user
+  budgets, circuit breakers enforced at API gateway
+
+**DETECT**
 - DE.CM-01: Monitor LLM resource consumption in real time —
-  cost spikes and unusual volume patterns alerted immediately
+  anomalous consumption spikes detected and alerted
 
-**Hardening**
-- RS.MA-02: Define automated response for consumption anomalies —
-  automated rate limit tightening, cost circuit breakers,
-  owner notification workflow — not just alerting
-- Per-tenant cost budgets with automatic suspension on breach
-- PR.IR-01: Include LLM services in infrastructure resilience
-  planning — BCP coverage, RTO and RPO defined
+**RESPOND**
+- RS.MI-01: Contain consumption incidents — automated rate
+  tightening, session suspension, cost circuit breakers
 
-**Advanced**
-- Deploy sponge example detection — inputs designed to
-  maximise computation identified and rejected
-- Conduct adversarial cost-maximisation testing — identify
-  the highest-cost inputs for your model and guard those paths
-- RC.RP-02: Test LLM failover and graceful degradation
-  procedures — verified recovery time against defined RTO
+**RECOVER**
+- RC.RP-01: Recovery plan covers LLM service restoration —
+  BCP includes LLM availability requirements, RTO/RPO defined
 
 #### Tools
 
@@ -692,49 +656,48 @@ categories.
 |---|---|---|
 | LiteLLM | Open-source | https://github.com/BerriAI/litellm |
 | Kong Gateway | Open-source | https://github.com/Kong/kong |
-| OpenTelemetry | Open-source | https://opentelemetry.io |
 
 #### Cross-references
 - Agentic Top 10: ASI08 Cascading Agent Failures
-- DSGAI 2026: DSGAI17 Data Availability and Resilience Failures
-- Other frameworks: ISA/IEC 62443 SR 7.6 (OT) · CIS Controls CIS 4/CIS 12 · CWE-400
+- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
+- Other frameworks: ISA/IEC 62443 SR 7.6 (OT) · CIS Controls CIS 12 · NIST SP 800-82 (OT)
 
 ---
 
-## CSF 2.0 organisational profile for LLM applications
+## CSF 2.0 profile for LLM security
 
-Use this profile to define current and target state for your LLM
-security programme aligned to CSF 2.0.
+The CSF 2.0 Organisational Profile framework allows organisations
+to document current state vs target state per function. This
+profile provides a starting point for LLM security programme alignment:
 
-| Function | Priority categories | Current state indicator | Target state |
+| CSF Function | LLM priority entries | Key categories | Target state |
 |---|---|---|---|
-| GOVERN | GV.RM-06, GV.SC-06, GV.OC-01 | LLM risks in risk register, supply chain policy documented | Board-level AI risk reporting, measurable objectives |
-| IDENTIFY | ID.AM-01, ID.RA-01 | LLM assets inventoried, supply chain risks assessed | Continuous asset discovery, automated risk scoring |
-| PROTECT | PR.DS-01/02, PR.AA-05, PR.PS-04 | Encryption at rest/transit, least privilege enforced, secure coding | DLP deployed, output redaction live, SBOM maintained |
-| DETECT | DE.CM-01, DE.CM-09 | Basic logging active | Real-time anomaly detection, injection monitoring, consumption alerts |
-| RESPOND | RS.MA-01, RS.MA-02 | Incident response plan exists | LLM-specific playbooks tested, automated response active |
-| RECOVER | RC.RP-02 | Backup/restore documented | Failover tested, degraded mode validated, RTO/RPO met |
+| GOVERN | LLM03, LLM06, LLM09 | GV.SC-01, GV.OC-01, GV.RM-01/06 | Supply chain programme live, acceptable use policy published, risk register complete |
+| IDENTIFY | LLM01, LLM02, LLM04 | ID.AM-08, ID.RA-01, ID.RA-08 | All LLM assets inventoried, risk assessments complete, threat intel subscriptions active |
+| PROTECT | LLM01, LLM02, LLM06 | PR.DS-01/02, PR.AA-01/05, PR.PS-04 | Encryption, access controls, and secure development requirements implemented |
+| DETECT | LLM04, LLM08, LLM10 | DE.CM-01/09, DE.AE-02 | Production monitoring live for all LLM systems, anomaly alerts operational |
+| RESPOND | LLM01, LLM04, LLM10 | RS.AN-03, RS.MI-01/02 | Incident response procedures tested for all LLM-specific scenarios |
+| RECOVER | LLM10 | RC.RP-01 | BCP covers LLM availability, RTO/RPO defined and tested |
 
 ---
 
 ## Implementation priority
 
-| Phase | LLM entries | CSF categories | Rationale |
+| Phase | LLM entries | CSF focus | Rationale |
 |---|---|---|---|
-| 1 — Do now | LLM01, LLM06 | GV.RM-06, PR.AA-05 | Risk register and least privilege close the most common breach paths |
-| 2 — This sprint | LLM02, LLM07 | PR.DS-01, ID.AM-01 | Data asset inventory and encryption protect what already exists |
-| 3 — This quarter | LLM03, LLM04 | GV.SC-06, PR.PS-04 | Supply chain and integrity require pipeline-level changes |
-| 4 — Ongoing | LLM05, LLM08, LLM09, LLM10 | DE.CM-01/09, PR.IR-01 | Monitoring, resilience, output security, and misinformation hardening |
+| 1 — GOVERN + IDENTIFY | LLM03, LLM06 | GV.SC-01, ID.AM-08 | Asset inventory and supply chain governance before technical controls |
+| 2 — PROTECT | LLM01, LLM02, LLM05 | PR.DS, PR.AA, PR.PS-04 | Data protection and access control close the most common breach paths |
+| 3 — DETECT | LLM04, LLM08, LLM10 | DE.CM-01/09 | Monitoring programme covers poisoning, vector store, and consumption risks |
+| 4 — RESPOND + RECOVER | All | RS.AN, RS.MI, RC.RP | Incident response tested, BCP covers LLM availability |
 
 ---
 
 ## References
 
-- NIST Cybersecurity Framework 2.0: https://www.nist.gov/cyberframework
-- CSF 2.0 full document: https://doi.org/10.6028/NIST.CSWP.29
-- CSF 2.0 reference tool: https://csf.tools
-- OWASP LLM Top 10 2025: https://genai.owasp.org/llm-top-10/
-- NIST AI RMF 1.0: https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf
+- [NIST CSF 2.0](https://www.nist.gov/cyberframework)
+- [NIST CSF 2.0 Quick Start Guides](https://www.nist.gov/cyberframework/getting-started)
+- [NIST AI RMF 1.0](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf)
+- [OWASP LLM Top 10 2025](https://genai.owasp.org/llm-top-10/)
 
 ---
 
@@ -742,7 +705,7 @@ security programme aligned to CSF 2.0.
 
 | Date | Version | Change | Author |
 |---|---|---|---|
-| 2026-03-25 | 2026-Q1 | Initial mapping — LLM01-LLM10 full entries with CSF 2.0 profile | OWASP GenAI Data Security Initiative |
+| 2026-03-26 | 2026-Q1 | Initial mapping — LLM01–LLM10 full entries with CSF 2.0 profile | OWASP GenAI Data Security Initiative |
 
 ---
 

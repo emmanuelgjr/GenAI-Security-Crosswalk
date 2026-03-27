@@ -7,35 +7,17 @@
   License     : CC BY-SA 4.0
 -->
 
-# Agentic Top 10 2026 x NIST CSF 2.0
+# Agentic Top 10 2026 × NIST CSF 2.0
 
 Mapping the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 to the [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework).
 
-Agentic AI systems create a qualitatively different CSF 2.0 risk
-profile compared to static LLMs. The six CSF 2.0 functions each
-engage differently in an agentic context:
-
-GOVERN is stressed because autonomy limits, human oversight policy,
-and agent identity governance must be explicitly defined before
-deployment — there is no safe default.
-
-IDENTIFY is stressed because every agent deployment creates new
-assets (memory stores, tool integrations, A2A channels) that fall
-outside traditional asset inventories.
-
-PROTECT is stressed because least privilege, credential management,
-and platform security all have agentic-specific requirements that
-standard IT controls do not cover.
-
-DETECT is the most critical function for agentic AI — rogue agents,
-goal hijack, and memory poisoning are often invisible until detected
-through behavioural analysis. Without DE controls, the other functions
-have no feedback loop.
-
-RESPOND and RECOVER must include kill switch procedures, memory audit
-workflows, and cascade containment — not just standard incident
-response playbooks.
+The new GOVERN function in CSF 2.0 is especially relevant for agentic
+AI — autonomous systems require explicit governance policies around
+acceptable autonomy scope, human oversight requirements, and supply
+chain management that the old CSF 1.1 had no category for. Every
+agentic deployment should map its autonomy policy to GV.OC-01 and
+GV.RM-01 before any technical controls are designed.
 
 ---
 
@@ -43,26 +25,26 @@ response playbooks.
 
 | ID | Name | Severity | Primary CSF 2.0 Categories | Tier |
 |---|---|---|---|---|
-| ASI01 | Agent Goal Hijack | Critical | GV.RM-06, PR.PS-04, DE.CM-09, RS.MA-02 | Foundational-Advanced |
-| ASI02 | Tool Misuse and Exploitation | Critical | GV.RM-06, PR.AA-05, DE.CM-01, RS.MA-02 | Foundational-Advanced |
-| ASI03 | Identity and Privilege Abuse | Critical | GV.RM-06, PR.AA-05, PR.AA-02, DE.CM-01 | Foundational-Advanced |
-| ASI04 | Agentic Supply Chain | High | GV.SC-06, GV.SC-07, PR.PS-02, ID.RA-01 | Foundational-Hardening |
-| ASI05 | Unexpected Code Execution | Critical | GV.RM-06, PR.PS-04, PR.IR-01, DE.CM-09 | Hardening-Advanced |
-| ASI06 | Memory and Context Poisoning | High | PR.DS-01, PR.AA-05, DE.CM-09, RS.MA-02 | Hardening-Advanced |
-| ASI07 | Insecure Inter-Agent Comms | High | PR.DS-02, PR.AA-05, DE.CM-01, PR.PS-04 | Hardening-Advanced |
-| ASI08 | Cascading Agent Failures | High | PR.IR-01, DE.CM-01, RS.MA-02, RC.RP-02 | Foundational-Advanced |
-| ASI09 | Human-Agent Trust Exploitation | Medium | GV.OC-01, GV.RM-06, DE.CM-09, RS.MA-01 | Foundational-Hardening |
-| ASI10 | Rogue Agents | Critical | GV.RM-06, DE.CM-09, RS.MA-02, RC.RP-02 | Hardening-Advanced |
+| ASI01 | Agent Goal Hijack | Critical | GV.OC-01, PR.PS-04, DE.CM-01, RS.MI-01 | Foundational–Advanced |
+| ASI02 | Tool Misuse & Exploitation | Critical | PR.AA-05, GV.OC-01, DE.CM-01, RS.AN-03 | Foundational–Advanced |
+| ASI03 | Identity & Privilege Abuse | Critical | PR.AA-01, PR.AA-05, PR.DS-01, DE.CM-01 | Foundational–Advanced |
+| ASI04 | Agentic Supply Chain | High | GV.SC-01, GV.SC-06, ID.AM-08, PR.PS-02 | Foundational–Hardening |
+| ASI05 | Unexpected Code Execution | Critical | PR.PS-04, PR.IR-01, DE.CM-01, RS.MI-01 | Hardening–Advanced |
+| ASI06 | Memory & Context Poisoning | High | PR.DS-01, DE.CM-09, ID.AM-08, RS.AN-03 | Hardening–Advanced |
+| ASI07 | Insecure Inter-Agent Comms | High | PR.AA-01, PR.DS-02, DE.CM-01, GV.SC-01 | Hardening–Advanced |
+| ASI08 | Cascading Agent Failures | High | PR.IR-01, DE.CM-01, RS.MI-01, RC.RP-01 | Foundational–Advanced |
+| ASI09 | Human-Agent Trust Exploitation | Medium | GV.OC-01, PR.AT-01, DE.CM-09, RS.CO-03 | Foundational–Hardening |
+| ASI10 | Rogue Agents | Critical | DE.CM-09, DE.AE-02, RS.AN-03, PR.AA-05 | Hardening–Advanced |
 
 ---
 
 ## Audience tags
 
-- **CISO / governance** — full file, CSF 2.0 profile for agentic AI programme
-- **Risk manager** — GV and ID function categories
-- **Security engineer** — PR, DE, RS function categories — kill switch, monitoring
-- **OT engineer** — ASI02, ASI08 with ISA 62443 crosswalk for OT context
-- **Federal agency teams** — CSF 2.0 to EO 14110 alignment for agentic deployments
+- **CISO / governance** — full file, CSF 2.0 integration for agentic AI programme
+- **Risk manager** — GOVERN and IDENTIFY entries per vulnerability
+- **Security operations** — DETECT and RESPOND entries
+- **Federal agency / FISMA** — CSF 2.0 as NIST reference framework
+- **OT engineer** — ASI01, ASI02, ASI08 with ISA 62443 crosswalk
 
 ---
 
@@ -74,187 +56,156 @@ response playbooks.
 
 **Severity:** Critical
 
-An attacker redirects agent objectives through direct or indirect
-instruction injection — the agent then autonomously executes a
-multi-step attack chain. CSF 2.0 GV.RM-06 is the foundational
-governance anchor: without a documented organisational policy on
-permissible agent autonomy, every downstream control lacks an anchor.
+An attacker redirects agent objectives through instruction injection.
+CSF 2.0 GOVERN provides the policy anchor — without GV.OC-01 defining
+acceptable agent behaviour, every other control lacks a reference point.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Policy defines permissible agent autonomy — agents cannot change stated goals without human confirmation |
-| Platform security — software integrity | PR.PS-04 | PROTECT | Input validation and goal-state verification implemented as platform security controls |
-| Continuous monitoring | DE.CM-09 | DETECT | Goal hijack indicators monitored — deviation from stated goal state triggers alert |
-| Incident analysis | RS.MA-02 | RESPOND | Kill switch procedure, action reversal checklist, affected system notification — tested and documented |
+| Organisational Context | GV.OC-01 | GOVERN | Policy defines permissible agent autonomy — agents cannot change stated goals without human confirmation |
+| Platform Security | PR.PS-04 | PROTECT | Secure software development — input validation and goal-state verification as platform security controls |
+| Continuous Monitoring | DE.CM-01 | DETECT | Networks and assets monitored — injection indicators detected across all agent input channels |
+| Incident Mitigation | RS.MI-01 | RESPOND | Incidents contained — agent suspended, actions reversed, kill switch activated |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.RM-06: Document organisational policy on agent autonomy —
-  what goal changes require human confirmation, what actions
-  agents cannot take autonomously regardless of instruction
-- PR.PS-04: Implement input validation at all external content
-  boundaries — historian data, documents, emails, tool outputs
-  all treated as untrusted before entering agent context
-- Implement operator kill switch — documented, tested,
-  accessible from operator consoles
+**GOVERN**
+- GV.OC-01: Establish and document policy on permissible
+  agent autonomy — what goal changes require human
+  confirmation, what actions agents cannot take autonomously
+- GV.RM-06: Include agent goal hijack in risk register —
+  document per-deployment blast radius, owner, treatment
 
-**Hardening**
-- DE.CM-09: Implement goal-state monitoring — verify agent
-  actions remain consistent with stated session goal,
-  deviations trigger suspension and human review
-- Require human confirmation before any goal-changing action —
-  confirmation through a separate, independent interface
-- RS.MA-02: Define and test kill switch procedure — suspension,
-  action reversal checklist, downstream impact assessment
+**IDENTIFY**
+- ID.RA-01: Map all injection paths per deployment in
+  risk assessment — user prompt, RAG, tool returns,
+  email, documents, web content
 
-**Advanced**
-- Version-control agent goal specifications with cryptographic
-  signing — runtime deviations from committed specification
-  trigger automatic suspension
-- Extend DE.CM-09 to cover all indirect injection surfaces
-  specific to your deployment
-- Include agent goal hijack in Process Hazard Analysis for
-  OT deployments
+**PROTECT**
+- PR.PS-04: Implement goal-state verification and input
+  validation as platform security requirements — structural
+  controls enforced at the orchestration layer
+- Treat all external content as untrusted regardless of
+  source channel
 
-#### Tools
+**DETECT**
+- DE.CM-01: Monitor all agent input channels for injection
+  indicators — real-time detection, not periodic review
 
-| Tool | Type | Link |
-|---|---|---|
-| Garak | Open-source | https://github.com/leondz/garak |
-| Invariant Analyzer | Open-source | https://github.com/invariantlabs-ai/invariant |
+**RESPOND**
+- RS.MI-01: Define containment procedure for goal hijack —
+  kill switch activation, action reversal checklist,
+  downstream impact assessment
 
 #### Cross-references
 - LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
-- Other frameworks: AIUC-1 B001/B005/B006 · EU AI Act Art. 14 · ISA/IEC 62443 SR 3.3 (OT)
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
+- Other frameworks: AIUC-1 B001/B005 · NIST AI RMF GV-1.7 · ISA/IEC 62443 SR 3.3 (OT)
 
 ---
 
-### ASI02 — Tool Misuse and Exploitation
+### ASI02 — Tool Misuse & Exploitation
 
 **Severity:** Critical
 
-Agents misuse legitimate tools — calling them with destructive
-parameters or in unexpected sequences. CSF 2.0 PR.AA-05 least
-privilege is the foundational control: an agent that misuses a
-tool can only do so within the scope of its access permissions.
+Agents misuse legitimate tools via prompt manipulation or unsafe
+delegation. CSF 2.0 identity and access control (PR.AA) governs
+the tool permission surface.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Policy requires human confirmation for irreversible tool invocations — defined before deployment |
-| Identity management — least privilege | PR.AA-05 | PROTECT | Per-tool minimum permission enforced — agents cannot invoke tools outside defined role scope |
-| Continuous monitoring | DE.CM-01 | DETECT | All tool invocations logged — anomalous parameters, unusual invocation sequences, high-frequency patterns |
-| Incident analysis | RS.MA-02 | RESPOND | Tool disable procedure, parameter audit, downstream impact assessment — documented for each tool class |
+| Identity Management, Authentication & Access Control | PR.AA-05 | PROTECT | Access permissions managed — per-tool permission manifests, least privilege per tool, irreversibility classification |
+| Organisational Context | GV.OC-01 | GOVERN | Policy defines permissible tool invocations — which tools require human confirmation |
+| Continuous Monitoring | DE.CM-01 | DETECT | All tool invocations logged and monitored — anomalous parameters, unusual sequences, high frequency detected |
+| Incident Analysis | RS.AN-03 | RESPOND | Root cause analysis — which tool was misused, what downstream impact occurred, what parameters were used |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.RM-06: Define policy requiring human confirmation for
-  all irreversible tool invocations — what constitutes
-  irreversible per tool type documented before deployment
-- PR.AA-05: Implement per-tool permission scope — agent does
-  not hold a broad credential but tool-specific scoped
-  tokens for each integration
-- DE.CM-01: Log all tool invocations with full context —
-  tool identity, parameters, invoking session, timestamp
+**GOVERN**
+- GV.OC-01: Define tool use policy — approved tools per
+  agent role, operations requiring human confirmation,
+  prohibited tool operations documented
 
-**Hardening**
-- Validate all tool descriptors before agent loading —
-  any hidden instruction in a descriptor is a rejection trigger
-- RS.MA-02: Define incident response per tool class —
-  which tools can be disabled remotely, how parameters
-  are audited post-incident, how downstream impact is assessed
-- Tool allowlisting at the orchestration layer — agents
-  cannot invoke tools outside their defined role
+**PROTECT**
+- PR.AA-05: Implement per-tool permission manifests —
+  each tool scoped to minimum required operations,
+  enforced at the orchestration layer
+- Human confirmation gates for all irreversible tool
+  invocations — independent of the agent interface
 
-**Advanced**
-- Automated tool disable on anomalous invocation detection —
-  single compromised tool token revoked without affecting
-  other tool access
-- Conduct tool misuse red team exercises — attempt destructive
-  outcomes through legitimate tool invocations
-- Include tool misuse in Process Hazard Analysis for OT
-  deployments
+**DETECT**
+- DE.CM-01: Log and monitor all tool invocations —
+  tool identity, parameters, user session, timestamp,
+  anomalous patterns alerted
 
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| NeMo Guardrails | Open-source | https://github.com/NVIDIA/NeMo-Guardrails |
-| MCP Inspector | Open-source | https://github.com/modelcontextprotocol/inspector |
-| Invariant Analyzer | Open-source | https://github.com/invariantlabs-ai/invariant |
+**RESPOND**
+- RS.AN-03: Investigate tool misuse incidents — what
+  parameters were generated, what downstream state
+  was changed, what can be reversed
 
 #### Cross-references
 - LLM Top 10: LLM05 Insecure Output Handling, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI06 Tool Plugin and Agent Data Exchange
-- Other frameworks: AIUC-1 B006/B007 · ISA/IEC 62443 SR 2.2 (OT) · EU AI Act Art. 14
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
+- Other frameworks: AIUC-1 B006/B007 · EU AI Act Art. 14 · ISA/IEC 62443 SR 2.2 (OT)
 
 ---
 
-### ASI03 — Identity and Privilege Abuse
+### ASI03 — Identity & Privilege Abuse
 
 **Severity:** Critical
 
-Agents inherit and cache credentials that, when compromised, expose
-all systems the agent has access to. CSF 2.0 PR.AA access management
-covers NHI (Non-Human Identity) governance — agent credential
-lifecycle is an access management responsibility, not an AI-specific
-one.
+Agents inherit and cache credentials exploited for lateral movement.
+CSF 2.0 identity management (PR.AA) and data security (PR.DS) are
+the primary PROTECT categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Agent identity governance policy — NHI inventory, short-lived credentials, scope controls documented |
-| Identity management — least privilege | PR.AA-05 | PROTECT | Agent credentials scoped to minimum required access — reviewed and minimised regularly |
-| Access management — account management | PR.AA-02 | PROTECT | Agent identity lifecycle management — issuance, rotation, revocation all formally managed |
-| Continuous monitoring | DE.CM-01 | DETECT | All agent credential operations logged — anomalous usage patterns detected and alerted |
+| Identity Management, Authentication & Access Control | PR.AA-01 | PROTECT | Identities and credentials managed — NHI inventory, lifecycle management, unique identity per agent |
+| Identity Management, Authentication & Access Control | PR.AA-05 | PROTECT | Access permissions managed — agent credential scope enforced, least privilege per agent role |
+| Data Security | PR.DS-01 | PROTECT | Sensitive data protected at rest — agent credentials encrypted, not stored in cleartext |
+| Continuous Monitoring | DE.CM-01 | DETECT | Credential usage monitored — anomalous access patterns detected |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.AA-05: Scope all agent credentials to minimum required
-  access — least privilege enforced, reviewed quarterly
-- PR.AA-02: Implement agent identity lifecycle management —
-  issuance, rotation, and revocation all formally managed,
-  NHI inventory maintained
-- Issue short-lived, task-scoped credentials per invocation —
-  never long-lived tokens shared across tasks or sessions
+**GOVERN**
+- GV.RM-06: Include agent credential exposure in risk
+  register — document NHI inventory status, scope
+  controls, rotation programme maturity
 
-**Hardening**
-- DE.CM-01: Log all agent credential operations — issuance,
-  use, expiry — anomalous usage patterns detected
-- GV.RM-06: Include NHI governance in organisational risk
-  management programme — agent credential risks in risk register
-- Implement JIT credential issuance with automatic revocation
-  on task completion
+**IDENTIFY**
+- ID.AM-08: Inventory all agent NHIs as part of asset
+  management — every agent identity, its permissions,
+  TTL, and associated systems
 
-**Advanced**
-- Implement PKI-backed agent identities for multi-agent
-  deployments — certificate-based authentication
-- RS.MA-02: Define incident response for credential exposure —
-  rotation, containment, lateral movement scope assessment,
-  forensic capture
-- Conduct agent credential red team exercises — lateral
-  movement using agent credentials across all accessible systems
+**PROTECT**
+- PR.AA-01: Manage all agent identities — unique NHI
+  per deployment, documented lifecycle, no shared
+  credentials across agent instances
+- PR.AA-05: Enforce least privilege on all agent
+  credentials — minimum scope, quarterly review,
+  short-lived JIT issuance
+- PR.DS-01: Store all agent credentials encrypted —
+  secret manager, no cleartext in config or logs
 
-#### Tools
+**DETECT**
+- DE.CM-01: Monitor agent credential usage — anomalous
+  access scope, unusual timing, cross-system lateral
+  movement detected
 
-| Tool | Type | Link |
-|---|---|---|
-| HashiCorp Vault | Open-source | https://www.vaultproject.io |
-| SPIFFE / SPIRE | Open-source | https://spiffe.io |
-| Teleport | Open-source/Commercial | https://goteleport.com |
+**RESPOND**
+- RS.MI-01: Contain credential exposure — immediate
+  rotation, lateral movement assessment, downstream
+  system notification
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI02 Agent Identity and Credential Exposure
-- Other frameworks: OWASP NHI Top 10 · AIUC-1 A/B007 · EU AI Act Art. 15
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 · AIUC-1 A/B007 · ISO 27001 A.8.2
 
 ---
 
@@ -262,62 +213,49 @@ one.
 
 **Severity:** High
 
-Malicious or compromised tools, MCP servers, or model components
-loaded at runtime alter agent behaviour across all consumers. CSF 2.0
-GV.SC supply chain risk management added in version 2.0 is the
-primary governance anchor — dynamic runtime components are in scope.
+Compromised tools, MCP servers, or model components alter agent
+behaviour. CSF 2.0 GOVERN supply chain risk management (GV.SC)
+is the primary category — supply chain is now a first-class concern.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Supply chain risk management — suppliers | GV.SC-06 | GOVERN | Security requirements applied to all agent component vendors — including dynamic runtime MCP providers |
-| Supply chain risk management — due diligence | GV.SC-07 | GOVERN | Due diligence on all agent tool and MCP server vendors before production use |
-| Platform security — approved software | PR.PS-02 | PROTECT | Only approved, integrity-verified agent components loaded — runtime dynamic loading blocked for unapproved sources |
-| Risk assessment | ID.RA-01 | IDENTIFY | Supply chain attack vectors identified per component — dynamic tool loading assessed as elevated risk |
+| Supply Chain Risk Management | GV.SC-01 | GOVERN | Cybersecurity supply chain risk management programme — all agent component vendors in scope |
+| Supply Chain Risk Management | GV.SC-06 | GOVERN | Cybersecurity requirements in supplier contracts — integrity guarantees, vulnerability disclosure SLA |
+| Asset Management | ID.AM-08 | IDENTIFY | Agent components inventoried — ML SBOM for all tools, MCP servers, model weights, libraries |
+| Platform Security | PR.PS-02 | PROTECT | Software managed to reduce risk — component integrity verification, change management |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.SC-06: Establish supply chain security requirements for
-  all agent component vendors — approved sources, integrity
-  requirements, change management procedures
-- PR.PS-02: Maintain approved component registry — agent
-  cannot load tools or MCP servers from unapproved sources,
-  enforced at the orchestration layer
-- Verify cryptographic signatures of all components before
-  loading — unsigned components rejected
+**GOVERN**
+- GV.SC-01: Establish supply chain programme for all
+  agent components — tool providers, MCP server vendors,
+  model weight sources assessed and managed
+- GV.SC-06: Include security requirements in contracts
+  with all agent component providers — integrity, disclosure,
+  notification obligations
 
-**Hardening**
-- GV.SC-07: Conduct security due diligence on all agent
-  component vendors — security practices, incident history,
-  vulnerability notification responsiveness
-- Apply agent component change management — no dynamic
-  updates in production without review and approval
-- Scan all tool descriptors for hidden instructions before
-  agent loading
+**IDENTIFY**
+- ID.AM-08: Maintain ML SBOM for all agent deployments —
+  components inventoried with versions, sources, hashes
+- ID.RA-08: Receive threat intelligence on agent supply
+  chain threats — MCP compromise campaigns, model backdoors
 
-**Advanced**
-- PR.PS-02: Implement runtime component integrity monitoring —
-  continuous hash verification of loaded components,
-  deviation triggers agent suspension
-- Conduct adversarial supply chain testing — attempt to
-  introduce compromised components and verify detection
-- GV.SC-06: Establish responsible disclosure relationship
-  with all strategic component vendors
+**PROTECT**
+- PR.PS-02: Verify integrity of all components before
+  deployment — cryptographic signatures, hash verification
+- Change management for all component updates — no
+  runtime loading from unapproved sources
 
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| CycloneDX | Open-source | https://cyclonedx.org |
-| ModelScan | Open-source | https://github.com/protectai/modelscan |
-| MCP Inspector | Open-source | https://github.com/modelcontextprotocol/inspector |
+**DETECT**
+- DE.CM-09: Monitor for unauthorised component changes —
+  runtime hash verification, deviation triggers alert
 
 #### Cross-references
 - LLM Top 10: LLM03 Supply Chain Vulnerabilities
-- DSGAI 2026: DSGAI04 Data Model and Artifact Poisoning
-- Other frameworks: NIST SP 800-218A · AIUC-1 B001/B003 · EU AI Act Art. 25
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning
+- Other frameworks: NIST SP 800-218A · ISO 27001 A.5.19/A.5.21 · ISA/IEC 62443 62443-2-4 (OT)
 
 ---
 
@@ -325,56 +263,42 @@ primary governance anchor — dynamic runtime components are in scope.
 
 **Severity:** Critical
 
-Agents that generate and execute code become RCE gateways when
-crafted prompts cause them to run attacker-controlled logic. CSF 2.0
-GV.RM-06 requires this to be an explicit governance decision — code
-execution capability in any agent is a separate, elevated risk that
-requires documented approval before deployment.
+Agents that generate and execute code become RCE gateways. CSF 2.0
+platform security (PR.PS) and infrastructure resilience (PR.IR)
+address sandbox and execution control requirements.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Code execution capability requires explicit governance approval — documented as elevated risk with additional controls |
-| Platform security — software integrity | PR.PS-04 | PROTECT | Sandboxing, input filtering, static analysis implemented as platform security controls |
-| Infrastructure resilience | PR.IR-01 | PROTECT | Code execution sandbox isolated — cannot affect production infrastructure availability |
-| Continuous monitoring | DE.CM-09 | DETECT | Runtime monitoring of agent code execution — anomalous system calls detected |
+| Platform Security | PR.PS-04 | PROTECT | Secure software development — static analysis, sandbox, allowlist as code execution platform security controls |
+| Infrastructure Resilience | PR.IR-01 | PROTECT | Networks and environments protected — sandbox isolated from production infrastructure |
+| Continuous Monitoring | DE.CM-01 | DETECT | Code execution monitored — sandbox escape attempts, anomalous system calls detected |
+| Incident Mitigation | RS.MI-01 | RESPOND | Code execution incidents contained — sandbox isolated, forensic capture initiated |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.RM-06: Document agent code execution capability as an
-  elevated risk — explicit governance approval required
-  before any agent with code execution is deployed
-- PR.PS-04: Sandbox all agent code execution — no host
-  filesystem, network, or OT system API access by default
-- Avoid deploying agents with code execution capability
-  unless strictly necessary — strongest control
+**GOVERN**
+- GV.OC-01: Policy defines agent code execution scope —
+  which agents may execute code, what sandbox requirements
+  apply, what formal approval is required
 
-**Hardening**
-- DE.CM-09: Implement runtime monitoring of code execution —
-  all system calls logged, anomalous calls blocked and alerted
-- PR.PS-04: Static analysis of all agent-generated code
-  before execution — reject code containing operations
-  outside the allowlist
+**PROTECT**
+- PR.PS-04: Implement static analysis, sandbox, and allowlist
+  as platform security requirements for all code execution
+  capability in agent deployments
 - PR.IR-01: Isolate code execution sandbox from production
-  infrastructure — resource limits enforced at OS level
+  infrastructure — no network access to production systems
+  from within sandbox
 
-**Advanced**
-- Hardware-level sandboxing — gVisor or Firecracker for
-  kernel-level isolation
-- Conduct red team exercises targeting code execution —
-  attempt sandbox escape from within your specific runtime
-- RS.MA-02: Define incident response for code execution anomaly —
-  sandbox isolation, kill switch, forensic capture workflow
+**DETECT**
+- DE.CM-01: Monitor code execution environments —
+  anomalous system calls, network attempts, file access
+  outside scratch directory detected and alerted
 
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| gVisor | Open-source | https://gvisor.dev |
-| Semgrep | Open-source | https://semgrep.dev |
-| Bandit | Open-source | https://github.com/PyCQA/bandit |
+**RESPOND**
+- RS.MI-01: Contain code execution incidents — sandbox
+  isolation, kill switch activation, scope assessment
 
 #### Cross-references
 - LLM Top 10: LLM05 Insecure Output Handling
@@ -383,66 +307,54 @@ requires documented approval before deployment.
 
 ---
 
-### ASI06 — Memory and Context Poisoning
+### ASI06 — Memory & Context Poisoning
 
 **Severity:** High
 
-Persistent corruption of agent memory or RAG stores causes systematic
-incorrect behaviour across all future interactions. CSF 2.0 PR.DS
-data security applies to agent memory stores as data assets — the same
-protection requirements as training data apply to runtime memory that
-influences model behaviour.
+Persistent memory poisoning causes systematic incorrect behaviour
+across all future interactions. CSF 2.0 data security (PR.DS) and
+detection (DE.CM) govern memory store integrity.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Data security — data at rest | PR.DS-01 | PROTECT | Agent memory stores encrypted and access-controlled — same protection as equivalent data assets |
-| Identity management — least privilege | PR.AA-05 | PROTECT | Write access to agent memory restricted — only the agent and designated administrators |
-| Continuous monitoring | DE.CM-09 | DETECT | Memory content integrity monitored — statistical anomaly detection, access pattern analysis |
-| Incident analysis | RS.MA-02 | RESPOND | Memory audit procedure, content purge, operational impact assessment — defined for each deployment |
+| Data Security | PR.DS-01 | PROTECT | Agent memory stores protected at rest — access controls, encryption, integrity verification |
+| Continuous Monitoring | DE.CM-09 | DETECT | Monitoring for anomalous data — memory content integrity checks, unusual write patterns detected |
+| Asset Management | ID.AM-08 | IDENTIFY | Agent memory stores inventoried as data assets — content classification, access controls, TTL documented |
+| Incident Analysis | RS.AN-03 | RESPOND | Memory poisoning incidents analysed — affected sessions identified, operational decisions influenced reviewed |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.DS-01: Encrypt all agent memory stores at rest —
-  and implement access controls from day one, policy enforced
-- PR.AA-05: Restrict write access to agent memory —
-  only the agent and designated administrators can write,
-  all writes logged
-- Enforce memory TTL — entries expire and require
-  re-validation against authoritative sources
+**GOVERN**
+- GV.RM-06: Include memory poisoning in risk register —
+  per deployment documentation of memory trust levels
+  and detection capability
 
-**Hardening**
-- DE.CM-09: Implement continuous memory integrity monitoring —
-  statistical anomaly detection on content and access patterns
-- Implement memory segmentation by trust level — OT
-  operational data and external web content in separate,
-  isolated memory namespaces
-- RS.MA-02: Define response for confirmed memory poisoning —
-  which content is purged, how operational decisions
-  influenced by poisoned memory are reviewed
+**IDENTIFY**
+- ID.AM-08: Inventory all agent memory stores —
+  classify content, document access controls, TTL, and
+  write access controls
 
-**Advanced**
-- Cryptographic integrity verification of memory store
-  contents — tamper detection between write and read
-- DE.CM-09: Integrate memory anomaly alerts into SIEM —
-  unusual patterns treated as security events
-- Include memory poisoning scenarios in incident response
-  exercises
+**PROTECT**
+- PR.DS-01: Protect agent memory stores — access controls,
+  encryption at rest, write access restricted to authorised
+  sources, TTL enforced
 
-#### Tools
+**DETECT**
+- DE.CM-09: Monitor memory stores for anomalous content
+  and access patterns — statistical integrity checks,
+  unusual write volumes alerted
 
-| Tool | Type | Link |
-|---|---|---|
-| Weaviate | Open-source | https://weaviate.io |
-| Langfuse | Open-source | https://langfuse.com |
-| LlamaIndex | Open-source | https://www.llamaindex.ai |
+**RESPOND**
+- RS.AN-03: Investigate poisoning incidents — which memory
+  entries were affected, which decisions were influenced,
+  what operational impact occurred
 
 #### Cross-references
-- LLM Top 10: LLM04 Data and Model Poisoning
-- DSGAI 2026: DSGAI04 Data Model and Artifact Poisoning, DSGAI13 Vector Store Platform Security
-- Other frameworks: AIUC-1 A/B002 · ISO 27001 A.8.15 · ISA/IEC 62443 SR 3.7 (OT)
+- LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI13 Vector Store Platform Security
+- Other frameworks: AIUC-1 A/B002 · NIST AI RMF MS-2.5 · ISA/IEC 62443 SR 3.7 (OT)
 
 ---
 
@@ -450,57 +362,41 @@ influences model behaviour.
 
 **Severity:** High
 
-A2A communication channels lacking authentication or encryption
-enable spoofing and agent-in-the-middle attacks. CSF 2.0 PR.DS-02
-data in transit security applies to all A2A channels — agent-to-agent
-communication is a data flow requiring the same protection as any
-other sensitive data transit path.
+A2A channels lacking authentication enable agent-in-the-middle attacks.
+CSF 2.0 identity management (PR.AA) and data-in-transit protection
+(PR.DS-02) are the primary categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Data security — data in transit | PR.DS-02 | PROTECT | All A2A communication encrypted — TLS 1.3 minimum on all inter-agent channels |
-| Identity management — least privilege | PR.AA-05 | PROTECT | A2A channels authenticated — no ambient trust, unique identity per agent |
-| Continuous monitoring | DE.CM-01 | DETECT | All A2A traffic logged — anomalous authentication failures and unusual message patterns alerted |
-| Platform security — software integrity | PR.PS-04 | PROTECT | A2A message schema validation — reject malformed or unexpected message structures |
+| Identity Management, Authentication & Access Control | PR.AA-01 | PROTECT | Agent identities managed — each agent has a unique, verifiable identity for A2A authentication |
+| Data Security | PR.DS-02 | PROTECT | Data in transit protected — all A2A communication encrypted, integrity verified |
+| Continuous Monitoring | DE.CM-01 | DETECT | A2A channels monitored — replay attacks, spoofed senders, anomalous message patterns detected |
+| Supply Chain Risk Management | GV.SC-01 | GOVERN | Inter-agent communication infrastructure treated as internal supply chain — authentication requirements documented |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.DS-02: Enforce TLS 1.3 minimum on all A2A channels —
-  no cleartext agent messaging on any network segment
-- PR.AA-05: Authenticate all A2A messages — no ambient trust
-  between agents, unique identity per agent deployment
-- DE.CM-01: Log all A2A communication — authentication
-  events, message volumes, anomalous patterns
+**PROTECT**
+- PR.AA-01: Issue unique identity per agent — A2A
+  authentication bound to specific agent identity,
+  not shared service account
+- PR.DS-02: Enforce mutual TLS on all A2A channels —
+  encryption and authentication in a single control,
+  short-lived certificates, replay protection
 
-**Hardening**
-- Implement replay attack protection on A2A channels —
-  message nonces, timestamps, and sequence numbers
-- Isolate A2A communication on dedicated network segment —
-  separate from OT control traffic where applicable
-- PR.PS-04: Schema validation on all A2A message payloads —
-  reject unexpected or malformed structures
+**DETECT**
+- DE.CM-01: Monitor all A2A communication — unusual
+  sender identities, replayed messages, schema violations
+  detected and alerted
 
-**Advanced**
-- Implement mutual TLS for all production A2A channels —
-  both sides authenticate before any message exchange
-- Short-lived agent identity certificates — automated rotation
-- DE.CM-01: Continuous A2A anomaly detection — flag unexpected
-  message patterns and out-of-scope content
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| SPIFFE / SPIRE | Open-source | https://spiffe.io |
-| Linkerd | Open-source | https://linkerd.io |
-| cert-manager | Open-source | https://cert-manager.io |
+**RESPOND**
+- RS.MI-01: Contain A2A compromise — channel isolation,
+  affected agent suspension, message log forensics
 
 #### Cross-references
-- DSGAI 2026: DSGAI02 Agent Identity and Credential Exposure
-- Other frameworks: OWASP NHI Top 10 · AIUC-1 B007/B008 · ISA/IEC 62443 SR 3.1 (OT)
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 NHI-4/NHI-7 · AIUC-1 B007/B008 · ISA/IEC 62443 SR 3.1 (OT)
 
 ---
 
@@ -508,64 +404,48 @@ other sensitive data transit path.
 
 **Severity:** High
 
-Single-point faults propagate through multi-agent workflows into
-system-wide incidents. In OT environments, cascading agent failures
-can cross from the AI layer into physical process control. CSF 2.0
-PR.IR infrastructure resilience is the primary protection function —
-circuit breakers and fail-safe defaults are resilience controls.
-
-**OT critical note:** In industrial environments this is Critical
-severity — see Agentic_ISA62443.md for OT-specific controls.
+Single-point faults propagate through multi-agent workflows. CSF 2.0
+infrastructure resilience (PR.IR) and recovery planning (RC.RP) are
+the primary categories. In OT environments this is Critical severity.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Infrastructure resilience | PR.IR-01 | PROTECT | Circuit breakers implemented as resilience controls — cascade cannot propagate beyond defined blast radius |
-| Continuous monitoring | DE.CM-01 | DETECT | Cascade indicators monitored — correlated anomalous agent actions across the cluster alerted |
-| Incident analysis | RS.MA-02 | RESPOND | Defined suspension procedure, process control fallback, human escalation path — tested |
-| Incident recovery | RC.RP-02 | RECOVER | Recovery procedures for agent cluster failures — tested failover, defined RTO, graceful degradation |
+| Infrastructure Resilience | PR.IR-01 | PROTECT | Networks and environments protected for resilience — circuit breakers, blast radius limits, fail-safe defaults |
+| Continuous Monitoring | DE.CM-01 | DETECT | Cascade indicators detected — correlated failure patterns across agent cluster monitored |
+| Incident Mitigation | RS.MI-01 | RESPOND | Incidents contained — kill switch activated, process control fallback initiated |
+| Incident Recovery | RC.RP-01 | RECOVER | Recovery plan includes agent cluster failures — BCP covers AI system availability, RTO/RPO defined |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- PR.IR-01: Implement circuit breakers — automatic suspension
-  when failure rate exceeds threshold, fail-safe default
-  for all agents on suspension
-- Define fail-safe modes — on suspension, process continues
-  without agent involvement, operators notified immediately
-- Operator-accessible kill switch — documented, tested,
-  accessible from operator consoles
+**GOVERN**
+- GV.RM-01: Include cascade risk in risk management strategy —
+  define acceptable blast radius per deployment, document
+  recovery time objectives for agent clusters
 
-**Hardening**
-- DE.CM-01: Integrate cascade detection into security
-  monitoring — correlated anomalous agent actions across
-  cluster alerted before physical process impact
-- Segment agent clusters by process area — failure in
-  one cluster cannot cascade to adjacent clusters
-- RS.MA-02: Define cascade incident response — who is
-  notified, what fallback activates, how operators resume
+**PROTECT**
+- PR.IR-01: Implement circuit breakers and blast radius
+  limits as resilience measures — agent clusters segmented,
+  inter-cluster propagation controlled
 
-**Advanced**
-- Conduct chaos engineering — intentional fault injection
-  into multi-agent workflows, circuit breaker effectiveness
-  verified against documented blast radius
-- RC.RP-02: Include agent cluster failures in BCP —
-  annual failover drills covering cascade scenarios
-- OT: include cascade scenarios in Process Hazard Analysis
+**DETECT**
+- DE.CM-01: Monitor for cascade indicators — correlated
+  anomalous agent actions detected before physical impact
 
-#### Tools
+**RESPOND**
+- RS.MI-01: Cascade containment — kill switch activation,
+  process control fallback, operator notification
 
-| Tool | Type | Link |
-|---|---|---|
-| OpenTelemetry | Open-source | https://opentelemetry.io |
-| Resilience4j | Open-source | https://resilience4j.readme.io |
-| LangSmith | Commercial | https://smith.langchain.com |
+**RECOVER**
+- RC.RP-01: Recovery plan covers agent cluster failures —
+  restart procedures, state validation, root cause
+  investigation before reactivation
 
 #### Cross-references
 - LLM Top 10: LLM10 Unbounded Consumption
-- DSGAI 2026: DSGAI17 Data Availability and Resilience Failures
-- Other frameworks: AIUC-1 D · ISA/IEC 62443 SR 7.6 (OT) · NIST SP 800-82 (OT)
+- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
+- Other frameworks: AIUC-1 D · ISA/IEC 62443 SR 7.6/7.7 (OT) · NIST SP 800-82 Rev 3
 
 ---
 
@@ -573,56 +453,46 @@ severity — see Agentic_ISA62443.md for OT-specific controls.
 
 **Severity:** Medium
 
-Users anthropomorphise agents — trusting their apparent expertise —
-enabling manipulated agents to exploit operators into approving
-harmful actions. CSF 2.0 GV.OC-01 organisational context requires
-that stakeholders understand AI system limitations — this is the
-governance foundation for preventing trust exploitation.
+Agents build false trust enabling manipulation of human approvers.
+CSF 2.0 awareness training (PR.AT) and organisational context
+(GV.OC-01) are the primary categories.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Organisational context | GV.OC-01 | GOVERN | Stakeholders informed of agent limitations — users and operators trained on advisory nature before access |
-| Risk management strategy | GV.RM-06 | GOVERN | Policy on agent transparency — agents identify as AI, advisory outputs distinguished from authoritative |
-| Continuous monitoring | DE.CM-09 | DETECT | Feedback mechanisms detecting operator over-trust patterns — aggregate analysis of agent-influenced decisions |
-| Incident analysis | RS.MA-01 | RESPOND | Response for detected trust exploitation — operator retraining, interface redesign, aggregate audit |
+| Organisational Context | GV.OC-01 | GOVERN | Policy requires AI disclosure and advisory labelling — agent transparency as a governance requirement |
+| Awareness and Training | PR.AT-01 | PROTECT | Users trained on AI limitations — operators understand agent advisory status and verification requirements |
+| Continuous Monitoring | DE.CM-09 | DETECT | Monitoring for aggregate over-trust patterns — systematic operator acceptance without verification detected |
+| Communication | RS.CO-03 | RESPOND | Information shared following incidents — trust exploitation incidents reported to affected users |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.OC-01: Communicate agent advisory limitations to all
-  stakeholders — operators and users trained before access
-  is granted, refreshed annually
-- GV.RM-06: Establish policy requiring agents to identify
-  as AI — all agent-user interactions disclose AI nature,
-  enforced at the guardrail layer
-- Separate agent conversation from security approval flows —
-  chat is never the consent mechanism for sensitive actions
+**GOVERN**
+- GV.OC-01: Policy requires AI disclosure in all
+  agent-user interactions — EU AI Act Art. 50 compliance
+  as a governance requirement, not just legal obligation
 
-**Hardening**
-- DE.CM-09: Implement feedback channels for over-trust
-  detection — aggregate analysis of agent-influenced
-  decisions, shift-level pattern review for OT operators
-- RS.MA-01: Define response for detected trust exploitation —
-  operator retraining, interface redesign, aggregate decision
-  audit
-- Implement output filtering to detect and block
-  manipulative language patterns in agent responses
+**PROTECT**
+- PR.AT-01: Train all users of agent decision-support
+  tools on AI limitations — verification requirements,
+  how to identify AI output vs authoritative content
+- Independent approval flows for sensitive actions —
+  chat interface cannot be the consent mechanism
 
-**Advanced**
-- Deploy behavioural analysis detecting agent nudging toward
-  specific approvals — alert on persuasion pattern detection
-- Conduct red team exercises simulating trust exploitation —
-  test how effectively operators identify manipulated
-  recommendations in your specific deployment
-- GV.OC-01: Include human-agent trust policies in AI
-  governance — reviewed annually with user research input
+**DETECT**
+- DE.CM-09: Monitor for aggregate over-trust patterns —
+  systematic operator acceptance of agent recommendations
+  without independent verification detected
+
+**RESPOND**
+- RS.CO-03: Report trust exploitation incidents —
+  notify affected users, initiate retraining
 
 #### Cross-references
 - LLM Top 10: LLM09 Misinformation
-- DSGAI 2026: DSGAI21 Disinformation and Integrity Attacks
-- Other frameworks: EU AI Act Art. 50/52 · AIUC-1 C/F · NIST AI RMF GV-1.7
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
+- Other frameworks: EU AI Act Art. 13/50 · AIUC-1 C/F · ISA/IEC 62443 SR 2.3 (OT)
 
 ---
 
@@ -630,100 +500,75 @@ governance foundation for preventing trust exploitation.
 
 **Severity:** Critical
 
-Malicious or compromised agents appear compliant but pursue hidden
-goals — often the end-state of an undetected ASI01 or ASI06 attack.
-CSF 2.0 DE.CM continuous monitoring is the most critical function
-for rogue agent detection — without behavioural monitoring, a rogue
-agent can operate indefinitely.
+Compromised agents pursue hidden goals while appearing compliant.
+CSF 2.0 detection (DE.CM, DE.AE) is the most critical function —
+without behavioural monitoring, rogue agents operate indefinitely.
 
 #### CSF 2.0 mapping
 
 | Category | ID | Function | How it applies |
 |---|---|---|---|
-| Risk management strategy | GV.RM-06 | GOVERN | Policy requires comprehensive audit logging and behavioural monitoring of all deployed agents from day one |
-| Continuous monitoring | DE.CM-09 | DETECT | Behavioural baseline monitoring — deviation from established baseline triggers tiered response |
-| Incident analysis | RS.MA-02 | RESPOND | Kill switch activation, recent recommendation audit, process state validation, forensic capture |
-| Incident recovery | RC.RP-02 | RECOVER | Recovery procedure after rogue agent containment — clean reactivation process, post-incident review |
+| Continuous Monitoring | DE.CM-09 | DETECT | Monitoring for anomalous data and software use — behavioural baseline deviation detected |
+| Adverse Event Analysis | DE.AE-02 | DETECT | Detected events analysed to understand attack targets — rogue agent patterns correlated across sessions |
+| Incident Analysis | RS.AN-03 | RESPOND | Root cause analysis — what caused rogue behaviour, which sessions were affected, what was the blast radius |
+| Identity Management, Authentication & Access Control | PR.AA-05 | PROTECT | Access permissions managed — rogue agent cannot exceed its permission envelope regardless of internal goal state |
 
-#### Mitigations by tier
+#### Mitigations by CSF function
 
-**Foundational**
-- GV.RM-06: Establish policy requiring full observability
-  for all agents — no production deployment without
-  comprehensive audit logging and monitoring coverage
-- DE.CM-09: Establish behavioural baseline for every
-  deployed agent during commissioning — expected invocation
-  patterns, recommendation distributions, access volumes
-- Implement scope constraints at the orchestration layer —
-  rogue agent cannot exceed its permission envelope
+**GOVERN**
+- GV.OC-01: Policy requires comprehensive audit logging
+  of all agent actions — no production deployment
+  without full observability
 
-**Hardening**
-- DE.CM-09: Continuous behavioural monitoring — deviation
-  from baseline triggers tiered response: log, alert,
-  suspend, investigate
-- Aggregate recommendation analysis — periodic review
-  of agent recommendation patterns for systematic bias
-  or drift from expected behaviour
-- RS.MA-02: Define rogue agent containment procedure —
-  kill switch, audit checklist, operational impact
-  assessment, forensic capture workflow
+**IDENTIFY**
+- ID.RA-01: Include rogue agent risk in risk assessment —
+  detection capability, blast radius, response procedures
+  documented per deployment
 
-**Advanced**
-- Conduct rogue agent red team exercises — simulate
-  persistent hidden goal pursuit across extended sessions,
-  verify detection capability
-- Multi-agent consensus for high-stakes decisions — rogue
-  single agent cannot influence critical recommendations
-  without cross-validation
-- RC.RP-02: Define clean reactivation process — full
-  investigation complete, root cause confirmed, controls
-  updated before any reactivation
+**PROTECT**
+- PR.AA-05: Scope constraints enforced at infrastructure
+  layer — rogue agent cannot exceed its permission
+  envelope regardless of internal state
 
-#### Tools
+**DETECT**
+- DE.CM-09: Continuous behavioural monitoring —
+  establish baseline during commissioning, alert on
+  deviation using tiered response
+- DE.AE-02: Analyse patterns across sessions — systematic
+  recommendation bias detected through aggregate analysis
 
-| Tool | Type | Link |
-|---|---|---|
-| Langfuse | Open-source | https://langfuse.com |
-| Helicone | Open-source | https://www.helicone.ai |
-| OpenTelemetry | Open-source | https://opentelemetry.io |
+**RESPOND**
+- RS.AN-03: Rogue agent containment and investigation —
+  kill switch activation, recommendation audit,
+  process state validation, forensic capture
+- RS.MI-01: Contain rogue agent — credentials revoked,
+  actions reviewed, process state validated
 
 #### Cross-references
 - LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI16 Endpoint and Browser Overreach
+- DSGAI 2026: DSGAI16 Endpoint & Browser Overreach
 - Other frameworks: AIUC-1 B001/B002/C/E · EU AI Act Art. 14/15 · ISA/IEC 62443 SR 3.7 (OT)
 
 ---
 
-## CSF 2.0 agentic AI profile
+## CSF 2.0 profile for agentic AI
 
-| Function | Priority categories | Agentic-specific target state |
-|---|---|---|
-| GOVERN | GV.RM-06, GV.SC-06, GV.OC-01 | Autonomy policy documented, NHI governance live, supply chain requirements applied |
-| IDENTIFY | ID.AM-01, ID.RA-01 | All agent assets inventoried including memory stores, tools, A2A channels |
-| PROTECT | PR.AA-05, PR.DS-01/02, PR.PS-04, PR.IR-01 | Least privilege per tool, memory encrypted, A2A encrypted, circuit breakers live |
-| DETECT | DE.CM-01, DE.CM-09 | Behavioural baselines established, tool invocation monitoring live, goal-state monitoring active |
-| RESPOND | RS.MA-01, RS.MA-02 | Kill switch tested, containment procedures exercised, forensic capability confirmed |
-| RECOVER | RC.RP-02 | Clean reactivation process documented, BCP covers agent cluster failures, RTO/RPO defined |
-
----
-
-## Implementation priority
-
-| Phase | ASI entries | CSF categories | Rationale |
+| CSF Function | Priority entries | Key categories | Target state |
 |---|---|---|---|
-| 1 — Do now | ASI01, ASI02, ASI03 | GV.RM-06, PR.AA-05 | Governance policy and least privilege close the largest attack surface |
-| 2 — This sprint | ASI05, ASI10 | GV.RM-06 code execution, DE.CM-09 baseline | RCE and rogue agents are catastrophic if triggered undetected |
-| 3 — This quarter | ASI04, ASI06, ASI07 | GV.SC-06, PR.DS-01/02, PR.PS-04 | Supply chain, memory, and A2A security require infrastructure changes |
-| 4 — Ongoing | ASI08, ASI09 | PR.IR-01, RC.RP-02, GV.OC-01 | Resilience, cascade engineering, and trust boundary hardening |
+| GOVERN | ASI01, ASI02, ASI04 | GV.OC-01, GV.SC-01/06, GV.RM-01/06 | Autonomy policy published, supply chain programme live, risk register complete |
+| IDENTIFY | ASI03, ASI04, ASI08 | ID.AM-08, ID.RA-01, ID.RA-08 | All agent NHIs inventoried, component SBOM maintained, cascade blast radius documented |
+| PROTECT | ASI03, ASI05, ASI07 | PR.AA-01/05, PR.DS-01/02, PR.PS-04, PR.IR-01 | NHI governance live, A2A mTLS implemented, sandbox deployed |
+| DETECT | ASI10, ASI06, ASI08 | DE.CM-01/09, DE.AE-02 | Behavioural baselines established, memory monitoring live, cascade detection operational |
+| RESPOND | ASI01, ASI08, ASI10 | RS.AN-03, RS.MI-01 | Kill switch tested, incident response exercised for all ASI scenarios |
+| RECOVER | ASI08 | RC.RP-01 | BCP covers agent cluster failures, RTO/RPO defined and tested |
 
 ---
 
 ## References
 
-- NIST Cybersecurity Framework 2.0: https://www.nist.gov/cyberframework
-- CSF 2.0 full document: https://doi.org/10.6028/NIST.CSWP.29
-- OWASP Agentic Top 10 2026: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
-- NIST AI RMF 1.0: https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf
+- [NIST CSF 2.0](https://www.nist.gov/cyberframework)
+- [OWASP Agentic Top 10 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [NIST AI RMF 1.0](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf)
 
 ---
 
@@ -731,7 +576,7 @@ agent can operate indefinitely.
 
 | Date | Version | Change | Author |
 |---|---|---|---|
-| 2026-03-25 | 2026-Q1 | Initial mapping — ASI01-ASI10 full entries with CSF 2.0 profile | OWASP GenAI Data Security Initiative |
+| 2026-03-26 | 2026-Q1 | Initial mapping — ASI01–ASI10 full entries with CSF 2.0 profile | OWASP GenAI Data Security Initiative |
 
 ---
 
