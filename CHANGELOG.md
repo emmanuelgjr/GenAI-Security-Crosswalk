@@ -8,6 +8,16 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ---
 
 
+## [1.1.2] — 2026-03-27
+
+### Corrections
+
+- Removed 38 empty placeholder files that had never been populated
+- Fixed mapping file count in README: 39 — 38
+- Fixed per-source-list framework counts: Agentic 14 — 15, DSGAI 10 — 9
+
+---
+
 ## [1.1.1] — 2026-03-27
 
 ### Corrections

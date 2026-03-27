@@ -2,9 +2,9 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.1.1-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.2-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
-[![Mapping Files](https://img.shields.io/badge/mapping%20files-39-brightgreen)](README.md)
+[![Mapping Files](https://img.shields.io/badge/mapping%20files-38-brightgreen)](README.md)
 [![Frameworks](https://img.shields.io/badge/frameworks-17-orange)](README.md)
  
 > The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **17 frameworks** and **3 OWASP source lists**.
@@ -22,7 +22,7 @@ Every file answers one question: **which controls from framework X address vulne
 |---|---|
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
 | **17** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity |
-| **39** mapping files | Every source list entry × every applicable framework |
+| **38** mapping files | Every source list entry × every applicable framework |
 | **13** implementation recipes | Production-ready Python patterns |
 | **40+** open-source tools | Catalogued and organised by function |
  
@@ -35,8 +35,8 @@ All free. All open-source. Built for practitioners.
 | List | Entries | Version | Frameworks mapped |
 |---|---|---|---|
 | [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) | LLM01–LLM10 | 2025 | 14 |
-| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01–ASI10 | 2026 | 14 |
-| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01–DSGAI21 | 2026 | 10 |
+| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01–ASI10 | 2026 | 15 |
+| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01–DSGAI21 | 2026 | 9 |
  
 ---
  
@@ -85,7 +85,7 @@ All free. All open-source. Built for practitioners.
 | [LLM_ENISA.md](llm-top10/LLM_ENISA.md) | ENISA Multilayer Framework | L1/L2/L3 layer mapping, EU AI Act and NIS2 alignment table |
 | [LLM_SAMM.md](llm-top10/LLM_SAMM.md) | OWASP SAMM v2.0 | L1–L3 maturity roadmap per vulnerability with fillable scorecard |
  
-### Agentic Top 10 2026 — 14 framework mappings
+### Agentic Top 10 2026 — 15 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -106,7 +106,7 @@ All free. All open-source. Built for practitioners.
  
 > **Also in this folder:** [Agentic_CWE_CVE.md](agentic-top10/Agentic_CWE_CVE.md) — CWE root cause taxonomy, confirmed CVEs, full CWE cross-reference index.
  
-### DSGAI 2026 — 10 framework mappings
+### DSGAI 2026 — 9 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -159,7 +159,7 @@ GenAI-Security-Crosswalk/
 │   ├── LLM_ENISA.md                 ← EU / NIS2
 │   └── LLM_SAMM.md                  ← Maturity model
 │
-├── agentic-top10/                   ← ASI01–ASI10 × 14 frameworks
+├── agentic-top10/                   ← ASI01–ASI10 × 15 frameworks
 │   ├── Agentic_AIUC1.md
 │   ├── Agentic_MITREATLAS.md
 │   ├── Agentic_NISTAIRMF.md
@@ -176,7 +176,7 @@ GenAI-Security-Crosswalk/
 │   ├── Agentic_AIVSS.md             ← Risk scoring — autonomy premium
 │   └── Agentic_CWE_CVE.md           ← CWE taxonomy + confirmed CVEs
 │
-├── dsgai-2026/                      ← DSGAI01–DSGAI21 × 10 frameworks
+├── dsgai-2026/                      ← DSGAI01–DSGAI21 × 9 frameworks
 │   ├── DSGAI_ISO27001.md
 │   ├── DSGAI_NISTAIRMF.md
 │   ├── DSGAI_EUAIAct.md
