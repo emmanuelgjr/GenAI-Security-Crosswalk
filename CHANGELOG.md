@@ -176,32 +176,16 @@ exposure per entry, and GPAI vs high-risk applicability clearly marked.
 
 ## [Unreleased]
 
-### Planned for v1.1
+### Planned
 
 #### New framework mappings
-- `llm-top10/LLM_NISTCSF2.md` � NIST CSF 2.0
-- `llm-top10/LLM_ISO42001.md` � ISO/IEC 42001 AI Management Systems
-- `llm-top10/LLM_SAMM.md` � OWASP SAMM
-- `llm-top10/LLM_ENISA.md` � ENISA AI Cybersecurity Risks
-- `llm-top10/LLM_SOC2.md` � SOC 2 Type II
-- `llm-top10/LLM_PCIDSS.md` � PCI DSS v4.0
-- `agentic-top10/Agentic_NISTCSF2.md` � NIST CSF 2.0
-- `agentic-top10/Agentic_ISO27001.md` � ISO/IEC 27001:2022
-- `agentic-top10/Agentic_ISO42001.md` � ISO/IEC 42001 AI Management Systems
-- `dsgai-2026/DSGAI_NISTCSF2.md` � NIST CSF 2.0
-- `dsgai-2026/DSGAI_MITREATLAS.md` � MITRE ATLAS
-- `dsgai-2026/DSGAI_ISA62443.md` � ISA/IEC 62443 (OT)
-
-#### Shared resources
-- `shared/RECIPES.md` � Additional recipes: fine-tuning pipeline security,
-  agent memory architecture patterns, embedding pipeline hardening
-- `i18n/es/` � Spanish translations (community contribution)
-- `i18n/pt/` � Portuguese translations (community contribution)
-
-#### Infrastructure
-- GitHub Actions CI workflow � validate file template compliance on PR
-- `data/` � Machine-readable JSON for all mapping entries
-- AIVSS scores added to all mapping files
+- `llm-top10/LLM_STRIDE.md` — STRIDE threat modeling
+- `llm-top10/LLM_CWE_CVE.md` — CWE root cause taxonomy and CVE evidence
+- `llm-top10/LLM_AITG.md` — OWASP AI Testing Guide
+- `dsgai-2026/DSGAI_ASVS.md` — OWASP ASVS 4.0.3
+- `dsgai-2026/DSGAI_CISControls.md` — CIS Controls v8.1
+- `dsgai-2026/DSGAI_CWE_CVE.md` — CWE root cause taxonomy and CVE evidence
+- `dsgai-2026/DSGAI_ENISA.md` — ENISA Multilayer Framework
 
 ---
 
