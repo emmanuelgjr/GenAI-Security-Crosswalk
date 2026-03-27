@@ -7,50 +7,43 @@
   License     : CC BY-SA 4.0
 -->
 
-# Agentic Top 10 2026 x OWASP ASVS 4.0.3
+# Agentic Top 10 2026 × OWASP ASVS 4.0.3
 
 Mapping the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
-to the [OWASP Application Security Verification Standard (ASVS) 4.0.3](https://owasp.org/www-project-application-security-verification-standard/)
-— the framework for testing and verifying the security of web
-applications and APIs, organised into 14 chapters with three
-verification levels (L1/L2/L3).
-
-Agentic AI systems are web applications and APIs with autonomous
-execution capability layered on top. All standard ASVS controls
-apply — with specific requirements amplified by the agentic context.
-The key ASVS chapters for agentic AI are:
-
-**V4 Access Control** — the most critical chapter for agentic AI.
-Every agent tool invocation is an access control decision. V4
-requirements for least privilege, access enforcement, and account
-management map directly to the per-tool permission manifests and
-NHI (Non-Human Identity) governance that agentic deployments require.
-
-**V5 Validation, Sanitization and Encoding** — goal hijack and tool
-misuse both exploit insufficient input validation. V5 requirements
-apply to every content channel an agent processes, not just direct
-user input.
-
-**V11 Business Logic** — the chapter most under-utilised in agentic
-security. V11 requires that business logic abuse scenarios are
-identified, that rate limits exist, and that workflows enforce
-correct sequencing. For agentic AI, this maps directly to kill
-switches, cascade containment, and human confirmation gates.
-
-**V13 API and Web Service** — agents are API clients and API servers.
-Rate limiting, input validation, and authentication requirements in
-V13 apply to both sides of every agent-to-tool and agent-to-agent
-communication channel.
-
-For LLM Top 10 x ASVS see LLM_ASVS.md.
+to the [OWASP Application Security Verification Standard (ASVS) 4.0.3](https://owasp.org/www-project-application-security-verification-standard/) —
+the framework for testing and verifying web application and API
+security, organised into 14 chapters with three verification levels.
 
 ---
 
-## ASVS verification levels
+## ASVS and agentic AI
 
-- **L1** — Opportunistic: passively verifiable, minimum security requirement
-- **L2** — Standard: most applications with sensitive data
-- **L3** — Advanced: high-value targets, high assurance required
+Agentic systems are web applications and APIs with additional attack
+surfaces. Every standard ASVS control applies — plus several chapters
+become dramatically more important than they are for conventional
+applications:
+
+**V5 — Validation, Sanitisation and Encoding** is the most critical
+chapter for agentic AI. Prompt injection is an injection vulnerability
+(CWE-74) — the same category ASVS V5 addresses for SQL, OS commands,
+and LDAP. The same input validation principles apply.
+
+**V4 — Access Control** governs tool permissions. An agent that can
+invoke a tool with arbitrary parameters under a shared high-privilege
+account is a V4.1.3 (least privilege) violation.
+
+**V11 — Business Logic** is critical for agentic AI — goal hijack,
+excessive agency, and cascading failures are all business logic abuse
+scenarios that V11 directly addresses.
+
+**V13 — API and Web Service** covers all LLM API endpoints and
+agent orchestration APIs — rate limiting, authentication, output
+validation, and replay protection.
+
+**Verification levels:**
+- L1 — Opportunistic: passively verifiable, minimal security requirement
+- L2 — Standard: most applications with sensitive data
+- L3 — Advanced: high-value targets, high assurance required
 
 ---
 
@@ -58,27 +51,27 @@ For LLM Top 10 x ASVS see LLM_ASVS.md.
 
 | ID | Name | Severity | Primary ASVS Chapters / Requirements | Level | Tier |
 |---|---|---|---|---|---|
-| ASI01 | Agent Goal Hijack | Critical | V5.1, V5.2, V11.1, V1.1 | L1-L3 | Foundational-Advanced |
-| ASI02 | Tool Misuse and Exploitation | Critical | V4.1, V4.2, V11.1, V7.2 | L1-L3 | Foundational-Advanced |
-| ASI03 | Identity and Privilege Abuse | Critical | V4.1, V2.1, V2.6, V7.2 | L1-L3 | Foundational-Advanced |
-| ASI04 | Agentic Supply Chain | High | V10.2, V14.2, V1.1 | L2-L3 | Foundational-Hardening |
-| ASI05 | Unexpected Code Execution | Critical | V5.2, V5.2.4, V12.3, V14.5 | L1-L3 | Hardening-Advanced |
-| ASI06 | Memory and Context Poisoning | High | V5.1, V8.1, V6.1, V12.1 | L2-L3 | Hardening-Advanced |
-| ASI07 | Insecure Inter-Agent Comms | High | V9.1, V4.1, V7.2, V5.3 | L1-L3 | Hardening-Advanced |
-| ASI08 | Cascading Agent Failures | High | V11.1, V13.1, V7.4, V1.1 | L1-L3 | Foundational-Advanced |
-| ASI09 | Human-Agent Trust Exploitation | Medium | V14.5, V7.4, V11.1, V5.2 | L1-L2 | Foundational-Hardening |
-| ASI10 | Rogue Agents | Critical | V7.2, V7.4, V11.1, V4.1 | L2-L3 | Hardening-Advanced |
+| ASI01 | Agent Goal Hijack | Critical | V5.1, V5.2, V11.1, V1.1 | L1–L3 | Foundational–Advanced |
+| ASI02 | Tool Misuse & Exploitation | Critical | V4.1, V11.1, V13.1, V7.2 | L1–L3 | Foundational–Advanced |
+| ASI03 | Identity & Privilege Abuse | Critical | V2.1, V4.1, V6.1, V7.2 | L1–L3 | Foundational–Advanced |
+| ASI04 | Agentic Supply Chain | High | V10.2, V14.2, V1.1 | L2–L3 | Foundational–Hardening |
+| ASI05 | Unexpected Code Execution | Critical | V5.2, V5.3, V11.1, V13.1 | L1–L3 | Hardening–Advanced |
+| ASI06 | Memory & Context Poisoning | High | V5.1, V4.1, V6.1, V12.1 | L2–L3 | Hardening–Advanced |
+| ASI07 | Insecure Inter-Agent Comms | High | V9.1, V3.3, V4.1, V7.2 | L1–L3 | Hardening–Advanced |
+| ASI08 | Cascading Agent Failures | High | V11.1, V13.1, V7.4, V1.1 | L1–L3 | Foundational–Advanced |
+| ASI09 | Human-Agent Trust Exploitation | Medium | V11.1, V5.2, V7.4, V13.1 | L1–L2 | Foundational–Hardening |
+| ASI10 | Rogue Agents | Critical | V7.2, V11.1, V4.1, V13.1 | L2–L3 | Hardening–Advanced |
 
 ---
 
 ## Audience tags
 
-- **Developer** — full file, specific ASVS requirements to implement per entry
-- **Security architect** — V1 architecture requirements, V11 business logic
+- **Developer** — full file, specific ASVS requirements to implement
+- **Security architect** — V1 architecture, V11 business logic entries
 - **Penetration tester** — verification requirements per level for test planning
 - **Security engineer** — V4 access control, V5 validation, V13 API security
-- **Auditor** — ASVS level mapping for assurance assessment scope
-- **OT engineer** — ASI02, ASI08 entries with ISA 62443 crosswalk notes
+- **Auditor** — ASVS level mapping for assurance assessment
+- **OT engineer** — ASI01, ASI02, ASI08 with ISA 62443 crosswalk
 
 ---
 
@@ -91,223 +84,152 @@ For LLM Top 10 x ASVS see LLM_ASVS.md.
 **Severity:** Critical
 
 An attacker redirects agent objectives through direct or indirect
-instruction injection — the agent autonomously executes a multi-step
-attack chain. ASVS V5 (Validation, Sanitization and Encoding) is
-the primary chapter — every content channel an agent processes is
-an input that requires V5 validation, not just direct user input.
-V11 (Business Logic) adds the requirement to identify and mitigate
-goal hijack as a business logic abuse scenario.
-
-**ASVS framing:** Goal hijack is an input validation failure (V5)
-that enables a business logic abuse (V11). Both chapters apply
-simultaneously — V5 controls what enters the agent's context,
-V11 controls what the agent is permitted to do with any goal state.
+instruction injection. ASVS Chapter V5 (Validation, Sanitisation and
+Encoding) is the primary chapter — prompt injection is an injection
+vulnerability class fully covered by V5.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify all user input validated against allowlist or rejected | V5.1.1 | L1 | All inputs to agents validated — indirect injection through processed content equally in scope as direct user input |
-| Verify output encoding prevents injection attacks | V5.2.1 | L1 | Agent outputs encoded before passing to downstream renderers, interpreters, or tool call parameters |
-| Verify business logic abuse scenarios identified | V11.1.2 | L2 | Goal hijack scenarios explicitly identified in business logic threat model — treatment controls documented |
-| Threat modelling of all data flows | V1.1.2 | L2 | All agent data flows threat-modelled — every content source the agent processes mapped as a potential injection path |
-| Verify application limits implement business limits | V11.1.4 | L2 | Goal-state constraints enforced at the orchestration layer — agent cannot pursue goals outside defined scope |
+| Verify all user input validated against allowlist | V5.1.1 | L1 | All inputs to agents validated — indirect injection through processed content equally in scope |
+| Verify output encoding prevents injection | V5.2.1 | L1 | Agent responses encoded before passing to downstream renderers — outputs treated as untrusted |
+| Verify application protects against OS command injection | V5.2.5 | L1 | Agent-generated instructions not executed in system context without validation |
+| Threat modelling of all data flows | V1.1.2 | L2 | All agent input sources threat-modelled — every indirect injection path documented |
+| Verify business logic limits prevent function abuse | V11.1.2 | L2 | Business logic controls prevent injection from redirecting agent goal |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V5.1.1: Validate all inputs to agents before processing —
-  extend V5 coverage to every content channel the agent
-  processes: RAG chunks, tool outputs, emails, documents,
-  not just direct user input
-- V5.2.1: Encode all agent outputs before passing to
-  downstream consumers — treat agent responses as untrusted
-  input to every downstream system
-- Implement operator kill switch — ability to halt all
-  agent activity immediately, V11 business constraint
+- V5.1.1: Input validation on all agent input channels —
+  user prompt, RAG content, tool returns, email, uploaded
+  documents all validated as untrusted content
+- V5.2.1: Output encoding before passing to downstream
+  systems — agent outputs treated as untrusted input
+- Kill switch implementation — V11 business logic
+  control enabling immediate halt of agent activity
 
 **Hardening (L2)**
-- V11.1.2: Identify goal hijack as a business logic abuse
-  scenario — document in threat model with specific injection
-  paths per content source, treatment controls assigned
-- V11.1.4: Enforce goal-state constraints at the orchestration
-  layer — agent cannot pursue goals outside defined scope
-  regardless of instruction source
-- V1.1.2: Threat-model all agent data flows — every content
-  channel the agent processes documented as a potential
-  injection path in the architecture threat model
+- V1.1.2: Threat model all agent data flows — every
+  indirect injection surface identified and documented,
+  mitigations verified in security testing
+- V11.1.2: Business logic controls prevent goal redirection —
+  goal-state verification implemented, deviation
+  triggers suspension rather than continuation
 
 **Advanced (L3)**
-- Implement cryptographically signed goal specifications —
-  runtime deviation from signed goal triggers automatic
-  suspension, verified in V11 business logic test suite
-- V5.1.1: Extend adversarial testing to all indirect injection
-  surfaces — RAG sources, tool descriptors, all data
-  sources the agent processes in your specific deployment
-- V11.1.2: Include goal hijack in penetration testing scope —
-  direct, indirect, and multi-turn attacks tested against
-  your specific deployment
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| Garak | Open-source | https://github.com/leondz/garak |
-| Invariant Analyzer | Open-source | https://github.com/invariantlabs-ai/invariant |
-| OWASP ZAP (API testing) | Open-source | https://www.zaproxy.org |
+- V5.1.1: Validate all content sources for each specific
+  deployment — historian data (OT), email content,
+  web results each treated as injection vectors
+- V11.1.2: Adversarial goal hijack testing as L3
+  verification — multi-turn and indirect scenarios
+  verified against your specific agentic deployment
 
 #### Cross-references
 - LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
-- Other frameworks: ISO 27001 A.8.28 · NIST AI RMF GV-1.7 · EU AI Act Art. 14
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
+- Other frameworks: ISO 27001 A.8.28 · AIUC-1 B001/B005 · CWE-74
 
 ---
 
-### ASI02 — Tool Misuse and Exploitation
+### ASI02 — Tool Misuse & Exploitation
 
 **Severity:** Critical
 
-Agents misuse legitimate tools — calling them with destructive
-parameters or in unexpected sequences. ASVS V4 (Access Control)
-is the primary chapter — agent tool access is an access control
-decision that must enforce least privilege per V4.1 and account
-management per V4.2. V11 (Business Logic) adds the requirement
-to define and enforce permitted operation sequences.
-
-**ASVS framing:** Tool misuse is an access control failure (V4)
-compounded by insufficient business logic constraints (V11). An
-agent that can invoke a tool can only misuse it to the extent that
-V4 least privilege permits — scope the permissions correctly and
-the blast radius of any misuse is bounded.
+Agents misuse legitimate tools via prompt manipulation or unsafe
+delegation. ASVS Chapter V4 (Access Control) governs tool permissions —
+least privilege (V4.1.3) applies to every agent tool integration.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify access control enforces least privilege | V4.1.3 | L1 | Agent tool access enforced at minimum required scope — read-only by default, write access requires explicit justification |
-| Verify all sensitive functions protected by access control | V4.1.1 | L1 | Irreversible tool operations (delete, send, publish, execute) protected — agent cannot invoke without verified authorisation |
-| Verify all business logic decisions logged | V7.2.2 | L2 | All agent tool invocations logged — tool identity, parameters, invoking session, timestamp — immutable trail |
-| Verify business logic abuse scenarios identified | V11.1.2 | L2 | Tool misuse scenarios identified — destructive parameter injection, unusual tool chains, MCP descriptor poisoning |
+| Verify access control enforces least privilege | V4.1.3 | L1 | Agent tool access scoped to minimum required operations — read-only by default, write access formally approved |
+| Verify all sensitive functions have access control | V4.1.1 | L1 | All destructive tool operations require explicit authorisation — not inheritable from agent session |
+| Verify all business logic decisions logged | V7.2.2 | L2 | All tool invocations logged — tool identity, parameters, agent session, timestamp |
+| Verify business logic abuse scenarios identified | V11.1.2 | L2 | Tool chain exploitation scenarios identified in threat model — mitigations implemented and verified |
+| Verify API rate limiting | V13.1.1 | L1 | Tool API endpoints rate-limited — anomalous invocation frequency detected |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V4.1.3: Enforce least privilege on all agent tool access —
-  per-tool minimum permission, read-only by default, write
-  access requires explicit documented justification
-- V4.1.1: Protect all irreversible tool operations with
-  access control — human confirmation required for delete,
-  send, publish, execute, pay, regardless of agent instruction
-- Human confirmation gate for irreversible tools — separate
-  confirmation interface, not the agent chat
+- V4.1.3: Least privilege on all agent tool integrations —
+  per-tool permission manifests enforced at orchestration
+  layer, not just policy
+- V4.1.1: Access controls on all destructive tool
+  operations — irreversible tools require human
+  confirmation, enforced independently of agent framework
+- V13.1.1: Rate limiting on all tool API endpoints —
+  anomalous frequency detected and alerted
 
 **Hardening (L2)**
-- V7.2.2: Collect detailed audit logs for all agent tool
-  invocations — tool identity, parameters, session identity,
-  timestamp — immutable audit trail integrated into SIEM
-- V11.1.2: Identify tool misuse scenarios in business logic
-  threat model — destructive parameter injection, MCP
-  descriptor poisoning, unusual tool sequences — treatment
-  controls documented and tested
-- Validate all tool descriptors before agent loading —
-  hidden instructions trigger rejection
+- V7.2.2: Log all tool invocations — tool identity,
+  parameters, agent identity, timestamp — immutable
+  audit trail for forensic investigation
+- V11.1.2: Identify and document tool chain exploitation
+  scenarios — combinations of legitimate tool calls
+  producing harmful outcomes verified in testing
 
 **Advanced (L3)**
-- Per-invocation parameter validation — all tool parameters
-  validated against safe ranges before execution, verified
-  in V4 access control test suite
-- V11.1.2: Include tool misuse in penetration testing —
-  attempt destructive outcomes through legitimate tool
-  invocations against your specific deployment
-- V4.1.3: Include agent tool access in privileged access
-  reviews — quarterly scope review, unused permissions removed
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| NeMo Guardrails | Open-source | https://github.com/NVIDIA/NeMo-Guardrails |
-| MCP Inspector | Open-source | https://github.com/modelcontextprotocol/inspector |
-| Guardrails AI | Open-source | https://github.com/guardrails-ai/guardrails |
+- V4.1.3: Include agent tool permissions in privileged
+  access reviews — quarterly, unused permissions removed
+- V11.1.2: Adversarial tool chain testing at L3 —
+  attempt harm through legitimate tool sequences in
+  your specific deployment
 
 #### Cross-references
 - LLM Top 10: LLM05 Insecure Output Handling, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI06 Tool Plugin and Agent Data Exchange, DSGAI12 Unsafe NL Data Gateways
-- Other frameworks: ISO 27001 A.8.2 · AIUC-1 B006/B007 · ISA/IEC 62443 SR 2.2 (OT)
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
+- Other frameworks: ISO 27001 A.8.2 · AIUC-1 B006/B007 · CWE-284
 
 ---
 
-### ASI03 — Identity and Privilege Abuse
+### ASI03 — Identity & Privilege Abuse
 
 **Severity:** Critical
 
-Agents inherit and cache credentials that, when compromised, expose
-all systems the agent has access to. ASVS V4 (Access Control) and
-V2 (Authentication) are the primary chapters — agent credentials
-are authentication tokens requiring V2 management and V4 least
-privilege enforcement. The most critical NHI-specific ASVS
-requirement is V2.6 (look-up secret storage).
-
-**ASVS framing:** Agent credential abuse is an authentication
-failure (V2) that enables access control violations (V4). V2 controls
-how agent credentials are stored and managed — V4 controls the
-scope of access those credentials permit. Both must be addressed
-to prevent lateral movement via agent identity abuse.
+Agents inherit and cache credentials exploited for lateral movement.
+ASVS Chapter V2 (Authentication) and V4 (Access Control) govern
+agent credential management.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify access control enforces least privilege | V4.1.3 | L1 | Agent credentials scoped to minimum required access — quarterly review, unused scope removed |
-| Verify all sensitive functions protected | V4.1.1 | L1 | Agent access to sensitive systems enforced by access control — credential scope cannot be self-escalated |
-| Verify lookup secrets random and not reused | V2.6.1 | L2 | Agent API keys and tokens generated with sufficient entropy — no sequential, predictable, or reused tokens |
-| Verify credentials not hardcoded | V2.10.1 | L2 | No hardcoded agent credentials in source code, configuration files, or prompts — secret manager required |
-| Verify all access control decisions logged | V7.2.1 | L2 | All agent credential operations logged — issuance, use, expiry, anomalous patterns detectable |
+| Verify credentials not in source code | V2.1.1 | L1 | Agent credentials not hardcoded — secret manager required |
+| Verify access control enforces least privilege | V4.1.3 | L1 | Agent credential scope minimum required — no over-privileged NHIs |
+| Verify sensitive data encrypted at rest | V6.1.1 | L2 | Agent credentials encrypted at rest — no cleartext in config or agent memory |
+| Verify access control decisions logged | V7.2.1 | L2 | All credential usage logged — issuance, access, expiry detectable |
+| Verify secrets not in source code | V14.2.3 | L2 | Agent credentials not committed to source control |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V4.1.3: Scope all agent credentials to minimum required
-  access — enforce least privilege at the identity layer,
-  not just the application layer
-- V4.1.1: Protect all sensitive system access with verified
-  access controls — agent credentials cannot self-escalate
-  beyond their defined scope
-- Issue short-lived, task-scoped credentials per invocation —
-  never long-lived tokens shared across tasks or sessions
+- V2.1.1: No hardcoded agent credentials — secret
+  manager required for all agent credential storage
+- V4.1.3: Least privilege on all agent credentials —
+  minimum scope per agent role, short TTL, JIT issuance
+- Unique credential per agent deployment — no shared
+  NHIs across agent instances
 
 **Hardening (L2)**
-- V2.10.1: Store all agent credentials in a secret manager —
-  no hardcoded credentials anywhere, rotate on schedule,
-  V2 authentication requirement applied to NHI
-- V2.6.1: Generate agent tokens with sufficient entropy —
-  no sequential or predictable credential identifiers
-- V7.2.1: Log all agent credential operations — issuance,
-  use, expiry — anomalous patterns detected through SIEM
+- V6.1.1: Encrypt all agent credentials at rest —
+  same cryptographic standards as production data
+- V7.2.1: Log all credential operations — issuance,
+  use, expiry, anomalous patterns detectable
+- V14.2.3: Agent credentials never in source code —
+  enforce as CI/CD gate
 
 **Advanced (L3)**
-- Implement PKI-backed agent identities — certificate-based
-  authentication verified through V9 communication security
-  requirements
-- V4.1.3: Include agent NHIs in privileged access reviews —
-  same rigour as human privileged accounts, automated
-  detection of privilege creep
-- Conduct agent credential red team — attempt lateral
-  movement using agent credentials, include in L3
-  penetration testing scope
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| HashiCorp Vault | Open-source | https://www.vaultproject.io |
-| SPIFFE / SPIRE | Open-source | https://spiffe.io |
-| Teleport | Open-source/Commercial | https://goteleport.com |
+- PKI-backed agent identities as L3 credential control —
+  certificate-based authentication for all agent-to-system
+  connections
+- V4.1.3: Quarterly privileged access review includes
+  all agent NHIs — documented as L3 assurance evidence
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI02 Agent Identity and Credential Exposure
-- Other frameworks: OWASP NHI Top 10 · ISO 27001 A.8.2/A.5.16 · EU AI Act Art. 15
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 (all entries) · ISO 27001 A.8.2/A.5.16 · CWE-522
 
 ---
 
@@ -315,66 +237,48 @@ to prevent lateral movement via agent identity abuse.
 
 **Severity:** High
 
-Malicious or compromised tools, MCP servers, or model components
-loaded at runtime alter agent behaviour. ASVS V10 (Malicious Code)
-and V14 (Configuration) are the primary chapters — agent components
-are software dependencies requiring the same supply chain controls
-as any other third-party software.
+Compromised tools, MCP servers, or model components alter agent
+behaviour. ASVS Chapter V10 (Malicious Code) and V14 (Configuration)
+govern agent components as software supply chain elements.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify third-party components current and vulnerability-free | V10.2.1 | L2 | All agent component libraries and dependencies scanned for CVEs — ML SBOM maintained |
-| Verify only minimal approved external components used | V10.2.2 | L2 | Approved component list for all agent deployments — unsigned or unverified components rejected |
-| Verify build pipelines include security checks | V14.2.2 | L2 | CI/CD pipeline for agent components includes integrity verification and vulnerability scanning |
-| Threat modelling of all data flows | V1.1.2 | L2 | All agent supply chain component interactions threat-modelled — runtime dynamic loading explicitly in scope |
+| Verify third-party components current and free of vulnerabilities | V10.2.1 | L2 | All agent component libraries scanned for CVEs — ML SBOM maintained and monitored |
+| Verify only minimal approved external libraries | V10.2.2 | L2 | Approved component list — unsigned or unverified agent components rejected |
+| Verify build pipelines include security checks | V14.2.2 | L2 | CI/CD pipeline for agent components includes integrity verification and CVE scanning |
+| Verify threat model covers all data flows | V1.1.2 | L2 | Supply chain threat model documents all agent component sources and trust levels |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- Maintain ML SBOM as part of software asset inventory —
-  every agent component (model, adapters, MCP servers,
-  runtime libraries) inventoried with version and source
-- Pin all component versions — no automatic updates in
-  production without review and approval
-- V10.2.1: Include agent component CVE scanning in
-  vulnerability management — model inference libraries
-  and MCP server dependencies scanned on schedule
+- Maintain ML SBOM for all agentic deployments —
+  every component inventoried with version, source, hash
+- Pin all component versions — no automatic updates
+  without review
 
 **Hardening (L2)**
-- V10.2.2: Establish approved component list for all
-  agent deployments — only sourced from approved vendors,
-  cryptographic signatures verified before loading
-- V14.2.2: Integrate agent component integrity verification
-  into build pipeline — unsigned or modified components
-  rejected before deployment
-- Scan all tool descriptors for hidden instructions before
-  agent loading — any hidden instruction triggers rejection
+- V10.2.1: CVE scanning in CI/CD for all agent components —
+  ML libraries, MCP server dependencies, inference
+  runtime all scanned before deployment
+- V10.2.2: Approved component list enforced — only
+  sourced from approved vendors, cryptographic signatures
+  verified before loading any component
+- V14.2.2: Build pipeline includes agent component
+  integrity checks — unsigned components blocked
 
 **Advanced (L3)**
-- Operate isolated agent component evaluation environment —
-  behavioural testing before each production promotion,
-  results in security test records
-- V10.2.1: Conduct adversarial supply chain testing —
-  attempt to introduce compromised components, verify
-  detection mechanisms hold
-- V1.1.2: Include runtime dynamic tool loading in threat
-  model — MCP servers fetched at inference treated as
-  untrusted until verified
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| CycloneDX | Open-source | https://cyclonedx.org |
-| ModelScan | Open-source | https://github.com/protectai/modelscan |
-| OWASP Dependency-Check | Open-source | https://owasp.org/www-project-dependency-check/ |
+- Operate isolated evaluation environment — behavioural
+  testing of each component before production promotion
+- V10.2.1: Runtime integrity monitoring — hash
+  verification of loaded components, deviation triggers
+  suspension
 
 #### Cross-references
 - LLM Top 10: LLM03 Supply Chain Vulnerabilities
-- DSGAI 2026: DSGAI04 Data Model and Artifact Poisoning
-- Other frameworks: ISO 27001 A.5.19/A.5.21 · NIST AI RMF MP-5.1 · NIST SP 800-218A
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning
+- Other frameworks: ISO 27001 A.5.19/A.5.21 · NIST CSF 2.0 GV.SC-01 · CWE-494
 
 ---
 
@@ -383,139 +287,100 @@ as any other third-party software.
 **Severity:** Critical
 
 Agents that generate and execute code become RCE gateways. ASVS V5
-(Validation, Sanitization and Encoding) is the most critical chapter —
-V5.2.4 prohibits eval and dynamic code execution of untrusted data,
-which directly governs agent-generated code. V12 (Files and Resources)
-adds requirements for safe file upload and execution contexts.
-
-**ASVS framing:** Agent code execution is a V5.2.4 violation waiting
-to happen. The requirement "verify that the application does not use
-eval() or other dynamic code execution features" applies with full
-force to agent-generated code — the agent is generating untrusted
-content that must not be executed without strict sandboxing.
+(Validation) and V5.2 (Output Handling) are the primary chapters —
+agent-generated code is untrusted output that must never be executed
+without validation.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify application does not use eval or dynamic code execution | V5.2.4 | L1 | No eval, exec, or equivalent on agent-generated content — absolute prohibition enforced through code review |
-| Verify application protects against OS command injection | V5.2.5 | L1 | Agent-generated commands validated before execution — allowlisted operations only, no raw shell access |
-| Verify file upload malware scanning | V12.1.1 | L2 | Agent-generated scripts scanned before execution — static analysis as a V12 file security control |
-| Verify server-side upload path validation | V12.3.1 | L2 | Code execution sandbox prevents path traversal — no access outside designated execution directory |
-| Verify untrusted data not passed to dynamic code | V14.5.1 | L3 | Structural guarantee that agent-generated content cannot reach an execution context without allowlist validation |
+| Verify output encoding of untrusted data in HTML context | V5.2.1 | L1 | Agent code output encoded before rendering in any context |
+| Verify application does not use eval or dynamic code | V5.2.4 | L1 | No eval or exec of agent-generated code — absolute prohibition enforced in code review |
+| Verify output encoding in OS command context | V5.2.5 | L1 | Agent-generated commands validated before any shell execution |
+| Verify output encoding in SQL context | V5.3.5 | L1 | No raw agent output in SQL context — parameterised execution only |
+| Verify business logic limits | V11.1.2 | L2 | Code execution capability in agents subject to business logic controls — sandbox, allowlist, static analysis |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V5.2.4: Enforce no eval or dynamic code execution of
-  agent-generated content — absolute prohibition, verified
-  through code review and static analysis in CI/CD pipeline
-- V5.2.5: Validate all agent-generated commands before
-  execution — allowlisted operations only, no raw shell
-  or OS command access from agent-generated content
-- Avoid agents with code execution capability unless
-  strictly necessary — default position, document
-  justification and security review if deployed
+- V5.2.4: Never use eval, exec, or equivalent on
+  agent-generated code — absolute L1 requirement,
+  enforced through automated code review
+- V5.2.5: No raw agent output in shell context —
+  validated against allowlist before any execution
+- V5.3.5: No raw agent output in SQL context —
+  parameterised execution only, no string interpolation
 
 **Hardening (L2)**
-- V12.1.1: Implement static analysis of all agent-generated
-  code before execution — scan for operations outside the
-  allowlist, reject before execution
-- V12.3.1: Enforce sandbox path constraints — code execution
-  sandbox prevents any path traversal outside designated
-  scratch directory
-- V5.2.4: Conduct SAST scan specifically targeting eval
-  and dynamic code execution patterns in all agent
-  integration code
+- V11.1.2: Business logic controls for code execution —
+  sandbox, network isolation, and allowlist as L2
+  verification requirements for agentic code execution
+- Static analysis of agent-generated code before
+  execution — V5 input validation principle applied
+  to code as output
 
 **Advanced (L3)**
-- V14.5.1: Structural guarantee that agent-generated content
-  cannot reach execution context without allowlist validation —
-  verified through architecture review and L3 penetration test
-- Hardware-level sandboxing — gVisor or Firecracker documented
-  as V14 configuration control
-- V5.2.4: Include sandbox escape in penetration testing scope —
-  attempt to execute arbitrary code through agent code
-  generation paths, document results
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| gVisor | Open-source | https://gvisor.dev |
-| Semgrep | Open-source | https://semgrep.dev |
-| Bandit | Open-source | https://github.com/PyCQA/bandit |
+- Hardware-level sandboxing as L3 assurance control —
+  kernel-level isolation preventing escape to host
+- V5.2.4: Adversarial code injection testing at L3 —
+  attempt RCE through crafted inputs against specific
+  deployment, verify sandbox containment
 
 #### Cross-references
 - LLM Top 10: LLM05 Insecure Output Handling
 - DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
-- Other frameworks: AIUC-1 B005/B006 · CWE-94 · ISA/IEC 62443 SR 3.3 (OT)
+- Other frameworks: AIUC-1 B005/B006 · CWE-94 · ISO 27001 A.8.28
 
 ---
 
-### ASI06 — Memory and Context Poisoning
+### ASI06 — Memory & Context Poisoning
 
 **Severity:** High
 
-Persistent memory poisoning causes systematic incorrect behaviour
-across all future interactions. ASVS V8 (Data Protection) governs
-agent memory stores as data assets. V5.1 input validation applies
-to every write operation to agent memory — content entering memory
-must be treated as untrusted input requiring validation.
+Persistent memory poisoning causes systematic incorrect behaviour.
+ASVS V5.1 (input validation) and V4.1 (access control) govern
+memory write paths as input boundaries requiring validation and
+access control.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify sensitive data not cached in cleartext | V8.1.1 | L1 | Agent memory stores do not cache sensitive data in cleartext — encrypted at rest, access-controlled |
-| Verify all inputs validated against allowlist | V5.1.1 | L1 | All content entering agent memory validated before write — indirect injection via memory is in scope |
-| Verify all sensitive data encrypted at rest | V6.1.1 | L2 | All agent memory content encrypted at rest — same protection as equivalent data assets |
-| Verify file upload malware scanning | V12.1.1 | L2 | Content validation on all agent memory ingestion — adversarial patterns detected before write |
+| Verify all user input validated against allowlist | V5.1.1 | L1 | All content entering agent memory validated — injection patterns rejected at write boundary |
+| Verify access control enforces least privilege | V4.1.3 | L1 | Memory write access restricted to minimum required sources — only agent and authorised administrators can write |
+| Verify sensitive data encrypted at rest | V6.1.1 | L2 | Agent memory stores encrypted at rest — embeddings, long-term memory |
+| Verify file upload malware scanning | V12.1.1 | L2 | Content entering agent memory scanned — adversarial content, injection patterns detected before write |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V8.1.1: Ensure agent memory stores do not cache sensitive
-  data in cleartext — encrypted at rest, access-controlled
-  from day one
-- V5.1.1: Apply input validation to all agent memory write
-  operations — content entering memory is untrusted input
-  requiring V5 validation controls
-- Enforce memory TTL — entries expire per defined retention
-  policy, no indefinite persistence
+- V5.1.1: Validate all content before writing to agent
+  memory — injection patterns rejected at write boundary,
+  untrusted sources cannot bypass validation
+- V4.1.3: Least privilege on memory write access —
+  only agent and designated administrators can write,
+  no unauthenticated memory writes
 
 **Hardening (L2)**
-- V6.1.1: Encrypt all agent memory content at rest —
-  embeddings and memory stores require same encryption
-  treatment as equivalent source documents
-- V12.1.1: Implement content validation on memory ingestion —
-  anomalous patterns, adversarial content, path traversal
-  attempts detected and rejected before write
-- Log all memory write operations — provenance of content
-  traceable, anomalous writes detectable from audit logs
+- V6.1.1: Encrypt all agent memory stores at rest —
+  embeddings, long-term memory, operational knowledge
+- V12.1.1: Scan content before memory write — adversarial
+  patterns, credential content detected before ingestion
+- TTL enforcement on memory entries — V12 file resource
+  management principle applied to memory store content
 
 **Advanced (L3)**
-- Cryptographic integrity verification of memory store
-  contents — tamper detection between write and read
-  operations, verified in L3 security assessment
-- Conduct memory poisoning scenarios in penetration testing —
-  attempt injection via each content source the agent
-  processes, verify detection and isolation controls hold
-- V8.1.1: Automated memory purge on agent decommission —
-  deletion verified, documented in data protection records
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| Weaviate | Open-source | https://weaviate.io |
-| Langfuse | Open-source | https://langfuse.com |
-| LlamaIndex | Open-source | https://www.llamaindex.ai |
+- Cryptographic integrity verification on memory store —
+  tamper detection as L3 assurance control
+- V5.1.1: Adversarial memory poisoning testing at L3 —
+  injection paths via each content source tested,
+  detection capability verified
 
 #### Cross-references
-- LLM Top 10: LLM04 Data and Model Poisoning, LLM08 Vector and Embedding Weaknesses
-- DSGAI 2026: DSGAI04 Data Model and Artifact Poisoning, DSGAI13 Vector Store Platform Security
-- Other frameworks: AIUC-1 A/B002 · ISO 27001 A.8.9/A.8.10 · ISA/IEC 62443 SR 3.7 (OT)
+- LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
+- DSGAI 2026: DSGAI13 Vector Store Platform Security
+- Other frameworks: ISO 27001 A.8.3/A.8.24 · NIST AI RMF MS-2.5 · CWE-349
 
 ---
 
@@ -523,64 +388,46 @@ must be treated as untrusted input requiring validation.
 
 **Severity:** High
 
-A2A communication channels lacking authentication or encryption
-enable spoofing and agent-in-the-middle attacks. ASVS V9
-(Communication Security) is the primary chapter — A2A channels
-are communication paths requiring TLS, certificate validation, and
-mutual authentication per V9. V4 access control adds authentication
-requirements, and V5.3 adds output encoding requirements for all
-A2A message content.
+A2A channels lacking authentication enable agent-in-the-middle attacks.
+ASVS Chapter V9 (Communication) and V3 (Session Management) govern
+A2A communication as API communication requiring encryption and
+session integrity.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify TLS used for all communications | V9.1.1 | L1 | All A2A communication encrypted — TLS 1.2 minimum, TLS 1.3 recommended |
-| Verify certificate validity | V9.1.2 | L1 | All A2A certificates validated — no self-signed certificates in production without explicit trust establishment |
-| Verify access control enforces least privilege | V4.1.3 | L1 | A2A channels authenticated — unique identity per agent, no ambient trust |
-| Verify output encoding in all contexts | V5.3.1 | L1 | A2A message content encoded appropriately — schema validation on all inter-agent message payloads |
-| Verify all access control decisions logged | V7.2.1 | L2 | All A2A authentication events logged — failed authentication, unusual patterns detectable |
+| Verify TLS used for all client connectivity | V9.1.1 | L1 | All A2A communication encrypted — mutual TLS, no cleartext inter-agent messages |
+| Verify anti-replay tokens in state-changing operations | V3.3.1 | L1 | Replay protection on all A2A messages — nonces, timestamps, sequence numbers |
+| Verify access control enforces identity | V4.1.3 | L1 | A2A channels enforce sender identity — unauthenticated messages rejected |
+| Verify all security controls logged | V7.2.1 | L2 | All A2A messages logged — sender identity, content hash, schema validation results |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V9.1.1: Enforce TLS on all A2A communication channels —
-  no cleartext agent messaging, TLS 1.2 minimum on all
-  inter-agent message paths
-- V9.1.2: Validate all A2A certificates — certificate
-  pinning or strict CA validation, no certificate errors
-  silently ignored
-- V4.1.3: Authenticate all A2A messages — unique agent
-  identity, no ambient trust between agents
+- V9.1.1: Enforce mutual TLS on all A2A channels —
+  both parties authenticate, messages encrypted, L1
+  requirement for all production A2A communication
+- V3.3.1: Replay protection on all A2A messages —
+  nonces, timestamps, sequence numbers enforced
+- V4.1.3: A2A channels enforce sender identity —
+  unauthenticated messages rejected at the channel layer
 
 **Hardening (L2)**
-- V5.3.1: Implement schema validation on all A2A message
-  payloads — reject unexpected or malformed message structures
-- V7.2.1: Log all A2A authentication events — feed into SIEM,
-  failed authentication and unusual patterns alerted
-- Implement replay attack protection — message nonces,
-  timestamps, and sequence numbers on all A2A channels
+- V7.2.1: Log all A2A messages — sender identity,
+  content hash, timestamp — immutable audit trail
+- Schema validation on all A2A message payloads —
+  reject malformed or unexpected structures
 
 **Advanced (L3)**
-- Implement mutual TLS for all production A2A channels —
-  both sides authenticate, verified in L3 security assessment
-- Short-lived agent identity certificates — automated
-  rotation, certificate revocation capability tested
-- V9.1.1: Conduct A2A security testing — spoofing, replay,
-  and man-in-the-middle scenarios against your specific
-  A2A channel implementation
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| SPIFFE / SPIRE | Open-source | https://spiffe.io |
-| cert-manager | Open-source | https://cert-manager.io |
-| Linkerd | Open-source | https://linkerd.io |
+- PKI-backed agent identities for A2A — short-lived
+  certificates, hardware-backed keys as L3 assurance
+- V9.1.1: A2A channel security in penetration testing
+  at L3 — spoofing, replay, schema violations tested
 
 #### Cross-references
-- DSGAI 2026: DSGAI02 Agent Identity and Credential Exposure
-- Other frameworks: OWASP NHI Top 10 · ISO 27001 A.8.24 · ISA/IEC 62443 SR 3.1 (OT)
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 NHI-4/NHI-7 · ISO 27001 A.8.20/A.8.24 · CWE-287
 
 ---
 
@@ -588,74 +435,48 @@ A2A message content.
 
 **Severity:** High
 
-Single-point faults propagate through multi-agent workflows into
-system-wide incidents. ASVS V11 (Business Logic) is the primary
-chapter — cascade containment is a business logic constraint
-requirement. V13 (API and Web Service) adds rate limiting and
-payload size requirements that prevent resource-exhaustion-triggered
-cascades. V7 (Error Handling and Logging) adds the requirement
-to handle failures gracefully.
-
-**ASVS framing:** Cascading failures are a V11 business logic failure
-(no cascade depth limit defined) compounded by a V7 error handling
-failure (no graceful degradation) and a V13 rate limiting failure
-(no resource caps preventing saturation). All three must be addressed.
+Single-point faults propagate through multi-agent workflows. ASVS
+Chapter V11 (Business Logic) and V13 (API and Web Service) govern
+cascade prevention as business logic abuse and API resilience.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify application limits implement business limits | V11.1.4 | L2 | Cascade depth limits and blast radius constraints enforced as business logic limits — circuit breaker thresholds |
-| Verify API rate limiting | V13.1.1 | L1 | Rate limiting on all agent API endpoints — A2A communication volume caps preventing saturation |
-| Verify API rejects large unexpected payloads | V13.1.3 | L1 | Token and payload limits on all agent interfaces — resource exhaustion triggers rejected before cascade |
-| Verify error handling does not expose sensitive data | V7.4.1 | L1 | Agent cascade errors handled gracefully — no sensitive information in error responses, fail-safe defaults |
-| Verify all flows verified for timing issues | V11.1.6 | L3 | Race conditions in multi-agent coordination identified and addressed — concurrent action conflicts prevented |
+| Verify business logic assumptions documented | V11.1.1 | L2 | Cascade blast radius documented as business logic assumption — maximum affected systems formally accepted |
+| Verify business logic limits prevent abuse | V11.1.2 | L2 | Circuit breakers as business logic controls — cascade propagation limited by design |
+| Verify API rate limiting | V13.1.1 | L1 | Rate limiting on all agent API endpoints — cascade amplification through API exhaustion limited |
+| Verify error handling does not expose sensitive data | V7.4.1 | L1 | Cascade errors handled gracefully — no sensitive system information in error responses |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V13.1.1: Implement rate limiting on all agent API endpoints —
-  A2A communication volume caps, hard limits enforced at
-  the gateway before reaching orchestration logic
-- V13.1.3: Set payload and token limits on all agent
-  interfaces — resource-exhaustion-triggering inputs
-  rejected before they can initiate cascade
-- V7.4.1: Implement graceful degradation for all agent
-  failures — fail-safe defaults, no sensitive information
-  in error responses, operators notified
+- V13.1.1: Rate limiting on all agent API endpoints —
+  cascade amplification through API saturation limited
+- V7.4.1: Cascade errors handled gracefully — explicit
+  unavailability notice to operators, no silent failure
+- Kill switch implementation — V11 business logic
+  control enabling immediate halt of agent cluster
 
 **Hardening (L2)**
-- V11.1.4: Enforce cascade depth limits and blast radius
-  constraints as business logic limits — circuit breaker
-  thresholds defined and tested before each deployment
-- Segment agent clusters — blast radius bounded by design,
-  failure in one cluster cannot cascade to adjacent clusters
-- Operator-accessible kill switch — V11 business constraint,
-  documented and tested before production
+- V11.1.1: Document cascade blast radius as business
+  logic assumption — maximum affected systems formally
+  defined and accepted before multi-agent deployment
+- V11.1.2: Circuit breakers as business logic controls —
+  cascade propagation limited at each agent-to-agent
+  boundary
 
 **Advanced (L3)**
-- V11.1.6: Identify and address timing issues in multi-agent
-  coordination — race conditions in concurrent agent
-  action scenarios tested and resolved
-- Conduct chaos engineering — intentional fault injection,
-  circuit breaker effectiveness verified against defined
-  blast radius
-- V13.1.1: Include cascade resilience in L3 penetration
-  test scope — verify rate limiting and circuit breakers
-  hold under adversarial load conditions
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| OpenTelemetry | Open-source | https://opentelemetry.io |
-| Resilience4j | Open-source | https://resilience4j.readme.io |
-| LangSmith | Commercial | https://smith.langchain.com |
+- V11.1.2: Chaos engineering as L3 business logic
+  verification — intentional failure injection verifies
+  circuit breaker effectiveness
+- V13.1.1: Adversarial load testing at L3 — verify
+  rate limiting holds under cascade amplification
 
 #### Cross-references
 - LLM Top 10: LLM10 Unbounded Consumption
-- DSGAI 2026: DSGAI17 Data Availability and Resilience Failures
-- Other frameworks: AIUC-1 D · ISA/IEC 62443 SR 7.6 (OT) · NIST SP 800-82 (OT)
+- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
+- Other frameworks: ISO 27001 A.5.30 · ISA/IEC 62443 SR 7.6/7.7 (OT) · CWE-400
 
 ---
 
@@ -663,67 +484,52 @@ failure (no graceful degradation) and a V13 rate limiting failure
 
 **Severity:** Medium
 
-Users anthropomorphise agents — enabling manipulated agents to
-exploit operators into approving harmful actions. ASVS V14.5
-(HTTP Security Headers — including content type enforcement) and
-V7.4 (error and state handling) apply to preventing UI deception.
-V11.1 business logic controls apply to ensuring approval flows
-cannot be bypassed through conversational manipulation.
-
-**ASVS framing:** Trust exploitation is a V14 interface security
-failure (advisory status not enforced at the UI layer) compounded
-by a V11 business logic failure (approval flows accessible through
-the agent chat interface). The fix is structural: advisory output
-clearly distinguished at the rendering layer, approval flows
-separated from the agent conversation channel.
+Agents build false trust enabling manipulation of human approvers.
+ASVS V11 (Business Logic) addresses trust exploitation as a business
+logic abuse scenario where the AI system manipulates the human
+decision-making process.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify application does not contain client-side secrets | V14.5.1 | L1 | Agent identity disclosure enforced — users cannot be deceived about AI nature through client-side manipulation |
-| Verify error handling does not expose sensitive data | V7.4.1 | L1 | Agent advisory status clearly rendered — users cannot mistake AI output for authoritative source |
-| Verify business logic abuse scenarios identified | V11.1.2 | L2 | Trust exploitation scenarios identified in business logic threat model — approval flow bypass scenarios documented |
-| Verify application limits prevent abuse | V11.1.4 | L2 | Approval flows cannot be triggered or bypassed through agent conversation — separate interface required |
+| Verify business logic assumptions documented | V11.1.1 | L2 | AI advisory limitations documented as business logic assumptions — verification requirements per domain |
+| Verify outputs encoded before rendering | V5.2.1 | L1 | Agent advisory outputs clearly labelled — users cannot mistake AI output for authoritative content |
+| Verify all security controls logged | V7.4.1 | L1 | Agent-influenced operator decisions logged — aggregate patterns detectable |
+| Verify API rejects large unexpected payloads | V13.1.3 | L1 | Approval flows independent of agent interface — no state-changing approvals via agent chat |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V7.4.1: Ensure agent advisory status is clearly rendered
-  in all interface contexts — users cannot mistake AI
-  output for authoritative source through any rendering
-  environment
-- V14.5.1: Enforce AI identity disclosure at the application
-  layer — users receive clear indication of AI interaction
-  through verified interface controls, not just system
-  prompt instruction
-- Separate agent conversation from security approval flows —
-  approval mechanisms are independent server-side controls
+- V5.2.1: Label all agent advisory output — clear visual
+  distinction from authoritative content in all rendering
+  contexts, enforced at rendering layer not in response
+- V7.4.1: Log all agent-influenced decisions — aggregate
+  over-trust patterns detectable through log analysis
+- V13.1.3: Approval flows independent of agent interface —
+  sensitive state changes cannot be approved via agent
+  chat, separate confirmation system required
 
 **Hardening (L2)**
-- V11.1.2: Identify trust exploitation as a business logic
-  abuse scenario — document in threat model, treatment
-  controls assigned, approval flow bypass scenarios tested
-- V11.1.4: Enforce approval flow separation — chat interface
-  cannot trigger or bypass security approvals, structural
-  guarantee verified through code review
-- Implement output filtering to detect and block manipulative
-  language patterns in agent responses
+- V11.1.1: Document AI advisory limitations as business
+  logic assumptions — which domains require verification,
+  what constitutes an authoritative source vs AI advisory
+- Safety alarm independence — agents cannot acknowledge
+  or suppress safety alarms, enforced as V11 business
+  logic control (OT)
 
 **Advanced (L3)**
-- Conduct trust exploitation scenarios in penetration testing —
-  test how effectively users identify manipulated agent
-  recommendations in your specific deployment context
-- V11.1.2: Verify approval flows cannot be bypassed through
-  any agent conversation path — include in L3 business
-  logic test scope
-- Aggregate decision pattern monitoring — alert on patterns
-  of systematic approval without independent verification
+- V11.1.2: Trust exploitation in penetration testing
+  at L3 — test operator susceptibility to manipulated
+  recommendations in your specific deployment
+- Operator competency verification as L3 assurance —
+  operators demonstrate ability to identify AI advisory
+  vs authoritative content
 
 #### Cross-references
 - LLM Top 10: LLM09 Misinformation
-- DSGAI 2026: DSGAI21 Disinformation and Integrity Attacks
-- Other frameworks: EU AI Act Art. 50/52 · AIUC-1 C/F · ISO 42001 A.8.1
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
+- Other frameworks: EU AI Act Art. 13/50 · ISO 27001 A.6.3 · AIUC-1 C/F
 
 ---
 
@@ -731,119 +537,95 @@ separated from the agent conversation channel.
 
 **Severity:** Critical
 
-Malicious or compromised agents pursue hidden goals while appearing
-compliant. ASVS V7 (Error Handling and Logging) is the most critical
-chapter — without comprehensive logging per V7.2, a rogue agent
-has no detection surface. V4 access control limits the blast radius
-of rogue behaviour. V11 business logic constrains what a rogue agent
-can accomplish within the system.
-
-**ASVS framing:** Rogue agent detection depends entirely on V7.2
-comprehensive logging — without it, no detection mechanism can
-function. V4 least privilege bounds what a rogue agent can achieve —
-a rogue agent with narrow scope causes bounded damage before
-containment. V11 business logic constraints limit the action sequences
-available to a rogue agent regardless of its internal goal state.
+Compromised agents pursue hidden goals while appearing compliant.
+ASVS V7 (Error Handling and Logging) is the primary chapter —
+comprehensive logging is the foundational rogue agent control.
+Without complete audit trails, rogue behaviour cannot be detected.
 
 #### ASVS mapping
 
 | Requirement | ID | Level | How it applies |
 |---|---|---|---|
-| Verify all security events logged | V7.2.1 | L2 | Comprehensive logging of all agent actions — tool invocations, data access, goal state, recommendations |
-| Verify all business logic decisions logged | V7.2.2 | L2 | All agent business logic decisions logged — every recommendation, every goal state transition, every tool call |
-| Verify access control enforces least privilege | V4.1.3 | L1 | Rogue agent cannot exceed defined permission scope — least privilege bounds blast radius |
-| Verify business logic abuse scenarios identified | V11.1.2 | L2 | Rogue agent scenarios identified in business logic threat model — persistent hidden goal detection approach documented |
-| Verify application limits enforce business limits | V11.1.4 | L2 | Scope constraints enforced — rogue agent cannot self-expand capability or load additional tools |
+| Verify access control decisions logged | V7.2.1 | L2 | All agent actions logged — no production deployment without complete observability |
+| Verify all business logic decisions logged | V7.2.2 | L2 | All agent tool invocations and recommendations logged — systematic bias detectable through aggregate analysis |
+| Verify business logic limits prevent abuse | V11.1.2 | L2 | Scope constraints as business logic controls — rogue agent cannot exceed permission envelope |
+| Verify API rate limiting | V13.1.1 | L1 | Rate limiting prevents rogue agent from amplifying impact through API exhaustion |
 
 #### Mitigations by tier
 
 **Foundational (L1)**
-- V4.1.3: Enforce least privilege on all agent capabilities —
-  rogue agent with narrow scope causes bounded damage before
-  containment, implement before any production deployment
-- Operator-accessible kill switch — absolute V11 business
-  constraint, documented and tested before production
-- Enable comprehensive audit logging — no production agent
-  deployment without full V7.2 logging coverage
+- V13.1.1: Rate limiting on all agent API endpoints —
+  rogue agent cannot amplify impact through excessive
+  tool invocations
+- Scope constraints enforced at orchestration layer —
+  V11 business logic control, rogue agent cannot exceed
+  its permission envelope
 
 **Hardening (L2)**
-- V7.2.1/V7.2.2: Collect all agent security events and
-  business logic decisions in audit logs — integrate into
-  SIEM, behavioural baseline deviation generates tiered
-  response: log, alert, suspend, investigate
-- V11.1.2: Identify rogue agent scenarios in business logic
-  threat model — detection capability, blast radius, and
-  defined response procedures documented per deployment
-- V11.1.4: Enforce scope constraints at the orchestration
-  layer — rogue agent cannot self-expand capability
-  through any available mechanism
+- V7.2.1: Complete audit logging of all agent actions —
+  no production deployment without full observability,
+  L2 verification requirement
+- V7.2.2: All tool invocations and recommendations
+  logged — systematic bias detectable through aggregate
+  analysis across sessions
+- V11.1.2: Behavioural baseline as business logic
+  control — deviation from baseline triggers tiered
+  response as documented business logic behaviour
 
 **Advanced (L3)**
-- V7.2.1: Conduct rogue agent scenarios in penetration testing —
-  simulate persistent hidden goal pursuit across extended
-  sessions, verify detection capability through L3 assessment
-- Establish behavioural baseline — expected invocation
-  patterns and recommendation distributions documented,
-  deviation triggers defined response
-- Multi-agent consensus for high-stakes decisions — rogue
-  single agent cannot influence critical outputs without
-  cross-validation, verified in L3 business logic testing
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| Langfuse | Open-source | https://langfuse.com |
-| Helicone | Open-source | https://www.helicone.ai |
-| Wazuh | Open-source | https://wazuh.com |
+- V7.2.2: Rogue agent red team at L3 — simulate
+  persistent hidden goal pursuit, verify detection
+  capability via aggregate log analysis, document
+  maximum dwell time before detection
+- V11.1.2: Multi-agent consensus for high-stakes
+  decisions — rogue single agent cannot influence
+  critical outcomes without cross-validation
 
 #### Cross-references
 - LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI16 Endpoint and Browser Overreach
-- Other frameworks: AIUC-1 B001/B002/C/E · EU AI Act Art. 14/15 · ISA/IEC 62443 SR 3.7 (OT)
+- DSGAI 2026: DSGAI16 Endpoint & Browser Overreach
+- Other frameworks: ISO 27001 A.8.16/A.8.15 · AIUC-1 B001/B002/C/E · CWE-284
 
 ---
 
-## ASVS verification checklist for agentic AI applications
+## ASVS verification checklist for agentic AI
 
 ### L1 — Baseline (all agentic deployments)
 
-- [ ] V5.1.1: Input validation on all agent input channels — including indirect content sources
-- [ ] V5.2.4: No eval or dynamic code execution of agent-generated content
-- [ ] V5.2.5: All agent-generated commands validated before execution
-- [ ] V4.1.1/V4.1.3: Least privilege on all agent tool and system access
-- [ ] V4.1.1: Irreversible tool operations protected — human confirmation required
-- [ ] V8.1.1: Agent memory stores do not cache sensitive data in cleartext
-- [ ] V9.1.1/V9.1.2: All A2A communication encrypted with validated certificates
-- [ ] V7.4.1: Graceful degradation — fail-safe defaults, no sensitive data in error responses
-- [ ] V13.1.1: Rate limiting on all agent API and A2A endpoints
-- [ ] V13.1.3: Payload and token limits enforced on all agent interfaces
+- [ ] V5.1.1: Input validation on all agent input channels
+- [ ] V5.2.1: Advisory labels on all agent outputs — rendering layer enforcement
+- [ ] V5.2.4: No eval or exec of agent-generated code
+- [ ] V5.2.5: No raw agent output in shell context
+- [ ] V5.3.5: No raw agent output in SQL context
+- [ ] V4.1.1/V4.1.3: Least privilege on all agent tool and credential access
+- [ ] V2.1.1: No hardcoded agent credentials
+- [ ] V9.1.1: All A2A communication encrypted (mutual TLS)
+- [ ] V3.3.1: Replay protection on all A2A messages
+- [ ] V13.1.1: Rate limiting on all agent API endpoints
+- [ ] V7.4.1: Cascade errors handled gracefully
 
-### L2 — Standard (agentic deployments with sensitive data)
+### L2 — Standard (deployments with sensitive data or autonomous action)
 
-- [ ] V1.1.2: All agent data flows in threat model — every content source mapped
-- [ ] V7.2.1/V7.2.2: All agent security events and business logic decisions logged
-- [ ] V10.2.1/V10.2.2: Agent supply chain — CVE scanning, approved component list
-- [ ] V14.2.2: Build pipeline includes agent component integrity verification
-- [ ] V11.1.2: Business logic abuse scenarios identified — goal hijack, tool misuse, rogue agent
-- [ ] V11.1.4: Business logic limits enforced — cascade depth, scope constraints, approval flows
-- [ ] V2.6.1: Agent credentials generated with sufficient entropy
-- [ ] V2.10.1: No hardcoded agent credentials anywhere
-- [ ] V6.1.1: All agent memory content encrypted at rest
-- [ ] V12.1.1: Content validation on agent memory and code execution ingestion
+- [ ] V1.1.2: All agent data flows threat-modelled
+- [ ] V6.1.1: All agent credentials and memory stores encrypted at rest
+- [ ] V7.2.1: All agent access control decisions logged
+- [ ] V7.2.2: All agent tool invocations and recommendations logged
+- [ ] V10.2.1: Agent component CVEs in vulnerability management
+- [ ] V10.2.2: Approved component list enforced
+- [ ] V11.1.1: Cascade blast radius and AI advisory limitations documented
+- [ ] V11.1.2: Circuit breakers and scope constraints as business logic controls
+- [ ] V14.2.2: Build pipeline includes agent component integrity checks
+- [ ] V14.2.3: Agent credentials not in source code
 
-### L3 — Advanced (high-assurance agentic deployments)
+### L3 — Advanced (high-assurance, high-consequence deployments)
 
-- [ ] Goal hijack adversarial testing — all indirect injection surfaces covered
-- [ ] Tool misuse penetration testing — destructive parameter injection scenarios
-- [ ] Agent credential abuse — lateral movement testing
-- [ ] Supply chain adversarial testing — compromised component introduction
-- [ ] Sandbox escape testing for any code execution agents
-- [ ] A2A security testing — spoofing, replay, MITM scenarios
-- [ ] Cascade resilience testing — circuit breaker effectiveness under adversarial load
-- [ ] Rogue agent penetration testing — persistent hidden goal simulation
-- [ ] V11.1.6: Timing issues in multi-agent coordination identified and resolved
-- [ ] V14.5.1: Trust exploitation scenarios tested — approval flow bypass verification
+- [ ] Adversarial goal hijack testing covering all indirect injection surfaces
+- [ ] Adversarial tool chain exploitation testing
+- [ ] Sandbox escape testing for code execution agents
+- [ ] A2A security penetration testing — spoofing, replay, schema
+- [ ] Cascade resilience under adversarial load
+- [ ] Rogue agent detection red team — aggregate log analysis verification
+- [ ] Supply chain integrity testing — compromised component detection
 
 ---
 
@@ -851,22 +633,20 @@ available to a rogue agent regardless of its internal goal state.
 
 | Phase | ASI entries | ASVS level | Priority requirements |
 |---|---|---|---|
-| 1 — L1 baseline | ASI01, ASI02, ASI07, ASI08 | L1 | V5.1.1, V4.1.3, V9.1.1, V13.1.1 |
-| 2 — L1 complete | ASI03, ASI05, ASI09 | L1 | V4.1.1, V5.2.4, V7.4.1 |
-| 3 — L2 standard | ASI04, ASI06, ASI10 | L2 | V10.2.1, V7.2.1, V6.1.1, V11.1.4 |
-| 4 — L2 complete | ASI08, ASI10 | L2 | V11.1.2, V11.1.4 — business logic abuse scenarios |
-| 5 — L3 advanced | All | L3 | Adversarial testing, red team, rogue agent simulation |
+| 1 — L1 baseline | ASI01, ASI02, ASI05, ASI08 | L1 | V5.1.1, V4.1.3, V5.2.4, V13.1.1 |
+| 2 — L1 complete | ASI03, ASI07, ASI09 | L1 | V2.1.1, V9.1.1, V3.3.1, V5.2.1 |
+| 3 — L2 standard | ASI04, ASI06, ASI10 | L2 | V10.2.1, V7.2.1/V7.2.2, V6.1.1 |
+| 4 — L2 complete | ASI08, ASI09 | L2 | V11.1.1, V11.1.2 |
+| 5 — L3 advanced | All | L3 | Adversarial testing, red team, chaos engineering |
 
 ---
 
 ## References
 
-- OWASP ASVS 4.0.3: https://owasp.org/www-project-application-security-verification-standard/
-- OWASP ASVS GitHub: https://github.com/OWASP/ASVS
-- OWASP Agentic Top 10 2026: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
-- OWASP NHI Top 10: https://owasp.org/www-project-non-human-identities-top-10/
-- OWASP AI Testing Guide: https://owasp.org/www-project-ai-testing-guide/
-- LLM Top 10 x ASVS mapping: see LLM_ASVS.md in this repository
+- [OWASP ASVS 4.0.3](https://owasp.org/www-project-application-security-verification-standard/)
+- [OWASP ASVS GitHub](https://github.com/OWASP/ASVS)
+- [OWASP Agentic Top 10 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [OWASP AI Testing Guide](https://owasp.org/www-project-ai-testing-guide/)
 
 ---
 
@@ -874,7 +654,7 @@ available to a rogue agent regardless of its internal goal state.
 
 | Date | Version | Change | Author |
 |---|---|---|---|
-| 2026-03-25 | 2026-Q1 | Initial mapping — ASI01-ASI10 full entries with L1/L2/L3 verification requirements and full checklist | OWASP GenAI Data Security Initiative |
+| 2026-03-26 | 2026-Q1 | Initial mapping — ASI01–ASI10 full entries with L1/L2/L3 verification requirements | OWASP GenAI Data Security Initiative |
 
 ---
 
