@@ -1,6 +1,6 @@
 <!--
   GenAI Security Crosswalk
-  Maintained by: OWASP GenAI Data Security Initiative — https://genai.owasp.org
+  Maintained by: OWASP GenAI Data Security Initiative â€” https://genai.owasp.org
   License     : CC BY-SA 4.0
 -->
 
@@ -14,7 +14,7 @@
 [![Frameworks](https://img.shields.io/badge/frameworks-16-orange)](README.md)
 
 The most comprehensive publicly available mapping of OWASP GenAI
-security risks to industry frameworks — covering LLM applications,
+security risks to industry frameworks â€” covering LLM applications,
 autonomous agentic AI, and GenAI data security across **16 frameworks**
 and **3 OWASP source lists**.
 
@@ -38,9 +38,9 @@ All free. All open-source. Built for practitioners.
 
 | List | Entries | Version | Status |
 |---|---|---|---|
-| [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) | LLM01–LLM10 | 2025 | ? 14 framework mappings |
-| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01–ASI10 | 2026 | ? 13 framework mappings |
-| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01–DSGAI21 | 2026 | ? 9 framework mappings |
+| [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) | LLM01â€“LLM10 | 2025 | ? 14 framework mappings |
+| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01â€“ASI10 | 2026 | ? 13 framework mappings |
+| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01â€“DSGAI21 | 2026 | ? 9 framework mappings |
 
 ---
 
@@ -54,22 +54,22 @@ All free. All open-source. Built for practitioners.
 | [ISO/IEC 27001:2022](https://www.iso.org/standard/82875.html) | ? | ? | ? |
 | [NIST CSF 2.0](https://www.nist.gov/cyberframework) | ? | ? | ? |
 | [ISA/IEC 62443](https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards) | ? | ? | ? |
-| [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) | ? | ? | — |
-| [CIS Controls v8.1](https://www.cisecurity.org/controls) | ? | ? | — |
-| [OWASP ASVS 4.0.3](https://owasp.org/www-project-application-security-verification-standard/) | ? | ? | — |
-| [SOC 2 Trust Services Criteria](https://www.aicpa-cima.com/resources/landing/2017-trust-services-criteria) | ? | — | ? |
-| [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/) | ? | — | ? |
-| [ENISA Multilayer Framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) | ? | — | — |
-| [OWASP SAMM v2.0](https://owaspsamm.org/) | ? | — | — |
-| [NIST SP 800-82 Rev 3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf) | ? | — | — |
-| [AIUC-1](https://www.aiuc-1.com) | — | ? | — |
-| [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/) | — | ? | — |
+| [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) | ? | ? | â€” |
+| [CIS Controls v8.1](https://www.cisecurity.org/controls) | ? | ? | â€” |
+| [OWASP ASVS 4.0.3](https://owasp.org/www-project-application-security-verification-standard/) | ? | ? | â€” |
+| [SOC 2 Trust Services Criteria](https://www.aicpa-cima.com/resources/landing/2017-trust-services-criteria) | ? | â€” | ? |
+| [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/) | ? | â€” | ? |
+| [ENISA Multilayer Framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) | ? | â€” | â€” |
+| [OWASP SAMM v2.0](https://owaspsamm.org/) | ? | â€” | â€” |
+| [NIST SP 800-82 Rev 3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf) | ? | â€” | â€” |
+| [AIUC-1](https://www.aiuc-1.com) | â€” | ? | â€” |
+| [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/) | â€” | ? | â€” |
 
 ---
 
 ## All mapping files
 
-### LLM Top 10 2025 — 14 framework mappings
+### LLM Top 10 2025 â€” 14 framework mappings
 
 | File | Framework | Standout content |
 |---|---|---|
@@ -86,9 +86,9 @@ All free. All open-source. Built for practitioners.
 | [`LLM_SOC2.md`](llm-top10/LLM_SOC2.md) | SOC 2 Trust Services Criteria | TSC mapping for SaaS and cloud LLM deployments |
 | [`LLM_PCIDSS.md`](llm-top10/LLM_PCIDSS.md) | PCI DSS v4.0 | CHD scope guidance, Req 3/6/7/10/11/12 per vulnerability |
 | [`LLM_ENISA.md`](llm-top10/LLM_ENISA.md) | ENISA Multilayer Framework | L1/L2/L3 layer mapping, EU AI Act and NIS2 alignment table |
-| [`LLM_SAMM.md`](llm-top10/LLM_SAMM.md) | OWASP SAMM v2.0 | L1–L3 maturity roadmap per vulnerability, fillable scorecard |
+| [`LLM_SAMM.md`](llm-top10/LLM_SAMM.md) | OWASP SAMM v2.0 | L1â€“L3 maturity roadmap per vulnerability, fillable scorecard |
 
-### Agentic Top 10 2026 — 13 framework mappings
+### Agentic Top 10 2026 â€” 13 framework mappings
 
 | File | Framework | Standout content |
 |---|---|---|
@@ -103,10 +103,10 @@ All free. All open-source. Built for practitioners.
 | [`Agentic_OWASP_NHI.md`](agentic-top10/Agentic_OWASP_NHI.md) | OWASP NHI Top 10 | NHI-to-ASI full mapping, NHI programme maturity table |
 | [`Agentic_CISControls.md`](agentic-top10/Agentic_CISControls.md) | CIS Controls v8.1 | IG1/IG2/IG3 tiered safeguards, agentic NHI as CIS 5 |
 | [`Agentic_ASVS.md`](agentic-top10/Agentic_ASVS.md) | OWASP ASVS 4.0.3 | L1/L2/L3 verification checklist for agentic deployments |
-| [`Agentic_AITG.md`](agentic-top10/Agentic_AITG.md) | OWASP AI Testing Guide | 50 test cases across ASI01–ASI10, pre-deployment gates |
+| [`Agentic_AITG.md`](agentic-top10/Agentic_AITG.md) | OWASP AI Testing Guide | 50 test cases across ASI01â€“ASI10, pre-deployment gates |
 | [`Agentic_AIVSS.md`](agentic-top10/Agentic_AIVSS.md) | OWASP AIVSS | Dual-scenario scoring (supervised vs autonomous), autonomy premium analysis |
 
-### DSGAI 2026 — 9 framework mappings
+### DSGAI 2026 â€” 9 framework mappings
 
 | File | Framework | Standout content |
 |---|---|---|
@@ -124,7 +124,7 @@ All free. All open-source. Built for practitioners.
 
 | File | Contents |
 |---|---|
-| [`shared/RECIPES.md`](shared/RECIPES.md) | 13 security implementation patterns — RAG, MCP, OT agentic |
+| [`shared/RECIPES.md`](shared/RECIPES.md) | 13 security implementation patterns â€” RAG, MCP, OT agentic |
 | [`shared/TOOLS.md`](shared/TOOLS.md) | 40+ open-source security tools catalogue |
 | [`shared/GLOSSARY.md`](shared/GLOSSARY.md) | Unified terminology across LLM/ASI/DSGAI |
 | [`shared/SEVERITY.md`](shared/SEVERITY.md) | Severity definitions and AIVSS alignment |
@@ -140,58 +140,58 @@ GenAI-Security-Crosswalk/
 +-- CHANGELOG.md            ? Version history
 +-- SECURITY.md             ? Vulnerability disclosure policy
 +-- CODE_OF_CONDUCT.md      ? Contributor code of conduct
-¦
-+-- llm-top10/              ? LLM01–LLM10 × 14 frameworks ?
-¦   +-- LLM_MITREATLAS.md
-¦   +-- LLM_NISTAIRMF.md
-¦   +-- LLM_EUAIAct.md
-¦   +-- LLM_ISO27001.md
-¦   +-- LLM_ISO42001.md
-¦   +-- LLM_CISControls.md
-¦   +-- LLM_ASVS.md
-¦   +-- LLM_ISA62443.md       ? OT/ICS
-¦   +-- LLM_NISTSP80082.md    ? OT/ICS
-¦   +-- LLM_NISTCSF2.md
-¦   +-- LLM_SOC2.md
-¦   +-- LLM_PCIDSS.md
-¦   +-- LLM_ENISA.md          ? EU/NIS2
-¦   +-- LLM_SAMM.md           ? Maturity model
-¦
-+-- agentic-top10/          ? ASI01–ASI10 × 13 frameworks ?
-¦   +-- Agentic_AIUC1.md
-¦   +-- Agentic_MITREATLAS.md
-¦   +-- Agentic_NISTAIRMF.md
-¦   +-- Agentic_EUAIAct.md
-¦   +-- Agentic_ISO27001.md
-¦   +-- Agentic_ISO42001.md
-¦   +-- Agentic_NISTCSF2.md
-¦   +-- Agentic_ISA62443.md   ? OT/ICS
-¦   +-- Agentic_OWASP_NHI.md  ? Identity
-¦   +-- Agentic_CISControls.md
-¦   +-- Agentic_ASVS.md
-¦   +-- Agentic_AITG.md       ? Testing
-¦   +-- Agentic_AIVSS.md      ? Scoring
-¦   +-- Agentic_CWE_CVE.md    ? Weakness taxonomy
-¦
-+-- dsgai-2026/             ? DSGAI01–DSGAI21 × 9 frameworks ?
-¦   +-- DSGAI_ISO27001.md
-¦   +-- DSGAI_NISTAIRMF.md
-¦   +-- DSGAI_EUAIAct.md
-¦   +-- DSGAI_NISTCSF2.md
-¦   +-- DSGAI_MITREATLAS.md
-¦   +-- DSGAI_ISA62443.md     ? OT/ICS
-¦   +-- DSGAI_SOC2.md
-¦   +-- DSGAI_PCIDSS.md
-¦
+Â¦
++-- llm-top10/              ? LLM01â€“LLM10 Ã— 14 frameworks ?
+Â¦   +-- LLM_MITREATLAS.md
+Â¦   +-- LLM_NISTAIRMF.md
+Â¦   +-- LLM_EUAIAct.md
+Â¦   +-- LLM_ISO27001.md
+Â¦   +-- LLM_ISO42001.md
+Â¦   +-- LLM_CISControls.md
+Â¦   +-- LLM_ASVS.md
+Â¦   +-- LLM_ISA62443.md       ? OT/ICS
+Â¦   +-- LLM_NISTSP80082.md    ? OT/ICS
+Â¦   +-- LLM_NISTCSF2.md
+Â¦   +-- LLM_SOC2.md
+Â¦   +-- LLM_PCIDSS.md
+Â¦   +-- LLM_ENISA.md          ? EU/NIS2
+Â¦   +-- LLM_SAMM.md           ? Maturity model
+Â¦
++-- agentic-top10/          ? ASI01â€“ASI10 Ã— 13 frameworks ?
+Â¦   +-- Agentic_AIUC1.md
+Â¦   +-- Agentic_MITREATLAS.md
+Â¦   +-- Agentic_NISTAIRMF.md
+Â¦   +-- Agentic_EUAIAct.md
+Â¦   +-- Agentic_ISO27001.md
+Â¦   +-- Agentic_ISO42001.md
+Â¦   +-- Agentic_NISTCSF2.md
+Â¦   +-- Agentic_ISA62443.md   ? OT/ICS
+Â¦   +-- Agentic_OWASP_NHI.md  ? Identity
+Â¦   +-- Agentic_CISControls.md
+Â¦   +-- Agentic_ASVS.md
+Â¦   +-- Agentic_AITG.md       ? Testing
+Â¦   +-- Agentic_AIVSS.md      ? Scoring
+Â¦   +-- Agentic_CWE_CVE.md    ? Weakness taxonomy
+Â¦
++-- dsgai-2026/             ? DSGAI01â€“DSGAI21 Ã— 9 frameworks ?
+Â¦   +-- DSGAI_ISO27001.md
+Â¦   +-- DSGAI_NISTAIRMF.md
+Â¦   +-- DSGAI_EUAIAct.md
+Â¦   +-- DSGAI_NISTCSF2.md
+Â¦   +-- DSGAI_MITREATLAS.md
+Â¦   +-- DSGAI_ISA62443.md     ? OT/ICS
+Â¦   +-- DSGAI_SOC2.md
+Â¦   +-- DSGAI_PCIDSS.md
+Â¦
 +-- shared/                 ? Practitioner resources
-¦   +-- RECIPES.md          ? 13 security implementation patterns
-¦   +-- TOOLS.md            ? 40+ open-source tool catalogue
-¦   +-- GLOSSARY.md         ? Unified terminology
-¦   +-- SEVERITY.md         ? Severity definitions
-¦
+Â¦   +-- RECIPES.md          ? 13 security implementation patterns
+Â¦   +-- TOOLS.md            ? 40+ open-source tool catalogue
+Â¦   +-- GLOSSARY.md         ? Unified terminology
+Â¦   +-- SEVERITY.md         ? Severity definitions
+Â¦
 +-- data/
-¦   +-- schema.json         ? Machine-readable mapping schema
-¦
+Â¦   +-- schema.json         ? Machine-readable mapping schema
+Â¦
 +-- i18n/
     +-- README.md           ? Translation contribution guide
 ```
@@ -215,9 +215,9 @@ GenAI-Security-Crosswalk/
 ? [`llm-top10/LLM_NISTSP80082.md`](llm-top10/LLM_NISTSP80082.md)
 
 **I am deploying autonomous agents:**
-? [`agentic-top10/Agentic_OWASP_NHI.md`](agentic-top10/Agentic_OWASP_NHI.md) — identity
-? [`agentic-top10/Agentic_AIUC1.md`](agentic-top10/Agentic_AIUC1.md) — governance
-? [`agentic-top10/Agentic_AIVSS.md`](agentic-top10/Agentic_AIVSS.md) — risk scoring
+? [`agentic-top10/Agentic_OWASP_NHI.md`](agentic-top10/Agentic_OWASP_NHI.md) â€” identity
+? [`agentic-top10/Agentic_AIUC1.md`](agentic-top10/Agentic_AIUC1.md) â€” governance
+? [`agentic-top10/Agentic_AIVSS.md`](agentic-top10/Agentic_AIVSS.md) â€” risk scoring
 
 **I need to build an ISO 27001 ISMS extension for GenAI:**
 ? [`llm-top10/LLM_ISO27001.md`](llm-top10/LLM_ISO27001.md)
@@ -235,13 +235,13 @@ GenAI-Security-Crosswalk/
 ? [`dsgai-2026/DSGAI_MITREATLAS.md`](dsgai-2026/DSGAI_MITREATLAS.md)
 
 **I need to score agentic risk for a risk register:**
-? [`agentic-top10/Agentic_AIVSS.md`](agentic-top10/Agentic_AIVSS.md) — includes autonomy premium analysis
+? [`agentic-top10/Agentic_AIVSS.md`](agentic-top10/Agentic_AIVSS.md) â€” includes autonomy premium analysis
 
 **I need to build a security test plan for agentic AI:**
-? [`agentic-top10/Agentic_AITG.md`](agentic-top10/Agentic_AITG.md) — 50 test cases
+? [`agentic-top10/Agentic_AITG.md`](agentic-top10/Agentic_AITG.md) â€” 50 test cases
 
 **I need concrete implementation code, not framework mappings:**
-? [`shared/RECIPES.md`](shared/RECIPES.md) — 13 production patterns with working Python
+? [`shared/RECIPES.md`](shared/RECIPES.md) â€” 13 production patterns with working Python
 
 **I need CWE root causes and CVE evidence for agentic risks:**
 ? [`agentic-top10/Agentic_CWE_CVE.md`](agentic-top10/Agentic_CWE_CVE.md)
@@ -253,31 +253,31 @@ GenAI-Security-Crosswalk/
 
 ## Standout coverage
 
-**Complete OT/ICS trilogy** — the only publicly available mapping of
+**Complete OT/ICS trilogy** â€” the only publicly available mapping of
 all three OWASP GenAI source lists to ISA/IEC 62443 and NIST SP
 800-82 Rev 3. Includes zone model, security level ratings, FR/SR
 references, OT-specific threat scenarios, and pre-deployment
 checklists. `DSGAI_ISA62443.md` contains the RAG corpus poisoning
-scenario — a SafetyProcedure manipulation attack requiring no OT
-network access — that exists nowhere else in public documentation.
+scenario â€” a SafetyProcedure manipulation attack requiring no OT
+network access â€” that exists nowhere else in public documentation.
 
-**Agentic AI autonomy premium** — `Agentic_AIVSS.md` quantifies
+**Agentic AI autonomy premium** â€” `Agentic_AIVSS.md` quantifies
 what removing human oversight actually costs in risk: average +1.79
 AIVSS severity points across all 10 agentic entries. Converts 7 of
 10 entries from High to Critical. The quantitative case for mandatory
 human oversight in the EU AI Act context.
 
-**Complete agentic identity coverage** — `Agentic_OWASP_NHI.md`
+**Complete agentic identity coverage** â€” `Agentic_OWASP_NHI.md`
 maps every NHI Top 10 entry to every ASI entry. The only public
 document translating agentic risks into the NHI controls that IAM
 teams already operate.
 
-**SAMM maturity roadmap** — `LLM_SAMM.md` includes a fillable
+**SAMM maturity roadmap** â€” `LLM_SAMM.md` includes a fillable
 scorecard with minimum viable maturity levels for production LLM
 deployments. The artefact security programme leads use to brief
 engineering leadership.
 
-**Implementation recipes** — `shared/RECIPES.md` contains 13
+**Implementation recipes** â€” `shared/RECIPES.md` contains 13
 production-ready security patterns with working Python code: access-
 controlled RAG retrieval, MCP descriptor integrity verification,
 JIT credential management, OT kill switch, behavioural baseline
@@ -287,7 +287,7 @@ monitoring, cascade containment, and human confirmation gates.
 
 ## Contributing
 
-Contributions are welcome — new framework mappings, updated controls,
+Contributions are welcome â€” new framework mappings, updated controls,
 new implementation recipes, translations, and tool additions.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the file template, PR
@@ -307,7 +307,7 @@ distribute your contributions under the same license.
 
 ## Acknowledgements
 
-Maintained by [Emmanuel Junior Rodrigues](https://github.com/emmanuelgjr)
+Maintained by [Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)
 and the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).
 
 Built on the work of the OWASP LLM Top 10, OWASP Agentic Top 10,
@@ -316,4 +316,4 @@ project teams.
 
 ---
 
-*[genai.owasp.org](https://genai.owasp.org) · [CC BY-SA 4.0](LICENSE)*
+*[genai.owasp.org](https://genai.owasp.org) Â· [CC BY-SA 4.0](LICENSE)*
