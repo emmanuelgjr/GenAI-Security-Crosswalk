@@ -7,6 +7,39 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.3.0] — 2026-03-27
+
+### Added
+
+#### New mapping files (3 added)
+
+| File | Framework | Note |
+|---|---|---|
+| `llm-top10/LLM_MAESTRO.md` | MAESTRO | Closes last gap — all three source lists now have MAESTRO coverage |
+| `dsgai-2026/DSGAI_ISO42001.md` | ISO/IEC 42001:2023 | Closes last gap — all three source lists now have ISO 42001 coverage |
+| `agentic-top10/Agentic_ENISA.md` | ENISA Multilayer Framework | Closes last gap — all three source lists now have ENISA coverage |
+
+#### README updates
+
+- Mapping file count updated: 45 — 48
+- LLM framework mapping count updated: 17 — 18
+- Agentic framework mapping count updated: 15 — 16
+- DSGAI framework mapping count updated: 13 — 14
+- Framework matrix: MAESTRO, ISO 42001, ENISA now show full ✅ across all three source lists
+- Repository structure tree updated for all new files
+
+#### Totals at v1.3.0
+
+| Metric | Count |
+|---|---|
+| Source lists | 3 |
+| Frameworks | 17 |
+| Mapping files | 48 |
+| Implementation recipes | 13 |
+| Tools catalogued | 40+ |
+
+---
+
 ## [1.2.0] — 2026-03-27
 
 ### Added

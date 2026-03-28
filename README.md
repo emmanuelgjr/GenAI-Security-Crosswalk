@@ -2,9 +2,9 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.2.0-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.3.0-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
-[![Mapping Files](https://img.shields.io/badge/mapping%20files-45-brightgreen)](README.md)
+[![Mapping Files](https://img.shields.io/badge/mapping%20files-48-brightgreen)](README.md)
 [![Frameworks](https://img.shields.io/badge/frameworks-17-orange)](README.md)
  
 > The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **17 frameworks** and **3 OWASP source lists**.
@@ -22,7 +22,7 @@ Every file answers one question: **which controls from framework X address vulne
 |---|---|
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
 | **17** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity |
-| **45** mapping files | Every source list entry × every applicable framework |
+| **48** mapping files | Every source list entry × every applicable framework |
 | **13** implementation recipes | Production-ready Python patterns |
 | **40+** open-source tools | Catalogued and organised by function |
  
@@ -34,9 +34,9 @@ All free. All open-source. Built for practitioners.
  
 | List | Entries | Version | Frameworks mapped |
 |---|---|---|---|
-| [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) | LLM01–LLM10 | 2025 | 17 |
-| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01–ASI10 | 2026 | 15 |
-| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01–DSGAI21 | 2026 | 13 |
+| [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) | LLM01–LLM10 | 2025 | 18 |
+| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01–ASI10 | 2026 | 16 |
+| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01–DSGAI21 | 2026 | 14 |
  
 ---
  
@@ -50,13 +50,13 @@ All free. All open-source. Built for practitioners.
 | [ISO/IEC 27001:2022](https://www.iso.org/standard/82875.html) | ✅ | ✅ | ✅ |
 | [NIST CSF 2.0](https://www.nist.gov/cyberframework) | ✅ | ✅ | ✅ |
 | [ISA/IEC 62443 — OT/ICS](https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards) | ✅ | ✅ | ✅ |
-| [MAESTRO — CSA](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | — | ✅ | ✅ |
-| [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) | ✅ | ✅ | — |
+| [MAESTRO — CSA](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | ✅ | ✅ | ✅ |
+| [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) | ✅ | ✅ | ✅ |
 | [CIS Controls v8.1](https://www.cisecurity.org/controls) | ✅ | ✅ | ✅ |
 | [OWASP ASVS 4.0.3](https://owasp.org/www-project-application-security-verification-standard/) | ✅ | ✅ | ✅ |
 | [SOC 2 Trust Services Criteria](https://www.aicpa-cima.com/resources/landing/2017-trust-services-criteria) | ✅ | — | ✅ |
 | [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/) | ✅ | — | ✅ |
-| [ENISA Multilayer Framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) | ✅ | — | ✅ |
+| [ENISA Multilayer Framework](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai) | ✅ | ✅ | ✅ |
 | [OWASP SAMM v2.0](https://owaspsamm.org/) | ✅ | — | — |
 | [NIST SP 800-82 Rev 3 — OT/ICS](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf) | ✅ | — | — |
 | [AIUC-1](https://www.aiuc-1.com) | — | ✅ | — |
@@ -66,7 +66,7 @@ All free. All open-source. Built for practitioners.
  
 ## All mapping files
  
-### LLM Top 10 2025 — 17 framework mappings
+### LLM Top 10 2025 — 18 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -87,8 +87,9 @@ All free. All open-source. Built for practitioners.
 | [LLM_STRIDE.md](llm-top10/LLM_STRIDE.md) | STRIDE | Six-category threat model per LLM entry with DFD integration guidance |
 | [LLM_CWE_CVE.md](llm-top10/LLM_CWE_CVE.md) | CWE / CVE | CWE root cause taxonomy and confirmed CVE evidence table per entry |
 | [LLM_AITG.md](llm-top10/LLM_AITG.md) | OWASP AI Testing Guide | Structured test cases per LLM entry with pass criteria and CI/CD integration guidance |
+| [LLM_MAESTRO.md](llm-top10/LLM_MAESTRO.md) | MAESTRO | Seven-layer architectural threat model, layer-to-LLM mapping, 90-minute threat modeling session guide |
 
-### Agentic Top 10 2026 — 15 framework mappings
+### Agentic Top 10 2026 — 16 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -106,10 +107,11 @@ All free. All open-source. Built for practitioners.
 | [Agentic_ASVS.md](agentic-top10/Agentic_ASVS.md) | OWASP ASVS 4.0.3 | L1/L2/L3 verification checklist for agentic deployments |
 | [Agentic_AITG.md](agentic-top10/Agentic_AITG.md) | OWASP AI Testing Guide | 50 structured test cases across ASI01–ASI10 with pre-deployment gates |
 | [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) | OWASP AIVSS | Dual-scenario scoring (supervised vs autonomous), +1.79 autonomy premium |
- 
+| [Agentic_ENISA.md](agentic-top10/Agentic_ENISA.md) | ENISA Multilayer Framework | L1/L2/L3 layer mapping, EU AI Act Art. 14/15/52 alignment, NIS2 Article 23 incident assessment guidance |
+
 > **Also in this folder:** [Agentic_CWE_CVE.md](agentic-top10/Agentic_CWE_CVE.md) — CWE root cause taxonomy, confirmed CVEs, full CWE cross-reference index.
- 
-### DSGAI 2026 — 13 framework mappings
+
+### DSGAI 2026 — 14 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -126,6 +128,7 @@ All free. All open-source. Built for practitioners.
 | [DSGAI_CISControls.md](dsgai-2026/DSGAI_CISControls.md) | CIS Controls v8.1 | IG1/IG2/IG3 safeguards for all 21 entries, GenAI data security implementation groups |
 | [DSGAI_CWE_CVE.md](dsgai-2026/DSGAI_CWE_CVE.md) | CWE / CVE | CWE root cause taxonomy and confirmed CVE evidence for all 21 DSGAI entries |
 | [DSGAI_ENISA.md](dsgai-2026/DSGAI_ENISA.md) | ENISA Multilayer Framework | L1/L2/L3 layer mapping, EU AI Act and NIS2 alignment for all 21 DSGAI entries |
+| [DSGAI_ISO42001.md](dsgai-2026/DSGAI_ISO42001.md) | ISO/IEC 42001:2023 | AIMS controls per DSGAI entry, ISO 27001 integration guidance, A.7 data governance reference |
 
 ### Shared resources
  
@@ -167,9 +170,10 @@ GenAI-Security-Crosswalk/
 │   ├── LLM_SAMM.md                  ← Maturity model
 │   ├── LLM_STRIDE.md                ← Threat modeling
 │   ├── LLM_CWE_CVE.md               ← Root cause taxonomy + CVEs
-│   └── LLM_AITG.md                  ← AI Testing Guide
+│   ├── LLM_AITG.md                  ← AI Testing Guide
+│   └── LLM_MAESTRO.md               ← MAESTRO seven-layer threat model
 │
-├── agentic-top10/                   ← ASI01–ASI10 × 15 frameworks
+├── agentic-top10/                   ← ASI01–ASI10 × 16 frameworks
 │   ├── Agentic_AIUC1.md
 │   ├── Agentic_MITREATLAS.md
 │   ├── Agentic_NISTAIRMF.md
@@ -184,9 +188,10 @@ GenAI-Security-Crosswalk/
 │   ├── Agentic_ASVS.md
 │   ├── Agentic_AITG.md              ← AI Testing Guide — 50 test cases
 │   ├── Agentic_AIVSS.md             ← Risk scoring — autonomy premium
-│   └── Agentic_CWE_CVE.md           ← CWE taxonomy + confirmed CVEs
+│   ├── Agentic_CWE_CVE.md           ← CWE taxonomy + confirmed CVEs
+│   └── Agentic_ENISA.md             ← EU / NIS2
 │
-├── dsgai-2026/                      ← DSGAI01–DSGAI21 × 13 frameworks
+├── dsgai-2026/                      ← DSGAI01–DSGAI21 × 14 frameworks
 │   ├── DSGAI_ISO27001.md
 │   ├── DSGAI_NISTAIRMF.md
 │   ├── DSGAI_EUAIAct.md
@@ -199,7 +204,8 @@ GenAI-Security-Crosswalk/
 │   ├── DSGAI_ASVS.md                ← OWASP ASVS 4.0.3
 │   ├── DSGAI_CISControls.md         ← CIS Controls v8.1
 │   ├── DSGAI_CWE_CVE.md             ← Root cause taxonomy + CVEs
-│   └── DSGAI_ENISA.md               ← EU / NIS2
+│   ├── DSGAI_ENISA.md               ← EU / NIS2
+│   └── DSGAI_ISO42001.md            ← AI management system
 │
 ├── shared/
 │   ├── RECIPES.md                   ← 13 implementation patterns (Python code)
