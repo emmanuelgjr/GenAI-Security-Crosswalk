@@ -574,7 +574,26 @@
       "url": "https://github.com/great-expectations/great_expectations"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "ChatGPT indirect prompt injection via attacker-controlled web content",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-003"
+    },
+    {
+      "name": "Hugging Face model repository pickle-based malware supply chain",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-009"
+    },
+    {
+      "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-016"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM03",

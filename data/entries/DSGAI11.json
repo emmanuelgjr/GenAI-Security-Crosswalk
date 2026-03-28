@@ -516,7 +516,14 @@
       "url": "https://portswigger.net/burp/communitydownload"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "OpenAI Redis caching bug exposes user conversation history",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-006"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM02",

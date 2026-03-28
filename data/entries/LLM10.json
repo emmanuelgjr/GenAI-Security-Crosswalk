@@ -600,7 +600,20 @@
       "url": "https://github.com/BerriAI/litellm"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Clarkesworld magazine overwhelmed by AI-generated fiction submissions",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-014"
+    },
+    {
+      "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-017"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM01",

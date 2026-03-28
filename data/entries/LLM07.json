@@ -559,7 +559,32 @@
       "url": "https://github.com/leondz/garak"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "GitHub Copilot reproduces verbatim licensed code and embedded secrets",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-008"
+    },
+    {
+      "name": "WormGPT — uncensored LLM sold for cybercrime on dark web forums",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-011"
+    },
+    {
+      "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2022,
+      "incident_id": "INC-013"
+    },
+    {
+      "name": "GPT-4 system prompt extraction via jailbreak in production deployments",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-018"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI01"

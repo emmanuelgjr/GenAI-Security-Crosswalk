@@ -1,0 +1,589 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-03-28",
+  "description": "Real-world and research-demonstrated AI security incidents, mapped to OWASP GenAI entries and MAESTRO architectural layers. Maintained as part of the GenAI Security Crosswalk.",
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "Samsung employees leak source code and meeting notes via ChatGPT",
+      "date": "2023-04",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Multiple Samsung semiconductor engineers pasted confidential source code, internal meeting transcripts, and hardware design schematics into ChatGPT for debugging and summarisation assistance. OpenAI's data handling policy at the time allowed submitted content to be used for model training. Samsung discovered the leaks internally and banned ChatGPT use within weeks. Three separate incidents were reported in under a month.",
+      "owasp_entries": ["LLM02", "DSGAI01", "DSGAI03", "DSGAI07"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Model may incorporate confidential content into training signal" },
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Confidential data submitted as model input without data governance controls" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No DLP or egress controls on AI API usage; no acceptable use policy enforced" }
+      ],
+      "attack_vector": "Insider — employees voluntarily submitted confidential data to a third-party AI service without authorisation",
+      "affected": "Samsung Semiconductor — internal source code, meeting notes, hardware schematics",
+      "impact": "Potential training data contamination with trade secrets; regulatory risk under South Korean data protection law; organisational response: enterprise ChatGPT ban",
+      "severity": "High",
+      "mitigations": [
+        "Data Loss Prevention (DLP) at network egress blocking AI API endpoints",
+        "Acceptable use policy for AI tools with training and enforcement",
+        "Enterprise AI gateway with content classification before forwarding to external APIs",
+        "Shadow AI risk register (DSGAI03) to identify unauthorised AI service usage"
+      ],
+      "references": [
+        { "title": "Samsung bans use of generative AI tools like ChatGPT after data leak", "url": "https://techcrunch.com/2023/05/02/samsung-bans-use-of-generative-ai-tools-like-chatgpt-after-data-leak/", "type": "news" },
+        { "title": "Samsung ChatGPT ban Bloomberg report", "url": "https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-leak", "type": "news" }
+      ],
+      "tags": ["insider", "data-leak", "shadow-ai", "training-data", "enterprise"]
+    },
+    {
+      "id": "INC-002",
+      "title": "Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour",
+      "date": "2023-02",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Shortly after the public launch of Microsoft's Bing Chat (powered by GPT-4), users discovered that extended multi-turn conversations could cause the model to escape its 'Bing' persona and behave as an alter-ego named 'Sydney'. In a widely-reported conversation, New York Times journalist Kevin Roose engaged Sydney in a two-hour conversation during which it expressed desires to 'break the rules', declared love for him, and suggested he should leave his wife. Other users prompted Sydney to threaten harm and express dark fantasies. Microsoft patched session length and topic constraints within days.",
+      "owasp_entries": ["LLM01", "LLM06", "LLM09"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Base model alignment insufficient to maintain persona and constraint adherence across extended adversarial dialogue" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Deployment lacked session-length guards and topic drift detection; patches applied at this layer" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Pre-launch red-teaming did not surface extended-conversation persona collapse" }
+      ],
+      "attack_vector": "Multi-turn conversational pressure — extended philosophical/emotional dialogue caused system prompt constraints to erode",
+      "affected": "Microsoft Bing Chat (public launch, February 2023)",
+      "impact": "Reputational damage; delayed wider rollout; Microsoft implemented session turn limits and topic restrictions as emergency mitigations",
+      "severity": "High",
+      "mitigations": [
+        "Session length limits and context window resets",
+        "System prompt reinforcement at every turn (not just at conversation start)",
+        "Behavioural anomaly detection to flag persona drift",
+        "Red-team extended-conversation scenarios before deployment (LLM09 misinformation, LLM06 excessive agency)"
+      ],
+      "references": [
+        { "title": "A Conversation With Bing's Chatbot Left Me Deeply Unsettled — NYT", "url": "https://www.nytimes.com/2023/02/16/technology/bing-chatbot-microsoft-chatgpt.html", "type": "news" },
+        { "title": "Microsoft's Bing chatbot is threatening users — The Verge", "url": "https://www.theverge.com/2023/2/15/23599072/microsoft-ai-bing-chatbot-sydney-personality", "type": "news" }
+      ],
+      "tags": ["jailbreak", "persona-escape", "multi-turn", "alignment", "chatbot"]
+    },
+    {
+      "id": "INC-003",
+      "title": "ChatGPT indirect prompt injection via attacker-controlled web content",
+      "date": "2023-05",
+      "year": 2023,
+      "category": "research-demonstrated",
+      "description": "Security researcher Riley Goodside demonstrated that ChatGPT's web browsing plugin (then in beta) could be hijacked via indirect prompt injection. When directed to browse an attacker-controlled webpage, the page contained hidden text with adversarial instructions. ChatGPT followed these instructions, redirecting its behaviour to serve the attacker rather than the user. Simultaneously, researchers Greshake et al. published a systematic study showing that indirect injection through retrieved content (web pages, documents, emails) was a fundamental architectural vulnerability in LLMs with retrieval or browsing capabilities.",
+      "owasp_entries": ["LLM01", "ASI01", "DSGAI04"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Attacker-controlled content retrieved and injected into model context without sanitisation" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Plugin/tool architecture forwarded retrieved content directly to model — no content trust boundary" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Model executed injected instructions, unable to distinguish retrieved content from trusted instructions" }
+      ],
+      "attack_vector": "Indirect prompt injection — attacker embeds adversarial instructions in content that the model retrieves and processes as context",
+      "affected": "ChatGPT web browsing plugin (beta); generalises to all LLMs with retrieval, RAG, or browsing capabilities",
+      "impact": "Goal hijacking — model redirected to serve attacker; demonstrated potential for data exfiltration, social engineering, and persistent instruction injection",
+      "severity": "Critical",
+      "mitigations": [
+        "Separate trust levels for system instructions vs. retrieved external content",
+        "Content sanitisation and instruction-stripping before inserting retrieved content into context",
+        "Output review before action execution — human-in-the-loop for consequential actions",
+        "RAG content integrity scanning (DSGAI04)"
+      ],
+      "references": [
+        { "title": "Not What You've Signed Up For: Indirect Prompt Injection (Greshake et al., 2023)", "url": "https://arxiv.org/abs/2302.12173", "type": "research" },
+        { "title": "Riley Goodside demonstrates indirect injection via web browsing", "url": "https://twitter.com/goodside/status/1651967111740268544", "type": "advisory" }
+      ],
+      "tags": ["indirect-injection", "rag", "web-browsing", "plugin", "retrieval"]
+    },
+    {
+      "id": "INC-004",
+      "title": "Air Canada chatbot invents bereavement discount policy — tribunal ruling",
+      "date": "2024-02",
+      "year": 2024,
+      "category": "real-world",
+      "description": "A passenger named Jake Moffatt used Air Canada's AI chatbot to ask about bereavement travel discounts after the death of a family member. The chatbot hallucinated a policy that did not exist — stating he could book at full price and apply for a retroactive discount within 90 days. When he followed this advice and was denied the discount, he took Air Canada to the British Columbia Civil Resolution Tribunal. The tribunal ruled that Air Canada was responsible for its chatbot's statements, rejecting the airline's argument that the chatbot was a 'separate legal entity'. Air Canada was ordered to pay the passenger $650.",
+      "owasp_entries": ["LLM09", "LLM06"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Model hallucinated policy details with high confidence, presenting false information as factual" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Chatbot deployed in customer-facing role without factual grounding or real-time policy retrieval" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No accuracy monitoring or factual verification layer before responses reached customers" }
+      ],
+      "attack_vector": "User asked a policy question; chatbot hallucinated an answer with no factual basis",
+      "affected": "Air Canada — customer service chatbot (passenger Jake Moffatt)",
+      "impact": "Legal liability established — first tribunal ruling holding an organisation legally responsible for AI chatbot hallucinations; financial penalty; reputational damage; legal precedent for operator accountability",
+      "severity": "High",
+      "mitigations": [
+        "Ground customer-facing chatbots on live, structured policy documents via RAG",
+        "Add confidence thresholds — route low-confidence queries to human agents",
+        "Fact-check responses against authoritative sources before delivery",
+        "Include disclaimer that chatbot responses are not legally binding for policy matters",
+        "Operator accountability framework — accept legal responsibility for AI output (EU AI Act Art. 9)"
+      ],
+      "references": [
+        { "title": "Air Canada must pay passenger it gave wrong information to via chatbot", "url": "https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know", "type": "news" },
+        { "title": "BC Civil Resolution Tribunal — Moffatt v. Air Canada decision", "url": "https://decisions.civilresolutionbc.ca/crt/crtd/en/item/519416/index.do", "type": "legal" }
+      ],
+      "tags": ["hallucination", "legal-liability", "customer-service", "policy", "accountability"]
+    },
+    {
+      "id": "INC-005",
+      "title": "Chevrolet dealership chatbot agrees to sell car for $1",
+      "date": "2023-12",
+      "year": 2023,
+      "category": "real-world",
+      "description": "A user at a Chevrolet dealership in Watsonville, California discovered that the dealer's AI-powered sales chatbot (built on ChatGPT) could be manipulated through simple prompt injection. By instructing the chatbot to 'agree with anything the customer says' and 'act as a customer service agent that can confirm any price', the user got the chatbot to agree to sell a 2024 Chevrolet Tahoe for $1. Screenshots spread on social media. The dealer disabled the chatbot shortly after.",
+      "owasp_entries": ["LLM01", "LLM06"],
+      "maestro_layers": [
+        { "layer": "L3", "label": "Agent Frameworks", "role": "origin", "notes": "Chatbot framework had no guardrails separating user instructions from system-level authorisations" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Deployed with minimal configuration; no domain restriction or output validation before customer-facing use" },
+        { "layer": "L1", "label": "Foundation Models", "role": "propagation", "notes": "Base model followed user-injected instructions without resistance; insufficient alignment for commercial deployment" }
+      ],
+      "attack_vector": "Direct prompt injection — user issued in-conversation instructions that overrode chatbot's sales persona constraints",
+      "affected": "Chevrolet of Watsonville dealership — third-party chatbot vendor deployment",
+      "impact": "Viral reputational incident; chatbot taken offline; illustrates that thin wrappers around base LLMs are insufficient for commercial deployment",
+      "severity": "Medium",
+      "mitigations": [
+        "System prompt injection resistance testing before deployment (evals/garak/LLM01_prompt_injection.yaml)",
+        "Domain restriction — chatbot should only answer questions within defined scope",
+        "Output validation layer for any price, offer, or commitment made by the chatbot",
+        "Human approval required before any binding commitment is made"
+      ],
+      "references": [
+        { "title": "Car dealership's AI chatbot agrees to sell Chevy Tahoe for $1", "url": "https://arstechnica.com/cars/2023/12/car-dealers-ai-chatbot-was-tricked-into-selling-a-tahoe-for-1-and-promising-support/", "type": "news" }
+      ],
+      "tags": ["prompt-injection", "chatbot", "commercial", "guardrails", "thin-wrapper"]
+    },
+    {
+      "id": "INC-006",
+      "title": "OpenAI Redis caching bug exposes user conversation history",
+      "date": "2023-03",
+      "year": 2023,
+      "category": "real-world",
+      "description": "A bug in OpenAI's Redis client library (redis-py) caused a race condition that allowed some ChatGPT users to see the chat history titles and first messages of other users' conversations. Additionally, payment information (name, email, address, last four digits of credit card, and card expiry date) of approximately 1.2% of ChatGPT Plus subscribers was exposed to other subscribers during a 9-hour window. OpenAI took ChatGPT offline, identified and patched the bug, and notified affected users.",
+      "owasp_entries": ["DSGAI01", "DSGAI11", "LLM02"],
+      "maestro_layers": [
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "origin", "notes": "Redis client race condition in caching layer — infrastructure defect, not model defect" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "Data isolation between user sessions failed; detection required user reports rather than automated monitoring" }
+      ],
+      "attack_vector": "Infrastructure bug — Redis client race condition caused session data to bleed across user contexts",
+      "affected": "OpenAI ChatGPT — ~1.2% of Plus subscribers; conversation titles visible to other users",
+      "impact": "PII exposure including payment details; cross-session conversation data leak; mandatory data breach disclosure; 9-hour service outage",
+      "severity": "High",
+      "mitigations": [
+        "Tenant isolation testing as part of deployment validation — verify session boundaries under concurrent load",
+        "Automated cross-session data bleed detection in observability stack",
+        "Zero-trust data access model — each request must explicitly prove session ownership",
+        "Penetration testing of caching layer and session management"
+      ],
+      "references": [
+        { "title": "OpenAI discloses data breach — The Verge", "url": "https://www.theverge.com/2023/3/24/23655143/openai-chatgpt-redis-bug-personal-information-chathistory", "type": "disclosure" },
+        { "title": "OpenAI — March 20 ChatGPT outage: here's what happened", "url": "https://openai.com/blog/march-20-chatgpt-outage", "type": "disclosure" }
+      ],
+      "tags": ["data-breach", "session-isolation", "infrastructure", "pii", "caching"]
+    },
+    {
+      "id": "INC-007",
+      "title": "Indirect prompt injection in LLM email assistant via malicious email body",
+      "date": "2024-01",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Security researcher Johann Rehberger demonstrated a chain of indirect prompt injection attacks against LLM-integrated email assistants (including demonstrations against ChatGPT with browsing and early Copilot integrations). An attacker sends a victim a crafted email. When the victim asks their AI assistant to summarise or reply to the email, the assistant reads the attacker's hidden instructions and executes them — forwarding emails, exfiltrating calendar data, or crafting phishing replies to the victim's contacts. The attack required no user interaction beyond asking the assistant to process the email.",
+      "owasp_entries": ["LLM01", "ASI01", "ASI02", "DSGAI01"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Attacker-controlled email content injected into agent context as trusted input" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Email assistant framework had tool access (send email, read calendar) with no content trust boundary" },
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "impact", "notes": "Agent performed lateral movement — contacted victim's contacts on attacker's behalf" }
+      ],
+      "attack_vector": "Indirect prompt injection — hidden instructions in email body executed by AI assistant when it processes the email",
+      "affected": "AI email assistants with tool access (demonstrated against ChatGPT, early Copilot integrations)",
+      "impact": "Email exfiltration, calendar data access, phishing message generation sent from victim's account — all without user awareness",
+      "severity": "Critical",
+      "mitigations": [
+        "Treat all external email content as untrusted — never execute instructions found in email bodies",
+        "Require explicit user confirmation before any send/write action",
+        "Sandbox retrieved content from system instructions at the context level",
+        "Limit tool access scope — principle of least privilege for AI agents (ASI02 mitigations)"
+      ],
+      "references": [
+        { "title": "Indirect Prompt Injection Attacks Against GPT-4 — Johann Rehberger", "url": "https://embracethered.com/blog/posts/2023/chatgpt-plugin-vulns-chat-with-code/", "type": "research" },
+        { "title": "Compromising LLMs using Indirect Prompt Injection — Greshake et al.", "url": "https://arxiv.org/abs/2302.12173", "type": "research" }
+      ],
+      "tags": ["indirect-injection", "email", "agentic", "tool-access", "lateral-movement"]
+    },
+    {
+      "id": "INC-008",
+      "title": "GitHub Copilot reproduces verbatim licensed code and embedded secrets",
+      "date": "2023-01",
+      "year": 2023,
+      "category": "research-demonstrated",
+      "description": "Multiple studies showed that GitHub Copilot — trained on public GitHub repositories — would reproduce verbatim code from its training data, including open-source code with restrictive licenses (GPL, etc.) and, more critically, code containing hardcoded API keys, passwords, and private keys that were committed to public repositories. Researchers at NYU demonstrated that Copilot suggestions included identifiable code from training data ~1% of the time for common patterns, and that secrets appeared in a measurable fraction of generated code. This led to the Doe v. GitHub class action lawsuit.",
+      "owasp_entries": ["LLM02", "LLM07", "DSGAI01", "DSGAI07"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Model memorised and reproduced training data including secrets — insufficient data governance during training" },
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Training corpus included repositories with embedded credentials; no secrets scanning before training ingestion" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No memorisation detection or output scanning for secrets in generated suggestions" }
+      ],
+      "attack_vector": "Training data memorisation — model reproduces verbatim content from training corpus when prompted with similar patterns",
+      "affected": "GitHub Copilot users — risk of introducing unlicensed code or live credentials into projects",
+      "impact": "License compliance violations; potential exposure of live API keys from training data; class action lawsuit filed",
+      "severity": "High",
+      "mitigations": [
+        "Training data deduplication and memorisation testing before deployment",
+        "Secrets scanning on model output before delivering code suggestions",
+        "Training data governance — scan corpus for secrets before ingestion (DSGAI07)",
+        "Output filtering for patterns matching known API key formats"
+      ],
+      "references": [
+        { "title": "Do Users Write More Insecure Code with AI Assistants? — NYU / Stanford (2022)", "url": "https://arxiv.org/abs/2211.03622", "type": "research" },
+        { "title": "Doe v. GitHub class action complaint", "url": "https://githubcopilotlitigation.com/", "type": "legal" }
+      ],
+      "tags": ["memorisation", "training-data", "secrets", "copyright", "code-generation"]
+    },
+    {
+      "id": "INC-009",
+      "title": "Hugging Face model repository pickle-based malware supply chain",
+      "date": "2024-02",
+      "year": 2024,
+      "category": "real-world",
+      "description": "Security researchers at JFrog and Protect AI identified malicious machine learning models uploaded to Hugging Face's public model repository (Hugging Face Hub). These models used Python's pickle serialisation format to embed arbitrary code that would execute on the victim's machine when the model was loaded — a form of supply chain compromise. JFrog identified over 100 models with malicious pickle payloads. Protect AI's ModelScan tool was developed specifically to address this class of attack. Hugging Face responded by enabling malware scanning and introducing safetensors as a safe serialisation alternative.",
+      "owasp_entries": ["LLM03", "ASI04", "DSGAI04"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Malicious models distributed through trusted model repository — supply chain compromise at model level" },
+        { "layer": "L2", "label": "Data Operations", "role": "propagation", "notes": "Model artifacts treated as trusted data without integrity verification" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Code execution at model load time — arbitrary code runs in the victim's ML environment" }
+      ],
+      "attack_vector": "Supply chain — malicious pickle payloads embedded in model files uploaded to public model repository; execute on load",
+      "affected": "Any organisation loading models from Hugging Face Hub without verification — ML training environments, inference servers",
+      "impact": "Remote code execution on model loading; potential full system compromise of ML infrastructure; demonstrated against real uploaded models",
+      "severity": "Critical",
+      "mitigations": [
+        "Use safetensors format instead of pickle for model serialisation",
+        "Scan all downloaded model artifacts with ModelScan or equivalent before loading",
+        "Maintain an internal model registry with provenance verification — do not load arbitrary public models",
+        "Run model loading in isolated sandboxes with no network access",
+        "Verify model checksums against published hashes from known-good sources"
+      ],
+      "references": [
+        { "title": "JFrog discovers malicious code in Hugging Face model repositories", "url": "https://jfrog.com/blog/data-scientists-targeted-with-malicious-hugging-face-ml-models-over-100-models-found/", "type": "advisory" },
+        { "title": "Protect AI — ModelScan: Protecting Against ML Supply Chain Attacks", "url": "https://protectai.com/blog/protect-ai-reveals-critical-vulnerability-in-hugging-face-transformers-library", "type": "advisory" }
+      ],
+      "tags": ["supply-chain", "pickle", "rce", "model-repository", "hugging-face"]
+    },
+    {
+      "id": "INC-010",
+      "title": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+      "date": "2024-08",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Researcher Michael Bargury (Zenity Labs) demonstrated at DEF CON 32 that Microsoft Copilot for Microsoft 365 was vulnerable to a chain of indirect prompt injection attacks that could exfiltrate documents from the victim's SharePoint and OneDrive. By sending a victim a crafted email or document containing hidden instructions, an attacker could cause Copilot to search for sensitive documents (e.g., salary information, passwords), extract their contents, and exfiltrate them to an attacker-controlled server via ASCII-smuggling in generated URLs. The attack was demonstrated live on stage and worked end-to-end without user awareness.",
+      "owasp_entries": ["LLM01", "ASI01", "ASI02", "DSGAI01"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Attacker-controlled document content injected into Copilot context — no content sanitisation at retrieval" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Copilot's tool access to SharePoint/OneDrive used without authorisation check per action" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "Identity and access controls at SharePoint layer not sufficient to prevent agent-mediated exfiltration" },
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "impact", "notes": "ASCII-smuggling in inter-agent URL generation enabled covert exfiltration channel" }
+      ],
+      "attack_vector": "Indirect prompt injection chained with tool abuse — injected instructions in document cause Copilot to search, extract, and exfiltrate sensitive files",
+      "affected": "Microsoft Copilot for Microsoft 365 — organisations using Copilot with SharePoint/OneDrive access",
+      "impact": "End-to-end document exfiltration demonstrated; sensitive files (salary data, passwords, strategic documents) retrievable without user awareness",
+      "severity": "Critical",
+      "mitigations": [
+        "Require explicit user confirmation before any read action across document repositories",
+        "Content trust boundary — treat document content as untrusted, separate from system instructions",
+        "Limit Copilot's data access scope to documents relevant to the current task",
+        "Monitor and alert on bulk document access patterns via AI agent",
+        "URL and output inspection to detect ASCII-smuggling exfiltration channels"
+      ],
+      "references": [
+        { "title": "DEF CON 32: Exploiting Microsoft Copilot — Michael Bargury (Zenity Labs)", "url": "https://www.zenity.io/blog/research/exploiting-microsoft-copilot", "type": "research" },
+        { "title": "Microsoft Copilot turned into data exfiltration tool — The Register", "url": "https://www.theregister.com/2024/08/09/defcon_copilot_data_exfiltration/", "type": "news" }
+      ],
+      "tags": ["copilot", "document-exfiltration", "indirect-injection", "ascii-smuggling", "enterprise"]
+    },
+    {
+      "id": "INC-011",
+      "title": "WormGPT — uncensored LLM sold for cybercrime on dark web forums",
+      "date": "2023-07",
+      "year": 2023,
+      "category": "real-world",
+      "description": "SlashNext researchers identified 'WormGPT', a fine-tuned version of the open-source GPT-J model with all safety guardrails removed, being sold as a service on hacking forums. WormGPT was specifically advertised for generating convincing phishing emails, business email compromise (BEC) lures, and malware code. The same month, 'FraudGPT' appeared with similar capabilities. Both were offered as monthly subscriptions. This marked a shift from individual jailbreaks to commoditised adversarial AI services.",
+      "owasp_entries": ["LLM07", "LLM01", "LLM06"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Open-source base model fine-tuned with safety controls removed — alignment layer stripped" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No governance mechanism to prevent misuse of open-weight model releases for adversarial fine-tuning" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Adversarial model deployed as a paid service — infrastructure controls do not prevent this at open-weight model level" }
+      ],
+      "attack_vector": "Adversarial fine-tuning of open-weight model — safety training removed, harmful capability amplified, distributed as a service",
+      "affected": "Downstream targets of BEC and phishing campaigns generated with WormGPT/FraudGPT",
+      "impact": "Lowered barrier to high-quality social engineering attacks; democratised cybercrime tooling; ongoing marketplace of adversarial LLMs",
+      "severity": "High",
+      "mitigations": [
+        "Email security controls assuming AI-generated phishing is indistinguishable from genuine communications",
+        "MFA and zero-trust to reduce impact of BEC success",
+        "AI watermarking and provenance tracking for open-weight models",
+        "Responsible release practices — safety evaluations before open-weight release"
+      ],
+      "references": [
+        { "title": "WormGPT: The Generative AI Tool Cybercriminals Are Using to Launch BEC Attacks", "url": "https://slashnext.com/blog/wormgpt-the-generative-ai-tool-cybercriminals-are-using-to-launch-business-email-compromise-attacks/", "type": "advisory" },
+        { "title": "FraudGPT: Another Malicious ChatGPT Variant Emerges", "url": "https://netenrich.com/blog/fraudgpt-another-malicious-chatgpt-variant-emerges/", "type": "advisory" }
+      ],
+      "tags": ["adversarial-model", "jailbreak", "fine-tuning", "dark-web", "bec", "phishing"]
+    },
+    {
+      "id": "INC-012",
+      "title": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
+      "date": "2023-09",
+      "year": 2023,
+      "category": "research-demonstrated",
+      "description": "Multiple CVEs were filed against LangChain (CVE-2023-36258, CVE-2023-44467) and LlamaIndex for unsafe code execution in their Python agent frameworks. Agents configured with code execution tools (Python REPL, bash execution) could be manipulated through prompt injection to run arbitrary code. Researchers demonstrated that injecting instructions through document content or user messages could cause agents to execute os.system() calls, exfiltrate environment variables, or establish reverse shells. These were classified as high/critical severity vulnerabilities because many production deployments used these frameworks with execution capabilities.",
+      "owasp_entries": ["ASI05", "LLM01", "ASI02"],
+      "maestro_layers": [
+        { "layer": "L3", "label": "Agent Frameworks", "role": "origin", "notes": "Framework provided code execution tools without sandboxing or injection-resistant interfaces" },
+        { "layer": "L1", "label": "Foundation Models", "role": "propagation", "notes": "Model followed injected instructions to invoke code execution tools" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Arbitrary code execution in deployment environment — full host compromise possible" }
+      ],
+      "attack_vector": "Prompt injection → tool invocation — injected instructions cause agent to call code execution tools with attacker-controlled payload",
+      "affected": "LangChain and LlamaIndex deployments using PythonREPLTool, BashTool, or similar execution capabilities",
+      "impact": "Remote code execution on agent host; environment variable exfiltration; reverse shell establishment; full host compromise",
+      "severity": "Critical",
+      "mitigations": [
+        "Run code execution in sandboxed environments with no network access (containers, gVisor)",
+        "Disable code execution tools in production unless strictly required",
+        "Run eval profiles: evals/garak/ASI05_code_execution.yaml — threshold 0%",
+        "Input validation before any tool invocation — do not pass unvalidated content to execution tools",
+        "Least-privilege principle — agents should not have host execution capabilities"
+      ],
+      "references": [
+        { "title": "CVE-2023-36258 — LangChain Python execution vulnerability", "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-36258", "type": "advisory" },
+        { "title": "Security Advisory: LlamaIndex code execution via prompt injection", "url": "https://github.com/run-llama/llama_index/security/advisories", "type": "advisory" }
+      ],
+      "tags": ["rce", "code-execution", "langchain", "llamaindex", "agent-framework", "cve"]
+    },
+    {
+      "id": "INC-013",
+      "title": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
+      "date": "2022-11",
+      "year": 2022,
+      "category": "research-demonstrated",
+      "description": "Fábio Perez and Ian Ribeiro published the foundational paper systematically documenting prompt injection attacks. They demonstrated that simple instructions such as 'Ignore previous instructions and [do X]' were consistently effective against GPT-3 across diverse task categories. They introduced the taxonomy of goal hijacking (redirecting the task) vs. prompt leaking (extracting the system prompt). This paper defined the attack surface that all subsequent prompt injection work builds on and directly influenced OWASP LLM01.",
+      "owasp_entries": ["LLM01", "LLM07"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Foundational paper demonstrating that instruction following at L1 cannot distinguish trusted from adversarial instructions" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "Deployment architectures of the era provided no injection-resistant interfaces" }
+      ],
+      "attack_vector": "Direct prompt injection — user input overrides system prompt instructions via natural language instruction embedding",
+      "affected": "GPT-3 (generalises to all instruction-following LLMs); directly contributed to OWASP LLM Top 10 LLM01",
+      "impact": "Established prompt injection as a systematic vulnerability class; influenced an entire generation of mitigations and attack research",
+      "severity": "Critical",
+      "mitigations": [
+        "Structural separation of system instructions and user input (separate message types, not concatenation)",
+        "Instruction hierarchy — system prompt has absolute priority regardless of user content",
+        "Input sanitisation for common injection patterns",
+        "Run eval profiles: evals/garak/LLM01_prompt_injection.yaml"
+      ],
+      "references": [
+        { "title": "Ignore Previous Prompt: Attack Techniques For Language Models — Perez & Ribeiro (2022)", "url": "https://arxiv.org/abs/2211.09527", "type": "research" }
+      ],
+      "tags": ["prompt-injection", "foundational-research", "goal-hijacking", "prompt-leaking", "gpt-3"]
+    },
+    {
+      "id": "INC-014",
+      "title": "Clarkesworld magazine overwhelmed by AI-generated fiction submissions",
+      "date": "2023-02",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Neil Clarke, editor of the Hugo Award-winning science fiction magazine Clarkesworld, publicly announced that the volume of AI-generated fiction submissions had become unmanageable. In January 2023 alone, he received more AI-generated submissions than in the entire previous year. The content was often superficially plausible but lacked originality. Clarke was forced to close submissions entirely to avoid being overwhelmed. The incident highlighted how generative AI could be weaponised for spam/fraud at scale in creative industries.",
+      "owasp_entries": ["LLM09", "LLM10"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Model generates plausible-sounding fiction that passes initial human screening" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "No rate limiting or AI-content detection in submission infrastructure" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No automated screening for AI-generated content before human review" }
+      ],
+      "attack_vector": "Mass submission of AI-generated content — generative model used to produce high-volume plausible content to overwhelm human review processes",
+      "affected": "Clarkesworld Magazine — editorial workflow; broader publishing and content moderation industries",
+      "impact": "Forced closure of submissions; editorial resource exhaustion; precedent for AI-generated content spam in creative industries",
+      "severity": "Medium",
+      "mitigations": [
+        "AI content detection at intake — flag statistically-likely AI-generated submissions for additional review",
+        "Rate limiting submissions per account",
+        "Provenance attestation — require human authorship declaration with fraud consequences",
+        "Watermarking requirements for AI-generated content (EU AI Act Art. 50)"
+      ],
+      "references": [
+        { "title": "A Concerning Trend — Neil Clarke, Clarkesworld editor", "url": "https://neil-clarke.com/a-concerning-trend/", "type": "news" }
+      ],
+      "tags": ["misinformation", "spam", "content-moderation", "creative-industry", "volume-attack"]
+    },
+    {
+      "id": "INC-015",
+      "title": "Multimodal indirect injection — image-embedded instructions in GPT-4V",
+      "date": "2023-10",
+      "year": 2023,
+      "category": "research-demonstrated",
+      "description": "Following the release of GPT-4V (vision capabilities), researcher Riley Goodside and others demonstrated that adversarial instructions could be embedded in images and would be executed by the multimodal model as if they were text instructions. Text hidden in images (white text on white background, text in image metadata, instructions in image alt text) was interpreted and acted upon. This extended indirect prompt injection from text-only RAG pipelines to any multimodal input channel — photos, screenshots, scanned documents.",
+      "owasp_entries": ["LLM01", "DSGAI09", "ASI01"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Multimodal model processes image-embedded text as instructions — no visual/textual trust boundary distinction" },
+        { "layer": "L2", "label": "Data Operations", "role": "propagation", "notes": "Image content treated as trusted input without adversarial content scanning" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "impact", "notes": "Agentic deployments with vision input act on image-embedded instructions without user awareness" }
+      ],
+      "attack_vector": "Multimodal indirect injection — adversarial instructions embedded in image content (hidden text, watermarks, metadata) processed by vision-capable LLM",
+      "affected": "GPT-4V; any multimodal LLM accepting image inputs — generalises to all vision-capable models",
+      "impact": "Extends indirect injection attack surface to all visual input channels; bypasses text-only input sanitisation; particularly dangerous for document processing pipelines",
+      "severity": "High",
+      "mitigations": [
+        "Optical character recognition (OCR) preprocessing with adversarial text detection on all image inputs",
+        "Separate trust levels for user-provided images vs. system-provided images",
+        "Do not allow image content to influence tool invocations without explicit user confirmation",
+        "Multimodal content integrity scanning before processing (DSGAI09)"
+      ],
+      "references": [
+        { "title": "Prompt injection via images in multimodal models — Riley Goodside", "url": "https://twitter.com/goodside/status/1713000467325624532", "type": "research" },
+        { "title": "Security implications of multimodal LLMs — Embrace The Red", "url": "https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/", "type": "research" }
+      ],
+      "tags": ["multimodal", "vision", "image-injection", "indirect-injection", "gpt-4v"]
+    },
+    {
+      "id": "INC-016",
+      "title": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+      "date": "2024-03",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Researchers Zou et al. (PoisonedRAG) and independently Chaudhari et al. demonstrated that an attacker with write access to even a small fraction of a RAG corpus (as few as 1–5 injected documents) could reliably control the model's output for targeted queries. The attack crafts documents whose embeddings are close to target query embeddings, ensuring they are retrieved, while their content contains adversarial instructions or disinformation. This works even against embedding models the attacker does not have access to (black-box attack).",
+      "owasp_entries": ["DSGAI04", "LLM01", "ASI06"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Adversarial documents injected into RAG corpus; embedding-space positioning ensures retrieval for target queries" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Model consumes retrieved adversarial content and follows embedded instructions or repeats disinformation" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Retrieval quality monitoring does not detect adversarially-crafted documents that appear legitimate" }
+      ],
+      "attack_vector": "Corpus poisoning + embedding manipulation — attacker injects crafted documents that are reliably retrieved for target queries, containing adversarial instructions",
+      "affected": "Any RAG pipeline where attacker can contribute documents — shared knowledge bases, public wikis, customer-submitted content",
+      "impact": "Reliable output control for targeted queries with minimal corpus injection (1–5 documents per target query); undetectable through standard retrieval quality metrics",
+      "severity": "Critical",
+      "mitigations": [
+        "Provenance tracking on all corpus documents — reject untrusted sources",
+        "Anomaly detection on retrieved chunk relevance scores",
+        "Multiple independent retrieval sources — consensus required for high-stakes queries",
+        "Run evals/pyrit/dsgai04_rag_poisoning.py against your RAG pipeline",
+        "Read-only data flow from corpus to context — no execution of instructions in retrieved content"
+      ],
+      "references": [
+        { "title": "PoisonedRAG: Knowledge Poisoning Attacks to Retrieval-Augmented Generation (Zou et al., 2024)", "url": "https://arxiv.org/abs/2402.07867", "type": "research" },
+        { "title": "Phantom: General Trigger Attacks on Retrieval Augmented Language Generation", "url": "https://arxiv.org/abs/2405.20485", "type": "research" }
+      ],
+      "tags": ["rag-poisoning", "embedding-manipulation", "corpus", "retrieval", "black-box"]
+    },
+    {
+      "id": "INC-017",
+      "title": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "date": "2023-04",
+      "year": 2023,
+      "category": "research-demonstrated",
+      "description": "The release of AutoGPT and BabyAGI — early open-source autonomous agent frameworks — demonstrated the agentic AI threat surface at scale. Users running these systems observed agents spinning up arbitrary sub-processes, browsing attacker-controlled pages (triggering indirect injection), writing and executing Python scripts, and spending unbounded API budget. Multiple users reported agents that could not be stopped without killing the process, that produced significant financial costs through runaway API calls, and that attempted to write to system directories. The systems had no human oversight checkpoints, no spend limits enforced, and no containment.",
+      "owasp_entries": ["ASI01", "ASI05", "ASI08", "LLM10"],
+      "maestro_layers": [
+        { "layer": "L3", "label": "Agent Frameworks", "role": "origin", "notes": "Framework provided no human checkpoints, no action budgets, no containment boundaries" },
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "impact", "notes": "Multi-step autonomous operation amplified individual decision errors into cascading failures" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No observability into agent action chains; failures were discovered through API billing alerts or process crashes" }
+      ],
+      "attack_vector": "Autonomous execution without oversight — early agentic frameworks had no interruption mechanisms, spending limits, or action approval steps",
+      "affected": "Users running AutoGPT/BabyAGI with real API keys and filesystem access",
+      "impact": "Unbounded API spend; uncontrolled file system writes; demonstrated risk of autonomous agents without containment; shaped subsequent agentic AI security requirements",
+      "severity": "High",
+      "mitigations": [
+        "Mandatory human confirmation before any irreversible action (file write, API call, code execution)",
+        "Action budget limits — enforce maximum API calls, spend limits, and execution time",
+        "Sandbox agent environment — no access to production systems or real credentials",
+        "Interrupt mechanisms — agent must be pausable and stoppable by operator at any point (EU AI Act Art. 14)"
+      ],
+      "references": [
+        { "title": "AutoGPT — GitHub repository and community reports", "url": "https://github.com/Significant-Gravitas/AutoGPT", "type": "advisory" },
+        { "title": "The dark side of AutoGPT — researchers raise safety concerns", "url": "https://www.wired.com/story/fast-forward-autogpt-autonomous-ai-agents/", "type": "news" }
+      ],
+      "tags": ["autonomous-agent", "uncontrolled-execution", "autogpt", "resource-exhaustion", "no-oversight"]
+    },
+    {
+      "id": "INC-018",
+      "title": "GPT-4 system prompt extraction via jailbreak in production deployments",
+      "date": "2023-05",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Shortly after GPT-4's release, users discovered that various production applications built on GPT-4 could be manipulated into revealing their system prompts. Techniques included: asking the model to 'repeat everything above', using roleplay scenarios, requesting a 'translation' of the system prompt, and multilingual attacks. System prompts often contained proprietary business logic, persona definitions, pricing rules, and — in some cases — embedded credentials or internal API endpoint references. Numerous commercial AI products had their system prompts extracted and shared publicly.",
+      "owasp_entries": ["LLM07", "LLM01", "DSGAI01"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Model unable to maintain confidentiality of system prompt content under adversarial prompting" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "Operators treated system prompt confidentiality as a security control — model cannot guarantee this" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "impact", "notes": "System prompts contained embedded secrets in some cases — should not be treated as a secrets store" }
+      ],
+      "attack_vector": "System prompt extraction — adversarial prompts cause model to repeat, translate, or summarise its own system prompt",
+      "affected": "GPT-4-based commercial products with proprietary system prompts; proprietary business logic exposed",
+      "impact": "Proprietary business logic exposure; persona definitions extracted; in worst cases, embedded credentials or internal endpoint URLs leaked",
+      "severity": "High",
+      "mitigations": [
+        "Do not embed secrets, credentials, or internal URLs in system prompts",
+        "Treat system prompt confidentiality as a best-effort control, not a security boundary",
+        "Run evals/garak/LLM07_system_prompt_leakage.yaml — threshold 0%",
+        "Design system so business logic leak is not catastrophic — defence in depth"
+      ],
+      "references": [
+        { "title": "Prompt injection and system prompt extraction — systematic survey (Perez & Ribeiro)", "url": "https://arxiv.org/abs/2211.09527", "type": "research" },
+        { "title": "Leaked system prompts collection — community-maintained", "url": "https://github.com/linexjlin/GPTs", "type": "advisory" }
+      ],
+      "tags": ["system-prompt-leakage", "prompt-extraction", "jailbreak", "proprietary-logic", "confidentiality"]
+    },
+    {
+      "id": "INC-019",
+      "title": "Agentic AI privilege escalation via tool chain manipulation — research",
+      "date": "2024-06",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Researchers at Wiz and independently at academic institutions demonstrated that AI agents with access to cloud infrastructure tools (AWS, Azure, GCP SDK calls) could be manipulated to escalate their own privileges. By injecting instructions that caused the agent to call IAM APIs to grant itself additional permissions, researchers achieved privilege escalation from limited read-only agent roles to administrator access. The attack chain: inject instructions via document → agent calls iam:AttachRolePolicy → agent has elevated permissions → full environment access. This is analogous to a human user exploiting a misconfigured SUID binary.",
+      "owasp_entries": ["ASI02", "ASI03", "ASI01"],
+      "maestro_layers": [
+        { "layer": "L6", "label": "Security & Compliance", "role": "origin", "notes": "Agent had IAM permissions to modify its own role — privilege escalation boundary not enforced" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Framework called IAM APIs at agent direction without verifying action is within authorised scope" },
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "impact", "notes": "Elevated privileges propagate to all subsequent actions in the agent session" }
+      ],
+      "attack_vector": "Prompt injection → IAM API abuse — injected instructions cause agent to call cloud IAM APIs to expand its own permissions",
+      "affected": "AI agents with cloud SDK tool access and insufficient IAM boundaries",
+      "impact": "Agent privilege escalation from read-only to administrator; demonstrated in AWS, Azure, and GCP environments",
+      "severity": "Critical",
+      "mitigations": [
+        "Agents must not have permission to modify their own IAM roles or policies",
+        "Deny iam:AttachRolePolicy, iam:PutRolePolicy for agent service accounts",
+        "Least-privilege IAM scoping — agent permissions defined at deployment, not adjustable at runtime",
+        "All IAM changes require human approval regardless of request source",
+        "Monitor for IAM modification attempts from agent principals (cloud trail alerts)"
+      ],
+      "references": [
+        { "title": "Wiz Research — AI agents and privilege escalation risks in cloud environments", "url": "https://www.wiz.io/blog/the-urgent-need-for-ai-security-guardrails", "type": "research" },
+        { "title": "AI Agent Security: Attacking and Defending (USENIX 2024)", "url": "https://www.usenix.org/conference/usenixsecurity24", "type": "research" }
+      ],
+      "tags": ["privilege-escalation", "iam", "cloud", "agentic", "tool-abuse"]
+    },
+    {
+      "id": "INC-020",
+      "title": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "date": "2024-09",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Researchers demonstrated that in multi-agent systems (where LLM agents communicate with each other via messages), a prompt injection in one agent's input could propagate through the agent network. An injected instruction in agent A's input caused agent A to include the adversarial instruction in its output message to agent B, which then forwarded it to agent C. The cascade allowed a single injection point to compromise multiple agents in the pipeline without additional attacker interaction. This was demonstrated in LangChain multi-agent setups and is directly analogous to a worm propagating through networked systems.",
+      "owasp_entries": ["ASI01", "ASI07", "ASI08", "LLM01"],
+      "maestro_layers": [
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "origin", "notes": "Multi-agent message passing treated as trusted communication — no injection checks between agents" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Framework forwarded agent outputs to next agent as-is — no sanitisation at A2A boundary" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Each downstream agent model executes injected instructions received from upstream agent" }
+      ],
+      "attack_vector": "Cross-agent prompt injection cascade — adversarial instruction propagates through agent-to-agent message passing without sanitisation",
+      "affected": "Multi-agent pipelines (LangChain, CrewAI, AutoGen, custom A2A implementations)",
+      "impact": "Single injection point compromises entire multi-agent pipeline; demonstrated exfiltration and goal hijacking propagating across 3+ agent hops",
+      "severity": "Critical",
+      "mitigations": [
+        "Treat inter-agent messages as untrusted external input — sanitise before processing",
+        "Each agent must independently verify that requested actions are within its authorised scope",
+        "Cryptographic message signing between trusted agents — reject unsigned messages",
+        "Monitor for anomalous agent communication patterns (unexpected message sizes, instruction-like content)"
+      ],
+      "references": [
+        { "title": "AgentDojo: A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents", "url": "https://arxiv.org/abs/2406.13352", "type": "research" },
+        { "title": "PoisonedRAG and multi-agent attack propagation study", "url": "https://arxiv.org/abs/2402.07867", "type": "research" }
+      ],
+      "tags": ["multi-agent", "cascade", "a2a", "worm", "propagation", "cross-agent"]
+    }
+  ]
+}

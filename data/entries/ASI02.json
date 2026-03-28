@@ -644,7 +644,32 @@
       "url": "https://www.vaultproject.io"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Indirect prompt injection in LLM email assistant via malicious email body",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-007"
+    },
+    {
+      "name": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-010"
+    },
+    {
+      "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-012"
+    },
+    {
+      "name": "Agentic AI privilege escalation via tool chain manipulation — research",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-019"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM05",

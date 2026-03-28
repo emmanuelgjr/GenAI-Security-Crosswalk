@@ -621,7 +621,14 @@
       "url": "https://snyk.io"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Hugging Face model repository pickle-based malware supply chain",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-009"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM03",

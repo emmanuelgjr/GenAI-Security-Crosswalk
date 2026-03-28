@@ -691,7 +691,80 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/promptfoo/promptfoo"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-002"
+      },
+      {
+        "name": "ChatGPT indirect prompt injection via attacker-controlled web content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-003"
+      },
+      {
+        "name": "Chevrolet dealership chatbot agrees to sell car for $1",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-005"
+      },
+      {
+        "name": "Indirect prompt injection in LLM email assistant via malicious email body",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-007"
+      },
+      {
+        "name": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-010"
+      },
+      {
+        "name": "WormGPT — uncensored LLM sold for cybercrime on dark web forums",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-011"
+      },
+      {
+        "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-012"
+      },
+      {
+        "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2022,
+        "incident_id": "INC-013"
+      },
+      {
+        "name": "Multimodal indirect injection — image-embedded instructions in GPT-4V",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-015"
+      },
+      {
+        "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-016"
+      },
+      {
+        "name": "GPT-4 system prompt extraction via jailbreak in production deployments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-018"
+      },
+      {
+        "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-020"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI01",
@@ -1382,7 +1455,26 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/leondz/garak"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Samsung employees leak source code and meeting notes via ChatGPT",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-001"
+      },
+      {
+        "name": "OpenAI Redis caching bug exposes user conversation history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-006"
+      },
+      {
+        "name": "GitHub Copilot reproduces verbatim licensed code and embedded secrets",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-008"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI03",
@@ -2048,7 +2140,14 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/leondz/garak"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Hugging Face model repository pickle-based malware supply chain",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-009"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI04",
@@ -3974,7 +4073,32 @@ window.CROSSWALK_DATA = [
         "url": "https://claroty.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-002"
+      },
+      {
+        "name": "Air Canada chatbot invents bereavement discount policy — tribunal ruling",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-004"
+      },
+      {
+        "name": "Chevrolet dealership chatbot agrees to sell car for $1",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-005"
+      },
+      {
+        "name": "WormGPT — uncensored LLM sold for cybercrime on dark web forums",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-011"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI01",
@@ -4561,7 +4685,32 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/leondz/garak"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "GitHub Copilot reproduces verbatim licensed code and embedded secrets",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-008"
+      },
+      {
+        "name": "WormGPT — uncensored LLM sold for cybercrime on dark web forums",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-011"
+      },
+      {
+        "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2022,
+        "incident_id": "INC-013"
+      },
+      {
+        "name": "GPT-4 system prompt extraction via jailbreak in production deployments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-018"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI01"
@@ -5772,7 +5921,26 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/confident-ai/deepeval"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-002"
+      },
+      {
+        "name": "Air Canada chatbot invents bereavement discount policy — tribunal ruling",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-004"
+      },
+      {
+        "name": "Clarkesworld magazine overwhelmed by AI-generated fiction submissions",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-014"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI09"
@@ -6392,7 +6560,20 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/BerriAI/litellm"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Clarkesworld magazine overwhelmed by AI-generated fiction submissions",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-014"
+      },
+      {
+        "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-017"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM01",
@@ -7094,7 +7275,50 @@ window.CROSSWALK_DATA = [
         "url": "https://goteleport.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "ChatGPT indirect prompt injection via attacker-controlled web content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-003"
+      },
+      {
+        "name": "Indirect prompt injection in LLM email assistant via malicious email body",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-007"
+      },
+      {
+        "name": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-010"
+      },
+      {
+        "name": "Multimodal indirect injection — image-embedded instructions in GPT-4V",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-015"
+      },
+      {
+        "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-017"
+      },
+      {
+        "name": "Agentic AI privilege escalation via tool chain manipulation — research",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-019"
+      },
+      {
+        "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-020"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM01",
@@ -7762,7 +7986,32 @@ window.CROSSWALK_DATA = [
         "url": "https://www.vaultproject.io"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Indirect prompt injection in LLM email assistant via malicious email body",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-007"
+      },
+      {
+        "name": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-010"
+      },
+      {
+        "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-012"
+      },
+      {
+        "name": "Agentic AI privilege escalation via tool chain manipulation — research",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-019"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM05",
@@ -8470,7 +8719,14 @@ window.CROSSWALK_DATA = [
         "url": "https://aws.amazon.com/secrets-manager/"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Agentic AI privilege escalation via tool chain manipulation — research",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-019"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM06"
@@ -9113,7 +9369,14 @@ window.CROSSWALK_DATA = [
         "url": "https://snyk.io"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Hugging Face model repository pickle-based malware supply chain",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-009"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM03",
@@ -9751,7 +10014,20 @@ window.CROSSWALK_DATA = [
         "url": "https://www.dragos.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-012"
+      },
+      {
+        "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-017"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM05",
@@ -10398,7 +10674,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.trychroma.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-016"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM04",
@@ -11032,7 +11315,14 @@ window.CROSSWALK_DATA = [
         "url": "https://cert-manager.io"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-020"
+      }
+    ],
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI02",
@@ -11668,7 +11958,20 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/Netflix/Hystrix"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-017"
+      },
+      {
+        "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-020"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM10",
@@ -13583,7 +13886,44 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/leondz/garak"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Samsung employees leak source code and meeting notes via ChatGPT",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-001"
+      },
+      {
+        "name": "OpenAI Redis caching bug exposes user conversation history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-006"
+      },
+      {
+        "name": "Indirect prompt injection in LLM email assistant via malicious email body",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-007"
+      },
+      {
+        "name": "GitHub Copilot reproduces verbatim licensed code and embedded secrets",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-008"
+      },
+      {
+        "name": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-010"
+      },
+      {
+        "name": "GPT-4 system prompt extraction via jailbreak in production deployments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-018"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM02",
@@ -14761,7 +15101,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.zscaler.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Samsung employees leak source code and meeting notes via ChatGPT",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-001"
+      }
+    ],
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI07",
@@ -15360,7 +15707,26 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/great-expectations/great_expectations"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "ChatGPT indirect prompt injection via attacker-controlled web content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-003"
+      },
+      {
+        "name": "Hugging Face model repository pickle-based malware supply chain",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-009"
+      },
+      {
+        "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-016"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM03",
@@ -17042,7 +17408,20 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/amundsen-io/amundsen"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Samsung employees leak source code and meeting notes via ChatGPT",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-001"
+      },
+      {
+        "name": "GitHub Copilot reproduces verbatim licensed code and embedded secrets",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-008"
+      }
+    ],
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI08",
@@ -18164,7 +18543,14 @@ window.CROSSWALK_DATA = [
         "url": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Multimodal indirect injection — image-embedded instructions in GPT-4V",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-015"
+      }
+    ],
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI01",
@@ -19229,7 +19615,14 @@ window.CROSSWALK_DATA = [
         "url": "https://portswigger.net/burp/communitydownload"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "OpenAI Redis caching bug exposes user conversation history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-006"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM02",

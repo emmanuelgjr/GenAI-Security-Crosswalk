@@ -2,7 +2,7 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.5.5-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.5.6-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
 [![Mapping Files](https://img.shields.io/badge/mapping%20files-58-brightgreen)](README.md)
 [![Frameworks](https://img.shields.io/badge/frameworks-17-orange)](README.md)
@@ -27,6 +27,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **40+** open-source tools | Catalogued and organised by function |
 | **10** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
 | **17** compliance reports | Per-framework gap assessments auto-generated from data layer |
+| **20** documented incidents | Real-world + research incidents with MAESTRO layer attribution |
  
 All free. All open-source. Built for practitioners.
  
@@ -239,7 +240,10 @@ GenAI-Security-Crosswalk/
 │   └── TEMPLATE.md                  ← Canonical template for new mapping files
 │
 ├── data/
-│   ├── schema.json                  ← JSON Schema (Draft 7) for mapping entries
+│   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
+│   ├── incidents.json               ← 20 incidents with MAESTRO layer attribution
+│   ├── incidents-schema.json        ← JSON Schema for incidents
+│   ├── entries/                     ← 41 machine-readable entry JSON files
 │   └── README.md                    ← Data layer docs, jq query examples
 │
 ├── scripts/
@@ -275,6 +279,20 @@ node scripts/compliance-report.js --list-frameworks        # see all options
 ```
 
 Each report includes: executive summary, coverage matrix (OWASP entries × controls), per-control detail with notes, and a prioritised action plan.
+
+## Incident tracker
+
+20 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
+
+```bash
+node scripts/incidents-report.js                      # all incidents → reports/incidents.md
+node scripts/incidents-report.js --entry LLM01        # incidents for a specific entry
+node scripts/incidents-report.js --layer L3           # incidents implicating Agent Frameworks
+node scripts/incidents-report.js --category real-world
+node scripts/incidents-report.js --format csv         # Excel export
+```
+
+MAESTRO layer roles tracked per incident: **Origin** (where attack starts) · **Propagation** (how it spreads) · **Impact** (where harm manifests) · **Blind-spot** (where detection failed).
 
 ---
 

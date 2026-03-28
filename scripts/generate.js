@@ -523,6 +523,25 @@ function main() {
   console.log(`\nGenAI Security Crosswalk — generate.js${DRY_RUN ? ' [DRY RUN]' : ''}`);
   console.log('─'.repeat(50));
 
+  // Load incidents index from data/incidents.json if available
+  const incidentsFile = path.join(ROOT, 'data', 'incidents.json');
+  const incidentsByEntry = {};   // entryId -> [{name, url, year, incident_id}]
+  if (fs.existsSync(incidentsFile)) {
+    const incDb = JSON.parse(fs.readFileSync(incidentsFile, 'utf8'));
+    for (const inc of incDb.incidents) {
+      for (const eid of (inc.owasp_entries || [])) {
+        if (!incidentsByEntry[eid]) incidentsByEntry[eid] = [];
+        incidentsByEntry[eid].push({
+          name:        inc.title,
+          url:         'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json',
+          year:        inc.year,
+          incident_id: inc.id,
+        });
+      }
+    }
+    console.log(`  Loaded incidents: ${incDb.incidents.length} entries from data/incidents.json`);
+  }
+
   // Target IDs
   const targetIds = SINGLE_ID
     ? [SINGLE_ID.toUpperCase()]
@@ -614,7 +633,7 @@ function main() {
       audience:    data.audiences.length ? data.audiences : defaultAudience(vuln.source_list),
       mappings:    data.mappings,
       tools:       data.tools,
-      incidents:   [],   // populated when data/incidents.json is available
+      incidents:   incidentsByEntry[id] || [],
       crossrefs:   data.crossrefs,
       changelog: [
         {

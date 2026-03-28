@@ -614,7 +614,20 @@
       "url": "https://github.com/Netflix/Hystrix"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-017"
+    },
+    {
+      "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-020"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM10",

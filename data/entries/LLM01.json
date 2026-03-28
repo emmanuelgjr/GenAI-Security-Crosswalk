@@ -686,7 +686,80 @@
       "url": "https://github.com/promptfoo/promptfoo"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-002"
+    },
+    {
+      "name": "ChatGPT indirect prompt injection via attacker-controlled web content",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-003"
+    },
+    {
+      "name": "Chevrolet dealership chatbot agrees to sell car for $1",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-005"
+    },
+    {
+      "name": "Indirect prompt injection in LLM email assistant via malicious email body",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-007"
+    },
+    {
+      "name": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-010"
+    },
+    {
+      "name": "WormGPT — uncensored LLM sold for cybercrime on dark web forums",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-011"
+    },
+    {
+      "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-012"
+    },
+    {
+      "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2022,
+      "incident_id": "INC-013"
+    },
+    {
+      "name": "Multimodal indirect injection — image-embedded instructions in GPT-4V",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-015"
+    },
+    {
+      "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-016"
+    },
+    {
+      "name": "GPT-4 system prompt extraction via jailbreak in production deployments",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-018"
+    },
+    {
+      "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-020"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI01",

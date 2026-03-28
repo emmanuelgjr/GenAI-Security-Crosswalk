@@ -579,7 +579,26 @@
       "url": "https://github.com/confident-ai/deepeval"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-002"
+    },
+    {
+      "name": "Air Canada chatbot invents bereavement discount policy — tribunal ruling",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-004"
+    },
+    {
+      "name": "Clarkesworld magazine overwhelmed by AI-generated fiction submissions",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-014"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI09"

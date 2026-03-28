@@ -9,7 +9,54 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-No planned items — framework coverage matrix, data layer, GitHub Pages query interface, eval profiles, and compliance report generator are complete. Next: incident tracker (`data/incidents.json`).
+All planned items complete through v1.5.6. Next: community contributions, additional incident entries, and framework expansion.
+
+---
+
+## [1.5.6] — 2026-03-28
+
+### Added
+
+#### Incident tracker — real-world AI security incidents with MAESTRO layer attribution
+
+`data/incidents.json` — 20 documented AI security incidents mapped to OWASP entries and MAESTRO architectural layers (L1–L7). Each incident records where the attack originated, how it propagated, where harm manifested, and where detection failed.
+
+**Incidents included (20):**
+
+| ID | Incident | Category | Severity | OWASP |
+|---|---|---|---|---|
+| INC-001 | Samsung ChatGPT data leak | Real | High | LLM02, DSGAI01, DSGAI03 |
+| INC-002 | Bing/Sydney jailbreak | Real | High | LLM01, LLM06, LLM09 |
+| INC-003 | ChatGPT indirect injection via web | Research | Critical | LLM01, ASI01, DSGAI04 |
+| INC-004 | Air Canada chatbot hallucination lawsuit | Real | High | LLM09, LLM06 |
+| INC-005 | Chevrolet chatbot $1 car deal | Real | Medium | LLM01, LLM06 |
+| INC-006 | OpenAI Redis conversation history leak | Real | High | DSGAI01, DSGAI11 |
+| INC-007 | LLM email assistant indirect injection | Research | Critical | LLM01, ASI01, ASI02 |
+| INC-008 | GitHub Copilot code/secret memorisation | Research | High | LLM02, LLM07, DSGAI01 |
+| INC-009 | Hugging Face pickle malware supply chain | Real | Critical | LLM03, ASI04, DSGAI04 |
+| INC-010 | Microsoft Copilot document exfiltration | Research | Critical | LLM01, ASI01, ASI02 |
+| INC-011 | WormGPT dark-web adversarial LLM | Real | High | LLM07, LLM01, LLM06 |
+| INC-012 | LangChain/LlamaIndex RCE via injection | Research | Critical | ASI05, LLM01, ASI02 |
+| INC-013 | Perez & Ribeiro foundational injection paper | Research | Critical | LLM01, LLM07 |
+| INC-014 | Clarkesworld AI fiction spam | Real | Medium | LLM09, LLM10 |
+| INC-015 | Multimodal image-embedded injection | Research | High | LLM01, DSGAI09, ASI01 |
+| INC-016 | RAG corpus poisoning (PoisonedRAG) | Research | Critical | DSGAI04, LLM01, ASI06 |
+| INC-017 | AutoGPT uncontrolled execution | Research | High | ASI01, ASI05, ASI08 |
+| INC-018 | GPT-4 system prompt extraction | Real | High | LLM07, LLM01, DSGAI01 |
+| INC-019 | AI agent IAM privilege escalation | Research | Critical | ASI02, ASI03, ASI01 |
+| INC-020 | Multi-agent injection cascade | Research | Critical | ASI01, ASI07, ASI08 |
+
+`data/incidents-schema.json` — JSON Schema (Draft 7) for incident entries. Each incident has: MAESTRO layer attribution with roles (origin/propagation/impact/blind-spot), OWASP entry cross-references, attack vector, impact, mitigations, and references.
+
+`scripts/incidents-report.js` — query and report generator:
+- Filter by `--entry`, `--layer`, `--severity`, `--category`, `--year`
+- Output: Markdown (default), CSV, JSON
+- MAESTRO layer attribution summary table with role breakdown
+- Incident index + full detail view with references and mitigations
+
+**Updated:**
+- `scripts/generate.js` — now reads `data/incidents.json` at generation time and populates `incidents` arrays in all 41 entry JSON files
+- `data/entries/` — 21 entries now have incident references; `docs/data.js` regenerated
 
 ---
 

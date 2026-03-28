@@ -685,7 +685,14 @@
       "url": "https://aws.amazon.com/secrets-manager/"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Agentic AI privilege escalation via tool chain manipulation — research",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-019"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM06"

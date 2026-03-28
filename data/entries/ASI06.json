@@ -624,7 +624,14 @@
       "url": "https://www.trychroma.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-016"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM04",

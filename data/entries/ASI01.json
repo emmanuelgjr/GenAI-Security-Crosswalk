@@ -670,7 +670,50 @@
       "url": "https://goteleport.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "ChatGPT indirect prompt injection via attacker-controlled web content",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-003"
+    },
+    {
+      "name": "Indirect prompt injection in LLM email assistant via malicious email body",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-007"
+    },
+    {
+      "name": "Microsoft Copilot for M365 — document exfiltration via indirect injection",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-010"
+    },
+    {
+      "name": "Multimodal indirect injection — image-embedded instructions in GPT-4V",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-015"
+    },
+    {
+      "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-017"
+    },
+    {
+      "name": "Agentic AI privilege escalation via tool chain manipulation — research",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-019"
+    },
+    {
+      "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-020"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM01",

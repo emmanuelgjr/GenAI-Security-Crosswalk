@@ -616,7 +616,20 @@
       "url": "https://www.dragos.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-012"
+    },
+    {
+      "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-017"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM05",

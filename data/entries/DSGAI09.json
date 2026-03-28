@@ -534,7 +534,14 @@
       "url": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Multimodal indirect injection — image-embedded instructions in GPT-4V",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-015"
+    }
+  ],
   "crossrefs": {
     "dsgai_2026": [
       "DSGAI01",

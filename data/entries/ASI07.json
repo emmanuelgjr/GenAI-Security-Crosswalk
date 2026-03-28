@@ -609,7 +609,14 @@
       "url": "https://cert-manager.io"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-020"
+    }
+  ],
   "crossrefs": {
     "dsgai_2026": [
       "DSGAI02",
