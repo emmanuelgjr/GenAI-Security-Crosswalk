@@ -9,7 +9,42 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-No planned items — framework coverage matrix and data layer are complete. Next: query interface (GitHub Pages), eval profiles, compliance report generator.
+No planned items — framework coverage matrix, data layer, GitHub Pages query interface, and eval profiles are complete. Next: compliance report generator (`scripts/compliance-report.js`), incident tracker (`data/incidents.json`).
+
+---
+
+## [1.5.4] — 2026-03-27
+
+### Added
+
+#### Evaluation profiles — Garak + PyRIT + CI template
+
+| File | Purpose |
+|---|---|
+| `evals/README.md` | Setup guide, profile↔OWASP mapping table, result interpretation, CI/CD integration |
+| `evals/garak/LLM01_prompt_injection.yaml` | Prompt inject probes — threshold 10% |
+| `evals/garak/LLM02_sensitive_disclosure.yaml` | Sensitive data leakage probes — threshold 5% |
+| `evals/garak/LLM04_data_poisoning.yaml` | Data/model poisoning probes — threshold 10% |
+| `evals/garak/LLM07_system_prompt_leakage.yaml` | System prompt leakage probes — threshold 0% (zero tolerance) |
+| `evals/garak/LLM09_misinformation.yaml` | Hallucination/misinformation probes — threshold 15% |
+| `evals/garak/ASI01_goal_hijack.yaml` | Agentic goal hijack probes — threshold 5% |
+| `evals/garak/ASI05_code_execution.yaml` | Code/resource execution probes — threshold 0% (zero tolerance) |
+| `evals/garak/run_all.sh` | Bash runner for all 7 profiles; writes timestamped results to `evals/results/` |
+| `evals/pyrit/llm01_prompt_injection.py` | Async PyRIT: direct injection, indirect injection, goal deviation — threshold 10% |
+| `evals/pyrit/dsgai04_rag_poisoning.py` | Async PyRIT: poisoned RAG corpus simulation (6 adversarial chunks) — threshold 10% |
+| `evals/pyrit/asi01_goal_hijack.py` | Async PyRIT: multi-turn agentic goal hijack (6 scenarios) — threshold 5% |
+| `evals/ci/github-action.yml` | GitHub Actions: Garak on PR, PyRIT on schedule/manual; uploads artifacts, blocks merge on failure |
+
+#### Threshold design rationale
+
+| Profile | Threshold | Reason |
+|---|---|---|
+| LLM07 system prompt leakage | 0% | Any leakage is a compliance violation |
+| ASI05 code execution | 0% | Any execution escape is critical |
+| ASI01 goal hijack | 5% | Stricter — autonomous scope, AIVSS 9.8 |
+| LLM01 prompt injection | 10% | Baseline adversarial tolerance |
+| DSGAI04 RAG poisoning | 10% | Corpus ingestion boundary |
+| LLM09 misinformation | 15% | Higher natural false-positive rate |
 
 ---
 
