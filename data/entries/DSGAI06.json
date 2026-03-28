@@ -507,6 +507,70 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Minimum scope for retrieval service accounts"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases — lineage-aware artefact management",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Maintain end-to-end data lineage records linking every model version to its training data, transformations, and intermediate artefacts"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — traceable data pipeline architecture",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Design AI data pipelines with built-in lineage tracking; require lineage metadata capture at every transformation step as an explicit design requirement"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-3",
+      "control_name": "Configuration Change Control — pipeline lineage documentation",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Maintain comprehensive data lineage documentation for all AI pipelines; update on every transformation, combination, or processing change"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — data transformation logging",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Log all data transformation events in AI pipelines; enable end-to-end lineage reconstruction from source to model"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — lineage requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include data lineage completeness in AI risk management strategy; define minimum lineage requirements per data sensitivity level"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — data transformation mapping",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Map all data transformations in AI pipelines; document inputs, outputs, and processing logic for each stage"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — lineage governance",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include data lineage requirements in ICT risk management; define minimum lineage completeness per data sensitivity"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — lineage gap detection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Monitor for data lineage gaps; alert on undocumented transformations or broken lineage chains"
     }
   ],
   "tools": [
@@ -539,6 +603,41 @@
       "name": "NeMo Guardrails",
       "type": "open-source",
       "url": "https://github.com/NVIDIA/NeMo-Guardrails"
+    },
+    {
+      "name": "OpenLineage",
+      "type": "open-source",
+      "url": "https://openlineage.io"
+    },
+    {
+      "name": "Marquez",
+      "type": "open-source",
+      "url": "https://marquezproject.ai"
+    },
+    {
+      "name": "MLflow",
+      "type": "open-source",
+      "url": "https://mlflow.org"
+    },
+    {
+      "name": "DataHub",
+      "type": "open-source",
+      "url": "https://datahubproject.io"
+    },
+    {
+      "name": "Apache Atlas",
+      "type": "open-source",
+      "url": "https://atlas.apache.org"
+    },
+    {
+      "name": "dbt",
+      "type": "open-source",
+      "url": "https://www.getdbt.com"
+    },
+    {
+      "name": "Collibra",
+      "type": "commercial",
+      "url": "https://www.collibra.com"
     }
   ],
   "incidents": [],

@@ -580,6 +580,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived credentials � cascade event triggers automatic revocation of all affected tokens"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Design circuit breakers, step limits, cost budgets, and human approval gates as explicit security requirements for all agentic automation workflows",
+      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Ensures cascade prevention is a design-phase requirement"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Conduct adversarial testing of cascade failure paths — test error propagation, hallucination amplification, and runaway automation scenarios",
+      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validates cascade prevention controls under attack conditions"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Define remediation procedures for cascade failure incidents including automatic circuit breaker activation, workflow suspension, cost cap enforcement, and rollback",
+      "control_name": "RV.2.1-PS – Assess, prioritise, and remediate vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables rapid response to cascading automation failures"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Define explicit requirements for maximum automation depth, step limits, cost budgets, and mandatory human checkpoints for each agent workflow",
+      "control_name": "PW.1.1-PS – Define security requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establishes automation boundaries as mandatory requirements"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — inter-agent boundaries",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce boundary protection between agents in multi-agent systems; prevent uncontrolled propagation of failures or attacks across agent boundaries"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — cascade detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor multi-agent systems for cascade indicators — error propagation, resource exhaustion spreading, and anomalous inter-agent communication patterns"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "IR-4",
+      "control_name": "Incident Handling — cascading failure response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define incident handling procedures for cascading agent failures; include automated circuit breakers, agent isolation, and multi-agent system shutdown procedures"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — automation risk",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include cascading automation risk in the organisational risk management strategy; define acceptable multi-agent coupling thresholds and circuit breaker requirements"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 11",
+      "control_name": "Response and Recovery — cascading failure response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define response and recovery procedures for cascading agent failures; include automated circuit breakers, agent isolation, and multi-agent system safe-state transitions"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — cascade indicator monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor multi-agent systems for cascade indicators — error propagation, resource exhaustion spreading, and anomalous inter-agent communication patterns"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — agent system continuity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain backup configurations, memory snapshots, and fallback agent deployments; enable restoration of agent systems to known-good state"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — cascading risk governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include cascading automation risk in ICT risk management; define acceptable multi-agent coupling thresholds and circuit breaker requirements"
     }
   ],
   "tools": [
@@ -612,6 +708,26 @@
       "name": "Netflix Hystrix",
       "type": "open-source",
       "url": "https://github.com/Netflix/Hystrix"
+    },
+    {
+      "name": "LiteLLM",
+      "type": "open-source",
+      "url": "https://github.com/BerriAI/litellm"
+    },
+    {
+      "name": "Kong Gateway",
+      "type": "open-source",
+      "url": "https://github.com/Kong/kong"
+    },
+    {
+      "name": "Istio",
+      "type": "open-source",
+      "url": "https://istio.io"
+    },
+    {
+      "name": "PagerDuty",
+      "type": "commercial",
+      "url": "https://www.pagerduty.com"
     }
   ],
   "incidents": [
@@ -637,7 +753,8 @@
   "crossrefs": {
     "llm_top10": [
       "LLM10",
-      "LLM01"
+      "LLM01",
+      "LLM04"
     ],
     "dsgai_2026": [
       "DSGAI17",

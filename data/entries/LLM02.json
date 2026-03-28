@@ -624,6 +624,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Audit all config and data sources for embedded credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Secure coding — ML pipeline output handling",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement secure coding practices for all code paths that consume LLM output; treat model responses as untrusted input to downstream systems"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review for security vulnerabilities — output validation",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include output injection and unsafe rendering scenarios in pre-release security reviews; verify that output sanitisation controls are present and effective"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Verify software integrity — model artifact integrity",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Verify that the model artifact serving output has not been tampered with; maintain signed model checksums and verify before deployment"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — output security",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include output-based injection testing (XSS, SQLi, CMDi via LLM output) in adversarial test suites"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — training data and model weights",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Encrypt training data, fine-tuning datasets, and model weights at rest; prevent data memorisation exposure through access controls on data stores"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — AI inference logging",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log all model inference requests and responses with sufficient detail to detect sensitive data disclosure; include user identity, query content, and response metadata"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — model endpoint access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce role-based access control on model inference endpoints; restrict access to training data, fine-tuning data, and model configuration based on clearance and need-to-know"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — output content monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor model outputs for sensitive data patterns — PII, credentials, classification markings — and alert on detection"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — data disclosure controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement ICT security controls to prevent LLM-based disclosure of sensitive financial data, PII, and credentials; include output monitoring and data loss prevention"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — data breach reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify LLM data disclosure events as ICT-related incidents; report to competent authorities per DORA incident classification and reporting requirements"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — AI data governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI data handling in ICT risk management framework; define policies for data processed by LLM systems including classification, retention, and access controls"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — data leakage detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for sensitive data in model outputs; monitor for PII, financial data, and credential patterns in inference responses"
     }
   ],
   "tools": [
@@ -666,6 +762,41 @@
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "OWASP ZAP",
+      "type": "open-source",
+      "url": "https://www.zaproxy.org"
+    },
+    {
+      "name": "Semgrep",
+      "type": "open-source",
+      "url": "https://semgrep.dev"
+    },
+    {
+      "name": "DOMPurify",
+      "type": "open-source",
+      "url": "https://github.com/cure53/DOMPurify"
+    },
+    {
+      "name": "Guardrails AI",
+      "type": "open-source",
+      "url": "https://github.com/guardrails-ai/guardrails"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "AWS CloudTrail / Azure Monitor",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/cloudtrail/"
+    },
+    {
+      "name": "Nightfall DLP",
+      "type": "commercial",
+      "url": "https://www.nightfall.ai"
     }
   ],
   "incidents": [
@@ -697,7 +828,9 @@
   "crossrefs": {
     "agentic_top10": [
       "ASI03",
-      "ASI06"
+      "ASI06",
+      "ASI02",
+      "ASI05"
     ],
     "dsgai_2026": [
       "DSGAI01",
@@ -706,7 +839,10 @@
       "DSGAI07",
       "DSGAI08",
       "DSGAI06",
-      "DSGAI03"
+      "DSGAI03",
+      "DSGAI05",
+      "DSGAI12",
+      "DSGAI16"
     ]
   },
   "changelog": [

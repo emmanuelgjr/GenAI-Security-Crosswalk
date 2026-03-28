@@ -438,6 +438,78 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Scope data feed credentials to approved data only"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review for security vulnerabilities — synthetic data quality review",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Review synthetic data for bias inheritance, privacy leakage, and statistical fidelity before use in training pipelines; verify privacy guarantees are meaningful"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — synthetic data adversarial testing",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Conduct adversarial testing of synthetic data for membership inference, attribute inference, and reconstruction attacks to validate privacy claims"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Analyse root causes — synthetic data failure analysis",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "When model failures trace to synthetic training data, conduct root cause analysis of the generation process, source data, and privacy mechanism"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — synthetic data quality",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Monitor synthetic data outputs for quality, privacy preservation, and absence of sensitive pattern leakage"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CA-7",
+      "control_name": "Continuous Monitoring — synthetic data drift",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include synthetic data quality metrics in continuous monitoring; track for privacy degradation and bias drift"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — synthetic data risks",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include synthetic data re-identification and pattern leakage in vulnerability assessment"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — synthetic data privacy",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement privacy controls for synthetic data generation; validate privacy preservation and absence of sensitive pattern leakage"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — synthetic data testing",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include synthetic data re-identification and privacy testing in resilience testing programme"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — synthetic data quality monitoring",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Monitor synthetic data for quality and privacy metrics; alert on privacy degradation"
     }
   ],
   "tools": [
@@ -495,6 +567,21 @@
       "name": "SDV",
       "type": "open-source",
       "url": "https://github.com/sdv-dev/SDV"
+    },
+    {
+      "name": "Anonymeter",
+      "type": "open-source",
+      "url": "https://github.com/statice/anonymeter"
+    },
+    {
+      "name": "ARX Data Anonymization",
+      "type": "open-source",
+      "url": "https://arx.deidentifier.org"
+    },
+    {
+      "name": "Microsoft Presidio",
+      "type": "open-source",
+      "url": "https://github.com/microsoft/presidio"
     }
   ],
   "incidents": [],
@@ -506,10 +593,14 @@
     "llm_top10": [
       "LLM02",
       "LLM01",
-      "LLM08"
+      "LLM08",
+      "LLM09",
+      "LLM03"
     ],
     "agentic_top10": [
-      "ASI03"
+      "ASI03",
+      "ASI06",
+      "ASI09"
     ]
   },
   "changelog": [

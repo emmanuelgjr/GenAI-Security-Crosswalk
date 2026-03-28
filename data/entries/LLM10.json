@@ -561,6 +561,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credentials per integration"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — resource and throttling requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define token limits, rate limits, and cost budgets as explicit security design requirements for all AI inference services; document in design specifications"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — load and adversarial consumption testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct adversarial resource consumption testing (sponge examples, token amplification, recursive context injection) before each production release"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.2.1-PS",
+      "control_name": "Assess, prioritise, and remediate — availability remediation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define and test remediation procedures for availability incidents — rate limit tightening, model rollback, cost circuit breaker activation"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Verify software integrity — throttle and limit configuration integrity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify that rate limit and resource constraint configurations have not been altered before deployment; treat throttle configuration as a security artefact"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — rate limiting and cost controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce rate limiting, token quotas, and cost circuit breakers at the AI service boundary; define per-user and per-session consumption limits"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — consumption anomaly detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor AI service consumption metrics — tokens, latency, cost — in real time; alert and auto-mitigate on consumption anomalies"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — resource budget enforcement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Restrict AI services to defined resource budgets; disable unnecessary model capabilities; enforce compute and cost limits in configuration"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "IR-4",
+      "control_name": "Incident Handling — consumption incident response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define incident handling procedures for AI consumption anomalies including automatic throttling, service suspension, and cost cap enforcement"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — consumption controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement rate limiting, token quotas, and cost circuit breakers on financial AI inference services; define per-user and per-service consumption limits"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — consumption anomaly detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor AI service consumption metrics in real time; alert on token spikes, latency degradation, and cost overruns affecting financial service availability"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — AI service continuity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain backup model deployments and fallback inference paths for AI services supporting critical financial functions; test restoration procedures"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 11",
+      "control_name": "Response and Recovery — consumption incident response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define response and recovery procedures for AI consumption incidents; include automatic throttling, failover activation, and service restoration"
     }
   ],
   "tools": [
@@ -598,6 +694,11 @@
       "name": "LiteLLM (rate limiting)",
       "type": "open-source",
       "url": "https://github.com/BerriAI/litellm"
+    },
+    {
+      "name": "AWS Budgets / Azure Cost Management",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/aws-cost-management/aws-budgets/"
     }
   ],
   "incidents": [

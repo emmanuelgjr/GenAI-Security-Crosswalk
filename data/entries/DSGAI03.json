@@ -505,6 +505,78 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Audit config files for embedded credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Reuse existing well-secured software — AI tool vetting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Vet all AI tools, services, and plugins before organisational adoption; verify data handling, security posture, and compliance capabilities"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — shadow AI detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement controls to detect and prevent unauthorised AI tool usage that processes organisational data outside governed pipelines"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities — shadow AI exposure monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establish procedures to identify data exposure from shadow AI tool usage; define triage and remediation workflows for unsanctioned data processing"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — approved AI tools only",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Restrict AI tool usage to approved, vetted tools within the FedRAMP boundary; disable or block access to unauthorised AI services"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SA-9",
+      "control_name": "External Information System Services — third-party AI controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Require FedRAMP authorisation or equivalent for all third-party AI services; block data transfer to unauthorised AI tools"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — AI tool access control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce access control preventing data transfer to unauthorised AI tools; monitor and block shadow AI usage"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — AI tool vendor oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI tools and services in third-party ICT risk management; conduct due diligence before approval; monitor ongoing compliance"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — unauthorised AI tool blocking",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement controls preventing data transfer to unauthorised AI tools; enforce approved tools policy"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — AI tool governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define approved AI tools policy in ICT risk management framework; require vetting before use in financial data processing"
     }
   ],
   "tools": [
@@ -542,6 +614,26 @@
       "name": "Zscaler (DLP)",
       "type": "commercial",
       "url": "https://www.zscaler.com"
+    },
+    {
+      "name": "Netskope",
+      "type": "commercial",
+      "url": "https://www.netskope.com"
+    },
+    {
+      "name": "Zscaler",
+      "type": "commercial",
+      "url": "https://www.zscaler.com"
+    },
+    {
+      "name": "Nightfall DLP",
+      "type": "commercial",
+      "url": "https://www.nightfall.ai"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
     }
   ],
   "incidents": [
@@ -559,10 +651,13 @@
     ],
     "llm_top10": [
       "LLM03",
-      "LLM02"
+      "LLM02",
+      "LLM05",
+      "LLM06"
     ],
     "agentic_top10": [
-      "ASI04"
+      "ASI04",
+      "ASI10"
     ]
   },
   "changelog": [

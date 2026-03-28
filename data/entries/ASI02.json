@@ -595,6 +595,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Unique credential per tool integration � tool-scoped tokens, not agent-wide tokens"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Define explicit security requirements specifying the maximum permitted tool access, API scope, data source access, and resource boundaries for each agent deployment",
+      "control_name": "PW.1.1-PS – Define security requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Establishes access control as a mandatory deployment requirement"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Threat model all agent access paths to tools, data stores, and APIs; design least-privilege tool manifests and enforce tenant isolation by design",
+      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Ensures access boundaries are designed before implementation"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Protect agent configuration files, tool manifests, permission policies, and orchestration definitions from unauthorised modification",
+      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Prevents tampering with access control configuration"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Review agent access control enforcement — verify that tool permission manifests, RBAC policies, and tenant isolation boundaries are correctly implemented and cannot be bypassed",
+      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Validates access controls before production deployment"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — agent resource access",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enforce role-based access control on all agent resources — tools, data stores, APIs, and inter-agent communication channels; deny by default"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-6",
+      "control_name": "Least Privilege — agent permissions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enforce least privilege for all agent permissions; restrict tool access, data store access, and API scope to minimum necessary per agent role"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — agent capability restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Restrict agents to minimum necessary capabilities; disable unused tools, APIs, and action types; enforce capability restrictions in agent configuration"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — access decision logging",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Log all agent access decisions — permitted and denied — with sufficient detail for access control review and incident investigation"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — agent access controls",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement security controls enforcing least privilege on agent tool access, data store access, and API permissions within financial systems"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — agent permission governance",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include agent access control policies in ICT risk management framework; define acceptable permission scopes per agent role and financial function"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — unauthorised access detection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Monitor agent access patterns for unauthorised tool invocations, data access beyond scope, and permission violations; alert on detection"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — access control testing",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include agent access control bypass in resilience testing; verify that agents cannot exceed defined permission boundaries under adversarial conditions"
     }
   ],
   "tools": [
@@ -642,6 +738,31 @@
       "name": "HashiCorp Vault",
       "type": "open-source",
       "url": "https://www.vaultproject.io"
+    },
+    {
+      "name": "LAAF (LLM Agent Assessment Framework)",
+      "type": "open-source",
+      "url": "https://github.com/OWASP/LAAF"
+    },
+    {
+      "name": "Open Policy Agent (OPA)",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "Guardrails AI",
+      "type": "open-source",
+      "url": "https://github.com/guardrails-ai/guardrails"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "AWS IAM / Azure RBAC",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/iam/"
     },
     {
       "name": "LAAF v2.0",
@@ -702,12 +823,14 @@
   "crossrefs": {
     "llm_top10": [
       "LLM05",
-      "LLM06"
+      "LLM06",
+      "LLM07"
     ],
     "dsgai_2026": [
       "DSGAI06",
       "DSGAI12",
-      "DSGAI07"
+      "DSGAI07",
+      "DSGAI08"
     ]
   },
   "changelog": [

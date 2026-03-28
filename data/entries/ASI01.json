@@ -611,6 +611,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Unique identity per agent � no shared service accounts across agent deployments"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Threat model the agent pipeline for adversarial goal manipulation vectors including direct injection, indirect injection via tool outputs, and context poisoning",
+      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Ensures goal integrity is a design-phase requirement for all agentic systems"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Review agent behaviour for goal deviation — verify that the agent maintains intended objectives under adversarial input conditions",
+      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Catches goal manipulation vulnerabilities before production deployment"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Conduct adversarial red-team testing against goal hijacking vectors including injection through every data source, tool output, and context channel",
+      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validates goal integrity controls under realistic attack conditions"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Establish procedures to identify goal hijacking incidents in production including goal deviation monitoring, triage, and confirmation workflows",
+      "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables rapid detection and response to goal manipulation in live systems"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — adversarial agent inputs",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Extend malicious code protection to detect and block adversarial inputs targeting agent goal manipulation including injection through tool outputs and context stores"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — agent context validation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validate all inputs to agent systems including user prompts, tool outputs, memory retrievals, and inter-agent messages; enforce structural separation of instructions and data"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CA-8",
+      "control_name": "Penetration Testing — agent hijacking testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include agent goal hijacking in penetration testing scope; cover injection through all input channels — user prompts, tool outputs, memory stores, and inter-agent communication"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — agent action audit trail",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log all agent actions, goal interpretations, tool invocations, and decision points with sufficient detail to detect goal hijacking in post-incident analysis"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — adversarial agent controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls to detect and block adversarial inputs targeting agent goal manipulation including injection through tool outputs and context stores"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — agent hijacking scenarios",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include agent goal hijacking in threat-led penetration testing; cover injection through user prompts, tool outputs, memory stores, and inter-agent messages"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — goal manipulation monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for agent goal manipulation; monitor for behavioural deviations, unexpected tool invocations, and goal drift indicators"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 45",
+      "control_name": "Information Sharing — agent attack intelligence",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Share agent goal hijacking threat intelligence with sector peers through DORA information sharing arrangements"
     }
   ],
   "tools": [
@@ -668,6 +764,31 @@
       "name": "Teleport",
       "type": "commercial",
       "url": "https://goteleport.com"
+    },
+    {
+      "name": "LAAF (LLM Agent Assessment Framework)",
+      "type": "open-source",
+      "url": "https://github.com/OWASP/LAAF"
+    },
+    {
+      "name": "PyRIT",
+      "type": "open-source",
+      "url": "https://github.com/Azure/PyRIT"
+    },
+    {
+      "name": "NIST SP 800-218A",
+      "type": "open-source",
+      "url": "https://doi.org/10.6028/NIST.SP.800-218A.ipd"
+    },
+    {
+      "name": "LLM Guard",
+      "type": "open-source",
+      "url": "https://github.com/protectai/llm-guard"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
     },
     {
       "name": "LAAF v2.0",

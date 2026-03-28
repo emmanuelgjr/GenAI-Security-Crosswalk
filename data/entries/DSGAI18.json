@@ -445,6 +445,78 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce human identity for all compliance operations"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — AI data governance requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define security requirements mandating AI-specific data governance including data stewardship, accountability structures, and policy enforcement mechanisms"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — governance-integrated AI architecture",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Design AI systems with governance controls integrated into pipeline architecture; embed policy enforcement, approval workflows, and audit capabilities"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Analyse root causes — governance failure analysis",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "When data governance failures contribute to AI incidents, conduct root cause analysis to identify governance gaps and strengthen frameworks"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — AI governance framework",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establish comprehensive AI data governance framework within risk management strategy; define roles, policies, and oversight mechanisms"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-3",
+      "control_name": "Configuration Change Control — governance policy management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain AI governance policies under change control; require approval for policy modifications; audit all changes"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-3",
+      "control_name": "Risk Assessment — governance completeness",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Assess AI governance completeness; identify gaps in roles, policies, oversight, and accountability"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — AI governance framework",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establish comprehensive AI data governance within ICT risk management; define roles, policies, and oversight mechanisms"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — governance improvement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Apply lessons learned to improve AI governance; update policies and controls based on incident analysis and regulatory changes"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — governance scope mapping",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Map all AI systems subject to governance; ensure complete coverage of AI data assets"
     }
   ],
   "tools": [
@@ -467,17 +539,54 @@
       "name": "OpenDP",
       "type": "open-source",
       "url": "https://github.com/opendp/opendp"
+    },
+    {
+      "name": "Collibra",
+      "type": "commercial",
+      "url": "https://www.collibra.com"
+    },
+    {
+      "name": "Atlan",
+      "type": "commercial",
+      "url": "https://atlan.com"
+    },
+    {
+      "name": "Apache Atlas",
+      "type": "open-source",
+      "url": "https://atlas.apache.org"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "Alation",
+      "type": "commercial",
+      "url": "https://www.alation.com"
+    },
+    {
+      "name": "ServiceNow GRC",
+      "type": "commercial",
+      "url": "https://www.servicenow.com"
     }
   ],
   "incidents": [],
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM08"
+      "LLM08",
+      "LLM06",
+      "LLM05",
+      "LLM09"
     ],
     "dsgai_2026": [
       "DSGAI10",
       "DSGAI15"
+    ],
+    "agentic_top10": [
+      "ASI04",
+      "ASI09"
     ]
   },
   "changelog": [

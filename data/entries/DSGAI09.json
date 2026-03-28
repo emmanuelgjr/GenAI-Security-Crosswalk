@@ -500,6 +500,70 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Rotate corpus write credentials; implement short-lived write pattern"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — IP protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Protect model weights, architecture specifications, training data, and proprietary algorithms from unauthorised access; implement defence against model extraction attacks"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases — IP asset management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain access-controlled, versioned registries for all IP-sensitive AI artefacts; enforce need-to-know access and log all access events"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — IP encryption",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Encrypt all intellectual property — model weights, proprietary training data, algorithms — at rest with FIPS 140-validated modules"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — IP access control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce strict access control on AI intellectual property; restrict to minimum necessary personnel with audit trail"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-12",
+      "control_name": "Audit Generation — IP access tracking",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Generate audit records for all access to AI intellectual property; enable detection of unauthorised access and exfiltration"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — IP protection controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls protecting AI intellectual property — encryption, access controls, and DLP for model weights and proprietary data"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — IP theft reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify AI IP theft as an ICT-related incident; assess impact and report per DORA criteria"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — IP exfiltration detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection for IP exfiltration attempts; monitor model weight access and download patterns"
     }
   ],
   "tools": [
@@ -532,6 +596,41 @@
       "name": "Azure AI Content Safety",
       "type": "commercial",
       "url": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
+    },
+    {
+      "name": "ModelScan",
+      "type": "open-source",
+      "url": "https://github.com/protectai/modelscan"
+    },
+    {
+      "name": "Sigstore",
+      "type": "open-source",
+      "url": "https://www.sigstore.dev"
+    },
+    {
+      "name": "AWS Nitro Enclaves",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/ec2/nitro/nitro-enclaves/"
+    },
+    {
+      "name": "Azure Confidential Computing",
+      "type": "commercial",
+      "url": "https://azure.microsoft.com/en-us/solutions/confidential-compute/"
+    },
+    {
+      "name": "HashiCorp Vault",
+      "type": "commercial",
+      "url": "https://www.vaultproject.io"
+    },
+    {
+      "name": "Nightfall DLP",
+      "type": "commercial",
+      "url": "https://www.nightfall.ai"
+    },
+    {
+      "name": "AWS KMS / Azure Key Vault",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/kms/"
     }
   ],
   "incidents": [
@@ -556,10 +655,13 @@
     "llm_top10": [
       "LLM02",
       "LLM04",
-      "LLM08"
+      "LLM08",
+      "LLM03",
+      "LLM05"
     ],
     "agentic_top10": [
-      "ASI03"
+      "ASI03",
+      "ASI04"
     ]
   },
   "changelog": [

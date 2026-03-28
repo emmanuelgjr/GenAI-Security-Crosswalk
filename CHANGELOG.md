@@ -9,7 +9,51 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-Next: npm package `@owasp/genai-crosswalk` with TypeScript types, SBOM generation in CI, FedRAMP AI overlay + DORA framework additions.
+All items through v1.7.0 complete.
+
+---
+
+## [1.7.0] — 2026-03-28
+
+### Added
+
+#### Two new frameworks: FedRAMP AI overlay + DORA (frameworks 19 & 20)
+
+**FedRAMP** — US Federal Risk and Authorization Management Program AI overlay, extending SP 800-53 Rev 5 baseline:
+
+| File | Entries |
+|---|---|
+| `llm-top10/LLM_FedRAMP.md` | LLM01–LLM10 |
+| `agentic-top10/Agentic_FedRAMP.md` | ASI01–ASI10 |
+| `dsgai-2026/DSGAI_FedRAMP.md` | DSGAI01–DSGAI21 |
+
+**DORA** — EU Digital Operational Resilience Act (Regulation 2022/2554), mandatory for financial entities:
+
+| File | Entries |
+|---|---|
+| `llm-top10/LLM_DORA.md` | LLM01–LLM10 |
+| `agentic-top10/Agentic_DORA.md` | ASI01–ASI10 |
+| `dsgai-2026/DSGAI_DORA.md` | DSGAI01–DSGAI21 |
+
+#### npm package `@owasp/genai-crosswalk`
+
+- TypeScript types for all data structures (Entry, Incident, Mapping, MaestroLayer, etc.)
+- `src/index.ts` — typed API: `getEntry()`, `getFramework()`, `searchEntries()`, `getBySeverity()`, `getIncidentsForEntry()`, `getIncidentsByLayer()`
+- `src/index.test.ts` — 12 smoke tests using Node.js built-in test runner
+- `tsconfig.json`, `dist/` build output
+- `package.json` updated: `@owasp/genai-crosswalk`, `main: dist/index.js`, `types: dist/index.d.ts`
+
+#### SBOM generation
+
+- `.github/workflows/sbom.yml` — CycloneDX SBOM on every tag push, attached to GitHub Release
+- `scripts/sbom-inventory.js` — content-level SBOM of all crosswalk data assets (mapping files, entries, incidents)
+
+### Changed
+- `scripts/generate.js` — added SP 800-218A, FedRAMP, and DORA to FRAMEWORK_FILES catalog
+- `scripts/compliance-report.js` — added FedRAMP and DORA to REPORT_FRAMEWORKS + FW_META
+- `.gitignore` — added `dist/`, SBOM artifacts
+- Mapping file count: 61 → 67 (6 FedRAMP + DORA files)
+- Framework count: 18 → 20
 
 ---
 

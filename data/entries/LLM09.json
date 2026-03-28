@@ -560,6 +560,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce separate human and machine credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review for security vulnerabilities — output validation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include accuracy, hallucination, and misinformation scenarios in pre-release model behaviour reviews; validate output quality against domain benchmarks"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — behavioural and accuracy testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct adversarial and behavioural testing covering hallucination rates, factual accuracy, and misinformation generation potential before each release"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities — emergent behaviour monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establish procedures to detect and triage misinformation incidents in production including user feedback channels, automated fact-checking, and output monitoring"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — output confidence and citation requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Design AI systems to surface confidence indicators, source citations, and uncertainty signals in output; include as explicit security and quality requirements"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — output quality monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor model outputs for factual accuracy, consistency, and hallucination indicators; alert when confidence scores or factual grounding drops below thresholds"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CA-7",
+      "control_name": "Continuous Monitoring — model drift detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include model output quality and drift monitoring in FedRAMP continuous monitoring programme; track accuracy metrics, hallucination rates, and output consistency over time"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-6",
+      "control_name": "Audit Review — AI behaviour review",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Regularly review AI inference logs and output samples for hallucination patterns, factual errors, and misleading content; escalate findings through security channels"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — grounding and retrieval validation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validate retrieval sources and grounding data provided to the model; ensure factual grounding sources are authoritative and current"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — output quality monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for AI output quality degradation — hallucinations, factual errors, and misleading content in financial AI outputs"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — AI reliability governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI output reliability in the ICT risk management framework; define acceptable accuracy thresholds for financial AI use cases"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — misinformation post-mortem",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct post-incident analysis for misinformation events; identify root cause, assess customer and regulatory impact, and update controls"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — grounding controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement factual grounding controls for financial AI outputs — RAG with authoritative sources, confidence scoring, and human review for high-stakes outputs"
     }
   ],
   "tools": [
@@ -577,6 +673,21 @@
       "name": "DeepEval",
       "type": "open-source",
       "url": "https://github.com/confident-ai/deepeval"
+    },
+    {
+      "name": "Evals (OpenAI)",
+      "type": "open-source",
+      "url": "https://github.com/openai/evals"
+    },
+    {
+      "name": "Ragas",
+      "type": "open-source",
+      "url": "https://github.com/explodinggradients/ragas"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
     }
   ],
   "incidents": [
@@ -616,7 +727,9 @@
       "ASI09"
     ],
     "dsgai_2026": [
-      "DSGAI21"
+      "DSGAI21",
+      "DSGAI10",
+      "DSGAI17"
     ]
   },
   "changelog": [

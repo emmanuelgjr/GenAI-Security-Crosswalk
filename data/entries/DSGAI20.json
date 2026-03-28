@@ -491,6 +491,78 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Protect audit credential integrity"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — data localization requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define security requirements mandating compliance with data localization laws for all AI pipeline data; document jurisdictional restrictions for each dataset"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — jurisdictional access controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement access controls that enforce data localization boundaries; prevent data transfer or processing outside authorised jurisdictions"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases — jurisdiction-aware artefact management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain jurisdiction metadata on all data and model artefacts; enable verification that training and serving comply with localization requirements"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — data flow enforcement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce data flow controls preventing AI data from crossing jurisdictional boundaries; restrict to approved data centres and regions"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — localisation governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data localisation in AI risk management; define data residency requirements per jurisdiction and data type"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-3",
+      "control_name": "Configuration Change Control — data location management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain documentation of AI data storage locations; require change control for data location modifications"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — localisation governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data localisation in ICT risk management; define residency requirements per jurisdiction"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — cross-border data oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Address data localisation in third-party agreements; verify provider data processing locations meet residency requirements"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — data flow enforcement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement controls preventing AI data from crossing jurisdictional boundaries without authorisation"
     }
   ],
   "tools": [
@@ -528,17 +600,57 @@
       "name": "ART (Adversarial Robustness Toolbox)",
       "type": "open-source",
       "url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
+    },
+    {
+      "name": "Azure Policy",
+      "type": "commercial",
+      "url": "https://azure.microsoft.com/en-us/products/azure-policy"
+    },
+    {
+      "name": "AWS Config",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/config/"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "Privacera",
+      "type": "commercial",
+      "url": "https://privacera.com"
+    },
+    {
+      "name": "AWS Region Controls / Azure Policy",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/compliance/data-residency/"
+    },
+    {
+      "name": "Netskope",
+      "type": "commercial",
+      "url": "https://www.netskope.com"
+    },
+    {
+      "name": "OneTrust",
+      "type": "commercial",
+      "url": "https://www.onetrust.com"
     }
   ],
   "incidents": [],
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM04"
+      "LLM04",
+      "LLM07",
+      "LLM05"
     ],
     "dsgai_2026": [
       "DSGAI18",
       "DSGAI04"
+    ],
+    "agentic_top10": [
+      "ASI04"
     ]
   },
   "changelog": [

@@ -1,0 +1,48 @@
+name: SBOM Generation
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sbom:
+    name: Generate CycloneDX SBOM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+
+      - name: Generate CycloneDX SBOM
+        uses: CycloneDX/gh-node-module-generatebom@v1
+        with:
+          output: sbom.cdx.json
+
+      - name: Generate content inventory SBOM
+        run: node scripts/sbom-inventory.js
+
+      - name: Upload SBOM artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: |
+            sbom.cdx.json
+            sbom-content.cdx.json
+
+      - name: Attach SBOM to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          gh release upload "$TAG" sbom.cdx.json sbom-content.cdx.json --clobber

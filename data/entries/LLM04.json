@@ -593,6 +593,102 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Apply NHI-3 controls to all data pipeline third-party credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — resource and availability constraints",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include resource limits, rate limiting, and availability requirements as explicit security design requirements for AI inference services"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — load and adversarial testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct adversarial load testing and sponge example testing to validate resource consumption limits hold under attack conditions"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.2.1-PS",
+      "control_name": "Assess, prioritise, and remediate — availability remediation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define remediation procedures for availability incidents including model rollback, rate limit tightening, and cost circuit breakers"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review for security vulnerabilities — resource handling",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include resource exhaustion scenarios in pre-release security reviews; verify that token limits and rate limits are enforced by design"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — AI API endpoints",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce boundary protection on all AI inference endpoints — rate limiting, token quotas, and cost circuit breakers at the network and application boundary"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — consumption anomaly detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor AI inference services for resource consumption anomalies — token spikes, latency degradation, cost overruns; alert and auto-mitigate on threshold breach"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — AI resource restrictions",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Restrict AI inference services to minimum necessary compute, memory, and token budgets; disable unused model capabilities and endpoints"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — resource consumption logging",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log resource consumption per inference request — tokens, latency, cost; enable detection and forensic analysis of DoS patterns"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — availability controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement rate limiting, token quotas, and cost circuit breakers on AI inference services to prevent resource exhaustion and denial of service"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — consumption anomaly detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor AI inference services for resource consumption anomalies; alert on token spikes, latency degradation, and cost overruns"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — AI service continuity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain backup model deployments, checkpoint restoration capability, and fallback inference paths for AI services supporting critical financial functions"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 11",
+      "control_name": "Response and Recovery — DoS incident response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define response and recovery procedures for AI denial of service events; include automated throttling, failover, and service restoration"
     }
   ],
   "tools": [
@@ -635,6 +731,31 @@
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "LiteLLM",
+      "type": "open-source",
+      "url": "https://github.com/BerriAI/litellm"
+    },
+    {
+      "name": "Kong Gateway",
+      "type": "open-source",
+      "url": "https://github.com/Kong/kong"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "Locust",
+      "type": "open-source",
+      "url": "https://locust.io"
+    },
+    {
+      "name": "AWS WAF / Azure Front Door",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/waf/"
     }
   ],
   "incidents": [
@@ -647,14 +768,16 @@
   ],
   "crossrefs": {
     "agentic_top10": [
-      "ASI06"
+      "ASI06",
+      "ASI08"
     ],
     "dsgai_2026": [
       "DSGAI04",
       "DSGAI21",
       "DSGAI03",
       "DSGAI02",
-      "DSGAI09"
+      "DSGAI09",
+      "DSGAI17"
     ]
   },
   "changelog": [

@@ -552,6 +552,102 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Require authentication for all vector database connections"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — embedding store protection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Classify embedding stores and vector databases as sensitive AI artefacts; apply access controls, encryption at rest/in transit, and audit logging"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — embedding adversarial testing",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Conduct adversarial testing of retrieval pipelines including embedding inversion, retrieval poisoning, and semantic search manipulation scenarios"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Analyse root causes — embedding incident forensics",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "When an embedding or retrieval security incident occurs, conduct forensic analysis of the vector store, ingestion pipeline, and query patterns"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Reuse existing well-secured software — vector store vetting",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Vet vector database platforms and embedding model providers for security posture before adoption; review access control capabilities"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — embedding store protection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Encrypt vector databases and embedding stores at rest; enforce access controls and audit logging on all embedding read and write operations"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — adversarial embedding detection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Extend malicious code protection to detect adversarial manipulation of embeddings — poisoned vectors, out-of-distribution injections, and embedding inversion attacks"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — embedding infrastructure",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include vector databases, embedding pipelines, and retrieval infrastructure in vulnerability scanning; test for injection, access control bypass, and data extraction"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — embedding store access",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enforce role-based access control on vector database operations; restrict who can read, write, and delete embeddings"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — embedding store protection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement security controls for vector databases and embedding stores — encryption at rest, access controls, and integrity monitoring for financial data embeddings"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — embedding security testing",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include vector database and embedding pipeline security in resilience testing; test for injection, access control bypass, and data extraction from embeddings"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — embedding infrastructure assets",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Register vector databases, embedding models, and retrieval infrastructure in the ICT asset inventory with classification per data sensitivity"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — embedding tampering detection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Monitor embedding stores for unauthorised modifications, anomalous writes, and bulk access patterns indicative of extraction or poisoning"
     }
   ],
   "tools": [
@@ -584,6 +680,26 @@
       "name": "ML Privacy Meter",
       "type": "open-source",
       "url": "https://github.com/privacytrustlab/ml_privacy_meter"
+    },
+    {
+      "name": "LanceDB",
+      "type": "open-source",
+      "url": "https://lancedb.com"
+    },
+    {
+      "name": "Milvus",
+      "type": "open-source",
+      "url": "https://milvus.io"
+    },
+    {
+      "name": "LLM Guard",
+      "type": "open-source",
+      "url": "https://github.com/protectai/llm-guard"
+    },
+    {
+      "name": "OWASP ZAP",
+      "type": "open-source",
+      "url": "https://www.zaproxy.org"
     }
   ],
   "incidents": [],
@@ -595,7 +711,9 @@
       "DSGAI13",
       "DSGAI18",
       "DSGAI08",
-      "DSGAI09"
+      "DSGAI09",
+      "DSGAI04",
+      "DSGAI05"
     ]
   },
   "changelog": [

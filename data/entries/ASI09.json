@@ -571,6 +571,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least privilege makes agent capabilities visible and bounded � users understand what the agent can actually do"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Review agent behaviour for emergent capabilities — verify that self-modification, dynamic tool discovery, and autonomous agent spawning do not create unintended security exposures",
+      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Catches emergent pattern risks before production"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Conduct adversarial testing targeting emerging agentic patterns — self-evolution, prompt self-modification, autonomous tool acquisition, and dynamic agent creation",
+      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validates controls against novel attack surfaces"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Establish monitoring for emergent agent behaviours — detect agents acquiring new capabilities, modifying their own definitions, or spawning sub-agents outside approved patterns",
+      "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables detection of emerging risks in production"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "When incidents involve novel agentic patterns, conduct root cause analysis focused on understanding the emergent capability and its security implications",
+      "control_name": "RV.3.1-PS – Analyse root causes",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Builds organisational knowledge of emerging agentic risks"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CA-7",
+      "control_name": "Continuous Monitoring — novel pattern detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include monitoring for novel agentic behaviour patterns in FedRAMP continuous monitoring; track for unexpected capabilities, emergent behaviours, and architectural drift"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — emerging attack surfaces",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include emerging agentic attack surfaces in vulnerability scanning; assess novel architectures for security implications before production deployment"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — unexpected behaviour detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor agent systems for unexpected behaviour — novel tool use patterns, unanticipated goal decomposition, and emergent inter-agent coordination"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-6",
+      "control_name": "Audit Review — agent decision review",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct regular audit review of agent decision logs; identify patterns indicative of unexpected capabilities or emergent behaviours requiring security assessment"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — novel agentic risk governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include emerging agentic pattern risks in ICT risk management framework; assess novel architectures for operational resilience implications before deployment"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — unexpected behaviour monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor agent systems for unexpected behaviour — novel tool use patterns, unanticipated goal decomposition, and emergent inter-agent coordination"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — emerging pattern assessment",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Apply lessons learned from emerging agentic pattern incidents; update governance and controls as new attack techniques and defence approaches emerge"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — novel architecture testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include emerging agentic architecture security in resilience testing; assess novel patterns for resilience implications before production deployment"
     }
   ],
   "tools": [
@@ -593,6 +689,26 @@
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "MITRE ATLAS",
+      "type": "open-source",
+      "url": "https://atlas.mitre.org"
+    },
+    {
+      "name": "PyRIT",
+      "type": "open-source",
+      "url": "https://github.com/Azure/PyRIT"
     }
   ],
   "incidents": [],
@@ -603,7 +719,9 @@
     ],
     "dsgai_2026": [
       "DSGAI21",
-      "DSGAI04"
+      "DSGAI04",
+      "DSGAI06",
+      "DSGAI18"
     ]
   },
   "changelog": [

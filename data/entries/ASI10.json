@@ -602,6 +602,102 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived credentials � rogue detection triggers token expiry without requiring manual revocation"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Vet all external agent dependencies — LLM APIs, tool endpoints, MCP servers, orchestration platforms — for reliability, security posture, and failure mode characteristics before adoption",
+      "control_name": "PW.4.1-PS – Reuse existing well-secured software",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents adoption of unreliable dependencies"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Verify that external dependency responses are consistent with expected behaviour — detect API version changes, model swaps, or degraded output quality that could affect agent correctness",
+      "control_name": "PS.2.1-PS – Verify software integrity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Detects dependency degradation and tampering"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Monitor all agent dependencies for availability, behavioural consistency, and security posture changes; establish triage procedures for dependency degradation events",
+      "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables rapid detection of dependency failures"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Define remediation procedures for dependency failures — graceful degradation, fallback providers, workflow suspension, and stakeholder notification",
+      "control_name": "RV.2.1-PS – Assess, prioritise, and remediate vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Ensures operational continuity during dependency outages"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-2",
+      "control_name": "Supply Chain Risk Management Plan — agent dependencies",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include all agent external dependencies — model APIs, tool endpoints, data sources — in supply chain risk management with availability and integrity requirements"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SA-9",
+      "control_name": "External Information System Services — agent service dependencies",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Require SLAs from agent dependency providers covering availability, performance, security, and incident notification; establish fallback procedures"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — dependency health monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor agent dependency health in real time — API availability, response latency, error rates; alert on degradation and trigger fallback procedures"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "IR-4",
+      "control_name": "Incident Handling — dependency failure response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define incident handling procedures for agent dependency failures; include automated fallback activation, graceful degradation, and service restoration"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — agent dependency oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include all agent external dependencies — model APIs, tool endpoints, data sources — in third-party ICT risk management with availability and integrity requirements"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 11",
+      "control_name": "Response and Recovery — dependency failure response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define response and recovery procedures for agent dependency failures; include fallback activation, graceful degradation, and service restoration"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — dependency continuity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain backup and fallback mechanisms for critical agent dependencies; enable continued operation during provider outages"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — dependency health monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor agent dependency health in real time — API availability, response latency, error rates; alert on degradation and trigger fallback procedures"
     }
   ],
   "tools": [
@@ -654,13 +750,39 @@
       "name": "Teleport",
       "type": "commercial",
       "url": "https://goteleport.com"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "LiteLLM",
+      "type": "open-source",
+      "url": "https://github.com/BerriAI/litellm"
+    },
+    {
+      "name": "Grafana",
+      "type": "open-source",
+      "url": "https://grafana.com"
+    },
+    {
+      "name": "PagerDuty",
+      "type": "commercial",
+      "url": "https://www.pagerduty.com"
+    },
+    {
+      "name": "Istio",
+      "type": "open-source",
+      "url": "https://istio.io"
     }
   ],
   "incidents": [],
   "crossrefs": {
     "llm_top10": [
       "LLM06",
-      "LLM10"
+      "LLM10",
+      "LLM05"
     ],
     "agentic_top10": [
       "ASI01",
@@ -677,7 +799,9 @@
       "DSGAI16",
       "DSGAI03",
       "DSGAI19",
-      "DSGAI02"
+      "DSGAI02",
+      "DSGAI17",
+      "DSGAI06"
     ]
   },
   "changelog": [

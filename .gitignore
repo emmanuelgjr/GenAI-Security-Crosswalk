@@ -7,3 +7,6 @@ __pycache__/
 evals/results/
 reports/
 data/.watch-state.json
+dist/
+sbom.cdx.json
+sbom-content.cdx.json

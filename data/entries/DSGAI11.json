@@ -482,6 +482,78 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vault session store credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — data retention and deletion policies",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define security requirements governing data retention periods, deletion procedures, and right-to-erasure compliance for all data in AI pipelines"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases — retention-aware artefact management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain versioned data and model artefacts with retention metadata; enable selective data removal and model retraining on deletion requests"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.2.1-PS",
+      "control_name": "Assess, prioritise, and remediate — deletion request remediation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define procedures to assess and remediate data deletion requests including impact analysis on trained models and retraining requirements"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-3",
+      "control_name": "Configuration Change Control — retention policy management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define and enforce data retention policies for all AI data; implement automated deletion schedules; log policy changes"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — retained data encryption",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Encrypt all retained AI data; implement crypto-shredding capability for secure deletion"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — retention governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data retention risk in AI risk management; define retention periods per data type and regulatory requirement"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — retention governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data retention policies in ICT risk management; define retention periods per data type and regulatory requirement"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — retention and deletion procedures",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement backup policies aligned with retention requirements; include secure deletion procedures for expired AI data"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — retention enforcement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce retention policies through automated deletion and crypto-shredding; prevent retention beyond defined periods"
     }
   ],
   "tools": [
@@ -514,6 +586,41 @@
       "name": "Burp Suite Community",
       "type": "open-source",
       "url": "https://portswigger.net/burp/communitydownload"
+    },
+    {
+      "name": "Apache Atlas",
+      "type": "open-source",
+      "url": "https://atlas.apache.org"
+    },
+    {
+      "name": "Immuta",
+      "type": "commercial",
+      "url": "https://www.immuta.com"
+    },
+    {
+      "name": "OneTrust",
+      "type": "commercial",
+      "url": "https://www.onetrust.com"
+    },
+    {
+      "name": "DVC (Data Version Control)",
+      "type": "open-source",
+      "url": "https://dvc.org"
+    },
+    {
+      "name": "AWS S3 Lifecycle / Azure Lifecycle Management",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/s3/"
+    },
+    {
+      "name": "HashiCorp Vault",
+      "type": "commercial",
+      "url": "https://www.vaultproject.io"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
     }
   ],
   "incidents": [
@@ -527,7 +634,9 @@
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM07"
+      "LLM07",
+      "LLM03",
+      "LLM08"
     ],
     "dsgai_2026": [
       "DSGAI13"

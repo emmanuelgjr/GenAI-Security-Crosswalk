@@ -587,6 +587,102 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Unique credential per agent � code execution in one instance cannot leverage other instances' access"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Threat model all code execution paths in agent workflows; design sandboxing, resource limits, and execution constraints as explicit security requirements",
+      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Ensures code execution boundaries are designed before implementation"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Implement secure coding for agent code execution — sandbox isolation, input validation for code generation, output filtering, and prevention of self-modification",
+      "control_name": "PW.5.1-PS – Secure coding practices",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents code execution vulnerabilities in agent implementation"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Conduct adversarial testing targeting code execution — sandbox escapes, resource limit bypasses, self-modification, and host system access through generated code",
+      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validates execution boundary controls under attack conditions"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Protect agent execution environments, sandbox configurations, and runtime constraints from unauthorised modification",
+      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents weakening of execution boundaries through configuration tampering"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — code execution restrictions",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Restrict agent code execution to minimum necessary scope; enforce sandbox boundaries, disable unnecessary language features, and limit filesystem and network access"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — execution sandbox",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce strict boundary protection on agent code execution environments; isolate from production systems, restrict network access, and enforce resource limits"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — agent-generated code",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Scan agent-generated code for malicious patterns before execution; detect and block code that attempts filesystem access, network communication, or privilege escalation"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CA-8",
+      "control_name": "Penetration Testing — execution boundary testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include agent code execution sandbox escape in penetration testing scope; test boundary integrity under adversarial conditions"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — code execution controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls restricting agent code execution — sandboxing, capability restrictions, network isolation, and resource limits"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — sandbox escape testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include agent code execution sandbox escape in threat-led penetration testing; test boundary integrity under adversarial conditions"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — code execution incident reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify uncontrolled code execution events as ICT-related incidents; assess impact on financial systems and report per DORA criteria"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — execution anomaly detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor agent code execution for anomalous patterns — unexpected system calls, network access, filesystem operations; alert on detection"
     }
   ],
   "tools": [
@@ -614,6 +710,16 @@
       "name": "Dragos",
       "type": "commercial",
       "url": "https://www.dragos.com"
+    },
+    {
+      "name": "Garak",
+      "type": "open-source",
+      "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "E2B",
+      "type": "open-source",
+      "url": "https://e2b.dev"
     }
   ],
   "incidents": [
@@ -634,11 +740,17 @@
     "llm_top10": [
       "LLM05",
       "LLM07",
-      "LLM03"
+      "LLM03",
+      "LLM02",
+      "LLM01",
+      "LLM06"
     ],
     "dsgai_2026": [
       "DSGAI12",
-      "DSGAI13"
+      "DSGAI13",
+      "DSGAI06",
+      "DSGAI05",
+      "DSGAI08"
     ]
   },
   "changelog": [

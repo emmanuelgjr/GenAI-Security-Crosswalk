@@ -59,6 +59,8 @@ const REPORT_FRAMEWORKS = [
   'ENISA Multilayer Framework',
   'OWASP NHI Top 10',
   'NIST SP 800-218A',
+  'FedRAMP',
+  'DORA',
 ];
 
 const SEVERITY_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3 };
@@ -172,6 +174,18 @@ const FW_META = {
     deadline: 'Initial Public Draft — final expected 2026',
     audience: 'ML engineers, US federal contractors, secure SDLC teams',
     note: 'Extends SSDF with AI-specific practices for secure GenAI/foundation model development.',
+  },
+  'FedRAMP': {
+    short: 'FedRAMP',
+    deadline: 'Continuous — required for US federal cloud services',
+    audience: 'US federal contractors, cloud service providers, FedRAMP assessors',
+    note: 'AI overlay extends SP 800-53 Rev 5 baseline with AI-specific controls for federal cloud AI.',
+  },
+  'DORA': {
+    short: 'DORA',
+    deadline: 'January 17, 2025 — mandatory for EU financial entities',
+    audience: 'Financial sector CISOs, third-party risk managers, EU financial regulators',
+    note: 'Digital Operational Resilience Act — ICT risk, incident reporting, resilience testing for financial AI.',
   },
 };
 

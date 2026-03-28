@@ -651,6 +651,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent credentials machine-only � human use detected and blocked"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Define explicit privilege boundaries for each agent identity — maximum permitted privilege level, credential scope, and escalation constraints",
+      "control_name": "PW.1.1-PS – Define security requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establishes privilege boundaries as mandatory requirements"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Implement secure credential handling — agents must not inherit user credentials, store tokens in context, or pass credentials between agents without explicit authorisation",
+      "control_name": "PW.5.1-PS – Secure coding practices",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents credential leakage through agent code paths"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Protect credential stores, identity configurations, and privilege mapping files from unauthorised access and modification",
+      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents tampering with privilege boundaries"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Establish monitoring and triage procedures for privilege escalation incidents — detect agents operating beyond their assigned privilege level",
+      "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables rapid detection of privilege escalation in production"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-6",
+      "control_name": "Least Privilege — escalation prevention",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce least privilege with explicit privilege ceilings per agent; prevent accumulation of permissions through tool chaining or inter-agent delegation"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "IA-2",
+      "control_name": "Identification and Authentication — agent NHI",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Assign unique non-human identities to each AI agent; authenticate agent identity at each tool invocation and inter-agent communication boundary"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — tool boundary enforcement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce access control at every tool invocation boundary; validate agent identity and authorisation for each requested action regardless of calling context"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "IR-4",
+      "control_name": "Incident Handling — escalation incident response",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define incident handling procedures for agent privilege escalation events; include automated containment, privilege revocation, and forensic investigation"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — escalation prevention controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls preventing agent privilege escalation through tool chaining, inter-agent delegation, or permission accumulation"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — escalation incident reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify agent privilege escalation as an ICT-related incident; assess impact on financial systems and report per DORA incident classification criteria"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — escalation scenario testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include agent privilege escalation scenarios in threat-led penetration testing; test for escalation through tool chaining and inter-agent trust"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — escalation detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for agent privilege escalation; monitor for permission boundary violations and unexpected privilege accumulation"
     }
   ],
   "tools": [
@@ -685,6 +781,36 @@
       "url": "https://aws.amazon.com/secrets-manager/"
     },
     {
+      "name": "LAAF (LLM Agent Assessment Framework)",
+      "type": "open-source",
+      "url": "https://github.com/OWASP/LAAF"
+    },
+    {
+      "name": "Open Policy Agent (OPA)",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "Falco",
+      "type": "open-source",
+      "url": "https://falco.org"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "SPIFFE/SPIRE",
+      "type": "open-source",
+      "url": "https://spiffe.io"
+    },
+    {
+      "name": "CyberArk",
+      "type": "commercial",
+      "url": "https://www.cyberark.com"
+    },
+    {
       "name": "LAAF v2.0",
       "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
       "type": "open-source"
@@ -706,12 +832,15 @@
   ],
   "crossrefs": {
     "llm_top10": [
-      "LLM06"
+      "LLM06",
+      "LLM01"
     ],
     "dsgai_2026": [
       "DSGAI02",
       "DSGAI10",
-      "DSGAI11"
+      "DSGAI11",
+      "DSGAI06",
+      "DSGAI08"
     ]
   },
   "changelog": [

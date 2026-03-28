@@ -600,6 +600,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credential stores per third-party component"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — training data and pipelines",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Protect training data repositories, fine-tuning datasets, and ML pipeline code from unauthorised read, write, and modification"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases — model versioning",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain versioned, integrity-verified training data snapshots and model checkpoints in a secure model registry; enable rollback"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Reuse existing well-secured software — dataset vetting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Vet all third-party and external training datasets for provenance, integrity, and potential poisoning before use in any training run"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Analyse root causes — training data forensics",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "When poisoning is detected, conduct training data analysis to identify the poisoned records, their source, and the blast radius"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-2",
+      "control_name": "Supply Chain Risk Management Plan — AI data sources",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI training data sources, fine-tuning datasets, and pre-trained model weights in the supply chain risk management plan; document provenance and risk assessment for each"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-3",
+      "control_name": "Supply Chain Controls and Processes — model provenance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement supply chain controls for AI model components — verify integrity, provenance, and authenticity of all training data and model weights before use"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — training pipeline integrity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Extend malicious code protection to training data pipelines; detect and block poisoned data, anomalous labels, and backdoor triggers"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-3",
+      "control_name": "Configuration Change Control — model update governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Require formal change control for all model updates, fine-tuning runs, and training data changes; maintain audit trail of all modifications"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — AI data and model provider oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI model providers and training data vendors in third-party ICT risk oversight; assess data provenance, integrity, and poisoning risk"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — training pipeline integrity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls protecting training data pipelines from unauthorised modification, poisoned data injection, and backdoor embedding"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — AI training data assets",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Identify and classify all AI training datasets, fine-tuning data, and model weights as ICT assets in the asset inventory"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — poisoning post-mortem",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct post-incident analysis for data poisoning events; identify root cause, trace poisoned records, and update protection controls"
     }
   ],
   "tools": [
@@ -637,6 +733,26 @@
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "IBM Adversarial Robustness Toolbox",
+      "type": "open-source",
+      "url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
+    },
+    {
+      "name": "CleanLab",
+      "type": "open-source",
+      "url": "https://github.com/cleanlab/cleanlab"
+    },
+    {
+      "name": "Great Expectations",
+      "type": "open-source",
+      "url": "https://greatexpectations.io"
+    },
+    {
+      "name": "Sigstore",
+      "type": "open-source",
+      "url": "https://www.sigstore.dev"
     }
   ],
   "incidents": [
@@ -650,14 +766,16 @@
   "crossrefs": {
     "agentic_top10": [
       "ASI04",
-      "ASI07"
+      "ASI07",
+      "ASI06"
     ],
     "dsgai_2026": [
       "DSGAI04",
       "DSGAI03",
       "DSGAI06",
       "DSGAI16",
-      "DSGAI17"
+      "DSGAI17",
+      "DSGAI05"
     ]
   },
   "changelog": [

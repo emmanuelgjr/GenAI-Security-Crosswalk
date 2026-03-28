@@ -551,6 +551,70 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived tokens for all data pipeline service accounts"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — data access audit controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement comprehensive audit logging for all access to training data, model weights, embedding stores, and pipeline configuration; enforce tamper-evident log storage"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities — audit-driven detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establish procedures to detect data access anomalies using audit logs; define triage workflows for suspicious access patterns across AI data stores"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — AI data access logging",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log all access to AI training data, model weights, inference inputs and outputs, and configuration; include user/service identity, timestamp, and access type"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-12",
+      "control_name": "Audit Generation — inference audit trail",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Generate audit records for all model inference requests with sufficient detail for compliance and incident investigation"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — authenticated data access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce authenticated, authorised access to all AI data stores; deny unauthenticated access; log all access decisions"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — data access monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for anomalous AI data access; monitor for unauthorised access patterns, bulk extractions, and access outside normal parameters"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — data access governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI data access logging requirements in ICT risk management framework; define logging scope, retention, and review requirements"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — data store inventory",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Register all AI data stores in ICT asset inventory; ensure logging coverage for all identified data assets"
     }
   ],
   "tools": [
@@ -583,6 +647,41 @@
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "Elastic SIEM",
+      "type": "open-source",
+      "url": "https://www.elastic.co/security"
+    },
+    {
+      "name": "AWS CloudTrail",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/cloudtrail/"
+    },
+    {
+      "name": "Azure Monitor",
+      "type": "commercial",
+      "url": "https://azure.microsoft.com/en-us/products/monitor"
+    },
+    {
+      "name": "AWS CloudTrail / Azure Monitor",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/cloudtrail/"
+    },
+    {
+      "name": "Elasticsearch",
+      "type": "open-source",
+      "url": "https://www.elastic.co"
+    },
+    {
+      "name": "Splunk",
+      "type": "commercial",
+      "url": "https://www.splunk.com"
     }
   ],
   "incidents": [
@@ -638,12 +737,15 @@
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM01"
+      "LLM01",
+      "LLM03",
+      "LLM07"
     ],
     "agentic_top10": [
       "ASI03",
       "ASI06",
-      "ASI01"
+      "ASI01",
+      "ASI02"
     ]
   },
   "changelog": [

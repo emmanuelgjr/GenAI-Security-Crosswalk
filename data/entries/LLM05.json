@@ -576,6 +576,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Apply least-privilege to all credentials used in downstream processing"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Reuse existing well-secured software — third-party AI model and dataset vetting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Vet all third-party model weights, datasets, plugins, and libraries before use; verify provenance, licence, and security posture"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Verify software integrity — model and library supply chain",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify integrity of all model artefacts and third-party components using cryptographic signatures and checksums before deployment"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases — model registry",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain a secure, versioned model registry with provenance records for all components; enable auditability and rollback"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities — supply chain monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor for newly disclosed vulnerabilities in third-party AI components; establish a triage process for AI-specific CVEs"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-2",
+      "control_name": "Supply Chain Risk Management Plan — AI components",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include all AI components — models, datasets, adapters, libraries, plugins — in the supply chain risk management plan with provenance and risk assessment"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-3",
+      "control_name": "Supply Chain Controls — model provenance verification",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement integrity verification for all AI supply chain components using cryptographic signatures, checksums, and attestation before deployment"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SA-9",
+      "control_name": "External Information System Services — third-party AI",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Require third-party AI service providers to meet FedRAMP requirements; establish SLAs covering model security, data handling, and incident notification"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SA-3",
+      "control_name": "System Development Life Cycle — AI SDLC",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Integrate AI-specific security activities into the SDLC — model security review, adversarial testing, supply chain verification at each lifecycle phase"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — AI vendor oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI model providers, dataset vendors, and ML library maintainers in third-party ICT risk management; conduct due diligence, contractual oversight, and ongoing monitoring"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — AI supply chain assets",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Identify and classify all AI supply chain components — models, datasets, adapters, libraries, plugins — in the ICT asset inventory with provenance records"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — AI supply chain governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI supply chain risk in the ICT risk management framework; define policies for AI component sourcing, vetting, and lifecycle management"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — supply chain resilience",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI supply chain disruption scenarios in resilience testing; test fallback procedures for third-party AI service failures"
     }
   ],
   "tools": [
@@ -593,6 +689,26 @@
       "name": "Semgrep",
       "type": "open-source",
       "url": "https://semgrep.dev"
+    },
+    {
+      "name": "CycloneDX",
+      "type": "open-source",
+      "url": "https://cyclonedx.org"
+    },
+    {
+      "name": "ModelScan",
+      "type": "open-source",
+      "url": "https://github.com/protectai/modelscan"
+    },
+    {
+      "name": "OWASP Dependency-Check",
+      "type": "open-source",
+      "url": "https://owasp.org/www-project-dependency-check/"
+    },
+    {
+      "name": "Sigstore",
+      "type": "open-source",
+      "url": "https://www.sigstore.dev"
     }
   ],
   "incidents": [
@@ -606,11 +722,15 @@
   "crossrefs": {
     "agentic_top10": [
       "ASI02",
-      "ASI05"
+      "ASI05",
+      "ASI04",
+      "ASI10"
     ],
     "dsgai_2026": [
       "DSGAI05",
-      "DSGAI12"
+      "DSGAI12",
+      "DSGAI04",
+      "DSGAI19"
     ]
   },
   "changelog": [

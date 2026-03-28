@@ -580,6 +580,102 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived credentials for memory store access � rotate on each agent session"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Protect agent memory stores, context databases, and shared state repositories from unauthorised read, write, and modification; enforce access controls per agent identity",
+      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents direct tampering with agent memory and context"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Maintain versioned, integrity-verified snapshots of agent memory and context stores; enable rollback to pre-poisoning states",
+      "control_name": "PS.3.1-PS – Archive and protect software releases",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Ensures recovery capability for memory poisoning incidents"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Review agent behaviour for memory-influenced anomalies — verify that persistent memory and shared context do not introduce unintended behaviour changes across sessions",
+      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Catches memory poisoning effects before they propagate"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "When memory poisoning is detected, conduct forensic analysis to identify the poisoned records, their ingestion source, propagation path, and blast radius across agents",
+      "control_name": "RV.3.1-PS – Analyse root causes",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enables thorough incident response for memory poisoning events"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — memory store protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Encrypt agent memory stores and context databases at rest; enforce access controls and integrity verification on all memory read and write operations"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — adversarial memory detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Extend malicious content detection to agent memory stores; detect poisoned memories, manipulated context, and adversarial state modifications"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — memory operation audit",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log all agent memory operations — reads, writes, deletions — with sufficient detail to detect poisoning and support forensic investigation"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — memory infrastructure",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include agent memory stores, context databases, and shared state infrastructure in vulnerability scanning and security assessment"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — memory integrity controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls protecting agent memory stores from poisoning, tampering, and unauthorised modification; enforce access controls and integrity verification"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — memory manipulation detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for agent memory manipulation; monitor for anomalous writes, content inconsistencies, and cross-session poisoning patterns"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — memory store assets",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Register agent memory stores, context databases, and shared state systems in the ICT asset inventory; classify by data sensitivity"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — memory poisoning post-mortem",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct post-incident analysis for memory poisoning events; trace poisoned content to source and assess impact on agent decisions"
     }
   ],
   "tools": [
@@ -624,6 +720,41 @@
       "url": "https://www.trychroma.com"
     },
     {
+      "name": "LAAF (LLM Agent Assessment Framework)",
+      "type": "open-source",
+      "url": "https://github.com/OWASP/LAAF"
+    },
+    {
+      "name": "Garak",
+      "type": "open-source",
+      "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "Great Expectations",
+      "type": "open-source",
+      "url": "https://greatexpectations.io"
+    },
+    {
+      "name": "Weaviate",
+      "type": "open-source",
+      "url": "https://weaviate.io"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "HashiCorp Vault",
+      "type": "commercial",
+      "url": "https://www.vaultproject.io"
+    },
+    {
       "name": "LAAF v2.0",
       "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
       "type": "open-source"
@@ -659,7 +790,8 @@
     "llm_top10": [
       "LLM04",
       "LLM08",
-      "LLM02"
+      "LLM02",
+      "LLM03"
     ],
     "dsgai_2026": [
       "DSGAI04",

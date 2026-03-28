@@ -491,6 +491,62 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scan and scrub credentials from inference logs"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — data minimisation requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Define security requirements enforcing data minimisation — AI systems must collect and process only the data necessary for their documented purpose"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — minimisation-by-design",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Design AI data pipelines with data minimisation controls built in; implement field-level filtering, aggregation, and anonymisation at ingestion"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-6",
+      "control_name": "Least Privilege — data collection restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Restrict AI data collection to minimum necessary for stated purpose; enforce at pipeline ingestion points"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — data processing restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Restrict AI data processing to minimum necessary scope; disable collection of non-essential data fields"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — minimisation governance",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include data minimisation in AI risk management; define minimum necessary data per AI use case"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — minimisation governance",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include data minimisation in ICT risk management; define minimum necessary data per AI use case"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — collection restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement controls restricting AI data collection to minimum necessary; enforce at pipeline ingestion points"
     }
   ],
   "tools": [
@@ -513,17 +569,55 @@
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "Presidio",
+      "type": "open-source",
+      "url": "https://github.com/microsoft/presidio"
+    },
+    {
+      "name": "ARX Data Anonymization",
+      "type": "open-source",
+      "url": "https://arx.deidentifier.org"
+    },
+    {
+      "name": "Amnesia",
+      "type": "open-source",
+      "url": "https://amnesia.openaire.eu"
+    },
+    {
+      "name": "Google Differential Privacy",
+      "type": "open-source",
+      "url": "https://github.com/google/differential-privacy"
+    },
+    {
+      "name": "Microsoft Presidio",
+      "type": "open-source",
+      "url": "https://github.com/microsoft/presidio"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "OneTrust",
+      "type": "commercial",
+      "url": "https://www.onetrust.com"
     }
   ],
   "incidents": [],
   "crossrefs": {
     "llm_top10": [
       "LLM07",
-      "LLM02"
+      "LLM02",
+      "LLM08",
+      "LLM06"
     ],
     "agentic_top10": [
       "ASI01",
-      "ASI06"
+      "ASI06",
+      "ASI02"
     ],
     "dsgai_2026": [
       "DSGAI03"

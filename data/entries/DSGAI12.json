@@ -529,6 +529,62 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Rotate API credentials; implement per-session tokens"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — data ownership and rights management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define security requirements that establish clear data ownership, licensing terms, and permitted use for all datasets in AI pipelines"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — ownership-based access controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement access controls that enforce data ownership boundaries; prevent use of datasets outside their licensed scope or ownership agreement"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — ownership governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, outputs, and derived insights"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — ownership-based access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce access controls aligned with data ownership; restrict usage based on ownership rights and licence terms"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — usage tracking",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log data usage for ownership compliance; track how data is used across AI systems for licence and rights management"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — ownership governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, outputs, and derived insights"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — data rights management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Address data ownership and usage rights in third-party agreements; clarify ownership of AI outputs and derived data"
     }
   ],
   "tools": [
@@ -561,6 +617,36 @@
       "name": "SQLFluff",
       "type": "open-source",
       "url": "https://github.com/sqlfluff/sqlfluff"
+    },
+    {
+      "name": "Collibra",
+      "type": "commercial",
+      "url": "https://www.collibra.com"
+    },
+    {
+      "name": "Alation",
+      "type": "commercial",
+      "url": "https://www.alation.com"
+    },
+    {
+      "name": "Apache Atlas",
+      "type": "open-source",
+      "url": "https://atlas.apache.org"
+    },
+    {
+      "name": "CycloneDX",
+      "type": "open-source",
+      "url": "https://cyclonedx.org"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "OneTrust",
+      "type": "commercial",
+      "url": "https://www.onetrust.com"
     }
   ],
   "incidents": [],
@@ -568,12 +654,16 @@
     "llm_top10": [
       "LLM05",
       "LLM01",
-      "LLM02"
+      "LLM02",
+      "LLM03",
+      "LLM09"
     ],
     "agentic_top10": [
       "ASI02",
       "ASI05",
-      "ASI01"
+      "ASI01",
+      "ASI04",
+      "ASI09"
     ],
     "dsgai_2026": [
       "DSGAI14"

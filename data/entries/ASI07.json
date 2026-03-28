@@ -580,6 +580,102 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Unique identity per agent � A2A authentication bound to specific agent identity"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Define explicit security requirements constraining permitted tool invocation sequences and cross-tool data flows for each agent deployment",
+      "control_name": "PW.1.1-PS – Define security requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Establishes chaining constraints as mandatory requirements"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Threat model tool interaction graphs — identify composite action sequences that could achieve unauthorised outcomes; design controls for chain-level authorisation",
+      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Ensures chaining risks are addressed at design time"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Review agent behaviour for chain-based scope violations — verify that multi-step tool sequences cannot achieve outcomes exceeding individual tool permissions",
+      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Catches chaining vulnerabilities before production"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Establish monitoring for anomalous tool invocation sequences; define triage procedures for suspected lateral chaining incidents",
+      "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enables detection of chaining attacks in production"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-6",
+      "control_name": "Least Privilege — tool chain restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enforce least privilege across tool chains; prevent agents from combining tool invocations that individually are safe but together achieve harmful outcomes"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — tool combination restrictions",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Restrict permitted tool combinations; define allowed tool chains in configuration and deny undefined sequences"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — per-tool boundary enforcement",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Enforce access control at each tool invocation independently; re-evaluate authorisation at every step in a tool chain regardless of prior approvals"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — tool chain audit trail",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Log complete tool chain sequences with full context; enable detection and forensic analysis of harmful tool combination patterns"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — tool chain controls",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement security controls restricting tool chain composition; enforce per-tool access control and define permitted tool sequences for financial agent systems"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — tool composition governance",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include tool chaining risk in ICT risk management framework; define policies for permitted tool combinations and escalation requirements for novel tool chains"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — tool chain testing",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include lateral tool chaining in resilience testing; test whether agents can combine permitted tools to achieve unauthorised outcomes"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — tool chain anomaly detection",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Monitor agent tool invocation sequences for anomalous patterns; alert on novel tool combinations or sequences that cross security boundaries"
     }
   ],
   "tools": [
@@ -607,6 +703,36 @@
       "name": "mTLS (cert-manager)",
       "type": "open-source",
       "url": "https://cert-manager.io"
+    },
+    {
+      "name": "Garak",
+      "type": "open-source",
+      "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "NeMo Guardrails",
+      "type": "open-source",
+      "url": "https://github.com/NVIDIA/NeMo-Guardrails"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "Guardrails AI",
+      "type": "open-source",
+      "url": "https://github.com/guardrails-ai/guardrails"
     }
   ],
   "incidents": [
@@ -627,10 +753,13 @@
     "dsgai_2026": [
       "DSGAI02",
       "DSGAI16",
-      "DSGAI17"
+      "DSGAI17",
+      "DSGAI06"
     ],
     "llm_top10": [
-      "LLM03"
+      "LLM03",
+      "LLM06",
+      "LLM01"
     ]
   },
   "changelog": [

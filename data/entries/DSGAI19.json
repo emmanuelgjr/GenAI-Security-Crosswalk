@@ -483,6 +483,78 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Per-stage minimum scope credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Reuse existing well-secured software — third-party data vetting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Vet all third-party data sources, APIs, and pre-trained components for security, quality, compliance, and provenance before use in AI pipelines"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Verify software integrity — third-party data integrity",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify integrity of all third-party data deliveries using checksums, signatures, or schema validation; detect tampering or corruption before pipeline ingestion"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities — third-party monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor for security advisories and quality issues from third-party data providers; establish triage procedures for third-party data incidents"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SA-9",
+      "control_name": "External Information System Services — third-party data controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Require FedRAMP authorisation for third-party data service providers; establish SLAs covering data security, privacy, and incident notification"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-2",
+      "control_name": "Supply Chain Risk Management Plan — data provider risk",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include third-party data providers in supply chain risk management; assess data handling practices and security posture"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-3",
+      "control_name": "Supply Chain Controls — data provenance from third parties",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify provenance and integrity of data from third-party sources; implement validation before ingestion into AI pipelines"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — data provider and processor oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include all third-party data providers and processors in DORA third-party risk management; conduct due diligence, establish contracts, and monitor ongoing compliance"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — third-party data inventory",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Register all third-party data sources in ICT asset inventory; document provenance, contracts, and dependency relationships"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — third-party data governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include third-party data risk in ICT risk management; define policies for external data sourcing and processing"
     }
   ],
   "tools": [
@@ -500,6 +572,36 @@
       "name": "Presidio",
       "type": "open-source",
       "url": "https://github.com/microsoft/presidio"
+    },
+    {
+      "name": "Great Expectations",
+      "type": "open-source",
+      "url": "https://greatexpectations.io"
+    },
+    {
+      "name": "CycloneDX",
+      "type": "open-source",
+      "url": "https://cyclonedx.org"
+    },
+    {
+      "name": "Sigstore",
+      "type": "open-source",
+      "url": "https://www.sigstore.dev"
+    },
+    {
+      "name": "OWASP Dependency-Check",
+      "type": "open-source",
+      "url": "https://owasp.org/www-project-dependency-check/"
+    },
+    {
+      "name": "OneTrust Vendorpedia",
+      "type": "commercial",
+      "url": "https://www.onetrust.com"
+    },
+    {
+      "name": "ServiceNow VRM",
+      "type": "commercial",
+      "url": "https://www.servicenow.com"
     }
   ],
   "incidents": [],
@@ -509,10 +611,13 @@
       "DSGAI08"
     ],
     "llm_top10": [
-      "LLM02"
+      "LLM02",
+      "LLM05",
+      "LLM03"
     ],
     "agentic_top10": [
-      "ASI10"
+      "ASI10",
+      "ASI04"
     ]
   },
   "changelog": [

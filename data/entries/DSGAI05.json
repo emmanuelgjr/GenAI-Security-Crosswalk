@@ -493,6 +493,78 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Minimum scope; no service account has guardrail disable capability"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Verify software integrity — data provenance verification",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify provenance and integrity of all datasets used in training, fine-tuning, and evaluation; maintain cryptographic attestation of data origin and chain of custody"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Archive and protect software releases — data versioning with provenance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain versioned dataset snapshots with provenance metadata recording origin, collection method, processing steps, and quality metrics"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Reuse existing well-secured software — dataset quality vetting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Vet all datasets for quality, completeness, representativeness, and fitness for purpose before use in any training or evaluation pipeline"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SR-3",
+      "control_name": "Supply Chain Controls — data provenance tracking",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement provenance tracking for all AI training data; document source, collection method, processing history, and licensing for each dataset"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — data quality controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validate quality, completeness, and accuracy of data entering AI pipelines; reject data failing quality thresholds"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-3",
+      "control_name": "Configuration Change Control — data source changes",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Require formal change control for all data source additions, modifications, and removals; maintain audit trail"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — data source documentation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Document provenance, collection method, and quality characteristics for all AI training data in the ICT asset inventory"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — data quality controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality thresholds"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — external data source oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include external data sources in third-party risk management; assess data quality and provenance practices"
     }
   ],
   "tools": [
@@ -525,6 +597,31 @@
       "name": "Cerberus",
       "type": "open-source",
       "url": "https://github.com/pyeve/cerberus"
+    },
+    {
+      "name": "DVC (Data Version Control)",
+      "type": "open-source",
+      "url": "https://dvc.org"
+    },
+    {
+      "name": "Apache Atlas",
+      "type": "open-source",
+      "url": "https://atlas.apache.org"
+    },
+    {
+      "name": "Pachyderm",
+      "type": "open-source",
+      "url": "https://www.pachyderm.com"
+    },
+    {
+      "name": "OpenLineage",
+      "type": "open-source",
+      "url": "https://openlineage.io"
+    },
+    {
+      "name": "Collibra",
+      "type": "commercial",
+      "url": "https://www.collibra.com"
     }
   ],
   "incidents": [
@@ -539,7 +636,8 @@
     "llm_top10": [
       "LLM05",
       "LLM04",
-      "LLM01"
+      "LLM01",
+      "LLM03"
     ],
     "dsgai_2026": [
       "DSGAI13",
@@ -547,7 +645,9 @@
     ],
     "agentic_top10": [
       "ASI02",
-      "ASI08"
+      "ASI08",
+      "ASI04",
+      "ASI06"
     ]
   },
   "changelog": [

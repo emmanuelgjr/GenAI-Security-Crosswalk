@@ -505,6 +505,62 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vault all model storage credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — consent management requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define security requirements mandating consent verification before personal data enters AI training, fine-tuning, or inference pipelines"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — consent enforcement architecture",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Design AI systems with consent enforcement mechanisms that validate consent status before data processing and honour consent withdrawal across all pipeline stages"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — consent governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include consent management in AI risk management strategy; define consent requirements per data type and processing activity"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — consent-based access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce access controls aligned with consent status; block AI processing on data where consent has been withdrawn"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — consent compliance logging",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log consent status and changes; enable audit of consent compliance for all AI data processing activities"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — consent governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include consent management in ICT risk management; define consent requirements per data type and AI processing activity"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — consent-aligned controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement access controls aligned with consent status; block AI processing on data where consent has been withdrawn"
     }
   ],
   "tools": [
@@ -537,6 +593,41 @@
       "name": "Fluent Bit",
       "type": "open-source",
       "url": "https://github.com/fluent/fluent-bit"
+    },
+    {
+      "name": "OneTrust",
+      "type": "commercial",
+      "url": "https://www.onetrust.com"
+    },
+    {
+      "name": "Transcend",
+      "type": "commercial",
+      "url": "https://transcend.io"
+    },
+    {
+      "name": "CookieYes",
+      "type": "open-source",
+      "url": "https://www.cookieyes.com"
+    },
+    {
+      "name": "Osano",
+      "type": "commercial",
+      "url": "https://www.osano.com"
+    },
+    {
+      "name": "Collibra",
+      "type": "commercial",
+      "url": "https://www.collibra.com"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "TrustArc",
+      "type": "commercial",
+      "url": "https://trustarc.com"
     }
   ],
   "incidents": [],
@@ -548,7 +639,12 @@
     ],
     "llm_top10": [
       "LLM02",
-      "LLM03"
+      "LLM03",
+      "LLM06"
+    ],
+    "agentic_top10": [
+      "ASI09",
+      "ASI02"
     ]
   },
   "changelog": [

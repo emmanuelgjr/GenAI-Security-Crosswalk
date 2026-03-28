@@ -500,6 +500,78 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vault all model provider credentials"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review for security vulnerabilities — bias and fairness review",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include bias, fairness, and discrimination testing in pre-release model behaviour reviews; assess model outputs across protected attributes and demographic groups"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — adversarial fairness testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct adversarial testing for discriminatory outputs; test model behaviour across demographic groups, intersectional categories, and edge cases"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Analyse root causes — bias source tracing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "When discriminatory behaviour is identified, conduct root cause analysis tracing bias to specific training data sources, labelling processes, or preprocessing steps"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — bias detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor AI outputs for bias indicators; track fairness metrics across demographic groups and use cases"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CA-7",
+      "control_name": "Continuous Monitoring — fairness monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include bias and fairness metrics in continuous monitoring; track output equity over time"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — bias assessment",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include bias detection and fairness assessment in vulnerability scanning; test for disparate impact"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — bias monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor AI outputs for bias indicators; track fairness metrics across demographic groups and financial service use cases"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — fairness governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI bias and fairness in ICT risk management; define fairness requirements for financial AI systems"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — bias testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include bias detection and fairness testing in resilience testing; test for disparate impact in financial AI outputs"
     }
   ],
   "tools": [
@@ -532,6 +604,36 @@
       "name": "Chaos Monkey",
       "type": "open-source",
       "url": "https://github.com/Netflix/chaosmonkey"
+    },
+    {
+      "name": "Fairlearn",
+      "type": "open-source",
+      "url": "https://fairlearn.org"
+    },
+    {
+      "name": "AI Fairness 360",
+      "type": "open-source",
+      "url": "https://aif360.mybluemix.net"
+    },
+    {
+      "name": "What-If Tool",
+      "type": "open-source",
+      "url": "https://pair-code.github.io/what-if-tool"
+    },
+    {
+      "name": "Aequitas",
+      "type": "open-source",
+      "url": "https://github.com/dssg/aequitas"
+    },
+    {
+      "name": "IBM AI Fairness 360",
+      "type": "open-source",
+      "url": "https://aif360.mybluemix.net"
+    },
+    {
+      "name": "Fiddler AI",
+      "type": "commercial",
+      "url": "https://www.fiddler.ai"
     }
   ],
   "incidents": [
@@ -546,11 +648,13 @@
     "llm_top10": [
       "LLM10",
       "LLM03",
-      "LLM04"
+      "LLM04",
+      "LLM09"
     ],
     "agentic_top10": [
       "ASI08",
-      "ASI07"
+      "ASI07",
+      "ASI09"
     ]
   },
   "changelog": [

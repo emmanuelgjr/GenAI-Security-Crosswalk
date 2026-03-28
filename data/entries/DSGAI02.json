@@ -552,6 +552,70 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived write tokens; rotate frequently"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — data inventory and classification",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define security requirements mandating a complete data inventory covering all datasets used in training, fine-tuning, RAG, and evaluation; classify by sensitivity"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — data flow transparency",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Design AI pipelines with documented data flow diagrams showing data origins, transformations, storage locations, and access points; maintain as living artefacts"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — data visibility requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data visibility and transparency requirements in AI risk management strategy; define what data flows must be documented and monitored"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — data flow tracking",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log data movement through AI pipelines — ingestion, transformation, training, inference; enable end-to-end data flow traceability"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CM-3",
+      "control_name": "Configuration Change Control — data pipeline documentation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Document and control changes to AI data pipeline configurations; maintain current data flow diagrams and processing documentation"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — data visibility governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data visibility and transparency requirements in ICT risk management; define what AI data flows must be documented and monitored"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — data asset mapping",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Map all AI data assets — training data, inference data, embeddings, model artefacts — in the ICT asset inventory with data flow documentation"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — data flow monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor AI data flows for undocumented data movement; alert on data transfers outside documented pipelines"
     }
   ],
   "tools": [
@@ -584,20 +648,60 @@
       "name": "SPIRE",
       "type": "open-source",
       "url": "https://github.com/spiffe/spire"
+    },
+    {
+      "name": "Apache Atlas",
+      "type": "open-source",
+      "url": "https://atlas.apache.org"
+    },
+    {
+      "name": "Amundsen",
+      "type": "open-source",
+      "url": "https://www.amundsen.io"
+    },
+    {
+      "name": "Google Data Catalog",
+      "type": "commercial",
+      "url": "https://cloud.google.com/data-catalog"
+    },
+    {
+      "name": "Collibra",
+      "type": "commercial",
+      "url": "https://www.collibra.com"
+    },
+    {
+      "name": "OpenLineage",
+      "type": "open-source",
+      "url": "https://openlineage.io"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "Alation",
+      "type": "commercial",
+      "url": "https://www.alation.com"
     }
   ],
   "incidents": [],
   "crossrefs": {
     "agentic_top10": [
       "ASI03",
-      "ASI07"
+      "ASI07",
+      "ASI04",
+      "ASI09"
     ],
     "dsgai_2026": [
       "DSGAI01"
     ],
     "llm_top10": [
       "LLM06",
-      "LLM04"
+      "LLM04",
+      "LLM03",
+      "LLM05",
+      "LLM09"
     ]
   },
   "changelog": [

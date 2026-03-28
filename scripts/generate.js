@@ -108,6 +108,9 @@ const FRAMEWORK_FILES = [
   { rel: 'llm-top10/LLM_MAESTRO.md',     framework: 'MAESTRO',                  ids: LLM_IDS },
   { rel: 'llm-top10/LLM_AIUC1.md',       framework: 'AIUC-1',                   ids: LLM_IDS },
   { rel: 'llm-top10/LLM_NHI.md',         framework: 'OWASP NHI Top 10',         ids: LLM_IDS },
+  { rel: 'llm-top10/LLM_SP800218A.md',  framework: 'NIST SP 800-218A',         ids: LLM_IDS },
+  { rel: 'llm-top10/LLM_FedRAMP.md',   framework: 'FedRAMP',                 ids: LLM_IDS },
+  { rel: 'llm-top10/LLM_DORA.md',      framework: 'DORA',                    ids: LLM_IDS },
 
   // Agentic Top 10
   { rel: 'agentic-top10/Agentic_MITREATLAS.md',   framework: 'MITRE ATLAS',              ids: ASI_IDS },
@@ -129,6 +132,9 @@ const FRAMEWORK_FILES = [
   { rel: 'agentic-top10/Agentic_MAESTRO.md',        framework: 'MAESTRO',                 ids: ASI_IDS },
   { rel: 'agentic-top10/Agentic_AIUC1.md',           framework: 'AIUC-1',                  ids: ASI_IDS },
   { rel: 'agentic-top10/Agentic_OWASP_NHI.md',      framework: 'OWASP NHI Top 10',        ids: ASI_IDS },
+  { rel: 'agentic-top10/Agentic_SP800218A.md',     framework: 'NIST SP 800-218A',        ids: ASI_IDS },
+  { rel: 'agentic-top10/Agentic_FedRAMP.md',      framework: 'FedRAMP',                ids: ASI_IDS },
+  { rel: 'agentic-top10/Agentic_DORA.md',         framework: 'DORA',                   ids: ASI_IDS },
 
   // DSGAI 2026
   { rel: 'dsgai-2026/DSGAI_MITREATLAS.md',  framework: 'MITRE ATLAS',              ids: DSGAI_IDS },
@@ -149,6 +155,9 @@ const FRAMEWORK_FILES = [
   { rel: 'dsgai-2026/DSGAI_MAESTRO.md',     framework: 'MAESTRO',                  ids: DSGAI_IDS },
   { rel: 'dsgai-2026/DSGAI_AIUC1.md',       framework: 'AIUC-1',                   ids: DSGAI_IDS },
   { rel: 'dsgai-2026/DSGAI_NHI.md',         framework: 'OWASP NHI Top 10',         ids: DSGAI_IDS },
+  { rel: 'dsgai-2026/DSGAI_SP800218A.md',  framework: 'NIST SP 800-218A',         ids: DSGAI_IDS },
+  { rel: 'dsgai-2026/DSGAI_FedRAMP.md',   framework: 'FedRAMP',                 ids: DSGAI_IDS },
+  { rel: 'dsgai-2026/DSGAI_DORA.md',      framework: 'DORA',                    ids: DSGAI_IDS },
 ];
 
 // ─── Audience role mapping ────────────────────────────────────────────────────

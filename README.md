@@ -2,12 +2,13 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.6.0-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.7.0-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
-[![Mapping Files](https://img.shields.io/badge/mapping%20files-61-brightgreen)](README.md)
-[![Frameworks](https://img.shields.io/badge/frameworks-18-orange)](README.md)
+[![Mapping Files](https://img.shields.io/badge/mapping%20files-67-brightgreen)](README.md)
+[![Frameworks](https://img.shields.io/badge/frameworks-20-orange)](README.md)
+[![npm](https://img.shields.io/badge/npm-%40owasp%2Fgenai--crosswalk-red)](https://www.npmjs.com/package/@owasp/genai-crosswalk)
  
-> The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **18 frameworks** and **3 OWASP source lists**.
+> The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **20 frameworks** and **3 OWASP source lists**.
  
 Maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).  
 Created by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)**.
@@ -21,8 +22,8 @@ Every file answers one question: **which controls from framework X address vulne
 | | |
 |---|---|
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
-| **18** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC |
-| **61** mapping files | Every source list entry × every applicable framework |
+| **20** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC · Financial |
+| **67** mapping files | Every source list entry × every applicable framework |
 | **13** implementation recipes | Production-ready Python patterns |
 | **40+** open-source tools | Catalogued and organised by function |
 | **10** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
@@ -66,12 +67,14 @@ All free. All open-source. Built for practitioners.
 | [AIUC-1](https://www.aiuc-1.com) | ✅ | ✅ | ✅ |
 | [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/) | ✅ | ✅ | ✅ |
 | [NIST SP 800-218A](https://doi.org/10.6028/NIST.SP.800-218A.ipd) | ✅ | ✅ | ✅ |
+| [FedRAMP](https://www.fedramp.gov/) | ✅ | ✅ | ✅ |
+| [DORA (EU 2022/2554)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554) | ✅ | ✅ | ✅ |
 
 ---
 
 ## All mapping files
 
-### LLM Top 10 2025 — 21 framework mappings
+### LLM Top 10 2025 — 23 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -96,8 +99,10 @@ All free. All open-source. Built for practitioners.
 | [LLM_AIUC1.md](llm-top10/LLM_AIUC1.md) | AIUC-1 | Six-domain control mapping for LLM deployments — certification readiness checklist |
 | [LLM_NHI.md](llm-top10/LLM_NHI.md) | OWASP NHI Top 10 | Credential and identity controls per LLM entry — NHI programme maturity table |
 | [LLM_SP800218A.md](llm-top10/LLM_SP800218A.md) | NIST SP 800-218A | Secure AI SDLC practices — PW/PS/RV practice mapping per LLM entry |
+| [LLM_FedRAMP.md](llm-top10/LLM_FedRAMP.md) | FedRAMP | SP 800-53 AI overlay — AC/AU/CA/CM/IA/IR/RA/SA/SC/SI/SR control families |
+| [LLM_DORA.md](llm-top10/LLM_DORA.md) | DORA | EU financial sector resilience — Art. 5–45 per LLM entry |
 
-### Agentic Top 10 2026 — 21 framework mappings
+### Agentic Top 10 2026 — 23 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -121,10 +126,12 @@ All free. All open-source. Built for practitioners.
 | [Agentic_SAMM.md](agentic-top10/Agentic_SAMM.md) | OWASP SAMM v2.0 | L1–L3 maturity scorecard for agentic AI — pre-deployment gates and programme maturity roadmap |
 | [Agentic_NISTSP80082.md](agentic-top10/Agentic_NISTSP80082.md) | NIST SP 800-82 Rev 3 | OT agent placement, SP 800-53 controls, U.S. regulatory crosswalk (NERC CIP, AWIA, CMMC) |
 | [Agentic_SP800218A.md](agentic-top10/Agentic_SP800218A.md) | NIST SP 800-218A | Secure agentic SDLC — tool access, memory integrity, multi-agent pipeline practices |
+| [Agentic_FedRAMP.md](agentic-top10/Agentic_FedRAMP.md) | FedRAMP | Federal agentic AI authorization — agent identity, tool access, cascade controls |
+| [Agentic_DORA.md](agentic-top10/Agentic_DORA.md) | DORA | Financial sector agentic resilience — incident reporting, third-party agent risk |
 
 > **Also in this folder:** [Agentic_CWE_CVE.md](agentic-top10/Agentic_CWE_CVE.md) — CWE root cause taxonomy, confirmed CVEs, full CWE cross-reference index.
 
-### DSGAI 2026 — 19 framework mappings
+### DSGAI 2026 — 21 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -147,6 +154,8 @@ All free. All open-source. Built for practitioners.
 | [DSGAI_AIUC1.md](dsgai-2026/DSGAI_AIUC1.md) | AIUC-1 | Domain A (Data & Privacy) covers 50%+ of DSGAI entries — certification readiness table |
 | [DSGAI_NHI.md](dsgai-2026/DSGAI_NHI.md) | OWASP NHI Top 10 | NHI as enabling condition for DSGAI risks — NHI programme maturity table for GenAI data |
 | [DSGAI_SP800218A.md](dsgai-2026/DSGAI_SP800218A.md) | NIST SP 800-218A | Secure GenAI data SDLC — training data protection, data governance, provenance practices |
+| [DSGAI_FedRAMP.md](dsgai-2026/DSGAI_FedRAMP.md) | FedRAMP | Federal data security controls — SC-28 data at rest, AU-2 logging, SR supply chain |
+| [DSGAI_DORA.md](dsgai-2026/DSGAI_DORA.md) | DORA | Financial data resilience — Art. 8 asset inventory, Art. 12 backup, Art. 28-44 vendor risk |
 
 ### Shared resources
  
@@ -344,6 +353,23 @@ node scripts/watch.js --watcher arxiv  # run single watcher
 ```
 
 Weekly GitHub Actions cron (`.github/workflows/weekly-watch.yml`) runs all 4 watchers and opens labeled issues automatically.
+
+### npm package
+
+```bash
+npm install @owasp/genai-crosswalk
+```
+
+```typescript
+import { getEntry, getFramework, searchEntries, incidents } from '@owasp/genai-crosswalk';
+
+const llm01 = getEntry('LLM01');        // typed Entry object
+const euai  = getFramework('EU AI Act'); // { framework, entries, controls }
+const hits  = searchEntries('injection');  // Entry[]
+const incs  = incidents;                   // 31 Incident[] with MAESTRO layers
+```
+
+Full TypeScript types included for all data structures.
 
 ---
 

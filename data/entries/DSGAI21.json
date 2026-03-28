@@ -656,6 +656,94 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Initial release — full mapping DSGAI01–DSGAI21 to NHI Top 10"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements — regulatory compliance requirements",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define security requirements that mandate compliance with all applicable data protection, privacy, and AI-specific regulations for each AI system deployment"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software — compliance-by-design",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Design AI systems with regulatory compliance built into architecture; embed compliance controls, audit capabilities, and regulatory reporting into pipeline design"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Analyse root causes — compliance failure analysis",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "When regulatory non-compliance is identified, conduct root cause analysis to determine the gap, affected data subjects, and required remediation"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — regulatory compliance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include regulatory compliance in AI risk management; map applicable data laws to AI processing activities and define compliance requirements"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-3",
+      "control_name": "Risk Assessment — compliance gap analysis",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — regulatory evidence",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain comprehensive logs for regulatory compliance evidence; ensure audit trails meet requirements of applicable data laws"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — legally mandated controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement access controls mandated by applicable data laws; enforce data subject rights, purpose limitation, and processing restrictions"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — regulatory compliance governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — compliance incident reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify regulatory non-compliance events as ICT incidents where material; report to competent authorities per DORA criteria"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — compliance improvement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes and incident analysis"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — regulated data mapping",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Map all AI data subject to regulatory requirements; ensure complete coverage in compliance programme"
     }
   ],
   "tools": [
@@ -693,16 +781,46 @@
       "name": "RAGAS",
       "type": "open-source",
       "url": "https://github.com/explodinggradients/ragas"
+    },
+    {
+      "name": "OneTrust",
+      "type": "commercial",
+      "url": "https://www.onetrust.com"
+    },
+    {
+      "name": "TrustArc",
+      "type": "commercial",
+      "url": "https://trustarc.com"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "Transcend",
+      "type": "commercial",
+      "url": "https://transcend.io"
+    },
+    {
+      "name": "ServiceNow GRC",
+      "type": "commercial",
+      "url": "https://www.servicenow.com"
     }
   ],
   "incidents": [],
   "crossrefs": {
     "llm_top10": [
       "LLM04",
-      "LLM09"
+      "LLM09",
+      "LLM06",
+      "LLM07",
+      "LLM02"
     ],
     "agentic_top10": [
-      "ASI06"
+      "ASI06",
+      "ASI09",
+      "ASI02"
     ],
     "dsgai_2026": [
       "DSGAI01",

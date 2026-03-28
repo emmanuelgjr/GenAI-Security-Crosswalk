@@ -632,6 +632,102 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Rotate all LLM application tokens; implement short-lived token pattern"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software to meet security requirements — adversarial input",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Threat model the AI pipeline for adversarial input vectors including direct and indirect prompt injection; document mitigating design decisions"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review the software for security vulnerabilities — model behaviour",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Review model outputs and system behaviour for unexpected responses to adversarial inputs; include injection bypass scenarios in code and design reviews"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — adversarial / red-team",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct adversarial testing (red-teaming) against prompt injection vectors before each production release; cover direct, indirect, and multimodal injection paths"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities — AI-specific",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Establish procedures to identify prompt injection incidents in production including monitoring, triage, and confirmation workflows"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — adversarial AI inputs",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Extend malicious code protection to detect and block adversarial inputs including direct and indirect prompt injection payloads"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — prompt validation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validate all inputs to LLM inference endpoints; enforce structural separation between instruction and data contexts; reject known injection patterns"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — AI red-teaming",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include prompt injection vectors in vulnerability scanning programme; conduct regular automated and manual injection testing"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CA-8",
+      "control_name": "Penetration Testing — AI adversarial testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include prompt injection scenarios in penetration testing engagements; cover direct, indirect, and multimodal injection paths"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — adversarial input controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement ICT security controls to detect and block adversarial inputs including direct and indirect prompt injection; treat as a mandatory protection measure"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Digital Operational Resilience Testing — AI red-teaming",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include prompt injection scenarios in threat-led penetration testing (TLPT); cover direct, indirect, and multimodal injection vectors targeting financial AI services"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — injection monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Deploy detection mechanisms for prompt injection attempts; monitor inference requests for adversarial patterns and alert security operations"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 45",
+      "control_name": "Information Sharing — injection threat intelligence",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Share prompt injection threat intelligence with sector peers through DORA information sharing arrangements"
     }
   ],
   "tools": [
@@ -684,6 +780,26 @@
       "name": "Promptfoo",
       "type": "open-source",
       "url": "https://github.com/promptfoo/promptfoo"
+    },
+    {
+      "name": "PyRIT",
+      "type": "open-source",
+      "url": "https://github.com/Azure/PyRIT"
+    },
+    {
+      "name": "NIST SP 800-218A",
+      "type": "open-source",
+      "url": "https://doi.org/10.6028/NIST.SP.800-218A.ipd"
+    },
+    {
+      "name": "NIST SP 800-53A",
+      "type": "open-source",
+      "url": "https://csrc.nist.gov/publications/detail/sp/800-53a/rev-5/final"
+    },
+    {
+      "name": "DORA RTS/ITS",
+      "type": "open-source",
+      "url": "https://www.eba.europa.eu/regulation-and-policy/digital-operational-resilience-act-dora"
     },
     {
       "name": "LAAF v2.0",
