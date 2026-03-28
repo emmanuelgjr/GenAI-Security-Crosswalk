@@ -9,16 +9,53 @@
 [![npm](https://img.shields.io/badge/npm-%40owasp%2Fgenai--crosswalk-red)](https://www.npmjs.com/package/@owasp/genai-crosswalk)
  
 > The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **20 frameworks** and **3 OWASP source lists**.
- 
-Maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).  
+
+Maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).
 Created by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)**.
- 
+
 ---
- 
+
+## TL;DR — What is this and what do I do?
+
+**The problem:** You're deploying AI (LLMs, agents, RAG pipelines) and need to know which security controls apply — across EU AI Act, NIST, ISO, SOC 2, FedRAMP, DORA, and 14 more frameworks. No single document maps AI risks to all of them.
+
+**This repo solves that.** Every OWASP GenAI vulnerability (41 total) is mapped to specific controls in 20 industry frameworks. Pick your risk, find your controls.
+
+### 3 ways to use it (pick one)
+
+**1. Score your coverage in 60 seconds** (no install needed)
+> Go to the **[web app](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score)**, select the frameworks you implement, see your gaps instantly. Upload tool results to validate.
+
+**2. Read the mapping file you need** (browse the repo)
+> Find your framework below, click the file, read the controls. Example: deploying AI in the EU? Start with [LLM_EUAIAct.md](llm-top10/LLM_EUAIAct.md).
+
+**3. Run the tools** (for security engineers and red-teamers)
+```bash
+git clone https://github.com/emmanuelgjr/GenAI-Security-Crosswalk.git
+cd GenAI-Security-Crosswalk
+node scripts/compliance-report.js --framework "EU AI Act"   # gap assessment
+node scripts/incidents-report.js --entry LLM01              # incident analysis
+node scripts/compliance-report.js --format oscal            # GRC platform export
+node scripts/incidents-report.js --format stix              # SIEM/SOAR export
+```
+
+### Who is this for?
+
+| You are... | Start here |
+|---|---|
+| **CISO / compliance officer** | [Score your coverage](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score) → export the gap report |
+| **Security engineer** | [Explorer](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) → search by risk, see all controls |
+| **Red teamer** | [LAAF guide](evals/laaf/README.md) → run S1–S6 attack stages, map results to OWASP |
+| **GRC / auditor** | `compliance-report.js --format oscal` → import into ServiceNow/Archer |
+| **Developer** | `npm install @owasp/genai-crosswalk` → query risks + controls programmatically |
+| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 31 AI incidents into Sentinel/Splunk |
+
+---
+
 ## What this repository provides
- 
+
 Every file answers one question: **which controls from framework X address vulnerability Y?**
- 
+
 | | |
 |---|---|
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
@@ -30,7 +67,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **20** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
 | **31** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
- 
+
 All free. All open-source. Built for practitioners.
  
 ---

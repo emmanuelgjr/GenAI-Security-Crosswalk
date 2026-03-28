@@ -1112,6 +1112,60 @@ input, select { font-family: inherit; }
     hero.appendChild(ctas);
     container.appendChild(hero);
 
+    // How to use this — 3-step quickstart
+    var howSection = el('section', { className: 'section', style: 'padding-bottom:0;' });
+    howSection.appendChild(el('h2', { className: 'section-title' }, 'How to Use This'));
+    howSection.appendChild(el('p', { className: 'section-desc' }, 'Pick the path that matches your role. Everything is free, no login required.'));
+
+    var howGrid = el('div', { style: 'display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px;' });
+
+    var paths = [
+      {
+        icon: '\uD83C\uDFAF',
+        title: 'Score your coverage',
+        desc: 'Select the frameworks you implement, see your gaps instantly. Upload Garak/PyRIT/LAAF results to validate.',
+        link: '#/score',
+        cta: 'Start scoring \u2192',
+        who: 'CISOs, compliance officers, GRC teams'
+      },
+      {
+        icon: '\uD83D\uDD0D',
+        title: 'Explore risks & controls',
+        desc: 'Search 41 OWASP entries, filter by severity, click any entry to see all 20 framework mappings.',
+        link: '#/explorer',
+        cta: 'Open explorer \u2192',
+        who: 'Security engineers, architects, auditors'
+      },
+      {
+        icon: '\uD83D\uDEE1\uFE0F',
+        title: 'Run the eval tools',
+        desc: 'Clone the repo, run Garak + PyRIT + LAAF against your models, generate compliance reports.',
+        link: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk',
+        cta: 'View on GitHub \u2192',
+        who: 'Red teamers, AppSec engineers, developers'
+      }
+    ];
+
+    paths.forEach(function(p) {
+      var card = el('div', {
+        className: 'card',
+        style: 'padding:24px;display:flex;flex-direction:column;gap:8px;'
+      });
+      card.appendChild(el('div', { style: 'font-size:2rem;' }, p.icon));
+      card.appendChild(el('h3', { style: 'font-size:1.05rem;font-weight:700;margin:0;' }, p.title));
+      card.appendChild(el('p', { style: 'font-size:.85rem;color:var(--text-secondary);margin:0;flex:1;' }, p.desc));
+      card.appendChild(el('div', { style: 'font-size:.75rem;color:var(--text-secondary);margin-top:4px;font-style:italic;' }, p.who));
+      var link = el('a', {
+        href: p.link,
+        style: 'margin-top:8px;font-size:.85rem;font-weight:600;color:var(--accent);text-decoration:none;'
+      }, p.cta);
+      card.appendChild(link);
+      howGrid.appendChild(card);
+    });
+
+    howSection.appendChild(howGrid);
+    container.appendChild(howSection);
+
     // Source list columns
     var srcSection = el('section', { className: 'section' });
     srcSection.appendChild(el('h2', { className: 'section-title' }, 'What This Covers'));
