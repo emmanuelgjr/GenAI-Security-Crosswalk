@@ -3,416 +3,2182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GenAI Security Crosswalk — Query Interface</title>
+<title>OWASP GenAI Security Crosswalk</title>
+<meta name="description" content="The most comprehensive mapping of AI security risks to industry frameworks. 41 entries across LLM Top 10, Agentic Top 10, and DSGAI mapped to 23 frameworks.">
+<meta property="og:title" content="OWASP GenAI Security Crosswalk">
+<meta property="og:description" content="The most comprehensive mapping of AI security risks to industry frameworks.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ══════════════════════════════════════════════════════════════════════════════
+   CSS Custom Properties & Theme
+   ══════════════════════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg:        #f8f9fa;
-    --surface:   #ffffff;
-    --border:    #e2e6ea;
-    --text:      #1a1d23;
-    --muted:     #6c757d;
-    --accent:    #2563eb;
-    --accent-bg: #eff6ff;
-    --cr:        #dc2626; --cr-bg: #fef2f2;
-    --hi:        #ea580c; --hi-bg: #fff7ed;
-    --me:        #ca8a04; --me-bg: #fefce8;
-    --lo:        #16a34a; --lo-bg: #f0fdf4;
-    --radius:    8px;
-    --shadow:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-  }
+:root {
+  --bg: #f8fafc;
+  --bg-alt: #f1f5f9;
+  --surface: #ffffff;
+  --surface-hover: #f8fafc;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-bg: #eff6ff;
+  --accent-light: #dbeafe;
+  --nav-bg: #ffffff;
+  --nav-border: #e2e8f0;
+  --hero-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  --hero-text: #f8fafc;
+  --card-shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --card-shadow-hover: 0 10px 25px rgba(0,0,0,.08), 0 4px 10px rgba(0,0,0,.04);
+  --modal-bg: rgba(0,0,0,.5);
+  --cr: #dc2626; --cr-bg: #fef2f2; --cr-border: #fecaca;
+  --hi: #ea580c; --hi-bg: #fff7ed; --hi-border: #fed7aa;
+  --me: #ca8a04; --me-bg: #fefce8; --me-border: #fef08a;
+  --lo: #16a34a; --lo-bg: #f0fdf4; --lo-border: #bbf7d0;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+  --transition: 150ms ease;
+  --max-w: 1280px;
+}
 
-  body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-alt: #1e293b;
+  --surface: #1e293b;
+  --surface-hover: #334155;
+  --border: #334155;
+  --border-light: #1e293b;
+  --text: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-bg: #1e3a5f;
+  --accent-light: #1e3a5f;
+  --nav-bg: #0f172a;
+  --nav-border: #1e293b;
+  --hero-bg: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%);
+  --card-shadow: 0 1px 3px rgba(0,0,0,.3), 0 1px 2px rgba(0,0,0,.2);
+  --card-shadow-hover: 0 10px 25px rgba(0,0,0,.4);
+  --modal-bg: rgba(0,0,0,.7);
+  --cr-bg: #450a0a; --cr-border: #7f1d1d;
+  --hi-bg: #431407; --hi-border: #7c2d12;
+  --me-bg: #422006; --me-border: #713f12;
+  --lo-bg: #052e16; --lo-border: #166534;
+}
 
-  /* ── Header ── */
-  header { background: var(--accent); color: #fff; padding: 20px 24px 18px; }
-  header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; }
-  header p  { font-size: .85rem; opacity: .85; margin-top: 2px; }
-  header .meta { display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap; }
-  header .meta span { background: rgba(255,255,255,.15); border-radius: 20px; padding: 2px 10px; font-size: .78rem; }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Base styles
+   ══════════════════════════════════════════════════════════════════════════════ */
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, select { font-family: inherit; }
 
-  /* ── Controls ── */
-  .controls { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; position: sticky; top: 0; z-index: 10; box-shadow: var(--shadow); }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Navigation
+   ══════════════════════════════════════════════════════════════════════════════ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 24px; height: 56px;
+}
+.nav-logo {
+  font-weight: 700; font-size: .95rem; color: var(--text);
+  text-decoration: none; white-space: nowrap; margin-right: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-logo:hover { color: var(--accent); text-decoration: none; }
+.nav-logo svg { flex-shrink: 0; }
+.nav-links { display: flex; gap: 4px; flex: 1; }
+.nav-links a {
+  padding: 6px 12px; border-radius: 6px; font-size: .875rem;
+  color: var(--text-secondary); text-decoration: none; font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a.active {
+  background: var(--accent-bg); color: var(--accent); text-decoration: none;
+}
+.nav-right { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav-icon-btn {
+  width: 36px; height: 36px; border-radius: 8px; display: flex;
+  align-items: center; justify-content: center; color: var(--text-secondary);
+  transition: background var(--transition), color var(--transition);
+}
+.nav-icon-btn:hover { background: var(--bg-alt); color: var(--text); }
+.hamburger { display: none; }
 
-  .search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 340px; }
-  .search-wrap input { width: 100%; border: 1px solid var(--border); border-radius: var(--radius); padding: 7px 12px 7px 34px; font-size: .875rem; outline: none; transition: border-color .15s; }
-  .search-wrap input:focus { border-color: var(--accent); }
-  .search-wrap svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+/* Mobile nav */
+.mobile-menu {
+  display: none; position: fixed; top: 56px; left: 0; right: 0;
+  background: var(--nav-bg); border-bottom: 1px solid var(--nav-border);
+  padding: 8px; z-index: 99;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block; padding: 10px 16px; border-radius: 8px;
+  color: var(--text-secondary); font-weight: 500; text-decoration: none;
+}
+.mobile-menu a:hover, .mobile-menu a.active {
+  background: var(--accent-bg); color: var(--accent);
+}
 
-  .pill-group { display: flex; gap: 4px; flex-wrap: wrap; }
-  .pill { border: 1px solid var(--border); background: var(--surface); color: var(--muted); border-radius: 20px; padding: 4px 12px; font-size: .8rem; cursor: pointer; transition: all .15s; white-space: nowrap; }
-  .pill:hover { border-color: var(--accent); color: var(--accent); }
-  .pill.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .pill.cr.active { background: var(--cr); border-color: var(--cr); }
-  .pill.hi.active { background: var(--hi); border-color: var(--hi); }
-  .pill.me.active { background: var(--me); border-color: var(--me); }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Main content area
+   ══════════════════════════════════════════════════════════════════════════════ */
+.app { margin-top: 56px; min-height: calc(100vh - 56px); }
 
-  select { border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 28px 6px 10px; font-size: .8rem; color: var(--text); background: var(--surface); cursor: pointer; outline: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; }
-  select:focus { border-color: var(--accent); }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Hero (Landing page)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.hero {
+  background: var(--hero-bg); color: var(--hero-text);
+  padding: 80px 24px 64px; text-align: center;
+}
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800;
+  letter-spacing: -.02em; margin-bottom: 12px;
+}
+.hero .subtitle {
+  font-size: clamp(.95rem, 2vw, 1.2rem); color: #94a3b8;
+  max-width: 600px; margin: 0 auto 8px; line-height: 1.5;
+}
+.hero .creator {
+  font-size: .875rem; color: #64748b; margin-bottom: 32px;
+}
+.hero .creator a { color: #60a5fa; }
+.stat-row {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 36px;
+}
+.stat-card {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-lg); padding: 20px 28px; min-width: 140px;
+  backdrop-filter: blur(4px);
+}
+.stat-card .stat-num {
+  font-size: 1.75rem; font-weight: 800; color: #fff;
+  display: block; line-height: 1.2;
+}
+.stat-card .stat-label { font-size: .8rem; color: #94a3b8; }
+.hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary, .btn-secondary {
+  padding: 10px 24px; border-radius: 8px; font-size: .9rem; font-weight: 600;
+  transition: all var(--transition); display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-primary {
+  background: var(--accent); color: #fff;
+}
+.btn-primary:hover { background: var(--accent-hover); text-decoration: none; color: #fff; }
+.btn-secondary {
+  background: rgba(255,255,255,.08); color: #e2e8f0;
+  border: 1px solid rgba(255,255,255,.15);
+}
+.btn-secondary:hover { background: rgba(255,255,255,.12); text-decoration: none; color: #fff; }
 
-  .controls-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
-  #result-count { font-size: .8rem; color: var(--muted); white-space: nowrap; }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Sections
+   ══════════════════════════════════════════════════════════════════════════════ */
+.section {
+  max-width: var(--max-w); margin: 0 auto; padding: 48px 24px;
+}
+.section-title {
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;
+  letter-spacing: -.01em;
+}
+.section-desc {
+  color: var(--text-secondary); margin-bottom: 32px; font-size: .95rem;
+}
 
-  /* ── Main layout ── */
-  main { padding: 20px 24px; max-width: 1400px; margin: 0 auto; }
+/* Source list columns */
+.source-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.source-col {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.source-col-head {
+  padding: 16px 20px; font-weight: 700; font-size: .95rem;
+  border-bottom: 1px solid var(--border); background: var(--bg-alt);
+}
+.source-col-head .count {
+  font-weight: 400; color: var(--text-muted); font-size: .8rem;
+}
+.source-col-item {
+  padding: 10px 20px; border-bottom: 1px solid var(--border-light);
+  font-size: .875rem; display: flex; align-items: center; gap: 8px;
+  cursor: pointer; transition: background var(--transition);
+}
+.source-col-item:last-child { border-bottom: none; }
+.source-col-item:hover { background: var(--surface-hover); }
+.source-col-item .item-id {
+  font-family: var(--font-mono); font-size: .75rem; font-weight: 600;
+  color: var(--accent); min-width: 60px;
+}
 
-  /* ── Cards ── */
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+/* Framework grid */
+.fw-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;
+}
+.fw-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 20px;
+  transition: all var(--transition); cursor: pointer;
+}
+.fw-card:hover { border-color: var(--accent); box-shadow: var(--card-shadow-hover); }
+.fw-card-name { font-weight: 600; font-size: .9rem; margin-bottom: 4px; }
+.fw-card-count { font-size: .8rem; color: var(--text-muted); }
 
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: box-shadow .15s; }
-  .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Filter bar (Explorer, Incidents)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.filter-bar {
+  position: sticky; top: 56px; z-index: 50;
+  background: var(--nav-bg); border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.filter-bar-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.search-input {
+  flex: 1; min-width: 200px; max-width: 340px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 8px 12px 8px 36px; font-size: .875rem;
+  background: var(--surface); color: var(--text);
+  outline: none; transition: border-color var(--transition);
+}
+.search-input:focus { border-color: var(--accent); }
+.search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 340px; }
+.search-wrap svg {
+  position: absolute; left: 10px; top: 50%;
+  transform: translateY(-50%); color: var(--text-muted); pointer-events: none;
+}
+.search-wrap input { width: 100%; }
 
-  .card-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
-  .card-id { font-family: monospace; font-size: .8rem; font-weight: 700; background: var(--accent-bg); color: var(--accent); border-radius: 4px; padding: 2px 7px; }
-  .sev { border-radius: 4px; padding: 2px 7px; font-size: .75rem; font-weight: 600; letter-spacing: .02em; }
-  .sev.Critical { background: var(--cr-bg); color: var(--cr); }
-  .sev.High     { background: var(--hi-bg); color: var(--hi); }
-  .sev.Medium   { background: var(--me-bg); color: var(--me); }
-  .sev.Low      { background: var(--lo-bg); color: var(--lo); }
-  .source-tag { font-size: .72rem; color: var(--muted); margin-left: auto; white-space: nowrap; }
+.pill-group { display: flex; gap: 4px; flex-wrap: wrap; }
+.pill {
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-secondary); border-radius: 20px; padding: 4px 14px;
+  font-size: .8rem; font-weight: 500; transition: all var(--transition); white-space: nowrap;
+}
+.pill:hover { border-color: var(--accent); color: var(--accent); }
+.pill.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.pill.sev-cr.active { background: var(--cr); border-color: var(--cr); }
+.pill.sev-hi.active { background: var(--hi); border-color: var(--hi); }
+.pill.sev-me.active { background: var(--me); border-color: var(--me); }
+.pill.sev-lo.active { background: var(--lo); border-color: var(--lo); }
 
-  .card-body { padding: 12px 16px; }
-  .card-name { font-size: 1rem; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+.filter-select {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 6px 28px 6px 10px; font-size: .8rem; color: var(--text);
+  background: var(--surface); outline: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 8px center;
+}
+.filter-count {
+  font-size: .8rem; color: var(--text-muted); white-space: nowrap; margin-left: auto;
+}
 
-  .stats { display: flex; gap: 12px; font-size: .78rem; color: var(--muted); flex-wrap: wrap; margin-bottom: 8px; }
-  .stats span::before { content: ''; }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Card grid (Explorer, Incidents)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px; max-width: var(--max-w); margin: 0 auto; padding: 24px;
+}
+.entry-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: var(--card-shadow);
+  transition: all var(--transition); cursor: pointer; overflow: hidden;
+}
+.entry-card:hover { box-shadow: var(--card-shadow-hover); border-color: var(--accent); transform: translateY(-1px); }
+.entry-card-inner { padding: 20px; }
+.entry-card-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap;
+}
+.badge-id {
+  font-family: var(--font-mono); font-size: .78rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 4px;
+}
+.badge-id.Critical { background: var(--cr-bg); color: var(--cr); border: 1px solid var(--cr-border); }
+.badge-id.High { background: var(--hi-bg); color: var(--hi); border: 1px solid var(--hi-border); }
+.badge-id.Medium { background: var(--me-bg); color: var(--me); border: 1px solid var(--me-border); }
+.badge-id.Low { background: var(--lo-bg); color: var(--lo); border: 1px solid var(--lo-border); }
+.sev-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.sev-dot.Critical { background: var(--cr); }
+.sev-dot.High { background: var(--hi); }
+.sev-dot.Medium { background: var(--me); }
+.sev-dot.Low { background: var(--lo); }
+.badge-sev {
+  font-size: .72rem; font-weight: 600; padding: 2px 8px;
+  border-radius: 4px;
+}
+.badge-sev.Critical { background: var(--cr-bg); color: var(--cr); }
+.badge-sev.High { background: var(--hi-bg); color: var(--hi); }
+.badge-sev.Medium { background: var(--me-bg); color: var(--me); }
+.badge-sev.Low { background: var(--lo-bg); color: var(--lo); }
+.badge-source {
+  font-size: .72rem; color: var(--text-muted); margin-left: auto;
+  background: var(--bg-alt); padding: 2px 8px; border-radius: 4px;
+}
+.entry-card-name {
+  font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 12px;
+}
+.entry-card-stats {
+  display: flex; gap: 16px; font-size: .8rem; color: var(--text-muted);
+  flex-wrap: wrap;
+}
+.entry-card-stats span { display: flex; align-items: center; gap: 4px; }
 
-  .xrefs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
-  .xref-chip { font-size: .72rem; font-family: monospace; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; color: var(--muted); cursor: pointer; transition: all .1s; }
-  .xref-chip:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Modal
+   ══════════════════════════════════════════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: var(--modal-bg);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 56px 16px 16px;
+  overflow-y: auto;
+  opacity: 0; visibility: hidden;
+  transition: opacity 200ms ease, visibility 200ms ease;
+}
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal {
+  background: var(--surface); border-radius: var(--radius-xl);
+  width: 100%; max-width: 800px; max-height: calc(100vh - 80px);
+  overflow-y: auto; box-shadow: 0 25px 50px rgba(0,0,0,.25);
+  transform: translateY(10px); transition: transform 200ms ease;
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-header {
+  padding: 24px 24px 16px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 12px;
+  position: sticky; top: 0; background: var(--surface);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  z-index: 1;
+}
+.modal-header-info { flex: 1; }
+.modal-close {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); transition: all var(--transition);
+  flex-shrink: 0;
+}
+.modal-close:hover { background: var(--bg-alt); color: var(--text); }
+.modal-body { padding: 24px; }
+.modal-section { margin-bottom: 24px; }
+.modal-section:last-child { margin-bottom: 0; }
+.modal-section-title {
+  font-size: .78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--text-muted); margin-bottom: 12px;
+}
 
-  .aivss-score { font-size: .78rem; background: #f0fdf4; color: #166534; border-radius: 4px; padding: 2px 8px; display: inline-block; margin-bottom: 8px; font-weight: 600; }
+/* Mapping table in modal */
+.mapping-table {
+  width: 100%; border-collapse: collapse; font-size: .85rem;
+}
+.mapping-table th {
+  text-align: left; padding: 8px 12px; font-size: .75rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--text-muted); border-bottom: 2px solid var(--border);
+  cursor: pointer; user-select: none;
+  white-space: nowrap;
+}
+.mapping-table th:hover { color: var(--accent); }
+.mapping-table th .sort-arrow { font-size: .65rem; margin-left: 4px; }
+.mapping-table td {
+  padding: 8px 12px; border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+.mapping-table tr:hover td { background: var(--bg-alt); }
+.mapping-table .ctrl-id {
+  font-family: var(--font-mono); font-size: .78rem; color: var(--accent);
+  white-space: nowrap;
+}
+.mapping-table .ctrl-id a { color: inherit; }
+.mapping-table .tier-badge {
+  font-size: .68rem; padding: 1px 6px; border-radius: 3px;
+  white-space: nowrap;
+}
+.tier-Foundational { background: var(--lo-bg); color: var(--lo); }
+.tier-Hardening { background: var(--me-bg); color: var(--me); }
+.tier-Advanced { background: var(--cr-bg); color: var(--cr); }
 
-  .card-foot { display: flex; gap: 8px; align-items: center; padding-top: 4px; }
-  .btn-expand { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 12px; font-size: .8rem; cursor: pointer; color: var(--text); transition: all .15s; text-align: center; }
-  .btn-expand:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
-  .btn-json { background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 5px 8px; font-size: .75rem; color: var(--muted); cursor: pointer; text-decoration: none; transition: all .15s; white-space: nowrap; }
-  .btn-json:hover { border-color: var(--accent); color: var(--accent); }
+/* Tool chips in modal */
+.tool-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool-chip {
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 12px; font-size: .82rem;
+}
+.tool-chip a { font-weight: 500; }
+.tool-chip .tool-type { font-size: .72rem; color: var(--text-muted); margin-left: 4px; }
 
-  /* ── Detail panel ── */
-  .detail { display: none; border-top: 1px solid var(--border); padding: 14px 16px; background: var(--bg); }
-  .detail.open { display: block; }
+/* Incident chips in modal */
+.incident-chip {
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 12px; font-size: .85rem;
+  display: flex; align-items: center; gap: 8px; margin-bottom: 6px;
+  cursor: pointer; transition: all var(--transition);
+}
+.incident-chip:hover { border-color: var(--accent); background: var(--accent-bg); }
 
-  .fw-group { margin-bottom: 14px; }
-  .fw-group-name { font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
-  .fw-row { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; border-bottom: 1px solid var(--border); font-size: .8rem; }
-  .fw-row:last-child { border-bottom: none; }
-  .fw-ctrl-id { font-family: monospace; font-size: .75rem; color: var(--accent); white-space: nowrap; min-width: 90px; }
-  .fw-ctrl-id a { color: inherit; text-decoration: none; }
-  .fw-ctrl-id a:hover { text-decoration: underline; }
-  .fw-ctrl-name { color: var(--text); flex: 1; }
-  .fw-ctrl-note { font-size: .72rem; color: var(--muted); margin-top: 2px; }
-  .tier-badge { font-size: .68rem; border-radius: 3px; padding: 1px 5px; background: var(--border); color: var(--muted); white-space: nowrap; margin-left: auto; }
-  .tier-badge.Foundational { background: #dcfce7; color: #166534; }
-  .tier-badge.Hardening    { background: #fef9c3; color: #854d0e; }
-  .tier-badge.Advanced     { background: #fee2e2; color: #991b1b; }
+/* Xref chips */
+.xref-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.xref-chip {
+  font-family: var(--font-mono); font-size: .78rem; font-weight: 500;
+  padding: 3px 10px; border-radius: 4px; cursor: pointer;
+  background: var(--accent-bg); color: var(--accent);
+  border: 1px solid var(--accent-light);
+  transition: all var(--transition);
+}
+.xref-chip:hover { background: var(--accent); color: #fff; }
 
-  .tools-section { margin-top: 12px; }
-  .tools-section h4 { font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
-  .tools-list { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tool-chip { font-size: .77rem; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 3px 9px; }
-  .tool-chip a { color: var(--accent); text-decoration: none; }
-  .tool-chip a:hover { text-decoration: underline; }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Coverage Matrix (Frameworks page)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.matrix-wrap {
+  max-width: 100%; overflow-x: auto; padding: 24px;
+  margin: 0 auto;
+}
+.matrix-stats {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; gap: 16px; flex-wrap: wrap; padding: 24px 24px 0;
+}
+.matrix-stat {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 20px; flex: 1; min-width: 140px;
+}
+.matrix-stat-label { font-size: .78rem; color: var(--text-muted); }
+.matrix-stat-val { font-size: 1.5rem; font-weight: 700; }
+.matrix-table {
+  border-collapse: collapse; font-size: .72rem; width: 100%;
+  min-width: 900px;
+}
+.matrix-table th {
+  padding: 6px 4px; font-weight: 600; text-align: center;
+  border-bottom: 2px solid var(--border); position: sticky; top: 0;
+  background: var(--bg); z-index: 2;
+}
+.matrix-table th.col-header {
+  writing-mode: vertical-lr; transform: rotate(180deg);
+  height: 140px; cursor: pointer; font-size: .68rem;
+  white-space: nowrap;
+}
+.matrix-table th.col-header:hover { color: var(--accent); }
+.matrix-table th.row-header {
+  text-align: left; padding: 6px 8px; font-family: var(--font-mono);
+  position: sticky; left: 0; background: var(--bg); z-index: 3;
+  white-space: nowrap; font-size: .75rem; cursor: pointer;
+}
+.matrix-table th.row-header:hover { color: var(--accent); }
+.matrix-table td {
+  width: 28px; height: 28px; text-align: center; cursor: pointer;
+  border: 1px solid var(--border-light);
+}
+.matrix-cell-mapped {
+  background: #22c55e;
+}
+[data-theme="dark"] .matrix-cell-mapped { background: #16a34a; }
+.matrix-cell-empty { background: var(--bg-alt); }
+.matrix-cell-mapped:hover { background: #16a34a; }
+[data-theme="dark"] .matrix-cell-mapped:hover { background: #15803d; }
+.matrix-cell-empty:hover { background: var(--border); }
 
-  /* ── Empty state ── */
-  .empty { text-align: center; padding: 60px 24px; color: var(--muted); }
-  .empty h3 { font-size: 1.1rem; margin-bottom: 8px; }
+/* Cell popup */
+.cell-popup {
+  position: fixed; z-index: 300; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15); padding: 12px 16px;
+  max-width: 360px; font-size: .82rem; pointer-events: none;
+}
+.cell-popup-title { font-weight: 700; margin-bottom: 6px; }
 
-  /* ── Loading ── */
-  .loading { text-align: center; padding: 60px; color: var(--muted); font-size: .9rem; }
+/* ══════════════════════════════════════════════════════════════════════════════
+   Incidents page
+   ══════════════════════════════════════════════════════════════════════════════ */
+.incident-summary {
+  max-width: var(--max-w); margin: 0 auto; padding: 24px 24px 0;
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.incident-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: var(--card-shadow);
+  overflow: hidden; transition: all var(--transition); cursor: pointer;
+}
+.incident-card:hover { box-shadow: var(--card-shadow-hover); border-color: var(--accent); }
+.incident-card-inner { padding: 20px; }
+.incident-card-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;
+}
+.incident-card-id {
+  font-family: var(--font-mono); font-size: .75rem; font-weight: 700;
+  color: var(--accent);
+}
+.badge-cat {
+  font-size: .7rem; padding: 2px 8px; border-radius: 4px;
+  background: var(--bg-alt); color: var(--text-muted);
+  text-transform: capitalize;
+}
+.incident-card-title {
+  font-size: .95rem; font-weight: 600; margin-bottom: 8px; line-height: 1.4;
+}
+.incident-card-date {
+  font-size: .8rem; color: var(--text-muted); margin-bottom: 8px;
+}
+.incident-card-entries {
+  display: flex; flex-wrap: wrap; gap: 4px;
+}
+.incident-entry-badge {
+  font-family: var(--font-mono); font-size: .7rem; font-weight: 600;
+  padding: 1px 6px; border-radius: 3px;
+  background: var(--accent-bg); color: var(--accent);
+}
 
-  /* ── Responsive ── */
-  @media (max-width: 600px) {
-    header { padding: 16px; }
-    .controls { padding: 10px 16px; }
-    main { padding: 16px; }
-    .grid { grid-template-columns: 1fr; }
-  }
+/* Incident detail (expanded) */
+.incident-detail { padding: 0 20px 20px; }
+.incident-desc { font-size: .875rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
+.maestro-table {
+  width: 100%; border-collapse: collapse; font-size: .82rem; margin-bottom: 16px;
+}
+.maestro-table th {
+  text-align: left; padding: 6px 10px; font-size: .72rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--text-muted); border-bottom: 2px solid var(--border);
+}
+.maestro-table td { padding: 8px 10px; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.maestro-role {
+  font-size: .72rem; font-weight: 600; padding: 2px 8px;
+  border-radius: 3px; text-transform: capitalize; white-space: nowrap;
+}
+.maestro-role-origin { background: var(--cr-bg); color: var(--cr); }
+.maestro-role-propagation { background: var(--hi-bg); color: var(--hi); }
+.maestro-role-impact { background: var(--me-bg); color: var(--me); }
+.maestro-role-blind-spot { background: var(--bg-alt); color: var(--text-muted); }
+
+.mitigation-list { padding-left: 20px; font-size: .85rem; color: var(--text-secondary); }
+.mitigation-list li { margin-bottom: 6px; }
+.ref-list { display: flex; flex-direction: column; gap: 4px; }
+.ref-link { font-size: .85rem; }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Score page
+   ══════════════════════════════════════════════════════════════════════════════ */
+.score-layout {
+  max-width: var(--max-w); margin: 0 auto; padding: 24px;
+  display: grid; grid-template-columns: 300px 1fr; gap: 24px;
+}
+.score-sidebar {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px; height: fit-content;
+  position: sticky; top: 80px;
+}
+.score-sidebar h3 { font-size: .95rem; margin-bottom: 12px; }
+.fw-checkbox-list { display: flex; flex-direction: column; gap: 6px; }
+.fw-checkbox {
+  display: flex; align-items: center; gap: 8px; font-size: .85rem;
+  cursor: pointer; padding: 4px 0;
+}
+.fw-checkbox input { accent-color: var(--accent); }
+.score-main { min-width: 0; }
+.score-overview {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.score-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px; text-align: center;
+}
+.score-big {
+  font-size: 2.5rem; font-weight: 800;
+}
+.score-big.good { color: var(--lo); }
+.score-big.ok { color: var(--me); }
+.score-big.poor { color: var(--hi); }
+.score-big.none { color: var(--cr); }
+.score-label { font-size: .82rem; color: var(--text-muted); margin-top: 4px; }
+.score-sublabel { font-size: .78rem; color: var(--text-secondary); font-weight: 600; }
+.gap-section { margin-top: 24px; }
+.gap-section h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+.gap-item {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 8px;
+  font-size: .85rem;
+}
+.gap-item .gap-id {
+  font-family: var(--font-mono); font-weight: 700; min-width: 70px;
+}
+.gap-item .gap-name { flex: 1; }
+.rec-list { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.rec-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.rec-item .rec-rank {
+  font-size: 1.25rem; font-weight: 800; color: var(--accent); min-width: 30px;
+}
+.rec-item .rec-fw { font-weight: 600; }
+.rec-item .rec-covers { font-size: .8rem; color: var(--text-muted); }
+.score-actions {
+  display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   About page
+   ══════════════════════════════════════════════════════════════════════════════ */
+.about-content {
+  max-width: 720px; margin: 0 auto; padding: 48px 24px;
+}
+.about-content h2 {
+  font-size: 1.75rem; font-weight: 800; margin-bottom: 8px;
+}
+.about-content h3 {
+  font-size: 1.15rem; font-weight: 700; margin: 32px 0 12px;
+}
+.about-content p {
+  color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7;
+}
+.timeline { border-left: 2px solid var(--border); padding-left: 24px; margin: 24px 0; }
+.timeline-item { margin-bottom: 20px; position: relative; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -29px; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--bg);
+}
+.timeline-date { font-size: .78rem; color: var(--text-muted); font-weight: 600; }
+.timeline-text { font-size: .9rem; }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Footer
+   ══════════════════════════════════════════════════════════════════════════════ */
+.site-footer {
+  border-top: 1px solid var(--border); padding: 24px;
+  text-align: center; font-size: .82rem; color: var(--text-muted);
+}
+.site-footer a { color: var(--text-secondary); }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Empty / Loading states
+   ══════════════════════════════════════════════════════════════════════════════ */
+.empty-state {
+  text-align: center; padding: 80px 24px; color: var(--text-muted);
+}
+.empty-state h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text-secondary); }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Responsive
+   ══════════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .source-cols { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; padding: 16px; }
+  .score-layout { grid-template-columns: 1fr; }
+  .score-sidebar { position: static; }
+  .filter-bar-inner { gap: 8px; }
+  .search-wrap { max-width: none; }
+  .matrix-table th.col-header { height: 100px; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 48px 16px 40px; }
+  .stat-card { min-width: 120px; padding: 14px 18px; }
+  .stat-card .stat-num { font-size: 1.4rem; }
+  .section { padding: 32px 16px; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Print styles (Score PDF export)
+   ══════════════════════════════════════════════════════════════════════════════ */
+@media print {
+  .navbar, .mobile-menu, .filter-bar, .score-actions, .site-footer { display: none !important; }
+  .app { margin-top: 0; }
+  .score-layout { grid-template-columns: 1fr; }
+  .score-sidebar { position: static; break-inside: avoid; }
+  .gap-item, .rec-item, .score-card { break-inside: avoid; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .score-card { border: 1px solid #ccc; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <h1>GenAI Security Crosswalk</h1>
-  <p>Query 41 vulnerability entries × 17 frameworks × 3 OWASP source lists</p>
-  <div class="meta">
-    <span id="meta-entries">— entries</span>
-    <span id="meta-mappings">— mappings</span>
-    <span id="meta-frameworks">— frameworks</span>
-    <span>v1.5.2 · CC BY-SA 4.0</span>
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Navigation
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#/" class="nav-logo" aria-label="Home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>GenAI Crosswalk</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#/explorer">Explorer</a>
+      <a href="#/frameworks">Frameworks</a>
+      <a href="#/incidents">Incidents</a>
+      <a href="#/score">Score</a>
+      <a href="#/about">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-light"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-dark" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a href="https://github.com/emmanuelgjr/GenAI-Security-Crosswalk" target="_blank" rel="noopener" class="nav-icon-btn" aria-label="GitHub repository" title="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <button class="nav-icon-btn hamburger" id="hamburger" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
   </div>
-</header>
+</nav>
 
-<div class="controls">
-  <div class="search-wrap">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-    <input type="search" id="search" placeholder="Search by ID, name, control, framework…" autocomplete="off">
-  </div>
-
-  <div class="pill-group" id="source-pills">
-    <button class="pill active" data-val="">All lists</button>
-    <button class="pill" data-val="LLM-Top10-2025">LLM Top 10</button>
-    <button class="pill" data-val="Agentic-Top10-2026">Agentic Top 10</button>
-    <button class="pill" data-val="DSGAI-2026">DSGAI 2026</button>
-  </div>
-
-  <div class="pill-group" id="sev-pills">
-    <button class="pill active" data-val="">All severity</button>
-    <button class="pill cr" data-val="Critical">Critical</button>
-    <button class="pill hi" data-val="High">High</button>
-    <button class="pill me" data-val="Medium">Medium</button>
-  </div>
-
-  <select id="fw-select">
-    <option value="">All frameworks</option>
-  </select>
-
-  <select id="tier-select">
-    <option value="">All tiers</option>
-    <option value="Foundational">Foundational</option>
-    <option value="Hardening">Hardening</option>
-    <option value="Advanced">Advanced</option>
-  </select>
-
-  <div class="controls-right">
-    <span id="result-count"></span>
-  </div>
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="#/">Home</a>
+  <a href="#/explorer">Explorer</a>
+  <a href="#/frameworks">Frameworks</a>
+  <a href="#/incidents">Incidents</a>
+  <a href="#/score">Score</a>
+  <a href="#/about">About</a>
 </div>
 
-<main>
-  <div id="root"><div class="loading">Loading data…</div></div>
-</main>
+<!-- Modal overlay (reused for all detail views) -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Detail view">
+  <div class="modal" id="modal-content"></div>
+</div>
 
+<!-- Cell popup for matrix -->
+<div class="cell-popup" id="cell-popup" style="display:none"></div>
+
+<!-- Main app container -->
+<div class="app" id="app"></div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  OWASP GenAI Data Security Initiative &middot; CC BY-SA 4.0 &middot;
+  <a href="https://github.com/emmanuelgjr/GenAI-Security-Crosswalk" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+<!-- Data scripts -->
 <script src="data.js"></script>
+<script src="incidents.js"></script>
+
 <script>
-(function () {
+(function() {
   'use strict';
 
-  // ── State ────────────────────────────────────────────────────────────────────
-  const state = {
-    search:   '',
-    source:   '',
-    severity: '',
-    framework:'',
-    tier:     '',
-    expanded: new Set(),
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Data references
+  // ══════════════════════════════════════════════════════════════════════════════
+  var DATA = window.CROSSWALK_DATA || [];
+  var INCIDENTS = window.CROSSWALK_INCIDENTS || [];
+
+  // Pre-compute some lookups
+  var FRAMEWORKS = [];
+  var FW_SET = new Set();
+  DATA.forEach(function(e) {
+    e.mappings.forEach(function(m) { FW_SET.add(m.framework); });
+  });
+  FRAMEWORKS = Array.from(FW_SET).sort();
+
+  var ENTRY_MAP = {};
+  DATA.forEach(function(e) { ENTRY_MAP[e.id] = e; });
+
+  var INCIDENT_MAP = {};
+  INCIDENTS.forEach(function(inc) { INCIDENT_MAP[inc.id] = inc; });
+
+  var SOURCE_LABELS = {
+    'LLM-Top10-2025': 'LLM Top 10 2025',
+    'Agentic-Top10-2026': 'Agentic Top 10 2026',
+    'DSGAI-2026': 'DSGAI 2026'
   };
 
-  const data = window.CROSSWALK_DATA || [];
-
-  // ── Bootstrap ─────────────────────────────────────────────────────────────────
-  function init() {
-    if (!data.length) {
-      document.getElementById('root').innerHTML = '<div class="empty"><h3>No data loaded</h3><p>Run <code>node scripts/generate.js</code> to generate data.js</p></div>';
-      return;
-    }
-
-    // Populate framework dropdown
-    const frameworks = [...new Set(data.flatMap(e => e.mappings.map(m => m.framework)))].sort();
-    const fwSel = document.getElementById('fw-select');
-    frameworks.forEach(fw => {
-      const opt = document.createElement('option');
-      opt.value = fw; opt.textContent = fw;
-      fwSel.appendChild(opt);
-    });
-
-    // Meta stats
-    const totalMappings  = data.reduce((s, e) => s + e.mappings.length, 0);
-    document.getElementById('meta-entries').textContent   = `${data.length} entries`;
-    document.getElementById('meta-mappings').textContent  = `${totalMappings.toLocaleString()} mappings`;
-    document.getElementById('meta-frameworks').textContent = `${frameworks.length} frameworks`;
-
-    // Event listeners
-    document.getElementById('search').addEventListener('input', e => { state.search = e.target.value.trim().toLowerCase(); render(); });
-
-    document.getElementById('source-pills').addEventListener('click', e => {
-      const pill = e.target.closest('.pill');
-      if (!pill) return;
-      document.querySelectorAll('#source-pills .pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      state.source = pill.dataset.val;
-      render();
-    });
-
-    document.getElementById('sev-pills').addEventListener('click', e => {
-      const pill = e.target.closest('.pill');
-      if (!pill) return;
-      document.querySelectorAll('#sev-pills .pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      state.severity = pill.dataset.val;
-      render();
-    });
-
-    document.getElementById('fw-select').addEventListener('change', e => { state.framework = e.target.value; render(); });
-    document.getElementById('tier-select').addEventListener('change', e => { state.tier = e.target.value; render(); });
-
-    render();
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Theme management
+  // ══════════════════════════════════════════════════════════════════════════════
+  function getPreferredTheme() {
+    var saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  // ── Filter ───────────────────────────────────────────────────────────────────
-  function filter(entry) {
-    if (state.source   && entry.source_list !== state.source)   return false;
-    if (state.severity && entry.severity    !== state.severity) return false;
-
-    if (state.framework) {
-      if (!entry.mappings.some(m => m.framework === state.framework)) return false;
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    var lightIcon = document.getElementById('theme-icon-light');
+    var darkIcon = document.getElementById('theme-icon-dark');
+    if (lightIcon && darkIcon) {
+      lightIcon.style.display = theme === 'dark' ? 'none' : 'block';
+      darkIcon.style.display = theme === 'dark' ? 'block' : 'none';
     }
-    if (state.tier) {
-      if (!entry.mappings.some(m => m.tier === state.tier)) return false;
-    }
-
-    if (state.search) {
-      const q = state.search;
-      const inId      = entry.id.toLowerCase().includes(q);
-      const inName    = entry.name.toLowerCase().includes(q);
-      const inMapping = entry.mappings.some(m =>
-        m.control_id.toLowerCase().includes(q) ||
-        m.control_name.toLowerCase().includes(q) ||
-        m.framework.toLowerCase().includes(q) ||
-        (m.notes || '').toLowerCase().includes(q)
-      );
-      const inTools = entry.tools.some(t => t.name.toLowerCase().includes(q));
-      if (!inId && !inName && !inMapping && !inTools) return false;
-    }
-
-    return true;
+    localStorage.setItem('theme', theme);
   }
 
-  // ── Render ───────────────────────────────────────────────────────────────────
-  function render() {
-    const visible = data.filter(filter);
-    document.getElementById('result-count').textContent = `${visible.length} of ${data.length}`;
+  applyTheme(getPreferredTheme());
 
-    const root = document.getElementById('root');
-    if (!visible.length) {
-      root.innerHTML = '<div class="empty"><h3>No entries match</h3><p>Try adjusting your filters or search term.</p></div>';
-      return;
-    }
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
 
-    root.innerHTML = '<div class="grid" id="grid"></div>';
-    const grid = document.getElementById('grid');
-    visible.forEach(entry => grid.appendChild(buildCard(entry)));
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Mobile menu
+  // ══════════════════════════════════════════════════════════════════════════════
+  var mobileMenu = document.getElementById('mobile-menu');
+  document.getElementById('hamburger').addEventListener('click', function() {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') mobileMenu.classList.remove('open');
+  });
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Modal management
+  // ══════════════════════════════════════════════════════════════════════════════
+  var modalOverlay = document.getElementById('modal-overlay');
+  var modalContent = document.getElementById('modal-content');
+
+  function openModal(buildFn) {
+    modalContent.innerHTML = '';
+    buildFn(modalContent);
+    modalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Focus first close button
+    var closeBtn = modalContent.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
   }
 
-  // ── Card builder ─────────────────────────────────────────────────────────────
-  function buildCard(entry) {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.dataset.id = entry.id;
+  function closeModal() {
+    modalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-    // Visible framework list (filtered if fw filter active)
-    const shownMappings = state.framework
-      ? entry.mappings.filter(m => m.framework === state.framework)
-      : entry.mappings;
+  modalOverlay.addEventListener('click', function(e) {
+    if (e.target === modalOverlay) closeModal();
+  });
 
-    const frameworkCount = new Set(entry.mappings.map(m => m.framework)).size;
-    const allXrefs = [
-      ...(entry.crossrefs.llm_top10     || []),
-      ...(entry.crossrefs.agentic_top10 || []),
-      ...(entry.crossrefs.dsgai_2026    || []),
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Utility functions
+  // ══════════════════════════════════════════════════════════════════════════════
+  function esc(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(String(str)));
+    return div.innerHTML;
+  }
+
+  function el(tag, attrs, children) {
+    var node = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function(k) {
+        if (k === 'className') node.className = attrs[k];
+        else if (k === 'textContent') node.textContent = attrs[k];
+        else if (k.startsWith('on')) node.addEventListener(k.slice(2).toLowerCase(), attrs[k]);
+        else node.setAttribute(k, attrs[k]);
+      });
+    }
+    if (children) {
+      if (typeof children === 'string') node.textContent = children;
+      else if (Array.isArray(children)) children.forEach(function(c) { if (c) node.appendChild(c); });
+      else node.appendChild(children);
+    }
+    return node;
+  }
+
+  function debounce(fn, ms) {
+    var timer;
+    return function() {
+      var args = arguments;
+      var ctx = this;
+      clearTimeout(timer);
+      timer = setTimeout(function() { fn.apply(ctx, args); }, ms);
+    };
+  }
+
+  function sevColor(sev) {
+    switch(sev) {
+      case 'Critical': return 'var(--cr)';
+      case 'High': return 'var(--hi)';
+      case 'Medium': return 'var(--me)';
+      case 'Low': return 'var(--lo)';
+      default: return 'var(--text-muted)';
+    }
+  }
+
+  function scoreClass(pct) {
+    if (pct >= 75) return 'good';
+    if (pct >= 50) return 'ok';
+    if (pct >= 25) return 'poor';
+    return 'none';
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Router
+  // ══════════════════════════════════════════════════════════════════════════════
+  var routes = {
+    '/': renderLanding,
+    '/explorer': renderExplorer,
+    '/frameworks': renderFrameworks,
+    '/incidents': renderIncidents,
+    '/score': renderScore,
+    '/about': renderAbout
+  };
+
+  function getRoute() {
+    var hash = window.location.hash || '#/';
+    // Extract the path part (before any query params)
+    var path = hash.slice(1).split('?')[0];
+    if (!path || path === '') path = '/';
+    return path;
+  }
+
+  function navigate() {
+    var path = getRoute();
+    var app = document.getElementById('app');
+    app.innerHTML = '';
+
+    // Update nav active state
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var linkPath = href ? href.slice(1) : '/';
+      a.classList.toggle('active', linkPath === path);
+    });
+
+    var renderFn = routes[path] || renderLanding;
+    renderFn(app);
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener('hashchange', navigate);
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Landing Page
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderLanding(container) {
+    var totalMappings = DATA.reduce(function(s, e) { return s + e.mappings.length; }, 0);
+
+    // Hero
+    var hero = el('div', { className: 'hero' });
+    hero.appendChild(el('h1', {}, 'OWASP GenAI Security Crosswalk'));
+    hero.appendChild(el('p', { className: 'subtitle' }, 'The most comprehensive mapping of AI security risks to industry frameworks'));
+
+    var creator = el('p', { className: 'creator' });
+    creator.appendChild(document.createTextNode('Created by '));
+    creator.appendChild(el('a', { href: 'https://github.com/emmanuelgjr', target: '_blank', rel: 'noopener' }, 'Emmanuel Guilherme Junior'));
+    hero.appendChild(creator);
+
+    // Stats
+    var stats = [
+      [FRAMEWORKS.length, 'Frameworks'],
+      [totalMappings.toLocaleString(), 'Mappings'],
+      [INCIDENTS.length, 'Incidents'],
+      [DATA.length, 'Entries']
+    ];
+    var statRow = el('div', { className: 'stat-row' });
+    stats.forEach(function(s) {
+      var card = el('div', { className: 'stat-card' });
+      card.appendChild(el('span', { className: 'stat-num' }, String(s[0])));
+      card.appendChild(el('span', { className: 'stat-label' }, s[1]));
+      statRow.appendChild(card);
+    });
+    hero.appendChild(statRow);
+
+    // CTAs
+    var ctas = el('div', { className: 'hero-ctas' });
+    var btn1 = el('a', { href: '#/explorer', className: 'btn-primary' });
+    btn1.textContent = 'Explore Entries \u2192';
+    var btn2 = el('a', { href: '#/score', className: 'btn-secondary' });
+    btn2.textContent = 'Score Your Coverage \u2192';
+    ctas.appendChild(btn1);
+    ctas.appendChild(btn2);
+    hero.appendChild(ctas);
+    container.appendChild(hero);
+
+    // Source list columns
+    var srcSection = el('section', { className: 'section' });
+    srcSection.appendChild(el('h2', { className: 'section-title' }, 'What This Covers'));
+    srcSection.appendChild(el('p', { className: 'section-desc' }, 'Three OWASP source lists covering the full spectrum of GenAI security risks.'));
+
+    var srcCols = el('div', { className: 'source-cols' });
+    var sourceGroups = [
+      { key: 'LLM-Top10-2025', name: 'LLM Top 10 2025', prefix: 'LLM' },
+      { key: 'Agentic-Top10-2026', name: 'Agentic Top 10 2026', prefix: 'ASI' },
+      { key: 'DSGAI-2026', name: 'DSGAI 2026', prefix: 'DSGAI' }
     ];
 
-    const sourceLabel = {
-      'LLM-Top10-2025':    'LLM Top 10 2025',
-      'Agentic-Top10-2026':'Agentic Top 10 2026',
-      'DSGAI-2026':        'DSGAI 2026',
-    }[entry.source_list] || entry.source_list;
+    sourceGroups.forEach(function(sg) {
+      var entries = DATA.filter(function(e) { return e.source_list === sg.key; });
+      var col = el('div', { className: 'source-col' });
+      var head = el('div', { className: 'source-col-head' });
+      head.appendChild(document.createTextNode(sg.name + ' '));
+      head.appendChild(el('span', { className: 'count' }, '(' + entries.length + ' entries)'));
+      col.appendChild(head);
 
-    card.innerHTML = `
-      <div class="card-head">
-        <span class="card-id">${entry.id}</span>
-        <span class="sev ${entry.severity}">${entry.severity}</span>
-        <span class="source-tag">${sourceLabel}</span>
-      </div>
-      <div class="card-body">
-        <div class="card-name">${entry.name}</div>
-        <div class="stats">
-          <span>${entry.mappings.length} controls</span>
-          <span>${frameworkCount} frameworks</span>
-          ${entry.tools.length ? `<span>${entry.tools.length} tools</span>` : ''}
-          ${entry.aivss_score ? `<span>AIVSS ${entry.aivss_score}</span>` : ''}
-        </div>
-        ${allXrefs.length ? `<div class="xrefs">${allXrefs.map(x => `<span class="xref-chip" data-jump="${x}">${x}</span>`).join('')}</div>` : ''}
-        <div class="card-foot">
-          <button class="btn-expand">${state.expanded.has(entry.id) ? 'Hide controls ↑' : 'View controls ↓'}</button>
-          <a class="btn-json" href="https://raw.githubusercontent.com/emmanuelgjr/GenAI-Security-Crosswalk/main/data/entries/${entry.id}.json" target="_blank" rel="noopener">JSON ↗</a>
-        </div>
-      </div>
-      <div class="detail ${state.expanded.has(entry.id) ? 'open' : ''}">
-        ${buildDetail(entry, shownMappings)}
-      </div>`;
+      entries.forEach(function(entry) {
+        var item = el('div', { className: 'source-col-item', tabindex: '0', role: 'button', 'aria-label': 'View ' + entry.id + ' ' + entry.name });
+        item.appendChild(el('span', { className: 'item-id' }, entry.id));
+        item.appendChild(el('span', {}, entry.name));
+        item.addEventListener('click', function() {
+          window.location.hash = '#/explorer';
+          setTimeout(function() { openEntryModal(entry); }, 100);
+        });
+        item.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
+        });
+        col.appendChild(item);
+      });
+      srcCols.appendChild(col);
+    });
+    srcSection.appendChild(srcCols);
+    container.appendChild(srcSection);
 
-    // Expand toggle
-    card.querySelector('.btn-expand').addEventListener('click', () => {
-      if (state.expanded.has(entry.id)) state.expanded.delete(entry.id);
-      else state.expanded.add(entry.id);
-      // Re-render just this card in place
-      const fresh = buildCard(entry);
-      card.replaceWith(fresh);
+    // Frameworks section
+    var fwSection = el('section', { className: 'section' });
+    fwSection.appendChild(el('h2', { className: 'section-title' }, 'Frameworks'));
+    fwSection.appendChild(el('p', { className: 'section-desc' }, 'Security and compliance frameworks mapped in this crosswalk.'));
+
+    var fwGrid = el('div', { className: 'fw-grid' });
+    FRAMEWORKS.forEach(function(fw) {
+      var count = 0;
+      DATA.forEach(function(e) {
+        if (e.mappings.some(function(m) { return m.framework === fw; })) count++;
+      });
+      var card = el('div', { className: 'fw-card', tabindex: '0', role: 'button', 'aria-label': fw });
+      card.appendChild(el('div', { className: 'fw-card-name' }, fw));
+      card.appendChild(el('div', { className: 'fw-card-count' }, count + ' of ' + DATA.length + ' entries covered'));
+      card.addEventListener('click', function() {
+        window.location.hash = '#/frameworks';
+      });
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+      });
+      fwGrid.appendChild(card);
+    });
+    fwSection.appendChild(fwGrid);
+    container.appendChild(fwSection);
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Entry Explorer
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderExplorer(container) {
+    var state = { search: '', severity: '', source: '' };
+
+    // Filter bar
+    var filterBar = el('div', { className: 'filter-bar' });
+    var filterInner = el('div', { className: 'filter-bar-inner' });
+
+    // Search
+    var searchWrap = el('div', { className: 'search-wrap' });
+    var searchSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    searchSvg.setAttribute('width', '14');
+    searchSvg.setAttribute('height', '14');
+    searchSvg.setAttribute('viewBox', '0 0 24 24');
+    searchSvg.setAttribute('fill', 'none');
+    searchSvg.setAttribute('stroke', 'currentColor');
+    searchSvg.setAttribute('stroke-width', '2');
+    searchSvg.innerHTML = '<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>';
+    searchWrap.appendChild(searchSvg);
+    var searchInput = el('input', {
+      className: 'search-input',
+      type: 'search',
+      placeholder: 'Search entries, controls, frameworks\u2026',
+      'aria-label': 'Search entries'
+    });
+    searchWrap.appendChild(searchInput);
+    filterInner.appendChild(searchWrap);
+
+    // Severity pills
+    var sevGroup = el('div', { className: 'pill-group' });
+    ['All', 'Critical', 'High', 'Medium'].forEach(function(sev) {
+      var p = el('button', {
+        className: 'pill' + (sev === 'All' ? ' active' : '') +
+          (sev === 'Critical' ? ' sev-cr' : sev === 'High' ? ' sev-hi' : sev === 'Medium' ? ' sev-me' : ''),
+        'aria-label': 'Filter by ' + sev + ' severity'
+      }, sev);
+      p.addEventListener('click', function() {
+        sevGroup.querySelectorAll('.pill').forEach(function(b) { b.classList.remove('active'); });
+        p.classList.add('active');
+        state.severity = sev === 'All' ? '' : sev;
+        renderCards();
+      });
+      sevGroup.appendChild(p);
+    });
+    filterInner.appendChild(sevGroup);
+
+    // Source pills
+    var srcGroup = el('div', { className: 'pill-group' });
+    [['All', ''], ['LLM', 'LLM-Top10-2025'], ['Agentic', 'Agentic-Top10-2026'], ['DSGAI', 'DSGAI-2026']].forEach(function(item) {
+      var p = el('button', {
+        className: 'pill' + (item[0] === 'All' ? ' active' : ''),
+        'aria-label': 'Filter by ' + item[0] + ' source list'
+      }, item[0]);
+      p.addEventListener('click', function() {
+        srcGroup.querySelectorAll('.pill').forEach(function(b) { b.classList.remove('active'); });
+        p.classList.add('active');
+        state.source = item[1];
+        renderCards();
+      });
+      srcGroup.appendChild(p);
+    });
+    filterInner.appendChild(srcGroup);
+
+    var countLabel = el('span', { className: 'filter-count' });
+    filterInner.appendChild(countLabel);
+    filterBar.appendChild(filterInner);
+    container.appendChild(filterBar);
+
+    // Card grid
+    var grid = el('div', { className: 'card-grid' });
+    container.appendChild(grid);
+
+    // Search with debounce
+    searchInput.addEventListener('input', debounce(function() {
+      state.search = searchInput.value.trim().toLowerCase();
+      renderCards();
+    }, 150));
+
+    function filterEntries() {
+      return DATA.filter(function(e) {
+        if (state.severity && e.severity !== state.severity) return false;
+        if (state.source && e.source_list !== state.source) return false;
+        if (state.search) {
+          var q = state.search;
+          var inId = e.id.toLowerCase().indexOf(q) !== -1;
+          var inName = e.name.toLowerCase().indexOf(q) !== -1;
+          var inMapping = e.mappings.some(function(m) {
+            return m.control_id.toLowerCase().indexOf(q) !== -1 ||
+                   m.control_name.toLowerCase().indexOf(q) !== -1 ||
+                   m.framework.toLowerCase().indexOf(q) !== -1;
+          });
+          if (!inId && !inName && !inMapping) return false;
+        }
+        return true;
+      });
+    }
+
+    function renderCards() {
+      var visible = filterEntries();
+      countLabel.textContent = visible.length + ' of ' + DATA.length + ' entries';
+      grid.innerHTML = '';
+
+      if (visible.length === 0) {
+        var empty = el('div', { className: 'empty-state' });
+        empty.appendChild(el('h3', {}, 'No entries match'));
+        empty.appendChild(el('p', {}, 'Try adjusting your filters or search term.'));
+        grid.appendChild(empty);
+        return;
+      }
+
+      visible.forEach(function(entry) {
+        grid.appendChild(buildEntryCard(entry));
+      });
+    }
+
+    renderCards();
+  }
+
+  function buildEntryCard(entry) {
+    var fwCount = new Set(entry.mappings.map(function(m) { return m.framework; })).size;
+    var incCount = entry.incidents ? entry.incidents.length : 0;
+    var toolCount = entry.tools ? entry.tools.length : 0;
+
+    var card = el('div', {
+      className: 'entry-card',
+      tabindex: '0',
+      role: 'button',
+      'aria-label': entry.id + ' ' + entry.name
     });
 
-    // Cross-ref chips → jump to that entry
-    card.querySelectorAll('.xref-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        state.search = chip.dataset.jump;
-        document.getElementById('search').value = chip.dataset.jump;
-        // Clear other filters
-        state.source = ''; state.severity = ''; state.framework = ''; state.tier = '';
-        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-        document.querySelector('#source-pills .pill').classList.add('active');
-        document.querySelector('#sev-pills .pill').classList.add('active');
-        document.getElementById('fw-select').value = '';
-        document.getElementById('tier-select').value = '';
-        render();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+    var inner = el('div', { className: 'entry-card-inner' });
+
+    // Head
+    var head = el('div', { className: 'entry-card-head' });
+    head.appendChild(el('span', { className: 'badge-id ' + entry.severity }, entry.id));
+    head.appendChild(el('span', { className: 'badge-sev ' + entry.severity }, entry.severity));
+    head.appendChild(el('span', { className: 'badge-source' }, SOURCE_LABELS[entry.source_list] || entry.source_list));
+    inner.appendChild(head);
+
+    // Name
+    inner.appendChild(el('div', { className: 'entry-card-name' }, entry.name));
+
+    // Stats
+    var stats = el('div', { className: 'entry-card-stats' });
+    stats.appendChild(el('span', {}, fwCount + ' frameworks'));
+    stats.appendChild(el('span', {}, entry.mappings.length + ' controls'));
+    if (incCount > 0) stats.appendChild(el('span', {}, incCount + ' incidents'));
+    if (toolCount > 0) stats.appendChild(el('span', {}, toolCount + ' tools'));
+    inner.appendChild(stats);
+
+    card.appendChild(inner);
+
+    card.addEventListener('click', function() { openEntryModal(entry); });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEntryModal(entry); }
     });
 
     return card;
   }
 
-  // ── Detail panel ─────────────────────────────────────────────────────────────
-  function buildDetail(entry, shownMappings) {
-    // Group by framework
-    const byFw = {};
-    shownMappings.forEach(m => {
-      if (!byFw[m.framework]) byFw[m.framework] = [];
-      byFw[m.framework].push(m);
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Entry detail modal
+  // ══════════════════════════════════════════════════════════════════════════════
+  function openEntryModal(entry) {
+    openModal(function(modal) {
+      // Header
+      var header = el('div', { className: 'modal-header' });
+      var info = el('div', { className: 'modal-header-info' });
+      var headRow = el('div', { style: 'display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;' });
+      headRow.appendChild(el('span', { className: 'badge-id ' + entry.severity }, entry.id));
+      headRow.appendChild(el('span', { className: 'badge-sev ' + entry.severity }, entry.severity));
+      if (entry.aivss_score) {
+        headRow.appendChild(el('span', { style: 'font-size:.78rem;background:var(--lo-bg);color:var(--lo);border-radius:4px;padding:2px 8px;font-weight:600;' }, 'AIVSS ' + entry.aivss_score));
+      }
+      headRow.appendChild(el('span', { className: 'badge-source' }, SOURCE_LABELS[entry.source_list] || entry.source_list));
+      info.appendChild(headRow);
+      info.appendChild(el('h2', { style: 'font-size:1.15rem;font-weight:700;' }, entry.name));
+      header.appendChild(info);
+
+      var closeBtn = el('button', { className: 'modal-close', 'aria-label': 'Close' });
+      closeBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+      closeBtn.addEventListener('click', closeModal);
+      header.appendChild(closeBtn);
+      modal.appendChild(header);
+
+      var body = el('div', { className: 'modal-body' });
+
+      // Framework mappings table
+      var mappingSection = el('div', { className: 'modal-section' });
+      mappingSection.appendChild(el('div', { className: 'modal-section-title' }, 'Framework Mappings (' + entry.mappings.length + ' controls)'));
+
+      var sortState = { col: 'framework', asc: true };
+
+      function buildMappingTable() {
+        var sorted = entry.mappings.slice().sort(function(a, b) {
+          var va = a[sortState.col] || '';
+          var vb = b[sortState.col] || '';
+          if (typeof va === 'string') va = va.toLowerCase();
+          if (typeof vb === 'string') vb = vb.toLowerCase();
+          if (va < vb) return sortState.asc ? -1 : 1;
+          if (va > vb) return sortState.asc ? 1 : -1;
+          return 0;
+        });
+
+        var table = el('table', { className: 'mapping-table' });
+        var thead = el('thead');
+        var tr = el('tr');
+        [['framework', 'Framework'], ['control_id', 'Control'], ['control_name', 'Name'], ['tier', 'Tier']].forEach(function(col) {
+          var th = el('th', { 'aria-label': 'Sort by ' + col[1] });
+          th.textContent = col[1];
+          if (sortState.col === col[0]) {
+            var arrow = el('span', { className: 'sort-arrow' }, sortState.asc ? '\u25B2' : '\u25BC');
+            th.appendChild(arrow);
+          }
+          th.addEventListener('click', function() {
+            if (sortState.col === col[0]) sortState.asc = !sortState.asc;
+            else { sortState.col = col[0]; sortState.asc = true; }
+            // Re-render table
+            var oldTable = mappingSection.querySelector('table');
+            if (oldTable) oldTable.replaceWith(buildMappingTable());
+          });
+          tr.appendChild(th);
+        });
+        thead.appendChild(tr);
+        table.appendChild(thead);
+
+        var tbody = el('tbody');
+        sorted.forEach(function(m) {
+          var row = el('tr');
+          row.appendChild(el('td', {}, m.framework));
+          var ctrlTd = el('td', { className: 'ctrl-id' });
+          if (m.url) {
+            var a = el('a', { href: m.url, target: '_blank', rel: 'noopener' }, m.control_id);
+            ctrlTd.appendChild(a);
+          } else {
+            ctrlTd.textContent = m.control_id;
+          }
+          row.appendChild(ctrlTd);
+          var nameTd = el('td');
+          nameTd.textContent = m.control_name;
+          if (m.notes) {
+            var note = el('div', { style: 'font-size:.75rem;color:var(--text-muted);margin-top:2px;' });
+            note.textContent = m.notes.length > 120 ? m.notes.substring(0, 120) + '\u2026' : m.notes;
+            nameTd.appendChild(note);
+          }
+          row.appendChild(nameTd);
+          row.appendChild(el('td', {}, el('span', { className: 'mapping-table tier-badge tier-' + (m.tier || '') }, m.tier || '')));
+          tbody.appendChild(row);
+        });
+        table.appendChild(tbody);
+        return table;
+      }
+
+      mappingSection.appendChild(buildMappingTable());
+      body.appendChild(mappingSection);
+
+      // Incidents
+      if (entry.incidents && entry.incidents.length > 0) {
+        var incSection = el('div', { className: 'modal-section' });
+        incSection.appendChild(el('div', { className: 'modal-section-title' }, 'Related Incidents (' + entry.incidents.length + ')'));
+        entry.incidents.forEach(function(inc) {
+          var chip = el('div', { className: 'incident-chip' });
+          chip.appendChild(el('span', { style: 'font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--accent);' }, inc.incident_id));
+          chip.appendChild(el('span', {}, inc.name));
+          chip.addEventListener('click', function() {
+            closeModal();
+            window.location.hash = '#/incidents';
+            setTimeout(function() {
+              var fullInc = INCIDENT_MAP[inc.incident_id];
+              if (fullInc) openIncidentModal(fullInc);
+            }, 150);
+          });
+          incSection.appendChild(chip);
+        });
+        body.appendChild(incSection);
+      }
+
+      // Tools
+      if (entry.tools && entry.tools.length > 0) {
+        var toolSection = el('div', { className: 'modal-section' });
+        toolSection.appendChild(el('div', { className: 'modal-section-title' }, 'Tools (' + entry.tools.length + ')'));
+        var toolList = el('div', { className: 'tool-list' });
+        entry.tools.forEach(function(t) {
+          var chip = el('span', { className: 'tool-chip' });
+          if (t.url) {
+            chip.appendChild(el('a', { href: t.url, target: '_blank', rel: 'noopener' }, t.name));
+          } else {
+            chip.appendChild(document.createTextNode(t.name));
+          }
+          chip.appendChild(el('span', { className: 'tool-type' }, '\u00B7 ' + t.type));
+          toolList.appendChild(chip);
+        });
+        toolSection.appendChild(toolList);
+        body.appendChild(toolSection);
+      }
+
+      // Cross-references
+      var allXrefs = [];
+      if (entry.crossrefs) {
+        if (entry.crossrefs.llm_top10) allXrefs = allXrefs.concat(entry.crossrefs.llm_top10);
+        if (entry.crossrefs.agentic_top10) allXrefs = allXrefs.concat(entry.crossrefs.agentic_top10);
+        if (entry.crossrefs.dsgai_2026) allXrefs = allXrefs.concat(entry.crossrefs.dsgai_2026);
+      }
+      if (allXrefs.length > 0) {
+        var xrefSection = el('div', { className: 'modal-section' });
+        xrefSection.appendChild(el('div', { className: 'modal-section-title' }, 'Cross-References'));
+        var xrefChips = el('div', { className: 'xref-chips' });
+        allXrefs.forEach(function(xid) {
+          var chip = el('span', { className: 'xref-chip', tabindex: '0', role: 'button', 'aria-label': 'Go to ' + xid });
+          chip.textContent = xid;
+          chip.addEventListener('click', function() {
+            var target = ENTRY_MAP[xid];
+            if (target) {
+              closeModal();
+              setTimeout(function() { openEntryModal(target); }, 200);
+            }
+          });
+          xrefChips.appendChild(chip);
+        });
+        xrefSection.appendChild(xrefChips);
+        body.appendChild(xrefSection);
+      }
+
+      modal.appendChild(body);
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Frameworks Coverage Matrix
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderFrameworks(container) {
+    // Stats
+    var statsRow = el('div', { className: 'matrix-stats' });
+    var totalCells = DATA.length * FRAMEWORKS.length;
+    var mappedCells = 0;
+    DATA.forEach(function(e) {
+      var fws = new Set(e.mappings.map(function(m) { return m.framework; }));
+      mappedCells += fws.size;
+    });
+    var coveragePct = Math.round((mappedCells / totalCells) * 100);
+
+    var statItems = [
+      ['Total Entries', DATA.length],
+      ['Total Frameworks', FRAMEWORKS.length],
+      ['Mapped Cells', mappedCells + ' / ' + totalCells],
+      ['Overall Coverage', coveragePct + '%']
+    ];
+    statItems.forEach(function(s) {
+      var card = el('div', { className: 'matrix-stat' });
+      card.appendChild(el('div', { className: 'matrix-stat-label' }, s[0]));
+      card.appendChild(el('div', { className: 'matrix-stat-val' }, String(s[1])));
+      statsRow.appendChild(card);
+    });
+    container.appendChild(statsRow);
+
+    // Matrix table
+    var wrap = el('div', { className: 'matrix-wrap' });
+    var table = el('table', { className: 'matrix-table' });
+
+    // Header row
+    var thead = el('thead');
+    var headerRow = el('tr');
+    headerRow.appendChild(el('th', { className: 'row-header' }, 'Entry'));
+    FRAMEWORKS.forEach(function(fw) {
+      var th = el('th', { className: 'col-header', title: fw });
+      th.textContent = fw;
+      th.addEventListener('click', function() {
+        openFrameworkModal(fw);
+      });
+      headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Body
+    var tbody = el('tbody');
+    var popup = document.getElementById('cell-popup');
+
+    DATA.forEach(function(entry) {
+      var row = el('tr');
+      var entryFws = {};
+      entry.mappings.forEach(function(m) {
+        if (!entryFws[m.framework]) entryFws[m.framework] = [];
+        entryFws[m.framework].push(m);
+      });
+
+      var rowHeader = el('th', { className: 'row-header', title: entry.id + ' - ' + entry.name });
+      rowHeader.textContent = entry.id;
+      rowHeader.addEventListener('click', function() { openEntryModal(entry); });
+      row.appendChild(rowHeader);
+
+      FRAMEWORKS.forEach(function(fw) {
+        var mapped = entryFws[fw] || [];
+        var td = el('td', {
+          className: mapped.length > 0 ? 'matrix-cell-mapped' : 'matrix-cell-empty',
+          'aria-label': entry.id + ' x ' + fw + ': ' + (mapped.length > 0 ? mapped.length + ' controls' : 'not mapped')
+        });
+
+        if (mapped.length > 0) {
+          td.addEventListener('mouseenter', function(e) {
+            popup.style.display = 'block';
+            var title = el('div', { className: 'cell-popup-title' });
+            title.textContent = entry.id + ' \u00D7 ' + fw;
+            popup.innerHTML = '';
+            popup.appendChild(title);
+            mapped.forEach(function(m) {
+              var line = el('div', { style: 'font-size:.78rem;margin-top:4px;' });
+              line.textContent = m.control_id + ' - ' + m.control_name;
+              popup.appendChild(line);
+            });
+            positionPopup(e);
+          });
+          td.addEventListener('mousemove', positionPopup);
+          td.addEventListener('mouseleave', function() { popup.style.display = 'none'; });
+          td.addEventListener('click', function() { openEntryModal(entry); });
+        }
+
+        row.appendChild(td);
+      });
+
+      tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    container.appendChild(wrap);
+  }
+
+  function positionPopup(e) {
+    var popup = document.getElementById('cell-popup');
+    var x = e.clientX + 12;
+    var y = e.clientY + 12;
+    if (x + 360 > window.innerWidth) x = e.clientX - 370;
+    if (y + 200 > window.innerHeight) y = e.clientY - 210;
+    popup.style.left = x + 'px';
+    popup.style.top = y + 'px';
+  }
+
+  function openFrameworkModal(fw) {
+    openModal(function(modal) {
+      var header = el('div', { className: 'modal-header' });
+      var info = el('div', { className: 'modal-header-info' });
+      info.appendChild(el('h2', { style: 'font-size:1.15rem;font-weight:700;' }, fw));
+      var coveredEntries = DATA.filter(function(e) { return e.mappings.some(function(m) { return m.framework === fw; }); });
+      info.appendChild(el('p', { style: 'font-size:.85rem;color:var(--text-secondary);margin-top:4px;' }, coveredEntries.length + ' of ' + DATA.length + ' entries covered (' + Math.round(coveredEntries.length / DATA.length * 100) + '%)'));
+      header.appendChild(info);
+
+      var closeBtn = el('button', { className: 'modal-close', 'aria-label': 'Close' });
+      closeBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+      closeBtn.addEventListener('click', closeModal);
+      header.appendChild(closeBtn);
+      modal.appendChild(header);
+
+      var body = el('div', { className: 'modal-body' });
+      var table = el('table', { className: 'mapping-table' });
+      var thead = el('thead');
+      var tr = el('tr');
+      ['Entry', 'Control ID', 'Control Name', 'Tier'].forEach(function(h) {
+        tr.appendChild(el('th', {}, h));
+      });
+      thead.appendChild(tr);
+      table.appendChild(thead);
+
+      var tbody = el('tbody');
+      var allControls = [];
+      DATA.forEach(function(e) {
+        e.mappings.forEach(function(m) {
+          if (m.framework === fw) allControls.push({ entry: e, mapping: m });
+        });
+      });
+      allControls.sort(function(a, b) { return a.entry.id.localeCompare(b.entry.id); });
+
+      allControls.forEach(function(item) {
+        var row = el('tr');
+        var entryTd = el('td');
+        entryTd.appendChild(el('span', { className: 'badge-id ' + item.entry.severity, style: 'cursor:pointer;' }, item.entry.id));
+        entryTd.addEventListener('click', function() {
+          closeModal();
+          setTimeout(function() { openEntryModal(item.entry); }, 200);
+        });
+        row.appendChild(entryTd);
+
+        var ctrlTd = el('td', { className: 'ctrl-id' });
+        if (item.mapping.url) {
+          ctrlTd.appendChild(el('a', { href: item.mapping.url, target: '_blank', rel: 'noopener' }, item.mapping.control_id));
+        } else {
+          ctrlTd.textContent = item.mapping.control_id;
+        }
+        row.appendChild(ctrlTd);
+        row.appendChild(el('td', {}, item.mapping.control_name));
+        row.appendChild(el('td', {}, el('span', { className: 'tier-badge tier-' + (item.mapping.tier || '') }, item.mapping.tier || '')));
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+      body.appendChild(table);
+      modal.appendChild(body);
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Incidents page
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderIncidents(container) {
+    var state = { severity: '', category: '', year: '', maestro: '', search: '' };
+
+    // Summary stats
+    var summary = el('div', { className: 'incident-summary' });
+    var byCategory = {};
+    var bySeverity = {};
+    INCIDENTS.forEach(function(inc) {
+      byCategory[inc.category] = (byCategory[inc.category] || 0) + 1;
+      bySeverity[inc.severity] = (bySeverity[inc.severity] || 0) + 1;
     });
 
-    const fwHtml = Object.entries(byFw).map(([fw, controls]) => `
-      <div class="fw-group">
-        <div class="fw-group-name">${fw} <span style="font-weight:400;font-size:.72rem">(${controls.length})</span></div>
-        ${controls.map(c => `
-          <div class="fw-row">
-            <span class="fw-ctrl-id">${c.url ? `<a href="${c.url}" target="_blank" rel="noopener">${escHtml(c.control_id)}</a>` : escHtml(c.control_id)}</span>
-            <div class="fw-ctrl-name">
-              ${escHtml(c.control_name)}
-              ${c.notes ? `<div class="fw-ctrl-note">${escHtml(c.notes.substring(0, 140))}${c.notes.length > 140 ? '…' : ''}</div>` : ''}
-            </div>
-            <span class="tier-badge ${c.tier}">${c.tier}</span>
-          </div>`).join('')}
-      </div>`).join('');
+    var summaryItems = [
+      ['Total Incidents', INCIDENTS.length],
+      ['Critical', bySeverity['Critical'] || 0],
+      ['High', bySeverity['High'] || 0],
+      ['Medium', bySeverity['Medium'] || 0],
+      ['Real-world', byCategory['real-world'] || 0],
+      ['Research', byCategory['research-demonstrated'] || 0]
+    ];
+    summaryItems.forEach(function(s) {
+      var card = el('div', { className: 'matrix-stat' });
+      card.appendChild(el('div', { className: 'matrix-stat-label' }, s[0]));
+      card.appendChild(el('div', { className: 'matrix-stat-val' }, String(s[1])));
+      summary.appendChild(card);
+    });
+    container.appendChild(summary);
 
-    const toolsHtml = entry.tools.length ? `
-      <div class="tools-section">
-        <h4>Tools</h4>
-        <div class="tools-list">
-          ${entry.tools.map(t => `<span class="tool-chip">${t.url ? `<a href="${t.url}" target="_blank" rel="noopener">${escHtml(t.name)}</a>` : escHtml(t.name)}<span style="color:var(--muted);font-size:.68rem"> · ${t.type}</span></span>`).join('')}
-        </div>
-      </div>` : '';
+    // Filter bar
+    var filterBar = el('div', { className: 'filter-bar' });
+    var filterInner = el('div', { className: 'filter-bar-inner' });
 
-    return fwHtml + toolsHtml;
+    // Search
+    var searchWrap = el('div', { className: 'search-wrap' });
+    var searchSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    searchSvg.setAttribute('width', '14');
+    searchSvg.setAttribute('height', '14');
+    searchSvg.setAttribute('viewBox', '0 0 24 24');
+    searchSvg.setAttribute('fill', 'none');
+    searchSvg.setAttribute('stroke', 'currentColor');
+    searchSvg.setAttribute('stroke-width', '2');
+    searchSvg.innerHTML = '<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>';
+    searchWrap.appendChild(searchSvg);
+    var searchInput = el('input', {
+      className: 'search-input',
+      type: 'search',
+      placeholder: 'Search incidents\u2026',
+      'aria-label': 'Search incidents'
+    });
+    searchWrap.appendChild(searchInput);
+    filterInner.appendChild(searchWrap);
+
+    // Severity pills
+    var sevGroup = el('div', { className: 'pill-group' });
+    ['All', 'Critical', 'High', 'Medium'].forEach(function(sev) {
+      var p = el('button', {
+        className: 'pill' + (sev === 'All' ? ' active' : '') +
+          (sev === 'Critical' ? ' sev-cr' : sev === 'High' ? ' sev-hi' : sev === 'Medium' ? ' sev-me' : '')
+      }, sev);
+      p.addEventListener('click', function() {
+        sevGroup.querySelectorAll('.pill').forEach(function(b) { b.classList.remove('active'); });
+        p.classList.add('active');
+        state.severity = sev === 'All' ? '' : sev;
+        renderCards();
+      });
+      sevGroup.appendChild(p);
+    });
+    filterInner.appendChild(sevGroup);
+
+    // Category pills
+    var catGroup = el('div', { className: 'pill-group' });
+    [['All', ''], ['Real-world', 'real-world'], ['Research', 'research-demonstrated']].forEach(function(item) {
+      var p = el('button', { className: 'pill' + (item[0] === 'All' ? ' active' : '') }, item[0]);
+      p.addEventListener('click', function() {
+        catGroup.querySelectorAll('.pill').forEach(function(b) { b.classList.remove('active'); });
+        p.classList.add('active');
+        state.category = item[1];
+        renderCards();
+      });
+      catGroup.appendChild(p);
+    });
+    filterInner.appendChild(catGroup);
+
+    // Year select
+    var years = Array.from(new Set(INCIDENTS.map(function(i) { return i.year; }))).sort();
+    var yearSel = el('select', { className: 'filter-select', 'aria-label': 'Filter by year' });
+    yearSel.appendChild(el('option', { value: '' }, 'All years'));
+    years.forEach(function(y) {
+      yearSel.appendChild(el('option', { value: String(y) }, String(y)));
+    });
+    yearSel.addEventListener('change', function() {
+      state.year = yearSel.value;
+      renderCards();
+    });
+    filterInner.appendChild(yearSel);
+
+    // MAESTRO layer select
+    var layers = ['L1 Foundation Models', 'L2 Data Operations', 'L3 Agent Frameworks', 'L4 Deployment & Infrastructure', 'L5 Evaluation & Observability', 'L6 Security & Compliance', 'L7 Agent Ecosystem'];
+    var layerSel = el('select', { className: 'filter-select', 'aria-label': 'Filter by MAESTRO layer' });
+    layerSel.appendChild(el('option', { value: '' }, 'All MAESTRO layers'));
+    layers.forEach(function(l) {
+      layerSel.appendChild(el('option', { value: l.split(' ')[0] }, l));
+    });
+    layerSel.addEventListener('change', function() {
+      state.maestro = layerSel.value;
+      renderCards();
+    });
+    filterInner.appendChild(layerSel);
+
+    var countLabel = el('span', { className: 'filter-count' });
+    filterInner.appendChild(countLabel);
+    filterBar.appendChild(filterInner);
+    container.appendChild(filterBar);
+
+    // Card grid
+    var grid = el('div', { className: 'card-grid' });
+    container.appendChild(grid);
+
+    searchInput.addEventListener('input', debounce(function() {
+      state.search = searchInput.value.trim().toLowerCase();
+      renderCards();
+    }, 150));
+
+    function filterIncidents() {
+      return INCIDENTS.filter(function(inc) {
+        if (state.severity && inc.severity !== state.severity) return false;
+        if (state.category && inc.category !== state.category) return false;
+        if (state.year && inc.year !== parseInt(state.year)) return false;
+        if (state.maestro && !inc.maestro_layers.some(function(l) { return l.layer === state.maestro; })) return false;
+        if (state.search) {
+          var q = state.search;
+          if (inc.id.toLowerCase().indexOf(q) === -1 &&
+              inc.title.toLowerCase().indexOf(q) === -1 &&
+              inc.description.toLowerCase().indexOf(q) === -1 &&
+              !inc.tags.some(function(t) { return t.toLowerCase().indexOf(q) !== -1; }))
+            return false;
+        }
+        return true;
+      });
+    }
+
+    function renderCards() {
+      var visible = filterIncidents();
+      countLabel.textContent = visible.length + ' of ' + INCIDENTS.length + ' incidents';
+      grid.innerHTML = '';
+
+      if (visible.length === 0) {
+        var empty = el('div', { className: 'empty-state' });
+        empty.appendChild(el('h3', {}, 'No incidents match'));
+        empty.appendChild(el('p', {}, 'Try adjusting your filters.'));
+        grid.appendChild(empty);
+        return;
+      }
+
+      visible.forEach(function(inc) {
+        grid.appendChild(buildIncidentCard(inc));
+      });
+    }
+
+    renderCards();
   }
 
-  function escHtml(str) {
-    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  function buildIncidentCard(inc) {
+    var card = el('div', {
+      className: 'incident-card',
+      tabindex: '0',
+      role: 'button',
+      'aria-label': inc.id + ' ' + inc.title
+    });
+    var inner = el('div', { className: 'incident-card-inner' });
+
+    var head = el('div', { className: 'incident-card-head' });
+    head.appendChild(el('span', { className: 'incident-card-id' }, inc.id));
+    head.appendChild(el('span', { className: 'badge-sev ' + inc.severity }, inc.severity));
+    head.appendChild(el('span', { className: 'badge-cat' }, inc.category.replace('-', ' ')));
+    inner.appendChild(head);
+
+    inner.appendChild(el('div', { className: 'incident-card-title' }, inc.title));
+    inner.appendChild(el('div', { className: 'incident-card-date' }, inc.date));
+
+    var entries = el('div', { className: 'incident-card-entries' });
+    inc.owasp_entries.forEach(function(eid) {
+      entries.appendChild(el('span', { className: 'incident-entry-badge' }, eid));
+    });
+    inner.appendChild(entries);
+
+    card.appendChild(inner);
+    card.addEventListener('click', function() { openIncidentModal(inc); });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openIncidentModal(inc); }
+    });
+    return card;
   }
 
-  // ── Go ────────────────────────────────────────────────────────────────────────
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  function openIncidentModal(inc) {
+    openModal(function(modal) {
+      var header = el('div', { className: 'modal-header' });
+      var info = el('div', { className: 'modal-header-info' });
+      var headRow = el('div', { style: 'display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;' });
+      headRow.appendChild(el('span', { className: 'incident-card-id' }, inc.id));
+      headRow.appendChild(el('span', { className: 'badge-sev ' + inc.severity }, inc.severity));
+      headRow.appendChild(el('span', { className: 'badge-cat' }, inc.category.replace('-', ' ')));
+      headRow.appendChild(el('span', { style: 'font-size:.82rem;color:var(--text-muted);' }, inc.date));
+      info.appendChild(headRow);
+      info.appendChild(el('h2', { style: 'font-size:1.15rem;font-weight:700;' }, inc.title));
+      header.appendChild(info);
+
+      var closeBtn = el('button', { className: 'modal-close', 'aria-label': 'Close' });
+      closeBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+      closeBtn.addEventListener('click', closeModal);
+      header.appendChild(closeBtn);
+      modal.appendChild(header);
+
+      var body = el('div', { className: 'modal-body' });
+
+      // Description
+      body.appendChild(el('p', { className: 'incident-desc' }, inc.description));
+
+      // Info section
+      var infoSection = el('div', { className: 'modal-section' });
+      infoSection.appendChild(el('div', { className: 'modal-section-title' }, 'Details'));
+      var details = [
+        ['Attack Vector', inc.attack_vector],
+        ['Affected', inc.affected],
+        ['Impact', inc.impact]
+      ];
+      details.forEach(function(d) {
+        var row = el('div', { style: 'margin-bottom:10px;' });
+        row.appendChild(el('div', { style: 'font-size:.78rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;' }, d[0]));
+        row.appendChild(el('div', { style: 'font-size:.85rem;margin-top:2px;' }, d[1]));
+        infoSection.appendChild(row);
+      });
+      body.appendChild(infoSection);
+
+      // OWASP entries
+      var owaspSection = el('div', { className: 'modal-section' });
+      owaspSection.appendChild(el('div', { className: 'modal-section-title' }, 'Related OWASP Entries'));
+      var xrefChips = el('div', { className: 'xref-chips' });
+      inc.owasp_entries.forEach(function(eid) {
+        var chip = el('span', { className: 'xref-chip', tabindex: '0', role: 'button' });
+        chip.textContent = eid;
+        chip.addEventListener('click', function() {
+          var target = ENTRY_MAP[eid];
+          if (target) {
+            closeModal();
+            setTimeout(function() { openEntryModal(target); }, 200);
+          }
+        });
+        xrefChips.appendChild(chip);
+      });
+      owaspSection.appendChild(xrefChips);
+      body.appendChild(owaspSection);
+
+      // MAESTRO layers
+      if (inc.maestro_layers && inc.maestro_layers.length > 0) {
+        var maestroSection = el('div', { className: 'modal-section' });
+        maestroSection.appendChild(el('div', { className: 'modal-section-title' }, 'MAESTRO Layer Attribution'));
+        var mTable = el('table', { className: 'maestro-table' });
+        var mHead = el('thead');
+        var mHr = el('tr');
+        ['Layer', 'Role', 'Notes'].forEach(function(h) { mHr.appendChild(el('th', {}, h)); });
+        mHead.appendChild(mHr);
+        mTable.appendChild(mHead);
+        var mBody = el('tbody');
+        inc.maestro_layers.forEach(function(ml) {
+          var row = el('tr');
+          row.appendChild(el('td', { style: 'font-weight:600;white-space:nowrap;' }, ml.layer + ' ' + ml.label));
+          var roleTd = el('td');
+          var roleClass = 'maestro-role maestro-role-' + ml.role;
+          roleTd.appendChild(el('span', { className: roleClass }, ml.role.replace('-', ' ')));
+          row.appendChild(roleTd);
+          row.appendChild(el('td', {}, ml.notes));
+          mBody.appendChild(row);
+        });
+        mTable.appendChild(mBody);
+        maestroSection.appendChild(mTable);
+        body.appendChild(maestroSection);
+      }
+
+      // Mitigations
+      if (inc.mitigations && inc.mitigations.length > 0) {
+        var mitSection = el('div', { className: 'modal-section' });
+        mitSection.appendChild(el('div', { className: 'modal-section-title' }, 'Mitigations'));
+        var mitList = el('ul', { className: 'mitigation-list' });
+        inc.mitigations.forEach(function(m) {
+          mitList.appendChild(el('li', {}, m));
+        });
+        mitSection.appendChild(mitList);
+        body.appendChild(mitSection);
+      }
+
+      // References
+      if (inc.references && inc.references.length > 0) {
+        var refSection = el('div', { className: 'modal-section' });
+        refSection.appendChild(el('div', { className: 'modal-section-title' }, 'References'));
+        var refList = el('div', { className: 'ref-list' });
+        inc.references.forEach(function(r) {
+          refList.appendChild(el('a', { className: 'ref-link', href: r.url, target: '_blank', rel: 'noopener' }, r.title + ' \u2197'));
+        });
+        refSection.appendChild(refList);
+        body.appendChild(refSection);
+      }
+
+      modal.appendChild(body);
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Score page
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderScore(container) {
+    // Parse selected frameworks from URL hash query params
+    var hashParts = (window.location.hash || '').split('?');
+    var params = new URLSearchParams(hashParts[1] || '');
+    var initialSelected = params.get('fw') ? params.get('fw').split(',') : [];
+
+    var selected = new Set(initialSelected);
+
+    var layout = el('div', { className: 'score-layout' });
+
+    // Sidebar with framework checkboxes
+    var sidebar = el('div', { className: 'score-sidebar' });
+    sidebar.appendChild(el('h3', {}, 'Select frameworks you implement'));
+
+    var selectAllBtn = el('button', {
+      className: 'pill',
+      style: 'margin-bottom:12px;',
+      'aria-label': 'Select all frameworks'
+    }, 'Select All');
+    selectAllBtn.addEventListener('click', function() {
+      var allChecked = selected.size === FRAMEWORKS.length;
+      checkboxes.forEach(function(cb) { cb.checked = !allChecked; });
+      if (allChecked) selected.clear();
+      else FRAMEWORKS.forEach(function(fw) { selected.add(fw); });
+      updateScore();
+    });
+    sidebar.appendChild(selectAllBtn);
+
+    var checkboxList = el('div', { className: 'fw-checkbox-list' });
+    var checkboxes = [];
+    FRAMEWORKS.forEach(function(fw) {
+      var label = el('label', { className: 'fw-checkbox' });
+      var cb = el('input', { type: 'checkbox', 'aria-label': fw });
+      if (selected.has(fw)) cb.checked = true;
+      cb.addEventListener('change', function() {
+        if (cb.checked) selected.add(fw);
+        else selected.delete(fw);
+        updateScore();
+      });
+      checkboxes.push(cb);
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(fw));
+      checkboxList.appendChild(label);
+    });
+    sidebar.appendChild(checkboxList);
+    layout.appendChild(sidebar);
+
+    // Main content
+    var main = el('div', { className: 'score-main' });
+
+    // Action buttons
+    var actions = el('div', { className: 'score-actions' });
+    var exportBtn = el('button', { className: 'btn-primary', 'aria-label': 'Export as PDF' }, 'Export PDF');
+    exportBtn.addEventListener('click', function() { window.print(); });
+    actions.appendChild(exportBtn);
+
+    var shareBtn = el('button', { className: 'btn-secondary', style: 'background:var(--surface);color:var(--text);border:1px solid var(--border);', 'aria-label': 'Share link' }, 'Share Link');
+    shareBtn.addEventListener('click', function() {
+      var fwParam = Array.from(selected).join(',');
+      var shareUrl = window.location.origin + window.location.pathname + '#/score?fw=' + encodeURIComponent(fwParam);
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareUrl).then(function() {
+          shareBtn.textContent = 'Copied!';
+          setTimeout(function() { shareBtn.textContent = 'Share Link'; }, 2000);
+        });
+      }
+    });
+    actions.appendChild(shareBtn);
+    main.appendChild(actions);
+
+    var dashboard = el('div', { id: 'score-dashboard' });
+    main.appendChild(dashboard);
+    layout.appendChild(main);
+    container.appendChild(layout);
+
+    function updateScore() {
+      // Update URL
+      var fwParam = Array.from(selected).join(',');
+      var newHash = '#/score' + (fwParam ? '?fw=' + encodeURIComponent(fwParam) : '');
+      history.replaceState(null, '', newHash);
+
+      dashboard.innerHTML = '';
+
+      // Calculate coverage per entry
+      var coveredEntries = [];
+      var uncoveredEntries = [];
+      DATA.forEach(function(entry) {
+        var entryFws = new Set(entry.mappings.map(function(m) { return m.framework; }));
+        var hasOverlap = false;
+        selected.forEach(function(fw) {
+          if (entryFws.has(fw)) hasOverlap = true;
+        });
+        if (hasOverlap) coveredEntries.push(entry);
+        else uncoveredEntries.push(entry);
+      });
+
+      var overallPct = DATA.length > 0 ? Math.round((coveredEntries.length / DATA.length) * 100) : 0;
+
+      // Per source list
+      var sourceLists = ['LLM-Top10-2025', 'Agentic-Top10-2026', 'DSGAI-2026'];
+      var sourceStats = {};
+      sourceLists.forEach(function(sl) {
+        var total = DATA.filter(function(e) { return e.source_list === sl; }).length;
+        var covered = coveredEntries.filter(function(e) { return e.source_list === sl; }).length;
+        sourceStats[sl] = { total: total, covered: covered, pct: total > 0 ? Math.round((covered / total) * 100) : 0 };
+      });
+
+      // Overview cards
+      var overview = el('div', { className: 'score-overview' });
+
+      var mainCard = el('div', { className: 'score-card' });
+      mainCard.appendChild(el('div', { className: 'score-big ' + scoreClass(overallPct) }, overallPct + '%'));
+      mainCard.appendChild(el('div', { className: 'score-label' }, 'Overall Coverage'));
+      mainCard.appendChild(el('div', { className: 'score-sublabel' }, coveredEntries.length + ' / ' + DATA.length + ' entries'));
+      overview.appendChild(mainCard);
+
+      sourceLists.forEach(function(sl) {
+        var s = sourceStats[sl];
+        var card = el('div', { className: 'score-card' });
+        card.appendChild(el('div', { className: 'score-big ' + scoreClass(s.pct) }, s.pct + '%'));
+        card.appendChild(el('div', { className: 'score-label' }, SOURCE_LABELS[sl]));
+        card.appendChild(el('div', { className: 'score-sublabel' }, s.covered + ' / ' + s.total + ' entries'));
+        overview.appendChild(card);
+      });
+      dashboard.appendChild(overview);
+
+      // Severity heatmap (uncovered Critical/High)
+      var critUncovered = uncoveredEntries.filter(function(e) { return e.severity === 'Critical'; });
+      var highUncovered = uncoveredEntries.filter(function(e) { return e.severity === 'High'; });
+
+      if (critUncovered.length > 0 || highUncovered.length > 0) {
+        var heatSection = el('div', { className: 'gap-section' });
+        heatSection.appendChild(el('h3', { style: 'color:var(--cr);' }, 'Uncovered Critical/High Entries'));
+        var allHighPriority = critUncovered.concat(highUncovered);
+        allHighPriority.forEach(function(entry) {
+          var item = el('div', { className: 'gap-item', style: 'border-left:3px solid ' + sevColor(entry.severity) + ';cursor:pointer;' });
+          item.appendChild(el('span', { className: 'gap-id badge-id ' + entry.severity }, entry.id));
+          item.appendChild(el('span', { className: 'gap-name' }, entry.name));
+          item.appendChild(el('span', { className: 'badge-sev ' + entry.severity }, entry.severity));
+          item.addEventListener('click', function() { openEntryModal(entry); });
+          heatSection.appendChild(item);
+        });
+        dashboard.appendChild(heatSection);
+      }
+
+      // Full gap list (sorted by severity)
+      if (uncoveredEntries.length > 0) {
+        var sevOrder = { Critical: 0, High: 1, Medium: 2, Low: 3 };
+        uncoveredEntries.sort(function(a, b) { return (sevOrder[a.severity] || 9) - (sevOrder[b.severity] || 9); });
+
+        var gapSection = el('div', { className: 'gap-section' });
+        gapSection.appendChild(el('h3', {}, 'All Uncovered Entries (' + uncoveredEntries.length + ')'));
+        uncoveredEntries.forEach(function(entry) {
+          var item = el('div', { className: 'gap-item', style: 'cursor:pointer;' });
+          item.appendChild(el('span', { className: 'gap-id badge-id ' + entry.severity }, entry.id));
+          item.appendChild(el('span', { className: 'gap-name' }, entry.name));
+          item.appendChild(el('span', { className: 'badge-sev ' + entry.severity }, entry.severity));
+          item.appendChild(el('span', { className: 'badge-source', style: 'font-size:.7rem;' }, SOURCE_LABELS[entry.source_list] || entry.source_list));
+          item.addEventListener('click', function() { openEntryModal(entry); });
+          gapSection.appendChild(item);
+        });
+        dashboard.appendChild(gapSection);
+      }
+
+      // Top 5 frameworks to add
+      if (uncoveredEntries.length > 0 && selected.size < FRAMEWORKS.length) {
+        var fwScores = {};
+        FRAMEWORKS.forEach(function(fw) {
+          if (selected.has(fw)) return;
+          var wouldCover = 0;
+          uncoveredEntries.forEach(function(e) {
+            if (e.mappings.some(function(m) { return m.framework === fw; })) wouldCover++;
+          });
+          if (wouldCover > 0) fwScores[fw] = wouldCover;
+        });
+
+        var ranked = Object.keys(fwScores).sort(function(a, b) { return fwScores[b] - fwScores[a]; }).slice(0, 5);
+
+        if (ranked.length > 0) {
+          var recSection = el('div', { className: 'gap-section' });
+          recSection.appendChild(el('h3', {}, 'Top Frameworks to Add'));
+          recSection.appendChild(el('p', { style: 'font-size:.85rem;color:var(--text-secondary);margin-bottom:12px;' }, 'Adding these frameworks would close the most coverage gaps.'));
+          var recList = el('div', { className: 'rec-list' });
+          ranked.forEach(function(fw, i) {
+            var item = el('div', { className: 'rec-item' });
+            item.appendChild(el('span', { className: 'rec-rank' }, '#' + (i + 1)));
+            var infoDiv = el('div');
+            infoDiv.appendChild(el('div', { className: 'rec-fw' }, fw));
+            infoDiv.appendChild(el('div', { className: 'rec-covers' }, 'Would cover ' + fwScores[fw] + ' additional entries'));
+            item.appendChild(infoDiv);
+            recList.appendChild(item);
+          });
+          recSection.appendChild(recList);
+          dashboard.appendChild(recSection);
+        }
+      }
+
+      // If everything covered
+      if (uncoveredEntries.length === 0 && selected.size > 0) {
+        var successSection = el('div', { className: 'gap-section', style: 'text-align:center;padding:40px;' });
+        successSection.appendChild(el('h3', { style: 'color:var(--lo);font-size:1.25rem;' }, 'Full Coverage Achieved'));
+        successSection.appendChild(el('p', { style: 'color:var(--text-secondary);' }, 'All ' + DATA.length + ' entries are covered by your selected frameworks.'));
+        dashboard.appendChild(successSection);
+      }
+
+      if (selected.size === 0) {
+        var emptySection = el('div', { className: 'empty-state' });
+        emptySection.appendChild(el('h3', {}, 'Select frameworks to begin'));
+        emptySection.appendChild(el('p', {}, 'Check the frameworks you implement in the sidebar to see your coverage score.'));
+        dashboard.appendChild(emptySection);
+      }
+    }
+
+    updateScore();
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // About page
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderAbout(container) {
+    var content = el('div', { className: 'about-content' });
+
+    content.appendChild(el('h2', {}, 'About the OWASP GenAI Security Crosswalk'));
+    content.appendChild(el('p', {}, 'The GenAI Security Crosswalk is the most comprehensive open-source mapping of generative AI security risks to industry frameworks. It was created to help security teams, compliance officers, and AI engineers understand how AI-specific threats map to existing controls and standards.'));
+
+    content.appendChild(el('h3', {}, 'Creator'));
+    var bio = el('p');
+    bio.appendChild(document.createTextNode('Built and maintained by '));
+    bio.appendChild(el('a', { href: 'https://github.com/emmanuelgjr', target: '_blank', rel: 'noopener' }, 'Emmanuel Guilherme Junior'));
+    bio.appendChild(document.createTextNode(', a contributor to the OWASP GenAI Data Security Initiative. Emmanuel is a security professional dedicated to bridging the gap between AI innovation and security governance.'));
+    content.appendChild(bio);
+
+    content.appendChild(el('h3', {}, 'Project Timeline'));
+    var timeline = el('div', { className: 'timeline' });
+    var events = [
+      ['2024 Q3', 'Initial crosswalk concept: mapping LLM Top 10 to NIST AI RMF and MITRE ATLAS'],
+      ['2024 Q4', 'Expanded to 10 frameworks with community contributions. Added ASVS, ISO 27001, ISO 42001 mappings.'],
+      ['2025 Q1', 'v1.0 release with query interface. Added CIS Controls, OWASP SAMM, PCI DSS, SOC 2 mappings.'],
+      ['2025 Q3', 'Added Agentic Top 10 2026 entries. Expanded to 17 frameworks. Added incident database.'],
+      ['2026 Q1', 'v1.7.0: Added DSGAI 2026, FedRAMP, DORA. 41 entries, 23 frameworks, 31 incidents. Full SPA launched.']
+    ];
+    events.forEach(function(ev) {
+      var item = el('div', { className: 'timeline-item' });
+      item.appendChild(el('div', { className: 'timeline-date' }, ev[0]));
+      item.appendChild(el('div', { className: 'timeline-text' }, ev[1]));
+      timeline.appendChild(item);
+    });
+    content.appendChild(timeline);
+
+    content.appendChild(el('h3', {}, 'OWASP Affiliation'));
+    content.appendChild(el('p', {}, 'This project is part of the OWASP GenAI Data Security Initiative, which aims to provide practical guidance for securing generative AI systems. All content is developed under the OWASP open-source model and is freely available to the community.'));
+
+    content.appendChild(el('h3', {}, 'Contributing'));
+    var contrib = el('p');
+    contrib.appendChild(document.createTextNode('Contributions are welcome! Visit the '));
+    contrib.appendChild(el('a', { href: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk', target: '_blank', rel: 'noopener' }, 'GitHub repository'));
+    contrib.appendChild(document.createTextNode(' to open issues, suggest new mappings, report incidents, or submit pull requests. See the CONTRIBUTING.md file for guidelines.'));
+    content.appendChild(contrib);
+
+    content.appendChild(el('h3', {}, 'License'));
+    content.appendChild(el('p', {}, 'This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). You are free to share and adapt the material for any purpose, including commercial, as long as you give appropriate credit and distribute under the same license.'));
+
+    container.appendChild(content);
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Initialize the app
+  // ══════════════════════════════════════════════════════════════════════════════
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', navigate);
+  } else {
+    navigate();
+  }
+
 })();
 </script>
 </body>
