@@ -7,6 +7,41 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [Unreleased]
+
+No planned items — framework coverage matrix is complete at v1.5.0. Planned enhancements tracked in `data/README.md` (JSON entries, generate.js, query.js).
+
+---
+
+## [1.5.1] — 2026-03-27
+
+### Added
+
+#### Infrastructure and contributor tooling
+
+| File | Purpose |
+|---|---|
+| `scripts/validate.js` | Content validator — 10 checks (sections, links, changelog, counts, cross-refs) |
+| `.github/workflows/validate.yml` | CI workflow — runs validator and mapping-count check on PR |
+| `GOVERNANCE.md` | Maintainer roles, PR review SLOs, decision tiers, release process, COI policy |
+| `.github/PULL_REQUEST_TEMPLATE.md` | Enhanced PR template with type checkboxes and content checklist |
+| `.github/ISSUE_TEMPLATE/new_framework.md` | Issue template for proposing a new framework mapping |
+| `.github/ISSUE_TEMPLATE/content_update.md` | Issue template for reporting outdated or incorrect mappings |
+| `.github/ISSUE_TEMPLATE/bug_report.md` | Issue template for broken links, typos, and CI failures |
+| `shared/TEMPLATE.md` | Canonical mapping file template — all required sections pre-populated |
+| `data/README.md` | Data layer documentation, schema structure, jq query examples |
+| `i18n/WORKFLOW.md` | Translation contributor workflow — scope rules, machine translation policy |
+| `.github/CODEOWNERS` | Expanded ownership rules covering all folders and infrastructure files |
+
+#### README updates
+
+- Added "Start Here by role" section — five persona-based entry paths
+- Updated repository structure tree to include new infrastructure files
+- Added `shared/TEMPLATE.md` to Shared resources table
+- Updated i18n tree to reflect `WORKFLOW.md` and `fr/` language folder
+
+---
+
 ## [1.5.0] — 2026-03-27
 
 ### Added

@@ -1,0 +1,73 @@
+name: Content Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'llm-top10/**'
+      - 'agentic-top10/**'
+      - 'dsgai-2026/**'
+      - 'shared/**'
+      - 'data/**'
+      - 'CROSSREF.md'
+      - 'README.md'
+      - 'scripts/validate.js'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'llm-top10/**'
+      - 'agentic-top10/**'
+      - 'dsgai-2026/**'
+      - 'shared/**'
+      - 'data/**'
+      - 'CROSSREF.md'
+      - 'README.md'
+      - 'scripts/validate.js'
+
+jobs:
+  validate:
+    name: Structural validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run content validator
+        run: node scripts/validate.js
+
+      - name: Validate JSON schema
+        run: |
+          node -e "
+          const fs = require('fs');
+          const schema = JSON.parse(fs.readFileSync('data/schema.json', 'utf8'));
+          console.log('schema.json is valid JSON');
+          console.log('Title:', schema.title);
+          console.log('Required fields:', schema.required.join(', '));
+          "
+
+  mapping-counts:
+    name: Count consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check mapping file counts match README badge
+        run: |
+          LLM=$(ls llm-top10/*.md | wc -l)
+          AGT=$(ls agentic-top10/*.md | wc -l)
+          DSG=$(ls dsgai-2026/*.md | wc -l)
+          TOTAL=$((LLM + AGT + DSG))
+          echo "LLM: $LLM  Agentic: $AGT  DSGAI: $DSG  Total: $TOTAL"
+
+          BADGE=$(grep -o 'mapping%20files-[0-9]*-brightgreen' README.md | grep -o '[0-9]*')
+          echo "README badge: $BADGE"
+
+          if [ "$TOTAL" != "$BADGE" ]; then
+            echo "::error::Count mismatch — $TOTAL files on disk but README badge says $BADGE"
+            exit 1
+          fi
+          echo "Counts consistent: $TOTAL"

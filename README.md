@@ -2,7 +2,7 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.5.0-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.5.1-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
 [![Mapping Files](https://img.shields.io/badge/mapping%20files-58-brightgreen)](README.md)
 [![Frameworks](https://img.shields.io/badge/frameworks-17-orange)](README.md)
@@ -148,6 +148,7 @@ All free. All open-source. Built for practitioners.
 | [shared/TOOLS.md](shared/TOOLS.md) | 40+ open-source security tools organised by function |
 | [shared/GLOSSARY.md](shared/GLOSSARY.md) | Unified terminology across LLM, ASI, and DSGAI source lists |
 | [shared/SEVERITY.md](shared/SEVERITY.md) | Severity definitions and AIVSS alignment |
+| [shared/TEMPLATE.md](shared/TEMPLATE.md) | Canonical template for new mapping file contributors |
  
 ---
  
@@ -160,6 +161,7 @@ GenAI-Security-Crosswalk/
 ├── CROSSREF.md                      ← Master cross-reference: LLM ↔ ASI ↔ DSGAI
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
+├── GOVERNANCE.md                    ← Maintainer roles, PR SLOs, decision process
 ├── SECURITY.md
 ├── CODE_OF_CONDUCT.md
 │
@@ -231,19 +233,57 @@ GenAI-Security-Crosswalk/
 │   ├── RECIPES.md                   ← 13 implementation patterns (Python code)
 │   ├── TOOLS.md                     ← 40+ open-source tools catalogue
 │   ├── GLOSSARY.md                  ← Unified terminology
-│   └── SEVERITY.md                  ← Severity definitions + AIVSS alignment
+│   ├── SEVERITY.md                  ← Severity definitions + AIVSS alignment
+│   └── TEMPLATE.md                  ← Canonical template for new mapping files
 │
 ├── data/
-│   └── schema.json                  ← Machine-readable mapping schema
+│   ├── schema.json                  ← JSON Schema (Draft 7) for mapping entries
+│   └── README.md                    ← Data layer docs, jq query examples
+│
+├── scripts/
+│   └── validate.js                  ← Content validator (sections, links, counts)
 │
 └── i18n/
-    ├── README.md                    ← Translation contribution guide
-    ├── es/                          ← Spanish (community, in progress)
-    └── pt/                          ← Portuguese (community, in progress)
+    ├── WORKFLOW.md                  ← Translation contributor guide
+    ├── es/                          ← Spanish (accepting PRs)
+    ├── fr/                          ← French (accepting PRs)
+    └── pt/                          ← Portuguese (accepting PRs)
 ```
  
 ---
- 
+
+## Start here — by role
+
+Find your entry point in under 60 seconds.
+
+**I need to comply with EU AI Act before August 2026**
+→ Start: [LLM_EUAIAct.md](llm-top10/LLM_EUAIAct.md) — article-level obligations, fines exposure, compliance checklist
+→ Then: [Agentic_EUAIAct.md](agentic-top10/Agentic_EUAIAct.md) if you deploy autonomous agents (Art. 14 human oversight)
+→ Then: [DSGAI_EUAIAct.md](dsgai-2026/DSGAI_EUAIAct.md) for GPAI model scope and data governance obligations
+
+**I am deploying an autonomous AI agent and need to know what can go wrong**
+→ Start: [CROSSREF.md](CROSSREF.md) — master cross-reference across all 41 vulnerability IDs
+→ Then: [Agentic_MAESTRO.md](agentic-top10/Agentic_MAESTRO.md) — architectural threat model (where does each risk originate?)
+→ Then: [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) — score each risk; autonomy adds +1.79 avg severity
+→ Then: [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) — identity and credential controls
+
+**I am a SOC 2 auditor or GRC professional preparing a GenAI controls assessment**
+→ Start: [LLM_SOC2.md](llm-top10/LLM_SOC2.md) — TSC mapping for SaaS/cloud LLM deployments
+→ Then: [Agentic_SOC2.md](agentic-top10/Agentic_SOC2.md) — autonomous action scope, processing integrity criteria
+→ Then: [LLM_SAMM.md](llm-top10/LLM_SAMM.md) — fillable SAMM maturity scorecard to evidence programme completeness
+
+**I am an AppSec engineer or red-teamer building a test plan**
+→ Start: [Agentic_AITG.md](agentic-top10/Agentic_AITG.md) — 50 structured test cases with pass criteria and CI/CD gates
+→ Then: [DSGAI_MITREATLAS.md](dsgai-2026/DSGAI_MITREATLAS.md) — attacker TTP mapping with four complete attack chains
+→ Then: [shared/RECIPES.md](shared/RECIPES.md) — 13 working Python patterns to implement the controls you test against
+
+**I am securing AI deployed in OT/ICS environments (energy, utilities, manufacturing)**
+→ Start: [Agentic_NISTSP80082.md](agentic-top10/Agentic_NISTSP80082.md) — OT zone model, SP 800-53 controls, NERC CIP/AWIA/CMMC crosswalk
+→ Then: [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) — SL ratings, zone model, kill switch design
+→ Then: [DSGAI_ISA62443.md](dsgai-2026/DSGAI_ISA62443.md) — RAG corpus poisoning in OT (safety procedure manipulation scenario)
+
+---
+
 ## Quick navigation
  
 **EU AI Act compliance by August 2026**

@@ -1,7 +1,28 @@
-# Global owner
+# Global owner — all files require review from @emmanuelgjr unless overridden below
 * @emmanuelgjr
 
-# Framework leads (add as contributors join)
-/agentic-top10/Agentic_AIUC1.md @emmanuelgjr
+# Mapping folders — all three source lists
 /llm-top10/ @emmanuelgjr
+/agentic-top10/ @emmanuelgjr
 /dsgai-2026/ @emmanuelgjr
+
+# Shared resources
+/shared/ @emmanuelgjr
+
+# Data layer and machine-readable schema
+/data/ @emmanuelgjr
+
+# Validation scripts and CI
+/scripts/ @emmanuelgjr
+/.github/workflows/ @emmanuelgjr
+
+# Governance and community files
+/GOVERNANCE.md @emmanuelgjr
+/CONTRIBUTING.md @emmanuelgjr
+/CODE_OF_CONDUCT.md @emmanuelgjr
+/SECURITY.md @emmanuelgjr
+/.github/ISSUE_TEMPLATE/ @emmanuelgjr
+/.github/PULL_REQUEST_TEMPLATE.md @emmanuelgjr
+
+# Internationalisation — translation owners added here as language leads are confirmed
+/i18n/ @emmanuelgjr
