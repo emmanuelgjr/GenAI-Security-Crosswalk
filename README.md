@@ -27,7 +27,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **13** implementation recipes | Production-ready Python patterns |
 | **40+** open-source tools | Catalogued and organised by function |
 | **10** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
-| **18** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
+| **20** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
 | **31** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
  
@@ -39,9 +39,9 @@ All free. All open-source. Built for practitioners.
  
 | List | Entries | Version | Frameworks mapped |
 |---|---|---|---|
-| [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) | LLM01–LLM10 | 2025 | 20 |
-| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01–ASI10 | 2026 | 20 |
-| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01–DSGAI21 | 2026 | 18 |
+| [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) | LLM01–LLM10 | 2025 | 23 |
+| [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | ASI01–ASI10 | 2026 | 23 |
+| [OWASP GenAI Data Security Risks](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) | DSGAI01–DSGAI21 | 2026 | 21 |
  
 ---
  
@@ -181,8 +181,14 @@ GenAI-Security-Crosswalk/
 ├── GOVERNANCE.md                    ← Maintainer roles, PR SLOs, decision process
 ├── SECURITY.md
 ├── CODE_OF_CONDUCT.md
+├── package.json                     ← npm: @owasp/genai-crosswalk (node ≥18)
+├── tsconfig.json                    ← TypeScript config
 │
-├── llm-top10/                       ← LLM01–LLM10 × 20 frameworks
+├── src/                             ← npm package source (TypeScript)
+│   ├── index.ts                     ← Typed API: getEntry, getFramework, searchEntries
+│   └── index.test.ts                ← 12 smoke tests (Node.js built-in runner)
+│
+├── llm-top10/                       ← LLM01–LLM10 × 23 frameworks
 │   ├── LLM_MITREATLAS.md
 │   ├── LLM_NISTAIRMF.md
 │   ├── LLM_EUAIAct.md
@@ -202,9 +208,12 @@ GenAI-Security-Crosswalk/
 │   ├── LLM_AITG.md                  ← AI Testing Guide
 │   ├── LLM_MAESTRO.md               ← MAESTRO seven-layer threat model
 │   ├── LLM_AIUC1.md                 ← AIUC-1 certification framework
-│   └── LLM_NHI.md                   ← Non-Human Identity controls
+│   ├── LLM_NHI.md                   ← Non-Human Identity controls
+│   ├── LLM_SP800218A.md             ← Secure AI SDLC (SSDF extension)
+│   ├── LLM_FedRAMP.md               ← US federal cloud AI (SP 800-53 overlay)
+│   └── LLM_DORA.md                  ← EU financial sector resilience
 │
-├── agentic-top10/                   ← ASI01–ASI10 × 20 frameworks
+├── agentic-top10/                   ← ASI01–ASI10 × 23 frameworks
 │   ├── Agentic_AIUC1.md
 │   ├── Agentic_MITREATLAS.md
 │   ├── Agentic_NISTAIRMF.md
@@ -224,9 +233,12 @@ GenAI-Security-Crosswalk/
 │   ├── Agentic_SOC2.md              ← SOC 2 TSC — agentic AI audit
 │   ├── Agentic_PCIDSS.md            ← PCI DSS v4.0 — payment system agents
 │   ├── Agentic_SAMM.md              ← Maturity model — pre-deployment gates
-│   └── Agentic_NISTSP80082.md       ← OT/ICS — U.S. regulatory alignment
+│   ├── Agentic_NISTSP80082.md       ← OT/ICS — U.S. regulatory alignment
+│   ├── Agentic_SP800218A.md         ← Secure agentic SDLC
+│   ├── Agentic_FedRAMP.md           ← Federal agentic AI authorization
+│   └── Agentic_DORA.md              ← Financial sector agentic resilience
 │
-├── dsgai-2026/                      ← DSGAI01–DSGAI21 × 18 frameworks
+├── dsgai-2026/                      ← DSGAI01–DSGAI21 × 21 frameworks
 │   ├── DSGAI_ISO27001.md
 │   ├── DSGAI_NISTAIRMF.md
 │   ├── DSGAI_EUAIAct.md
@@ -244,7 +256,10 @@ GenAI-Security-Crosswalk/
 │   ├── DSGAI_SAMM.md                ← Maturity model — data security programme
 │   ├── DSGAI_NISTSP80082.md         ← OT/ICS — U.S. regulatory alignment
 │   ├── DSGAI_AIUC1.md               ← AIUC-1 certification framework
-│   └── DSGAI_NHI.md                 ← Non-Human Identity — data pipeline credentials
+│   ├── DSGAI_NHI.md                 ← Non-Human Identity — data pipeline credentials
+│   ├── DSGAI_SP800218A.md           ← Secure GenAI data SDLC
+│   ├── DSGAI_FedRAMP.md             ← Federal data security controls
+│   └── DSGAI_DORA.md                ← Financial data resilience
 │
 ├── shared/
 │   ├── RECIPES.md                   ← 13 implementation patterns (Python code)
@@ -255,15 +270,19 @@ GenAI-Security-Crosswalk/
 │
 ├── data/
 │   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
-│   ├── incidents.json               ← 20 incidents with MAESTRO layer attribution
+│   ├── incidents.json               ← 31 incidents with MAESTRO layer attribution
 │   ├── incidents-schema.json        ← JSON Schema for incidents
+│   ├── tools-supplement.json        ← Supplemental tools merged at generation time
 │   ├── entries/                     ← 41 machine-readable entry JSON files
 │   └── README.md                    ← Data layer docs, jq query examples
 │
 ├── scripts/
 │   ├── validate.js                  ← Content validator (sections, links, counts)
 │   ├── generate.js                  ← Markdown-to-JSON parser → data/entries/
-│   └── compliance-report.js         ← Gap assessment generator (MD / CSV / JSON)
+│   ├── compliance-report.js         ← Gap assessment generator (MD/CSV/JSON/OSCAL)
+│   ├── incidents-report.js          ← Incident query tool (MD/CSV/JSON/STIX 2.1)
+│   ├── watch.js                     ← External source watcher (OWASP/arXiv/NVD/frameworks)
+│   └── sbom-inventory.js            ← Content-level CycloneDX SBOM generator
 │
 ├── evals/
 │   ├── README.md                    ← Setup guide and result interpretation
@@ -272,9 +291,18 @@ GenAI-Security-Crosswalk/
 │   ├── laaf/                        ← LAAF v2.0 LPCI suite (S1–S6 + crosswalk reporter)
 │   └── ci/                          ← github-action.yml — drop-in CI/CD template
 │
+├── .github/workflows/
+│   ├── validate.yml                 ← CI validation on PR
+│   ├── link-check.yml               ← Broken link detection
+│   ├── markdown-lint.yml            ← Markdown linting
+│   ├── weekly-watch.yml             ← Weekly source monitoring + monthly regeneration
+│   └── sbom.yml                     ← CycloneDX SBOM on release tags
+│
 └── i18n/
     ├── WORKFLOW.md                  ← Translation contributor guide
-    ├── es/                          ← Spanish (accepting PRs)
+    ├── es/README.md                 ← Spanish seed (machine-assisted)
+    ├── ja/README.md                 ← Japanese seed (machine-assisted)
+    ├── de/README.md                 ← German seed (machine-assisted)
     ├── fr/                          ← French (accepting PRs)
     └── pt/                          ← Portuguese (accepting PRs)
 ```
@@ -286,7 +314,7 @@ GenAI-Security-Crosswalk/
 Generate framework-specific gap assessments from the data layer in seconds:
 
 ```bash
-node scripts/compliance-report.js                          # all 17 frameworks → reports/
+node scripts/compliance-report.js                          # all 20 frameworks → reports/
 node scripts/compliance-report.js --framework "EU AI Act"  # one framework
 node scripts/compliance-report.js --format csv             # Excel-compatible
 node scripts/compliance-report.js --format json            # machine-readable
@@ -321,7 +349,7 @@ See `evals/laaf/README.md` for the full LPCI attack vector → OWASP → MAESTRO
 
 ## Incident tracker
 
-20 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
+31 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
 
 ```bash
 node scripts/incidents-report.js                      # all incidents → reports/incidents.md
@@ -398,6 +426,16 @@ Find your entry point in under 60 seconds.
 → Then: [DSGAI_MITREATLAS.md](dsgai-2026/DSGAI_MITREATLAS.md) — attacker TTP mapping with four complete attack chains
 → Then: [shared/RECIPES.md](shared/RECIPES.md) — 13 working Python patterns to implement the controls you test against
 
+**I am a US federal contractor needing FedRAMP authorization for AI services**
+→ Start: [LLM_FedRAMP.md](llm-top10/LLM_FedRAMP.md) — SP 800-53 AI overlay controls (AC/AU/CA/CM/IA/IR/RA/SA/SC/SI/SR)
+→ Then: [Agentic_FedRAMP.md](agentic-top10/Agentic_FedRAMP.md) for agentic AI agent identity and cascade controls
+→ Then: [DSGAI_FedRAMP.md](dsgai-2026/DSGAI_FedRAMP.md) for data security controls (SC-28, AU-2, SR)
+
+**I work in EU financial services and need DORA compliance for AI systems**
+→ Start: [LLM_DORA.md](llm-top10/LLM_DORA.md) — Art. 5–45 per LLM risk, incident reporting requirements
+→ Then: [Agentic_DORA.md](agentic-top10/Agentic_DORA.md) for third-party agent risk (Art. 28–44)
+→ Then: [DSGAI_DORA.md](dsgai-2026/DSGAI_DORA.md) for data resilience and backup (Art. 8, Art. 12)
+
 **I am securing AI deployed in OT/ICS environments (energy, utilities, manufacturing)**
 → Start: [Agentic_NISTSP80082.md](agentic-top10/Agentic_NISTSP80082.md) — OT zone model, SP 800-53 controls, NERC CIP/AWIA/CMMC crosswalk
 → Then: [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) — SL ratings, zone model, kill switch design
@@ -450,6 +488,15 @@ Find your entry point in under 60 seconds.
 **Implementation code, not framework theory**
 → [shared/RECIPES.md](shared/RECIPES.md) — 13 production patterns with working Python
  
+**US federal / FedRAMP authorization for AI services**
+→ [LLM_FedRAMP.md](llm-top10/LLM_FedRAMP.md) · [Agentic_FedRAMP.md](agentic-top10/Agentic_FedRAMP.md) · [DSGAI_FedRAMP.md](dsgai-2026/DSGAI_FedRAMP.md)
+
+**EU financial sector (DORA compliance)**
+��� [LLM_DORA.md](llm-top10/LLM_DORA.md) · [Agentic_DORA.md](agentic-top10/Agentic_DORA.md) · [DSGAI_DORA.md](dsgai-2026/DSGAI_DORA.md)
+
+**Secure AI development lifecycle (SSDF extension)**
+→ [LLM_SP800218A.md](llm-top10/LLM_SP800218A.md) �� [Agentic_SP800218A.md](agentic-top10/Agentic_SP800218A.md) · [DSGAI_SP800218A.md](dsgai-2026/DSGAI_SP800218A.md)
+
 **All risks across all three source lists**
 → [CROSSREF.md](CROSSREF.md) — master cross-reference
  
