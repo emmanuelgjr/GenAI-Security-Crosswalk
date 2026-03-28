@@ -10,6 +10,8 @@
  
 > The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **20 frameworks** and **3 OWASP source lists**.
 
+### [Live Web App](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/) | [Score Your Coverage](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score) | [Explore Entries](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) | [View Incidents](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents)
+
 Maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).
 Created by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)**.
 
@@ -398,6 +400,24 @@ node scripts/incidents-report.js --format stix        # STIX 2.1 bundle for Sent
 ```
 
 MAESTRO layer roles tracked per incident: **Origin** (where attack starts) · **Propagation** (how it spreads) · **Impact** (where harm manifests) · **Blind-spot** (where detection failed).
+
+### Web app — interactive dashboard
+
+**https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/**
+
+No install required. Works on desktop and mobile.
+
+| Page | What it does |
+|------|-------------|
+| [**Score**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score) | Select your frameworks, see coverage gaps. Upload Garak/PyRIT/LAAF results to validate. Share your score card on LinkedIn. |
+| [**Explorer**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) | Search and filter all 41 entries. Click any entry to see controls across all 20 frameworks. |
+| [**Frameworks**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/frameworks) | Interactive 41×23 coverage matrix. Click any cell to see the specific controls mapped. |
+| [**Incidents**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents) | Browse 31 AI security incidents. Filter by severity, year, MAESTRO layer. Full attribution details. |
+
+**Evidence-based scoring** — three validation tiers:
+- **Self-Assessed** — checkbox only (unvalidated)
+- **Partially Validated** — some tool outputs uploaded
+- **Tool-Validated** — 20+ entries backed by Garak/PyRIT/LAAF/compliance report evidence
 
 ### Enterprise export formats
 
