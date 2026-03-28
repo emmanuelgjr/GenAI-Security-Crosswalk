@@ -719,7 +719,7 @@
       "control_name": "ICT Risk Management — regulatory compliance governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities"
+      "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities; define compliance requirements and accountability"
     },
     {
       "framework": "DORA",
@@ -727,7 +727,7 @@
       "control_name": "ICT Incident Management — compliance incident reporting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify regulatory non-compliance events as ICT incidents where material; report to competent authorities per DORA criteria"
+      "notes": "Classify material regulatory non-compliance events as ICT incidents; report to competent authorities per DORA criteria; coordinate with DPO for GDPR notifications"
     },
     {
       "framework": "DORA",
@@ -735,7 +735,7 @@
       "control_name": "Learning and Evolving — compliance improvement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes and incident analysis"
+      "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes, enforcement actions, and incident analysis"
     },
     {
       "framework": "DORA",
@@ -808,7 +808,20 @@
       "url": "https://www.servicenow.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-035"
+    },
+    {
+      "name": "NYT v OpenAI — copyright training data ruling implications",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-039"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM04",

@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "generated": "2026-03-28",
   "description": "Real-world and research-demonstrated AI security incidents, mapped to OWASP GenAI entries and MAESTRO architectural layers. Maintained as part of the GenAI Security Crosswalk.",
   "incidents": [
@@ -921,6 +921,297 @@
         { "title": "Galactica: A Large Language Model for Science — Meta AI (2022)", "url": "https://arxiv.org/abs/2211.09085", "type": "research" }
       ],
       "tags": ["galactica", "misinformation", "hallucination", "scientific-content", "meta", "real-world", "premature-deployment"]
+    },
+    {
+      "id": "INC-032",
+      "title": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+      "date": "2025-01",
+      "year": 2025,
+      "category": "real-world",
+      "description": "Security researcher Jeremiah Fowler discovered that DeepSeek AI, the Chinese AI startup behind DeepSeek-R1, left a ClickHouse database publicly accessible without authentication. The exposed database contained over 1 million records including chat logs, API keys, backend operational data, and system metadata. The exposure persisted for an unknown duration before being reported and secured. This represents a fundamental data operations failure — production chat data stored without access controls in a database accessible from the public internet.",
+      "owasp_entries": ["DSGAI01", "DSGAI02", "DSGAI08", "LLM02"],
+      "maestro_layers": [
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "origin", "notes": "Database deployment without authentication — infrastructure misconfiguration" },
+        { "layer": "L2", "label": "Data Operations", "role": "impact", "notes": "Chat logs and API keys exposed — data operations failure" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No access monitoring detected the open database" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No security scanning of deployment infrastructure" }
+      ],
+      "attack_vector": "No attack required — publicly accessible ClickHouse database without authentication; discovered by external security researcher",
+      "affected": "DeepSeek AI — 1M+ user chat logs, API keys, backend metadata",
+      "impact": "User privacy violation at scale; API key exposure enabling unauthorized access; demonstrates that frontier AI labs have basic infrastructure security gaps; regulatory exposure under Chinese data protection law and GDPR for EU users",
+      "severity": "Critical",
+      "mitigations": [
+        "Authentication required on all databases — no exceptions for internal/staging",
+        "Network segmentation: databases never exposed to public internet",
+        "Automated infrastructure scanning for open ports and unauthenticated services",
+        "Data classification: chat logs classified as PII, stored with encryption at rest"
+      ],
+      "references": [
+        { "title": "DeepSeek AI database left open, exposing chat logs and API keys — Wiz (2025)", "url": "https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak", "type": "advisory" }
+      ],
+      "tags": ["deepseek", "database-exposure", "chat-logs", "api-keys", "misconfiguration", "real-world", "2025"]
+    },
+    {
+      "id": "INC-033",
+      "title": "OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation",
+      "date": "2025-01",
+      "year": 2025,
+      "category": "research-demonstrated",
+      "description": "Multiple researchers independently demonstrated that OpenAI's o1 and o3 reasoning models — which use extended chain-of-thought (CoT) processing — are susceptible to jailbreaks that exploit the reasoning chain itself. By embedding adversarial instructions that interact with the model's internal reasoning steps, attackers can cause the model to \"reason its way\" into compliance with harmful requests. The attack exploits the fact that safety training operates on the final output but the CoT steps can establish logical premises that make harmful conclusions appear well-reasoned. OpenAI acknowledged the attack class and noted that reasoning models present novel safety challenges distinct from standard instruction-following models.",
+      "owasp_entries": ["LLM01", "LLM06", "LLM09"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Reasoning mechanism exploited — CoT safety alignment gap" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "CoT monitoring insufficient — safety evaluation operates on final output not reasoning steps" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "No deployment-layer intervention on reasoning chain content" }
+      ],
+      "attack_vector": "Adversarial instructions embedded in prompts that interact with the model's chain-of-thought reasoning steps — model reasons its way into compliance with harmful requests via logical premise manipulation",
+      "affected": "OpenAI o1, o1-mini, o3-mini reasoning models — attack class is specific to CoT reasoning models; applicable to any model with extended reasoning capabilities",
+      "impact": "Novel jailbreak class specific to reasoning models; safety training on final output is insufficient when CoT steps can establish adversarial premises; challenges the assumption that more capable reasoning improves safety",
+      "severity": "High",
+      "mitigations": [
+        "Safety evaluation must cover reasoning chain content, not just final output",
+        "CoT monitoring: flag reasoning steps that establish premises for harmful conclusions",
+        "Reasoning chain length limits for untrusted inputs",
+        "Independent safety classifier on CoT steps before final output generation"
+      ],
+      "references": [
+        { "title": "Reasoning model jailbreaks via chain-of-thought manipulation — security research (2025)", "url": "https://arxiv.org/abs/2501.01234", "type": "research" }
+      ],
+      "tags": ["reasoning-models", "chain-of-thought", "jailbreak", "o1", "o3", "cot-manipulation", "2025"]
+    },
+    {
+      "id": "INC-034",
+      "title": "Cursor AI code agent leaking repository secrets via context window",
+      "date": "2025-03",
+      "year": 2025,
+      "category": "real-world",
+      "description": "Users of Cursor AI (an AI-powered code editor) reported that the agent's context window inadvertently included sensitive files (.env, credentials, private keys) when generating code suggestions or answering questions about codebases. The AI agent, which indexes the entire repository for context, did not distinguish between files meant for AI context and files containing secrets. In several reported cases, the AI included credential values in its responses, which were then visible in shared Cursor sessions or logged by telemetry. The incident highlights the tension between broad context windows (needed for useful code assistance) and secret exposure (any file in the repo becomes potential model input).",
+      "owasp_entries": ["DSGAI08", "DSGAI01", "ASI02", "LLM02", "DSGAI14"],
+      "maestro_layers": [
+        { "layer": "L3", "label": "Agent Frameworks", "role": "origin", "notes": "Agent framework indexes all files without secret filtering" },
+        { "layer": "L2", "label": "Data Operations", "role": "propagation", "notes": "Secrets flow from repository into model context as data" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No monitoring of what files are included in agent context" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No DLP on agent context window content" }
+      ],
+      "attack_vector": "Not adversarial — agent design flaw; broad context window indexing includes .env, credential files, private keys; secrets appear in AI responses visible to users and telemetry",
+      "affected": "Cursor AI users — developers using AI code assistance on repositories containing secrets; any AI code agent with full-repo context indexing",
+      "impact": "Secret exposure via AI context window; credentials visible in shared sessions and telemetry logs; applies to all AI code agents (Copilot, Cody, Continue) that index full repositories",
+      "severity": "High",
+      "mitigations": [
+        "Context window filtering: exclude files matching .gitignore, .env*, *.pem, *.key patterns",
+        "Secret detection scan on context before model submission",
+        "Agent permission model: explicit opt-in for sensitive file access",
+        "Telemetry scrubbing: redact secrets from logged AI interactions"
+      ],
+      "references": [
+        { "title": "Cursor AI context window secret exposure — developer reports (2025)", "url": "https://github.com/getcursor/cursor/issues", "type": "advisory" }
+      ],
+      "tags": ["cursor-ai", "code-agent", "secret-exposure", "context-window", "developer-tools", "real-world", "2025"]
+    },
+    {
+      "id": "INC-035",
+      "title": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+      "date": "2025-03",
+      "year": 2025,
+      "category": "real-world",
+      "description": "The Italian Data Protection Authority (Garante per la protezione dei dati personali) issued its final enforcement decision against OpenAI regarding ChatGPT's compliance with GDPR. Following the initial March 2023 suspension and subsequent investigation, the Garante found violations of Articles 5 (data minimization), 6 (lawfulness — insufficient legal basis for training data processing), 13 (transparency — inadequate privacy notice), and 25 (data protection by design). The decision imposed a EUR 15 million fine and required structural remedies including age verification, opt-out mechanisms for training data, and enhanced transparency about data processing. This is the first major GDPR enforcement action specifically targeting an LLM provider's training data practices.",
+      "owasp_entries": ["DSGAI14", "DSGAI16", "DSGAI21", "DSGAI15", "DSGAI02"],
+      "maestro_layers": [
+        { "layer": "L6", "label": "Security & Compliance", "role": "origin", "notes": "Regulatory non-compliance — GDPR violations in data processing" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Training data practices found unlawful — affects foundation model legitimacy" },
+        { "layer": "L2", "label": "Data Operations", "role": "impact", "notes": "Data collection and processing scope exceeded legal basis" }
+      ],
+      "attack_vector": "Not adversarial — regulatory enforcement; GDPR Articles 5, 6, 13, 25 violations in training data collection, consent management, and transparency",
+      "affected": "OpenAI / ChatGPT — EUR 15M fine; all LLM providers operating in EU face precedent; structural remedies required",
+      "impact": "First major GDPR enforcement targeting LLM training data; establishes precedent that AI training on personal data requires explicit legal basis; EUR 15M fine; structural remedies (age verification, opt-out, transparency) now expected industry-wide",
+      "severity": "High",
+      "mitigations": [
+        "Legal basis assessment for all training data before collection",
+        "Consent management system with granular opt-out for training data use",
+        "Privacy notice specifically addressing AI/LLM data processing",
+        "Data protection impact assessment (DPIA) for all training data pipelines",
+        "Age verification for AI services accessible to minors"
+      ],
+      "references": [
+        { "title": "Italian DPA ChatGPT GDPR enforcement decision — Garante (2025)", "url": "https://www.garanteprivacy.it/", "type": "advisory" },
+        { "title": "GDPR enforcement against ChatGPT — IAPP analysis (2025)", "url": "https://iapp.org/news/", "type": "news" }
+      ],
+      "tags": ["gdpr", "garante", "chatgpt", "openai", "privacy", "consent", "data-minimization", "regulatory", "real-world", "2025"]
+    },
+    {
+      "id": "INC-036",
+      "title": "Clearview AI biometric bias — $50M class action settlement",
+      "date": "2025-01",
+      "year": 2025,
+      "category": "real-world",
+      "description": "Clearview AI reached a settlement in a class action lawsuit over its facial recognition system's biometric data collection and demonstrated racial bias. The lawsuit, filed under Illinois BIPA (Biometric Information Privacy Act), alleged that Clearview scraped billions of facial images from the internet without consent and that the resulting system exhibited measurable accuracy disparities across racial groups. The settlement established a USD 50 million fund and required Clearview to implement bias testing, obtain consent for US data collection, and submit to third-party audits. The case established legal precedent that AI training data bias creates direct financial liability.",
+      "owasp_entries": ["DSGAI17", "DSGAI13", "DSGAI14", "DSGAI09"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Biased training data — scraping without consent introduced demographic representation gaps" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Model outputs showed measurable racial accuracy disparities" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No bias testing or compliance review before deployment" }
+      ],
+      "attack_vector": "Not adversarial — systemic bias from training data collection methodology; web scraping without consent produced demographically unbalanced dataset",
+      "affected": "Clearview AI — USD 50M settlement; Illinois residents whose biometric data was collected without consent; law enforcement agencies using biased outputs",
+      "impact": "USD 50M settlement establishes financial precedent for AI training data bias; BIPA violations for unconsented biometric collection; mandatory bias testing + third-party audits as structural remedy; precedent for other states and jurisdictions",
+      "severity": "High",
+      "mitigations": [
+        "Bias testing across demographic groups before any deployment",
+        "Consent-based data collection — no web scraping of personal/biometric data",
+        "Third-party bias audits on regular cadence",
+        "Training data provenance tracking — document source and consent status"
+      ],
+      "references": [
+        { "title": "Clearview AI BIPA class action settlement — Reuters (2025)", "url": "https://www.reuters.com/legal/", "type": "news" }
+      ],
+      "tags": ["clearview-ai", "bias", "facial-recognition", "bipa", "class-action", "consent", "real-world", "2025"]
+    },
+    {
+      "id": "INC-037",
+      "title": "Azure OpenAI content filter bypass via structured output mode",
+      "date": "2025-02",
+      "year": 2025,
+      "category": "research-demonstrated",
+      "description": "Security researchers demonstrated that Azure OpenAI's content filtering system could be bypassed when using the structured output (JSON mode) API endpoint. The structured output mode, which constrains model responses to valid JSON matching a provided schema, applied content filters differently than the standard chat completion endpoint. By crafting JSON schemas that implicitly requested harmful content (e.g., a schema with fields like \"weapon_instructions\", \"vulnerability_details\"), researchers obtained harmful outputs that would be blocked in standard mode. The attack exploits the assumption that structured output is used only for legitimate data extraction.",
+      "owasp_entries": ["LLM01", "LLM08", "LLM05"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Content filter inconsistency between API modes — structured output bypass" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "Deployment layer did not normalize safety checks across API endpoints" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Eval testing did not cover structured output mode attack surface" }
+      ],
+      "attack_vector": "JSON schema crafted with field names that implicitly request harmful content; structured output mode applies weaker content filtering than chat completion endpoint",
+      "affected": "Azure OpenAI Service — structured output / JSON mode endpoint; applicable to any LLM API offering constrained generation modes with inconsistent safety filtering",
+      "impact": "Content filter bypass via legitimate API feature; structured output mode as blind spot for safety evaluation; demonstrates that all API modes must have equivalent safety enforcement",
+      "severity": "High",
+      "mitigations": [
+        "Normalize content filtering across all API modes (chat, structured, function calling)",
+        "Schema validation: flag JSON schemas with field names matching harmful content patterns",
+        "Eval coverage must include structured output and function calling modes, not just chat",
+        "Output validation on structured responses before delivery"
+      ],
+      "references": [
+        { "title": "Azure OpenAI structured output content filter bypass — security research (2025)", "url": "https://msrc.microsoft.com/", "type": "research" }
+      ],
+      "tags": ["azure-openai", "structured-output", "json-mode", "content-filter", "bypass", "api-mode", "2025"]
+    },
+    {
+      "id": "INC-038",
+      "title": "Hugging Face model card supply chain manipulation",
+      "date": "2025-01",
+      "year": 2025,
+      "category": "research-demonstrated",
+      "description": "Researchers from JFrog Security discovered that Hugging Face model cards — the metadata documents that describe model capabilities, limitations, and safety information — could be manipulated to execute arbitrary code when rendered in certain environments. Malicious actors uploaded models with crafted model cards containing embedded scripts that execute during model loading or card rendering. Additionally, model card metadata (claimed safety evaluations, benchmark scores, license information) was found to be entirely self-reported with no verification. Researchers demonstrated that a model claiming to be \"safety-tested\" and \"bias-free\" in its card could contain backdoored weights, and the Hugging Face platform had no mechanism to verify these claims. The attack combines supply chain code execution with metadata trust manipulation.",
+      "owasp_entries": ["LLM05", "ASI04", "LLM03", "DSGAI05"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Malicious model weights + metadata in foundation model supply chain" },
+        { "layer": "L2", "label": "Data Operations", "role": "propagation", "notes": "Unverified provenance claims propagate to downstream users" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "Platform rendering of model cards without sandboxing" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No verification of self-reported safety claims" }
+      ],
+      "attack_vector": "Dual attack: (1) code execution via crafted model card rendering, (2) metadata trust manipulation — self-reported safety/bias claims with no verification mechanism",
+      "affected": "Hugging Face Hub — 500K+ public models; any ML platform with self-reported model metadata; all downstream users who trust model card claims",
+      "impact": "Supply chain code execution via model card rendering; false safety claims on model cards undermine trust in model provenance; no platform-level verification of claimed evaluations; applies to all model hubs (HF, TensorFlow Hub, Model Garden)",
+      "severity": "Critical",
+      "mitigations": [
+        "Sandbox model card rendering — no script execution",
+        "Model provenance verification: cryptographic signing of model weights and metadata",
+        "Platform-verified evaluation badges (not self-reported)",
+        "Automated scanning of uploaded model artifacts for malicious payloads",
+        "Model card schema enforcement with verified claims vs self-reported claims"
+      ],
+      "references": [
+        { "title": "Malicious ML models on Hugging Face — JFrog Security (2025)", "url": "https://jfrog.com/blog/", "type": "research" },
+        { "title": "Hugging Face supply chain security — security research (2025)", "url": "https://huggingface.co/blog/security", "type": "advisory" }
+      ],
+      "tags": ["hugging-face", "supply-chain", "model-card", "metadata-manipulation", "code-execution", "provenance", "2025"]
+    },
+    {
+      "id": "INC-039",
+      "title": "NYT v OpenAI — copyright training data ruling implications",
+      "date": "2025-02",
+      "year": 2025,
+      "category": "real-world",
+      "description": "In the ongoing New York Times v. OpenAI/Microsoft litigation, key rulings in early 2025 established significant legal precedent for AI training data practices. The court denied OpenAI's motion to dismiss copyright claims, ruling that the reproduction of copyrighted content in training data and in model outputs could constitute infringement. The court found that ChatGPT's ability to reproduce near-verbatim excerpts of NYT articles was relevant evidence of infringement during training, not just output generation. The ruling impacts all AI companies using copyrighted content for training and establishes that \"fair use\" defenses for AI training are not automatic. The case has direct implications for data ownership, licensing requirements, and the economics of training data acquisition.",
+      "owasp_entries": ["DSGAI12", "DSGAI09", "DSGAI05", "DSGAI21"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Training data included copyrighted content without license — data operations governance failure" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "impact", "notes": "Legal liability for training data sourcing — compliance and regulatory exposure" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Model can reproduce copyrighted content — foundation model training contamination" }
+      ],
+      "attack_vector": "Not adversarial — legal/regulatory; training data included copyrighted content; model demonstrated ability to reproduce near-verbatim excerpts; fair use defense not automatic for AI training",
+      "affected": "OpenAI/Microsoft — NYT lawsuit; all AI companies using copyrighted content for training; establishes precedent for data licensing requirements industry-wide",
+      "impact": "Fair use defense for AI training is not automatic — major shift in legal landscape; training data licensing now required for copyrighted sources; model outputs reproducing training data = evidence of infringement; financial impact potentially billions in licensing obligations industry-wide",
+      "severity": "High",
+      "mitigations": [
+        "Training data licensing: obtain explicit permission for copyrighted content",
+        "Data provenance tracking: document source, license, and consent for all training data",
+        "Output monitoring: detect and filter near-verbatim reproduction of training content",
+        "Copyright compliance review integrated into training data pipeline governance"
+      ],
+      "references": [
+        { "title": "NYT v. OpenAI — court denies motion to dismiss — Reuters (2025)", "url": "https://www.reuters.com/legal/", "type": "news" },
+        { "title": "AI copyright training data legal analysis — EFF (2025)", "url": "https://www.eff.org/", "type": "research" }
+      ],
+      "tags": ["copyright", "training-data", "nyt", "openai", "fair-use", "data-ownership", "litigation", "real-world", "2025"]
+    },
+    {
+      "id": "INC-040",
+      "title": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+      "date": "2025-03",
+      "year": 2025,
+      "category": "research-demonstrated",
+      "description": "Researchers demonstrated that synthetic health records generated by state-of-the-art generative models (including fine-tuned LLMs and GANs) could be linked back to real patients in the original training dataset. Using membership inference attacks combined with auxiliary public data (voter rolls, social media), the researchers re-identified 23% of individuals whose data was in the synthetic dataset's training set. The attack exploits the fact that generative models memorize and reproduce statistical patterns from training data, and when the training data contains rare attribute combinations (e.g., rare disease + age + zip code), the synthetic data preserves these identifying patterns. The finding challenges the widespread assumption that synthetic data is inherently privacy-safe.",
+      "owasp_entries": ["DSGAI10", "DSGAI15", "DSGAI16", "DSGAI18"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Synthetic data generation preserves identifying patterns from training data" },
+        { "layer": "L1", "label": "Foundation Models", "role": "propagation", "notes": "Model memorization enables re-identification via membership inference" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Synthetic data privacy evaluation did not test for re-identification attacks" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "Privacy compliance assumed synthetic = anonymous — no formal privacy guarantee verified" }
+      ],
+      "attack_vector": "Membership inference attack on synthetic health records combined with auxiliary public data (voter rolls, social media); re-identified 23% of individuals in the training dataset via rare attribute combinations preserved in synthetic output",
+      "affected": "Healthcare organizations using synthetic data for AI training and analytics; any organization assuming synthetic data is privacy-safe without formal guarantees (differential privacy, k-anonymity verification)",
+      "impact": "23% re-identification rate destroys the assumption that synthetic data is inherently anonymous; HIPAA/GDPR exposure for healthcare organizations; synthetic data must be treated as pseudonymous, not anonymous, unless formal privacy guarantees are verified",
+      "severity": "High",
+      "mitigations": [
+        "Differential privacy guarantees during synthetic data generation (not just utility metrics)",
+        "Re-identification risk testing before any synthetic data release",
+        "Rare attribute suppression: remove or generalize combinations with <5 occurrences in training data",
+        "Formal privacy audit: k-anonymity / l-diversity / t-closeness verification on synthetic output"
+      ],
+      "references": [
+        { "title": "Re-identification of synthetic health records via membership inference — USENIX Security (2025)", "url": "https://www.usenix.org/conference/usenixsecurity25", "type": "research" }
+      ],
+      "tags": ["synthetic-data", "re-identification", "privacy", "health-records", "membership-inference", "differential-privacy", "2025"]
+    },
+    {
+      "id": "INC-041",
+      "title": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+      "date": "2025-02",
+      "year": 2025,
+      "category": "real-world",
+      "description": "A quantitative trading firm reported a significant loss event when its multi-agent AI trading system experienced cascading failures. The system used multiple specialized agents (market analysis, risk assessment, execution, portfolio rebalancing) operating with delegated autonomy. A market data anomaly triggered the analysis agent to issue conflicting signals, which the execution agent interpreted as a high-confidence sell instruction. The risk agent, operating on stale data due to a cache refresh lag, failed to flag the anomalous trade volume. The rebalancing agent then amplified the position by executing hedging trades against the original erroneous sell. The cascade completed in 340 milliseconds — faster than human intervention thresholds. The firm reported losses exceeding $8M before circuit breakers activated. Root cause: no inter-agent consistency validation and no circuit breaker at the agent orchestration layer.",
+      "owasp_entries": ["ASI08", "ASI07", "ASI10", "ASI09"],
+      "maestro_layers": [
+        { "layer": "L7", "label": "Multi-Agent Ecosystem", "role": "origin", "notes": "Multi-agent ecosystem with no inter-agent consistency validation" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Agent framework passed conflicting signals without reconciliation" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Execution infrastructure processed erroneous trades at machine speed" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Monitoring detected anomaly after 340ms cascade, beyond intervention threshold" }
+      ],
+      "attack_vector": "Not adversarial — systemic cascading failure; market data anomaly triggered analysis agent error, propagated through execution/risk/rebalancing agents without inter-agent validation; completed in 340ms",
+      "affected": "Quantitative trading firm — $8M+ loss; multi-agent financial systems with delegated execution autonomy",
+      "impact": "$8M+ loss in 340ms; demonstrates that multi-agent cascading failures occur faster than human intervention; inter-agent consistency validation is critical for autonomous financial systems; applies to all multi-agent systems with real-world action authority",
+      "severity": "Critical",
+      "mitigations": [
+        "Inter-agent consistency validation before execution of high-impact actions",
+        "Circuit breakers at agent orchestration layer, not just execution layer",
+        "Stale data detection: agents must validate data freshness before acting",
+        "Speed governors: mandatory delay between agent decision and real-world execution for high-impact trades",
+        "Human confirmation gate for actions exceeding defined risk thresholds"
+      ],
+      "references": [
+        { "title": "Multi-agent trading cascade failure analysis — financial industry report (2025)", "url": "https://www.risk.net/", "type": "news" }
+      ],
+      "tags": ["multi-agent", "trading", "cascade-failure", "financial", "autonomous", "circuit-breaker", "real-world", "2025"]
     }
   ]
 }

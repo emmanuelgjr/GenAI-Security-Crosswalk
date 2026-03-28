@@ -500,7 +500,7 @@
       "control_name": "ICT Risk Management — AI governance framework",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Establish comprehensive AI data governance within ICT risk management; define roles, policies, and oversight mechanisms"
+      "notes": "Establish comprehensive AI data governance within ICT risk management; define roles, policies, accountability, and oversight mechanisms"
     },
     {
       "framework": "DORA",
@@ -508,7 +508,7 @@
       "control_name": "Learning and Evolving — governance improvement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply lessons learned to improve AI governance; update policies and controls based on incident analysis and regulatory changes"
+      "notes": "Apply lessons learned to improve AI data governance; update policies and controls based on incident analysis and regulatory changes"
     },
     {
       "framework": "DORA",
@@ -516,7 +516,7 @@
       "control_name": "Identification — governance scope mapping",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Map all AI systems subject to governance; ensure complete coverage of AI data assets"
+      "notes": "Map all AI systems subject to governance; ensure complete coverage of AI data assets in governance framework"
     }
   ],
   "tools": [
@@ -571,7 +571,14 @@
       "url": "https://www.servicenow.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-040"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM02",

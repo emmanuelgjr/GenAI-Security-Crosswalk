@@ -938,6 +938,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-030"
+      },
+      {
+        "name": "OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-033"
+      },
+      {
+        "name": "Azure OpenAI content filter bypass via structured output mode",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-037"
       }
     ],
     "crossrefs": {
@@ -1785,6 +1797,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-024"
+      },
+      {
+        "name": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-032"
+      },
+      {
+        "name": "Cursor AI code agent leaking repository secrets via context window",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-034"
       }
     ],
     "crossrefs": {
@@ -2579,6 +2603,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-009"
+      },
+      {
+        "name": "Hugging Face model card supply chain manipulation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-038"
       }
     ],
     "crossrefs": {
@@ -4115,6 +4145,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-025"
+      },
+      {
+        "name": "Azure OpenAI content filter bypass via structured output mode",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-037"
+      },
+      {
+        "name": "Hugging Face model card supply chain manipulation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-038"
       }
     ],
     "crossrefs": {
@@ -4942,6 +4984,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2022,
         "incident_id": "INC-031"
+      },
+      {
+        "name": "OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-033"
       }
     ],
     "crossrefs": {
@@ -6423,7 +6471,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.zaproxy.org"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Azure OpenAI content filter bypass via structured output mode",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-037"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI06"
@@ -7168,6 +7223,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2022,
         "incident_id": "INC-031"
+      },
+      {
+        "name": "OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-033"
       }
     ],
     "crossrefs": {
@@ -9666,6 +9727,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-025"
+      },
+      {
+        "name": "Cursor AI code agent leaking repository secrets via context window",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-034"
       }
     ],
     "crossrefs": {
@@ -11274,6 +11341,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-009"
+      },
+      {
+        "name": "Hugging Face model card supply chain manipulation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-038"
       }
     ],
     "crossrefs": {
@@ -13621,6 +13694,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-023"
+      },
+      {
+        "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-041"
       }
     ],
     "crossrefs": {
@@ -14395,6 +14474,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-023"
+      },
+      {
+        "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-041"
       }
     ],
     "crossrefs": {
@@ -15130,7 +15215,14 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/Azure/PyRIT"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-041"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM09",
@@ -15931,7 +16023,14 @@ window.CROSSWALK_DATA = [
         "url": "https://istio.io"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-041"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM06",
@@ -16563,6 +16662,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
+        "control_id": "Art. 8",
+        "control_name": "Identification — data asset classification",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Register all AI data stores in ICT asset inventory; ensure logging coverage for all identified data assets including training data, model weights, and inference stores"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention — data access controls",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Implement security controls for AI data access — authentication, authorisation, and encryption; enforce least privilege on all data access paths"
+      },
+      {
+        "framework": "DORA",
         "control_id": "Art. 10",
         "control_name": "Detection — data access monitoring",
         "tier": "Foundational",
@@ -16571,19 +16686,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — data access governance",
+        "control_id": "Art. 17–23",
+        "control_name": "ICT Incident Management — access incident reporting",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include AI data access logging requirements in ICT risk management framework; define logging scope, retention, and review requirements"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — data store inventory",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Register all AI data stores in ICT asset inventory; ensure logging coverage for all identified data assets"
+        "notes": "Classify material AI data access violations as ICT-related incidents; report to competent authorities per DORA incident classification and reporting requirements"
       }
     ],
     "tools": [
@@ -16701,6 +16808,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-025"
+      },
+      {
+        "name": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-032"
+      },
+      {
+        "name": "Cursor AI code agent leaking repository secrets via context window",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-034"
       }
     ],
     "crossrefs": {
@@ -17413,7 +17532,20 @@ window.CROSSWALK_DATA = [
         "url": "https://www.alation.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-032"
+      },
+      {
+        "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-035"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI03",
@@ -18003,15 +18135,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Third-Party Risk — AI tool vendor oversight",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include AI tools and services in third-party ICT risk management; conduct due diligence before approval; monitor ongoing compliance"
+        "notes": "Include AI tools and services in third-party ICT risk management; conduct due diligence before approval; monitor ongoing compliance with financial sector requirements"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — unauthorised AI tool blocking",
+        "control_id": "Art. 8",
+        "control_name": "Identification — shadow AI discovery",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement controls preventing data transfer to unauthorised AI tools; enforce approved tools policy"
+        "notes": "Identify and register all AI tools — authorised and unauthorised — in the ICT asset inventory; maintain discovery mechanisms for unapproved AI services"
       },
       {
         "framework": "DORA",
@@ -18019,7 +18151,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — AI tool governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define approved AI tools policy in ICT risk management framework; require vetting before use in financial data processing"
+        "notes": "Define approved AI tools policy in ICT risk management framework; require vetting and approval before use in financial data processing"
       }
     ],
     "tools": [
@@ -18734,19 +18866,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 28–44",
-        "control_name": "Third-Party Risk — data and model provider oversight",
+        "control_id": "Art. 24–27",
+        "control_name": "Resilience Testing — poisoning detection testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include AI data and model providers in third-party risk management; assess poisoning risk and require integrity controls"
+        "notes": "Include data poisoning scenarios in resilience testing; test detection capabilities and recovery procedures for poisoned data and model artefacts"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — AI artefact inventory",
+        "control_id": "Art. 12",
+        "control_name": "Backup Policies — model and data restoration",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Register all AI training data, model weights, and pipeline artefacts in ICT asset inventory with provenance documentation"
+        "notes": "Maintain versioned backups of training data and model weights with integrity verification; enable rollback to pre-poisoning states"
       },
       {
         "framework": "DORA",
@@ -18754,7 +18886,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Learning and Evolving — poisoning post-mortem",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Conduct post-incident analysis for data poisoning events; trace poisoned content and update controls"
+        "notes": "Conduct post-incident analysis for data poisoning events; trace poisoned content and update protection controls"
       }
     ],
     "tools": [
@@ -19416,7 +19548,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Protection and Prevention — data quality controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality thresholds"
+        "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality or provenance thresholds"
       },
       {
         "framework": "DORA",
@@ -19424,7 +19556,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Third-Party Risk — external data source oversight",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include external data sources in third-party risk management; assess data quality and provenance practices"
+        "notes": "Include external data sources in third-party risk management; assess data quality, provenance practices, and licensing compliance"
       }
     ],
     "tools": [
@@ -19490,6 +19622,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2022,
         "incident_id": "INC-031"
+      },
+      {
+        "name": "Hugging Face model card supply chain manipulation",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-038"
+      },
+      {
+        "name": "NYT v OpenAI — copyright training data ruling implications",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-039"
       }
     ],
     "crossrefs": {
@@ -20079,19 +20223,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
+        "control_id": "Art. 12",
+        "control_name": "Backup Policies — lineage metadata preservation",
+        "tier": "Foundational",
+        "scope": "Build",
+        "notes": "Include lineage metadata in backup policies; ensure lineage records can be restored alongside data and models"
+      },
+      {
+        "framework": "DORA",
         "control_id": "Art. 5–7",
         "control_name": "ICT Risk Management — lineage governance",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Include data lineage requirements in ICT risk management; define minimum lineage completeness per data sensitivity"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 10",
-        "control_name": "Detection — lineage gap detection",
-        "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Monitor for data lineage gaps; alert on undocumented transformations or broken lineage chains"
       }
     ],
     "tools": [
@@ -20744,19 +20888,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
+        "control_id": "Art. 5–7",
+        "control_name": "ICT Risk Management — aggregation risk governance",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include data aggregation risk in ICT risk management; assess combined sensitivity of aggregated financial datasets used in AI systems"
+      },
+      {
+        "framework": "DORA",
         "control_id": "Art. 9",
         "control_name": "Protection and Prevention — aggregation controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Implement controls preventing uncontrolled data aggregation; enforce restrictions on combining datasets that create higher-sensitivity aggregates"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — aggregation risk governance",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Include data aggregation risk in ICT risk management; assess combined sensitivity of aggregated financial datasets"
       },
       {
         "framework": "DORA",
@@ -21517,7 +21661,20 @@ window.CROSSWALK_DATA = [
         "url": "https://aws.amazon.com/macie/"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-032"
+      },
+      {
+        "name": "Cursor AI code agent leaking repository secrets via context window",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-034"
+      }
+    ],
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI07"
@@ -22093,15 +22250,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Protection and Prevention — IP protection controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement security controls protecting AI intellectual property — encryption, access controls, and DLP for model weights and proprietary data"
+        "notes": "Implement security controls protecting AI intellectual property — encryption, access controls, and DLP for model weights, training data, and proprietary algorithms"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 17–23",
-        "control_name": "ICT Incident Management — IP theft reporting",
+        "control_id": "Art. 28–44",
+        "control_name": "Third-Party Risk — IP protection in vendor relationships",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify AI IP theft as an ICT-related incident; assess impact and report per DORA criteria"
+        "notes": "Address IP protection in third-party agreements; ensure vendors cannot access, replicate, or misuse proprietary AI assets"
       },
       {
         "framework": "DORA",
@@ -22191,6 +22348,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-026"
+      },
+      {
+        "name": "Clearview AI biometric bias — $50M class action settlement",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-036"
+      },
+      {
+        "name": "NYT v OpenAI — copyright training data ruling implications",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-039"
       }
     ],
     "crossrefs": {
@@ -22714,7 +22883,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Protection and Prevention — synthetic data privacy",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Implement privacy controls for synthetic data generation; validate privacy preservation and absence of sensitive pattern leakage"
+        "notes": "Implement privacy controls for synthetic data generation; validate privacy preservation and absence of sensitive pattern leakage from source financial data"
       },
       {
         "framework": "DORA",
@@ -22722,15 +22891,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Resilience Testing — synthetic data testing",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Include synthetic data re-identification and privacy testing in resilience testing programme"
+        "notes": "Include synthetic data re-identification and privacy testing in resilience testing programme; test for linkage attacks and attribute inference"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 10",
-        "control_name": "Detection — synthetic data quality monitoring",
+        "control_id": "Art. 13",
+        "control_name": "Learning and Evolving — synthetic data improvement",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Monitor synthetic data for quality and privacy metrics; alert on privacy degradation"
+        "notes": "Apply lessons learned from synthetic data privacy failures; update generation processes and validation controls"
       }
     ],
     "tools": [
@@ -22805,7 +22974,14 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/microsoft/presidio"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-040"
+      }
+    ],
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI08",
@@ -23372,7 +23548,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — retention governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data retention policies in ICT risk management; define retention periods per data type and regulatory requirement"
+        "notes": "Include data retention policies in ICT risk management; define retention periods per data type, AI processing stage, and regulatory requirement"
       },
       {
         "framework": "DORA",
@@ -23380,7 +23556,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Backup Policies — retention and deletion procedures",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement backup policies aligned with retention requirements; include secure deletion procedures for expired AI data"
+        "notes": "Implement backup policies aligned with retention requirements; include secure deletion procedures for expired AI data, embeddings, and model artefacts"
       },
       {
         "framework": "DORA",
@@ -24068,7 +24244,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — ownership governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, outputs, and derived insights"
+        "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, model outputs, and derived financial insights"
       },
       {
         "framework": "DORA",
@@ -24076,7 +24252,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Third-Party Risk — data rights management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Address data ownership and usage rights in third-party agreements; clarify ownership of AI outputs and derived data"
+        "notes": "Address data ownership and usage rights in third-party agreements; clarify ownership of AI outputs and derived data produced using vendor models"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 8",
+        "control_name": "Identification — ownership mapping",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Map ownership for all AI data assets; document rights, restrictions, and licensing for training data and outputs"
       }
     ],
     "tools": [
@@ -24141,7 +24325,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.onetrust.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "NYT v OpenAI — copyright training data ruling implications",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-039"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM05",
@@ -24730,19 +24921,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
+        "control_id": "Art. 5–7",
+        "control_name": "ICT Risk Management — data usage governance",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include data usage policies in ICT risk management; define approved purposes for each AI data category; restrict repurposing"
+      },
+      {
+        "framework": "DORA",
         "control_id": "Art. 9",
         "control_name": "Protection and Prevention — purpose-limited data controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement controls enforcing purpose-limitation on AI data usage; restrict processing to approved purposes"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 10",
-        "control_name": "Detection — misuse detection",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Monitor AI data usage for misuse indicators; alert on usage inconsistent with approved purposes"
+        "notes": "Implement controls enforcing purpose-limitation on AI data usage; restrict processing to approved purposes per data classification"
       },
       {
         "framework": "DORA",
@@ -24750,7 +24941,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Incident Management — misuse incident reporting",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify AI data misuse as ICT-related incidents where customer impact occurs; report per DORA criteria"
+        "notes": "Classify AI data misuse as ICT-related incidents where customer or regulatory impact occurs; report per DORA criteria"
       }
     ],
     "tools": [
@@ -24815,7 +25006,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.splunk.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Clearview AI biometric bias — $50M class action settlement",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-036"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM08",
@@ -25393,7 +25591,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — consent governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include consent management in ICT risk management; define consent requirements per data type and AI processing activity"
+        "notes": "Include consent management in ICT risk management; define consent requirements per data type and AI processing activity for financial services"
       },
       {
         "framework": "DORA",
@@ -25401,7 +25599,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Protection and Prevention — consent-aligned controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement access controls aligned with consent status; block AI processing on data where consent has been withdrawn"
+        "notes": "Implement access controls aligned with consent status; block AI processing on data where consent has been withdrawn or is insufficient"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection — consent violation monitoring",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor for AI processing inconsistent with consent status; alert on violations"
       }
     ],
     "tools": [
@@ -25471,7 +25677,26 @@ window.CROSSWALK_DATA = [
         "url": "https://trustarc.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Cursor AI code agent leaking repository secrets via context window",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-034"
+      },
+      {
+        "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-035"
+      },
+      {
+        "name": "Clearview AI biometric bias — $50M class action settlement",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-036"
+      }
+    ],
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI01",
@@ -26037,7 +26262,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — minimisation governance",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Include data minimisation in ICT risk management; define minimum necessary data per AI use case"
+        "notes": "Include data minimisation in ICT risk management; define minimum necessary data per AI use case and processing activity"
       },
       {
         "framework": "DORA",
@@ -26045,7 +26270,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Protection and Prevention — collection restrictions",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Implement controls restricting AI data collection to minimum necessary; enforce at pipeline ingestion points"
+        "notes": "Implement controls restricting AI data collection to minimum necessary; enforce at pipeline ingestion points and model training configuration"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 8",
+        "control_name": "Identification — data necessity mapping",
+        "tier": "Foundational",
+        "scope": "Build",
+        "notes": "Document data necessity justification for each AI data asset; map minimum required data per use case"
       }
     ],
     "tools": [
@@ -26105,7 +26338,20 @@ window.CROSSWALK_DATA = [
         "url": "https://www.onetrust.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-035"
+      },
+      {
+        "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-040"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM07",
@@ -26691,6 +26937,14 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
+        "control_id": "Art. 5–7",
+        "control_name": "ICT Risk Management — privacy risk governance",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include AI privacy erosion in ICT risk management; assess inference, aggregation, and memorisation risks for financial AI systems"
+      },
+      {
+        "framework": "DORA",
         "control_id": "Art. 9",
         "control_name": "Protection and Prevention — privacy-preserving controls",
         "tier": "Foundational",
@@ -26699,19 +26953,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — privacy risk governance",
+        "control_id": "Art. 10",
+        "control_name": "Detection — privacy degradation monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include AI privacy erosion in ICT risk management; assess inference, aggregation, and memorisation risks"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 24–27",
-        "control_name": "Resilience Testing — privacy testing",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Include privacy control testing in resilience testing; assess re-identification risk and memorisation in AI systems"
+        "notes": "Monitor for privacy degradation indicators; detect inference attacks, re-identification attempts, and memorisation in model outputs"
       }
     ],
     "tools": [
@@ -26786,7 +27032,20 @@ window.CROSSWALK_DATA = [
         "url": "https://www.onetrust.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-035"
+      },
+      {
+        "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-040"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI10",
@@ -27369,19 +27628,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 10",
-        "control_name": "Detection — bias monitoring",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Monitor AI outputs for bias indicators; track fairness metrics across demographic groups and financial service use cases"
-      },
-      {
-        "framework": "DORA",
         "control_id": "Art. 5–7",
         "control_name": "ICT Risk Management — fairness governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include AI bias and fairness in ICT risk management; define fairness requirements for financial AI systems"
+        "notes": "Include AI bias and fairness in ICT risk management; define fairness requirements for financial AI systems and acceptable disparity thresholds"
       },
       {
         "framework": "DORA",
@@ -27389,7 +27640,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Resilience Testing — bias testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include bias detection and fairness testing in resilience testing; test for disparate impact in financial AI outputs"
+        "notes": "Include bias detection and fairness testing in resilience testing programme; test for disparate impact in financial AI outputs across demographic groups"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 13",
+        "control_name": "Learning and Evolving — fairness improvement",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Apply lessons learned from bias incidents; update training data, model parameters, and controls based on fairness assessments"
       }
     ],
     "tools": [
@@ -27460,6 +27719,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2022,
         "incident_id": "INC-031"
+      },
+      {
+        "name": "Clearview AI biometric bias — $50M class action settlement",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-036"
       }
     ],
     "crossrefs": {
@@ -27986,7 +28251,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — AI governance framework",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Establish comprehensive AI data governance within ICT risk management; define roles, policies, and oversight mechanisms"
+        "notes": "Establish comprehensive AI data governance within ICT risk management; define roles, policies, accountability, and oversight mechanisms"
       },
       {
         "framework": "DORA",
@@ -27994,7 +28259,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Learning and Evolving — governance improvement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Apply lessons learned to improve AI governance; update policies and controls based on incident analysis and regulatory changes"
+        "notes": "Apply lessons learned to improve AI data governance; update policies and controls based on incident analysis and regulatory changes"
       },
       {
         "framework": "DORA",
@@ -28002,7 +28267,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Identification — governance scope mapping",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Map all AI systems subject to governance; ensure complete coverage of AI data assets"
+        "notes": "Map all AI systems subject to governance; ensure complete coverage of AI data assets in governance framework"
       }
     ],
     "tools": [
@@ -28057,7 +28322,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.servicenow.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-040"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM02",
@@ -28636,11 +28908,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — third-party data governance",
+        "control_id": "Art. 45",
+        "control_name": "Information Sharing — third-party threat intelligence",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include third-party data risk in ICT risk management; define policies for external data sourcing and processing"
+        "notes": "Participate in information sharing arrangements for third-party AI data risks; share threat intelligence on data provider compromises"
       }
     ],
     "tools": [
@@ -29263,7 +29535,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — localisation governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data localisation in ICT risk management; define residency requirements per jurisdiction"
+        "notes": "Include data localisation in ICT risk management; define residency requirements per jurisdiction and data type for AI systems"
       },
       {
         "framework": "DORA",
@@ -29271,15 +29543,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Third-Party Risk — cross-border data oversight",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Address data localisation in third-party agreements; verify provider data processing locations meet residency requirements"
+        "notes": "Address data localisation in third-party agreements; verify provider data processing locations meet residency requirements; monitor for unauthorised cross-border transfers"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — data flow enforcement",
+        "control_id": "Art. 8",
+        "control_name": "Identification — data location mapping",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement controls preventing AI data from crossing jurisdictional boundaries without authorisation"
+        "notes": "Map physical and logical locations of all AI data; document processing jurisdictions for training, inference, and storage"
       }
     ],
     "tools": [
@@ -30100,7 +30372,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Risk Management — regulatory compliance governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities"
+        "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities; define compliance requirements and accountability"
       },
       {
         "framework": "DORA",
@@ -30108,7 +30380,7 @@ window.CROSSWALK_DATA = [
         "control_name": "ICT Incident Management — compliance incident reporting",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify regulatory non-compliance events as ICT incidents where material; report to competent authorities per DORA criteria"
+        "notes": "Classify material regulatory non-compliance events as ICT incidents; report to competent authorities per DORA criteria; coordinate with DPO for GDPR notifications"
       },
       {
         "framework": "DORA",
@@ -30116,7 +30388,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Learning and Evolving — compliance improvement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes and incident analysis"
+        "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes, enforcement actions, and incident analysis"
       },
       {
         "framework": "DORA",
@@ -30189,7 +30461,20 @@ window.CROSSWALK_DATA = [
         "url": "https://www.servicenow.com"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-035"
+      },
+      {
+        "name": "NYT v OpenAI — copyright training data ruling implications",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-039"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM04",

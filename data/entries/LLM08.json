@@ -702,7 +702,14 @@
       "url": "https://www.zaproxy.org"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Azure OpenAI content filter bypass via structured output mode",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-037"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI06"

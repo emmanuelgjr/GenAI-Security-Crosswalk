@@ -537,7 +537,7 @@
       "control_name": "ICT Risk Management — retention governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data retention policies in ICT risk management; define retention periods per data type and regulatory requirement"
+      "notes": "Include data retention policies in ICT risk management; define retention periods per data type, AI processing stage, and regulatory requirement"
     },
     {
       "framework": "DORA",
@@ -545,7 +545,7 @@
       "control_name": "Backup Policies — retention and deletion procedures",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement backup policies aligned with retention requirements; include secure deletion procedures for expired AI data"
+      "notes": "Implement backup policies aligned with retention requirements; include secure deletion procedures for expired AI data, embeddings, and model artefacts"
     },
     {
       "framework": "DORA",

@@ -558,19 +558,19 @@
     },
     {
       "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — data usage governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data usage policies in ICT risk management; define approved purposes for each AI data category; restrict repurposing"
+    },
+    {
+      "framework": "DORA",
       "control_id": "Art. 9",
       "control_name": "Protection and Prevention — purpose-limited data controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement controls enforcing purpose-limitation on AI data usage; restrict processing to approved purposes"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 10",
-      "control_name": "Detection — misuse detection",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Monitor AI data usage for misuse indicators; alert on usage inconsistent with approved purposes"
+      "notes": "Implement controls enforcing purpose-limitation on AI data usage; restrict processing to approved purposes per data classification"
     },
     {
       "framework": "DORA",
@@ -578,7 +578,7 @@
       "control_name": "ICT Incident Management — misuse incident reporting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify AI data misuse as ICT-related incidents where customer impact occurs; report per DORA criteria"
+      "notes": "Classify AI data misuse as ICT-related incidents where customer or regulatory impact occurs; report per DORA criteria"
     }
   ],
   "tools": [
@@ -643,7 +643,14 @@
       "url": "https://www.splunk.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Clearview AI biometric bias — $50M class action settlement",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-036"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM08",

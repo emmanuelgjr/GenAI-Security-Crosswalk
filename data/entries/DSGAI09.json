@@ -547,15 +547,15 @@
       "control_name": "Protection and Prevention — IP protection controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement security controls protecting AI intellectual property — encryption, access controls, and DLP for model weights and proprietary data"
+      "notes": "Implement security controls protecting AI intellectual property — encryption, access controls, and DLP for model weights, training data, and proprietary algorithms"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 17–23",
-      "control_name": "ICT Incident Management — IP theft reporting",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk — IP protection in vendor relationships",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify AI IP theft as an ICT-related incident; assess impact and report per DORA criteria"
+      "notes": "Address IP protection in third-party agreements; ensure vendors cannot access, replicate, or misuse proprietary AI assets"
     },
     {
       "framework": "DORA",
@@ -645,6 +645,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-026"
+    },
+    {
+      "name": "Clearview AI biometric bias — $50M class action settlement",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-036"
+    },
+    {
+      "name": "NYT v OpenAI — copyright training data ruling implications",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-039"
     }
   ],
   "crossrefs": {

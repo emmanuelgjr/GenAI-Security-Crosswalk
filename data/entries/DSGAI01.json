@@ -594,6 +594,22 @@
     },
     {
       "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — data asset classification",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Register all AI data stores in ICT asset inventory; ensure logging coverage for all identified data assets including training data, model weights, and inference stores"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — data access controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Implement security controls for AI data access — authentication, authorisation, and encryption; enforce least privilege on all data access paths"
+    },
+    {
+      "framework": "DORA",
       "control_id": "Art. 10",
       "control_name": "Detection — data access monitoring",
       "tier": "Foundational",
@@ -602,19 +618,11 @@
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — data access governance",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — access incident reporting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include AI data access logging requirements in ICT risk management framework; define logging scope, retention, and review requirements"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — data store inventory",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Register all AI data stores in ICT asset inventory; ensure logging coverage for all identified data assets"
+      "notes": "Classify material AI data access violations as ICT-related incidents; report to competent authorities per DORA incident classification and reporting requirements"
     }
   ],
   "tools": [
@@ -732,6 +740,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-025"
+    },
+    {
+      "name": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-032"
+    },
+    {
+      "name": "Cursor AI code agent leaking repository secrets via context window",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-034"
     }
   ],
   "crossrefs": {

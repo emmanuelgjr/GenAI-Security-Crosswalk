@@ -493,7 +493,7 @@
       "control_name": "Protection and Prevention — synthetic data privacy",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Implement privacy controls for synthetic data generation; validate privacy preservation and absence of sensitive pattern leakage"
+      "notes": "Implement privacy controls for synthetic data generation; validate privacy preservation and absence of sensitive pattern leakage from source financial data"
     },
     {
       "framework": "DORA",
@@ -501,15 +501,15 @@
       "control_name": "Resilience Testing — synthetic data testing",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Include synthetic data re-identification and privacy testing in resilience testing programme"
+      "notes": "Include synthetic data re-identification and privacy testing in resilience testing programme; test for linkage attacks and attribute inference"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 10",
-      "control_name": "Detection — synthetic data quality monitoring",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving — synthetic data improvement",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Monitor synthetic data for quality and privacy metrics; alert on privacy degradation"
+      "notes": "Apply lessons learned from synthetic data privacy failures; update generation processes and validation controls"
     }
   ],
   "tools": [
@@ -584,7 +584,14 @@
       "url": "https://github.com/microsoft/presidio"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-040"
+    }
+  ],
   "crossrefs": {
     "dsgai_2026": [
       "DSGAI08",

@@ -576,7 +576,7 @@
       "control_name": "ICT Risk Management — ownership governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, outputs, and derived insights"
+      "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, model outputs, and derived financial insights"
     },
     {
       "framework": "DORA",
@@ -584,7 +584,15 @@
       "control_name": "Third-Party Risk — data rights management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Address data ownership and usage rights in third-party agreements; clarify ownership of AI outputs and derived data"
+      "notes": "Address data ownership and usage rights in third-party agreements; clarify ownership of AI outputs and derived data produced using vendor models"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — ownership mapping",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Map ownership for all AI data assets; document rights, restrictions, and licensing for training data and outputs"
     }
   ],
   "tools": [
@@ -649,7 +657,14 @@
       "url": "https://www.onetrust.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "NYT v OpenAI — copyright training data ruling implications",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-039"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM05",

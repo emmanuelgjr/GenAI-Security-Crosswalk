@@ -800,6 +800,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2022,
       "incident_id": "INC-031"
+    },
+    {
+      "name": "OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-033"
     }
   ],
   "crossrefs": {

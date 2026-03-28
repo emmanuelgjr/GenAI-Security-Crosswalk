@@ -558,6 +558,14 @@
     },
     {
       "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — privacy risk governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include AI privacy erosion in ICT risk management; assess inference, aggregation, and memorisation risks for financial AI systems"
+    },
+    {
+      "framework": "DORA",
       "control_id": "Art. 9",
       "control_name": "Protection and Prevention — privacy-preserving controls",
       "tier": "Foundational",
@@ -566,19 +574,11 @@
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — privacy risk governance",
+      "control_id": "Art. 10",
+      "control_name": "Detection — privacy degradation monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include AI privacy erosion in ICT risk management; assess inference, aggregation, and memorisation risks"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 24–27",
-      "control_name": "Resilience Testing — privacy testing",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include privacy control testing in resilience testing; assess re-identification risk and memorisation in AI systems"
+      "notes": "Monitor for privacy degradation indicators; detect inference attacks, re-identification attempts, and memorisation in model outputs"
     }
   ],
   "tools": [
@@ -653,7 +653,20 @@
       "url": "https://www.onetrust.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-035"
+    },
+    {
+      "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-040"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI10",

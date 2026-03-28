@@ -560,15 +560,15 @@
       "control_name": "Third-Party Risk — AI tool vendor oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include AI tools and services in third-party ICT risk management; conduct due diligence before approval; monitor ongoing compliance"
+      "notes": "Include AI tools and services in third-party ICT risk management; conduct due diligence before approval; monitor ongoing compliance with financial sector requirements"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — unauthorised AI tool blocking",
+      "control_id": "Art. 8",
+      "control_name": "Identification — shadow AI discovery",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement controls preventing data transfer to unauthorised AI tools; enforce approved tools policy"
+      "notes": "Identify and register all AI tools — authorised and unauthorised — in the ICT asset inventory; maintain discovery mechanisms for unapproved AI services"
     },
     {
       "framework": "DORA",
@@ -576,7 +576,7 @@
       "control_name": "ICT Risk Management — AI tool governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define approved AI tools policy in ICT risk management framework; require vetting before use in financial data processing"
+      "notes": "Define approved AI tools policy in ICT risk management framework; require vetting and approval before use in financial data processing"
     }
   ],
   "tools": [

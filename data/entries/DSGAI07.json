@@ -557,19 +557,19 @@
     },
     {
       "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — aggregation risk governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include data aggregation risk in ICT risk management; assess combined sensitivity of aggregated financial datasets used in AI systems"
+    },
+    {
+      "framework": "DORA",
       "control_id": "Art. 9",
       "control_name": "Protection and Prevention — aggregation controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Implement controls preventing uncontrolled data aggregation; enforce restrictions on combining datasets that create higher-sensitivity aggregates"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — aggregation risk governance",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include data aggregation risk in ICT risk management; assess combined sensitivity of aggregated financial datasets"
     },
     {
       "framework": "DORA",

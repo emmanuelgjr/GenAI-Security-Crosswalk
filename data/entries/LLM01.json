@@ -933,6 +933,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-030"
+    },
+    {
+      "name": "OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-033"
+    },
+    {
+      "name": "Azure OpenAI content filter bypass via structured output mode",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-037"
     }
   ],
   "crossrefs": {

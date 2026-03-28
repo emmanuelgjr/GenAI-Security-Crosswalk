@@ -538,7 +538,7 @@
       "control_name": "ICT Risk Management — minimisation governance",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Include data minimisation in ICT risk management; define minimum necessary data per AI use case"
+      "notes": "Include data minimisation in ICT risk management; define minimum necessary data per AI use case and processing activity"
     },
     {
       "framework": "DORA",
@@ -546,7 +546,15 @@
       "control_name": "Protection and Prevention — collection restrictions",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Implement controls restricting AI data collection to minimum necessary; enforce at pipeline ingestion points"
+      "notes": "Implement controls restricting AI data collection to minimum necessary; enforce at pipeline ingestion points and model training configuration"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification — data necessity mapping",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Document data necessity justification for each AI data asset; map minimum required data per use case"
     }
   ],
   "tools": [
@@ -606,7 +614,20 @@
       "url": "https://www.onetrust.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-035"
+    },
+    {
+      "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-040"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM07",

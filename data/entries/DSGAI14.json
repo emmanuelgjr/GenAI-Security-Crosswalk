@@ -552,7 +552,7 @@
       "control_name": "ICT Risk Management — consent governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include consent management in ICT risk management; define consent requirements per data type and AI processing activity"
+      "notes": "Include consent management in ICT risk management; define consent requirements per data type and AI processing activity for financial services"
     },
     {
       "framework": "DORA",
@@ -560,7 +560,15 @@
       "control_name": "Protection and Prevention — consent-aligned controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement access controls aligned with consent status; block AI processing on data where consent has been withdrawn"
+      "notes": "Implement access controls aligned with consent status; block AI processing on data where consent has been withdrawn or is insufficient"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection — consent violation monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor for AI processing inconsistent with consent status; alert on violations"
     }
   ],
   "tools": [
@@ -630,7 +638,26 @@
       "url": "https://trustarc.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Cursor AI code agent leaking repository secrets via context window",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-034"
+    },
+    {
+      "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-035"
+    },
+    {
+      "name": "Clearview AI biometric bias — $50M class action settlement",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-036"
+    }
+  ],
   "crossrefs": {
     "dsgai_2026": [
       "DSGAI01",

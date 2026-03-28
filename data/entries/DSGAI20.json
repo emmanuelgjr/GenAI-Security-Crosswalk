@@ -546,7 +546,7 @@
       "control_name": "ICT Risk Management — localisation governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data localisation in ICT risk management; define residency requirements per jurisdiction"
+      "notes": "Include data localisation in ICT risk management; define residency requirements per jurisdiction and data type for AI systems"
     },
     {
       "framework": "DORA",
@@ -554,15 +554,15 @@
       "control_name": "Third-Party Risk — cross-border data oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Address data localisation in third-party agreements; verify provider data processing locations meet residency requirements"
+      "notes": "Address data localisation in third-party agreements; verify provider data processing locations meet residency requirements; monitor for unauthorised cross-border transfers"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — data flow enforcement",
+      "control_id": "Art. 8",
+      "control_name": "Identification — data location mapping",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement controls preventing AI data from crossing jurisdictional boundaries without authorisation"
+      "notes": "Map physical and logical locations of all AI data; document processing jurisdictions for training, inference, and storage"
     }
   ],
   "tools": [

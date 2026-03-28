@@ -556,7 +556,7 @@
       "control_name": "Protection and Prevention — data quality controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality thresholds"
+      "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality or provenance thresholds"
     },
     {
       "framework": "DORA",
@@ -564,7 +564,7 @@
       "control_name": "Third-Party Risk — external data source oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include external data sources in third-party risk management; assess data quality and provenance practices"
+      "notes": "Include external data sources in third-party risk management; assess data quality, provenance practices, and licensing compliance"
     }
   ],
   "tools": [
@@ -630,6 +630,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2022,
       "incident_id": "INC-031"
+    },
+    {
+      "name": "Hugging Face model card supply chain manipulation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-038"
+    },
+    {
+      "name": "NYT v OpenAI — copyright training data ruling implications",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-039"
     }
   ],
   "crossrefs": {

@@ -761,6 +761,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-009"
+    },
+    {
+      "name": "Hugging Face model card supply chain manipulation",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-038"
     }
   ],
   "crossrefs": {

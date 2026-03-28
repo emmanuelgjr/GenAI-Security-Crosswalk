@@ -685,7 +685,20 @@
       "url": "https://www.alation.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-032"
+    },
+    {
+      "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-035"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI03",

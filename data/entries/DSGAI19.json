@@ -550,11 +550,11 @@
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — third-party data governance",
+      "control_id": "Art. 45",
+      "control_name": "Information Sharing — third-party threat intelligence",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include third-party data risk in ICT risk management; define policies for external data sourcing and processing"
+      "notes": "Participate in information sharing arrangements for third-party AI data risks; share threat intelligence on data provider compromises"
     }
   ],
   "tools": [

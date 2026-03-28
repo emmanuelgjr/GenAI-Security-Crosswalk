@@ -558,19 +558,19 @@
     },
     {
       "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — lineage metadata preservation",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include lineage metadata in backup policies; ensure lineage records can be restored alongside data and models"
+    },
+    {
+      "framework": "DORA",
       "control_id": "Art. 5–7",
       "control_name": "ICT Risk Management — lineage governance",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Include data lineage requirements in ICT risk management; define minimum lineage completeness per data sensitivity"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 10",
-      "control_name": "Detection — lineage gap detection",
-      "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Monitor for data lineage gaps; alert on undocumented transformations or broken lineage chains"
     }
   ],
   "tools": [

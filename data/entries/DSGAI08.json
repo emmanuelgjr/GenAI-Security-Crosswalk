@@ -656,7 +656,20 @@
       "url": "https://aws.amazon.com/macie/"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "DeepSeek AI database exposure — 1M+ chat logs publicly accessible",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-032"
+    },
+    {
+      "name": "Cursor AI code agent leaking repository secrets via context window",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-034"
+    }
+  ],
   "crossrefs": {
     "dsgai_2026": [
       "DSGAI07"

@@ -711,7 +711,14 @@
       "url": "https://github.com/Azure/PyRIT"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-041"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM09",

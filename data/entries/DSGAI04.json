@@ -620,19 +620,19 @@
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — data and model provider oversight",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — poisoning detection testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include AI data and model providers in third-party risk management; assess poisoning risk and require integrity controls"
+      "notes": "Include data poisoning scenarios in resilience testing; test detection capabilities and recovery procedures for poisoned data and model artefacts"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — AI artefact inventory",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies — model and data restoration",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Register all AI training data, model weights, and pipeline artefacts in ICT asset inventory with provenance documentation"
+      "notes": "Maintain versioned backups of training data and model weights with integrity verification; enable rollback to pre-poisoning states"
     },
     {
       "framework": "DORA",
@@ -640,7 +640,7 @@
       "control_name": "Learning and Evolving — poisoning post-mortem",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Conduct post-incident analysis for data poisoning events; trace poisoned content and update controls"
+      "notes": "Conduct post-incident analysis for data poisoning events; trace poisoned content and update protection controls"
     }
   ],
   "tools": [
