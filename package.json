@@ -1,6 +1,6 @@
 {
   "name": "@owasp/genai-crosswalk",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "OWASP GenAI Security Crosswalk — mapping LLM Top 10, Agentic Top 10, and DSGAI 2026 to 17 industry frameworks",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -9,7 +9,54 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-All items through v1.7.0 complete.
+Next: custom domain (crosswalk.owasp.org), npm publish, vendor integration packs.
+
+---
+
+## [1.8.0] — 2026-03-28
+
+### Added
+
+#### GitHub Pages web application
+
+Live at **https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/**
+
+6-page SPA with hash-based routing:
+- **Landing** — hero, stats (computed from data), framework grid, source list breakdown
+- **Explorer** — search/filter 41 entries, detail modals with sortable mapping tables
+- **Frameworks** — interactive 41×23 coverage matrix with click-through
+- **Incidents** — 31 incidents filterable by severity, category, year, MAESTRO layer
+- **Score** — evidence-based coverage scoring dashboard (see below)
+- **About** — creator bio, project timeline, contributing guide
+
+Dark mode (system preference + toggle), responsive, zero dependencies, keyboard accessible.
+
+#### Evidence-based scoring system
+
+Three validation tiers:
+- **Self-Assessed** (grey) — framework checkboxes only
+- **Partially Validated** (amber) — some tool outputs uploaded
+- **Tool-Validated** (green) — 20+ entries validated by evidence
+
+Evidence upload accepts JSON from:
+- `compliance-report.js --format json` → framework control validation
+- Garak results → LLM01/02/07/09 test evidence
+- PyRIT results → LLM01/DSGAI04/ASI01 test evidence
+- LAAF results → S1–S6 stage validation mapped to 7 OWASP entries
+
+Score measures control **depth** (not binary presence): severity-weighted average of controls covered / total controls per entry.
+
+#### Viral sharing features
+
+- Canvas-rendered 1200×630 PNG score card for LinkedIn/Twitter
+- Share on LinkedIn / Share on X with pre-filled text + hashtags
+- Embeddable SVG badge with Markdown/HTML copy-paste code
+- Deep-linking: `#/explorer/LLM01` and `#/incidents/INC-001` open detail modals directly
+- Open Graph + Twitter Card meta tags with OG image
+- Share button on every entry and incident detail modal
+
+### Changed
+- package.json version bumped to 1.8.0
 
 ---
 
