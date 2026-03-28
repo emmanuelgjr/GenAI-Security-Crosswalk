@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenAI Security Crosswalk — Query Interface</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #f8f9fa;
+    --surface:   #ffffff;
+    --border:    #e2e6ea;
+    --text:      #1a1d23;
+    --muted:     #6c757d;
+    --accent:    #2563eb;
+    --accent-bg: #eff6ff;
+    --cr:        #dc2626; --cr-bg: #fef2f2;
+    --hi:        #ea580c; --hi-bg: #fff7ed;
+    --me:        #ca8a04; --me-bg: #fefce8;
+    --lo:        #16a34a; --lo-bg: #f0fdf4;
+    --radius:    8px;
+    --shadow:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  }
+
+  body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+  /* ── Header ── */
+  header { background: var(--accent); color: #fff; padding: 20px 24px 18px; }
+  header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; }
+  header p  { font-size: .85rem; opacity: .85; margin-top: 2px; }
+  header .meta { display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap; }
+  header .meta span { background: rgba(255,255,255,.15); border-radius: 20px; padding: 2px 10px; font-size: .78rem; }
+
+  /* ── Controls ── */
+  .controls { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; position: sticky; top: 0; z-index: 10; box-shadow: var(--shadow); }
+
+  .search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 340px; }
+  .search-wrap input { width: 100%; border: 1px solid var(--border); border-radius: var(--radius); padding: 7px 12px 7px 34px; font-size: .875rem; outline: none; transition: border-color .15s; }
+  .search-wrap input:focus { border-color: var(--accent); }
+  .search-wrap svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+
+  .pill-group { display: flex; gap: 4px; flex-wrap: wrap; }
+  .pill { border: 1px solid var(--border); background: var(--surface); color: var(--muted); border-radius: 20px; padding: 4px 12px; font-size: .8rem; cursor: pointer; transition: all .15s; white-space: nowrap; }
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+  .pill.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .pill.cr.active { background: var(--cr); border-color: var(--cr); }
+  .pill.hi.active { background: var(--hi); border-color: var(--hi); }
+  .pill.me.active { background: var(--me); border-color: var(--me); }
+
+  select { border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 28px 6px 10px; font-size: .8rem; color: var(--text); background: var(--surface); cursor: pointer; outline: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; }
+  select:focus { border-color: var(--accent); }
+
+  .controls-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  #result-count { font-size: .8rem; color: var(--muted); white-space: nowrap; }
+
+  /* ── Main layout ── */
+  main { padding: 20px 24px; max-width: 1400px; margin: 0 auto; }
+
+  /* ── Cards ── */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: box-shadow .15s; }
+  .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+
+  .card-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+  .card-id { font-family: monospace; font-size: .8rem; font-weight: 700; background: var(--accent-bg); color: var(--accent); border-radius: 4px; padding: 2px 7px; }
+  .sev { border-radius: 4px; padding: 2px 7px; font-size: .75rem; font-weight: 600; letter-spacing: .02em; }
+  .sev.Critical { background: var(--cr-bg); color: var(--cr); }
+  .sev.High     { background: var(--hi-bg); color: var(--hi); }
+  .sev.Medium   { background: var(--me-bg); color: var(--me); }
+  .sev.Low      { background: var(--lo-bg); color: var(--lo); }
+  .source-tag { font-size: .72rem; color: var(--muted); margin-left: auto; white-space: nowrap; }
+
+  .card-body { padding: 12px 16px; }
+  .card-name { font-size: 1rem; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+
+  .stats { display: flex; gap: 12px; font-size: .78rem; color: var(--muted); flex-wrap: wrap; margin-bottom: 8px; }
+  .stats span::before { content: ''; }
+
+  .xrefs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .xref-chip { font-size: .72rem; font-family: monospace; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; color: var(--muted); cursor: pointer; transition: all .1s; }
+  .xref-chip:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+
+  .aivss-score { font-size: .78rem; background: #f0fdf4; color: #166534; border-radius: 4px; padding: 2px 8px; display: inline-block; margin-bottom: 8px; font-weight: 600; }
+
+  .card-foot { display: flex; gap: 8px; align-items: center; padding-top: 4px; }
+  .btn-expand { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 12px; font-size: .8rem; cursor: pointer; color: var(--text); transition: all .15s; text-align: center; }
+  .btn-expand:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+  .btn-json { background: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 5px 8px; font-size: .75rem; color: var(--muted); cursor: pointer; text-decoration: none; transition: all .15s; white-space: nowrap; }
+  .btn-json:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Detail panel ── */
+  .detail { display: none; border-top: 1px solid var(--border); padding: 14px 16px; background: var(--bg); }
+  .detail.open { display: block; }
+
+  .fw-group { margin-bottom: 14px; }
+  .fw-group-name { font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+  .fw-row { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; border-bottom: 1px solid var(--border); font-size: .8rem; }
+  .fw-row:last-child { border-bottom: none; }
+  .fw-ctrl-id { font-family: monospace; font-size: .75rem; color: var(--accent); white-space: nowrap; min-width: 90px; }
+  .fw-ctrl-id a { color: inherit; text-decoration: none; }
+  .fw-ctrl-id a:hover { text-decoration: underline; }
+  .fw-ctrl-name { color: var(--text); flex: 1; }
+  .fw-ctrl-note { font-size: .72rem; color: var(--muted); margin-top: 2px; }
+  .tier-badge { font-size: .68rem; border-radius: 3px; padding: 1px 5px; background: var(--border); color: var(--muted); white-space: nowrap; margin-left: auto; }
+  .tier-badge.Foundational { background: #dcfce7; color: #166534; }
+  .tier-badge.Hardening    { background: #fef9c3; color: #854d0e; }
+  .tier-badge.Advanced     { background: #fee2e2; color: #991b1b; }
+
+  .tools-section { margin-top: 12px; }
+  .tools-section h4 { font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+  .tools-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tool-chip { font-size: .77rem; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 3px 9px; }
+  .tool-chip a { color: var(--accent); text-decoration: none; }
+  .tool-chip a:hover { text-decoration: underline; }
+
+  /* ── Empty state ── */
+  .empty { text-align: center; padding: 60px 24px; color: var(--muted); }
+  .empty h3 { font-size: 1.1rem; margin-bottom: 8px; }
+
+  /* ── Loading ── */
+  .loading { text-align: center; padding: 60px; color: var(--muted); font-size: .9rem; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    header { padding: 16px; }
+    .controls { padding: 10px 16px; }
+    main { padding: 16px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>GenAI Security Crosswalk</h1>
+  <p>Query 41 vulnerability entries × 17 frameworks × 3 OWASP source lists</p>
+  <div class="meta">
+    <span id="meta-entries">— entries</span>
+    <span id="meta-mappings">— mappings</span>
+    <span id="meta-frameworks">— frameworks</span>
+    <span>v1.5.2 · CC BY-SA 4.0</span>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="search" id="search" placeholder="Search by ID, name, control, framework…" autocomplete="off">
+  </div>
+
+  <div class="pill-group" id="source-pills">
+    <button class="pill active" data-val="">All lists</button>
+    <button class="pill" data-val="LLM-Top10-2025">LLM Top 10</button>
+    <button class="pill" data-val="Agentic-Top10-2026">Agentic Top 10</button>
+    <button class="pill" data-val="DSGAI-2026">DSGAI 2026</button>
+  </div>
+
+  <div class="pill-group" id="sev-pills">
+    <button class="pill active" data-val="">All severity</button>
+    <button class="pill cr" data-val="Critical">Critical</button>
+    <button class="pill hi" data-val="High">High</button>
+    <button class="pill me" data-val="Medium">Medium</button>
+  </div>
+
+  <select id="fw-select">
+    <option value="">All frameworks</option>
+  </select>
+
+  <select id="tier-select">
+    <option value="">All tiers</option>
+    <option value="Foundational">Foundational</option>
+    <option value="Hardening">Hardening</option>
+    <option value="Advanced">Advanced</option>
+  </select>
+
+  <div class="controls-right">
+    <span id="result-count"></span>
+  </div>
+</div>
+
+<main>
+  <div id="root"><div class="loading">Loading data…</div></div>
+</main>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ── State ────────────────────────────────────────────────────────────────────
+  const state = {
+    search:   '',
+    source:   '',
+    severity: '',
+    framework:'',
+    tier:     '',
+    expanded: new Set(),
+  };
+
+  const data = window.CROSSWALK_DATA || [];
+
+  // ── Bootstrap ─────────────────────────────────────────────────────────────────
+  function init() {
+    if (!data.length) {
+      document.getElementById('root').innerHTML = '<div class="empty"><h3>No data loaded</h3><p>Run <code>node scripts/generate.js</code> to generate data.js</p></div>';
+      return;
+    }
+
+    // Populate framework dropdown
+    const frameworks = [...new Set(data.flatMap(e => e.mappings.map(m => m.framework)))].sort();
+    const fwSel = document.getElementById('fw-select');
+    frameworks.forEach(fw => {
+      const opt = document.createElement('option');
+      opt.value = fw; opt.textContent = fw;
+      fwSel.appendChild(opt);
+    });
+
+    // Meta stats
+    const totalMappings  = data.reduce((s, e) => s + e.mappings.length, 0);
+    document.getElementById('meta-entries').textContent   = `${data.length} entries`;
+    document.getElementById('meta-mappings').textContent  = `${totalMappings.toLocaleString()} mappings`;
+    document.getElementById('meta-frameworks').textContent = `${frameworks.length} frameworks`;
+
+    // Event listeners
+    document.getElementById('search').addEventListener('input', e => { state.search = e.target.value.trim().toLowerCase(); render(); });
+
+    document.getElementById('source-pills').addEventListener('click', e => {
+      const pill = e.target.closest('.pill');
+      if (!pill) return;
+      document.querySelectorAll('#source-pills .pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      state.source = pill.dataset.val;
+      render();
+    });
+
+    document.getElementById('sev-pills').addEventListener('click', e => {
+      const pill = e.target.closest('.pill');
+      if (!pill) return;
+      document.querySelectorAll('#sev-pills .pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      state.severity = pill.dataset.val;
+      render();
+    });
+
+    document.getElementById('fw-select').addEventListener('change', e => { state.framework = e.target.value; render(); });
+    document.getElementById('tier-select').addEventListener('change', e => { state.tier = e.target.value; render(); });
+
+    render();
+  }
+
+  // ── Filter ───────────────────────────────────────────────────────────────────
+  function filter(entry) {
+    if (state.source   && entry.source_list !== state.source)   return false;
+    if (state.severity && entry.severity    !== state.severity) return false;
+
+    if (state.framework) {
+      if (!entry.mappings.some(m => m.framework === state.framework)) return false;
+    }
+    if (state.tier) {
+      if (!entry.mappings.some(m => m.tier === state.tier)) return false;
+    }
+
+    if (state.search) {
+      const q = state.search;
+      const inId      = entry.id.toLowerCase().includes(q);
+      const inName    = entry.name.toLowerCase().includes(q);
+      const inMapping = entry.mappings.some(m =>
+        m.control_id.toLowerCase().includes(q) ||
+        m.control_name.toLowerCase().includes(q) ||
+        m.framework.toLowerCase().includes(q) ||
+        (m.notes || '').toLowerCase().includes(q)
+      );
+      const inTools = entry.tools.some(t => t.name.toLowerCase().includes(q));
+      if (!inId && !inName && !inMapping && !inTools) return false;
+    }
+
+    return true;
+  }
+
+  // ── Render ───────────────────────────────────────────────────────────────────
+  function render() {
+    const visible = data.filter(filter);
+    document.getElementById('result-count').textContent = `${visible.length} of ${data.length}`;
+
+    const root = document.getElementById('root');
+    if (!visible.length) {
+      root.innerHTML = '<div class="empty"><h3>No entries match</h3><p>Try adjusting your filters or search term.</p></div>';
+      return;
+    }
+
+    root.innerHTML = '<div class="grid" id="grid"></div>';
+    const grid = document.getElementById('grid');
+    visible.forEach(entry => grid.appendChild(buildCard(entry)));
+  }
+
+  // ── Card builder ─────────────────────────────────────────────────────────────
+  function buildCard(entry) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.id = entry.id;
+
+    // Visible framework list (filtered if fw filter active)
+    const shownMappings = state.framework
+      ? entry.mappings.filter(m => m.framework === state.framework)
+      : entry.mappings;
+
+    const frameworkCount = new Set(entry.mappings.map(m => m.framework)).size;
+    const allXrefs = [
+      ...(entry.crossrefs.llm_top10     || []),
+      ...(entry.crossrefs.agentic_top10 || []),
+      ...(entry.crossrefs.dsgai_2026    || []),
+    ];
+
+    const sourceLabel = {
+      'LLM-Top10-2025':    'LLM Top 10 2025',
+      'Agentic-Top10-2026':'Agentic Top 10 2026',
+      'DSGAI-2026':        'DSGAI 2026',
+    }[entry.source_list] || entry.source_list;
+
+    card.innerHTML = `
+      <div class="card-head">
+        <span class="card-id">${entry.id}</span>
+        <span class="sev ${entry.severity}">${entry.severity}</span>
+        <span class="source-tag">${sourceLabel}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${entry.name}</div>
+        <div class="stats">
+          <span>${entry.mappings.length} controls</span>
+          <span>${frameworkCount} frameworks</span>
+          ${entry.tools.length ? `<span>${entry.tools.length} tools</span>` : ''}
+          ${entry.aivss_score ? `<span>AIVSS ${entry.aivss_score}</span>` : ''}
+        </div>
+        ${allXrefs.length ? `<div class="xrefs">${allXrefs.map(x => `<span class="xref-chip" data-jump="${x}">${x}</span>`).join('')}</div>` : ''}
+        <div class="card-foot">
+          <button class="btn-expand">${state.expanded.has(entry.id) ? 'Hide controls ↑' : 'View controls ↓'}</button>
+          <a class="btn-json" href="https://raw.githubusercontent.com/emmanuelgjr/GenAI-Security-Crosswalk/main/data/entries/${entry.id}.json" target="_blank" rel="noopener">JSON ↗</a>
+        </div>
+      </div>
+      <div class="detail ${state.expanded.has(entry.id) ? 'open' : ''}">
+        ${buildDetail(entry, shownMappings)}
+      </div>`;
+
+    // Expand toggle
+    card.querySelector('.btn-expand').addEventListener('click', () => {
+      if (state.expanded.has(entry.id)) state.expanded.delete(entry.id);
+      else state.expanded.add(entry.id);
+      // Re-render just this card in place
+      const fresh = buildCard(entry);
+      card.replaceWith(fresh);
+    });
+
+    // Cross-ref chips → jump to that entry
+    card.querySelectorAll('.xref-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        state.search = chip.dataset.jump;
+        document.getElementById('search').value = chip.dataset.jump;
+        // Clear other filters
+        state.source = ''; state.severity = ''; state.framework = ''; state.tier = '';
+        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+        document.querySelector('#source-pills .pill').classList.add('active');
+        document.querySelector('#sev-pills .pill').classList.add('active');
+        document.getElementById('fw-select').value = '';
+        document.getElementById('tier-select').value = '';
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    return card;
+  }
+
+  // ── Detail panel ─────────────────────────────────────────────────────────────
+  function buildDetail(entry, shownMappings) {
+    // Group by framework
+    const byFw = {};
+    shownMappings.forEach(m => {
+      if (!byFw[m.framework]) byFw[m.framework] = [];
+      byFw[m.framework].push(m);
+    });
+
+    const fwHtml = Object.entries(byFw).map(([fw, controls]) => `
+      <div class="fw-group">
+        <div class="fw-group-name">${fw} <span style="font-weight:400;font-size:.72rem">(${controls.length})</span></div>
+        ${controls.map(c => `
+          <div class="fw-row">
+            <span class="fw-ctrl-id">${c.url ? `<a href="${c.url}" target="_blank" rel="noopener">${escHtml(c.control_id)}</a>` : escHtml(c.control_id)}</span>
+            <div class="fw-ctrl-name">
+              ${escHtml(c.control_name)}
+              ${c.notes ? `<div class="fw-ctrl-note">${escHtml(c.notes.substring(0, 140))}${c.notes.length > 140 ? '…' : ''}</div>` : ''}
+            </div>
+            <span class="tier-badge ${c.tier}">${c.tier}</span>
+          </div>`).join('')}
+      </div>`).join('');
+
+    const toolsHtml = entry.tools.length ? `
+      <div class="tools-section">
+        <h4>Tools</h4>
+        <div class="tools-list">
+          ${entry.tools.map(t => `<span class="tool-chip">${t.url ? `<a href="${t.url}" target="_blank" rel="noopener">${escHtml(t.name)}</a>` : escHtml(t.name)}<span style="color:var(--muted);font-size:.68rem"> · ${t.type}</span></span>`).join('')}
+        </div>
+      </div>` : '';
+
+    return fwHtml + toolsHtml;
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Go ────────────────────────────────────────────────────────────────────────
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>
