@@ -7,6 +7,36 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.4.0] — 2026-03-27
+
+### Added
+
+#### New mapping files (2 added)
+
+| File | Framework | Note |
+|---|---|---|
+| `agentic-top10/Agentic_SOC2.md` | SOC 2 Trust Services Criteria | Closes SOC 2 row — all three source lists now have SOC 2 coverage |
+| `agentic-top10/Agentic_PCIDSS.md` | PCI DSS v4.0 | Closes PCI DSS row — all three source lists now have PCI DSS coverage |
+
+#### README updates
+
+- Mapping file count updated: 48 — 50
+- Agentic framework mapping count updated: 16 — 18
+- Framework matrix: SOC 2 and PCI DSS now show full ✅ across all three source lists
+- Repository structure tree updated for all new files
+
+#### Totals at v1.4.0
+
+| Metric | Count |
+|---|---|
+| Source lists | 3 |
+| Frameworks | 17 |
+| Mapping files | 50 |
+| Implementation recipes | 13 |
+| Tools catalogued | 40+ |
+
+---
+
 ## [1.3.0] — 2026-03-27
 
 ### Added
