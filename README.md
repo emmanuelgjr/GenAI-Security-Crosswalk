@@ -2,12 +2,12 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.5.7-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.6.0-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
-[![Mapping Files](https://img.shields.io/badge/mapping%20files-58-brightgreen)](README.md)
-[![Frameworks](https://img.shields.io/badge/frameworks-17-orange)](README.md)
+[![Mapping Files](https://img.shields.io/badge/mapping%20files-61-brightgreen)](README.md)
+[![Frameworks](https://img.shields.io/badge/frameworks-18-orange)](README.md)
  
-> The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **17 frameworks** and **3 OWASP source lists**.
+> The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **18 frameworks** and **3 OWASP source lists**.
  
 Maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).  
 Created by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)**.
@@ -21,13 +21,13 @@ Every file answers one question: **which controls from framework X address vulne
 | | |
 |---|---|
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
-| **17** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity |
-| **58** mapping files | Every source list entry × every applicable framework |
+| **18** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC |
+| **61** mapping files | Every source list entry × every applicable framework |
 | **13** implementation recipes | Production-ready Python patterns |
 | **40+** open-source tools | Catalogued and organised by function |
 | **10** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
-| **17** compliance reports | Per-framework gap assessments auto-generated from data layer |
-| **21** documented incidents | Real-world + research incidents with MAESTRO layer attribution |
+| **18** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
+| **31** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
  
 All free. All open-source. Built for practitioners.
@@ -65,12 +65,13 @@ All free. All open-source. Built for practitioners.
 | [NIST SP 800-82 Rev 3 — OT/ICS](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf) | ✅ | ✅ | ✅ |
 | [AIUC-1](https://www.aiuc-1.com) | ✅ | ✅ | ✅ |
 | [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/) | ✅ | ✅ | ✅ |
- 
+| [NIST SP 800-218A](https://doi.org/10.6028/NIST.SP.800-218A.ipd) | ✅ | ✅ | ✅ |
+
 ---
- 
+
 ## All mapping files
- 
-### LLM Top 10 2025 — 20 framework mappings
+
+### LLM Top 10 2025 — 21 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -94,8 +95,9 @@ All free. All open-source. Built for practitioners.
 | [LLM_MAESTRO.md](llm-top10/LLM_MAESTRO.md) | MAESTRO | Seven-layer architectural threat model, layer-to-LLM mapping, 90-minute threat modeling session guide |
 | [LLM_AIUC1.md](llm-top10/LLM_AIUC1.md) | AIUC-1 | Six-domain control mapping for LLM deployments — certification readiness checklist |
 | [LLM_NHI.md](llm-top10/LLM_NHI.md) | OWASP NHI Top 10 | Credential and identity controls per LLM entry — NHI programme maturity table |
+| [LLM_SP800218A.md](llm-top10/LLM_SP800218A.md) | NIST SP 800-218A | Secure AI SDLC practices — PW/PS/RV practice mapping per LLM entry |
 
-### Agentic Top 10 2026 — 20 framework mappings
+### Agentic Top 10 2026 — 21 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -118,10 +120,11 @@ All free. All open-source. Built for practitioners.
 | [Agentic_PCIDSS.md](agentic-top10/Agentic_PCIDSS.md) | PCI DSS v4.0 | PCI audit guidance for agents with tool access to payment systems, Req 6/7/8/10/11/12 per entry |
 | [Agentic_SAMM.md](agentic-top10/Agentic_SAMM.md) | OWASP SAMM v2.0 | L1–L3 maturity scorecard for agentic AI — pre-deployment gates and programme maturity roadmap |
 | [Agentic_NISTSP80082.md](agentic-top10/Agentic_NISTSP80082.md) | NIST SP 800-82 Rev 3 | OT agent placement, SP 800-53 controls, U.S. regulatory crosswalk (NERC CIP, AWIA, CMMC) |
+| [Agentic_SP800218A.md](agentic-top10/Agentic_SP800218A.md) | NIST SP 800-218A | Secure agentic SDLC — tool access, memory integrity, multi-agent pipeline practices |
 
 > **Also in this folder:** [Agentic_CWE_CVE.md](agentic-top10/Agentic_CWE_CVE.md) — CWE root cause taxonomy, confirmed CVEs, full CWE cross-reference index.
 
-### DSGAI 2026 — 18 framework mappings
+### DSGAI 2026 — 19 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -143,6 +146,7 @@ All free. All open-source. Built for practitioners.
 | [DSGAI_NISTSP80082.md](dsgai-2026/DSGAI_NISTSP80082.md) | NIST SP 800-82 Rev 3 | OT data placement, SP 800-53 controls per DSGAI entry, NERC CIP/FISMA/CMMC crosswalk |
 | [DSGAI_AIUC1.md](dsgai-2026/DSGAI_AIUC1.md) | AIUC-1 | Domain A (Data & Privacy) covers 50%+ of DSGAI entries — certification readiness table |
 | [DSGAI_NHI.md](dsgai-2026/DSGAI_NHI.md) | OWASP NHI Top 10 | NHI as enabling condition for DSGAI risks — NHI programme maturity table for GenAI data |
+| [DSGAI_SP800218A.md](dsgai-2026/DSGAI_SP800218A.md) | NIST SP 800-218A | Secure GenAI data SDLC — training data protection, data governance, provenance practices |
 
 ### Shared resources
  
@@ -316,9 +320,30 @@ node scripts/incidents-report.js --entry LLM01        # incidents for a specific
 node scripts/incidents-report.js --layer L3           # incidents implicating Agent Frameworks
 node scripts/incidents-report.js --category real-world
 node scripts/incidents-report.js --format csv         # Excel export
+node scripts/incidents-report.js --format stix        # STIX 2.1 bundle for Sentinel/Splunk
 ```
 
 MAESTRO layer roles tracked per incident: **Origin** (where attack starts) · **Propagation** (how it spreads) · **Impact** (where harm manifests) · **Blind-spot** (where detection failed).
+
+### Enterprise export formats
+
+```bash
+# STIX 2.1 bundle — ingest into Splunk ES, Microsoft Sentinel, TAXII feeds
+node scripts/incidents-report.js --format stix
+
+# OSCAL 1.1.2 Component Definition — ingest into ServiceNow, Archer, XACTA
+node scripts/compliance-report.js --framework "EU AI Act" --format oscal
+```
+
+### Automated source monitoring
+
+```bash
+node scripts/watch.js              # check OWASP repos, arXiv, NVD, framework pages
+node scripts/watch.js --dry-run    # preview findings without opening issues
+node scripts/watch.js --watcher arxiv  # run single watcher
+```
+
+Weekly GitHub Actions cron (`.github/workflows/weekly-watch.yml`) runs all 4 watchers and opens labeled issues automatically.
 
 ---
 

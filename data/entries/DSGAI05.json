@@ -527,7 +527,14 @@
       "url": "https://github.com/pyeve/cerberus"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Meta Galactica model withdrawn after misinformation at launch",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2022,
+      "incident_id": "INC-031"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM05",

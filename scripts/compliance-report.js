@@ -8,18 +8,20 @@
  *   --format md   (default) Markdown — drop into docs, PR descriptions, audits
  *   --format csv            CSV      — open in Excel / Google Sheets
  *   --format json           JSON     — programmatic consumption / dashboards
+ *   --format oscal          OSCAL    — OSCAL 1.1.2 Component Definition JSON
  *
  * Usage:
  *   node scripts/compliance-report.js
  *   node scripts/compliance-report.js --framework "EU AI Act"
  *   node scripts/compliance-report.js --framework "ISO/IEC 42001:2023" --format csv
+ *   node scripts/compliance-report.js --framework "NIST AI RMF 1.0" --format oscal
  *   node scripts/compliance-report.js --severity Critical
  *   node scripts/compliance-report.js --out reports/
  *
  * Flags:
  *   --framework <name>   Report for one framework only (partial match, case-insensitive)
  *   --severity <level>   Filter entries: Critical | High | Medium | Low
- *   --format <fmt>       md | csv | json  (default: md)
+ *   --format <fmt>       md | csv | json | oscal  (default: md)
  *   --out <dir>          Output directory  (default: reports/)
  *   --stdout             Print to stdout instead of writing files
  *   --list-frameworks    List all available framework names and exit
@@ -56,6 +58,7 @@ const REPORT_FRAMEWORKS = [
   'AIUC-1',
   'ENISA Multilayer Framework',
   'OWASP NHI Top 10',
+  'NIST SP 800-218A',
 ];
 
 const SEVERITY_ORDER = { Critical: 0, High: 1, Medium: 2, Low: 3 };
@@ -164,6 +167,12 @@ const FW_META = {
     audience: 'Identity engineers, agentic AI teams',
     note: 'Non-Human Identity risks — API keys, service accounts, agent credentials.',
   },
+  'NIST SP 800-218A': {
+    short: 'SP 800-218A',
+    deadline: 'Initial Public Draft — final expected 2026',
+    audience: 'ML engineers, US federal contractors, secure SDLC teams',
+    note: 'Extends SSDF with AI-specific practices for secure GenAI/foundation model development.',
+  },
 };
 
 // ── Argument parsing ─────────────────────────────────────────────────────────
@@ -195,8 +204,8 @@ function parseArgs() {
     }
   }
 
-  if (!['md', 'csv', 'json'].includes(opts.format)) {
-    console.error(`Unknown format: ${opts.format}. Use md, csv, or json.`);
+  if (!['md', 'csv', 'json', 'oscal'].includes(opts.format)) {
+    console.error(`Unknown format: ${opts.format}. Use md, csv, json, or oscal.`);
     process.exit(1);
   }
 
@@ -664,6 +673,75 @@ function renderSummaryMarkdown(frameworks, allEntries, opts) {
   return lines.join('\n');
 }
 
+// ── OSCAL 1.1.2 renderer ─────────────────────────────────────────────────────
+
+const crypto = require('crypto');
+
+function renderOSCAL(fw, allEntries) {
+  const r   = buildFrameworkReport(fw, allEntries);
+  const now = new Date().toISOString();
+
+  const partyUuid = crypto.randomUUID();
+  const componentDef = {
+    'component-definition': {
+      uuid: crypto.randomUUID(),
+      metadata: {
+        title: `GenAI Security Crosswalk — ${fw} Component Definition`,
+        'last-modified': now,
+        version: '1.6.0',
+        'oscal-version': '1.1.2',
+        roles: [{ id: 'maintainer', title: 'Crosswalk Maintainer' }],
+        parties: [{
+          uuid: partyUuid,
+          type: 'organization',
+          name: 'OWASP GenAI Data Security Initiative',
+          links: [{ href: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk', rel: 'homepage' }],
+        }],
+        'responsible-parties': [{ 'role-id': 'maintainer', 'party-uuids': [partyUuid] }],
+      },
+      components: [{
+        uuid: crypto.randomUUID(),
+        type: 'software',
+        title: 'GenAI System',
+        description: `AI/ML system subject to ${fw} compliance assessment`,
+        'control-implementations': [{
+          uuid: crypto.randomUUID(),
+          source: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk',
+          description: `${fw} control mapping from GenAI Security Crosswalk`,
+          'implemented-requirements': [...r.controls.values()].flatMap(ctrl =>
+            ctrl.entries.map(entry => ({
+              uuid: crypto.randomUUID(),
+              'control-id': ctrl.control_id,
+              description: `${entry.id}: ${entry.name} — ${ctrl.control_name}${ctrl.notes.length ? ' | ' + ctrl.notes.join('; ') : ''}`,
+              props: [
+                { name: 'implementation-status', value: 'planned', ns: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk' },
+                { name: 'owasp-entry', value: entry.id, ns: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk' },
+                { name: 'severity', value: entry.severity, ns: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk' },
+                { name: 'source-list', value: entry.source_list, ns: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk' },
+              ],
+              links: [
+                { href: `https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/entries/${entry.id}.json`, rel: 'reference' },
+              ],
+            }))
+          ),
+        }],
+      }],
+      'back-matter': {
+        resources: r.uncovered.map(entry => ({
+          uuid: crypto.randomUUID(),
+          title: `GAP: ${entry.id} — ${entry.name} (${entry.severity})`,
+          description: `No ${fw} controls mapped for this OWASP entry. Severity: ${entry.severity}. Requires gap remediation.`,
+          props: [
+            { name: 'gap-severity', value: entry.severity, ns: 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk' },
+          ],
+        })),
+      },
+    },
+  };
+
+  return JSON.stringify(componentDef, null, 2);
+}
+
 // ── File output ───────────────────────────────────────────────────────────────
 
 function slugify(name) {
@@ -678,7 +756,7 @@ function writeOutput(content, fw, format, outDir, toStdout) {
 
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-  const ext  = format === 'md' ? '.md' : format === 'csv' ? '.csv' : '.json';
+  const ext  = format === 'md' ? '.md' : format === 'csv' ? '.csv' : format === 'oscal' ? '.oscal.json' : '.json';
   const slug = fw === '__summary__' ? 'compliance-summary' : `${slugify(fw)}-gap-assessment`;
   const file = path.join(outDir, slug + ext);
 
@@ -728,6 +806,8 @@ function main() {
       content = renderMarkdown(fw, entries, opts);
     } else if (opts.format === 'csv') {
       content = renderCSV(fw, entries);
+    } else if (opts.format === 'oscal') {
+      content = renderOSCAL(fw, entries);
     } else {
       content = renderJSON(fw, entries);
     }

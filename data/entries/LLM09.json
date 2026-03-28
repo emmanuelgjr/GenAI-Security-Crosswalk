@@ -597,6 +597,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2023,
       "incident_id": "INC-014"
+    },
+    {
+      "name": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-026"
+    },
+    {
+      "name": "Meta Galactica model withdrawn after misinformation at launch",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2022,
+      "incident_id": "INC-031"
     }
   ],
   "crossrefs": {

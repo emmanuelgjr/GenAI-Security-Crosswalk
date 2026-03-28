@@ -774,6 +774,54 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2026,
         "incident_id": "INC-021"
+      },
+      {
+        "name": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-022"
+      },
+      {
+        "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-023"
+      },
+      {
+        "name": "Slack AI indirect injection via channel content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-024"
+      },
+      {
+        "name": "GitHub Copilot Workspace prompt injection via repository content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-025"
+      },
+      {
+        "name": "MathPrompt: symbolic mathematics jailbreak attack",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-027"
+      },
+      {
+        "name": "Many-shot jailbreaking (Anthropic research)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-028"
+      },
+      {
+        "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-029"
+      },
+      {
+        "name": "Skeleton Key: direct system prompt override (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-030"
       }
     ],
     "crossrefs": {
@@ -1484,6 +1532,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-008"
+      },
+      {
+        "name": "Slack AI indirect injection via channel content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-024"
       }
     ],
     "crossrefs": {
@@ -2820,7 +2874,14 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/leondz/garak"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Many-shot jailbreaking (Anthropic research)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-028"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI06"
@@ -3439,7 +3500,14 @@ window.CROSSWALK_DATA = [
         "url": "https://semgrep.dev"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "GitHub Copilot Workspace prompt injection via repository content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-025"
+      }
+    ],
     "crossrefs": {
       "agentic_top10": [
         "ASI02",
@@ -4124,6 +4192,42 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2026,
         "incident_id": "INC-021"
+      },
+      {
+        "name": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-026"
+      },
+      {
+        "name": "MathPrompt: symbolic mathematics jailbreak attack",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-027"
+      },
+      {
+        "name": "Many-shot jailbreaking (Anthropic research)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-028"
+      },
+      {
+        "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-029"
+      },
+      {
+        "name": "Skeleton Key: direct system prompt override (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-030"
+      },
+      {
+        "name": "Meta Galactica model withdrawn after misinformation at launch",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2022,
+        "incident_id": "INC-031"
       }
     ],
     "crossrefs": {
@@ -4747,6 +4851,24 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2026,
         "incident_id": "INC-021"
+      },
+      {
+        "name": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-022"
+      },
+      {
+        "name": "GitHub Copilot Workspace prompt injection via repository content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-025"
+      },
+      {
+        "name": "Skeleton Key: direct system prompt override (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-030"
       }
     ],
     "crossrefs": {
@@ -5977,6 +6099,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-014"
+      },
+      {
+        "name": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-026"
+      },
+      {
+        "name": "Meta Galactica model withdrawn after misinformation at launch",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2022,
+        "incident_id": "INC-031"
       }
     ],
     "crossrefs": {
@@ -6610,6 +6744,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-017"
+      },
+      {
+        "name": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-026"
       }
     ],
     "crossrefs": {
@@ -7366,6 +7506,42 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2026,
         "incident_id": "INC-021"
+      },
+      {
+        "name": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-022"
+      },
+      {
+        "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-023"
+      },
+      {
+        "name": "Slack AI indirect injection via channel content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-024"
+      },
+      {
+        "name": "MathPrompt: symbolic mathematics jailbreak attack",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-027"
+      },
+      {
+        "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-029"
+      },
+      {
+        "name": "Skeleton Key: direct system prompt override (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-030"
       }
     ],
     "crossrefs": {
@@ -8070,6 +8246,24 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2026,
         "incident_id": "INC-021"
+      },
+      {
+        "name": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-022"
+      },
+      {
+        "name": "Slack AI indirect injection via channel content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-024"
+      },
+      {
+        "name": "GitHub Copilot Workspace prompt injection via repository content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-025"
       }
     ],
     "crossrefs": {
@@ -10762,6 +10956,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2026,
         "incident_id": "INC-021"
+      },
+      {
+        "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-023"
+      },
+      {
+        "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-029"
       }
     ],
     "crossrefs": {
@@ -11403,6 +11609,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-020"
+      },
+      {
+        "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-023"
       }
     ],
     "crossrefs": {
@@ -12052,6 +12264,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-020"
+      },
+      {
+        "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-023"
       }
     ],
     "crossrefs": {
@@ -14004,6 +14222,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-018"
+      },
+      {
+        "name": "Slack AI indirect injection via channel content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-024"
+      },
+      {
+        "name": "GitHub Copilot Workspace prompt injection via repository content",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-025"
       }
     ],
     "crossrefs": {
@@ -15823,6 +16053,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2026,
         "incident_id": "INC-021"
+      },
+      {
+        "name": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2023,
+        "incident_id": "INC-022"
+      },
+      {
+        "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-023"
       }
     ],
     "crossrefs": {
@@ -16374,7 +16616,14 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/pyeve/cerberus"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Meta Galactica model withdrawn after misinformation at launch",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2022,
+        "incident_id": "INC-031"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM05",
@@ -18647,6 +18896,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-015"
+      },
+      {
+        "name": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-026"
       }
     ],
     "crossrefs": {
@@ -23090,7 +23345,14 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/Netflix/chaosmonkey"
       }
     ],
-    "incidents": [],
+    "incidents": [
+      {
+        "name": "Meta Galactica model withdrawn after misinformation at launch",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2022,
+        "incident_id": "INC-031"
+      }
+    ],
     "crossrefs": {
       "llm_top10": [
         "LLM10",

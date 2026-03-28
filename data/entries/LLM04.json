@@ -637,7 +637,14 @@
       "url": "https://github.com/leondz/garak"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Many-shot jailbreaking (Anthropic research)",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-028"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI06"

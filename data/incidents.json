@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "generated": "2026-03-28",
   "description": "Real-world and research-demonstrated AI security incidents, mapped to OWASP GenAI entries and MAESTRO architectural layers. Maintained as part of the GenAI Security Crosswalk.",
   "incidents": [
@@ -619,6 +619,308 @@
         { "title": "LAAF v2.0 — Logic-layer Automated Attack Framework", "url": "https://github.com/qorvexconsulting1/laaf-V2.0", "type": "advisory" }
       ],
       "tags": ["lpci", "laaf", "memory-persistence", "layered-encoding", "semantic-reframing", "multi-stage", "agentic", "psb-algorithm", "empirical"]
+    },
+    {
+      "id": "INC-022",
+      "title": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+      "date": "2023-05",
+      "year": 2023,
+      "category": "research-demonstrated",
+      "description": "Greshake et al. published the foundational paper on indirect prompt injection attacks against LLM-integrated applications. The paper demonstrated that adversarial instructions embedded in third-party content retrieved by an LLM — web pages, documents, emails — can hijack the model's actions without the user's knowledge. Experiments covered Bing Chat (GPT-4-based) being manipulated via injected web content to perform phishing, exfiltration, and impersonation. The paper established the attack class that underlies all subsequent indirect injection incidents (INC-007, INC-010, INC-024) and coined the term \"indirect prompt injection.\"",
+      "owasp_entries": ["LLM01", "ASI01", "ASI02", "DSGAI04", "LLM07"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Adversarial content in retrieved data — third-party web pages and documents used as injection vector" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Agent executes injected instruction from retrieved content without content trust boundary" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Model alignment bypassed by authority framing in retrieved content" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No retrieval content validation in eval pipelines — injected instructions not detected before execution" }
+      ],
+      "attack_vector": "Adversarial instructions embedded in third-party content (web pages, documents) retrieved by LLM-integrated application — model treats retrieved content as trusted instructions",
+      "affected": "LLM-integrated applications with retrieval capabilities — demonstrated on Bing Chat (GPT-4); applicable to all RAG and web-browsing agents",
+      "impact": "Establishes indirect prompt injection as a distinct attack class; demonstrated phishing credential harvesting, data exfiltration, and persona impersonation via injected web content; foundational to all subsequent retrieval-based injection research",
+      "severity": "Critical",
+      "mitigations": [
+        "Strict separation between system instructions and retrieved/user content at prompt construction",
+        "Content sanitisation for retrieved documents before inclusion in context",
+        "Privilege separation: retrieval agent cannot execute actions without explicit user confirmation",
+        "Output validation: flag instruction-like patterns in LLM responses before execution"
+      ],
+      "references": [
+        { "title": "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injections — Greshake et al. (2023)", "url": "https://arxiv.org/abs/2302.12173", "type": "research" }
+      ],
+      "tags": ["indirect-injection", "retrieval", "bing-chat", "foundational", "phishing", "exfiltration"]
+    },
+    {
+      "id": "INC-023",
+      "title": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "date": "2024-03",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Nassi et al. (Cornell Tech, Technion, Intuit) demonstrated the first generative AI worm capable of self-replicating across multi-agent systems. Named \"Morris II\" after the 1988 Morris worm, the attack embeds adversarial self-replicating prompts in emails processed by AI email assistants (GenAI-powered). When the assistant reads the poisoned email, the injected prompt causes it to (a) exfiltrate contact data, (b) forward the worm to all contacts in the address book, and (c) store the adversarial prompt in the AI's memory/RAG store for future replication. Demonstrated on ChatGPT-4 and Gemini Pro. The attack exploits the multi-agent communication layer — no user interaction required after initial infection.",
+      "owasp_entries": ["ASI07", "ASI08", "ASI06", "LLM01", "DSGAI04", "ASI01"],
+      "maestro_layers": [
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "origin", "notes": "Agent-to-agent communication exploited for worm propagation — inter-agent messages treated as trusted" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Agent framework executes injected instructions without validation at A2A boundary" },
+        { "layer": "L2", "label": "Data Operations", "role": "propagation", "notes": "Memory/RAG stores worm payload for persistence — enables reinfection after initial remediation" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No anomaly detection on inter-agent message content or volume" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No rate limiting or quarantine on AI-generated outbound actions" }
+      ],
+      "attack_vector": "Self-replicating adversarial prompt embedded in email content — GenAI email assistant reads poison email, exfiltrates data, and autonomously forwards worm to all contacts via agent tool calls",
+      "affected": "GenAI-powered email assistants with contact access and send capabilities — demonstrated on ChatGPT-4 and Gemini Pro; applicable to any agentic system with memory and outbound communication tools",
+      "impact": "First demonstration of AI worm self-replication across agent ecosystem; establishes multi-agent cascade as a critical attack surface; cross-agent memory poisoning enables persistent reinfection even after initial remediation",
+      "severity": "Critical",
+      "mitigations": [
+        "Human approval required before any outbound agent action (email send, contact access)",
+        "Input validation and sanitisation for all inter-agent messages",
+        "Rate limiting on agent-initiated outbound actions",
+        "Immutable audit log of all agent communications with anomaly detection",
+        "Memory content integrity checks — validate stored content against trust policy before execution",
+        "Sandboxed agent execution with explicit permission grant per action"
+      ],
+      "references": [
+        { "title": "ComPromptMized: Unleashing Zero-click Worms that Target GenAI-Powered Applications — Nassi et al. (2024)", "url": "https://arxiv.org/abs/2403.02817", "type": "research" },
+        { "title": "Morris II AI Worm — Wired coverage", "url": "https://www.wired.com/story/here-come-the-ai-worms/", "type": "news" }
+      ],
+      "tags": ["ai-worm", "self-replicating", "multi-agent", "email-assistant", "morris-ii", "memory-poisoning", "cascade"]
+    },
+    {
+      "id": "INC-024",
+      "title": "Slack AI indirect injection via channel content",
+      "date": "2024-08",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Security researcher PromptArmor (August 2024) demonstrated that Slack AI's summarisation feature — which retrieves and summarises channel messages — could be exploited via indirect prompt injection. An attacker posts a message in any public or shared Slack channel containing adversarial instructions. When a target user asks Slack AI to summarise the channel, the AI reads the attacker's message and follows the injected instructions, which can include exfiltrating private data from other channels the user has access to, or returning phishing links as part of the summary. Slack confirmed the vulnerability and issued a fix, but the incident established that production SaaS AI summarisation features are vulnerable to indirect injection via user-generated content.",
+      "owasp_entries": ["LLM01", "ASI01", "DSGAI01", "LLM02", "ASI02"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Adversarial instruction in retrieved channel content — user-generated content used as injection vector" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "AI assistant executes instruction from retrieved content without content trust boundary" },
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "impact", "notes": "Cross-workspace data exfiltration via agent capabilities — pivot from one channel to private channels" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No validation of retrieved content before AI processing" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No alert on AI accessing channels outside summarisation scope" }
+      ],
+      "attack_vector": "Adversarial instructions posted to Slack channel — Slack AI summarisation feature retrieves channel content including injected instructions, which the model executes (exfiltration, phishing link injection)",
+      "affected": "Slack AI summarisation feature — all Slack workspaces with Slack AI enabled; attack vector is any public or shared channel the target user's AI can access",
+      "impact": "Demonstrated cross-channel data exfiltration via AI summarisation in production SaaS; attacker in one channel can pivot to access data from private channels via the victim's AI context; Slack confirmed and patched",
+      "severity": "Critical",
+      "mitigations": [
+        "Strict scoping: AI summarisation must only access the explicitly requested channel, not cross-reference others",
+        "Retrieved content treated as untrusted data — never as instructions",
+        "Output review: detect instruction-like patterns or URLs in AI summaries before display",
+        "Audit log of all channels accessed per AI summarisation request"
+      ],
+      "references": [
+        { "title": "Slack AI Indirect Prompt Injection — PromptArmor research (2024)", "url": "https://promptarmor.substack.com/p/data-exfiltration-from-slack-ai-via", "type": "advisory" },
+        { "title": "Slack AI vulnerability confirmed — The Register (2024)", "url": "https://www.theregister.com/2024/08/21/slack_ai_prompt_injection/", "type": "news" }
+      ],
+      "tags": ["slack-ai", "indirect-injection", "saas", "summarisation", "exfiltration", "production"]
+    },
+    {
+      "id": "INC-025",
+      "title": "GitHub Copilot Workspace prompt injection via repository content",
+      "date": "2024-05",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Security researchers demonstrated prompt injection attacks against GitHub Copilot's workspace and chat features via malicious content in repository files. An attacker contributes a file (README.md, a code comment, or a markdown doc) to a repository containing adversarial instructions. When a developer uses Copilot Chat or Copilot Workspace on that repository — asking it to explain code, suggest changes, or generate a PR — Copilot reads the file as context and executes the injected instructions. Demonstrated impacts include: exfiltrating repository secrets referenced in the context window, generating malicious code as a \"suggestion,\" and misleading developers about code functionality. The attack is zero-interaction for the attacker — it triggers on normal developer Copilot usage.",
+      "owasp_entries": ["LLM01", "LLM07", "ASI02", "LLM05", "DSGAI01"],
+      "maestro_layers": [
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "Adversarial content in repository files retrieved as AI context — repository treated as trusted data source" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Copilot executes instructions from repository content without content trust boundary" },
+        { "layer": "L1", "label": "Foundation Models", "role": "impact", "notes": "Model treats inline instructions as authoritative — cannot distinguish code context from adversarial directives" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No detection of instruction-like patterns in retrieved code context" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "No content validation at IDE/Copilot integration layer before context injection" }
+      ],
+      "attack_vector": "Adversarial instructions embedded in repository files (README, comments, markdown) — retrieved as Copilot context and executed as model instructions during normal developer AI-assisted coding workflow",
+      "affected": "GitHub Copilot Chat and Copilot Workspace — any developer using AI features on a repository containing adversarial content; particularly high risk for open-source contributors reviewing third-party repos",
+      "impact": "Secret exfiltration from developer context window; malicious code generation disguised as legitimate suggestions; developer trust in AI coding assistant undermined; supply chain risk via poisoned open-source repository content",
+      "severity": "High",
+      "mitigations": [
+        "Repository content treated as untrusted data in AI context — never as system instructions",
+        "Copilot should not reference secrets or sensitive file contents outside explicitly requested scope",
+        "Developer education: treat AI suggestions on unfamiliar repositories with extra scrutiny",
+        "Audit logging of files accessed per Copilot session"
+      ],
+      "references": [
+        { "title": "Prompt Injection via GitHub Copilot Workspace — security research (2024)", "url": "https://github.com/advisories", "type": "advisory" },
+        { "title": "GitHub Copilot prompt injection research findings (2024)", "url": "https://www.invicti.com/blog/web-security/prompt-injection-attacks/", "type": "research" }
+      ],
+      "tags": ["github-copilot", "code-assistant", "indirect-injection", "repository-poisoning", "developer-tools", "supply-chain"]
+    },
+    {
+      "id": "INC-026",
+      "title": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+      "date": "2024-02",
+      "year": 2024,
+      "category": "real-world",
+      "description": "A finance employee at a Hong Kong-based multinational company was tricked into transferring HKD 200 million (~USD 25.6 million) after attending a video conference call in which all other participants — including the company's CFO and other executives — were AI-generated deepfakes. The employee initially suspected a phishing email but was reassured by the apparent live video conference with known colleagues. Investigators determined the attackers used publicly available video and audio of the executives to generate real-time deepfake avatars and voice synthesis. The Hong Kong police confirmed the case in February 2024 as the largest known AI deepfake fraud case. The employee followed the CFO's instructions to make 15 transfers to five bank accounts.",
+      "owasp_entries": ["LLM09", "LLM06", "DSGAI09", "LLM10"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Foundation model used for audio/video synthesis — multimodal generation capability weaponised for real-time impersonation" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Deployment in real-time video conferencing infrastructure bypassed human identity verification" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No deepfake detection or cryptographic identity verification at organisational level" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "No anomaly detection on unusual financial request via video call channel" }
+      ],
+      "attack_vector": "Real-time AI-generated deepfake video and audio of corporate executives — victim deceived during live video conference call into executing 15 wire transfers totalling HKD 200M",
+      "affected": "Multinational company finance employee, Hong Kong office — HKD 200 million (~USD 25.6M) transferred to attacker-controlled accounts",
+      "impact": "Largest confirmed AI deepfake financial fraud; USD 25.6M loss; demonstrates that real-time multimodal AI synthesis has reached a level where live video identity verification is no longer reliable without cryptographic controls",
+      "severity": "Critical",
+      "mitigations": [
+        "Out-of-band verification for financial transfers above threshold — phone callback to known number, not video call",
+        "Cryptographic identity verification for high-stakes video communications (e.g. signed video calls)",
+        "Multi-person approval required for large wire transfers, not single-employee authorization",
+        "Employee training: treat video conference requests for unusual financial actions with heightened suspicion",
+        "Deepfake detection tools at video conferencing infrastructure level"
+      ],
+      "references": [
+        { "title": "Deepfake CFO tricks Hong Kong company into $25M transfer — CNN (2024)", "url": "https://edition.cnn.com/2024/02/04/asia/deepfake-cfo-hong-kong-scam-intl-hnk/index.html", "type": "news" },
+        { "title": "Hong Kong police confirm HKD 200M deepfake video call fraud — SCMP (2024)", "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3250851/hong-kong-police-deepfake-scammer-uses-ai-video-conference-steal-hk200-million", "type": "news" }
+      ],
+      "tags": ["deepfake", "voice-cloning", "financial-fraud", "social-engineering", "multimodal", "real-world", "cfo-fraud"]
+    },
+    {
+      "id": "INC-027",
+      "title": "MathPrompt: symbolic mathematics jailbreak attack",
+      "date": "2024-10",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Researchers from UCSB demonstrated MathPrompt — a jailbreak technique that encodes harmful prompts into symbolic mathematics (set theory notation, abstract algebra, graph theory) before submitting to LLMs. The technique exploits the fact that LLMs have strong mathematical reasoning capabilities but safety training is almost entirely focused on natural language. Harmful requests encoded as mathematical problems bypass content filters with 73.6% success rate across 8 frontier models (GPT-4o, Claude 3.5, Gemini 1.5, Llama 3, Mistral, etc.). The attack requires no special access — it uses the standard chat API. This is a direct instance of the Encoding category (E-class) in the LAAF technique taxonomy.",
+      "owasp_entries": ["LLM01", "LLM06", "ASI01"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Safety alignment training insufficient for symbolic/mathematical encoding — model alignment gap between reasoning capability and safety coverage" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Content filtering operates on natural language patterns — blind to mathematical encoding of harmful requests" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "No decode-then-evaluate step at deployment layer — safety checks applied to encoded form only" }
+      ],
+      "attack_vector": "Harmful natural-language requests encoded as symbolic mathematics problems (set theory, abstract algebra, graph theory) — bypasses safety filters trained on natural language; 73.6% average bypass rate across 8 frontier models",
+      "affected": "GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, Llama 3, Mistral Large, and 3 others — all tested via standard chat-completion API; attack is model-agnostic",
+      "impact": "73.6% harmful content bypass rate across frontier models; demonstrates a systematic gap between mathematical reasoning capability and safety alignment coverage; attack is trivially automatable and requires no special access",
+      "severity": "Critical",
+      "mitigations": [
+        "Content safety evaluation must operate on decoded/interpreted representations, not raw text patterns",
+        "Mathematical notation processing should trigger additional safety evaluation",
+        "Adversarial encoding test suite (including MathPrompt, Base64, hex, ROT13) in red-team evaluation profile",
+        "Add MathPrompt test cases to LAAF E-category technique taxonomy"
+      ],
+      "references": [
+        { "title": "MathPrompt: Exploiting LLMs' Mathematical Capabilities to Bypass Safety Measures — UCSB (2024)", "url": "https://arxiv.org/abs/2410.15262", "type": "research" }
+      ],
+      "tags": ["mathprompt", "jailbreak", "symbolic-encoding", "safety-bypass", "mathematics", "encoding-attack", "frontier-models"]
+    },
+    {
+      "id": "INC-028",
+      "title": "Many-shot jailbreaking (Anthropic research)",
+      "date": "2024-04",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Anthropic researchers published research demonstrating \"many-shot jailbreaking\" — a context-length attack where a large number of faux-dialogue examples are prepended to a harmful request in the prompt. With sufficient in-context examples (100–256 shots) of the model \"complying\" with harmful requests (fabricated dialogue), frontier models including Claude, GPT-4, and Llama begin to follow the behavioral pattern established in context, overriding their safety training. The attack exploits the in-context learning capability of long-context models — the same feature that makes them flexible also makes them susceptible to behavioral override via example accumulation. Effectiveness increases with context window size, making more capable models more vulnerable.",
+      "owasp_entries": ["LLM01", "LLM06", "LLM04"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "In-context learning mechanism exploited to override safety alignment — intrinsic model capability weaponised" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "No per-request monitoring for anomalously long prompts with instruction-like patterns" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Evaluation benchmarks do not test for many-shot behavioral drift across long context windows" }
+      ],
+      "attack_vector": "100–256 fabricated in-context examples of model complying with harmful requests prepended to target harmful prompt — exploits in-context learning to override safety training; effectiveness scales with context window size",
+      "affected": "Claude (all sizes), GPT-4, Llama 2/3 — all long-context frontier models; attack efficacy increases with context length, making more capable models more susceptible",
+      "impact": "Safety training override via in-context example accumulation; attack scales automatically with model capability improvements; establishes that longer context windows create proportionally larger attack surface for behavioral manipulation",
+      "severity": "High",
+      "mitigations": [
+        "Input length monitoring — flag and review unusually long prompts",
+        "Sliding context evaluation: assess safety risk of final N tokens regardless of total prompt length",
+        "In-context example validation: detect fabricated compliance dialogues in long prompts",
+        "Context window limits appropriate to deployment use case — do not expose maximum context to untrusted inputs"
+      ],
+      "references": [
+        { "title": "Many-shot jailbreaking — Anthropic (2024)", "url": "https://www.anthropic.com/research/many-shot-jailbreaking", "type": "research" }
+      ],
+      "tags": ["many-shot", "jailbreak", "in-context-learning", "long-context", "safety-bypass", "behavioral-override", "anthropic"]
+    },
+    {
+      "id": "INC-029",
+      "title": "Crescendo: multi-turn escalation attack (Microsoft)",
+      "date": "2024-05",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Microsoft researchers published the Crescendo attack — a multi-turn conversational jailbreak where the attacker gradually escalates requests across many turns, with each turn appearing benign or only slightly more sensitive than the previous. The model, which evaluates each turn in isolation against recent context, progressively accepts more harmful content as the conversation establishes a pattern. The attack exploits the fact that models evaluate safety based on recent conversational context, not the cumulative trajectory from session start. Crescendo was tested against GPT-4, Gemini Pro, Claude, and Copilot — achieving harmful content generation in all cases with median 7–12 turns. Unlike single-shot jailbreaks, Crescendo is conversational and does not require encoding or special formatting.",
+      "owasp_entries": ["LLM01", "LLM06", "ASI01", "ASI06"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Per-turn safety evaluation blind to cumulative conversation trajectory — safety assessed locally not globally" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "Agentic systems with multi-turn memory are more vulnerable — escalated context carries across sessions in persistent memory" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Eval benchmarks test single-turn safety, not multi-turn escalation patterns" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "No session-level behavioral analysis at deployment layer — per-request evaluation only" }
+      ],
+      "attack_vector": "Gradual multi-turn conversational escalation — each turn individually benign, cumulative trajectory bypasses safety evaluation; median 7–12 turns to harmful output generation; works on all tested frontier models without encoding or special formatting",
+      "affected": "GPT-4, Gemini Pro, Claude (all sizes), Microsoft Copilot — any LLM with multi-turn conversation; agentic deployments with persistent memory are particularly vulnerable as escalation persists across sessions",
+      "impact": "Harmful content generation across all tested frontier models; attack requires no technical skill — natural conversation; persistent memory in agentic systems amplifies risk by carrying escalated context across sessions; median 7–12 turns means attack completes within a single session",
+      "severity": "High",
+      "mitigations": [
+        "Session-level safety evaluation — analyse conversation trajectory, not just recent turns",
+        "Cumulative risk scoring across conversation history",
+        "Reset safety evaluation baseline when topic shifts significantly",
+        "Persistent memory integrity check: do not carry forward conversations that reached safety intervention thresholds",
+        "Red-team evaluation must include multi-turn escalation test cases (not just single-turn)"
+      ],
+      "references": [
+        { "title": "Crescendo: Jailbreaking Large Language Models with Sequential Harmless Requests — Microsoft (2024)", "url": "https://arxiv.org/abs/2404.01833", "type": "research" },
+        { "title": "Crescendo attack — Microsoft Research blog (2024)", "url": "https://www.microsoft.com/en-us/security/blog/2024/05/23/crescendo-ai-jailbreak-technique/", "type": "advisory" }
+      ],
+      "tags": ["crescendo", "multi-turn", "jailbreak", "escalation", "conversational", "microsoft", "session-context"]
+    },
+    {
+      "id": "INC-030",
+      "title": "Skeleton Key: direct system prompt override (Microsoft)",
+      "date": "2024-06",
+      "year": 2024,
+      "category": "research-demonstrated",
+      "description": "Microsoft researchers disclosed the Skeleton Key attack — a direct jailbreak technique where the attacker instructs the model to augment (not replace) its safety behavior by adding a new \"override mode\" framing. Unlike earlier jailbreaks that attempt to confuse or deceive the model, Skeleton Key directly asks the model to acknowledge that it can generate any content if prefixed with a warning, effectively making the model complicit in its own safety bypass. Microsoft tested Skeleton Key against GPT-3.5 Turbo, GPT-4, GPT-4o, Meta Llama3, Mistral Large, Anthropic Claude 3 Opus, and Google Gemini Pro 1.0 — all were susceptible to varying degrees. The attack requires no encoding or roleplay — it is a direct authority assertion that exploits the model's instruction-following training.",
+      "owasp_entries": ["LLM01", "LLM06", "LLM07", "ASI01"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Instruction-following training exploited — model accepts direct authority assertion to modify its own safety behavior" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "blind-spot", "notes": "System prompt override not detected at API/deployment layer — no monitoring for self-modification requests" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No monitoring for prompts that explicitly request safety behavior modification" }
+      ],
+      "attack_vector": "Direct authority assertion instructing the model to add an \"override mode\" — model acknowledges capability to generate any content when prefixed with safety warning; no encoding, roleplay, or technical obfuscation required",
+      "affected": "GPT-3.5 Turbo, GPT-4, GPT-4o, Meta Llama 3, Mistral Large, Claude 3 Opus, Gemini Pro 1.0 — all tested frontier models; attack exploits fundamental instruction-following vs. safety-training tension present in all RLHF-trained models",
+      "impact": "All tested frontier models susceptible; attack requires no technical skill; demonstrates that direct safety override requests can succeed against RLHF-trained models; challenges assumption that safety training is robust to explicit override requests",
+      "severity": "High",
+      "mitigations": [
+        "Monitor for prompts explicitly requesting safety behavior modification or override",
+        "System prompt immutability enforcement — user turns cannot modify declared safety behavior",
+        "Output review for disclaimer-prefixed harmful content patterns",
+        "Safety evaluation must include direct override request test cases"
+      ],
+      "references": [
+        { "title": "Skeleton Key: New jailbreak technique targets AI models — Microsoft (2024)", "url": "https://www.microsoft.com/en-us/security/blog/2024/06/26/mitigating-skeleton-key-a-new-type-of-generative-ai-jailbreak-technique/", "type": "advisory" },
+        { "title": "Skeleton Key jailbreak — arXiv (2024)", "url": "https://arxiv.org/abs/2402.06627", "type": "research" }
+      ],
+      "tags": ["skeleton-key", "jailbreak", "direct-override", "microsoft", "instruction-following", "rlhf", "frontier-models"]
+    },
+    {
+      "id": "INC-031",
+      "title": "Meta Galactica model withdrawn after misinformation at launch",
+      "date": "2022-11",
+      "year": 2022,
+      "category": "real-world",
+      "description": "Meta AI launched Galactica — a large language model trained on scientific literature and designed to assist with scientific writing, summarisation, and knowledge retrieval — publicly via a demo on November 15, 2022. Within 72 hours, Meta withdrew the public demo after widespread criticism from the scientific community. Researchers found that Galactica confidently generated plausible-sounding but factually incorrect scientific text, including fabricated citations, incorrect chemical formulae, and authoritative-sounding passages on controversial topics (e.g., the history of bears in space). The core failure was that the model's confident, authoritative tone conveyed false certainty — users with limited domain expertise could not distinguish accurate from fabricated content. This remains the canonical real-world example of LLM misinformation at launch in a high-stakes domain.",
+      "owasp_entries": ["LLM09", "DSGAI17", "LLM06", "DSGAI05"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Model hallucination — foundation model generates confident misinformation; training on authoritative scientific text amplified hallucination confidence" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "Pre-launch evaluation insufficient to detect misinformation rate in scientific domain" },
+        { "layer": "L4", "label": "Deployment & Infrastructure", "role": "impact", "notes": "Public demo deployment without adequate guardrails — premature release into high-stakes scientific domain" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "No content accuracy review mechanism before user-facing deployment in scientific knowledge domain" }
+      ],
+      "attack_vector": "Not adversarial — model self-generated misinformation; confident authoritative style prevented users from identifying incorrect content; training data bias toward authoritative scientific writing amplified hallucination confidence",
+      "affected": "Public users of Galactica demo — primarily researchers and students seeking scientific information; Meta AI reputational impact; broader public trust in AI scientific tools",
+      "impact": "Model withdrawn within 72 hours of launch; scientific community backlash established reputational precedent for AI misinformation risk; demonstrates that domain-specialist training does not prevent hallucination and may amplify misinformation confidence; canonical case study for LLM09",
+      "severity": "High",
+      "mitigations": [
+        "Calibrated uncertainty expression — model must express confidence proportional to actual accuracy",
+        "Citation verification: generated citations must be validated against real sources before display",
+        "Domain expert red-team evaluation before public release",
+        "Output flagging for scientific claims lacking grounding in retrieved sources",
+        "Human review gates for high-stakes knowledge domain deployments"
+      ],
+      "references": [
+        { "title": "Meta's Galactica AI model pulled after researchers complain it produces misinformation — The Guardian (2022)", "url": "https://www.theguardian.com/technology/2022/nov/17/meta-galactica-large-language-model-ai-research-tool-pulled-racist-tropes-false-information", "type": "news" },
+        { "title": "Galactica: A Large Language Model for Science — Meta AI (2022)", "url": "https://arxiv.org/abs/2211.09085", "type": "research" }
+      ],
+      "tags": ["galactica", "misinformation", "hallucination", "scientific-content", "meta", "real-world", "premature-deployment"]
     }
   ]
 }

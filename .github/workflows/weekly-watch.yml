@@ -1,0 +1,92 @@
+name: Weekly Source Watch
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 09:00 UTC
+  workflow_dispatch:
+    inputs:
+      watcher:
+        description: 'Run a specific watcher (owasp|arxiv|nvd|frameworks) or leave blank for all'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Dry run (no issues opened)'
+        type: boolean
+        default: false
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  watch:
+    name: Monitor external sources
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore watch state
+        uses: actions/cache@v4
+        with:
+          path: data/.watch-state.json
+          key: watch-state-${{ github.run_id }}
+          restore-keys: |
+            watch-state-
+
+      - name: Run source watchers
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          FLAGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then FLAGS="$FLAGS --dry-run"; fi
+          if [ -n "${{ inputs.watcher }}" ]; then FLAGS="$FLAGS --watcher ${{ inputs.watcher }}"; fi
+          node scripts/watch.js $FLAGS
+
+  monthly-regenerate:
+    name: Monthly report regeneration
+    if: github.event.schedule == '0 9 * * 1' && (github.event.schedule != '' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate data layer and reports
+        run: |
+          node scripts/generate.js
+          node scripts/compliance-report.js
+          node scripts/incidents-report.js
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create PR with updated reports
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="auto/monthly-regenerate-$(date +%Y%m%d)"
+          git checkout -b "$BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: monthly regeneration of data layer and compliance reports"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore: monthly report regeneration ($(date +%Y-%m-%d))" \
+            --body "Automated monthly regeneration of data/entries/, reports/, and docs/data.js." \
+            --label automated-watch

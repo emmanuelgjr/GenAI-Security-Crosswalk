@@ -641,6 +641,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2026,
       "incident_id": "INC-021"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-023"
+    },
+    {
+      "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-029"
     }
   ],
   "crossrefs": {

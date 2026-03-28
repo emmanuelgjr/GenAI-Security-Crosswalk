@@ -13,6 +13,7 @@
  *   node scripts/incidents-report.js --category real-world
  *   node scripts/incidents-report.js --maestro-summary
  *   node scripts/incidents-report.js --format csv
+ *   node scripts/incidents-report.js --format stix
  *   node scripts/incidents-report.js --stdout
  *
  * Flags:
@@ -22,7 +23,7 @@
  *   --category <cat>  real-world | research-demonstrated | red-team
  *   --year  <YYYY>    Filter by year
  *   --maestro-summary Print MAESTRO layer attribution summary only
- *   --format <fmt>    md | csv | json  (default: md)
+ *   --format <fmt>    md | csv | json | stix  (default: md)
  *   --out   <dir>     Output directory (default: reports/)
  *   --stdout          Print to stdout
  * ──────────────────────────────────────────────────────────────────────────
@@ -30,6 +31,7 @@
 
 'use strict';
 
+const crypto = require('crypto');
 const fs   = require('fs');
 const path = require('path');
 
@@ -334,6 +336,102 @@ function renderJSON(db, incidents) {
   }, null, 2);
 }
 
+// ── STIX 2.1 renderer ─────────────────────────────────────────────────────────
+
+function renderSTIX(db, incidents) {
+  // Produce a STIX 2.1 bundle
+  // Use crypto.randomUUID() for UUIDs (Node 18 built-in)
+  // Bundle contains:
+  //   - One "report" object per incident
+  //   - One "attack-pattern" object per unique OWASP entry referenced
+  //   - One "relationship" (uses) between each report and its attack-patterns
+
+  const bundle = {
+    type: "bundle",
+    id: `bundle--${crypto.randomUUID()}`,
+    objects: []
+  };
+
+  // Build attack-pattern objects for each unique OWASP entry
+  const owaspEntries = new Set(incidents.flatMap(i => i.owasp_entries));
+  const apMap = {}; // entry ID -> STIX ID
+  for (const entry of owaspEntries) {
+    const id = `attack-pattern--${crypto.randomUUID()}`;
+    apMap[entry] = id;
+    bundle.objects.push({
+      type: "attack-pattern",
+      spec_version: "2.1",
+      id,
+      created: new Date().toISOString(),
+      modified: new Date().toISOString(),
+      name: entry,
+      description: `OWASP GenAI Security Crosswalk — ${entry}`,
+      external_references: [
+        {
+          source_name: "owasp-genai-crosswalk",
+          external_id: entry,
+          url: `https://github.com/emmanuelgjr/GenAI-Security-Crosswalk`
+        }
+      ],
+      kill_chain_phases: [] // empty for now
+    });
+  }
+
+  // Build report + relationship objects for each incident
+  for (const inc of incidents) {
+    const reportId = `report--${crypto.randomUUID()}`;
+    const apRefs = inc.owasp_entries.map(e => apMap[e]).filter(Boolean);
+
+    bundle.objects.push({
+      type: "report",
+      spec_version: "2.1",
+      id: reportId,
+      created: inc.date ? new Date(inc.date + '-01').toISOString() : new Date().toISOString(),
+      modified: new Date().toISOString(),
+      name: `${inc.id}: ${inc.title}`,
+      description: inc.description,
+      published: inc.date ? new Date(inc.date + '-01').toISOString() : new Date().toISOString(),
+      report_types: [inc.category === 'real-world' ? 'threat-report' : 'attack-pattern'],
+      labels: inc.tags || [],
+      object_refs: apRefs,
+      external_references: (inc.references || []).map(r => ({
+        source_name: r.type,
+        url: r.url,
+        description: r.title
+      })),
+      extensions: {
+        "extension-definition--genai-crosswalk": {
+          extension_type: "property-extension",
+          incident_id: inc.id,
+          severity: inc.severity,
+          owasp_entries: inc.owasp_entries,
+          maestro_layers: inc.maestro_layers,
+          attack_vector: inc.attack_vector,
+          affected: inc.affected,
+          impact: inc.impact,
+          mitigations: inc.mitigations
+        }
+      }
+    });
+
+    // Add relationships
+    for (const apId of apRefs) {
+      bundle.objects.push({
+        type: "relationship",
+        spec_version: "2.1",
+        id: `relationship--${crypto.randomUUID()}`,
+        created: new Date().toISOString(),
+        modified: new Date().toISOString(),
+        relationship_type: "uses",
+        source_ref: reportId,
+        target_ref: apId
+      });
+    }
+  }
+
+  return JSON.stringify(bundle, null, 2);
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function groupBy(arr, fn) {
@@ -349,7 +447,7 @@ function groupBy(arr, fn) {
 function writeOutput(content, filename, format, outDir, toStdout) {
   if (toStdout) { process.stdout.write(content + '\n'); return null; }
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-  const ext  = format === 'csv' ? '.csv' : format === 'json' ? '.json' : '.md';
+  const ext  = format === 'csv' ? '.csv' : format === 'json' ? '.json' : format === 'stix' ? '.stix.json' : '.md';
   const file = path.join(outDir, filename + ext);
   fs.writeFileSync(file, content, 'utf8');
   return file;
@@ -371,6 +469,8 @@ function main() {
     content = renderCSV(incidents);
   } else if (opts.format === 'json') {
     content = renderJSON(db, incidents);
+  } else if (opts.format === 'stix') {
+    content = renderSTIX(db, incidents);
   } else {
     content = renderMarkdown(db, incidents, opts);
   }

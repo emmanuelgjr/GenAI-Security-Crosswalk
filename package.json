@@ -1,0 +1,47 @@
+{
+  "name": "genai-security-crosswalk",
+  "version": "1.6.0",
+  "description": "OWASP GenAI Security Crosswalk — mapping LLM Top 10, Agentic Top 10, and DSGAI 2026 to 17 industry frameworks",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.js",
+    "validate": "node scripts/validate.js",
+    "compliance": "node scripts/compliance-report.js",
+    "incidents": "node scripts/incidents-report.js",
+    "watch": "node scripts/watch.js",
+    "build": "npm run generate && npm run validate",
+    "build:reports": "npm run compliance && npm run incidents",
+    "ci": "npm run build && npm run build:reports"
+  },
+  "license": "CC-BY-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/issues"
+  },
+  "homepage": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk#readme",
+  "keywords": [
+    "owasp",
+    "llm-security",
+    "ai-security",
+    "genai",
+    "crosswalk",
+    "compliance",
+    "nist",
+    "eu-ai-act",
+    "prompt-injection",
+    "agentic-ai"
+  ],
+  "author": {
+    "name": "Emmanuel Guilherme Junior",
+    "url": "https://github.com/emmanuelgjr"
+  },
+  "contributors": [
+    "OWASP GenAI Data Security Initiative contributors"
+  ]
+}

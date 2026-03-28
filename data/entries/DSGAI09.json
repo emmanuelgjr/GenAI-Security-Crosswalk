@@ -540,6 +540,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2023,
       "incident_id": "INC-015"
+    },
+    {
+      "name": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-026"
     }
   ],
   "crossrefs": {

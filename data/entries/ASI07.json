@@ -615,6 +615,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-020"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-023"
     }
   ],
   "crossrefs": {

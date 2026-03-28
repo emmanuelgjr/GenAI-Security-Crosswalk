@@ -769,6 +769,54 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2026,
       "incident_id": "INC-021"
+    },
+    {
+      "name": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-022"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-023"
+    },
+    {
+      "name": "Slack AI indirect injection via channel content",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-024"
+    },
+    {
+      "name": "GitHub Copilot Workspace prompt injection via repository content",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-025"
+    },
+    {
+      "name": "MathPrompt: symbolic mathematics jailbreak attack",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-027"
+    },
+    {
+      "name": "Many-shot jailbreaking (Anthropic research)",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-028"
+    },
+    {
+      "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-029"
+    },
+    {
+      "name": "Skeleton Key: direct system prompt override (Microsoft)",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-030"
     }
   ],
   "crossrefs": {

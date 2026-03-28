@@ -9,7 +9,67 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-All planned items complete through v1.5.7. Next: community contributions, additional incident entries, and framework expansion.
+Next: npm package `@owasp/genai-crosswalk` with TypeScript types, SBOM generation in CI, FedRAMP AI overlay + DORA framework additions.
+
+---
+
+## [1.6.0] — 2026-03-28
+
+### Added
+
+#### Enterprise automation and new framework
+
+**NIST SP 800-218A framework mapping (18th framework):**
+
+| File | Entries covered |
+|---|---|
+| `llm-top10/LLM_SP800218A.md` | LLM01–LLM10 — Secure AI development lifecycle |
+| `agentic-top10/Agentic_SP800218A.md` | ASI01–ASI10 — Agentic system secure development |
+| `dsgai-2026/DSGAI_SP800218A.md` | DSGAI01–DSGAI21 — Data security for GenAI development |
+
+**10 new incidents (INC-022 to INC-031):**
+
+| ID | Title | Category | Severity |
+|---|---|---|---|
+| INC-022 | Greshake et al. indirect prompt injection paper | Research | Critical |
+| INC-023 | Morris II multi-agent worm (ComPromptMized) | Research | Critical |
+| INC-024 | Slack AI indirect injection via channel content | Research | Critical |
+| INC-025 | GitHub Copilot Workspace prompt injection | Research | High |
+| INC-026 | AI voice deepfake CEO fraud — $25.6M Hong Kong | Real-world | Critical |
+| INC-027 | MathPrompt symbolic mathematics jailbreak | Research | Critical |
+| INC-028 | Many-shot jailbreaking (Anthropic) | Research | High |
+| INC-029 | Crescendo multi-turn escalation (Microsoft) | Research | High |
+| INC-030 | Skeleton Key direct override (Microsoft) | Research | High |
+| INC-031 | Meta Galactica misinformation takedown | Real-world | High |
+
+**External source watcher (`scripts/watch.js`):**
+- 4 watchers: OWASP repos, arXiv papers, NVD CVEs, framework version pages
+- State file persistence (`data/.watch-state.json`)
+- Auto-opens GitHub Issues via API when changes detected
+- `--dry-run`, `--watcher <name>`, `--since <date>` flags
+
+**GitHub Actions automation (`.github/workflows/weekly-watch.yml`):**
+- Weekly Monday cron runs all 4 source watchers
+- Monthly report regeneration with auto-PR if data layer changes
+- Manual dispatch with watcher selection and dry-run option
+
+**Enterprise export formats:**
+- `--format stix` in `incidents-report.js` — STIX 2.1 bundle (Splunk ES, Microsoft Sentinel, TAXII)
+- `--format oscal` in `compliance-report.js` — OSCAL 1.1.2 Component Definition JSON (ServiceNow, Archer, XACTA)
+
+**`package.json`** — reproducible installs with `engines: { node: ">=18.0.0" }` and npm scripts
+
+**i18n seed translations:**
+- `i18n/es/README.md` — Spanish (machine-assisted draft)
+- `i18n/ja/README.md` — Japanese (machine-assisted draft)
+- `i18n/de/README.md` — German (machine-assisted draft)
+
+### Changed
+- `data/incidents.json` version bumped to 1.2.0 (31 incidents)
+- `scripts/compliance-report.js` — OSCAL renderer + NIST SP 800-218A in framework list
+- `scripts/incidents-report.js` — STIX 2.1 renderer + crypto for UUIDs
+- Mapping file count: 58 → 61 (3 SP 800-218A files)
+- Framework count: 17 → 18
 
 ---
 
