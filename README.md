@@ -2,7 +2,7 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.5.4-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.5.5-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
 [![Mapping Files](https://img.shields.io/badge/mapping%20files-58-brightgreen)](README.md)
 [![Frameworks](https://img.shields.io/badge/frameworks-17-orange)](README.md)
@@ -26,6 +26,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **13** implementation recipes | Production-ready Python patterns |
 | **40+** open-source tools | Catalogued and organised by function |
 | **10** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
+| **17** compliance reports | Per-framework gap assessments auto-generated from data layer |
  
 All free. All open-source. Built for practitioners.
  
@@ -242,7 +243,9 @@ GenAI-Security-Crosswalk/
 │   └── README.md                    ← Data layer docs, jq query examples
 │
 ├── scripts/
-│   └── validate.js                  ← Content validator (sections, links, counts)
+│   ├── validate.js                  ← Content validator (sections, links, counts)
+│   ├── generate.js                  ← Markdown-to-JSON parser → data/entries/
+│   └── compliance-report.js         ← Gap assessment generator (MD / CSV / JSON)
 │
 ├── evals/
 │   ├── README.md                    ← Setup guide and result interpretation
@@ -257,6 +260,22 @@ GenAI-Security-Crosswalk/
     └── pt/                          ← Portuguese (accepting PRs)
 ```
  
+---
+
+## Compliance gap reports
+
+Generate framework-specific gap assessments from the data layer in seconds:
+
+```bash
+node scripts/compliance-report.js                          # all 17 frameworks → reports/
+node scripts/compliance-report.js --framework "EU AI Act"  # one framework
+node scripts/compliance-report.js --format csv             # Excel-compatible
+node scripts/compliance-report.js --format json            # machine-readable
+node scripts/compliance-report.js --list-frameworks        # see all options
+```
+
+Each report includes: executive summary, coverage matrix (OWASP entries × controls), per-control detail with notes, and a prioritised action plan.
+
 ---
 
 ## Start here — by role

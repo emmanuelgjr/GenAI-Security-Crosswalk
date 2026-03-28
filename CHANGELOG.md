@@ -9,7 +9,44 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-No planned items — framework coverage matrix, data layer, GitHub Pages query interface, and eval profiles are complete. Next: compliance report generator (`scripts/compliance-report.js`), incident tracker (`data/incidents.json`).
+No planned items — framework coverage matrix, data layer, GitHub Pages query interface, eval profiles, and compliance report generator are complete. Next: incident tracker (`data/incidents.json`).
+
+---
+
+## [1.5.5] — 2026-03-28
+
+### Added
+
+#### Compliance gap assessment generator
+
+`scripts/compliance-report.js` — reads all 41 JSON entries and produces framework-centric gap reports.
+
+**Supported frameworks (17):** EU AI Act · ISO/IEC 42001:2023 · NIST AI RMF 1.0 · ISO/IEC 27001:2022 · SOC 2 · NIST CSF 2.0 · CIS Controls v8.1 · ISA/IEC 62443 · NIST SP 800-82 Rev 3 · OWASP ASVS · OWASP SAMM · PCI DSS v4.0 · MITRE ATLAS · MAESTRO · AIUC-1 · ENISA Multilayer Framework · OWASP NHI Top 10
+
+**Output formats:**
+- `--format md` (default) — Markdown suitable for audit packs, PR descriptions, and documentation
+- `--format csv` — Excel / Google Sheets compatible
+- `--format json` — Programmatic consumption, dashboards, CI/CD integrations
+
+**Each report includes:**
+- Executive summary table (entries covered, coverage %, Critical/High gap counts, overall status)
+- Framework context block (deadline, audience, scope)
+- Gap analysis — entries with no controls mapped, ordered by severity
+- Coverage matrix — OWASP entries → controls, grouped by source list
+- Control detail — all referenced controls with linked OWASP entries and notes
+- Prioritised action plan — P1 (immediate), P2 (short-term), P3 (medium-term), CI/CD integration
+
+**CLI flags:**
+```
+--framework <name>    Report for one framework (partial match, case-insensitive)
+--severity <level>    Filter entries: Critical | High | Medium | Low
+--format <fmt>        md | csv | json  (default: md)
+--out <dir>           Output directory (default: reports/)
+--stdout              Print to stdout
+--list-frameworks     List available framework names and exit
+```
+
+Also added `reports/` and `evals/results/` to `.gitignore` (generated output, not source).
 
 ---
 

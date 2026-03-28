@@ -4,3 +4,5 @@ Thumbs.db
 node_modules/
 .venv/
 __pycache__/
+evals/results/
+reports/
