@@ -317,16 +317,8 @@ exposure per entry, and GPAI vs high-risk applicability clearly marked.
 
 ## [Unreleased]
 
-### Planned
-
-#### New framework mappings
-- `llm-top10/LLM_STRIDE.md` — STRIDE threat modeling
-- `llm-top10/LLM_CWE_CVE.md` — CWE root cause taxonomy and CVE evidence
-- `llm-top10/LLM_AITG.md` — OWASP AI Testing Guide
-- `dsgai-2026/DSGAI_ASVS.md` — OWASP ASVS 4.0.3
-- `dsgai-2026/DSGAI_CISControls.md` — CIS Controls v8.1
-- `dsgai-2026/DSGAI_CWE_CVE.md` — CWE root cause taxonomy and CVE evidence
-- `dsgai-2026/DSGAI_ENISA.md` — ENISA Multilayer Framework
+No planned items — framework coverage matrix is complete.
+All 17 frameworks have full coverage across all 3 source lists (58 mapping files).
 
 ---
 
