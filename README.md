@@ -2,7 +2,7 @@
  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![OWASP Lab](https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue)](https://genai.owasp.org)
-[![Version](https://img.shields.io/badge/version-1.5.1-green)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.5.2-green)](CHANGELOG.md)
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
 [![Mapping Files](https://img.shields.io/badge/mapping%20files-58-brightgreen)](README.md)
 [![Frameworks](https://img.shields.io/badge/frameworks-17-orange)](README.md)

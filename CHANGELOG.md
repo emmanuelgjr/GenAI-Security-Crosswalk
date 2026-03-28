@@ -9,7 +9,33 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-No planned items — framework coverage matrix is complete at v1.5.0. Planned enhancements tracked in `data/README.md` (JSON entries, generate.js, query.js).
+No planned items — framework coverage matrix and data layer are complete. Next: query interface (GitHub Pages), eval profiles, compliance report generator.
+
+---
+
+## [1.5.2] — 2026-03-27
+
+### Added
+
+- `scripts/generate.js` — Markdown-to-JSON parser that reads all 58 mapping files and emits one structured JSON entry per vulnerability ID
+  - Handles 6 distinct table structures (ATLAS, ISO 27001, CSF 2.0, SAMM, MAESTRO bold-headers, generic)
+  - Extracts: framework control mappings, tools, cross-references, audience, tier, scope per entry
+  - Flags: `--dry-run` (validate without writing), `--id <ID>` (single entry)
+  - Zero warnings across all 41 entries
+
+- `data/entries/` — 41 machine-readable JSON files (LLM01–LLM10, ASI01–ASI10, DSGAI01–DSGAI21)
+  - Each file conforms to `data/schema.json` (JSON Schema Draft 7)
+  - Average: ~70 framework control mappings per entry across 17–18 frameworks
+  - AIVSS scores populated for all ASI entries (autonomous scenario)
+  - Cross-references populated from mapping file cross-reference sections
+
+### Entry statistics
+
+| Source list | Entries | Avg mappings/entry | Avg tools/entry |
+|---|---|---|---|
+| LLM Top 10 2025 | 10 | 72 | 6 |
+| Agentic Top 10 2026 | 10 | 73 | 7 |
+| DSGAI 2026 | 21 | 64 | 6 |
 
 ---
 
