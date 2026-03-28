@@ -7,6 +7,44 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.5.0] — 2026-03-27
+
+### Added
+
+#### New mapping files (8 added) — full framework coverage complete
+
+| File | Framework | Note |
+|---|---|---|
+| `agentic-top10/Agentic_SAMM.md` | OWASP SAMM v2.0 | Closes SAMM row for Agentic |
+| `dsgai-2026/DSGAI_SAMM.md` | OWASP SAMM v2.0 | Closes SAMM row for DSGAI — full ✅ |
+| `agentic-top10/Agentic_NISTSP80082.md` | NIST SP 800-82 Rev 3 | Closes SP 800-82 row for Agentic |
+| `dsgai-2026/DSGAI_NISTSP80082.md` | NIST SP 800-82 Rev 3 | Closes SP 800-82 row for DSGAI — full ✅ |
+| `llm-top10/LLM_AIUC1.md` | AIUC-1 | Closes AIUC-1 row for LLM |
+| `dsgai-2026/DSGAI_AIUC1.md` | AIUC-1 | Closes AIUC-1 row for DSGAI — full ✅ |
+| `llm-top10/LLM_NHI.md` | OWASP NHI Top 10 | Closes NHI row for LLM |
+| `dsgai-2026/DSGAI_NHI.md` | OWASP NHI Top 10 | Closes NHI row for DSGAI — full ✅ |
+
+#### README updates
+
+- Mapping file count updated: 50 — 58
+- LLM framework mapping count updated: 18 — 20
+- Agentic framework mapping count updated: 18 — 20
+- DSGAI framework mapping count updated: 14 — 18
+- Framework matrix: SAMM, SP 800-82, AIUC-1, NHI now show full ✅ across all three source lists
+- Repository structure tree updated for all new files
+
+#### Totals at v1.5.0
+
+| Metric | Count |
+|---|---|
+| Source lists | 3 |
+| Frameworks | 17 |
+| Mapping files | 58 |
+| Implementation recipes | 13 |
+| Tools catalogued | 40+ |
+
+---
+
 ## [1.4.0] — 2026-03-27
 
 ### Added
