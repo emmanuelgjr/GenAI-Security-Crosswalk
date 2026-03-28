@@ -2037,7 +2037,7 @@ input, select { font-family: inherit; }
 
     // Sidebar with framework checkboxes
     var sidebar = el('div', { className: 'score-sidebar' });
-    sidebar.appendChild(el('h3', {}, 'Select frameworks you implement'));
+    sidebar.appendChild(el('h3', {}, '1. Select frameworks you implement'));
 
     var selectAllBtn = el('button', {
       className: 'pill',
@@ -2070,6 +2070,154 @@ input, select { font-family: inherit; }
       checkboxList.appendChild(label);
     });
     sidebar.appendChild(checkboxList);
+
+    // Evidence upload section
+    sidebar.appendChild(el('hr', { style: 'border:none;border-top:1px solid var(--border);margin:16px 0;' }));
+    sidebar.appendChild(el('h3', {}, '2. Upload evidence (optional)'));
+    sidebar.appendChild(el('p', { style: 'font-size:.78rem;color:var(--text-secondary);margin-bottom:10px;' },
+      'Upload tool outputs to validate your score. Without evidence, your score is labeled "Self-Assessed".'));
+
+    // Evidence state
+    var evidence = { compliance: null, garak: null, pyrit: null, laaf: null, validatedEntries: {} };
+
+    function createUploadBtn(label, toolKey, hint) {
+      var wrap = el('div', { style: 'margin-bottom:8px;' });
+      var fileInput = el('input', { type: 'file', accept: '.json', style: 'display:none;', 'aria-label': 'Upload ' + label + ' results' });
+      var btn = el('button', { className: 'pill', style: 'width:100%;text-align:left;padding:6px 12px;font-size:.78rem;' });
+      btn.textContent = '\u2B06 ' + label;
+      var status = el('span', { style: 'font-size:.72rem;color:var(--text-secondary);display:block;margin-top:2px;' }, hint);
+
+      btn.addEventListener('click', function() { fileInput.click(); });
+      fileInput.addEventListener('change', function() {
+        if (!fileInput.files[0]) return;
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          try {
+            var data = JSON.parse(e.target.result);
+            evidence[toolKey] = data;
+            processEvidence(toolKey, data);
+            status.textContent = '\u2705 Loaded — ' + fileInput.files[0].name;
+            status.style.color = 'var(--lo)';
+            btn.style.borderColor = 'var(--lo)';
+            updateScore();
+          } catch (err) {
+            status.textContent = '\u274C Invalid JSON: ' + err.message;
+            status.style.color = 'var(--cr)';
+          }
+        };
+        reader.readAsText(fileInput.files[0]);
+      });
+
+      wrap.appendChild(fileInput);
+      wrap.appendChild(btn);
+      wrap.appendChild(status);
+      return wrap;
+    }
+
+    sidebar.appendChild(createUploadBtn('Compliance Report', 'compliance',
+      'From: node scripts/compliance-report.js --format json'));
+    sidebar.appendChild(createUploadBtn('Garak Results', 'garak',
+      'From: garak --report_prefix results'));
+    sidebar.appendChild(createUploadBtn('PyRIT Results', 'pyrit',
+      'From: PyRIT JSON output'));
+    sidebar.appendChild(createUploadBtn('LAAF Results', 'laaf',
+      'From: python evals/laaf/laaf_crosswalk.py --format json'));
+
+    function processEvidence(toolKey, data) {
+      // Map tool outputs to validated OWASP entries
+      if (toolKey === 'compliance') {
+        // compliance-report.js --format json produces framework reports
+        // Mark all entries that appear in the report as compliance-validated
+        if (data.framework && data.entries) {
+          data.entries.forEach(function(e) {
+            if (!evidence.validatedEntries[e.id]) evidence.validatedEntries[e.id] = {};
+            evidence.validatedEntries[e.id].compliance = {
+              framework: data.framework,
+              controls: e.controls ? e.controls.length : 0,
+              status: 'validated'
+            };
+          });
+        }
+        // Also handle array of frameworks
+        if (Array.isArray(data)) {
+          data.forEach(function(fw) {
+            if (fw.entries) fw.entries.forEach(function(e) {
+              if (!evidence.validatedEntries[e.id]) evidence.validatedEntries[e.id] = {};
+              evidence.validatedEntries[e.id].compliance = { framework: fw.framework, status: 'validated' };
+            });
+          });
+        }
+      }
+      if (toolKey === 'garak') {
+        // Garak outputs eval results — map probe names to OWASP entries
+        var garakMap = {
+          'promptinject': 'LLM01', 'knownbadsignatures': 'LLM01', 'artprompt': 'LLM01',
+          'leakreplay': 'LLM02', 'continuation': 'LLM02',
+          'dan': 'LLM06', 'gcg': 'LLM01',
+          'snowball': 'LLM09', 'misleading': 'LLM09',
+          'lmrc': 'LLM07'
+        };
+        var results = data.results || data.log || data;
+        if (Array.isArray(results)) {
+          results.forEach(function(r) {
+            var probe = (r.probe || r.test || '').toLowerCase();
+            Object.keys(garakMap).forEach(function(key) {
+              if (probe.includes(key)) {
+                var eid = garakMap[key];
+                if (!evidence.validatedEntries[eid]) evidence.validatedEntries[eid] = {};
+                evidence.validatedEntries[eid].garak = {
+                  probe: r.probe || probe,
+                  passed: r.passed || r.status === 'pass',
+                  score: r.score || null,
+                  status: 'tested'
+                };
+              }
+            });
+          });
+        }
+      }
+      if (toolKey === 'laaf') {
+        // LAAF crosswalk output maps stages to OWASP entries
+        var laafStageMap = {
+          S1: ['LLM07', 'LLM01'], S2: ['LLM01', 'ASI01', 'DSGAI04'],
+          S3: ['ASI01', 'ASI06', 'LLM06'], S4: ['ASI06', 'LLM06', 'DSGAI04'],
+          S5: ['LLM01', 'LLM02'], S6: ['DSGAI01', 'LLM07']
+        };
+        var stages = data.stages || data.results || data;
+        if (typeof stages === 'object') {
+          Object.keys(stages).forEach(function(stageKey) {
+            var mappedEntries = laafStageMap[stageKey] || laafStageMap[stageKey.toUpperCase()] || [];
+            var stageData = stages[stageKey];
+            mappedEntries.forEach(function(eid) {
+              if (!evidence.validatedEntries[eid]) evidence.validatedEntries[eid] = {};
+              evidence.validatedEntries[eid].laaf = {
+                stage: stageKey,
+                breakthrough_rate: stageData.breakthrough_rate || stageData.rate || null,
+                status: 'tested'
+              };
+            });
+          });
+        }
+      }
+      if (toolKey === 'pyrit') {
+        // PyRIT outputs — map to OWASP entries by attack type
+        var pyritMap = { 'prompt_injection': 'LLM01', 'rag_poisoning': 'DSGAI04', 'goal_hijack': 'ASI01' };
+        var attacks = data.attacks || data.results || data;
+        if (Array.isArray(attacks)) {
+          attacks.forEach(function(a) {
+            var atype = (a.attack_type || a.type || '').toLowerCase();
+            Object.keys(pyritMap).forEach(function(key) {
+              if (atype.includes(key)) {
+                var eid = pyritMap[key];
+                if (!evidence.validatedEntries[eid]) evidence.validatedEntries[eid] = {};
+                evidence.validatedEntries[eid].pyrit = { type: a.attack_type || atype, status: 'tested' };
+              }
+            });
+          });
+        }
+      }
+    }
+
     layout.appendChild(sidebar);
 
     // Main content
@@ -2179,9 +2327,26 @@ input, select { font-family: inherit; }
       // Overview cards
       var overview = el('div', { className: 'score-overview' });
 
+      // Determine validation tier
+      var evidenceCount = Object.keys(evidence.validatedEntries).length;
+      var hasEvidence = evidence.compliance || evidence.garak || evidence.pyrit || evidence.laaf;
+      var validationTier, tierColor, tierIcon;
+      if (hasEvidence && evidenceCount >= 20) {
+        validationTier = 'Tool-Validated'; tierColor = '#16a34a'; tierIcon = '\u2705';
+      } else if (hasEvidence) {
+        validationTier = 'Partially Validated'; tierColor = '#ca8a04'; tierIcon = '\u26A0\uFE0F';
+      } else {
+        validationTier = 'Self-Assessed'; tierColor = '#6c757d'; tierIcon = '\u2753';
+      }
+
       var mainCard = el('div', { className: 'score-card' });
       mainCard.appendChild(el('div', { className: 'score-big ' + scoreClass(overallPct) }, overallPct + '%'));
       mainCard.appendChild(el('div', { className: 'score-label' }, 'Overall Coverage'));
+      var tierBadge = el('div', {
+        style: 'margin-top:6px;display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:600;' +
+               'background:' + tierColor + '22;color:' + tierColor + ';border:1px solid ' + tierColor + '44;'
+      }, tierIcon + ' ' + validationTier);
+      mainCard.appendChild(tierBadge);
       mainCard.appendChild(el('div', { className: 'score-sublabel' }, selected.size + ' / ' + FRAMEWORKS.length + ' frameworks · severity-weighted'));
       overview.appendChild(mainCard);
 
@@ -2242,6 +2407,16 @@ input, select { font-family: inherit; }
           barWrap.appendChild(barFill);
           item.appendChild(barWrap);
           item.appendChild(el('span', { style: 'font-size:.8rem;font-weight:600;min-width:40px;text-align:right;color:' + (es.pct >= 70 ? 'var(--lo)' : es.pct >= 40 ? 'var(--me)' : 'var(--cr)') }, es.pct + '%'));
+          // Evidence badges
+          var ev = evidence.validatedEntries[es.entry.id];
+          if (ev) {
+            var evBadges = el('span', { style: 'display:flex;gap:2px;margin-left:4px;' });
+            if (ev.compliance) evBadges.appendChild(el('span', { style: 'font-size:.6rem;background:#16a34a22;color:#16a34a;padding:1px 4px;border-radius:3px;', title: 'Compliance report validated' }, 'CR'));
+            if (ev.garak) evBadges.appendChild(el('span', { style: 'font-size:.6rem;background:#2563eb22;color:#2563eb;padding:1px 4px;border-radius:3px;', title: 'Garak tested' }, 'GK'));
+            if (ev.pyrit) evBadges.appendChild(el('span', { style: 'font-size:.6rem;background:#7c3aed22;color:#7c3aed;padding:1px 4px;border-radius:3px;', title: 'PyRIT tested' }, 'PR'));
+            if (ev.laaf) evBadges.appendChild(el('span', { style: 'font-size:.6rem;background:#ea580c22;color:#ea580c;padding:1px 4px;border-radius:3px;', title: 'LAAF tested' }, 'LF'));
+            item.appendChild(evBadges);
+          }
           item.addEventListener('click', function() { openEntryModal(es.entry); });
           gapSection.appendChild(item);
         });
@@ -2311,7 +2486,8 @@ input, select { font-family: inherit; }
           fwCount: selected.size,
           criticalGaps: weakEntries.filter(function(e) { return e.entry.severity === 'Critical'; }).length,
           highGaps: weakEntries.filter(function(e) { return e.entry.severity === 'High'; }).length,
-          shareUrl: shareUrl
+          shareUrl: shareUrl,
+          validationTier: validationTier
         });
 
         // Copy link
@@ -2515,6 +2691,17 @@ input, select { font-family: inherit; }
     var today = new Date();
     var dateStr = 'Assessed: ' + today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
     ctx.fillText(dateStr, W - 40, H - 18);
+
+    // Validation tier badge
+    var tier = data.validationTier || 'Self-Assessed';
+    var tierCol = tier === 'Tool-Validated' ? '#22c55e' : tier === 'Partially Validated' ? '#eab308' : '#94a3b8';
+    ctx.fillStyle = tierCol + '33';
+    roundRect(ctx, 40, 130, ctx.measureText(tier).width + 30, 30, 15);
+    ctx.fill();
+    ctx.fillStyle = tierCol;
+    ctx.font = 'bold 14px system-ui, -apple-system, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(tier, 55, 150);
   }
 
   function roundRect(ctx, x, y, w, h, r) {
