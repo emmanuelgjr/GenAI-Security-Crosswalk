@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "description": "Supplemental tools not yet captured in mapping files — merged into entries at generation time by generate.js. Add new tools here; they are included on next generate.js run.",
+  "tools": {
+    "LLM01": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ],
+    "LLM06": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ],
+    "LLM07": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ],
+    "ASI01": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ],
+    "ASI02": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ],
+    "ASI03": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ],
+    "ASI06": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ],
+    "DSGAI04": [
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
+      }
+    ]
+  }
+}

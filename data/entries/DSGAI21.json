@@ -685,6 +685,11 @@
       "url": "https://github.com/shmsw25/FActScoring"
     },
     {
+      "name": "Cleanlab",
+      "type": "open-source",
+      "url": "https://github.com/cleanlab/cleanlab"
+    },
+    {
       "name": "RAGAS",
       "type": "open-source",
       "url": "https://github.com/explodinggradients/ragas"

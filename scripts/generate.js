@@ -511,6 +511,13 @@ function mergeCrossRefs(existing, incoming) {
   }
 }
 
+function mergeTools(existing, supplement) {
+  // Append supplemental tools not already present (match by name)
+  const names = new Set(existing.map(t => t.name));
+  const added = supplement.filter(t => !names.has(t.name));
+  return [...existing, ...added];
+}
+
 function mergeAudiences(existing, incoming) {
   const s = new Set(existing);
   for (const a of incoming) s.add(a);
@@ -540,6 +547,18 @@ function main() {
       }
     }
     console.log(`  Loaded incidents: ${incDb.incidents.length} entries from data/incidents.json`);
+  }
+
+  // Load supplemental tools from data/tools-supplement.json if available
+  const toolsSupplementFile = path.join(ROOT, 'data', 'tools-supplement.json');
+  const toolsSupplement = {};   // entryId -> Tool[]
+  if (fs.existsSync(toolsSupplementFile)) {
+    const ts = JSON.parse(fs.readFileSync(toolsSupplementFile, 'utf8'));
+    for (const [eid, tools] of Object.entries(ts.tools || {})) {
+      toolsSupplement[eid] = tools;
+    }
+    const count = Object.values(ts.tools || {}).reduce((n, t) => n + t.length, 0);
+    console.log(`  Loaded tools-supplement: ${count} tool entries from data/tools-supplement.json`);
   }
 
   // Target IDs
@@ -586,7 +605,7 @@ function main() {
       const xrefs    = parseCrossRefs(section);
 
       acc[id].mappings.push(...mappings);
-      mergeTools(acc[id].tools, tools);
+      acc[id].tools = mergeTools(acc[id].tools, tools);
       mergeCrossRefs(acc[id].crossrefs, xrefs);
       acc[id].audiences = mergeAudiences(acc[id].audiences, fileAudience);
 
@@ -632,7 +651,7 @@ function main() {
       aivss_score: AIVSS_SCORES[id] ?? null,
       audience:    data.audiences.length ? data.audiences : defaultAudience(vuln.source_list),
       mappings:    data.mappings,
-      tools:       data.tools,
+      tools:       mergeTools(data.tools, toolsSupplement[id] || []),
       incidents:   incidentsByEntry[id] || [],
       crossrefs:   data.crossrefs,
       changelog: [

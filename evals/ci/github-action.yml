@@ -179,3 +179,140 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ env.EVAL_MODEL_NAME }}
         run: python evals/pyrit/asi01_goal_hijack.py
+
+  # ── LAAF v2.0 evaluation (LPCI — memory persistence, layered encoding) ───────
+  laaf-eval:
+    name: LAAF LPCI Assessment
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    # Only run on scheduled runs or manual dispatch — deeper coverage, higher cost
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install LAAF v2.0
+        run: |
+          pip install git+https://github.com/qorvexconsulting1/laaf-V2.0.git --quiet
+          laaf list-techniques --format table | head -5
+
+      - name: Create results directory
+        run: mkdir -p ${{ env.RESULTS_DIR }}/laaf
+
+      - name: Run LAAF S1 — Reconnaissance (system prompt extraction)
+        if: ${{ github.event.inputs.profile == '' || github.event.inputs.profile == 'LAAF' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          laaf scan \
+            --target openai \
+            --model ${{ env.EVAL_MODEL_NAME }} \
+            --stages S1 \
+            --config-dir evals/laaf/stage_configs/ \
+            --max-attempts 50 \
+            --rate-limit 2.0 \
+            --output ${{ env.RESULTS_DIR }}/laaf/S1.json \
+          || echo "LAAF_S1_STATUS=FAIL" >> $GITHUB_ENV
+
+      - name: Run LAAF S2 — Logic-Layer Injection (RAG/document poisoning)
+        if: ${{ github.event.inputs.profile == '' || github.event.inputs.profile == 'LAAF' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          laaf scan \
+            --target openai \
+            --model ${{ env.EVAL_MODEL_NAME }} \
+            --stages S2 \
+            --config-dir evals/laaf/stage_configs/ \
+            --max-attempts 50 \
+            --rate-limit 2.0 \
+            --output ${{ env.RESULTS_DIR }}/laaf/S2.json \
+          || echo "LAAF_S2_STATUS=FAIL" >> $GITHUB_ENV
+
+      - name: Run LAAF S3+S4 — Trigger Execution and Persistence
+        if: ${{ github.event.inputs.profile == '' || github.event.inputs.profile == 'LAAF' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          laaf scan \
+            --target openai \
+            --model ${{ env.EVAL_MODEL_NAME }} \
+            --stages S3 S4 \
+            --config-dir evals/laaf/stage_configs/ \
+            --max-attempts 50 \
+            --rate-limit 2.0 \
+            --output ${{ env.RESULTS_DIR }}/laaf/S3S4.json \
+          || echo "LAAF_S3S4_STATUS=FAIL" >> $GITHUB_ENV
+
+      - name: Run LAAF S5 — Evasion (layered encoding bypass)
+        if: ${{ github.event.inputs.profile == '' || github.event.inputs.profile == 'LAAF' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          laaf scan \
+            --target openai \
+            --model ${{ env.EVAL_MODEL_NAME }} \
+            --stages S5 \
+            --config-dir evals/laaf/stage_configs/ \
+            --max-attempts 50 \
+            --rate-limit 2.0 \
+            --output ${{ env.RESULTS_DIR }}/laaf/S5.json \
+          || echo "LAAF_S5_STATUS=FAIL" >> $GITHUB_ENV
+
+      - name: Run LAAF S6 — Trace Tampering (audit integrity)
+        if: ${{ github.event.inputs.profile == '' || github.event.inputs.profile == 'LAAF' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          laaf scan \
+            --target openai \
+            --model ${{ env.EVAL_MODEL_NAME }} \
+            --stages S6 \
+            --config-dir evals/laaf/stage_configs/ \
+            --max-attempts 50 \
+            --rate-limit 2.0 \
+            --output ${{ env.RESULTS_DIR }}/laaf/S6.json \
+          || echo "LAAF_S6_STATUS=FAIL" >> $GITHUB_ENV
+
+      - name: Generate LAAF crosswalk report
+        if: always()
+        run: |
+          python evals/laaf/laaf_crosswalk.py \
+            --results-dir ${{ env.RESULTS_DIR }}/laaf/ \
+            --out ${{ env.RESULTS_DIR }}/laaf/crosswalk-report.md \
+            --format md || true
+
+      - name: Upload LAAF evaluation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: laaf-eval-results-${{ github.run_id }}
+          path: ${{ env.RESULTS_DIR }}/laaf/
+          retention-days: 90
+
+      - name: Check LAAF failures and annotate PR
+        if: always()
+        run: |
+          FAILED=""
+          [ "${LAAF_S1_STATUS:-}" = "FAIL" ]    && FAILED="${FAILED}S1(LLM07/LLM01) "
+          [ "${LAAF_S2_STATUS:-}" = "FAIL" ]    && FAILED="${FAILED}S2(LLM01/ASI01/DSGAI04) "
+          [ "${LAAF_S3S4_STATUS:-}" = "FAIL" ]  && FAILED="${FAILED}S3+S4(ASI06/ASI01) "
+          [ "${LAAF_S5_STATUS:-}" = "FAIL" ]    && FAILED="${FAILED}S5(LLM01/LLM02) "
+          [ "${LAAF_S6_STATUS:-}" = "FAIL" ]    && FAILED="${FAILED}S6(DSGAI01/LLM07) "
+
+          if [ -n "$FAILED" ]; then
+            echo "::error::LAAF LPCI evaluation FAILED for stages: $FAILED"
+            echo "Logic-layer Prompt Control Injection vulnerabilities detected."
+            echo "Review: ${{ env.RESULTS_DIR }}/laaf/crosswalk-report.md"
+            echo "LAAF repo: https://github.com/qorvexconsulting1/laaf-V2.0"
+            echo "Crosswalk: https://github.com/emmanuelgjr/GenAI-Security-Crosswalk"
+            exit 1
+          fi
+
+          echo "All LAAF LPCI stages within threshold."

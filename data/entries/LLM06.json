@@ -626,6 +626,11 @@
       "name": "Claroty",
       "type": "commercial",
       "url": "https://claroty.com"
+    },
+    {
+      "name": "LAAF v2.0",
+      "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+      "type": "open-source"
     }
   ],
   "incidents": [
@@ -652,6 +657,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2023,
       "incident_id": "INC-011"
+    },
+    {
+      "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-021"
     }
   ],
   "crossrefs": {

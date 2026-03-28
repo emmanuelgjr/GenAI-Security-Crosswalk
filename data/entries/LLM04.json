@@ -627,6 +627,11 @@
       "url": "https://www.dragos.com"
     },
     {
+      "name": "Cleanlab",
+      "type": "open-source",
+      "url": "https://github.com/cleanlab/cleanlab"
+    },
+    {
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"

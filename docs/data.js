@@ -689,6 +689,11 @@ window.CROSSWALK_DATA = [
         "name": "Promptfoo",
         "type": "open-source",
         "url": "https://github.com/promptfoo/promptfoo"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -763,6 +768,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-020"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -2799,6 +2810,11 @@ window.CROSSWALK_DATA = [
         "url": "https://www.dragos.com"
       },
       {
+        "name": "Cleanlab",
+        "type": "open-source",
+        "url": "https://github.com/cleanlab/cleanlab"
+      },
+      {
         "name": "Garak",
         "type": "open-source",
         "url": "https://github.com/leondz/garak"
@@ -4071,6 +4087,11 @@ window.CROSSWALK_DATA = [
         "name": "Claroty",
         "type": "commercial",
         "url": "https://claroty.com"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -4097,6 +4118,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-011"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -4683,6 +4710,11 @@ window.CROSSWALK_DATA = [
         "name": "Garak",
         "type": "open-source",
         "url": "https://github.com/leondz/garak"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -4709,6 +4741,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-018"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -7273,6 +7311,11 @@ window.CROSSWALK_DATA = [
         "name": "Teleport",
         "type": "commercial",
         "url": "https://goteleport.com"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -7317,6 +7360,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-020"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -7984,6 +8033,11 @@ window.CROSSWALK_DATA = [
         "name": "HashiCorp Vault",
         "type": "open-source",
         "url": "https://www.vaultproject.io"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -8010,6 +8064,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-019"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -8717,6 +8777,11 @@ window.CROSSWALK_DATA = [
         "name": "AWS Secrets Manager",
         "type": "commercial",
         "url": "https://aws.amazon.com/secrets-manager/"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -8725,6 +8790,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-019"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -10672,6 +10743,11 @@ window.CROSSWALK_DATA = [
         "name": "Chroma",
         "type": "open-source",
         "url": "https://www.trychroma.com"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -10680,6 +10756,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-016"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -15702,9 +15784,19 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/twosixlabs/armory"
       },
       {
+        "name": "Cleanlab",
+        "type": "open-source",
+        "url": "https://github.com/cleanlab/cleanlab"
+      },
+      {
         "name": "Great Expectations",
         "type": "open-source",
         "url": "https://github.com/great-expectations/great_expectations"
+      },
+      {
+        "name": "LAAF v2.0",
+        "url": "https://github.com/qorvexconsulting1/laaf-V2.0",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -15725,6 +15817,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-016"
+      },
+      {
+        "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-021"
       }
     ],
     "crossrefs": {
@@ -25267,6 +25365,11 @@ window.CROSSWALK_DATA = [
         "name": "FactScore",
         "type": "open-source",
         "url": "https://github.com/shmsw25/FActScoring"
+      },
+      {
+        "name": "Cleanlab",
+        "type": "open-source",
+        "url": "https://github.com/cleanlab/cleanlab"
       },
       {
         "name": "RAGAS",

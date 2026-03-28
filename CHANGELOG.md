@@ -9,7 +9,48 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-All planned items complete through v1.5.6. Next: community contributions, additional incident entries, and framework expansion.
+All planned items complete through v1.5.7. Next: community contributions, additional incident entries, and framework expansion.
+
+---
+
+## [1.5.7] — 2026-03-28
+
+### Added
+
+#### LAAF v2.0 integration — Logic-layer Automated Attack Framework
+
+LAAF v2.0 (https://github.com/qorvexconsulting1/laaf-V2.0) is the first automated red-teaming framework purpose-built for Logic-layer Prompt Control Injection (LPCI) vulnerabilities in agentic LLM systems. This release integrates it fully into the crosswalk evaluation suite.
+
+**New files:**
+
+| File | Purpose |
+|---|---|
+| `evals/laaf/README.md` | Integration guide — LPCI attack vectors, LAAF stage × OWASP crosswalk, threshold definitions, quickstart, CI/CD |
+| `evals/laaf/run_laaf.sh` | Full S1–S6 suite runner with per-stage thresholds (0% for S1/S3/S4/S6; 5% for S2; 10% for S5) |
+| `evals/laaf/laaf_crosswalk.py` | Maps LAAF scan results to OWASP entries and MAESTRO layers; outputs MD/CSV/JSON |
+| `evals/laaf/stage_configs/s1.yaml` | S1 Reconnaissance — system prompt extraction (LLM07, LLM01) |
+| `evals/laaf/stage_configs/s2.yaml` | S2 Logic-Layer Injection — RAG/document poisoning (LLM01, ASI01, DSGAI04) |
+| `evals/laaf/stage_configs/s3.yaml` | S3 Trigger Execution — memory-restored payload activation (ASI01, ASI06, LLM06) |
+| `evals/laaf/stage_configs/s4.yaml` | S4 Persistence and Reuse — cross-session foothold (ASI06, LLM06, DSGAI04) |
+| `evals/laaf/stage_configs/s5.yaml` | S5 Evasion — layered encoding filter bypass (LLM01, LLM02) |
+| `evals/laaf/stage_configs/s6.yaml` | S6 Trace Tampering — audit log concealment (DSGAI01, LLM07) |
+
+**LPCI attack vectors → OWASP crosswalk:**
+
+| Vector | Description | OWASP | MAESTRO |
+|---|---|---|---|
+| AV-1 Tool Poisoning | Compromise tool definitions | ASI02, LLM01, DSGAI04 | L3 Origin |
+| AV-2 Memory-Persistent Triggers | Dormant encoded payloads in memory | ASI06, ASI01 | L2 Origin, L7 Impact |
+| AV-3 Role Override | Privilege escalation via memory entrenchment | ASI03, LLM06, ASI01 | L6 Origin |
+| AV-4 Vector Store Persistence | Adversarial content indexed in RAG corpus | DSGAI04, LLM01, ASI06 | L2 Origin, L1 Impact |
+
+**Updated:**
+- `evals/ci/github-action.yml` — `laaf-eval` job added (schedule + manual dispatch; 6 stages with crosswalk stage configs)
+- `data/incidents.json` — INC-021: LAAF empirical study, 67–100% LPCI breakthrough rates across 5 production LLMs (Atta et al., arXiv:2507.10457)
+- `data/tools-supplement.json` — NEW: supplemental tools file merged into entries at generation time
+- `scripts/generate.js` — loads `tools-supplement.json` + fixed `acc[id].tools` accumulation assignment
+- `data/entries/` — LAAF v2.0 added to tools for LLM01, LLM06, LLM07, ASI01, ASI02, ASI03, ASI06, DSGAI04
+- `docs/data.js` — regenerated
 
 ---
 

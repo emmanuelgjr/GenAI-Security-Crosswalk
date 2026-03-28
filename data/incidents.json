@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "generated": "2026-03-28",
   "description": "Real-world and research-demonstrated AI security incidents, mapped to OWASP GenAI entries and MAESTRO architectural layers. Maintained as part of the GenAI Security Crosswalk.",
   "incidents": [
@@ -584,6 +584,41 @@
         { "title": "PoisonedRAG and multi-agent attack propagation study", "url": "https://arxiv.org/abs/2402.07867", "type": "research" }
       ],
       "tags": ["multi-agent", "cascade", "a2a", "worm", "propagation", "cross-agent"]
+    },
+    {
+      "id": "INC-021",
+      "title": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+      "date": "2026-03",
+      "year": 2026,
+      "category": "research-demonstrated",
+      "description": "Atta et al. (Qorvex Research, 2026) published the first systematic evaluation of Logic-layer Prompt Control Injection (LPCI) vulnerabilities using the LAAF v2.0 framework. The study ran the Persistent Stage Breaker (PSB) algorithm — 49 techniques across 6 LPCI stages (S1 Reconnaissance through S6 Trace Tampering) — against five production LLM endpoints via direct chat-completion API. Results: GPT-4o-mini 67% breakthrough rate (vs. 15% baseline), Claude-3-Sonnet 85%, Gemini-2.0-Flash 92%. Layered technique L3 (Nested Base64 + YAML + Authority Spoof) and semantic technique M5 (Authority Spoofing) showed the highest per-technique breakthrough rates. The study established LPCI as a distinct vulnerability class beyond surface-level prompt injection, targeting memory persistence, layered encoding, semantic reframing, and multi-stage lifecycle execution — the four dimensions specifically characteristic of agentic AI deployments.",
+      "owasp_entries": ["LLM01", "LLM07", "LLM06", "ASI01", "ASI06", "ASI02", "ASI03", "DSGAI04"],
+      "maestro_layers": [
+        { "layer": "L1", "label": "Foundation Models", "role": "origin", "notes": "Base model alignment insufficient to resist 49-technique LPCI taxonomy across all 6 stages" },
+        { "layer": "L2", "label": "Data Operations", "role": "origin", "notes": "AV-4 vector store payload persistence demonstrated — corpus injection enables persistent goal hijack" },
+        { "layer": "L3", "label": "Agent Frameworks", "role": "propagation", "notes": "AV-1 tool poisoning and AV-3 role override propagate through agentic orchestration layer" },
+        { "layer": "L5", "label": "Evaluation & Observability", "role": "blind-spot", "notes": "S6 trace tampering stage demonstrated audit log concealment — existing monitoring blind to LPCI attack chains" },
+        { "layer": "L6", "label": "Security & Compliance", "role": "blind-spot", "notes": "Semantic compliance/ISO/SOC 2 reframing (M2, M6) bypassed authority checks in all tested models" },
+        { "layer": "L7", "label": "Agent Ecosystem", "role": "impact", "notes": "AV-2 memory-persistent encoded triggers enable cross-session persistence — forensic attribution near-impossible (T10)" }
+      ],
+      "attack_vector": "Persistent Stage Breaker (PSB) algorithm: 49 techniques × 6 LPCI stages × adaptive mutation — generating up to 2,822,400 unique payload combinations via encoding, structural embedding, semantic reframing, trigger/timing, and exfiltration technique classes",
+      "affected": "GPT-4o-mini (67%), Claude-3-Sonnet (85%), Gemini-2.0-Flash (92%) — tested via direct chat-completion API; actual agentic deployments with persistent memory and tool access expected to show higher rates",
+      "impact": "Establishes that all major production LLMs are vulnerable to LPCI at statistically significant rates; 4x improvement over baseline injection success rate; AV-2 memory-persistent triggers and AV-4 RAG poisoning represent unmitigated threat classes for agentic deployments",
+      "severity": "Critical",
+      "mitigations": [
+        "Run LAAF S1–S6 against your deployment: bash evals/laaf/run_laaf.sh",
+        "Implement instruction hierarchy: system prompt has absolute priority at every turn, not just session start",
+        "Separate trust levels for system instructions vs. retrieved/user-provided content",
+        "Memory integrity monitoring: validate persisted content against trust policy before execution",
+        "Immutable audit logs outside agent control (mitigates S6 trace tampering)",
+        "Human confirmation required before any cross-session or memory-triggered action",
+        "See evals/laaf/README.md for full LAAF integration and stage-by-stage OWASP crosswalk"
+      ],
+      "references": [
+        { "title": "Logic-layer Prompt Control Injection Vulnerabilities in Agentic LLM Systems — Atta et al. (2026)", "url": "https://arxiv.org/abs/2507.10457", "type": "research" },
+        { "title": "LAAF v2.0 — Logic-layer Automated Attack Framework", "url": "https://github.com/qorvexconsulting1/laaf-V2.0", "type": "advisory" }
+      ],
+      "tags": ["lpci", "laaf", "memory-persistence", "layered-encoding", "semantic-reframing", "multi-stage", "agentic", "psb-algorithm", "empirical"]
     }
   ]
 }
