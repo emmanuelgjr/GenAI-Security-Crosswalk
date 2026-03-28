@@ -7,6 +7,46 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.2.0] — 2026-03-27
+
+### Added
+
+#### New LLM Top 10 mapping files (3 added)
+
+| File | Framework |
+|---|---|
+| `llm-top10/LLM_STRIDE.md` | STRIDE threat modeling |
+| `llm-top10/LLM_CWE_CVE.md` | CWE root cause taxonomy and CVE evidence |
+| `llm-top10/LLM_AITG.md` | OWASP AI Testing Guide |
+
+#### New DSGAI 2026 mapping files (4 added)
+
+| File | Framework |
+|---|---|
+| `dsgai-2026/DSGAI_ASVS.md` | OWASP ASVS 4.0.3 |
+| `dsgai-2026/DSGAI_CISControls.md` | CIS Controls v8.1 |
+| `dsgai-2026/DSGAI_CWE_CVE.md` | CWE root cause taxonomy and CVE evidence |
+| `dsgai-2026/DSGAI_ENISA.md` | ENISA Multilayer Framework |
+
+#### README updates
+
+- Mapping file count updated: 38 — 45
+- LLM framework mapping count updated: 14 — 17
+- DSGAI framework mapping count updated: 9 — 13
+- Framework matrix: CIS Controls, OWASP ASVS, ENISA now show DSGAI coverage
+- Repository structure tree updated for all new files
+
+#### Totals at v1.2.0
+
+| Metric | Count |
+|---|---|
+| Source lists | 3 |
+| Frameworks | 17 |
+| Mapping files | 45 |
+| Implementation recipes | 13 |
+| Tools catalogued | 40+ |
+
+---
 
 ## [1.1.2] — 2026-03-27
 
