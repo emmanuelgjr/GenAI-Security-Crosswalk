@@ -2128,28 +2128,52 @@ input, select { font-family: inherit; }
 
       dashboard.innerHTML = '';
 
-      // Calculate coverage per entry
+      // Calculate DEPTH coverage per entry
+      // Score = what % of each entry's total controls are covered by selected frameworks
+      // Weighted by severity: Critical=4, High=3, Medium=2, Low=1
+      var sevWeight = { Critical: 4, High: 3, Medium: 2, Low: 1 };
+      var totalWeight = 0;
+      var weightedScore = 0;
       var coveredEntries = [];
       var uncoveredEntries = [];
+      var entryScores = [];
+
       DATA.forEach(function(entry) {
-        var entryFws = new Set(entry.mappings.map(function(m) { return m.framework; }));
-        var hasOverlap = false;
-        selected.forEach(function(fw) {
-          if (entryFws.has(fw)) hasOverlap = true;
-        });
-        if (hasOverlap) coveredEntries.push(entry);
+        var totalControls = entry.mappings.length;
+        if (totalControls === 0) { uncoveredEntries.push(entry); return; }
+
+        var coveredControls = entry.mappings.filter(function(m) {
+          return selected.has(m.framework);
+        }).length;
+
+        var entryPct = Math.round((coveredControls / totalControls) * 100);
+        var weight = sevWeight[entry.severity] || 1;
+        totalWeight += weight;
+        weightedScore += (coveredControls / totalControls) * weight;
+
+        entryScores.push({ entry: entry, pct: entryPct, covered: coveredControls, total: totalControls });
+
+        if (coveredControls > 0) coveredEntries.push(entry);
         else uncoveredEntries.push(entry);
       });
 
-      var overallPct = DATA.length > 0 ? Math.round((coveredEntries.length / DATA.length) * 100) : 0;
+      var overallPct = totalWeight > 0 ? Math.round((weightedScore / totalWeight) * 100) : 0;
 
       // Per source list
       var sourceLists = ['LLM-Top10-2025', 'Agentic-Top10-2026', 'DSGAI-2026'];
       var sourceStats = {};
       sourceLists.forEach(function(sl) {
+        var slEntries = entryScores.filter(function(es) { return es.entry.source_list === sl; });
+        var slWeight = 0;
+        var slScore = 0;
+        slEntries.forEach(function(es) {
+          var w = sevWeight[es.entry.severity] || 1;
+          slWeight += w;
+          slScore += (es.covered / es.total) * w;
+        });
         var total = DATA.filter(function(e) { return e.source_list === sl; }).length;
-        var covered = coveredEntries.filter(function(e) { return e.source_list === sl; }).length;
-        sourceStats[sl] = { total: total, covered: covered, pct: total > 0 ? Math.round((covered / total) * 100) : 0 };
+        var covered = slEntries.filter(function(es) { return es.covered > 0; }).length;
+        sourceStats[sl] = { total: total, covered: covered, pct: slWeight > 0 ? Math.round((slScore / slWeight) * 100) : 0 };
       });
 
       // Overview cards
@@ -2158,7 +2182,7 @@ input, select { font-family: inherit; }
       var mainCard = el('div', { className: 'score-card' });
       mainCard.appendChild(el('div', { className: 'score-big ' + scoreClass(overallPct) }, overallPct + '%'));
       mainCard.appendChild(el('div', { className: 'score-label' }, 'Overall Coverage'));
-      mainCard.appendChild(el('div', { className: 'score-sublabel' }, coveredEntries.length + ' / ' + DATA.length + ' entries'));
+      mainCard.appendChild(el('div', { className: 'score-sublabel' }, selected.size + ' / ' + FRAMEWORKS.length + ' frameworks · severity-weighted'));
       overview.appendChild(mainCard);
 
       sourceLists.forEach(function(sl) {
@@ -2166,44 +2190,59 @@ input, select { font-family: inherit; }
         var card = el('div', { className: 'score-card' });
         card.appendChild(el('div', { className: 'score-big ' + scoreClass(s.pct) }, s.pct + '%'));
         card.appendChild(el('div', { className: 'score-label' }, SOURCE_LABELS[sl]));
-        card.appendChild(el('div', { className: 'score-sublabel' }, s.covered + ' / ' + s.total + ' entries'));
+        card.appendChild(el('div', { className: 'score-sublabel' }, s.covered + ' / ' + s.total + ' entries touched'));
         overview.appendChild(card);
       });
       dashboard.appendChild(overview);
 
-      // Severity heatmap (uncovered Critical/High)
-      var critUncovered = uncoveredEntries.filter(function(e) { return e.severity === 'Critical'; });
-      var highUncovered = uncoveredEntries.filter(function(e) { return e.severity === 'High'; });
+      // Severity heatmap — Critical/High entries with < 50% coverage
+      var weakEntries = entryScores.filter(function(es) {
+        return (es.entry.severity === 'Critical' || es.entry.severity === 'High') && es.pct < 50;
+      }).sort(function(a, b) {
+        var sevOrd = { Critical: 0, High: 1 };
+        if (sevOrd[a.entry.severity] !== sevOrd[b.entry.severity]) return sevOrd[a.entry.severity] - sevOrd[b.entry.severity];
+        return a.pct - b.pct;
+      });
 
-      if (critUncovered.length > 0 || highUncovered.length > 0) {
+      if (weakEntries.length > 0 && selected.size > 0) {
         var heatSection = el('div', { className: 'gap-section' });
-        heatSection.appendChild(el('h3', { style: 'color:var(--cr);' }, 'Uncovered Critical/High Entries'));
-        var allHighPriority = critUncovered.concat(highUncovered);
-        allHighPriority.forEach(function(entry) {
-          var item = el('div', { className: 'gap-item', style: 'border-left:3px solid ' + sevColor(entry.severity) + ';cursor:pointer;' });
-          item.appendChild(el('span', { className: 'gap-id badge-id ' + entry.severity }, entry.id));
-          item.appendChild(el('span', { className: 'gap-name' }, entry.name));
-          item.appendChild(el('span', { className: 'badge-sev ' + entry.severity }, entry.severity));
-          item.addEventListener('click', function() { openEntryModal(entry); });
+        heatSection.appendChild(el('h3', { style: 'color:var(--cr);' }, 'Critical/High Entries Below 50% Coverage'));
+        weakEntries.forEach(function(es) {
+          var item = el('div', { className: 'gap-item', style: 'border-left:3px solid ' + sevColor(es.entry.severity) + ';cursor:pointer;' });
+          item.appendChild(el('span', { className: 'gap-id badge-id ' + es.entry.severity }, es.entry.id));
+          item.appendChild(el('span', { className: 'gap-name' }, es.entry.name));
+          item.appendChild(el('span', { className: 'badge-sev ' + es.entry.severity }, es.pct + '% covered'));
+          item.appendChild(el('span', { style: 'font-size:.75rem;color:var(--text-secondary);' }, es.covered + '/' + es.total + ' controls'));
+          item.addEventListener('click', function() { openEntryModal(es.entry); });
           heatSection.appendChild(item);
         });
         dashboard.appendChild(heatSection);
       }
 
-      // Full gap list (sorted by severity)
-      if (uncoveredEntries.length > 0) {
-        var sevOrder = { Critical: 0, High: 1, Medium: 2, Low: 3 };
-        uncoveredEntries.sort(function(a, b) { return (sevOrder[a.severity] || 9) - (sevOrder[b.severity] || 9); });
+      // Full entry list with coverage depth (sorted by severity then coverage)
+      if (selected.size > 0 && entryScores.length > 0) {
+        var sortedScores = entryScores.slice().sort(function(a, b) {
+          var sevOrder = { Critical: 0, High: 1, Medium: 2, Low: 3 };
+          if (sevOrder[a.entry.severity] !== sevOrder[b.entry.severity])
+            return (sevOrder[a.entry.severity] || 9) - (sevOrder[b.entry.severity] || 9);
+          return a.pct - b.pct;
+        });
 
         var gapSection = el('div', { className: 'gap-section' });
-        gapSection.appendChild(el('h3', {}, 'All Uncovered Entries (' + uncoveredEntries.length + ')'));
-        uncoveredEntries.forEach(function(entry) {
-          var item = el('div', { className: 'gap-item', style: 'cursor:pointer;' });
-          item.appendChild(el('span', { className: 'gap-id badge-id ' + entry.severity }, entry.id));
-          item.appendChild(el('span', { className: 'gap-name' }, entry.name));
-          item.appendChild(el('span', { className: 'badge-sev ' + entry.severity }, entry.severity));
-          item.appendChild(el('span', { className: 'badge-source', style: 'font-size:.7rem;' }, SOURCE_LABELS[entry.source_list] || entry.source_list));
-          item.addEventListener('click', function() { openEntryModal(entry); });
+        gapSection.appendChild(el('h3', {}, 'All Entries — Coverage Depth'));
+        gapSection.appendChild(el('p', { style: 'font-size:.85rem;color:var(--text-secondary);margin-bottom:12px;' },
+          selected.size + ' of ' + FRAMEWORKS.length + ' frameworks selected — ' + overallPct + '% weighted coverage'));
+        sortedScores.forEach(function(es) {
+          var item = el('div', { className: 'gap-item', style: 'cursor:pointer;border-left:3px solid ' + sevColor(es.entry.severity) + ';' });
+          item.appendChild(el('span', { className: 'gap-id badge-id ' + es.entry.severity }, es.entry.id));
+          item.appendChild(el('span', { className: 'gap-name' }, es.entry.name));
+          // Coverage bar
+          var barWrap = el('div', { style: 'flex:1;max-width:120px;background:var(--bg);border-radius:4px;height:8px;overflow:hidden;' });
+          var barFill = el('div', { style: 'height:100%;width:' + es.pct + '%;background:' + (es.pct >= 70 ? 'var(--lo)' : es.pct >= 40 ? 'var(--me)' : 'var(--cr)') + ';border-radius:4px;transition:width .3s;' });
+          barWrap.appendChild(barFill);
+          item.appendChild(barWrap);
+          item.appendChild(el('span', { style: 'font-size:.8rem;font-weight:600;min-width:40px;text-align:right;color:' + (es.pct >= 70 ? 'var(--lo)' : es.pct >= 40 ? 'var(--me)' : 'var(--cr)') }, es.pct + '%'));
+          item.addEventListener('click', function() { openEntryModal(es.entry); });
           gapSection.appendChild(item);
         });
         dashboard.appendChild(gapSection);
@@ -2270,8 +2309,8 @@ input, select { font-family: inherit; }
           agenticPct: sourceStats['Agentic-Top10-2026'].pct,
           dsgaiPct: sourceStats['DSGAI-2026'].pct,
           fwCount: selected.size,
-          criticalGaps: critUncovered.length,
-          highGaps: highUncovered.length,
+          criticalGaps: weakEntries.filter(function(e) { return e.entry.severity === 'Critical'; }).length,
+          highGaps: weakEntries.filter(function(e) { return e.entry.severity === 'High'; }).length,
           shareUrl: shareUrl
         });
 
@@ -2305,8 +2344,10 @@ input, select { font-family: inherit; }
 
         // Twitter/X share
         twitterBtn.onclick = function() {
+          var critCount = weakEntries.filter(function(e) { return e.entry.severity === 'Critical'; }).length;
+          var highCount = weakEntries.filter(function(e) { return e.entry.severity === 'High'; }).length;
           var tweetText = 'Just assessed our AI security posture against the OWASP GenAI Crosswalk \u2014 scored ' + overallPct + '% across ' + selected.size + ' frameworks.\n\n' +
-            critUncovered.length + ' critical gaps identified. ' + highUncovered.length + ' high-severity gaps.\n\n' +
+            critCount + ' critical gaps identified. ' + highCount + ' high-severity gaps.\n\n' +
             'Free tool:\n\n#AISecurity #OWASP #GenAI #Cybersecurity';
           var twitterUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText) + '&url=' + encodeURIComponent(shareUrl);
           window.open(twitterUrl, '_blank', 'width=600,height=400');
