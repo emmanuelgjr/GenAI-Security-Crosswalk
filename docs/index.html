@@ -524,7 +524,7 @@ input, select { font-family: inherit; }
 }
 .matrix-table {
   border-collapse: collapse; font-size: .72rem;
-  width: auto; margin: 0;
+  width: auto; margin: 0; table-layout: fixed;
 }
 .matrix-table th {
   padding: 4px 2px; font-weight: 600; text-align: center;
@@ -538,10 +538,11 @@ input, select { font-family: inherit; }
 }
 .matrix-table th.col-header:hover { color: var(--accent); }
 .matrix-table th.row-header {
-  text-align: left; padding: 4px 6px 4px 4px; font-family: var(--font-mono);
+  text-align: left; padding: 4px 8px 4px 4px; font-family: var(--font-mono);
   position: sticky; left: 0; background: var(--bg); z-index: 3;
   white-space: nowrap; font-size: .75rem; cursor: pointer;
   border-right: 2px solid var(--border);
+  width: 70px; max-width: 70px;
 }
 .matrix-table th.row-header:hover { color: var(--accent); }
 .matrix-table td {
