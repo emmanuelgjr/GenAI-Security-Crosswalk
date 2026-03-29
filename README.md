@@ -12,8 +12,7 @@
 
 ### [Live Web App](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/) | [Score Your Coverage](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score) | [Explore Entries](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) | [View Incidents](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents)
 
-Maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).
-Created by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)**.
+Created and led by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)**, who leads the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).
 
 ---
 
@@ -610,11 +609,9 @@ Free to share and adapt for any purpose, including commercial use, with appropri
  
 ## Acknowledgements
  
-Created and maintained by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)** and the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).
- 
+Created and led by **[Emmanuel Guilherme Junior](https://github.com/emmanuelgjr)**, who leads the [OWASP GenAI Data Security Initiative](https://genai.owasp.org).
+
 Built on the work of the OWASP LLM Top 10, OWASP Agentic Top 10, OWASP GenAI Data Security, OWASP NHI Top 10, and OWASP SAMM project teams.
- 
-Special thanks to [Ken Huang](https://github.com/kenhuangus) (Cloud Security Alliance) for the MAESTRO framework and his contributions to the OWASP LLM Top 10.
  
 ---
  
