@@ -523,29 +523,31 @@ input, select { font-family: inherit; }
   margin: 0 auto; display: none;
 }
 .matrix-table {
-  border-collapse: collapse; font-size: .72rem; width: 100%;
-  min-width: 900px;
+  border-collapse: collapse; font-size: .72rem;
+  width: auto; margin: 0;
 }
 .matrix-table th {
-  padding: 6px 4px; font-weight: 600; text-align: center;
+  padding: 4px 2px; font-weight: 600; text-align: center;
   border-bottom: 2px solid var(--border); position: sticky; top: 0;
   background: var(--bg); z-index: 2;
 }
 .matrix-table th.col-header {
   writing-mode: vertical-lr; transform: rotate(180deg);
-  height: 140px; cursor: pointer; font-size: .68rem;
-  white-space: nowrap;
+  height: 130px; cursor: pointer; font-size: .65rem;
+  white-space: nowrap; padding: 4px 1px;
 }
 .matrix-table th.col-header:hover { color: var(--accent); }
 .matrix-table th.row-header {
-  text-align: left; padding: 6px 8px; font-family: var(--font-mono);
+  text-align: left; padding: 4px 6px 4px 4px; font-family: var(--font-mono);
   position: sticky; left: 0; background: var(--bg); z-index: 3;
   white-space: nowrap; font-size: .75rem; cursor: pointer;
+  border-right: 2px solid var(--border);
 }
 .matrix-table th.row-header:hover { color: var(--accent); }
 .matrix-table td {
-  width: 28px; height: 28px; text-align: center; cursor: pointer;
-  border: 1px solid var(--border-light);
+  width: 24px; height: 24px; min-width: 24px; max-width: 24px;
+  text-align: center; cursor: pointer;
+  border: 1px solid var(--border-light); padding: 0;
 }
 .matrix-cell-mapped { background: #22c55e; }
 [data-theme="dark"] .matrix-cell-mapped { background: #16a34a; }
