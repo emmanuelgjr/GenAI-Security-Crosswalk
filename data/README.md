@@ -10,7 +10,11 @@ dashboard integration, and downstream tooling without scraping Markdown.
 
 | File | Purpose |
 |---|---|
-| `schema.json` | JSON Schema (Draft 7) defining the structure of all mapping entries |
+| `schema.json` | JSON Schema (Draft 7) defining the structure of all entry files |
+| `incidents-schema.json` | JSON Schema for incident entries |
+| `incidents.json` | 50 real-world + research AI security incidents with MAESTRO layer attribution |
+| `tools-supplement.json` | Supplemental tool entries merged into entries at generation time |
+| `entries/` | 41 machine-readable JSON files — one per OWASP entry (LLM01–LLM10, ASI01–ASI10, DSGAI01–DSGAI21) |
 
 ---
 
@@ -40,7 +44,7 @@ Every mapping entry conforms to `schema.json`. Key fields:
     { "name": "Garak", "url": "https://github.com/leondz/garak", "type": "open-source" }
   ],
   "incidents": [
-    { "name": "EchoLeak", "url": "https://...", "year": 2025 }
+    { "name": "EchoLeak", "url": "https://...", "year": 2025, "incident_id": "INC-003" }
   ],
   "crossrefs": {
     "agentic_top10": ["ASI01"],
@@ -55,44 +59,105 @@ Every mapping entry conforms to `schema.json`. Key fields:
 
 ---
 
-## Validating the schema
+## Querying the data
+
+### CLI query tool (no dependencies)
 
 ```bash
-# Install a JSON Schema validator
-npm install -g ajv-cli
+# Summary statistics
+node scripts/query.js --stats
 
-# Validate a data file against the schema
-ajv validate -s data/schema.json -d data/entries/LLM01.json
+# All Critical severity entries
+node scripts/query.js --severity Critical
+
+# All entries mapped to a framework
+node scripts/query.js --framework "EU AI Act"
+
+# Full entry detail
+node scripts/query.js --entry LLM01
+
+# Tools for a specific entry
+node scripts/query.js --entry LLM01 --tools
+
+# Incidents for a specific entry
+node scripts/query.js --entry LLM01 --incidents
+
+# Framework mappings for an entry
+node scripts/query.js --entry ASI01 --mappings
+
+# Agentic entries only
+node scripts/query.js --source-list Agentic
+
+# Entries with AIVSS score above 8.0
+node scripts/query.js --aivss-above 8.0
+
+# Framework coverage matrix
+node scripts/query.js --framework-coverage
+
+# Search incidents by keyword
+node scripts/query.js --incident-search "deepfake"
+
+# JSON output for piping
+node scripts/query.js --severity Critical --json
+
+# CSV export
+node scripts/query.js --framework "NIST" --format csv
 ```
 
----
-
-## Querying with jq
-
-Common queries using [`jq`](https://stedolan.github.io/jq/):
+### With jq (alternative)
 
 ```bash
-# All Critical severity entries across all source lists
+# All Critical severity entries
 jq 'select(.severity == "Critical") | .id' data/entries/*.json
 
 # All entries mapping to ISO 42001
 jq 'select(.mappings[].framework == "ISO/IEC 42001:2023") | {id, name}' data/entries/*.json
 
-# All tools that address LLM01
-jq 'select(.id == "LLM01") | .tools[].name' data/entries/LLM01.json
+# Tools for LLM01
+jq '.tools[].name' data/entries/LLM01.json
 
 # Entries with AIVSS score above 8.0
 jq 'select(.aivss_score > 8.0) | {id, name, aivss_score}' data/entries/*.json
+```
 
-# All agentic entries with Foundational-tier mitigations
-jq 'select(.source_list == "Agentic-Top10-2026") |
-    select(.mappings[].tier == "Foundational") |
-    .id' data/entries/*.json
+### Compliance reports
 
-# Framework coverage: which source lists does each framework cover?
-jq -s 'group_by(.mappings[].framework) |
-        map({framework: .[0].mappings[].framework,
-             source_lists: map(.source_list) | unique})' data/entries/*.json
+```bash
+# All 20 frameworks — gap assessment
+node scripts/compliance-report.js
+
+# Single framework — multiple formats
+node scripts/compliance-report.js --framework "EU AI Act"
+node scripts/compliance-report.js --framework "EU AI Act" --format csv
+node scripts/compliance-report.js --framework "EU AI Act" --format json
+node scripts/compliance-report.js --framework "EU AI Act" --format oscal
+
+# Incident reports
+node scripts/incidents-report.js --entry LLM01
+node scripts/incidents-report.js --format stix    # STIX 2.1 for SIEM/SOAR
+```
+
+### TypeScript / npm
+
+```typescript
+import { getEntry, getFramework, searchEntries } from '@owasp/genai-crosswalk';
+
+const llm01 = getEntry('LLM01');
+const euai  = getFramework('EU AI Act');
+const hits  = searchEntries('injection');
+```
+
+---
+
+## Validating the schema
+
+```bash
+# Node.js validator (built-in)
+node scripts/validate.js
+
+# Or with ajv-cli
+npm install -g ajv-cli
+ajv validate -s data/schema.json -d data/entries/LLM01.json
 ```
 
 ---
@@ -101,11 +166,12 @@ jq -s 'group_by(.mappings[].framework) |
 
 The Markdown files in `/llm-top10/`, `/agentic-top10/`, and
 `/dsgai-2026/` are the **authoritative source** of all mapping content.
-The JSON data in `/data/entries/` (when populated) is derived from
-those files and must stay in sync.
+The JSON data in `/data/entries/` is derived from those files via
+`scripts/generate.js` and must stay in sync.
 
 If you find a discrepancy between a Markdown file and a JSON entry,
-the Markdown file is correct. Update the JSON to match, and open a PR.
+the Markdown file is correct. Run `node scripts/generate.js` to
+regenerate, and open a PR.
 
 ---
 
@@ -113,19 +179,10 @@ the Markdown file is correct. Update the JSON to match, and open a PR.
 
 When adding a new mapping file:
 1. Create the Markdown file following `shared/TEMPLATE.md`.
-2. Create a corresponding JSON entry in `data/entries/` following `schema.json`.
-3. Run `node scripts/validate.js` to confirm both are consistent.
+2. Run `node scripts/generate.js` to regenerate JSON entries.
+3. Run `node scripts/validate.js` to confirm consistency.
 4. Include both files in your PR.
 
 If you are not comfortable with JSON, submit the Markdown-only PR and
 note in the PR description that the JSON entry is outstanding — a
-maintainer will create it.
-
----
-
-## Planned enhancements
-
-- `data/entries/` — one JSON file per vulnerability ID (58 initial entries)
-- `data/incidents.json` — structured incident database with MAESTRO layer attribution
-- `scripts/generate.js` — parse Markdown files and emit JSON entries
-- `scripts/query.js` — CLI query interface wrapping jq patterns above
+maintainer will run `generate.js` after merge.

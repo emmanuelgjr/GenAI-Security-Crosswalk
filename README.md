@@ -320,6 +320,7 @@ GenAI-Security-Crosswalk/
 │   ├── generate.js                  ← Markdown-to-JSON parser → data/entries/
 │   ├── compliance-report.js         ← Gap assessment generator (MD/CSV/JSON/OSCAL)
 │   ├── incidents-report.js          ← Incident query tool (MD/CSV/JSON/STIX 2.1)
+│   ├── query.js                     ← CLI query interface (replaces jq)
 │   ├── watch.js                     ← External source watcher (OWASP/arXiv/NVD/frameworks)
 │   └── sbom-inventory.js            ← Content-level CycloneDX SBOM generator
 │
