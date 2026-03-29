@@ -472,20 +472,56 @@ input, select { font-family: inherit; }
 /* ══════════════════════════════════════════════════════════════════════════════
    Coverage Matrix (Frameworks page)
    ══════════════════════════════════════════════════════════════════════════════ */
+/* Frameworks page */
+.fw-page-header {
+  max-width: var(--max-w); margin: 0 auto; padding: 24px 24px 0;
+}
+.fw-page-header h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+.fw-page-header p { color: var(--text-secondary); font-size: .9rem; margin-bottom: 16px; }
+.fw-stats {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; gap: 12px; flex-wrap: wrap; padding: 0 24px 16px;
+}
+.fw-stat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 20px; flex: 1; min-width: 140px; text-align: center;
+}
+.fw-stat-card .num { font-size: 1.6rem; font-weight: 700; }
+.fw-stat-card .label { font-size: .78rem; color: var(--text-secondary); margin-top: 2px; }
+
+.fw-view-toggle {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 24px 16px;
+  display: flex; gap: 8px;
+}
+
+.fw-grid {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px;
+}
+.fw-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+}
+.fw-card:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(37,99,235,.1); }
+.fw-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.fw-card-name { font-weight: 700; font-size: .95rem; }
+.fw-card-pct { font-weight: 700; font-size: 1.1rem; }
+.fw-card-bar { height: 8px; background: var(--bg-alt); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
+.fw-card-bar-fill { height: 100%; border-radius: 4px; transition: width .3s; }
+.fw-card-detail { display: flex; gap: 16px; font-size: .78rem; color: var(--text-secondary); flex-wrap: wrap; }
+.fw-card-detail span { white-space: nowrap; }
+.fw-card-sources { display: flex; gap: 4px; margin-top: 8px; }
+.fw-source-dot { padding: 2px 8px; border-radius: 10px; font-size: .68rem; font-weight: 600; }
+.fw-source-dot.llm { background: #2563eb22; color: #2563eb; }
+.fw-source-dot.asi { background: #7c3aed22; color: #7c3aed; }
+.fw-source-dot.dsg { background: #059669022; color: #059669; }
+
+/* Matrix view (compact table) */
 .matrix-wrap {
   max-width: 100%; overflow-x: auto; padding: 24px;
-  margin: 0 auto;
+  margin: 0 auto; display: none;
 }
-.matrix-stats {
-  max-width: var(--max-w); margin: 0 auto;
-  display: flex; gap: 16px; flex-wrap: wrap; padding: 24px 24px 0;
-}
-.matrix-stat {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 12px 20px; flex: 1; min-width: 140px;
-}
-.matrix-stat-label { font-size: .78rem; color: var(--text-muted); }
-.matrix-stat-val { font-size: 1.5rem; font-weight: 700; }
 .matrix-table {
   border-collapse: collapse; font-size: .72rem; width: 100%;
   min-width: 900px;
@@ -511,9 +547,7 @@ input, select { font-family: inherit; }
   width: 28px; height: 28px; text-align: center; cursor: pointer;
   border: 1px solid var(--border-light);
 }
-.matrix-cell-mapped {
-  background: #22c55e;
-}
+.matrix-cell-mapped { background: #22c55e; }
 [data-theme="dark"] .matrix-cell-mapped { background: #16a34a; }
 .matrix-cell-empty { background: var(--bg-alt); }
 .matrix-cell-mapped:hover { background: #16a34a; }
@@ -1684,100 +1718,132 @@ input, select { font-family: inherit; }
   // Frameworks Coverage Matrix
   // ══════════════════════════════════════════════════════════════════════════════
   function renderFrameworks(container) {
-    // Stats
-    var statsRow = el('div', { className: 'matrix-stats' });
-    var totalCells = DATA.length * FRAMEWORKS.length;
-    var mappedCells = 0;
-    DATA.forEach(function(e) {
-      var fws = new Set(e.mappings.map(function(m) { return m.framework; }));
-      mappedCells += fws.size;
-    });
-    var coveragePct = Math.round((mappedCells / totalCells) * 100);
+    // Build framework data
+    var fwData = FRAMEWORKS.map(function(fw) {
+      var entries = DATA.filter(function(e) { return e.mappings.some(function(m) { return m.framework === fw; }); });
+      var totalControls = 0;
+      entries.forEach(function(e) { totalControls += e.mappings.filter(function(m) { return m.framework === fw; }).length; });
+      var llm = entries.filter(function(e) { return e.source_list === 'LLM-Top10-2025'; }).length;
+      var asi = entries.filter(function(e) { return e.source_list === 'Agentic-Top10-2026'; }).length;
+      var dsg = entries.filter(function(e) { return e.source_list === 'DSGAI-2026'; }).length;
+      return { name: fw, entries: entries.length, controls: totalControls, pct: Math.round(entries.length / DATA.length * 100), llm: llm, asi: asi, dsg: dsg };
+    }).sort(function(a, b) { return b.entries - a.entries; });
 
-    var statItems = [
-      ['Total Entries', DATA.length],
-      ['Total Frameworks', FRAMEWORKS.length],
-      ['Mapped Cells', mappedCells + ' / ' + totalCells],
-      ['Overall Coverage', coveragePct + '%']
-    ];
-    statItems.forEach(function(s) {
-      var card = el('div', { className: 'matrix-stat' });
-      card.appendChild(el('div', { className: 'matrix-stat-label' }, s[0]));
-      card.appendChild(el('div', { className: 'matrix-stat-val' }, String(s[1])));
+    var totalMapped = 0;
+    DATA.forEach(function(e) { totalMapped += new Set(e.mappings.map(function(m) { return m.framework; })).size; });
+
+    // Header
+    var header = el('div', { className: 'fw-page-header' });
+    header.appendChild(el('h2', {}, 'Framework Coverage'));
+    header.appendChild(el('p', {}, FRAMEWORKS.length + ' frameworks mapped across ' + DATA.length + ' OWASP entries. Click any framework to see its full control list.'));
+    container.appendChild(header);
+
+    // Stats
+    var statsRow = el('div', { className: 'fw-stats' });
+    [
+      [FRAMEWORKS.length, 'Frameworks'],
+      [DATA.length, 'Entries'],
+      [totalMapped, 'Mapped Cells'],
+      [Math.round(totalMapped / (DATA.length * FRAMEWORKS.length) * 100) + '%', 'Coverage']
+    ].forEach(function(s) {
+      var card = el('div', { className: 'fw-stat-card' });
+      card.appendChild(el('div', { className: 'num' }, String(s[0])));
+      card.appendChild(el('div', { className: 'label' }, s[1]));
       statsRow.appendChild(card);
     });
     container.appendChild(statsRow);
 
-    // Matrix table
+    // View toggle
+    var toggleRow = el('div', { className: 'fw-view-toggle' });
+    var cardViewBtn = el('button', { className: 'pill active' }, 'Card View');
+    var matrixViewBtn = el('button', { className: 'pill' }, 'Matrix View');
+    toggleRow.appendChild(cardViewBtn);
+    toggleRow.appendChild(matrixViewBtn);
+    container.appendChild(toggleRow);
+
+    // Card grid
+    var grid = el('div', { className: 'fw-grid' });
+    fwData.forEach(function(fw) {
+      var card = el('div', { className: 'fw-card', tabindex: '0', role: 'button', 'aria-label': fw.name });
+
+      var hdr = el('div', { className: 'fw-card-header' });
+      hdr.appendChild(el('div', { className: 'fw-card-name' }, fw.name));
+      var pctColor = fw.pct >= 90 ? 'var(--lo)' : fw.pct >= 70 ? 'var(--me)' : 'var(--cr)';
+      hdr.appendChild(el('div', { className: 'fw-card-pct', style: 'color:' + pctColor }, fw.pct + '%'));
+      card.appendChild(hdr);
+
+      var bar = el('div', { className: 'fw-card-bar' });
+      var fill = el('div', { className: 'fw-card-bar-fill', style: 'width:' + fw.pct + '%;background:' + pctColor });
+      bar.appendChild(fill);
+      card.appendChild(bar);
+
+      var detail = el('div', { className: 'fw-card-detail' });
+      detail.appendChild(el('span', {}, fw.entries + '/' + DATA.length + ' entries'));
+      detail.appendChild(el('span', {}, fw.controls + ' controls'));
+      card.appendChild(detail);
+
+      var sources = el('div', { className: 'fw-card-sources' });
+      if (fw.llm > 0) sources.appendChild(el('span', { className: 'fw-source-dot llm' }, 'LLM ' + fw.llm));
+      if (fw.asi > 0) sources.appendChild(el('span', { className: 'fw-source-dot asi' }, 'Agentic ' + fw.asi));
+      if (fw.dsg > 0) sources.appendChild(el('span', { className: 'fw-source-dot dsg' }, 'DSGAI ' + fw.dsg));
+      card.appendChild(sources);
+
+      card.addEventListener('click', function() { openFrameworkModal(fw.name); });
+      card.addEventListener('keydown', function(e) { if (e.key === 'Enter') openFrameworkModal(fw.name); });
+      grid.appendChild(card);
+    });
+    container.appendChild(grid);
+
+    // Matrix table (hidden by default)
     var wrap = el('div', { className: 'matrix-wrap' });
     var table = el('table', { className: 'matrix-table' });
-
-    // Header row
     var thead = el('thead');
     var headerRow = el('tr');
     headerRow.appendChild(el('th', { className: 'row-header' }, 'Entry'));
     FRAMEWORKS.forEach(function(fw) {
       var th = el('th', { className: 'col-header', title: fw });
       th.textContent = fw;
-      th.addEventListener('click', function() {
-        openFrameworkModal(fw);
-      });
+      th.addEventListener('click', function() { openFrameworkModal(fw); });
       headerRow.appendChild(th);
     });
     thead.appendChild(headerRow);
     table.appendChild(thead);
-
-    // Body
     var tbody = el('tbody');
     var popup = document.getElementById('cell-popup');
-
     DATA.forEach(function(entry) {
       var row = el('tr');
       var entryFws = {};
-      entry.mappings.forEach(function(m) {
-        if (!entryFws[m.framework]) entryFws[m.framework] = [];
-        entryFws[m.framework].push(m);
-      });
-
+      entry.mappings.forEach(function(m) { if (!entryFws[m.framework]) entryFws[m.framework] = []; entryFws[m.framework].push(m); });
       var rowHeader = el('th', { className: 'row-header', title: entry.id + ' - ' + entry.name });
       rowHeader.textContent = entry.id;
       rowHeader.addEventListener('click', function() { openEntryModal(entry); });
       row.appendChild(rowHeader);
-
       FRAMEWORKS.forEach(function(fw) {
         var mapped = entryFws[fw] || [];
-        var td = el('td', {
-          className: mapped.length > 0 ? 'matrix-cell-mapped' : 'matrix-cell-empty',
-          'aria-label': entry.id + ' x ' + fw + ': ' + (mapped.length > 0 ? mapped.length + ' controls' : 'not mapped')
-        });
-
+        var td = el('td', { className: mapped.length > 0 ? 'matrix-cell-mapped' : 'matrix-cell-empty', 'aria-label': entry.id + ' x ' + fw + ': ' + (mapped.length > 0 ? mapped.length + ' controls' : 'not mapped') });
         if (mapped.length > 0) {
-          td.addEventListener('mouseenter', function(e) {
-            popup.style.display = 'block';
-            var title = el('div', { className: 'cell-popup-title' });
-            title.textContent = entry.id + ' \u00D7 ' + fw;
-            popup.innerHTML = '';
-            popup.appendChild(title);
-            mapped.forEach(function(m) {
-              var line = el('div', { style: 'font-size:.78rem;margin-top:4px;' });
-              line.textContent = m.control_id + ' - ' + m.control_name;
-              popup.appendChild(line);
-            });
-            positionPopup(e);
-          });
+          td.addEventListener('mouseenter', function(e) { popup.style.display = 'block'; popup.innerHTML = ''; var t = el('div', { className: 'cell-popup-title' }); t.textContent = entry.id + ' \u00D7 ' + fw; popup.appendChild(t); mapped.slice(0, 5).forEach(function(m) { popup.appendChild(el('div', { style: 'font-size:.78rem;margin-top:4px;' }, (m.control_id || '') + ' ' + (m.control_name || ''))); }); if (mapped.length > 5) popup.appendChild(el('div', { style: 'font-size:.72rem;color:var(--text-secondary);margin-top:4px;' }, '+ ' + (mapped.length - 5) + ' more')); positionPopup(e); });
           td.addEventListener('mousemove', positionPopup);
           td.addEventListener('mouseleave', function() { popup.style.display = 'none'; });
           td.addEventListener('click', function() { openEntryModal(entry); });
         }
-
         row.appendChild(td);
       });
-
       tbody.appendChild(row);
     });
     table.appendChild(tbody);
     wrap.appendChild(table);
     container.appendChild(wrap);
+
+    // Toggle logic
+    cardViewBtn.addEventListener('click', function() {
+      grid.style.display = 'grid'; wrap.style.display = 'none';
+      cardViewBtn.classList.add('active'); matrixViewBtn.classList.remove('active');
+    });
+    matrixViewBtn.addEventListener('click', function() {
+      grid.style.display = 'none'; wrap.style.display = 'block';
+      cardViewBtn.classList.remove('active'); matrixViewBtn.classList.add('active');
+    });
   }
 
   function positionPopup(e) {
