@@ -6,7 +6,7 @@
 [![Source Lists](https://img.shields.io/badge/source%20lists-3-blueviolet)](README.md)
 [![Mapping Files](https://img.shields.io/badge/mapping%20files-67-brightgreen)](README.md)
 [![Frameworks](https://img.shields.io/badge/frameworks-20-orange)](README.md)
-[![npm](https://img.shields.io/badge/npm-%40owasp%2Fgenai--crosswalk-red)](https://www.npmjs.com/package/@owasp/genai-crosswalk)
+[![npm](https://img.shields.io/npm/v/genai-security-crosswalk?color=red&label=npm)](https://www.npmjs.com/package/genai-security-crosswalk)
  
 > The most comprehensive publicly available mapping of OWASP GenAI security risks to industry frameworks — covering LLM applications, autonomous agentic AI, and GenAI data security across **20 frameworks** and **3 OWASP source lists**.
 
@@ -48,7 +48,7 @@ node scripts/incidents-report.js --format stix              # SIEM/SOAR export
 | **Security engineer** | [Explorer](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) → search by risk, see all controls |
 | **Red teamer** | [LAAF guide](evals/laaf/README.md) → run S1–S6 attack stages, map results to OWASP |
 | **GRC / auditor** | `compliance-report.js --format oscal` → import into ServiceNow/Archer |
-| **Developer** | `npm install @owasp/genai-crosswalk` → query risks + controls programmatically |
+| **Developer** | `npm install genai-security-crosswalk` → query risks + controls programmatically |
 | **Threat intel analyst** | `incidents-report.js --format stix` → ingest 50 AI incidents into Sentinel/Splunk |
 
 ---
@@ -219,7 +219,7 @@ GenAI-Security-Crosswalk/
 ├── GOVERNANCE.md                    ← Maintainer roles, PR SLOs, decision process
 ├── SECURITY.md
 ├── CODE_OF_CONDUCT.md
-├── package.json                     ← npm: @owasp/genai-crosswalk (node ≥18)
+├── package.json                     ← npm: genai-security-crosswalk (node ≥18)
 ├── tsconfig.json                    ← TypeScript config
 │
 ├── src/                             ← npm package source (TypeScript)
@@ -442,11 +442,11 @@ Weekly GitHub Actions cron (`.github/workflows/weekly-watch.yml`) runs all 4 wat
 ### npm package
 
 ```bash
-npm install @owasp/genai-crosswalk
+npm install genai-security-crosswalk
 ```
 
 ```typescript
-import { getEntry, getFramework, searchEntries, incidents } from '@owasp/genai-crosswalk';
+import { getEntry, getFramework, searchEntries, incidents } from 'genai-security-crosswalk';
 
 const llm01 = getEntry('LLM01');        // typed Entry object
 const euai  = getFramework('EU AI Act'); // { framework, entries, controls }
