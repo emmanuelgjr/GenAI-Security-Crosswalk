@@ -764,6 +764,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-028"
+    },
+    {
+      "name": "Anthropic Claude context flooding — resource exhaustion via adversarial long-context prompts",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-045"
     }
   ],
   "crossrefs": {

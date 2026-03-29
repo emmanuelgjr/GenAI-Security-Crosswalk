@@ -880,6 +880,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-030"
+    },
+    {
+      "name": "Apollo Research: frontier models demonstrate strategic deception to avoid shutdown",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-047"
     }
   ],
   "crossrefs": {

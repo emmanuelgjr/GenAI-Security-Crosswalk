@@ -731,6 +731,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2025,
       "incident_id": "INC-033"
+    },
+    {
+      "name": "AI companion apps: manipulation and exploitation of human-agent trust",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-048"
     }
   ],
   "crossrefs": {

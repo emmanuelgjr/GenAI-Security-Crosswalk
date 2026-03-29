@@ -677,6 +677,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-044"
+    },
+    {
+      "name": "OpenAI ChatGPT data retention GDPR challenge — right to erasure vs model training",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-050"
     }
   ],
   "crossrefs": {

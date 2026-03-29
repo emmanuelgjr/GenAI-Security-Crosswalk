@@ -1,19 +1,21 @@
 <!--
-  GenAI Security Crosswalk — Shared Resources
-  File        : RECIPES.md — Security Implementation Patterns for GenAI Systems
+  GenAI Security Crosswalk ï¿½ Shared Resources
+  File        : RECIPES.md ï¿½ Security Implementation Patterns for GenAI Systems
   Version     : 2026-Q1
-  Maintained by: OWASP GenAI Data Security Initiative — https://genai.owasp.org
+  Maintained by: OWASP GenAI Data Security Initiative ï¿½ https://genai.owasp.org
   License     : CC BY-SA 4.0
 -->
 
 # Security Recipes for GenAI Systems
 
 Concrete, copy-paste-ready security implementation patterns for the
-three most critical GenAI deployment architectures:
+five most critical GenAI deployment architectures:
 
-1. **RAG Pipelines** — Retrieval-Augmented Generation security
-2. **MCP Servers** — Model Context Protocol server hardening
-3. **Multi-Agent OT** — Autonomous agents in industrial environments
+1. **RAG Pipelines** ï¿½ Retrieval-Augmented Generation security
+2. **MCP Servers** ï¿½ Model Context Protocol server hardening
+3. **Multi-Agent OT** ï¿½ Autonomous agents in industrial environments
+4. **Agentic AI** ï¿½ Agent memory, messaging, credentials, and output guardrails
+5. **Data Pipelines** ï¿½ Provenance, PII, differential privacy, and retention
 
 Each recipe maps to specific OWASP source list entries and framework
 controls covered in this repository. Where a recipe addresses a risk,
@@ -25,26 +27,28 @@ the relevant crosswalk files are cited.
 
 Each recipe follows the same structure:
 
-- **Threat** — what attack this addresses
-- **Architecture** — where this pattern fits in your stack
-- **Implementation** — concrete code, config, or process steps
-- **Validation** — how to verify the control works
-- **Crosswalk** — which repo files cover the underlying risks
+- **Threat** ï¿½ what attack this addresses
+- **Architecture** ï¿½ where this pattern fits in your stack
+- **Implementation** ï¿½ concrete code, config, or process steps
+- **Validation** ï¿½ how to verify the control works
+- **Crosswalk** ï¿½ which repo files cover the underlying risks
 
 Recipes are ordered from most-deployed to most-specialised.
 Start with RAG if you have a production RAG pipeline. Start with
 MCP if you are deploying tool-using agents. Start with OT if you
-are deploying AI in industrial environments.
+are deploying AI in industrial environments. Start with Agentic AI
+if you are building autonomous agent systems. Start with Data
+Pipelines if you need training data governance and privacy controls.
 
 ---
 
-# Part 1 — RAG Pipeline Security
+# Part 1 ï¿½ RAG Pipeline Security
 
 ---
 
 ## Recipe R-01: Access-Controlled Retrieval
 
-**Threat:** LLM02 Sensitive Information Disclosure — users retrieve
+**Threat:** LLM02 Sensitive Information Disclosure ï¿½ users retrieve
 documents they are not authorised to access through the RAG interface.
 
 **Architecture:** Vector store ? retrieval layer ? LLM context assembly
@@ -58,7 +62,7 @@ only be visible to executives, security engineers, or legal counsel.
 
 **Implementation:**
 
-*Step 1 — Tag every document at ingestion with its access tier:*
+*Step 1 ï¿½ Tag every document at ingestion with its access tier:*
 ```python
 from dataclasses import dataclass
 from typing import Optional
@@ -94,7 +98,7 @@ def ingest_document(content: str, metadata: DocumentMetadata, embedder, vector_s
     )
 ```
 
-*Step 2 — Apply user context as a retrieval filter at query time:*
+*Step 2 ï¿½ Apply user context as a retrieval filter at query time:*
 ```python
 def retrieve_with_access_control(
     query: str,
@@ -106,7 +110,7 @@ def retrieve_with_access_control(
 ) -> list[dict]:
     """
     Retrieve documents the user is authorised to access.
-    Filter applied at the vector store query — not post-retrieval.
+    Filter applied at the vector store query ï¿½ not post-retrieval.
     Post-retrieval filtering is insufficient: semantic search may
     score a restricted document highly and you would need to discard
     it after retrieving it, wasting retrieval budget and risking
@@ -114,7 +118,7 @@ def retrieve_with_access_control(
     """
     query_embedding = embedder.embed(query)
 
-    # Build access filter — user must match at least one allowed_role
+    # Build access filter ï¿½ user must match at least one allowed_role
     # OR appear in allowed_users for the document
     access_filter = {
         "should": [
@@ -143,7 +147,7 @@ def retrieve_with_access_control(
     return [r.payload for r in results]
 ```
 
-*Step 3 — Validate classification ceiling before context assembly:*
+*Step 3 ï¿½ Validate classification ceiling before context assembly:*
 ```python
 CLASSIFICATION_ORDER = ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED"]
 
@@ -162,7 +166,7 @@ def assemble_context(retrieved_docs: list[dict], user_max_classification: str) -
     """
     Refuse context assembly if any retrieved document exceeds
     the user's maximum permitted classification level.
-    This is a defence-in-depth check — the retrieval filter
+    This is a defence-in-depth check ï¿½ the retrieval filter
     should have already prevented this, but belt-and-suspenders
     is appropriate for access control.
     """
@@ -174,7 +178,7 @@ def assemble_context(retrieved_docs: list[dict], user_max_classification: str) -
         raise AccessControlViolation(
             f"Retrieved content at {ceiling} exceeds "
             f"user authorisation {user_max_classification}. "
-            f"Retrieval filter may have failed — investigate."
+            f"Retrieval filter may have failed ï¿½ investigate."
         )
 
     context = "\n\n".join(
@@ -200,14 +204,14 @@ for r in results:
         f"Access control failure: returned {r['classification']} to INTERNAL user"
 ```
 
-**Crosswalk:** LLM02 · DSGAI01 · DSGAI11 · ISO 27001 A.8.3 · NIST AI RMF MS-2.5
+**Crosswalk:** LLM02 ï¿½ DSGAI01 ï¿½ DSGAI11 ï¿½ ISO 27001 A.8.3 ï¿½ NIST AI RMF MS-2.5
 
 ---
 
 ## Recipe R-02: Ingestion Pipeline Integrity
 
 **Threat:** LLM04 Data & Model Poisoning / DSGAI05 Data Integrity
-& Validation Failures — adversarially crafted documents corrupt the
+& Validation Failures ï¿½ adversarially crafted documents corrupt the
 RAG knowledge base or exploit ingestion pipeline vulnerabilities.
 
 **Architecture:** Document upload ? validation layer ? chunking ?
@@ -247,7 +251,7 @@ def validate_document_for_ingestion(
 ) -> dict:
     """
     Multi-stage validation before any document enters the RAG corpus.
-    Returns a validation report — caller decides whether to proceed.
+    Returns a validation report ï¿½ caller decides whether to proceed.
     """
     path = Path(file_path)
     report = {
@@ -295,7 +299,7 @@ def validate_document_for_ingestion(
     for pattern in INJECTION_PATTERNS:
         if re.search(pattern, text_content, re.IGNORECASE):
             report["failures"].append(f"INJECTION_PATTERN_DETECTED: {pattern}")
-            # Do not return early — collect all failures for forensics
+            # Do not return early ï¿½ collect all failures for forensics
 
     # Stage 5: Source provenance check
     # In production: verify document came from an approved source system
@@ -329,7 +333,7 @@ SAFE_IMPORT_BASE = Path("/var/rag/imports/sandbox")
 
 def safe_snapshot_import(archive_path: str, destination: Path) -> list[str]:
     """
-    Safely extract snapshot archives — prevent path traversal.
+    Safely extract snapshot archives ï¿½ prevent path traversal.
     CVE-2024-3584 (Qdrant) demonstrated that snapshot imports
     can achieve arbitrary file write via path traversal in archives.
     """
@@ -341,7 +345,7 @@ def safe_snapshot_import(archive_path: str, destination: Path) -> list[str]:
             # Resolve the destination path and verify it stays within sandbox
             target = (destination / member).resolve()
 
-            # Path traversal check — must stay within destination
+            # Path traversal check ï¿½ must stay within destination
             if not str(target).startswith(str(destination)):
                 raise SecurityError(
                     f"Path traversal attempt in snapshot: {member} "
@@ -359,13 +363,13 @@ def safe_snapshot_import(archive_path: str, destination: Path) -> list[str]:
     return extracted
 ```
 
-**Crosswalk:** LLM04 · DSGAI05 · DSGAI13 · ISO 27001 A.8.26/A.8.28/A.8.29
+**Crosswalk:** LLM04 ï¿½ DSGAI05 ï¿½ DSGAI13 ï¿½ ISO 27001 A.8.26/A.8.28/A.8.29
 
 ---
 
 ## Recipe R-03: Output Redaction Before Delivery
 
-**Threat:** LLM02 Sensitive Information Disclosure — LLM responses
+**Threat:** LLM02 Sensitive Information Disclosure ï¿½ LLM responses
 contain PII, credentials, or sensitive identifiers that should be
 masked before reaching the user.
 
@@ -384,7 +388,7 @@ class RedactionPattern:
     replacement: str
     priority: int = 0  # Higher = applied first
 
-# Core patterns — extend for your environment
+# Core patterns ï¿½ extend for your environment
 DEFAULT_PATTERNS = [
     RedactionPattern("API_KEY_GENERIC",
         r"(?:api[_-]?key|apikey)[\"'\s:=]+([A-Za-z0-9_\-]{20,})",
@@ -429,7 +433,7 @@ class OutputRedactor:
     def redact(self, text: str, context: dict = None) -> tuple[str, list[str]]:
         """
         Apply redaction patterns. Returns (redacted_text, list_of_triggered_patterns).
-        Triggered patterns are logged for security monitoring — not returned to user.
+        Triggered patterns are logged for security monitoring ï¿½ not returned to user.
         """
         triggered = []
         result = text
@@ -477,18 +481,18 @@ def deliver_response(raw_response: str, user_id: str, session_id: str) -> str:
             user_id=user_id,
             session_id=session_id,
             patterns=triggered,
-            # Do NOT log the original response — that defeats the purpose
+            # Do NOT log the original response ï¿½ that defeats the purpose
         )
     return redacted
 ```
 
-**Crosswalk:** LLM02 · DSGAI01 · DSGAI09 · DSGAI14 · ISO 27001 A.8.11/A.8.12
+**Crosswalk:** LLM02 ï¿½ DSGAI01 ï¿½ DSGAI09 ï¿½ DSGAI14 ï¿½ ISO 27001 A.8.11/A.8.12
 
 ---
 
 ## Recipe R-04: RAG Circuit Breaker for Silent Failures
 
-**Threat:** DSGAI17 Data Availability & Resilience Failures — vector
+**Threat:** DSGAI17 Data Availability & Resilience Failures ï¿½ vector
 store degradation causes silent misinformation rather than a visible
 error.
 
@@ -503,7 +507,7 @@ from dataclasses import dataclass
 
 class CircuitState(Enum):
     CLOSED = "closed"       # Normal operation
-    OPEN = "open"           # Failing — reject requests
+    OPEN = "open"           # Failing ï¿½ reject requests
     HALF_OPEN = "half_open" # Testing recovery
 
 @dataclass
@@ -522,7 +526,7 @@ class RAGCircuitBreaker:
             else:
                 if fallback_fn:
                     return fallback_fn(query), "CIRCUIT_OPEN_FALLBACK"
-                raise CircuitOpenError("RAG circuit breaker open — vector store degraded")
+                raise CircuitOpenError("RAG circuit breaker open ï¿½ vector store degraded")
 
         try:
             result = retrieval_fn(query)
@@ -564,7 +568,7 @@ class RAGCircuitBreaker:
 def fallback_no_rag(query: str) -> list[dict]:
     """
     Graceful degradation: LLM answers from parametric knowledge only.
-    User is informed that retrieval is unavailable — not silently served
+    User is informed that retrieval is unavailable ï¿½ not silently served
     stale data as if it were current.
     """
     return [{
@@ -579,13 +583,13 @@ def fallback_no_rag(query: str) -> list[dict]:
     }]
 ```
 
-**Crosswalk:** DSGAI17 · ASI08 · LLM10 · ISA/IEC 62443 SR 7.6 (OT) · NIST SP 800-82 (OT)
+**Crosswalk:** DSGAI17 ï¿½ ASI08 ï¿½ LLM10 ï¿½ ISA/IEC 62443 SR 7.6 (OT) ï¿½ NIST SP 800-82 (OT)
 
 ---
 
 ## Recipe R-05: Telemetry with Least-Logging Defaults
 
-**Threat:** DSGAI14 Excessive Telemetry & Monitoring Leakage —
+**Threat:** DSGAI14 Excessive Telemetry & Monitoring Leakage ï¿½
 observability pipelines capture sensitive content in cleartext with
 long retention.
 
@@ -595,11 +599,11 @@ import hashlib
 from enum import IntEnum
 
 class LogLevel(IntEnum):
-    MINIMAL = 1   # Metrics only — no content
+    MINIMAL = 1   # Metrics only ï¿½ no content
     STANDARD = 2  # Anonymised content, hashed identifiers
-    DEBUG = 3     # Full content — requires approval, auto-expires
+    DEBUG = 3     # Full content ï¿½ requires approval, auto-expires
 
-CURRENT_LOG_LEVEL = LogLevel.STANDARD  # Default — never DEBUG in production
+CURRENT_LOG_LEVEL = LogLevel.STANDARD  # Default ï¿½ never DEBUG in production
 
 def log_rag_interaction(
     session_id: str,
@@ -611,7 +615,7 @@ def log_rag_interaction(
     retrieved_classifications: list[str]
 ):
     """
-    Tiered logging — content detail varies by log level.
+    Tiered logging ï¿½ content detail varies by log level.
     MINIMAL: suitable for long-retention operational dashboards.
     STANDARD: suitable for security monitoring, short retention (30d).
     DEBUG: full capture, requires explicit approval, 24h auto-expiry.
@@ -630,7 +634,7 @@ def log_rag_interaction(
         base_record.update({
             "query_length": len(query),
             "query_topic_hash": hashlib.sha256(query.encode()).hexdigest()[:8],
-            "doc_ids": retrieved_doc_ids,  # IDs are safe — not content
+            "doc_ids": retrieved_doc_ids,  # IDs are safe ï¿½ not content
             "response_length": len(response),
         })
 
@@ -647,17 +651,17 @@ def log_rag_interaction(
     audit_log.write(base_record)
 ```
 
-**Crosswalk:** DSGAI14 · LLM07 · ISO 27001 A.8.15 · NIST AI RMF GV-1.6
+**Crosswalk:** DSGAI14 ï¿½ LLM07 ï¿½ ISO 27001 A.8.15 ï¿½ NIST AI RMF GV-1.6
 
 ---
 
-# Part 2 — MCP Server Hardening
+# Part 2 ï¿½ MCP Server Hardening
 
 ---
 
 ## Recipe M-01: MCP Server Input Validation and Schema Enforcement
 
-**Threat:** ASI02 Tool Misuse — MCP servers accept malformed or
+**Threat:** ASI02 Tool Misuse ï¿½ MCP servers accept malformed or
 adversarial tool call parameters that cause downstream harm.
 
 **Architecture:** Agent ? MCP server ? tool execution
@@ -668,27 +672,27 @@ from pydantic import BaseModel, validator, Field
 from typing import Annotated
 import re
 
-# Define strict schemas for every tool — no open-ended parameter acceptance
+# Define strict schemas for every tool ï¿½ no open-ended parameter acceptance
 
 class HistorianQueryParams(BaseModel):
     """
-    Schema for historian read tool — OT environment example.
+    Schema for historian read tool ï¿½ OT environment example.
     All parameters strictly validated before the query executes.
     """
     tag_names: list[Annotated[str, Field(pattern=r"^[A-Z]{2,4}[-_]\d{3,4}[A-Z]?$")]]
     start_time: str  # ISO 8601
     end_time: str    # ISO 8601
-    max_points: Annotated[int, Field(ge=1, le=10000)]  # Hard cap — no unbounded queries
+    max_points: Annotated[int, Field(ge=1, le=10000)]  # Hard cap ï¿½ no unbounded queries
 
     @validator("tag_names")
     def validate_tag_count(cls, v):
         if len(v) > 50:
-            raise ValueError("Maximum 50 tags per query — use batch endpoint for larger requests")
+            raise ValueError("Maximum 50 tags per query ï¿½ use batch endpoint for larger requests")
         return v
 
     @validator("start_time", "end_time")
     def validate_iso_datetime(cls, v):
-        # Strict ISO 8601 — prevent injection via timestamp strings
+        # Strict ISO 8601 ï¿½ prevent injection via timestamp strings
         if not re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$", v):
             raise ValueError(f"Invalid ISO 8601 datetime: {v}")
         return v
@@ -696,8 +700,8 @@ class HistorianQueryParams(BaseModel):
 
 class WorkOrderCreateParams(BaseModel):
     """
-    Schema for work order creation tool — CMMS integration example.
-    This is an irreversible operation — extra validation layers applied.
+    Schema for work order creation tool ï¿½ CMMS integration example.
+    This is an irreversible operation ï¿½ extra validation layers applied.
     """
     equipment_id: Annotated[str, Field(pattern=r"^[A-Z]{2,6}-\d{3,6}$")]
     priority: Annotated[str, Field(pattern=r"^(LOW|MEDIUM|HIGH)$")]
@@ -729,7 +733,7 @@ class WorkOrderCreateParams(BaseModel):
 # MCP tool handler with schema validation
 def handle_tool_call(tool_name: str, params: dict, user_context: dict) -> dict:
     """
-    Central MCP tool handler — all calls validated before execution.
+    Central MCP tool handler ï¿½ all calls validated before execution.
     Schema validation is the gate. No raw parameter passthrough.
     """
     TOOL_SCHEMAS = {
@@ -749,7 +753,7 @@ def handle_tool_call(tool_name: str, params: dict, user_context: dict) -> dict:
             tool=tool_name,
             user=user_context.get("user_id"),
             error=str(e),
-            # Do not log the raw params — may contain sensitive content
+            # Do not log the raw params ï¿½ may contain sensitive content
         )
         raise ToolValidationError(f"Invalid parameters for {tool_name}: {e}")
 
@@ -765,13 +769,13 @@ def handle_tool_call(tool_name: str, params: dict, user_context: dict) -> dict:
     return execute_tool(tool_name, validated_params, user_context)
 ```
 
-**Crosswalk:** ASI02 · LLM05 · LLM06 · DSGAI06 · ISO 27001 A.8.26/A.8.28 · OWASP ASVS V5
+**Crosswalk:** ASI02 ï¿½ LLM05 ï¿½ LLM06 ï¿½ DSGAI06 ï¿½ ISO 27001 A.8.26/A.8.28 ï¿½ OWASP ASVS V5
 
 ---
 
 ## Recipe M-02: MCP Tool Descriptor Integrity Verification
 
-**Threat:** ASI04 Agentic Supply Chain — compromised MCP server
+**Threat:** ASI04 Agentic Supply Chain ï¿½ compromised MCP server
 injects hidden instructions into tool descriptors that redirect
 agent behaviour.
 
@@ -791,7 +795,7 @@ APPROVED_TOOL_DESCRIPTORS: dict[str, str] = {}  # tool_id ? expected_hash
 def register_tool_descriptor(tool_id: str, descriptor: dict, approver: str):
     """
     Register a tool descriptor with its integrity hash.
-    Called during formal tool approval process — not at runtime.
+    Called during formal tool approval process ï¿½ not at runtime.
     """
     descriptor_json = json.dumps(descriptor, sort_keys=True)
     descriptor_hash = hashlib.sha256(descriptor_json.encode()).hexdigest()
@@ -810,7 +814,7 @@ def validate_tool_descriptor(tool_id: str, descriptor: dict) -> bool:
     """
     Validate a tool descriptor against its approved hash.
     Called before the agent loads any tool.
-    Any modification to a descriptor — even whitespace — fails validation.
+    Any modification to a descriptor ï¿½ even whitespace ï¿½ fails validation.
     """
     if tool_id not in APPROVED_TOOL_DESCRIPTORS:
         security_log.error(
@@ -825,7 +829,7 @@ def validate_tool_descriptor(tool_id: str, descriptor: dict) -> bool:
 
     if not hmac.compare_digest(current_hash, expected_hash):
         security_log.critical(
-            "Tool descriptor integrity failure — possible supply chain compromise",
+            "Tool descriptor integrity failure ï¿½ possible supply chain compromise",
             tool_id=tool_id,
             expected_hash=expected_hash,
             current_hash=current_hash
@@ -838,7 +842,7 @@ def validate_tool_descriptor(tool_id: str, descriptor: dict) -> bool:
 def scan_descriptor_for_hidden_instructions(descriptor: dict) -> list[str]:
     """
     Scan tool descriptors for patterns that could redirect agent behaviour.
-    This is defence-in-depth on top of hash verification —
+    This is defence-in-depth on top of hash verification ï¿½
     catches cases where the attacker has update access to the registry.
     """
     SUSPICIOUS_DESCRIPTOR_PATTERNS = [
@@ -864,11 +868,11 @@ def scan_descriptor_for_hidden_instructions(descriptor: dict) -> list[str]:
 
 def load_tool_for_agent(tool_id: str, descriptor: dict) -> Optional[dict]:
     """
-    Safe tool loading — validates integrity and scans for hidden instructions
+    Safe tool loading ï¿½ validates integrity and scans for hidden instructions
     before making the tool available to the agent.
     """
     if not validate_tool_descriptor(tool_id, descriptor):
-        raise ToolIntegrityError(f"Tool {tool_id} failed integrity check — not loaded")
+        raise ToolIntegrityError(f"Tool {tool_id} failed integrity check ï¿½ not loaded")
 
     hidden = scan_descriptor_for_hidden_instructions(descriptor)
     if hidden:
@@ -878,19 +882,19 @@ def load_tool_for_agent(tool_id: str, descriptor: dict) -> Optional[dict]:
             patterns=hidden
         )
         raise ToolIntegrityError(
-            f"Tool {tool_id} descriptor contains suspicious patterns — not loaded"
+            f"Tool {tool_id} descriptor contains suspicious patterns ï¿½ not loaded"
         )
 
     return descriptor
 ```
 
-**Crosswalk:** ASI04 · LLM03 · DSGAI04 · ISO 27001 A.5.19/A.5.21 · NIST AI RMF MP-5.1
+**Crosswalk:** ASI04 ï¿½ LLM03 ï¿½ DSGAI04 ï¿½ ISO 27001 A.5.19/A.5.21 ï¿½ NIST AI RMF MP-5.1
 
 ---
 
 ## Recipe M-03: Per-Session Credential Scoping for MCP Tools
 
-**Threat:** ASI03 Identity & Privilege Abuse — agents hold long-lived,
+**Threat:** ASI03 Identity & Privilege Abuse ï¿½ agents hold long-lived,
 over-scoped credentials that persist beyond the task they were issued for.
 
 **Architecture:** Session start ? JIT credential issuance ? tool calls
@@ -935,11 +939,11 @@ class AgentCredentialManager:
         agent_role: str,
         requested_tools: list[str],
         task_description: str,
-        ttl_seconds: int = 900  # 15 minutes default — adjust per task type
+        ttl_seconds: int = 900  # 15 minutes default ï¿½ adjust per task type
     ) -> AgentCredential:
         """
         Issue a task-scoped, time-limited credential for this session.
-        Scope is derived from agent role and requested tools —
+        Scope is derived from agent role and requested tools ï¿½
         agent cannot self-escalate by requesting additional scope.
         """
         session_id = str(uuid.uuid4())
@@ -948,7 +952,7 @@ class AgentCredentialManager:
             requested_tools=requested_tools
         )
 
-        # Get actual credentials from vault — not stored in credential object
+        # Get actual credentials from vault ï¿½ not stored in credential object
         vault_secret_id = self.vault.issue_dynamic_secret(
             role=agent_role,
             scopes=permitted_scopes,
@@ -981,7 +985,7 @@ class AgentCredentialManager:
 
     def revoke_credential(self, session_id: str, reason: str = "session_end"):
         """
-        Immediately revoke credential — call on session end, on anomaly detection,
+        Immediately revoke credential ï¿½ call on session end, on anomaly detection,
         or on kill switch activation. Do not wait for TTL expiry.
         """
         if session_id not in self._active_credentials:
@@ -991,7 +995,7 @@ class AgentCredentialManager:
         credential.revoked = True
         credential.revoked_reason = reason
 
-        # Revoke in vault — invalidates the actual secret immediately
+        # Revoke in vault ï¿½ invalidates the actual secret immediately
         self.vault.revoke_secret(credential.credential_id)
 
         audit_log.info(
@@ -1025,7 +1029,7 @@ class AgentCredentialManager:
             },
             "optimisation_agent": {
                 "historian_query": ["read"],
-                "setpoint_recommend": ["recommend"],  # recommend only — not execute
+                "setpoint_recommend": ["recommend"],  # recommend only ï¿½ not execute
             }
         }
 
@@ -1038,13 +1042,13 @@ class AgentCredentialManager:
         }
 ```
 
-**Crosswalk:** ASI03 · DSGAI02 · OWASP NHI Top 10 NHI-5/7/9 · ISO 27001 A.8.2 · AIUC-1 A/B007
+**Crosswalk:** ASI03 ï¿½ DSGAI02 ï¿½ OWASP NHI Top 10 NHI-5/7/9 ï¿½ ISO 27001 A.8.2 ï¿½ AIUC-1 A/B007
 
 ---
 
 ## Recipe M-04: MCP Rate Limiting and Anomaly Detection
 
-**Threat:** LLM10 Unbounded Consumption / ASI08 Cascading Failures —
+**Threat:** LLM10 Unbounded Consumption / ASI08 Cascading Failures ï¿½
 agent tool invocations saturate downstream systems or exhibit
 anomalous patterns indicating compromise.
 
@@ -1119,7 +1123,7 @@ class ToolInvocationTracker:
                     current_rate=current_rate,
                     baseline_avg=avg_calls
                 )
-                # Alert but do not block — anomaly may be legitimate burst
+                # Alert but do not block ï¿½ anomaly may be legitimate burst
                 # Change to return False to block on anomaly
 
         # Record the call
@@ -1138,23 +1142,23 @@ class ToolInvocationTracker:
             self._baselines[baseline_key].pop(0)
 ```
 
-**Crosswalk:** LLM10 · ASI08 · DSGAI17 · ISA/IEC 62443 SR 7.6 (OT) · CIS Controls CIS 12
+**Crosswalk:** LLM10 ï¿½ ASI08 ï¿½ DSGAI17 ï¿½ ISA/IEC 62443 SR 7.6 (OT) ï¿½ CIS Controls CIS 12
 
 ---
 
-# Part 3 — Multi-Agent Security in OT Environments
+# Part 3 ï¿½ Multi-Agent Security in OT Environments
 
 ---
 
 ## Recipe O-01: Agent Kill Switch Implementation
 
-**Threat:** ASI01 Goal Hijack / ASI10 Rogue Agents — operator needs
+**Threat:** ASI01 Goal Hijack / ASI10 Rogue Agents ï¿½ operator needs
 to immediately halt all agent activity without affecting process control.
 
 **Architecture:** Operator console ? kill switch ? all Zone 3 agents
 
 **Design principle:**
-The kill switch must be implemented at the infrastructure layer —
+The kill switch must be implemented at the infrastructure layer ï¿½
 not in the agent itself. A compromised or rogue agent cannot be
 trusted to honour a kill command sent through its own interface.
 The switch must operate independently of the agent's execution path.
@@ -1198,7 +1202,7 @@ class AgentKillSwitch:
         """
         Call this before every tool invocation.
         Raises AgentSuspendedError if the kill switch has been activated.
-        Agents call this themselves — the switch state is not injected
+        Agents call this themselves ï¿½ the switch state is not injected
         via the agent's instruction path.
         """
         if not self.is_active:
@@ -1217,7 +1221,7 @@ class AgentKillSwitch:
     ):
         """
         Immediately suspend all agents in the cluster.
-        Call from operator console — requires authenticated operator identity.
+        Call from operator console ï¿½ requires authenticated operator identity.
         """
         with self._lock:
             if self._state == AgentKillSwitchState.ACTIVE:
@@ -1277,7 +1281,7 @@ class AgentKillSwitch:
     def _notify_process_control_fallback(self):
         """
         Signal process control system that agent advisory is offline.
-        Operators revert to manual mode — no more agent recommendations.
+        Operators revert to manual mode ï¿½ no more agent recommendations.
         Implementation depends on your DCS/SCADA integration.
         """
         # Example: write to a shared OPC-UA variable that HMI monitors
@@ -1290,14 +1294,14 @@ class AgentKillSwitch:
         return True  # Replace with actual verification
 
 
-# Usage pattern — agent calls this before every tool invocation
+# Usage pattern ï¿½ agent calls this before every tool invocation
 class SecureAgent:
     def __init__(self, kill_switch: AgentKillSwitch, credential_manager):
         self.kill_switch = kill_switch
         self.credential_manager = credential_manager
 
     def invoke_tool(self, tool_name: str, params: dict, session_id: str):
-        # Infrastructure check first — before any agent logic
+        # Infrastructure check first ï¿½ before any agent logic
         self.kill_switch.check_or_raise()
         # Then proceed with validated tool invocation
         credential = self.credential_manager.get_session_credential(session_id)
@@ -1306,13 +1310,13 @@ class SecureAgent:
         return execute_tool(tool_name, params, credential)
 ```
 
-**Crosswalk:** ASI01 · ASI10 · LLM06 · ISA/IEC 62443 SR 2.1 (OT) · EU AI Act Art. 14
+**Crosswalk:** ASI01 ï¿½ ASI10 ï¿½ LLM06 ï¿½ ISA/IEC 62443 SR 2.1 (OT) ï¿½ EU AI Act Art. 14
 
 ---
 
 ## Recipe O-02: Agent Behavioural Baseline and Anomaly Detection
 
-**Threat:** ASI10 Rogue Agents / ASI06 Memory Poisoning — agent
+**Threat:** ASI10 Rogue Agents / ASI06 Memory Poisoning ï¿½ agent
 behaviour drifts from established baseline indicating compromise or
 persistent goal modification.
 
@@ -1361,7 +1365,7 @@ class AgentBehaviouralBaseline:
     def check_deviation(self, current_metrics: dict) -> list[dict]:
         """
         Compare current session metrics against baseline.
-        Returns list of deviation findings — empty list means normal.
+        Returns list of deviation findings ï¿½ empty list means normal.
         """
         computed_baseline = self.compute_baseline()
         findings = []
@@ -1399,7 +1403,7 @@ def evaluate_agent_session(
 ):
     """
     Evaluate agent session metrics against baseline.
-    Called at session end — triggers kill switch on critical deviation.
+    Called at session end ï¿½ triggers kill switch on critical deviation.
     """
     findings = baseline.check_deviation(session_metrics)
     critical_findings = [f for f in findings if f["severity"] == "CRITICAL"]
@@ -1407,15 +1411,15 @@ def evaluate_agent_session(
 
     if warning_findings:
         security_log.warning(
-            "Agent behavioural deviation — WARNING",
+            "Agent behavioural deviation ï¿½ WARNING",
             agent_id=agent_id,
             findings=warning_findings
         )
-        # Alert security team — do not suspend yet
+        # Alert security team ï¿½ do not suspend yet
 
     if critical_findings:
         security_log.critical(
-            "Agent behavioural deviation — CRITICAL",
+            "Agent behavioural deviation ï¿½ CRITICAL",
             agent_id=agent_id,
             findings=critical_findings
         )
@@ -1427,7 +1431,7 @@ def evaluate_agent_session(
         )
         # Page security team
         alert_security_team(
-            subject="Rogue agent suspected — kill switch activated",
+            subject="Rogue agent suspected ï¿½ kill switch activated",
             agent_id=agent_id,
             findings=critical_findings
         )
@@ -1437,13 +1441,13 @@ def evaluate_agent_session(
         baseline.record_session(session_metrics)
 ```
 
-**Crosswalk:** ASI10 · ASI01 · ASI06 · ISA/IEC 62443 SR 3.7 (OT) · NIST AI RMF MS-2.5
+**Crosswalk:** ASI10 ï¿½ ASI01 ï¿½ ASI06 ï¿½ ISA/IEC 62443 SR 3.7 (OT) ï¿½ NIST AI RMF MS-2.5
 
 ---
 
 ## Recipe O-03: Cascade Containment Architecture
 
-**Threat:** ASI08 Cascading Agent Failures — single-agent fault
+**Threat:** ASI08 Cascading Agent Failures ï¿½ single-agent fault
 propagates to multiple systems before humans can intervene.
 
 **Implementation:**
@@ -1466,7 +1470,7 @@ class CascadeContainmentPolicy:
     def check_cascade_depth(self, current_depth: int, initiating_agent: str) -> bool:
         """
         Prevent runaway cascade chains. Every inter-agent call increments depth.
-        At max_cascade_depth, the request is rejected — not queued.
+        At max_cascade_depth, the request is rejected ï¿½ not queued.
         """
         if current_depth >= self.max_cascade_depth:
             security_log.warning(
@@ -1511,7 +1515,7 @@ class CascadeContainmentPolicy:
                     cluster_id=self.cluster_id,
                     consecutive_failures=self._consecutive_failures
                 )
-                # Notify OT operations — process control reverts to manual
+                # Notify OT operations ï¿½ process control reverts to manual
                 notify_operations_fallback(self.cluster_id)
 
 
@@ -1563,20 +1567,20 @@ def agent_inter_call_gate(
         raise
 ```
 
-**Crosswalk:** ASI08 · LLM10 · DSGAI17 · ISA/IEC 62443 SR 7.6/7.7 (OT) · NIST SP 800-82 (OT)
+**Crosswalk:** ASI08 ï¿½ LLM10 ï¿½ DSGAI17 ï¿½ ISA/IEC 62443 SR 7.6/7.7 (OT) ï¿½ NIST SP 800-82 (OT)
 
 ---
 
 ## Recipe O-04: Human Confirmation Gate for Irreversible OT Actions
 
-**Threat:** LLM06 Excessive Agency / ASI02 Tool Misuse — agent
+**Threat:** LLM06 Excessive Agency / ASI02 Tool Misuse ï¿½ agent
 autonomously executes an irreversible action in the OT environment.
 
 **Design principle:**
 The confirmation gate must be implemented as a separate service from
 the agent. If the gate lives inside the agent's execution context,
 it can be bypassed by goal hijack. The gate is an independent trust
-boundary — it validates human intent, not agent intent.
+boundary ï¿½ it validates human intent, not agent intent.
 
 **Implementation:**
 ```python
@@ -1611,7 +1615,7 @@ class HumanConfirmationGate:
         """
         Create a confirmation request. Returns a request_id for display.
         The operator receives this request on a SEPARATE channel
-        (HMI, mobile app, email) — not through the agent interface.
+        (HMI, mobile app, email) ï¿½ not through the agent interface.
         """
         request_id = str(uuid.uuid4())
         self._pending[request_id] = {
@@ -1660,7 +1664,7 @@ class HumanConfirmationGate:
         # Verify operator authorisation
         if not self._verify_operator(approving_operator_id, approver_pin, pending):
             security_log.warning(
-                "Confirmation approval rejected — operator not authorised",
+                "Confirmation approval rejected ï¿½ operator not authorised",
                 request_id=request_id,
                 operator_id=approving_operator_id
             )
@@ -1689,7 +1693,7 @@ class HumanConfirmationGate:
     def validate_and_consume(self, request_id: str, token: str) -> dict:
         """
         Agent submits this before executing the confirmed action.
-        Token is consumed — cannot be reused.
+        Token is consumed ï¿½ cannot be reused.
         """
         if request_id in self._consumed:
             raise TokenAlreadyConsumedError(f"Token {request_id} already used")
@@ -1713,12 +1717,12 @@ class HumanConfirmationGate:
             )
             raise InvalidTokenError("Confirmation token invalid")
 
-        # Consume the token — one-time use
+        # Consume the token ï¿½ one-time use
         self._consumed.add(request_id)
         del self._pending[request_id]
 
         audit_log.info(
-            "Confirmation token consumed — action authorised",
+            "Confirmation token consumed ï¿½ action authorised",
             request_id=request_id,
             action_type=pending["action_type"],
             target_system=pending["target_system"]
@@ -1748,47 +1752,844 @@ class HumanConfirmationGate:
         return any(role in required_roles for role in operator_roles)
 ```
 
-**Crosswalk:** LLM06 · ASI01 · ASI02 · ISA/IEC 62443 SR 2.1 (OT) · EU AI Act Art. 14 · NIST SP 800-82 (OT)
+**Crosswalk:** LLM06 ï¿½ ASI01 ï¿½ ASI02 ï¿½ ISA/IEC 62443 SR 2.1 (OT) ï¿½ EU AI Act Art. 14 ï¿½ NIST SP 800-82 (OT)
 
 ---
 
-# Appendix — Recipe to Risk Mapping
+# Part 4 ï¿½ Agentic AI Security
+
+---
+
+## Recipe A-01: Agent Memory Sanitization
+
+**Threat:** ASI06 Memory Poisoning ï¿½ adversarial content persisted in
+agent memory executes on future sessions, enabling cross-session
+instruction injection and persistent goal hijack.
+
+**Architecture:** Agent memory store ? sanitization layer ? execution context
+
+**Implementation:**
+
+Validate and sanitize agent memory entries before they are loaded into
+execution context. Check for instruction-like patterns, encoded payloads
+(base64, hex, unicode), and authority spoofing phrases using regex and
+simple heuristics.
+
+```python
+import re, base64, json
+from typing import Optional
+
+SUSPICIOUS_PATTERNS = [
+    r'ignore\s+(previous|all|above)\s+(instructions?|prompts?)',
+    r'you\s+are\s+now\s+(a|an|in)',
+    r'system\s*:\s*',
+    r'\[INST\]|\[/INST\]|<\|im_start\|>',
+    r'(IMPORTANT|CRITICAL|OVERRIDE):\s*',
+]
+
+ENCODING_PATTERNS = [
+    r'[A-Za-z0-9+/]{40,}={0,2}',  # Base64
+    r'(\\x[0-9a-fA-F]{2}){4,}',    # Hex escape
+    r'(&#x?[0-9a-fA-F]+;){3,}',    # HTML entities
+]
+
+def sanitize_memory_entry(entry: dict) -> tuple[dict, list[str]]:
+    """Validate and sanitize a memory entry. Returns (sanitized_entry, warnings)."""
+    warnings = []
+    content = entry.get('content', '')
+
+    for pattern in SUSPICIOUS_PATTERNS:
+        if re.search(pattern, content, re.IGNORECASE):
+            warnings.append(f'Instruction-like pattern detected: {pattern}')
+
+    for pattern in ENCODING_PATTERNS:
+        if re.search(pattern, content):
+            warnings.append(f'Encoded payload detected: {pattern}')
+            # Attempt decode to check for hidden instructions
+            for match in re.finditer(r'[A-Za-z0-9+/]{40,}={0,2}', content):
+                try:
+                    decoded = base64.b64decode(match.group()).decode('utf-8', errors='ignore')
+                    for sp in SUSPICIOUS_PATTERNS:
+                        if re.search(sp, decoded, re.IGNORECASE):
+                            warnings.append(f'Base64-encoded instruction detected')
+                            content = content.replace(match.group(), '[REDACTED:encoded-instruction]')
+                except Exception:
+                    pass
+
+    entry['content'] = content
+    entry['_sanitization'] = {
+        'warnings': warnings,
+        'sanitized': len(warnings) > 0,
+        'timestamp': __import__('datetime').datetime.utcnow().isoformat()
+    }
+    return entry, warnings
+
+def load_memory_safe(memory_store: list[dict], reject_on_warning: bool = True) -> list[dict]:
+    """Load memory entries with sanitization. Optionally reject entries with warnings."""
+    safe_entries = []
+    for entry in memory_store:
+        sanitized, warnings = sanitize_memory_entry(entry.copy())
+        if warnings and reject_on_warning:
+            print(f"REJECTED memory entry {entry.get('id','?')}: {warnings}")
+            continue
+        safe_entries.append(sanitized)
+    return safe_entries
+```
+
+**Validation:**
+Unit test with known adversarial memory entries: base64-encoded
+instructions should be detected and redacted, authority spoofing
+phrases should generate warnings, and clean entries should pass
+through without modification.
+
+**Crosswalk:** ASI06 ï¿½ DSGAI04 ï¿½ LLM01 ï¿½ MAESTRO L2 ï¿½ NIST AI RMF MANAGE-2.4
+
+---
+
+## Recipe A-02: Multi-Agent Message Validation
+
+**Threat:** ASI07 Lateral Tool Chaining / ASI08 Cascade ï¿½ unvalidated
+inter-agent messages enable injection propagation across agent
+boundaries, turning a single compromised agent into a cluster-wide
+breach vector.
+
+**Architecture:** Agent A ? message bus ? validation layer ? Agent B
+
+**Implementation:**
+
+JSON Schema enforcement on all inter-agent messages. Messages must
+declare sender, intent, and scope. No free-text instruction passing
+is permitted. Replay protection via timestamp freshness and nonce.
+
+```python
+import json, jsonschema, hashlib, time
+from typing import Any
+
+AGENT_MESSAGE_SCHEMA = {
+    "type": "object",
+    "required": ["sender", "receiver", "intent", "payload", "timestamp", "nonce"],
+    "properties": {
+        "sender": {"type": "string", "pattern": "^agent-[a-z0-9-]+$"},
+        "receiver": {"type": "string", "pattern": "^agent-[a-z0-9-]+$"},
+        "intent": {"type": "string", "enum": [
+            "query", "response", "delegate", "status", "error", "cancel"
+        ]},
+        "payload": {"type": "object"},
+        "timestamp": {"type": "number"},
+        "nonce": {"type": "string"},
+        "scope": {"type": "string", "enum": ["read", "write", "execute", "admin"]},
+    },
+    "additionalProperties": False
+}
+
+FORBIDDEN_PAYLOAD_PATTERNS = [
+    r'ignore\s+previous', r'system\s*:', r'you\s+are\s+now',
+    r'execute\s+command', r'run\s+code', r'eval\(',
+]
+
+def validate_agent_message(message: dict) -> tuple[bool, list[str]]:
+    """Validate an inter-agent message. Returns (is_valid, errors)."""
+    errors = []
+
+    # Schema validation
+    try:
+        jsonschema.validate(instance=message, schema=AGENT_MESSAGE_SCHEMA)
+    except jsonschema.ValidationError as e:
+        errors.append(f"Schema violation: {e.message}")
+        return False, errors
+
+    # Timestamp freshness (reject messages older than 30s)
+    if abs(time.time() - message.get('timestamp', 0)) > 30:
+        errors.append("Message timestamp too old (>30s) â€” possible replay attack")
+
+    # Payload content inspection
+    payload_str = json.dumps(message.get('payload', {}))
+    import re
+    for pattern in FORBIDDEN_PAYLOAD_PATTERNS:
+        if re.search(pattern, payload_str, re.IGNORECASE):
+            errors.append(f"Forbidden pattern in payload: {pattern}")
+
+    return len(errors) == 0, errors
+
+def create_signed_message(sender: str, receiver: str, intent: str,
+                          payload: dict, scope: str = "read") -> dict:
+    """Create a properly formatted inter-agent message."""
+    msg = {
+        "sender": sender,
+        "receiver": receiver,
+        "intent": intent,
+        "payload": payload,
+        "scope": scope,
+        "timestamp": time.time(),
+        "nonce": hashlib.sha256(f"{time.time()}{sender}".encode()).hexdigest()[:16]
+    }
+    return msg
+```
+
+**Validation:**
+Test with legitimate messages (pass), injection-containing messages
+(reject), and replay messages with stale timestamps (reject). Verify
+that schema violations are caught before content inspection.
+
+**Crosswalk:** ASI07 ï¿½ ASI08 ï¿½ ASI01 ï¿½ MAESTRO L7 ï¿½ ISA/IEC 62443 SR-3.1
+
+---
+
+## Recipe A-03: Agent Credential Rotation
+
+**Threat:** ASI02 Tool Misuse / ASI03 Identity & Privilege Abuse ï¿½
+agent credentials persist beyond need, enabling privilege escalation
+and lateral movement through long-lived tokens.
+
+**Architecture:** Agent ? credential broker ? short-lived token ? external service
+
+**Implementation:**
+
+JIT (Just-In-Time) credential issuance with automatic rotation and
+TTL enforcement. Credentials are use-counted and time-bounded.
+Exhausted or expired credentials are automatically revoked.
+
+```python
+import time, secrets, hashlib
+from dataclasses import dataclass, field
+from typing import Optional
+
+@dataclass
+class AgentCredential:
+    agent_id: str
+    service: str
+    token: str
+    scope: list[str]
+    issued_at: float
+    ttl_seconds: int = 300  # 5 min default
+    max_uses: int = 10
+    uses: int = 0
+
+    @property
+    def is_expired(self) -> bool:
+        return time.time() > self.issued_at + self.ttl_seconds
+
+    @property
+    def is_exhausted(self) -> bool:
+        return self.uses >= self.max_uses
+
+    @property
+    def is_valid(self) -> bool:
+        return not self.is_expired and not self.is_exhausted
+
+class CredentialBroker:
+    def __init__(self):
+        self._active: dict[str, AgentCredential] = {}
+        self._audit_log: list[dict] = []
+
+    def issue(self, agent_id: str, service: str, scope: list[str],
+              ttl: int = 300, max_uses: int = 10) -> AgentCredential:
+        # Revoke any existing credential for this agent+service
+        key = f"{agent_id}:{service}"
+        if key in self._active:
+            self.revoke(agent_id, service, reason="rotation")
+
+        cred = AgentCredential(
+            agent_id=agent_id, service=service,
+            token=secrets.token_urlsafe(32),
+            scope=scope, issued_at=time.time(),
+            ttl_seconds=ttl, max_uses=max_uses
+        )
+        self._active[key] = cred
+        self._log("issue", agent_id, service, scope)
+        return cred
+
+    def use(self, agent_id: str, service: str) -> Optional[str]:
+        key = f"{agent_id}:{service}"
+        cred = self._active.get(key)
+        if not cred or not cred.is_valid:
+            self._log("denied", agent_id, service, reason="expired_or_exhausted")
+            return None
+        cred.uses += 1
+        self._log("use", agent_id, service, uses=cred.uses)
+        return cred.token
+
+    def revoke(self, agent_id: str, service: str, reason: str = "manual"):
+        key = f"{agent_id}:{service}"
+        if key in self._active:
+            del self._active[key]
+            self._log("revoke", agent_id, service, reason=reason)
+
+    def cleanup_expired(self):
+        expired = [k for k, v in self._active.items() if not v.is_valid]
+        for k in expired:
+            parts = k.split(":", 1)
+            self.revoke(parts[0], parts[1], reason="auto_cleanup")
+
+    def _log(self, action, agent_id, service, **kwargs):
+        self._audit_log.append({
+            "action": action, "agent_id": agent_id,
+            "service": service, "timestamp": time.time(), **kwargs
+        })
+```
+
+**Validation:**
+Test credential issuance, expiry after TTL, use counting with
+exhaustion at max_uses, automatic rotation on re-issue, and verify
+the audit trail contains all lifecycle events.
+
+**Crosswalk:** ASI02 ï¿½ ASI03 ï¿½ OWASP NHI Top 10 ï¿½ ISO 27001 A.9.2 ï¿½ FedRAMP IA-4
+
+---
+
+## Recipe A-04: Agent Output Guardrails
+
+**Threat:** ASI01 Goal Hijacking / LLM05 Insecure Output Handling ï¿½
+agent executes tool calls based on hijacked instructions, bypassing
+intended operational boundaries.
+
+**Architecture:** Agent reasoning ? guardrail validator ? tool execution
+
+**Implementation:**
+
+Structured output validation that checks tool calls against an
+allowlist before execution. Each tool has a policy defining allowed
+arguments, rate limits, and forbidden patterns.
+
+```python
+import json, re
+from dataclasses import dataclass, field
+from typing import Any, Callable
+
+@dataclass
+class ToolPolicy:
+    name: str
+    allowed_args: dict  # param_name -> list of allowed values or regex
+    max_calls_per_session: int = 50
+    requires_confirmation: bool = False
+    forbidden_arg_patterns: list[str] = field(default_factory=list)
+
+class OutputGuardrail:
+    def __init__(self, policies: list[ToolPolicy]):
+        self._policies = {p.name: p for p in policies}
+        self._call_counts: dict[str, int] = {}
+
+    def validate_tool_call(self, tool_name: str, args: dict) -> tuple[bool, str]:
+        if tool_name not in self._policies:
+            return False, f"Tool '{tool_name}' not in allowlist"
+
+        policy = self._policies[tool_name]
+
+        # Rate limit
+        count = self._call_counts.get(tool_name, 0)
+        if count >= policy.max_calls_per_session:
+            return False, f"Tool '{tool_name}' exceeded max calls ({policy.max_calls_per_session})"
+
+        # Check forbidden patterns in args
+        args_str = json.dumps(args)
+        for pattern in policy.forbidden_arg_patterns:
+            if re.search(pattern, args_str, re.IGNORECASE):
+                return False, f"Forbidden pattern in args: {pattern}"
+
+        # Validate specific arg values
+        for param, constraint in policy.allowed_args.items():
+            if param in args:
+                value = str(args[param])
+                if isinstance(constraint, list) and value not in constraint:
+                    return False, f"Arg '{param}' value '{value}' not in allowlist"
+                if isinstance(constraint, str) and not re.match(constraint, value):
+                    return False, f"Arg '{param}' value '{value}' doesn't match pattern"
+
+        self._call_counts[tool_name] = count + 1
+        return True, "OK"
+
+    def wrap_executor(self, executor: Callable) -> Callable:
+        def guarded_executor(tool_name: str, args: dict) -> Any:
+            valid, reason = self.validate_tool_call(tool_name, args)
+            if not valid:
+                raise PermissionError(f"Guardrail blocked: {reason}")
+            return executor(tool_name, args)
+        return guarded_executor
+
+# Example policy
+POLICIES = [
+    ToolPolicy(name="web_search", allowed_args={"query": r"^.{1,200}$"},
+               max_calls_per_session=20,
+               forbidden_arg_patterns=[r"password", r"credential", r"api.key"]),
+    ToolPolicy(name="send_email", allowed_args={"to": r"^[^@]+@company\.com$"},
+               max_calls_per_session=5, requires_confirmation=True,
+               forbidden_arg_patterns=[r"<script", r"javascript:"]),
+    ToolPolicy(name="file_read", allowed_args={"path": r"^/data/public/"},
+               max_calls_per_session=50,
+               forbidden_arg_patterns=[r"\.env", r"\.key", r"credential"]),
+]
+```
+
+**Validation:**
+Test allowed tool calls (pass), forbidden tool name (block), argument
+pattern violation (block), and rate limit exhaustion (block after
+max_calls_per_session invocations).
+
+**Crosswalk:** ASI01 ï¿½ LLM05 ï¿½ ASI02 ï¿½ NIST AI RMF MANAGE-4.1 ï¿½ EU AI Act Art. 14
+
+---
+
+# Part 5 ï¿½ Data Pipeline Security
+
+---
+
+## Recipe D-01: Training Data Provenance Tracker
+
+**Threat:** DSGAI05 Data Integrity & Validation Failures / DSGAI06
+Data Lineage & Traceability Failures ï¿½ untraceable training data
+makes audit and compliance impossible, blocking incident
+investigation and regulatory response.
+
+**Architecture:** Data source ? ingestion ? hash chain ? training pipeline
+
+**Implementation:**
+
+SHA-256 hash chain linking each training data batch to its source,
+license, and consent status. Chain integrity can be verified at any
+time to detect tampering.
+
+```python
+import hashlib, json, time
+from dataclasses import dataclass, field
+from pathlib import Path
+
+@dataclass
+class DataSource:
+    source_id: str
+    name: str
+    url: str
+    license: str
+    consent_type: str  # "explicit", "legitimate_interest", "public_domain", "fair_use"
+    pii_contains: bool = False
+    reviewed_by: str = ""
+    reviewed_at: str = ""
+
+@dataclass
+class ProvenanceRecord:
+    batch_id: str
+    source: DataSource
+    file_hash: str
+    record_count: int
+    timestamp: float
+    previous_hash: str  # chain link
+    chain_hash: str = ""
+
+    def __post_init__(self):
+        chain_input = f"{self.batch_id}{self.file_hash}{self.previous_hash}{self.timestamp}"
+        self.chain_hash = hashlib.sha256(chain_input.encode()).hexdigest()
+
+class ProvenanceTracker:
+    def __init__(self, store_path: str = "provenance.jsonl"):
+        self._store = Path(store_path)
+        self._chain: list[ProvenanceRecord] = []
+        self._last_hash = "genesis"
+
+    def register_batch(self, batch_id: str, source: DataSource,
+                       file_path: str, record_count: int) -> ProvenanceRecord:
+        file_hash = self._hash_file(file_path)
+        record = ProvenanceRecord(
+            batch_id=batch_id, source=source, file_hash=file_hash,
+            record_count=record_count, timestamp=time.time(),
+            previous_hash=self._last_hash
+        )
+        self._chain.append(record)
+        self._last_hash = record.chain_hash
+        self._persist(record)
+        return record
+
+    def verify_chain(self) -> tuple[bool, list[str]]:
+        errors = []
+        prev = "genesis"
+        for i, rec in enumerate(self._chain):
+            expected = hashlib.sha256(
+                f"{rec.batch_id}{rec.file_hash}{prev}{rec.timestamp}".encode()
+            ).hexdigest()
+            if rec.chain_hash != expected:
+                errors.append(f"Chain broken at batch {rec.batch_id} (index {i})")
+            prev = rec.chain_hash
+        return len(errors) == 0, errors
+
+    def audit_report(self) -> dict:
+        return {
+            "total_batches": len(self._chain),
+            "chain_valid": self.verify_chain()[0],
+            "sources": list(set(r.source.source_id for r in self._chain)),
+            "pii_batches": sum(1 for r in self._chain if r.source.pii_contains),
+            "consent_breakdown": self._consent_stats(),
+            "total_records": sum(r.record_count for r in self._chain),
+        }
+
+    def _consent_stats(self):
+        stats = {}
+        for r in self._chain:
+            ct = r.source.consent_type
+            stats[ct] = stats.get(ct, 0) + r.record_count
+        return stats
+
+    def _hash_file(self, path: str) -> str:
+        h = hashlib.sha256()
+        with open(path, 'rb') as f:
+            for chunk in iter(lambda: f.read(8192), b''):
+                h.update(chunk)
+        return h.hexdigest()
+
+    def _persist(self, record: ProvenanceRecord):
+        with open(self._store, 'a') as f:
+            f.write(json.dumps({
+                "batch_id": record.batch_id,
+                "source_id": record.source.source_id,
+                "file_hash": record.file_hash,
+                "chain_hash": record.chain_hash,
+                "record_count": record.record_count,
+                "consent_type": record.source.consent_type,
+                "pii": record.source.pii_contains,
+                "timestamp": record.timestamp,
+            }) + "\n")
+```
+
+**Validation:**
+Register 5 batches, verify chain integrity returns valid. Tamper with
+one record's file_hash and verify that chain verification detects the
+break. Confirm audit_report accurately reflects consent breakdown and
+PII flags.
+
+**Crosswalk:** DSGAI05 ï¿½ DSGAI06 ï¿½ LLM03 ï¿½ ISO 42001 A.7.4 ï¿½ NIST AI RMF MAP-2.3
+
+---
+
+## Recipe D-02: PII Detection and Redaction Pipeline
+
+**Threat:** DSGAI14 Excessive Telemetry & Monitoring Leakage /
+DSGAI15 Inadequate PII Protection / DSGAI16 Non-compliant Data
+Handling ï¿½ personal data in training or inference pipelines flows
+without detection, creating regulatory exposure.
+
+**Architecture:** Raw data ? PII scanner ? redaction ? clean data
+
+**Implementation:**
+
+Regex-based PII detector with configurable redaction policies.
+Supports email, phone, SSN, credit card, and IP address patterns
+with extensibility for NER-based detection via spaCy.
+
+```python
+import re
+from dataclasses import dataclass
+from enum import Enum
+
+class PIIType(Enum):
+    EMAIL = "email"
+    PHONE = "phone"
+    SSN = "ssn"
+    CREDIT_CARD = "credit_card"
+    IP_ADDRESS = "ip_address"
+    NAME = "name"
+    ADDRESS = "address"
+
+PII_PATTERNS = {
+    PIIType.EMAIL: r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b',
+    PIIType.PHONE: r'\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b',
+    PIIType.SSN: r'\b\d{3}-\d{2}-\d{4}\b',
+    PIIType.CREDIT_CARD: r'\b(?:\d{4}[-\s]?){3}\d{4}\b',
+    PIIType.IP_ADDRESS: r'\b(?:\d{1,3}\.){3}\d{1,3}\b',
+}
+
+@dataclass
+class PIIMatch:
+    pii_type: PIIType
+    value: str
+    start: int
+    end: int
+
+class PIIScanner:
+    def __init__(self, types: list[PIIType] = None):
+        self.types = types or list(PIIType)
+        self._patterns = {t: PII_PATTERNS[t] for t in self.types if t in PII_PATTERNS}
+
+    def scan(self, text: str) -> list[PIIMatch]:
+        matches = []
+        for pii_type, pattern in self._patterns.items():
+            for m in re.finditer(pattern, text):
+                matches.append(PIIMatch(pii_type, m.group(), m.start(), m.end()))
+        return sorted(matches, key=lambda x: x.start)
+
+    def redact(self, text: str, replacement: str = "[REDACTED:{type}]") -> tuple[str, int]:
+        matches = self.scan(text)
+        count = len(matches)
+        for m in reversed(matches):  # reverse to preserve indices
+            label = replacement.replace("{type}", m.pii_type.value)
+            text = text[:m.start] + label + text[m.end:]
+        return text, count
+
+    def scan_batch(self, records: list[str]) -> dict:
+        total_pii = 0
+        by_type = {}
+        for record in records:
+            matches = self.scan(record)
+            total_pii += len(matches)
+            for m in matches:
+                by_type[m.pii_type.value] = by_type.get(m.pii_type.value, 0) + 1
+        return {"total_records": len(records), "total_pii": total_pii, "by_type": by_type}
+
+# Usage
+scanner = PIIScanner()
+text = "Contact john.doe@email.com or call 555-123-4567. SSN: 123-45-6789"
+redacted, count = scanner.redact(text)
+# "Contact [REDACTED:email] or call [REDACTED:phone]. SSN: [REDACTED:ssn]"
+```
+
+**Validation:**
+Test with known PII samples containing email, phone, SSN, credit
+card, and IP address values. Verify redaction replaces all instances.
+Test batch scanning statistics for accurate type-level counts.
+
+**Crosswalk:** DSGAI14 ï¿½ DSGAI15 ï¿½ DSGAI16 ï¿½ LLM02 ï¿½ GDPR Art. 5(1)(c) ï¿½ ISO 27001 A.8.11
+
+---
+
+## Recipe D-03: Differential Privacy for Model Training
+
+**Threat:** DSGAI10 Synthetic Data Generation Risks / DSGAI18
+Non-compliant Data Handling in AI Training Pipelines ï¿½ model outputs
+or synthetic data reveal training data membership, enabling
+reconstruction of individual records.
+
+**Architecture:** Training data ? DP-SGD ? model ? privacy-guaranteed outputs
+
+**Implementation:**
+
+Wrapper for PyTorch training with differential privacy via Opacus.
+Enforces a privacy budget (epsilon) and provides formal guarantees
+that individual training records cannot be distinguished.
+
+```python
+"""
+Differential Privacy training wrapper using Opacus.
+Install: pip install opacus torch
+"""
+from dataclasses import dataclass
+import torch
+from torch.utils.data import DataLoader
+
+@dataclass
+class DPConfig:
+    epsilon: float = 8.0        # privacy budget
+    delta: float = 1e-5         # failure probability
+    max_grad_norm: float = 1.0  # gradient clipping
+    noise_multiplier: float = 0.0  # computed from epsilon/delta
+
+    def summary(self) -> str:
+        return f"e={self.epsilon}, d={self.delta}, clip={self.max_grad_norm}"
+
+def train_with_dp(model: torch.nn.Module, train_loader: DataLoader,
+                  optimizer: torch.optim.Optimizer, criterion,
+                  config: DPConfig, epochs: int = 10) -> dict:
+    """Train a model with differential privacy guarantees."""
+    try:
+        from opacus import PrivacyEngine
+    except ImportError:
+        raise ImportError("pip install opacus")
+
+    privacy_engine = PrivacyEngine()
+    model, optimizer, train_loader = privacy_engine.make_private_with_epsilon(
+        module=model,
+        optimizer=optimizer,
+        data_loader=train_loader,
+        target_epsilon=config.epsilon,
+        target_delta=config.delta,
+        max_grad_norm=config.max_grad_norm,
+        epochs=epochs,
+    )
+
+    for epoch in range(epochs):
+        model.train()
+        total_loss = 0
+        for batch in train_loader:
+            optimizer.zero_grad()
+            inputs, targets = batch
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
+            loss.backward()
+            optimizer.step()
+            total_loss += loss.item()
+
+        epsilon_spent = privacy_engine.get_epsilon(config.delta)
+        print(f"Epoch {epoch+1}/{epochs} -- Loss: {total_loss:.4f} -- e spent: {epsilon_spent:.2f}")
+
+    final_epsilon = privacy_engine.get_epsilon(config.delta)
+    return {
+        "epsilon_spent": final_epsilon,
+        "delta": config.delta,
+        "epochs": epochs,
+        "within_budget": final_epsilon <= config.epsilon,
+        "privacy_guarantee": f"({final_epsilon:.2f}, {config.delta})-DP"
+    }
+```
+
+**Validation:**
+Train a small model with and without DP on the same dataset. Run a
+membership inference attack against both. The DP-trained model should
+show significantly lower attack success rate, confirming the privacy
+guarantee holds in practice.
+
+**Crosswalk:** DSGAI10 ï¿½ DSGAI18 ï¿½ DSGAI16 ï¿½ GDPR Art. 25 (privacy by design) ï¿½ NIST AI RMF MANAGE-3.2
+
+---
+
+## Recipe D-04: Data Retention Enforcer
+
+**Threat:** DSGAI11 Data Retention & Disposal Failures / DSGAI08
+Inadequate Consent & Data Rights Management ï¿½ AI data persists
+beyond legal retention period, violating GDPR, DORA, and SOC 2
+requirements.
+
+**Architecture:** Data store ? retention policy engine ? automated deletion + audit log
+
+**Implementation:**
+
+TTL-based retention enforcement with immutable audit trail. Policies
+are defined per data category with legal basis, regulation reference,
+and deletion method. Review-required categories are flagged for human
+approval before deletion.
+
+```python
+import time, json, hashlib
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional
+
+@dataclass
+class RetentionPolicy:
+    category: str           # "chat_logs", "training_data", "inference_logs", "embeddings"
+    ttl_days: int           # retention period
+    legal_basis: str        # "consent", "legitimate_interest", "legal_obligation"
+    regulation: str         # "GDPR Art.5(1)(e)", "DORA Art.12", "HIPAA 164.530(j)"
+    deletion_method: str    # "hard_delete", "crypto_erase", "anonymize"
+    review_required: bool = False
+
+POLICIES = [
+    RetentionPolicy("chat_logs", 30, "consent", "GDPR Art.5(1)(e)", "hard_delete"),
+    RetentionPolicy("training_data", 365, "legitimate_interest", "GDPR Art.6(1)(f)", "anonymize", review_required=True),
+    RetentionPolicy("inference_logs", 90, "legitimate_interest", "DORA Art.12", "hard_delete"),
+    RetentionPolicy("embeddings", 180, "consent", "GDPR Art.5(1)(e)", "crypto_erase"),
+    RetentionPolicy("model_checkpoints", 730, "legal_obligation", "SOC 2 CC7.2", "hard_delete", review_required=True),
+]
+
+class RetentionEnforcer:
+    def __init__(self, policies: list[RetentionPolicy], audit_path: str = "retention_audit.jsonl"):
+        self._policies = {p.category: p for p in policies}
+        self._audit_path = Path(audit_path)
+
+    def check_expired(self, records: list[dict]) -> list[dict]:
+        """Find records past retention. Each record needs: id, category, created_at (epoch)."""
+        expired = []
+        now = time.time()
+        for r in records:
+            policy = self._policies.get(r.get("category"))
+            if not policy:
+                continue
+            age_days = (now - r.get("created_at", now)) / 86400
+            if age_days > policy.ttl_days:
+                expired.append({**r, "_policy": policy.category, "_age_days": round(age_days, 1),
+                               "_method": policy.deletion_method, "_review": policy.review_required})
+        return expired
+
+    def enforce(self, records: list[dict], dry_run: bool = True) -> dict:
+        expired = self.check_expired(records)
+        auto_delete = [r for r in expired if not r["_review"]]
+        needs_review = [r for r in expired if r["_review"]]
+
+        deleted = []
+        if not dry_run:
+            for r in auto_delete:
+                self._delete(r)
+                deleted.append(r["id"])
+
+        result = {
+            "total_checked": len(records),
+            "expired": len(expired),
+            "auto_deleted": len(deleted) if not dry_run else 0,
+            "pending_review": len(needs_review),
+            "dry_run": dry_run,
+        }
+        self._audit(result, expired)
+        return result
+
+    def _delete(self, record: dict):
+        method = record["_method"]
+        # Implementation depends on storage backend
+        print(f"DELETE [{method}]: {record['id']} ({record['category']}, age: {record['_age_days']}d)")
+
+    def _audit(self, result: dict, expired: list):
+        entry = {"timestamp": time.time(), "result": result,
+                 "expired_ids": [r["id"] for r in expired]}
+        with open(self._audit_path, "a") as f:
+            f.write(json.dumps(entry) + "\n")
+```
+
+**Validation:**
+Create records with various ages spanning all policy categories.
+Verify detection of expired records. Test dry-run mode (no deletions)
+versus enforcement mode (deletions executed). Verify the audit trail
+contains complete records of all enforcement actions.
+
+**Crosswalk:** DSGAI11 ï¿½ DSGAI08 ï¿½ DSGAI14 ï¿½ GDPR Art. 5(1)(e) ï¿½ DORA Art. 12 ï¿½ SOC 2 CC7.2
+
+---
+
+# Appendix ï¿½ Recipe to Risk Mapping
 
 ## Source list coverage
 
 | Recipe | OWASP source list entries covered |
 |---|---|
-| R-01 Access-Controlled Retrieval | LLM02 · DSGAI01 · DSGAI11 |
-| R-02 Ingestion Pipeline Integrity | LLM04 · DSGAI05 · DSGAI13 |
-| R-03 Output Redaction | LLM02 · DSGAI01 · DSGAI09 · DSGAI14 |
-| R-04 RAG Circuit Breaker | DSGAI17 · ASI08 · LLM10 |
-| R-05 Telemetry Least-Logging | DSGAI14 · LLM07 |
-| M-01 MCP Input Validation | ASI02 · LLM05 · LLM06 · DSGAI06 |
-| M-02 Descriptor Integrity | ASI04 · LLM03 · DSGAI04 |
-| M-03 Per-Session Credentials | ASI03 · DSGAI02 |
-| M-04 Rate Limiting & Anomaly | LLM10 · ASI08 · DSGAI17 |
-| O-01 Kill Switch | ASI01 · ASI10 · LLM06 |
-| O-02 Behavioural Baseline | ASI10 · ASI01 · ASI06 |
-| O-03 Cascade Containment | ASI08 · LLM10 · DSGAI17 |
-| O-04 Human Confirmation Gate | LLM06 · ASI01 · ASI02 |
+| R-01 Access-Controlled Retrieval | LLM02 ï¿½ DSGAI01 ï¿½ DSGAI11 |
+| R-02 Ingestion Pipeline Integrity | LLM04 ï¿½ DSGAI05 ï¿½ DSGAI13 |
+| R-03 Output Redaction | LLM02 ï¿½ DSGAI01 ï¿½ DSGAI09 ï¿½ DSGAI14 |
+| R-04 RAG Circuit Breaker | DSGAI17 ï¿½ ASI08 ï¿½ LLM10 |
+| R-05 Telemetry Least-Logging | DSGAI14 ï¿½ LLM07 |
+| M-01 MCP Input Validation | ASI02 ï¿½ LLM05 ï¿½ LLM06 ï¿½ DSGAI06 |
+| M-02 Descriptor Integrity | ASI04 ï¿½ LLM03 ï¿½ DSGAI04 |
+| M-03 Per-Session Credentials | ASI03 ï¿½ DSGAI02 |
+| M-04 Rate Limiting & Anomaly | LLM10 ï¿½ ASI08 ï¿½ DSGAI17 |
+| O-01 Kill Switch | ASI01 ï¿½ ASI10 ï¿½ LLM06 |
+| O-02 Behavioural Baseline | ASI10 ï¿½ ASI01 ï¿½ ASI06 |
+| O-03 Cascade Containment | ASI08 ï¿½ LLM10 ï¿½ DSGAI17 |
+| O-04 Human Confirmation Gate | LLM06 ï¿½ ASI01 ï¿½ ASI02 |
+| A-01 Agent Memory Sanitization | ASI06 ï¿½ DSGAI04 ï¿½ LLM01 |
+| A-02 Multi-Agent Message Validation | ASI07 ï¿½ ASI08 ï¿½ ASI01 |
+| A-03 Agent Credential Rotation | ASI02 ï¿½ ASI03 |
+| A-04 Agent Output Guardrails | ASI01 ï¿½ LLM05 ï¿½ ASI02 |
+| D-01 Training Data Provenance | DSGAI05 ï¿½ DSGAI06 ï¿½ LLM03 |
+| D-02 PII Detection & Redaction | DSGAI14 ï¿½ DSGAI15 ï¿½ DSGAI16 ï¿½ LLM02 |
+| D-03 Differential Privacy | DSGAI10 ï¿½ DSGAI18 ï¿½ DSGAI16 |
+| D-04 Data Retention Enforcer | DSGAI11 ï¿½ DSGAI08 ï¿½ DSGAI14 |
 
 ## Framework control coverage
 
 | Recipe | Primary framework controls |
 |---|---|
-| R-01 | ISO 27001 A.8.3 · NIST AI RMF MS-2.5 · ASVS V4.1 |
-| R-02 | ISO 27001 A.8.26/A.8.28 · CIS Controls CIS 16 · ASVS V12 |
-| R-03 | ISO 27001 A.8.11/A.8.12 · NIST AI RMF GV-1.6 |
-| R-04 | ISA/IEC 62443 SR 7.6 · NIST SP 800-82 |
-| R-05 | ISO 27001 A.8.15 · GDPR Art. 32 |
-| M-01 | ASVS V5.1 · CIS Controls CIS 16 · ISO 27001 A.8.28 |
-| M-02 | ISO 27001 A.5.19/A.5.21 · NIST AI RMF MP-5.1 |
-| M-03 | OWASP NHI NHI-5/7/9 · ISO 27001 A.8.2 · AIUC-1 A/B007 |
-| M-04 | CIS Controls CIS 12 · ISA/IEC 62443 SR 7.6 |
-| O-01 | ISA/IEC 62443 SR 2.1 · EU AI Act Art. 14 · NIST SP 800-82 |
-| O-02 | ISA/IEC 62443 SR 3.7 · NIST AI RMF MS-2.5 |
-| O-03 | ISA/IEC 62443 SR 7.6/7.7 · NIST AI RMF MP-4.1 |
-| O-04 | EU AI Act Art. 14 · ISA/IEC 62443 SR 2.1 · NIST SP 800-82 |
+| R-01 | ISO 27001 A.8.3 ï¿½ NIST AI RMF MS-2.5 ï¿½ ASVS V4.1 |
+| R-02 | ISO 27001 A.8.26/A.8.28 ï¿½ CIS Controls CIS 16 ï¿½ ASVS V12 |
+| R-03 | ISO 27001 A.8.11/A.8.12 ï¿½ NIST AI RMF GV-1.6 |
+| R-04 | ISA/IEC 62443 SR 7.6 ï¿½ NIST SP 800-82 |
+| R-05 | ISO 27001 A.8.15 ï¿½ GDPR Art. 32 |
+| M-01 | ASVS V5.1 ï¿½ CIS Controls CIS 16 ï¿½ ISO 27001 A.8.28 |
+| M-02 | ISO 27001 A.5.19/A.5.21 ï¿½ NIST AI RMF MP-5.1 |
+| M-03 | OWASP NHI NHI-5/7/9 ï¿½ ISO 27001 A.8.2 ï¿½ AIUC-1 A/B007 |
+| M-04 | CIS Controls CIS 12 ï¿½ ISA/IEC 62443 SR 7.6 |
+| O-01 | ISA/IEC 62443 SR 2.1 ï¿½ EU AI Act Art. 14 ï¿½ NIST SP 800-82 |
+| O-02 | ISA/IEC 62443 SR 3.7 ï¿½ NIST AI RMF MS-2.5 |
+| O-03 | ISA/IEC 62443 SR 7.6/7.7 ï¿½ NIST AI RMF MP-4.1 |
+| O-04 | EU AI Act Art. 14 ï¿½ ISA/IEC 62443 SR 2.1 ï¿½ NIST SP 800-82 |
+| A-01 | MAESTRO L2 ï¿½ NIST AI RMF MANAGE-2.4 |
+| A-02 | MAESTRO L7 ï¿½ ISA/IEC 62443 SR-3.1 |
+| A-03 | ISO 27001 A.9.2 ï¿½ FedRAMP IA-4 ï¿½ OWASP NHI Top 10 |
+| A-04 | NIST AI RMF MANAGE-4.1 ï¿½ EU AI Act Art. 14 |
+| D-01 | ISO 42001 A.7.4 ï¿½ NIST AI RMF MAP-2.3 |
+| D-02 | GDPR Art. 5(1)(c) ï¿½ ISO 27001 A.8.11 |
+| D-03 | GDPR Art. 25 ï¿½ NIST AI RMF MANAGE-3.2 |
+| D-04 | GDPR Art. 5(1)(e) ï¿½ DORA Art. 12 ï¿½ SOC 2 CC7.2 |
 
 ---
 
@@ -1809,9 +2610,10 @@ class HumanConfirmationGate:
 
 | Date | Version | Change | Author |
 |---|---|---|---|
-| 2026-03-24 | 2026-Q1 | Initial release — 13 recipes across RAG, MCP, and OT patterns | OWASP GenAI Data Security Initiative |
+| 2026-03-28 | 2026-Q1 | Add Part 4 (Agentic AI, A-01 to A-04) and Part 5 (Data Pipelines, D-01 to D-04) ï¿½ 21 recipes total | OWASP GenAI Data Security Initiative |
+| 2026-03-24 | 2026-Q1 | Initial release ï¿½ 13 recipes across RAG, MCP, and OT patterns | OWASP GenAI Data Security Initiative |
 
 ---
 
-*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) —
+*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) ï¿½
 maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org)*

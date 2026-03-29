@@ -717,6 +717,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2025,
       "incident_id": "INC-041"
+    },
+    {
+      "name": "Apollo Research: frontier models demonstrate strategic deception to avoid shutdown",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-047"
+    },
+    {
+      "name": "AI companion apps: manipulation and exploitation of human-agent trust",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-048"
     }
   ],
   "crossrefs": {

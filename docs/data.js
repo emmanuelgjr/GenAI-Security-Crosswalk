@@ -950,6 +950,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-037"
+      },
+      {
+        "name": "Adversarial embedding attacks on production RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-046"
       }
     ],
     "crossrefs": {
@@ -2625,6 +2631,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-044"
+      },
+      {
+        "name": "Stability AI synthetic CSAM generation — training data and output safety failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-049"
       }
     ],
     "crossrefs": {
@@ -3417,6 +3429,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-028"
+      },
+      {
+        "name": "Anthropic Claude context flooding — resource exhaustion via adversarial long-context prompts",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-045"
       }
     ],
     "crossrefs": {
@@ -5011,6 +5029,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-033"
+      },
+      {
+        "name": "Apollo Research: frontier models demonstrate strategic deception to avoid shutdown",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-047"
+      },
+      {
+        "name": "AI companion apps: manipulation and exploitation of human-agent trust",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-048"
       }
     ],
     "crossrefs": {
@@ -6508,6 +6538,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-037"
+      },
+      {
+        "name": "Adversarial embedding attacks on production RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-046"
       }
     ],
     "crossrefs": {
@@ -7265,6 +7301,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-033"
+      },
+      {
+        "name": "AI companion apps: manipulation and exploitation of human-agent trust",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-048"
       }
     ],
     "crossrefs": {
@@ -8012,6 +8054,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-026"
+      },
+      {
+        "name": "Anthropic Claude context flooding — resource exhaustion via adversarial long-context prompts",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-045"
       }
     ],
     "crossrefs": {
@@ -8925,6 +8973,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-030"
+      },
+      {
+        "name": "Apollo Research: frontier models demonstrate strategic deception to avoid shutdown",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-047"
       }
     ],
     "crossrefs": {
@@ -12961,6 +13015,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-029"
+      },
+      {
+        "name": "Adversarial embedding attacks on production RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-046"
       }
     ],
     "crossrefs": {
@@ -15282,6 +15342,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-041"
+      },
+      {
+        "name": "Apollo Research: frontier models demonstrate strategic deception to avoid shutdown",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-047"
+      },
+      {
+        "name": "AI companion apps: manipulation and exploitation of human-agent trust",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-048"
       }
     ],
     "crossrefs": {
@@ -16095,6 +16167,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-041"
+      },
+      {
+        "name": "Apollo Research: frontier models demonstrate strategic deception to avoid shutdown",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-047"
       }
     ],
     "crossrefs": {
@@ -19033,6 +19111,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-023"
+      },
+      {
+        "name": "Adversarial embedding attacks on production RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-046"
       }
     ],
     "crossrefs": {
@@ -23075,6 +23159,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-040"
+      },
+      {
+        "name": "Stability AI synthetic CSAM generation — training data and output safety failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-049"
       }
     ],
     "crossrefs": {
@@ -23735,6 +23825,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-006"
+      },
+      {
+        "name": "OpenAI ChatGPT data retention GDPR challenge — right to erasure vs model training",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-050"
       }
     ],
     "crossrefs": {
@@ -25113,6 +25209,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-044"
+      },
+      {
+        "name": "Stability AI synthetic CSAM generation — training data and output safety failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-049"
       }
     ],
     "crossrefs": {
@@ -25808,6 +25910,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-044"
+      },
+      {
+        "name": "OpenAI ChatGPT data retention GDPR challenge — right to erasure vs model training",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-050"
       }
     ],
     "crossrefs": {
@@ -27169,6 +27277,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-044"
+      },
+      {
+        "name": "OpenAI ChatGPT data retention GDPR challenge — right to erasure vs model training",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-050"
       }
     ],
     "crossrefs": {
@@ -27860,6 +27974,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-036"
+      },
+      {
+        "name": "Stability AI synthetic CSAM generation — training data and output safety failures",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-049"
       }
     ],
     "crossrefs": {
@@ -30634,6 +30754,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-043"
+      },
+      {
+        "name": "OpenAI ChatGPT data retention GDPR challenge — right to erasure vs model training",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2024,
+        "incident_id": "INC-050"
       }
     ],
     "crossrefs": {

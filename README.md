@@ -50,7 +50,7 @@ node scripts/incidents-report.js --format stix              # SIEM/SOAR export
 | **Red teamer** | [LAAF guide](evals/laaf/README.md) → run S1–S6 attack stages, map results to OWASP |
 | **GRC / auditor** | `compliance-report.js --format oscal` → import into ServiceNow/Archer |
 | **Developer** | `npm install @owasp/genai-crosswalk` → query risks + controls programmatically |
-| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 44 AI incidents into Sentinel/Splunk |
+| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 50 AI incidents into Sentinel/Splunk |
 
 ---
 
@@ -63,11 +63,11 @@ Every file answers one question: **which controls from framework X address vulne
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
 | **20** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC · Financial |
 | **67** mapping files | Every source list entry × every applicable framework |
-| **13** implementation recipes | Production-ready Python patterns |
+| **21** implementation recipes | Production-ready Python patterns |
 | **57+** open-source tools | Catalogued and organised by function |
-| **16** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
+| **25** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
 | **20** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
-| **44** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
+| **50** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
 
 All free. All open-source. Built for practitioners.
@@ -200,7 +200,7 @@ All free. All open-source. Built for practitioners.
  
 | File | Contents |
 |---|---|
-| [shared/RECIPES.md](shared/RECIPES.md) | 13 security implementation patterns with working Python — RAG, MCP, OT, agentic |
+| [shared/RECIPES.md](shared/RECIPES.md) | 21 security implementation patterns with working Python — RAG, MCP, OT, agentic |
 | [shared/TOOLS.md](shared/TOOLS.md) | 57+ open-source security tools organised by function |
 | [shared/GLOSSARY.md](shared/GLOSSARY.md) | Unified terminology across LLM, ASI, and DSGAI source lists |
 | [shared/SEVERITY.md](shared/SEVERITY.md) | Severity definitions and AIVSS alignment |
@@ -301,7 +301,7 @@ GenAI-Security-Crosswalk/
 │   └── DSGAI_DORA.md                ← Financial data resilience
 │
 ├── shared/
-│   ├── RECIPES.md                   ← 13 implementation patterns (Python code)
+│   ├── RECIPES.md                   ← 21 implementation patterns (Python code)
 │   ├── TOOLS.md                     ← 57+ open-source tools catalogue
 │   ├── GLOSSARY.md                  ← Unified terminology
 │   ├── SEVERITY.md                  ← Severity definitions + AIVSS alignment
@@ -309,7 +309,7 @@ GenAI-Security-Crosswalk/
 │
 ├── data/
 │   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
-│   ├── incidents.json               ← 44 incidents with MAESTRO layer attribution
+│   ├── incidents.json               ← 50 incidents with MAESTRO layer attribution
 │   ├── incidents-schema.json        ← JSON Schema for incidents
 │   ├── tools-supplement.json        ← Supplemental tools merged at generation time
 │   ├── entries/                     ← 41 machine-readable entry JSON files
@@ -388,7 +388,7 @@ See `evals/laaf/README.md` for the full LPCI attack vector → OWASP → MAESTRO
 
 ## Incident tracker
 
-44 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
+50 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
 
 ```bash
 node scripts/incidents-report.js                      # all incidents → reports/incidents.md
@@ -412,7 +412,7 @@ No install required. Works on desktop and mobile.
 | [**Score**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score) | Select your frameworks, see coverage gaps. Upload Garak/PyRIT/LAAF results to validate. Share your score card on LinkedIn. |
 | [**Explorer**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) | Search and filter all 41 entries. Click any entry to see controls across all 20 frameworks. |
 | [**Frameworks**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/frameworks) | Interactive 41×23 coverage matrix. Click any cell to see the specific controls mapped. |
-| [**Incidents**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents) | Browse 44 AI security incidents. Filter by severity, year, MAESTRO layer. Full attribution details. |
+| [**Incidents**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents) | Browse 50 AI security incidents. Filter by severity, year, MAESTRO layer. Full attribution details. |
 
 **Evidence-based scoring** — three validation tiers:
 - **Self-Assessed** — checkbox only (unvalidated)
@@ -451,7 +451,7 @@ import { getEntry, getFramework, searchEntries, incidents } from '@owasp/genai-c
 const llm01 = getEntry('LLM01');        // typed Entry object
 const euai  = getFramework('EU AI Act'); // { framework, entries, controls }
 const hits  = searchEntries('injection');  // Entry[]
-const incs  = incidents;                   // 44 Incident[] with MAESTRO layers
+const incs  = incidents;                   // 50 Incident[] with MAESTRO layers
 ```
 
 Full TypeScript types included for all data structures.
@@ -481,7 +481,7 @@ Find your entry point in under 60 seconds.
 **I am an AppSec engineer or red-teamer building a test plan**
 → Start: [Agentic_AITG.md](agentic-top10/Agentic_AITG.md) — 50 structured test cases with pass criteria and CI/CD gates
 → Then: [DSGAI_MITREATLAS.md](dsgai-2026/DSGAI_MITREATLAS.md) — attacker TTP mapping with four complete attack chains
-→ Then: [shared/RECIPES.md](shared/RECIPES.md) — 13 working Python patterns to implement the controls you test against
+→ Then: [shared/RECIPES.md](shared/RECIPES.md) — 21 working Python patterns to implement the controls you test against
 
 **I am a US federal contractor needing FedRAMP authorization for AI services**
 → Start: [LLM_FedRAMP.md](llm-top10/LLM_FedRAMP.md) — SP 800-53 AI overlay controls (AC/AU/CA/CM/IA/IR/RA/SA/SC/SI/SR)
@@ -543,7 +543,7 @@ Find your entry point in under 60 seconds.
 → [Agentic_CWE_CVE.md](agentic-top10/Agentic_CWE_CVE.md) — root cause taxonomy, CVE evidence, cross-reference index
  
 **Implementation code, not framework theory**
-→ [shared/RECIPES.md](shared/RECIPES.md) — 13 production patterns with working Python
+→ [shared/RECIPES.md](shared/RECIPES.md) — 21 production patterns with working Python
  
 **US federal / FedRAMP authorization for AI services**
 → [LLM_FedRAMP.md](llm-top10/LLM_FedRAMP.md) · [Agentic_FedRAMP.md](agentic-top10/Agentic_FedRAMP.md) · [DSGAI_FedRAMP.md](dsgai-2026/DSGAI_FedRAMP.md)
@@ -587,7 +587,7 @@ Key finding from the DSGAI mapping: **L2 Data Operations is the originating laye
  
 ### Production implementation recipes
  
-[shared/RECIPES.md](shared/RECIPES.md) contains 13 production-ready security patterns with working Python: access-controlled RAG retrieval, MCP descriptor integrity verification, JIT credential issuance, OT kill switch, behavioural baseline monitoring, cascade containment, and human confirmation gates.
+[shared/RECIPES.md](shared/RECIPES.md) contains 21 production-ready security patterns with working Python: access-controlled RAG retrieval, MCP descriptor integrity verification, JIT credential issuance, OT kill switch, behavioural baseline monitoring, cascade containment, and human confirmation gates.
  
 ---
  
