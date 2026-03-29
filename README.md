@@ -64,8 +64,8 @@ Every file answers one question: **which controls from framework X address vulne
 | **20** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC · Financial |
 | **67** mapping files | Every source list entry × every applicable framework |
 | **21** implementation recipes | Production-ready Python patterns |
-| **57+** open-source tools | Catalogued and organised by function |
-| **25** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
+| **70+** open-source tools | Catalogued and organised by function |
+| **25** eval profiles | Runnable Garak (13) + PyRIT (6) + LAAF (6) tests mapped to OWASP entries |
 | **20** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
 | **50** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
@@ -200,8 +200,8 @@ All free. All open-source. Built for practitioners.
  
 | File | Contents |
 |---|---|
-| [shared/RECIPES.md](shared/RECIPES.md) | 21 security implementation patterns with working Python — RAG, MCP, OT, agentic |
-| [shared/TOOLS.md](shared/TOOLS.md) | 57+ open-source security tools organised by function |
+| [shared/RECIPES.md](shared/RECIPES.md) | 21 security implementation patterns with working Python — RAG, MCP, OT, Agentic, Data Pipeline |
+| [shared/TOOLS.md](shared/TOOLS.md) | 70+ open-source security tools organised by function |
 | [shared/GLOSSARY.md](shared/GLOSSARY.md) | Unified terminology across LLM, ASI, and DSGAI source lists |
 | [shared/SEVERITY.md](shared/SEVERITY.md) | Severity definitions and AIVSS alignment |
 | [shared/TEMPLATE.md](shared/TEMPLATE.md) | Canonical template for new mapping file contributors |
@@ -302,7 +302,7 @@ GenAI-Security-Crosswalk/
 │
 ├── shared/
 │   ├── RECIPES.md                   ← 21 implementation patterns (Python code)
-│   ├── TOOLS.md                     ← 57+ open-source tools catalogue
+│   ├── TOOLS.md                     ← 70+ open-source tools catalogue
 │   ├── GLOSSARY.md                  ← Unified terminology
 │   ├── SEVERITY.md                  ← Severity definitions + AIVSS alignment
 │   └── TEMPLATE.md                  ← Canonical template for new mapping files
@@ -588,7 +588,7 @@ Key finding from the DSGAI mapping: **L2 Data Operations is the originating laye
  
 ### Production implementation recipes
  
-[shared/RECIPES.md](shared/RECIPES.md) contains 21 production-ready security patterns with working Python: access-controlled RAG retrieval, MCP descriptor integrity verification, JIT credential issuance, OT kill switch, behavioural baseline monitoring, cascade containment, and human confirmation gates.
+[shared/RECIPES.md](shared/RECIPES.md) contains 21 production-ready security patterns with working Python across 5 deployment architectures: RAG pipeline security (access control, ingestion integrity, circuit breakers), MCP server hardening (input validation, credential scoping), OT/ICS agent safety (kill switches, behavioural baselines, cascade containment), agentic AI security (memory sanitization, inter-agent message validation, credential rotation, output guardrails), and data pipeline security (provenance tracking, PII redaction, differential privacy, retention enforcement).
  
 ---
  
