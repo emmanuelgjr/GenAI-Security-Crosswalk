@@ -50,7 +50,7 @@ node scripts/incidents-report.js --format stix              # SIEM/SOAR export
 | **Red teamer** | [LAAF guide](evals/laaf/README.md) → run S1–S6 attack stages, map results to OWASP |
 | **GRC / auditor** | `compliance-report.js --format oscal` → import into ServiceNow/Archer |
 | **Developer** | `npm install @owasp/genai-crosswalk` → query risks + controls programmatically |
-| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 31 AI incidents into Sentinel/Splunk |
+| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 44 AI incidents into Sentinel/Splunk |
 
 ---
 
@@ -201,7 +201,7 @@ All free. All open-source. Built for practitioners.
 | File | Contents |
 |---|---|
 | [shared/RECIPES.md](shared/RECIPES.md) | 13 security implementation patterns with working Python — RAG, MCP, OT, agentic |
-| [shared/TOOLS.md](shared/TOOLS.md) | 40+ open-source security tools organised by function |
+| [shared/TOOLS.md](shared/TOOLS.md) | 57+ open-source security tools organised by function |
 | [shared/GLOSSARY.md](shared/GLOSSARY.md) | Unified terminology across LLM, ASI, and DSGAI source lists |
 | [shared/SEVERITY.md](shared/SEVERITY.md) | Severity definitions and AIVSS alignment |
 | [shared/TEMPLATE.md](shared/TEMPLATE.md) | Canonical template for new mapping file contributors |
@@ -302,14 +302,14 @@ GenAI-Security-Crosswalk/
 │
 ├── shared/
 │   ├── RECIPES.md                   ← 13 implementation patterns (Python code)
-│   ├── TOOLS.md                     ← 40+ open-source tools catalogue
+│   ├── TOOLS.md                     ← 57+ open-source tools catalogue
 │   ├── GLOSSARY.md                  ← Unified terminology
 │   ├── SEVERITY.md                  ← Severity definitions + AIVSS alignment
 │   └── TEMPLATE.md                  ← Canonical template for new mapping files
 │
 ├── data/
 │   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
-│   ├── incidents.json               ← 31 incidents with MAESTRO layer attribution
+│   ├── incidents.json               ← 44 incidents with MAESTRO layer attribution
 │   ├── incidents-schema.json        ← JSON Schema for incidents
 │   ├── tools-supplement.json        ← Supplemental tools merged at generation time
 │   ├── entries/                     ← 41 machine-readable entry JSON files
