@@ -9,7 +9,65 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-Next: custom domain (crosswalk.owasp.org), npm publish, vendor integration packs.
+Next: npm publish to npmjs.com, custom domain (crosswalk.owasp.org), vendor integration packs, NeMo Guardrails configs.
+
+---
+
+## [2.0.0] — 2026-03-29
+
+### Added
+
+#### Web application — live at emmanuelgjr.github.io/GenAI-Security-Crosswalk
+
+- 7-page SPA: Landing, Explorer, Frameworks, Incidents, Score, Leaderboard, About
+- Evidence-based scoring with 3 validation tiers (Self-Assessed / Tool-Verified / Independently Attested)
+- Upload Garak/PyRIT/LAAF/compliance report JSON for tool-verified scores
+- Schema + fingerprint validation on all evidence uploads with suspicious result detection
+- Canvas-rendered 1200x630 score card PNG for LinkedIn/Twitter sharing
+- Embeddable SVG badge with Markdown/HTML copy-paste code
+- Deep-linking: `#/explorer/LLM01`, `#/incidents/INC-001`
+- Frameworks page: card grid with coverage bars + matrix view toggle
+- Leaderboard page with GitHub Issue submission flow
+- OG/Twitter Card meta tags for social previews
+- Dark mode, responsive, zero dependencies, keyboard accessible
+
+#### 50 incidents (was 31) — 100% entry coverage
+
+INC-032 to INC-050 added covering 2025 gap year:
+- DeepSeek database exposure, o1/o3 CoT jailbreak, Cursor AI secrets, Garante GDPR enforcement, Clearview AI bias settlement, Azure OpenAI filter bypass, HuggingFace supply chain, NYT v OpenAI copyright, synthetic data re-identification, multi-agent trading cascade, Claude context flooding, adversarial RAG embeddings, Apollo Research scheming, AI companion exploitation, Stability AI CSAM, OpenAI GDPR erasure, Uber lineage audit, TikTok localization, Scale AI labeler exposure
+
+#### 21 recipes (was 13) — 2 new parts
+
+- Part 4 Agentic AI: A-01 memory sanitization, A-02 message validation, A-03 credential rotation, A-04 output guardrails
+- Part 5 Data Pipeline: D-01 provenance tracker, D-02 PII redaction, D-03 differential privacy, D-04 retention enforcer
+
+#### 25 eval profiles (was 16)
+
+- 6 new Garak: LLM03, LLM05, LLM08, LLM10, ASI07, ASI08
+- 3 new PyRIT: asi04_supply_chain, dsgai08_data_leakage, dsgai17_bias_detection
+
+#### 70+ tools (was 57+)
+
+17 new tools in TOOLS.md: Inspect AI, TextAttack, Counterfit, Foolbox, Mindgard, Agentic Security, OpenAI Evals, Vigil, Arize Phoenix, AgentOps, LangSmith, Weave, OpenLLMetry, WhyLogs, Evidently, MLflow + tools-supplement expanded to 19 entries
+
+#### scripts/query.js — CLI query interface
+
+Replaces jq with Node.js: `--stats`, `--severity`, `--framework`, `--entry`, `--tools`, `--incidents`, `--mappings`, `--framework-coverage`, `--incident-search`, `--aivss-above`. Output: table/json/csv.
+
+#### Leaderboard submission template
+
+`.github/ISSUE_TEMPLATE/leaderboard_submission.md` — company name, industry, score, evidence, attestation fields
+
+### Fixed
+- 232 broken characters (U+FFFD mojibake) across 47 files repo-wide
+- Matrix view gap between entry labels and cells
+- All stale counts synced across README, webapp, and data layer
+
+### Changed
+- Attribution: "Created and led by Emmanuel Guilherme Junior — OWASP GenAI Data Security Initiative Lead"
+- data/README.md: removed "Planned enhancements" (all complete), added comprehensive query docs
+- TOOLS.md: added quick-reference table, improved layout
+- package.json version: 2.0.0
 
 ---
 
