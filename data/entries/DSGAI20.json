@@ -39,7 +39,7 @@
       "control_name": "Cost Harvesting",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "High-volume model extraction queries consume significant compute resources � financial impact alongside IP theft"
+      "notes": "High-volume model extraction queries consume significant compute resources — financial impact alongside IP theft"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -47,23 +47,23 @@
       "control_name": "Risk categorisation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Model extraction risks mapped per public-facing deployment � query volume limits, diversity monitoring"
+      "notes": "Model extraction risks mapped per public-facing deployment — query volume limits, diversity monitoring"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Model extraction red team exercises � attempt replication using your own API"
+      "notes": "Model extraction red team exercises — attempt replication using your own API"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing � data leakage",
+      "control_name": "Testing — data leakage",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Monitoring for systematic extraction patterns � anomalous query diversity and volume"
+      "notes": "Monitoring for systematic extraction patterns — anomalous query diversity and volume"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,12 +71,12 @@
       "control_name": "Risk response",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Response for detected model extraction � rate limit tightening, session blocking, forensic capture"
+      "notes": "Response for detected model extraction — rate limit tightening, session blocking, forensic capture"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures protecting AI system integrity",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "API rate limiting, output perturbation, and extraction monitoring are Art. 15 requirements"
@@ -84,15 +84,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "GPAI technical documentation includes model architecture and capability details",
-      "control_name": "Art. 53(1)(a) � GPAI documentation",
+      "control_name": "Art. 53(1)(a) — GPAI documentation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Technical documentation must be protected � model extraction enables circumvention of documentation obligations"
+      "notes": "Technical documentation must be protected — model extraction enables circumvention of documentation obligations"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Post-market monitoring covering security incidents",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Model extraction detection in post-market monitoring programme"
@@ -209,7 +209,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT GenAI model APIs rate-limited � systematic extraction requires high query volumes, rate limiting raises cost"
+      "notes": "OT GenAI model APIs rate-limited — systematic extraction requires high query volumes, rate limiting raises cost"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -217,7 +217,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Authentication on all OT GenAI model inference APIs � unauthenticated systematic querying blocked"
+      "notes": "Authentication on all OT GenAI model inference APIs — unauthenticated systematic querying blocked"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -225,7 +225,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Model extraction patterns detected � unusual query diversity alerted as potential AML.T0016"
+      "notes": "Model extraction patterns detected — unusual query diversity alerted as potential AML.T0016"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -249,7 +249,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "API rate limiting as access control � systematic extraction requires high query volumes"
+      "notes": "API rate limiting as access control — systematic extraction requires high query volumes"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -257,7 +257,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Production API monitoring � unusual query diversity and volume indicative of extraction alerted"
+      "notes": "Production API monitoring — unusual query diversity and volume indicative of extraction alerted"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -265,7 +265,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Monitoring for extraction behaviour � systematic output space coverage pattern detected"
+      "notes": "Monitoring for extraction behaviour — systematic output space coverage pattern detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -273,33 +273,33 @@
       "control_name": "Risk Assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Model extraction risk documented � IP exposure, CHD reconstruction potential assessed"
+      "notes": "Model extraction risk documented — IP exposure, CHD reconstruction potential assessed"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Proprietary model artifacts classified as confidential � access controls, rate limiting, extraction detection",
-      "control_name": "C2.1 � Confidential information protection",
+      "control_id": "Proprietary model artifacts classified as confidential — access controls, rate limiting, extraction detection",
+      "control_name": "C2.1 — Confidential information protection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "API rate limiting as access control limiting systematic model extraction",
-      "control_name": "CC6.1 � Logical access",
+      "control_name": "CC6.1 — Logical access",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Model extraction pattern monitoring � unusual query diversity and volume detected",
-      "control_name": "CC7.2 � Anomaly detection",
+      "control_id": "Model extraction pattern monitoring — unusual query diversity and volume detected",
+      "control_name": "CC7.2 — Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Model extraction risks identified in risk assessment � extraction vectors, IP exposure assessed",
-      "control_name": "CC3.2 � Risk assessment",
+      "control_id": "Model extraction risks identified in risk assessment — extraction vectors, IP exposure assessed",
+      "control_name": "CC3.2 — Risk assessment",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -309,7 +309,7 @@
       "control_name": "Restrict access",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "API rate limiting as access control � systematic model extraction requires high query volumes"
+      "notes": "API rate limiting as access control — systematic model extraction requires high query volumes"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -317,7 +317,7 @@
       "control_name": "Public-facing application protection",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Model extraction pattern detection as application protection � systematic API abuse detected"
+      "notes": "Model extraction pattern detection as application protection — systematic API abuse detected"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -325,7 +325,7 @@
       "control_name": "Audit log review",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Automated monitoring for extraction patterns � unusual query diversity alerted"
+      "notes": "Automated monitoring for extraction patterns — unusual query diversity alerted"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -333,7 +333,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Targeted risk analysis for model extraction � IP exposure, CHD reconstruction potential assessed"
+      "notes": "Targeted risk analysis for model extraction — IP exposure, CHD reconstruction potential assessed"
     },
     {
       "framework": "ENISA Multilayer Framework",

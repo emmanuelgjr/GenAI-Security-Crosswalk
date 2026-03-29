@@ -49,7 +49,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Supply chain data governance � policies for third-party model and data provenance"
+      "notes": "Supply chain data governance — policies for third-party model and data provenance"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -70,7 +70,7 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-3.2",
-      "control_name": "Residual risk � third party",
+      "control_name": "Residual risk — third party",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Residual risk from third-party components documented, monitored, and treated"
@@ -78,7 +78,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Supply chain risks must be identified and mitigated in the risk management system",
-      "control_name": "Art. 9 � Risk management",
+      "control_name": "Art. 9 — Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Third-party component risks are in scope for Art. 9 risk management"
@@ -86,7 +86,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Quality management must cover supply chain controls",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Documented supply chain security procedures required"
@@ -94,15 +94,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "Responsibilities distributed along the AI value chain between providers and deployers",
-      "control_name": "Art. 25 � Value chain responsibilities",
+      "control_name": "Art. 25 — Value chain responsibilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Providers must document what deployers inherit � deployers must verify"
+      "notes": "Providers must document what deployers inherit — deployers must verify"
     },
     {
       "framework": "EU AI Act",
       "control_id": "GPAI providers must document training data governance including third-party sources",
-      "control_name": "Art. 53(1)(a) � GPAI documentation",
+      "control_name": "Art. 53(1)(a) — GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Third-party training data provenance is a GPAI documentation obligation"
@@ -113,7 +113,7 @@
       "control_name": "Supplier relationships",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Security requirements applied to all LLM model and data vendors � provenance, integrity, disclosure obligations"
+      "notes": "Security requirements applied to all LLM model and data vendors — provenance, integrity, disclosure obligations"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Supplier agreements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Contractual security requirements for LLM component suppliers � integrity guarantees, vulnerability notification"
+      "notes": "Contractual security requirements for LLM component suppliers — integrity guarantees, vulnerability notification"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Supply chain security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Managing ICT supply chain risks � LLM model and library supply chain explicitly in scope"
+      "notes": "Managing ICT supply chain risks — LLM model and library supply chain explicitly in scope"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -137,7 +137,7 @@
       "control_name": "Management of technical vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Scanning and patching LLM component vulnerabilities � model weights and inference runtime libraries"
+      "notes": "Scanning and patching LLM component vulnerabilities — model weights and inference runtime libraries"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Third-party AI system acquisition",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Security requirements applied to all LLM component vendors � model providers, dataset suppliers, inference runtime vendors"
+      "notes": "Security requirements applied to all LLM component vendors — model providers, dataset suppliers, inference runtime vendors"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Customer relationships",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM deployment obligations to downstream customers � what security properties are guaranteed"
+      "notes": "LLM deployment obligations to downstream customers — what security properties are guaranteed"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,7 +161,7 @@
       "control_name": "Responsible AI system management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM components managed responsibly through lifecycle � acquisition, testing, deployment, decommission"
+      "notes": "LLM components managed responsibly through lifecycle — acquisition, testing, deployment, decommission"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -169,20 +169,20 @@
       "control_name": "Data quality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Third-party training datasets assessed for quality � provenance, completeness, representativeness, security"
+      "notes": "Third-party training datasets assessed for quality — provenance, completeness, representativeness, security"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "2.1 Establish and maintain software asset inventory",
-      "control_name": "CIS 2 � Inventory and Control of Software Assets",
+      "control_name": "CIS 2 — Inventory and Control of Software Assets",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "ML SBOM maintained as part of software asset inventory � model versions, libraries, adapters"
+      "notes": "ML SBOM maintained as part of software asset inventory — model versions, libraries, adapters"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "7.1 Establish vulnerability management process",
-      "control_name": "CIS 7 � Continuous Vulnerability Management",
+      "control_name": "CIS 7 — Continuous Vulnerability Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vulnerability management process covers LLM component CVEs and dependency risks"
@@ -190,10 +190,10 @@
     {
       "framework": "CIS Controls v8.1",
       "control_id": "16.6 Use only up-to-date and trusted third-party components",
-      "control_name": "CIS 16 � Application Software Security",
+      "control_name": "CIS 16 — Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Only approved, verified LLM components used in production � unsigned components rejected"
+      "notes": "Only approved, verified LLM components used in production — unsigned components rejected"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -201,7 +201,7 @@
       "control_name": "Verify third-party components are current and free from vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM component libraries and dependencies scanned for CVEs � ML SBOM maintained"
+      "notes": "All LLM component libraries and dependencies scanned for CVEs — ML SBOM maintained"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify only minimal approved external libraries are used",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approved component list for LLM deployments � unsigned or unverified components rejected"
+      "notes": "Approved component list for LLM deployments — unsigned or unverified components rejected"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -246,7 +246,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Third-party software compromise as OT attack vector",
-      "control_name": "Section 5.5 � Supply chain threats",
+      "control_name": "Section 5.5 — Supply chain threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM model weights and plugins as supply chain risk components"
@@ -254,7 +254,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Supply chain risk treatment",
-      "control_name": "Section 6.3 � Risk response",
+      "control_name": "Section 6.3 — Risk response",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "ML SBOM and component integrity verification as supply chain controls"
@@ -262,7 +262,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "OT supply chain risk management programme",
-      "control_name": "Section 8.4 � Supply chain programme",
+      "control_name": "Section 8.4 — Supply chain programme",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM vendors subject to same supply chain security requirements as OT software vendors"
@@ -281,7 +281,7 @@
       "control_name": "SA-12",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Security requirements applied to all LLM component vendors � provenance, integrity, vulnerability disclosure"
+      "notes": "Security requirements applied to all LLM component vendors — provenance, integrity, vulnerability disclosure"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -305,7 +305,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Cybersecurity supply chain risk management programme � LLM component vendors in scope"
+      "notes": "Cybersecurity supply chain risk management programme — LLM component vendors in scope"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Cybersecurity requirements included in contracts with suppliers � LLM model and data vendors"
+      "notes": "Cybersecurity requirements included in contracts with suppliers — LLM model and data vendors"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -321,7 +321,7 @@
       "control_name": "Asset Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Systems and hardware managed � ML SBOM as asset inventory for LLM components"
+      "notes": "Systems and hardware managed — ML SBOM as asset inventory for LLM components"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -329,33 +329,33 @@
       "control_name": "Platform Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Software managed to reduce risk � LLM component vulnerability management and patching"
+      "notes": "Software managed to reduce risk — LLM component vulnerability management and patching"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM component vendors assessed before use � security questionnaires, SOC 2 reports reviewed, ongoing monitoring",
-      "control_name": "CC9.1 � Vendor risk management",
+      "control_id": "LLM component vendors assessed before use — security questionnaires, SOC 2 reports reviewed, ongoing monitoring",
+      "control_name": "CC9.1 — Vendor risk management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Contractual security obligations for LLM vendors � data handling, vulnerability disclosure, incident notification",
-      "control_name": "CC9.2 � Vendor agreements",
+      "control_id": "Contractual security obligations for LLM vendors — data handling, vulnerability disclosure, incident notification",
+      "control_name": "CC9.2 — Vendor agreements",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM model updates and component changes managed through change management � approval, testing, rollback",
-      "control_name": "CC8.1 � Change management",
+      "control_id": "LLM model updates and component changes managed through change management — approval, testing, rollback",
+      "control_name": "CC8.1 — Change management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Supply chain attack vectors identified in LLM risk assessment � training data sources, model providers, plugin vendors",
-      "control_name": "CC3.2 � Risk assessment",
+      "control_id": "Supply chain attack vectors identified in LLM risk assessment — training data sources, model providers, plugin vendors",
+      "control_name": "CC3.2 — Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -365,7 +365,7 @@
       "control_name": "Third-party service providers",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "List of all TPSPs maintained � LLM component vendors with CDE access or data in scope"
+      "notes": "List of all TPSPs maintained — LLM component vendors with CDE access or data in scope"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -373,7 +373,7 @@
       "control_name": "TPSP agreements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Written agreements with LLM vendors � acknowledge responsibility for CHD security"
+      "notes": "Written agreements with LLM vendors — acknowledge responsibility for CHD security"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -381,7 +381,7 @@
       "control_name": "TPSP PCI DSS compliance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor TPSP PCI DSS compliance status � LLM component vendors with CHD access have compliant status verified"
+      "notes": "Monitor TPSP PCI DSS compliance status — LLM component vendors with CHD access have compliant status verified"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -389,7 +389,7 @@
       "control_name": "Security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM software components at latest security patches � ML libraries and inference runtime patched"
+      "notes": "All LLM software components at latest security patches — ML libraries and inference runtime patched"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -397,7 +397,7 @@
       "control_name": "Secure system changes",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Model component updates follow change management � security testing before production"
+      "notes": "Model component updates follow change management — security testing before production"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -405,7 +405,7 @@
       "control_name": "Supply Chain Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM component vendors assessed � model providers, dataset vendors, inference runtime suppliers subject to SCS practices"
+      "notes": "LLM component vendors assessed — model providers, dataset vendors, inference runtime suppliers subject to SCS practices"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -413,7 +413,7 @@
       "control_name": "Data and Model Security (DMS)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Model weight integrity verification � cryptographic signatures, hash-based baseline"
+      "notes": "Model weight integrity verification — cryptographic signatures, hash-based baseline"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -421,15 +421,15 @@
       "control_name": "Governance and Risk (GOV)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vendor risk management extended to AI component suppliers � contractual security obligations"
+      "notes": "Vendor risk management extended to AI component suppliers — contractual security obligations"
     },
     {
       "framework": "ENISA Multilayer Framework",
       "control_id": "L1",
-      "control_name": "General ICT � Supply Chain",
+      "control_name": "General ICT — Supply Chain",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "ML SBOM as software asset inventory � all LLM components inventoried, CVEs monitored"
+      "notes": "ML SBOM as software asset inventory — all LLM components inventoried, CVEs monitored"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -437,7 +437,7 @@
       "control_name": "Policy & Compliance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Supply chain security policy covers LLM component vendors � security requirements in procurement"
+      "notes": "Supply chain security policy covers LLM component vendors — security requirements in procurement"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -445,7 +445,7 @@
       "control_name": "Secure Build",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "ML SBOM maintained, CVE scanning in CI/CD � LLM components verified before each deployment"
+      "notes": "ML SBOM maintained, CVE scanning in CI/CD — LLM components verified before each deployment"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -453,7 +453,7 @@
       "control_name": "Architecture Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM supply chain architecture reviewed � trust boundaries and component integrity verified"
+      "notes": "LLM supply chain architecture reviewed — trust boundaries and component integrity verified"
     },
     {
       "framework": "STRIDE",

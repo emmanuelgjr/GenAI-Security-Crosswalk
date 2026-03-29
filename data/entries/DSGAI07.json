@@ -31,7 +31,7 @@
       "control_name": "Membership Inference",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Ungoverned training data status � adversary determines what sensitive data is in scope without classification barriers"
+      "notes": "Ungoverned training data status — adversary determines what sensitive data is in scope without classification barriers"
     },
     {
       "framework": "MITRE ATLAS",
@@ -47,7 +47,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data governance policy extended to all GenAI-derived assets � embeddings, caches, memory, telemetry"
+      "notes": "Data governance policy extended to all GenAI-derived assets — embeddings, caches, memory, telemetry"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -55,7 +55,7 @@
       "control_name": "Context establishment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "GenAI data assets inventoried and mapped � source through derivation chain documented"
+      "notes": "GenAI data assets inventoried and mapped — source through derivation chain documented"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -75,8 +75,8 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI training data subject to governance � relevant, representative, privacy-preserving",
-      "control_name": "Art. 10 � Data and data governance",
+      "control_id": "High-risk AI training data subject to governance — relevant, representative, privacy-preserving",
+      "control_name": "Art. 10 — Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data governance policy covering the full AI data lifecycle is an Art. 10 compliance requirement"
@@ -84,15 +84,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "Documented quality management system including data handling procedures",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data lifecycle procedures � classification, retention, deletion � documented in quality management"
+      "notes": "Data lifecycle procedures — classification, retention, deletion — documented in quality management"
     },
     {
       "framework": "EU AI Act",
       "control_id": "GPAI providers maintain technical documentation including training data governance",
-      "control_name": "Art. 53(1)(a) � GPAI documentation",
+      "control_name": "Art. 53(1)(a) — GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Full data governance documentation for GPAI training data is a binding Art. 53 obligation"
@@ -103,7 +103,7 @@
       "control_name": "Inventory of assets",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All GenAI data assets inventoried � training data, embeddings, caches, agent memory, logs"
+      "notes": "All GenAI data assets inventoried — training data, embeddings, caches, agent memory, logs"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -111,7 +111,7 @@
       "control_name": "Classification of information",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classification extended to GenAI-derived assets � embeddings inherit source classification"
+      "notes": "Classification extended to GenAI-derived assets — embeddings inherit source classification"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -127,7 +127,7 @@
       "control_name": "Information deletion",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Deletion and erasure obligations enforced across all derived assets � embeddings, caches, backups"
+      "notes": "Deletion and erasure obligations enforced across all derived assets — embeddings, caches, backups"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -216,7 +216,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT-derived GenAI assets (embeddings, caches) classified and protected � not treated as general IT data"
+      "notes": "OT-derived GenAI assets (embeddings, caches) classified and protected — not treated as general IT data"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -224,7 +224,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access controls on all GenAI-derived OT data assets � same authentication requirements as source data"
+      "notes": "Access controls on all GenAI-derived OT data assets — same authentication requirements as source data"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -264,7 +264,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data governance policy extended to all GenAI-derived assets � embeddings, caches, agent memory"
+      "notes": "Data governance policy extended to all GenAI-derived assets — embeddings, caches, agent memory"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -272,7 +272,7 @@
       "control_name": "Asset Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "GenAI data assets inventoried � training datasets, embeddings, RAG stores, agent memory, telemetry logs"
+      "notes": "GenAI data assets inventoried — training datasets, embeddings, RAG stores, agent memory, telemetry logs"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -280,7 +280,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All GenAI data assets protected per classification � derived assets inherit source classification"
+      "notes": "All GenAI data assets protected per classification — derived assets inherit source classification"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -288,33 +288,33 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitoring for ungoverned data assets � new GenAI deployments creating untracked data flows detected"
+      "notes": "Monitoring for ungoverned data assets — new GenAI deployments creating untracked data flows detected"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy identifies all confidential information in GenAI scope � including derived assets (embeddings, caches, traces)",
-      "control_name": "C1.1 � Confidentiality policy",
+      "control_id": "Policy identifies all confidential information in GenAI scope — including derived assets (embeddings, caches, traces)",
+      "control_name": "C1.1 — Confidentiality policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information lifecycle management covers GenAI-derived assets � embeddings inherit source data obligations",
-      "control_name": "P4.1 � Privacy information lifecycle",
+      "control_id": "Personal information lifecycle management covers GenAI-derived assets — embeddings inherit source data obligations",
+      "control_name": "P4.1 — Privacy information lifecycle",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Data lifecycle procedures documented � classification propagation, retention schedules, deletion procedures",
-      "control_name": "CC5.2 � Control activities",
+      "control_id": "Data lifecycle procedures documented — classification propagation, retention schedules, deletion procedures",
+      "control_name": "CC5.2 — Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Ungoverned derived asset risks identified in assessment � embeddings, caches, agent memory outside governance scope",
-      "control_name": "CC3.2 � Risk assessment",
+      "control_id": "Ungoverned derived asset risks identified in assessment — embeddings, caches, agent memory outside governance scope",
+      "control_name": "CC3.2 — Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -324,7 +324,7 @@
       "control_name": "Account data inventory",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All CHD locations documented � derived GenAI assets (embeddings, caches) included in data inventory"
+      "notes": "All CHD locations documented — derived GenAI assets (embeddings, caches) included in data inventory"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -332,7 +332,7 @@
       "control_name": "Data flow documentation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data flow diagrams include all GenAI pipeline paths � source through embedding, retrieval, generation, logging"
+      "notes": "Data flow diagrams include all GenAI pipeline paths — source through embedding, retrieval, generation, logging"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -340,7 +340,7 @@
       "control_name": "Media disposal",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Derived GenAI assets containing CHD disposed of securely � deletion verified per Req 9.4 requirements"
+      "notes": "Derived GenAI assets containing CHD disposed of securely — deletion verified per Req 9.4 requirements"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -348,7 +348,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for ungoverned GenAI-derived assets � scope, protection, lifecycle documented"
+      "notes": "Targeted risk analysis for ungoverned GenAI-derived assets — scope, protection, lifecycle documented"
     },
     {
       "framework": "ENISA Multilayer Framework",

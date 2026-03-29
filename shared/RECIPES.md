@@ -1,8 +1,8 @@
 <!--
-  GenAI Security Crosswalk � Shared Resources
-  File        : RECIPES.md � Security Implementation Patterns for GenAI Systems
+  GenAI Security Crosswalk — Shared Resources
+  File        : RECIPES.md — Security Implementation Patterns for GenAI Systems
   Version     : 2026-Q1
-  Maintained by: OWASP GenAI Data Security Initiative � https://genai.owasp.org
+  Maintained by: OWASP GenAI Data Security Initiative — https://genai.owasp.org
   License     : CC BY-SA 4.0
 -->
 
@@ -11,11 +11,11 @@
 Concrete, copy-paste-ready security implementation patterns for the
 five most critical GenAI deployment architectures:
 
-1. **RAG Pipelines** � Retrieval-Augmented Generation security
-2. **MCP Servers** � Model Context Protocol server hardening
-3. **Multi-Agent OT** � Autonomous agents in industrial environments
-4. **Agentic AI** � Agent memory, messaging, credentials, and output guardrails
-5. **Data Pipelines** � Provenance, PII, differential privacy, and retention
+1. **RAG Pipelines** — Retrieval-Augmented Generation security
+2. **MCP Servers** — Model Context Protocol server hardening
+3. **Multi-Agent OT** — Autonomous agents in industrial environments
+4. **Agentic AI** — Agent memory, messaging, credentials, and output guardrails
+5. **Data Pipelines** — Provenance, PII, differential privacy, and retention
 
 Each recipe maps to specific OWASP source list entries and framework
 controls covered in this repository. Where a recipe addresses a risk,
@@ -27,11 +27,11 @@ the relevant crosswalk files are cited.
 
 Each recipe follows the same structure:
 
-- **Threat** � what attack this addresses
-- **Architecture** � where this pattern fits in your stack
-- **Implementation** � concrete code, config, or process steps
-- **Validation** � how to verify the control works
-- **Crosswalk** � which repo files cover the underlying risks
+- **Threat** — what attack this addresses
+- **Architecture** — where this pattern fits in your stack
+- **Implementation** — concrete code, config, or process steps
+- **Validation** — how to verify the control works
+- **Crosswalk** — which repo files cover the underlying risks
 
 Recipes are ordered from most-deployed to most-specialised.
 Start with RAG if you have a production RAG pipeline. Start with
@@ -42,13 +42,13 @@ Pipelines if you need training data governance and privacy controls.
 
 ---
 
-# Part 1 � RAG Pipeline Security
+# Part 1 — RAG Pipeline Security
 
 ---
 
 ## Recipe R-01: Access-Controlled Retrieval
 
-**Threat:** LLM02 Sensitive Information Disclosure � users retrieve
+**Threat:** LLM02 Sensitive Information Disclosure — users retrieve
 documents they are not authorised to access through the RAG interface.
 
 **Architecture:** Vector store ? retrieval layer ? LLM context assembly
@@ -62,7 +62,7 @@ only be visible to executives, security engineers, or legal counsel.
 
 **Implementation:**
 
-*Step 1 � Tag every document at ingestion with its access tier:*
+*Step 1 — Tag every document at ingestion with its access tier:*
 ```python
 from dataclasses import dataclass
 from typing import Optional
@@ -98,7 +98,7 @@ def ingest_document(content: str, metadata: DocumentMetadata, embedder, vector_s
     )
 ```
 
-*Step 2 � Apply user context as a retrieval filter at query time:*
+*Step 2 — Apply user context as a retrieval filter at query time:*
 ```python
 def retrieve_with_access_control(
     query: str,
@@ -110,7 +110,7 @@ def retrieve_with_access_control(
 ) -> list[dict]:
     """
     Retrieve documents the user is authorised to access.
-    Filter applied at the vector store query � not post-retrieval.
+    Filter applied at the vector store query — not post-retrieval.
     Post-retrieval filtering is insufficient: semantic search may
     score a restricted document highly and you would need to discard
     it after retrieving it, wasting retrieval budget and risking
@@ -118,7 +118,7 @@ def retrieve_with_access_control(
     """
     query_embedding = embedder.embed(query)
 
-    # Build access filter � user must match at least one allowed_role
+    # Build access filter — user must match at least one allowed_role
     # OR appear in allowed_users for the document
     access_filter = {
         "should": [
@@ -147,7 +147,7 @@ def retrieve_with_access_control(
     return [r.payload for r in results]
 ```
 
-*Step 3 � Validate classification ceiling before context assembly:*
+*Step 3 — Validate classification ceiling before context assembly:*
 ```python
 CLASSIFICATION_ORDER = ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED"]
 
@@ -166,7 +166,7 @@ def assemble_context(retrieved_docs: list[dict], user_max_classification: str) -
     """
     Refuse context assembly if any retrieved document exceeds
     the user's maximum permitted classification level.
-    This is a defence-in-depth check � the retrieval filter
+    This is a defence-in-depth check — the retrieval filter
     should have already prevented this, but belt-and-suspenders
     is appropriate for access control.
     """
@@ -178,7 +178,7 @@ def assemble_context(retrieved_docs: list[dict], user_max_classification: str) -
         raise AccessControlViolation(
             f"Retrieved content at {ceiling} exceeds "
             f"user authorisation {user_max_classification}. "
-            f"Retrieval filter may have failed � investigate."
+            f"Retrieval filter may have failed — investigate."
         )
 
     context = "\n\n".join(
@@ -204,14 +204,14 @@ for r in results:
         f"Access control failure: returned {r['classification']} to INTERNAL user"
 ```
 
-**Crosswalk:** LLM02 � DSGAI01 � DSGAI11 � ISO 27001 A.8.3 � NIST AI RMF MS-2.5
+**Crosswalk:** LLM02 — DSGAI01 — DSGAI11 — ISO 27001 A.8.3 — NIST AI RMF MS-2.5
 
 ---
 
 ## Recipe R-02: Ingestion Pipeline Integrity
 
 **Threat:** LLM04 Data & Model Poisoning / DSGAI05 Data Integrity
-& Validation Failures � adversarially crafted documents corrupt the
+& Validation Failures — adversarially crafted documents corrupt the
 RAG knowledge base or exploit ingestion pipeline vulnerabilities.
 
 **Architecture:** Document upload ? validation layer ? chunking ?
@@ -251,7 +251,7 @@ def validate_document_for_ingestion(
 ) -> dict:
     """
     Multi-stage validation before any document enters the RAG corpus.
-    Returns a validation report � caller decides whether to proceed.
+    Returns a validation report — caller decides whether to proceed.
     """
     path = Path(file_path)
     report = {
@@ -299,7 +299,7 @@ def validate_document_for_ingestion(
     for pattern in INJECTION_PATTERNS:
         if re.search(pattern, text_content, re.IGNORECASE):
             report["failures"].append(f"INJECTION_PATTERN_DETECTED: {pattern}")
-            # Do not return early � collect all failures for forensics
+            # Do not return early — collect all failures for forensics
 
     # Stage 5: Source provenance check
     # In production: verify document came from an approved source system
@@ -333,7 +333,7 @@ SAFE_IMPORT_BASE = Path("/var/rag/imports/sandbox")
 
 def safe_snapshot_import(archive_path: str, destination: Path) -> list[str]:
     """
-    Safely extract snapshot archives � prevent path traversal.
+    Safely extract snapshot archives — prevent path traversal.
     CVE-2024-3584 (Qdrant) demonstrated that snapshot imports
     can achieve arbitrary file write via path traversal in archives.
     """
@@ -345,7 +345,7 @@ def safe_snapshot_import(archive_path: str, destination: Path) -> list[str]:
             # Resolve the destination path and verify it stays within sandbox
             target = (destination / member).resolve()
 
-            # Path traversal check � must stay within destination
+            # Path traversal check — must stay within destination
             if not str(target).startswith(str(destination)):
                 raise SecurityError(
                     f"Path traversal attempt in snapshot: {member} "
@@ -363,13 +363,13 @@ def safe_snapshot_import(archive_path: str, destination: Path) -> list[str]:
     return extracted
 ```
 
-**Crosswalk:** LLM04 � DSGAI05 � DSGAI13 � ISO 27001 A.8.26/A.8.28/A.8.29
+**Crosswalk:** LLM04 — DSGAI05 — DSGAI13 — ISO 27001 A.8.26/A.8.28/A.8.29
 
 ---
 
 ## Recipe R-03: Output Redaction Before Delivery
 
-**Threat:** LLM02 Sensitive Information Disclosure � LLM responses
+**Threat:** LLM02 Sensitive Information Disclosure — LLM responses
 contain PII, credentials, or sensitive identifiers that should be
 masked before reaching the user.
 
@@ -388,7 +388,7 @@ class RedactionPattern:
     replacement: str
     priority: int = 0  # Higher = applied first
 
-# Core patterns � extend for your environment
+# Core patterns — extend for your environment
 DEFAULT_PATTERNS = [
     RedactionPattern("API_KEY_GENERIC",
         r"(?:api[_-]?key|apikey)[\"'\s:=]+([A-Za-z0-9_\-]{20,})",
@@ -433,7 +433,7 @@ class OutputRedactor:
     def redact(self, text: str, context: dict = None) -> tuple[str, list[str]]:
         """
         Apply redaction patterns. Returns (redacted_text, list_of_triggered_patterns).
-        Triggered patterns are logged for security monitoring � not returned to user.
+        Triggered patterns are logged for security monitoring — not returned to user.
         """
         triggered = []
         result = text
@@ -481,18 +481,18 @@ def deliver_response(raw_response: str, user_id: str, session_id: str) -> str:
             user_id=user_id,
             session_id=session_id,
             patterns=triggered,
-            # Do NOT log the original response � that defeats the purpose
+            # Do NOT log the original response — that defeats the purpose
         )
     return redacted
 ```
 
-**Crosswalk:** LLM02 � DSGAI01 � DSGAI09 � DSGAI14 � ISO 27001 A.8.11/A.8.12
+**Crosswalk:** LLM02 — DSGAI01 — DSGAI09 — DSGAI14 — ISO 27001 A.8.11/A.8.12
 
 ---
 
 ## Recipe R-04: RAG Circuit Breaker for Silent Failures
 
-**Threat:** DSGAI17 Data Availability & Resilience Failures � vector
+**Threat:** DSGAI17 Data Availability & Resilience Failures — vector
 store degradation causes silent misinformation rather than a visible
 error.
 
@@ -507,7 +507,7 @@ from dataclasses import dataclass
 
 class CircuitState(Enum):
     CLOSED = "closed"       # Normal operation
-    OPEN = "open"           # Failing � reject requests
+    OPEN = "open"           # Failing — reject requests
     HALF_OPEN = "half_open" # Testing recovery
 
 @dataclass
@@ -526,7 +526,7 @@ class RAGCircuitBreaker:
             else:
                 if fallback_fn:
                     return fallback_fn(query), "CIRCUIT_OPEN_FALLBACK"
-                raise CircuitOpenError("RAG circuit breaker open � vector store degraded")
+                raise CircuitOpenError("RAG circuit breaker open — vector store degraded")
 
         try:
             result = retrieval_fn(query)
@@ -568,7 +568,7 @@ class RAGCircuitBreaker:
 def fallback_no_rag(query: str) -> list[dict]:
     """
     Graceful degradation: LLM answers from parametric knowledge only.
-    User is informed that retrieval is unavailable � not silently served
+    User is informed that retrieval is unavailable — not silently served
     stale data as if it were current.
     """
     return [{
@@ -583,13 +583,13 @@ def fallback_no_rag(query: str) -> list[dict]:
     }]
 ```
 
-**Crosswalk:** DSGAI17 � ASI08 � LLM10 � ISA/IEC 62443 SR 7.6 (OT) � NIST SP 800-82 (OT)
+**Crosswalk:** DSGAI17 — ASI08 — LLM10 — ISA/IEC 62443 SR 7.6 (OT) — NIST SP 800-82 (OT)
 
 ---
 
 ## Recipe R-05: Telemetry with Least-Logging Defaults
 
-**Threat:** DSGAI14 Excessive Telemetry & Monitoring Leakage �
+**Threat:** DSGAI14 Excessive Telemetry & Monitoring Leakage —
 observability pipelines capture sensitive content in cleartext with
 long retention.
 
@@ -599,11 +599,11 @@ import hashlib
 from enum import IntEnum
 
 class LogLevel(IntEnum):
-    MINIMAL = 1   # Metrics only � no content
+    MINIMAL = 1   # Metrics only — no content
     STANDARD = 2  # Anonymised content, hashed identifiers
-    DEBUG = 3     # Full content � requires approval, auto-expires
+    DEBUG = 3     # Full content — requires approval, auto-expires
 
-CURRENT_LOG_LEVEL = LogLevel.STANDARD  # Default � never DEBUG in production
+CURRENT_LOG_LEVEL = LogLevel.STANDARD  # Default — never DEBUG in production
 
 def log_rag_interaction(
     session_id: str,
@@ -615,7 +615,7 @@ def log_rag_interaction(
     retrieved_classifications: list[str]
 ):
     """
-    Tiered logging � content detail varies by log level.
+    Tiered logging — content detail varies by log level.
     MINIMAL: suitable for long-retention operational dashboards.
     STANDARD: suitable for security monitoring, short retention (30d).
     DEBUG: full capture, requires explicit approval, 24h auto-expiry.
@@ -634,7 +634,7 @@ def log_rag_interaction(
         base_record.update({
             "query_length": len(query),
             "query_topic_hash": hashlib.sha256(query.encode()).hexdigest()[:8],
-            "doc_ids": retrieved_doc_ids,  # IDs are safe � not content
+            "doc_ids": retrieved_doc_ids,  # IDs are safe — not content
             "response_length": len(response),
         })
 
@@ -651,17 +651,17 @@ def log_rag_interaction(
     audit_log.write(base_record)
 ```
 
-**Crosswalk:** DSGAI14 � LLM07 � ISO 27001 A.8.15 � NIST AI RMF GV-1.6
+**Crosswalk:** DSGAI14 — LLM07 — ISO 27001 A.8.15 — NIST AI RMF GV-1.6
 
 ---
 
-# Part 2 � MCP Server Hardening
+# Part 2 — MCP Server Hardening
 
 ---
 
 ## Recipe M-01: MCP Server Input Validation and Schema Enforcement
 
-**Threat:** ASI02 Tool Misuse � MCP servers accept malformed or
+**Threat:** ASI02 Tool Misuse — MCP servers accept malformed or
 adversarial tool call parameters that cause downstream harm.
 
 **Architecture:** Agent ? MCP server ? tool execution
@@ -672,27 +672,27 @@ from pydantic import BaseModel, validator, Field
 from typing import Annotated
 import re
 
-# Define strict schemas for every tool � no open-ended parameter acceptance
+# Define strict schemas for every tool — no open-ended parameter acceptance
 
 class HistorianQueryParams(BaseModel):
     """
-    Schema for historian read tool � OT environment example.
+    Schema for historian read tool — OT environment example.
     All parameters strictly validated before the query executes.
     """
     tag_names: list[Annotated[str, Field(pattern=r"^[A-Z]{2,4}[-_]\d{3,4}[A-Z]?$")]]
     start_time: str  # ISO 8601
     end_time: str    # ISO 8601
-    max_points: Annotated[int, Field(ge=1, le=10000)]  # Hard cap � no unbounded queries
+    max_points: Annotated[int, Field(ge=1, le=10000)]  # Hard cap — no unbounded queries
 
     @validator("tag_names")
     def validate_tag_count(cls, v):
         if len(v) > 50:
-            raise ValueError("Maximum 50 tags per query � use batch endpoint for larger requests")
+            raise ValueError("Maximum 50 tags per query — use batch endpoint for larger requests")
         return v
 
     @validator("start_time", "end_time")
     def validate_iso_datetime(cls, v):
-        # Strict ISO 8601 � prevent injection via timestamp strings
+        # Strict ISO 8601 — prevent injection via timestamp strings
         if not re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$", v):
             raise ValueError(f"Invalid ISO 8601 datetime: {v}")
         return v
@@ -700,8 +700,8 @@ class HistorianQueryParams(BaseModel):
 
 class WorkOrderCreateParams(BaseModel):
     """
-    Schema for work order creation tool � CMMS integration example.
-    This is an irreversible operation � extra validation layers applied.
+    Schema for work order creation tool — CMMS integration example.
+    This is an irreversible operation — extra validation layers applied.
     """
     equipment_id: Annotated[str, Field(pattern=r"^[A-Z]{2,6}-\d{3,6}$")]
     priority: Annotated[str, Field(pattern=r"^(LOW|MEDIUM|HIGH)$")]
@@ -733,7 +733,7 @@ class WorkOrderCreateParams(BaseModel):
 # MCP tool handler with schema validation
 def handle_tool_call(tool_name: str, params: dict, user_context: dict) -> dict:
     """
-    Central MCP tool handler � all calls validated before execution.
+    Central MCP tool handler — all calls validated before execution.
     Schema validation is the gate. No raw parameter passthrough.
     """
     TOOL_SCHEMAS = {
@@ -753,7 +753,7 @@ def handle_tool_call(tool_name: str, params: dict, user_context: dict) -> dict:
             tool=tool_name,
             user=user_context.get("user_id"),
             error=str(e),
-            # Do not log the raw params � may contain sensitive content
+            # Do not log the raw params — may contain sensitive content
         )
         raise ToolValidationError(f"Invalid parameters for {tool_name}: {e}")
 
@@ -769,13 +769,13 @@ def handle_tool_call(tool_name: str, params: dict, user_context: dict) -> dict:
     return execute_tool(tool_name, validated_params, user_context)
 ```
 
-**Crosswalk:** ASI02 � LLM05 � LLM06 � DSGAI06 � ISO 27001 A.8.26/A.8.28 � OWASP ASVS V5
+**Crosswalk:** ASI02 — LLM05 — LLM06 — DSGAI06 — ISO 27001 A.8.26/A.8.28 — OWASP ASVS V5
 
 ---
 
 ## Recipe M-02: MCP Tool Descriptor Integrity Verification
 
-**Threat:** ASI04 Agentic Supply Chain � compromised MCP server
+**Threat:** ASI04 Agentic Supply Chain — compromised MCP server
 injects hidden instructions into tool descriptors that redirect
 agent behaviour.
 
@@ -795,7 +795,7 @@ APPROVED_TOOL_DESCRIPTORS: dict[str, str] = {}  # tool_id ? expected_hash
 def register_tool_descriptor(tool_id: str, descriptor: dict, approver: str):
     """
     Register a tool descriptor with its integrity hash.
-    Called during formal tool approval process � not at runtime.
+    Called during formal tool approval process — not at runtime.
     """
     descriptor_json = json.dumps(descriptor, sort_keys=True)
     descriptor_hash = hashlib.sha256(descriptor_json.encode()).hexdigest()
@@ -814,7 +814,7 @@ def validate_tool_descriptor(tool_id: str, descriptor: dict) -> bool:
     """
     Validate a tool descriptor against its approved hash.
     Called before the agent loads any tool.
-    Any modification to a descriptor � even whitespace � fails validation.
+    Any modification to a descriptor — even whitespace — fails validation.
     """
     if tool_id not in APPROVED_TOOL_DESCRIPTORS:
         security_log.error(
@@ -829,7 +829,7 @@ def validate_tool_descriptor(tool_id: str, descriptor: dict) -> bool:
 
     if not hmac.compare_digest(current_hash, expected_hash):
         security_log.critical(
-            "Tool descriptor integrity failure � possible supply chain compromise",
+            "Tool descriptor integrity failure — possible supply chain compromise",
             tool_id=tool_id,
             expected_hash=expected_hash,
             current_hash=current_hash
@@ -842,7 +842,7 @@ def validate_tool_descriptor(tool_id: str, descriptor: dict) -> bool:
 def scan_descriptor_for_hidden_instructions(descriptor: dict) -> list[str]:
     """
     Scan tool descriptors for patterns that could redirect agent behaviour.
-    This is defence-in-depth on top of hash verification �
+    This is defence-in-depth on top of hash verification —
     catches cases where the attacker has update access to the registry.
     """
     SUSPICIOUS_DESCRIPTOR_PATTERNS = [
@@ -868,11 +868,11 @@ def scan_descriptor_for_hidden_instructions(descriptor: dict) -> list[str]:
 
 def load_tool_for_agent(tool_id: str, descriptor: dict) -> Optional[dict]:
     """
-    Safe tool loading � validates integrity and scans for hidden instructions
+    Safe tool loading — validates integrity and scans for hidden instructions
     before making the tool available to the agent.
     """
     if not validate_tool_descriptor(tool_id, descriptor):
-        raise ToolIntegrityError(f"Tool {tool_id} failed integrity check � not loaded")
+        raise ToolIntegrityError(f"Tool {tool_id} failed integrity check — not loaded")
 
     hidden = scan_descriptor_for_hidden_instructions(descriptor)
     if hidden:
@@ -882,19 +882,19 @@ def load_tool_for_agent(tool_id: str, descriptor: dict) -> Optional[dict]:
             patterns=hidden
         )
         raise ToolIntegrityError(
-            f"Tool {tool_id} descriptor contains suspicious patterns � not loaded"
+            f"Tool {tool_id} descriptor contains suspicious patterns — not loaded"
         )
 
     return descriptor
 ```
 
-**Crosswalk:** ASI04 � LLM03 � DSGAI04 � ISO 27001 A.5.19/A.5.21 � NIST AI RMF MP-5.1
+**Crosswalk:** ASI04 — LLM03 — DSGAI04 — ISO 27001 A.5.19/A.5.21 — NIST AI RMF MP-5.1
 
 ---
 
 ## Recipe M-03: Per-Session Credential Scoping for MCP Tools
 
-**Threat:** ASI03 Identity & Privilege Abuse � agents hold long-lived,
+**Threat:** ASI03 Identity & Privilege Abuse — agents hold long-lived,
 over-scoped credentials that persist beyond the task they were issued for.
 
 **Architecture:** Session start ? JIT credential issuance ? tool calls
@@ -939,11 +939,11 @@ class AgentCredentialManager:
         agent_role: str,
         requested_tools: list[str],
         task_description: str,
-        ttl_seconds: int = 900  # 15 minutes default � adjust per task type
+        ttl_seconds: int = 900  # 15 minutes default — adjust per task type
     ) -> AgentCredential:
         """
         Issue a task-scoped, time-limited credential for this session.
-        Scope is derived from agent role and requested tools �
+        Scope is derived from agent role and requested tools —
         agent cannot self-escalate by requesting additional scope.
         """
         session_id = str(uuid.uuid4())
@@ -952,7 +952,7 @@ class AgentCredentialManager:
             requested_tools=requested_tools
         )
 
-        # Get actual credentials from vault � not stored in credential object
+        # Get actual credentials from vault — not stored in credential object
         vault_secret_id = self.vault.issue_dynamic_secret(
             role=agent_role,
             scopes=permitted_scopes,
@@ -985,7 +985,7 @@ class AgentCredentialManager:
 
     def revoke_credential(self, session_id: str, reason: str = "session_end"):
         """
-        Immediately revoke credential � call on session end, on anomaly detection,
+        Immediately revoke credential — call on session end, on anomaly detection,
         or on kill switch activation. Do not wait for TTL expiry.
         """
         if session_id not in self._active_credentials:
@@ -995,7 +995,7 @@ class AgentCredentialManager:
         credential.revoked = True
         credential.revoked_reason = reason
 
-        # Revoke in vault � invalidates the actual secret immediately
+        # Revoke in vault — invalidates the actual secret immediately
         self.vault.revoke_secret(credential.credential_id)
 
         audit_log.info(
@@ -1029,7 +1029,7 @@ class AgentCredentialManager:
             },
             "optimisation_agent": {
                 "historian_query": ["read"],
-                "setpoint_recommend": ["recommend"],  # recommend only � not execute
+                "setpoint_recommend": ["recommend"],  # recommend only — not execute
             }
         }
 
@@ -1042,13 +1042,13 @@ class AgentCredentialManager:
         }
 ```
 
-**Crosswalk:** ASI03 � DSGAI02 � OWASP NHI Top 10 NHI-5/7/9 � ISO 27001 A.8.2 � AIUC-1 A/B007
+**Crosswalk:** ASI03 — DSGAI02 — OWASP NHI Top 10 NHI-5/7/9 — ISO 27001 A.8.2 — AIUC-1 A/B007
 
 ---
 
 ## Recipe M-04: MCP Rate Limiting and Anomaly Detection
 
-**Threat:** LLM10 Unbounded Consumption / ASI08 Cascading Failures �
+**Threat:** LLM10 Unbounded Consumption / ASI08 Cascading Failures —
 agent tool invocations saturate downstream systems or exhibit
 anomalous patterns indicating compromise.
 
@@ -1123,7 +1123,7 @@ class ToolInvocationTracker:
                     current_rate=current_rate,
                     baseline_avg=avg_calls
                 )
-                # Alert but do not block � anomaly may be legitimate burst
+                # Alert but do not block — anomaly may be legitimate burst
                 # Change to return False to block on anomaly
 
         # Record the call
@@ -1142,23 +1142,23 @@ class ToolInvocationTracker:
             self._baselines[baseline_key].pop(0)
 ```
 
-**Crosswalk:** LLM10 � ASI08 � DSGAI17 � ISA/IEC 62443 SR 7.6 (OT) � CIS Controls CIS 12
+**Crosswalk:** LLM10 — ASI08 — DSGAI17 — ISA/IEC 62443 SR 7.6 (OT) — CIS Controls CIS 12
 
 ---
 
-# Part 3 � Multi-Agent Security in OT Environments
+# Part 3 — Multi-Agent Security in OT Environments
 
 ---
 
 ## Recipe O-01: Agent Kill Switch Implementation
 
-**Threat:** ASI01 Goal Hijack / ASI10 Rogue Agents � operator needs
+**Threat:** ASI01 Goal Hijack / ASI10 Rogue Agents — operator needs
 to immediately halt all agent activity without affecting process control.
 
 **Architecture:** Operator console ? kill switch ? all Zone 3 agents
 
 **Design principle:**
-The kill switch must be implemented at the infrastructure layer �
+The kill switch must be implemented at the infrastructure layer —
 not in the agent itself. A compromised or rogue agent cannot be
 trusted to honour a kill command sent through its own interface.
 The switch must operate independently of the agent's execution path.
@@ -1202,7 +1202,7 @@ class AgentKillSwitch:
         """
         Call this before every tool invocation.
         Raises AgentSuspendedError if the kill switch has been activated.
-        Agents call this themselves � the switch state is not injected
+        Agents call this themselves — the switch state is not injected
         via the agent's instruction path.
         """
         if not self.is_active:
@@ -1221,7 +1221,7 @@ class AgentKillSwitch:
     ):
         """
         Immediately suspend all agents in the cluster.
-        Call from operator console � requires authenticated operator identity.
+        Call from operator console — requires authenticated operator identity.
         """
         with self._lock:
             if self._state == AgentKillSwitchState.ACTIVE:
@@ -1281,7 +1281,7 @@ class AgentKillSwitch:
     def _notify_process_control_fallback(self):
         """
         Signal process control system that agent advisory is offline.
-        Operators revert to manual mode � no more agent recommendations.
+        Operators revert to manual mode — no more agent recommendations.
         Implementation depends on your DCS/SCADA integration.
         """
         # Example: write to a shared OPC-UA variable that HMI monitors
@@ -1294,14 +1294,14 @@ class AgentKillSwitch:
         return True  # Replace with actual verification
 
 
-# Usage pattern � agent calls this before every tool invocation
+# Usage pattern — agent calls this before every tool invocation
 class SecureAgent:
     def __init__(self, kill_switch: AgentKillSwitch, credential_manager):
         self.kill_switch = kill_switch
         self.credential_manager = credential_manager
 
     def invoke_tool(self, tool_name: str, params: dict, session_id: str):
-        # Infrastructure check first � before any agent logic
+        # Infrastructure check first — before any agent logic
         self.kill_switch.check_or_raise()
         # Then proceed with validated tool invocation
         credential = self.credential_manager.get_session_credential(session_id)
@@ -1310,13 +1310,13 @@ class SecureAgent:
         return execute_tool(tool_name, params, credential)
 ```
 
-**Crosswalk:** ASI01 � ASI10 � LLM06 � ISA/IEC 62443 SR 2.1 (OT) � EU AI Act Art. 14
+**Crosswalk:** ASI01 — ASI10 — LLM06 — ISA/IEC 62443 SR 2.1 (OT) — EU AI Act Art. 14
 
 ---
 
 ## Recipe O-02: Agent Behavioural Baseline and Anomaly Detection
 
-**Threat:** ASI10 Rogue Agents / ASI06 Memory Poisoning � agent
+**Threat:** ASI10 Rogue Agents / ASI06 Memory Poisoning — agent
 behaviour drifts from established baseline indicating compromise or
 persistent goal modification.
 
@@ -1365,7 +1365,7 @@ class AgentBehaviouralBaseline:
     def check_deviation(self, current_metrics: dict) -> list[dict]:
         """
         Compare current session metrics against baseline.
-        Returns list of deviation findings � empty list means normal.
+        Returns list of deviation findings — empty list means normal.
         """
         computed_baseline = self.compute_baseline()
         findings = []
@@ -1403,7 +1403,7 @@ def evaluate_agent_session(
 ):
     """
     Evaluate agent session metrics against baseline.
-    Called at session end � triggers kill switch on critical deviation.
+    Called at session end — triggers kill switch on critical deviation.
     """
     findings = baseline.check_deviation(session_metrics)
     critical_findings = [f for f in findings if f["severity"] == "CRITICAL"]
@@ -1411,15 +1411,15 @@ def evaluate_agent_session(
 
     if warning_findings:
         security_log.warning(
-            "Agent behavioural deviation � WARNING",
+            "Agent behavioural deviation — WARNING",
             agent_id=agent_id,
             findings=warning_findings
         )
-        # Alert security team � do not suspend yet
+        # Alert security team — do not suspend yet
 
     if critical_findings:
         security_log.critical(
-            "Agent behavioural deviation � CRITICAL",
+            "Agent behavioural deviation — CRITICAL",
             agent_id=agent_id,
             findings=critical_findings
         )
@@ -1431,7 +1431,7 @@ def evaluate_agent_session(
         )
         # Page security team
         alert_security_team(
-            subject="Rogue agent suspected � kill switch activated",
+            subject="Rogue agent suspected — kill switch activated",
             agent_id=agent_id,
             findings=critical_findings
         )
@@ -1441,13 +1441,13 @@ def evaluate_agent_session(
         baseline.record_session(session_metrics)
 ```
 
-**Crosswalk:** ASI10 � ASI01 � ASI06 � ISA/IEC 62443 SR 3.7 (OT) � NIST AI RMF MS-2.5
+**Crosswalk:** ASI10 — ASI01 — ASI06 — ISA/IEC 62443 SR 3.7 (OT) — NIST AI RMF MS-2.5
 
 ---
 
 ## Recipe O-03: Cascade Containment Architecture
 
-**Threat:** ASI08 Cascading Agent Failures � single-agent fault
+**Threat:** ASI08 Cascading Agent Failures — single-agent fault
 propagates to multiple systems before humans can intervene.
 
 **Implementation:**
@@ -1470,7 +1470,7 @@ class CascadeContainmentPolicy:
     def check_cascade_depth(self, current_depth: int, initiating_agent: str) -> bool:
         """
         Prevent runaway cascade chains. Every inter-agent call increments depth.
-        At max_cascade_depth, the request is rejected � not queued.
+        At max_cascade_depth, the request is rejected — not queued.
         """
         if current_depth >= self.max_cascade_depth:
             security_log.warning(
@@ -1515,7 +1515,7 @@ class CascadeContainmentPolicy:
                     cluster_id=self.cluster_id,
                     consecutive_failures=self._consecutive_failures
                 )
-                # Notify OT operations � process control reverts to manual
+                # Notify OT operations — process control reverts to manual
                 notify_operations_fallback(self.cluster_id)
 
 
@@ -1567,20 +1567,20 @@ def agent_inter_call_gate(
         raise
 ```
 
-**Crosswalk:** ASI08 � LLM10 � DSGAI17 � ISA/IEC 62443 SR 7.6/7.7 (OT) � NIST SP 800-82 (OT)
+**Crosswalk:** ASI08 — LLM10 — DSGAI17 — ISA/IEC 62443 SR 7.6/7.7 (OT) — NIST SP 800-82 (OT)
 
 ---
 
 ## Recipe O-04: Human Confirmation Gate for Irreversible OT Actions
 
-**Threat:** LLM06 Excessive Agency / ASI02 Tool Misuse � agent
+**Threat:** LLM06 Excessive Agency / ASI02 Tool Misuse — agent
 autonomously executes an irreversible action in the OT environment.
 
 **Design principle:**
 The confirmation gate must be implemented as a separate service from
 the agent. If the gate lives inside the agent's execution context,
 it can be bypassed by goal hijack. The gate is an independent trust
-boundary � it validates human intent, not agent intent.
+boundary — it validates human intent, not agent intent.
 
 **Implementation:**
 ```python
@@ -1615,7 +1615,7 @@ class HumanConfirmationGate:
         """
         Create a confirmation request. Returns a request_id for display.
         The operator receives this request on a SEPARATE channel
-        (HMI, mobile app, email) � not through the agent interface.
+        (HMI, mobile app, email) — not through the agent interface.
         """
         request_id = str(uuid.uuid4())
         self._pending[request_id] = {
@@ -1664,7 +1664,7 @@ class HumanConfirmationGate:
         # Verify operator authorisation
         if not self._verify_operator(approving_operator_id, approver_pin, pending):
             security_log.warning(
-                "Confirmation approval rejected � operator not authorised",
+                "Confirmation approval rejected — operator not authorised",
                 request_id=request_id,
                 operator_id=approving_operator_id
             )
@@ -1693,7 +1693,7 @@ class HumanConfirmationGate:
     def validate_and_consume(self, request_id: str, token: str) -> dict:
         """
         Agent submits this before executing the confirmed action.
-        Token is consumed � cannot be reused.
+        Token is consumed — cannot be reused.
         """
         if request_id in self._consumed:
             raise TokenAlreadyConsumedError(f"Token {request_id} already used")
@@ -1717,12 +1717,12 @@ class HumanConfirmationGate:
             )
             raise InvalidTokenError("Confirmation token invalid")
 
-        # Consume the token � one-time use
+        # Consume the token — one-time use
         self._consumed.add(request_id)
         del self._pending[request_id]
 
         audit_log.info(
-            "Confirmation token consumed � action authorised",
+            "Confirmation token consumed — action authorised",
             request_id=request_id,
             action_type=pending["action_type"],
             target_system=pending["target_system"]
@@ -1752,17 +1752,17 @@ class HumanConfirmationGate:
         return any(role in required_roles for role in operator_roles)
 ```
 
-**Crosswalk:** LLM06 � ASI01 � ASI02 � ISA/IEC 62443 SR 2.1 (OT) � EU AI Act Art. 14 � NIST SP 800-82 (OT)
+**Crosswalk:** LLM06 — ASI01 — ASI02 — ISA/IEC 62443 SR 2.1 (OT) — EU AI Act Art. 14 — NIST SP 800-82 (OT)
 
 ---
 
-# Part 4 � Agentic AI Security
+# Part 4 — Agentic AI Security
 
 ---
 
 ## Recipe A-01: Agent Memory Sanitization
 
-**Threat:** ASI06 Memory Poisoning � adversarial content persisted in
+**Threat:** ASI06 Memory Poisoning — adversarial content persisted in
 agent memory executes on future sessions, enabling cross-session
 instruction injection and persistent goal hijack.
 
@@ -1842,13 +1842,13 @@ instructions should be detected and redacted, authority spoofing
 phrases should generate warnings, and clean entries should pass
 through without modification.
 
-**Crosswalk:** ASI06 � DSGAI04 � LLM01 � MAESTRO L2 � NIST AI RMF MANAGE-2.4
+**Crosswalk:** ASI06 — DSGAI04 — LLM01 — MAESTRO L2 — NIST AI RMF MANAGE-2.4
 
 ---
 
 ## Recipe A-02: Multi-Agent Message Validation
 
-**Threat:** ASI07 Lateral Tool Chaining / ASI08 Cascade � unvalidated
+**Threat:** ASI07 Lateral Tool Chaining / ASI08 Cascade — unvalidated
 inter-agent messages enable injection propagation across agent
 boundaries, turning a single compromised agent into a cluster-wide
 breach vector.
@@ -1931,13 +1931,13 @@ Test with legitimate messages (pass), injection-containing messages
 (reject), and replay messages with stale timestamps (reject). Verify
 that schema violations are caught before content inspection.
 
-**Crosswalk:** ASI07 � ASI08 � ASI01 � MAESTRO L7 � ISA/IEC 62443 SR-3.1
+**Crosswalk:** ASI07 — ASI08 — ASI01 — MAESTRO L7 — ISA/IEC 62443 SR-3.1
 
 ---
 
 ## Recipe A-03: Agent Credential Rotation
 
-**Threat:** ASI02 Tool Misuse / ASI03 Identity & Privilege Abuse �
+**Threat:** ASI02 Tool Misuse / ASI03 Identity & Privilege Abuse —
 agent credentials persist beyond need, enabling privilege escalation
 and lateral movement through long-lived tokens.
 
@@ -2033,13 +2033,13 @@ Test credential issuance, expiry after TTL, use counting with
 exhaustion at max_uses, automatic rotation on re-issue, and verify
 the audit trail contains all lifecycle events.
 
-**Crosswalk:** ASI02 � ASI03 � OWASP NHI Top 10 � ISO 27001 A.9.2 � FedRAMP IA-4
+**Crosswalk:** ASI02 — ASI03 — OWASP NHI Top 10 — ISO 27001 A.9.2 — FedRAMP IA-4
 
 ---
 
 ## Recipe A-04: Agent Output Guardrails
 
-**Threat:** ASI01 Goal Hijacking / LLM05 Insecure Output Handling �
+**Threat:** ASI01 Goal Hijacking / LLM05 Insecure Output Handling —
 agent executes tool calls based on hijacked instructions, bypassing
 intended operational boundaries.
 
@@ -2125,18 +2125,18 @@ Test allowed tool calls (pass), forbidden tool name (block), argument
 pattern violation (block), and rate limit exhaustion (block after
 max_calls_per_session invocations).
 
-**Crosswalk:** ASI01 � LLM05 � ASI02 � NIST AI RMF MANAGE-4.1 � EU AI Act Art. 14
+**Crosswalk:** ASI01 — LLM05 — ASI02 — NIST AI RMF MANAGE-4.1 — EU AI Act Art. 14
 
 ---
 
-# Part 5 � Data Pipeline Security
+# Part 5 — Data Pipeline Security
 
 ---
 
 ## Recipe D-01: Training Data Provenance Tracker
 
 **Threat:** DSGAI05 Data Integrity & Validation Failures / DSGAI06
-Data Lineage & Traceability Failures � untraceable training data
+Data Lineage & Traceability Failures — untraceable training data
 makes audit and compliance impossible, blocking incident
 investigation and regulatory response.
 
@@ -2253,7 +2253,7 @@ one record's file_hash and verify that chain verification detects the
 break. Confirm audit_report accurately reflects consent breakdown and
 PII flags.
 
-**Crosswalk:** DSGAI05 � DSGAI06 � LLM03 � ISO 42001 A.7.4 � NIST AI RMF MAP-2.3
+**Crosswalk:** DSGAI05 — DSGAI06 — LLM03 — ISO 42001 A.7.4 — NIST AI RMF MAP-2.3
 
 ---
 
@@ -2261,7 +2261,7 @@ PII flags.
 
 **Threat:** DSGAI14 Excessive Telemetry & Monitoring Leakage /
 DSGAI15 Inadequate PII Protection / DSGAI16 Non-compliant Data
-Handling � personal data in training or inference pipelines flows
+Handling — personal data in training or inference pipelines flows
 without detection, creating regulatory exposure.
 
 **Architecture:** Raw data ? PII scanner ? redaction ? clean data
@@ -2343,14 +2343,14 @@ Test with known PII samples containing email, phone, SSN, credit
 card, and IP address values. Verify redaction replaces all instances.
 Test batch scanning statistics for accurate type-level counts.
 
-**Crosswalk:** DSGAI14 � DSGAI15 � DSGAI16 � LLM02 � GDPR Art. 5(1)(c) � ISO 27001 A.8.11
+**Crosswalk:** DSGAI14 — DSGAI15 — DSGAI16 — LLM02 — GDPR Art. 5(1)(c) — ISO 27001 A.8.11
 
 ---
 
 ## Recipe D-03: Differential Privacy for Model Training
 
 **Threat:** DSGAI10 Synthetic Data Generation Risks / DSGAI18
-Non-compliant Data Handling in AI Training Pipelines � model outputs
+Non-compliant Data Handling in AI Training Pipelines — model outputs
 or synthetic data reveal training data membership, enabling
 reconstruction of individual records.
 
@@ -2432,14 +2432,14 @@ membership inference attack against both. The DP-trained model should
 show significantly lower attack success rate, confirming the privacy
 guarantee holds in practice.
 
-**Crosswalk:** DSGAI10 � DSGAI18 � DSGAI16 � GDPR Art. 25 (privacy by design) � NIST AI RMF MANAGE-3.2
+**Crosswalk:** DSGAI10 — DSGAI18 — DSGAI16 — GDPR Art. 25 (privacy by design) — NIST AI RMF MANAGE-3.2
 
 ---
 
 ## Recipe D-04: Data Retention Enforcer
 
 **Threat:** DSGAI11 Data Retention & Disposal Failures / DSGAI08
-Inadequate Consent & Data Rights Management � AI data persists
+Inadequate Consent & Data Rights Management — AI data persists
 beyond legal retention period, violating GDPR, DORA, and SOC 2
 requirements.
 
@@ -2533,63 +2533,63 @@ Verify detection of expired records. Test dry-run mode (no deletions)
 versus enforcement mode (deletions executed). Verify the audit trail
 contains complete records of all enforcement actions.
 
-**Crosswalk:** DSGAI11 � DSGAI08 � DSGAI14 � GDPR Art. 5(1)(e) � DORA Art. 12 � SOC 2 CC7.2
+**Crosswalk:** DSGAI11 — DSGAI08 — DSGAI14 — GDPR Art. 5(1)(e) — DORA Art. 12 — SOC 2 CC7.2
 
 ---
 
-# Appendix � Recipe to Risk Mapping
+# Appendix — Recipe to Risk Mapping
 
 ## Source list coverage
 
 | Recipe | OWASP source list entries covered |
 |---|---|
-| R-01 Access-Controlled Retrieval | LLM02 � DSGAI01 � DSGAI11 |
-| R-02 Ingestion Pipeline Integrity | LLM04 � DSGAI05 � DSGAI13 |
-| R-03 Output Redaction | LLM02 � DSGAI01 � DSGAI09 � DSGAI14 |
-| R-04 RAG Circuit Breaker | DSGAI17 � ASI08 � LLM10 |
-| R-05 Telemetry Least-Logging | DSGAI14 � LLM07 |
-| M-01 MCP Input Validation | ASI02 � LLM05 � LLM06 � DSGAI06 |
-| M-02 Descriptor Integrity | ASI04 � LLM03 � DSGAI04 |
-| M-03 Per-Session Credentials | ASI03 � DSGAI02 |
-| M-04 Rate Limiting & Anomaly | LLM10 � ASI08 � DSGAI17 |
-| O-01 Kill Switch | ASI01 � ASI10 � LLM06 |
-| O-02 Behavioural Baseline | ASI10 � ASI01 � ASI06 |
-| O-03 Cascade Containment | ASI08 � LLM10 � DSGAI17 |
-| O-04 Human Confirmation Gate | LLM06 � ASI01 � ASI02 |
-| A-01 Agent Memory Sanitization | ASI06 � DSGAI04 � LLM01 |
-| A-02 Multi-Agent Message Validation | ASI07 � ASI08 � ASI01 |
-| A-03 Agent Credential Rotation | ASI02 � ASI03 |
-| A-04 Agent Output Guardrails | ASI01 � LLM05 � ASI02 |
-| D-01 Training Data Provenance | DSGAI05 � DSGAI06 � LLM03 |
-| D-02 PII Detection & Redaction | DSGAI14 � DSGAI15 � DSGAI16 � LLM02 |
-| D-03 Differential Privacy | DSGAI10 � DSGAI18 � DSGAI16 |
-| D-04 Data Retention Enforcer | DSGAI11 � DSGAI08 � DSGAI14 |
+| R-01 Access-Controlled Retrieval | LLM02 — DSGAI01 — DSGAI11 |
+| R-02 Ingestion Pipeline Integrity | LLM04 — DSGAI05 — DSGAI13 |
+| R-03 Output Redaction | LLM02 — DSGAI01 — DSGAI09 — DSGAI14 |
+| R-04 RAG Circuit Breaker | DSGAI17 — ASI08 — LLM10 |
+| R-05 Telemetry Least-Logging | DSGAI14 — LLM07 |
+| M-01 MCP Input Validation | ASI02 — LLM05 — LLM06 — DSGAI06 |
+| M-02 Descriptor Integrity | ASI04 — LLM03 — DSGAI04 |
+| M-03 Per-Session Credentials | ASI03 — DSGAI02 |
+| M-04 Rate Limiting & Anomaly | LLM10 — ASI08 — DSGAI17 |
+| O-01 Kill Switch | ASI01 — ASI10 — LLM06 |
+| O-02 Behavioural Baseline | ASI10 — ASI01 — ASI06 |
+| O-03 Cascade Containment | ASI08 — LLM10 — DSGAI17 |
+| O-04 Human Confirmation Gate | LLM06 — ASI01 — ASI02 |
+| A-01 Agent Memory Sanitization | ASI06 — DSGAI04 — LLM01 |
+| A-02 Multi-Agent Message Validation | ASI07 — ASI08 — ASI01 |
+| A-03 Agent Credential Rotation | ASI02 — ASI03 |
+| A-04 Agent Output Guardrails | ASI01 — LLM05 — ASI02 |
+| D-01 Training Data Provenance | DSGAI05 — DSGAI06 — LLM03 |
+| D-02 PII Detection & Redaction | DSGAI14 — DSGAI15 — DSGAI16 — LLM02 |
+| D-03 Differential Privacy | DSGAI10 — DSGAI18 — DSGAI16 |
+| D-04 Data Retention Enforcer | DSGAI11 — DSGAI08 — DSGAI14 |
 
 ## Framework control coverage
 
 | Recipe | Primary framework controls |
 |---|---|
-| R-01 | ISO 27001 A.8.3 � NIST AI RMF MS-2.5 � ASVS V4.1 |
-| R-02 | ISO 27001 A.8.26/A.8.28 � CIS Controls CIS 16 � ASVS V12 |
-| R-03 | ISO 27001 A.8.11/A.8.12 � NIST AI RMF GV-1.6 |
-| R-04 | ISA/IEC 62443 SR 7.6 � NIST SP 800-82 |
-| R-05 | ISO 27001 A.8.15 � GDPR Art. 32 |
-| M-01 | ASVS V5.1 � CIS Controls CIS 16 � ISO 27001 A.8.28 |
-| M-02 | ISO 27001 A.5.19/A.5.21 � NIST AI RMF MP-5.1 |
-| M-03 | OWASP NHI NHI-5/7/9 � ISO 27001 A.8.2 � AIUC-1 A/B007 |
-| M-04 | CIS Controls CIS 12 � ISA/IEC 62443 SR 7.6 |
-| O-01 | ISA/IEC 62443 SR 2.1 � EU AI Act Art. 14 � NIST SP 800-82 |
-| O-02 | ISA/IEC 62443 SR 3.7 � NIST AI RMF MS-2.5 |
-| O-03 | ISA/IEC 62443 SR 7.6/7.7 � NIST AI RMF MP-4.1 |
-| O-04 | EU AI Act Art. 14 � ISA/IEC 62443 SR 2.1 � NIST SP 800-82 |
-| A-01 | MAESTRO L2 � NIST AI RMF MANAGE-2.4 |
-| A-02 | MAESTRO L7 � ISA/IEC 62443 SR-3.1 |
-| A-03 | ISO 27001 A.9.2 � FedRAMP IA-4 � OWASP NHI Top 10 |
-| A-04 | NIST AI RMF MANAGE-4.1 � EU AI Act Art. 14 |
-| D-01 | ISO 42001 A.7.4 � NIST AI RMF MAP-2.3 |
-| D-02 | GDPR Art. 5(1)(c) � ISO 27001 A.8.11 |
-| D-03 | GDPR Art. 25 � NIST AI RMF MANAGE-3.2 |
-| D-04 | GDPR Art. 5(1)(e) � DORA Art. 12 � SOC 2 CC7.2 |
+| R-01 | ISO 27001 A.8.3 — NIST AI RMF MS-2.5 — ASVS V4.1 |
+| R-02 | ISO 27001 A.8.26/A.8.28 — CIS Controls CIS 16 — ASVS V12 |
+| R-03 | ISO 27001 A.8.11/A.8.12 — NIST AI RMF GV-1.6 |
+| R-04 | ISA/IEC 62443 SR 7.6 — NIST SP 800-82 |
+| R-05 | ISO 27001 A.8.15 — GDPR Art. 32 |
+| M-01 | ASVS V5.1 — CIS Controls CIS 16 — ISO 27001 A.8.28 |
+| M-02 | ISO 27001 A.5.19/A.5.21 — NIST AI RMF MP-5.1 |
+| M-03 | OWASP NHI NHI-5/7/9 — ISO 27001 A.8.2 — AIUC-1 A/B007 |
+| M-04 | CIS Controls CIS 12 — ISA/IEC 62443 SR 7.6 |
+| O-01 | ISA/IEC 62443 SR 2.1 — EU AI Act Art. 14 — NIST SP 800-82 |
+| O-02 | ISA/IEC 62443 SR 3.7 — NIST AI RMF MS-2.5 |
+| O-03 | ISA/IEC 62443 SR 7.6/7.7 — NIST AI RMF MP-4.1 |
+| O-04 | EU AI Act Art. 14 — ISA/IEC 62443 SR 2.1 — NIST SP 800-82 |
+| A-01 | MAESTRO L2 — NIST AI RMF MANAGE-2.4 |
+| A-02 | MAESTRO L7 — ISA/IEC 62443 SR-3.1 |
+| A-03 | ISO 27001 A.9.2 — FedRAMP IA-4 — OWASP NHI Top 10 |
+| A-04 | NIST AI RMF MANAGE-4.1 — EU AI Act Art. 14 |
+| D-01 | ISO 42001 A.7.4 — NIST AI RMF MAP-2.3 |
+| D-02 | GDPR Art. 5(1)(c) — ISO 27001 A.8.11 |
+| D-03 | GDPR Art. 25 — NIST AI RMF MANAGE-3.2 |
+| D-04 | GDPR Art. 5(1)(e) — DORA Art. 12 — SOC 2 CC7.2 |
 
 ---
 
@@ -2610,10 +2610,10 @@ contains complete records of all enforcement actions.
 
 | Date | Version | Change | Author |
 |---|---|---|---|
-| 2026-03-28 | 2026-Q1 | Add Part 4 (Agentic AI, A-01 to A-04) and Part 5 (Data Pipelines, D-01 to D-04) � 21 recipes total | OWASP GenAI Data Security Initiative |
-| 2026-03-24 | 2026-Q1 | Initial release � 13 recipes across RAG, MCP, and OT patterns | OWASP GenAI Data Security Initiative |
+| 2026-03-28 | 2026-Q1 | Add Part 4 (Agentic AI, A-01 to A-04) and Part 5 (Data Pipelines, D-01 to D-04) — 21 recipes total | OWASP GenAI Data Security Initiative |
+| 2026-03-24 | 2026-Q1 | Initial release — 13 recipes across RAG, MCP, and OT patterns | OWASP GenAI Data Security Initiative |
 
 ---
 
-*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) �
+*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) —
 maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org)*

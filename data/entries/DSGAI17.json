@@ -23,7 +23,7 @@
       "control_name": "Denial of ML Service",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversary saturates GenAI pipeline � vector store, RAG retrieval, or inference endpoint rendered unavailable"
+      "notes": "Adversary saturates GenAI pipeline — vector store, RAG retrieval, or inference endpoint rendered unavailable"
     },
     {
       "framework": "MITRE ATLAS",
@@ -31,7 +31,7 @@
       "control_name": "Cost Harvesting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversary triggers disproportionate resource consumption through crafted queries � financial or operational DoS"
+      "notes": "Adversary triggers disproportionate resource consumption through crafted queries — financial or operational DoS"
     },
     {
       "framework": "MITRE ATLAS",
@@ -47,15 +47,15 @@
       "control_name": "Risk tolerance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Availability risk tolerance defined for AI pipelines � RTO/RPO per component documented"
+      "notes": "Availability risk tolerance defined for AI pipelines — RTO/RPO per component documented"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Resilience testing of RAG pipelines � vector store saturation, stale replica, index corruption"
+      "notes": "Resilience testing of RAG pipelines — vector store saturation, stale replica, index corruption"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -63,7 +63,7 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for AI pipeline availability failures � silent degradation detection and response"
+      "notes": "Incident response for AI pipeline availability failures — silent degradation detection and response"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,12 +71,12 @@
       "control_name": "Residual risk",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Residual availability risk documented � BCP coverage for AI pipeline components"
+      "notes": "Residual availability risk documented — BCP coverage for AI pipeline components"
     },
     {
       "framework": "EU AI Act",
       "control_id": "High-risk AI must remain accurate and available under adverse conditions",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vector store redundancy, circuit breakers, and staleness detection are Art. 15 requirements"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Post-market monitoring covering availability and resilience",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "AI pipeline availability monitoring in quality management and post-market monitoring programme"
@@ -95,7 +95,7 @@
       "control_name": "ICT readiness for business continuity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "AI pipeline availability requirements included in BCP � RTO/RPO defined for vector stores and RAG components"
+      "notes": "AI pipeline availability requirements included in BCP — RTO/RPO defined for vector stores and RAG components"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -103,7 +103,7 @@
       "control_name": "Backup",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Backup and recovery for all AI data assets � vector stores, embedding indexes, RAG corpora"
+      "notes": "Backup and recovery for all AI data assets — vector stores, embedding indexes, RAG corpora"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -202,7 +202,7 @@
       "control_name": "Control system backup",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT GenAI failures cannot affect backup and recovery of process control � independence verified"
+      "notes": "OT GenAI failures cannot affect backup and recovery of process control — independence verified"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -210,7 +210,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT GenAI pipeline failures treated as security events � process control fallback activated"
+      "notes": "OT GenAI pipeline failures treated as security events — process control fallback activated"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -218,7 +218,7 @@
       "control_name": "Information flow restriction",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT GenAI availability events do not propagate to process control � architectural separation"
+      "notes": "OT GenAI availability events do not propagate to process control — architectural separation"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -250,7 +250,7 @@
       "control_name": "Infrastructure Resilience",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Networks and environments protected for resilience � circuit breakers, freshness monitoring, redundancy"
+      "notes": "Networks and environments protected for resilience — circuit breakers, freshness monitoring, redundancy"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -258,7 +258,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "GenAI pipeline health monitored � freshness, availability metrics reviewed continuously"
+      "notes": "GenAI pipeline health monitored — freshness, availability metrics reviewed continuously"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -266,7 +266,7 @@
       "control_name": "Incident Mitigation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Pipeline failures contained � circuit breaker activation, graceful degradation, user notification"
+      "notes": "Pipeline failures contained — circuit breaker activation, graceful degradation, user notification"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -274,33 +274,33 @@
       "control_name": "Incident Recovery",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Recovery plan includes GenAI pipeline failures � BCP covers AI availability, RTO/RPO defined"
+      "notes": "Recovery plan includes GenAI pipeline failures — BCP covers AI availability, RTO/RPO defined"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM service availability commitments cover RAG freshness � stale data producing misinformation is an availability failure",
-      "control_name": "A1.1 � Availability policy",
+      "control_id": "LLM service availability commitments cover RAG freshness — stale data producing misinformation is an availability failure",
+      "control_name": "A1.1 — Availability policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Circuit breakers and freshness monitoring protect availability commitments � graceful degradation over silent failure",
-      "control_name": "A1.2 � Environmental protections",
+      "control_id": "Circuit breakers and freshness monitoring protect availability commitments — graceful degradation over silent failure",
+      "control_name": "A1.2 — Environmental protections",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG freshness monitoring � alert when index staleness exceeds threshold before misinformation reaches users",
-      "control_name": "CC7.2 � Anomaly detection",
+      "control_id": "RAG freshness monitoring — alert when index staleness exceeds threshold before misinformation reaches users",
+      "control_name": "CC7.2 — Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "Silent RAG degradation identified as availability risk in assessment",
-      "control_name": "CC3.2 � Risk assessment",
+      "control_name": "CC3.2 — Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -310,7 +310,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for GenAI availability in payment processing � silent failure impact on fraud detection"
+      "notes": "Targeted risk analysis for GenAI availability in payment processing — silent failure impact on fraud detection"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -318,7 +318,7 @@
       "control_name": "Network security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rate limiting protecting availability of CDE-facing LLM endpoints � DoS prevention"
+      "notes": "Rate limiting protecting availability of CDE-facing LLM endpoints — DoS prevention"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -326,7 +326,7 @@
       "control_name": "Audit log review",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Automated monitoring for GenAI pipeline health in CDE � freshness and availability metrics reviewed"
+      "notes": "Automated monitoring for GenAI pipeline health in CDE — freshness and availability metrics reviewed"
     },
     {
       "framework": "PCI DSS v4.0",

@@ -30,7 +30,7 @@
  *   --stats                 Summary statistics
  *   --format <fmt>          json | table | csv  (default: table)
  *   --json                  Shorthand for --format json
- * ────────���─────────────────────��───────────────────────────────────────────
+ * ────────———─────────────────────——───────────────────────────────────────────
  */
 
 'use strict';
@@ -42,7 +42,7 @@ const ROOT        = path.resolve(__dirname, '..');
 const ENTRIES_DIR = path.join(ROOT, 'data', 'entries');
 const INCIDENTS   = path.join(ROOT, 'data', 'incidents.json');
 
-// ── Args ────────────────────────────────────��────────────────────────────────
+// ── Args ────────────────────────────────────——────────────────────────────────
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -85,7 +85,7 @@ function printHelp() {
   console.log(help);
 }
 
-// ── Data ──���────────────────────────────���─────────────────────────────────────
+// ── Data ──———────────────────────────────———─────────────────────────────────────
 
 function loadEntries() {
   return fs.readdirSync(ENTRIES_DIR)
@@ -99,7 +99,7 @@ function loadIncidents() {
   return JSON.parse(fs.readFileSync(INCIDENTS, 'utf8')).incidents || [];
 }
 
-// ── Formatters ──────��──────────────────────────────��─────────────────────────
+// ── Formatters ──────——──────────────────────────────——─────────────────────────
 
 function formatTable(headers, rows) {
   const widths = headers.map((h, i) =>
@@ -260,7 +260,7 @@ function searchIncidents(incidents, query, format) {
   output(headers, rows, format);
 }
 
-// ── Main ─────────────────────��────────────────────────���──────────────────────
+// ── Main ─────────────────────——────────────────────────———──────────────────────
 
 function main() {
   const opts = parseArgs();

@@ -49,15 +49,15 @@
       "control_name": "Policies for trustworthy AI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy on agent transparency � agents must identify as AI, advisory outputs clearly distinguished from authoritative"
+      "notes": "Policy on agent transparency — agents must identify as AI, advisory outputs clearly distinguished from authoritative"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing � data leakage",
+      "control_name": "Testing — data leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Evaluation of transparency controls � verify advisory labels persist in all interface contexts"
+      "notes": "Evaluation of transparency controls — verify advisory labels persist in all interface contexts"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -65,20 +65,20 @@
       "control_name": "Feedback mechanisms",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Feedback channels detecting operator over-trust patterns � aggregate analysis of agent-influenced decisions"
+      "notes": "Feedback channels detecting operator over-trust patterns — aggregate analysis of agent-influenced decisions"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response � data",
+      "control_name": "Risk response — data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Response for detected trust exploitation patterns � operator retraining, interface redesign, aggregate audit"
+      "notes": "Response for detected trust exploitation patterns — operator retraining, interface redesign, aggregate audit"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Users informed of capabilities, limitations, and AI nature",
-      "control_name": "Art. 13 � Transparency",
+      "control_name": "Art. 13 — Transparency",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agents must clearly communicate their AI nature and advisory limitations"
@@ -86,18 +86,18 @@
     {
       "framework": "EU AI Act",
       "control_id": "Effective human oversight over high-risk AI",
-      "control_name": "Art. 14 � Human oversight",
+      "control_name": "Art. 14 — Human oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Humans must be able to override agent recommendations � trust exploitation undermines Art. 14 effectiveness"
+      "notes": "Humans must be able to override agent recommendations — trust exploitation undermines Art. 14 effectiveness"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Chatbots and AI-generated content must disclose AI nature",
-      "control_name": "Art. 50 � Transparency for certain AI systems",
+      "control_name": "Art. 50 — Transparency for certain AI systems",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent-user interactions require AI disclosure � universal obligation"
+      "notes": "All agent-user interactions require AI disclosure — universal obligation"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -105,7 +105,7 @@
       "control_name": "Information security awareness, education and training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All users of agentic decision-support tools trained on AI limitations � verification requirements, how to identify manipulation"
+      "notes": "All users of agentic decision-support tools trained on AI limitations — verification requirements, how to identify manipulation"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Compliance with policies",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy on agentic AI advisory use � domains requiring verification, approval flow independence from agent interface"
+      "notes": "Policy on agentic AI advisory use — domains requiring verification, approval flow independence from agent interface"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Monitoring activities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Aggregate over-trust patterns monitored � systematic operator acceptance without verification detected"
+      "notes": "Aggregate over-trust patterns monitored — systematic operator acceptance without verification detected"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Classification of information",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent advisory output classified � users cannot mistake model recommendations for authoritative system content"
+      "notes": "Agent advisory output classified — users cannot mistake model recommendations for authoritative system content"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -137,7 +137,7 @@
       "control_name": "Impact assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Trust exploitation impact assessed � which persons are affected by AI decisions influenced by manipulated trust"
+      "notes": "Trust exploitation impact assessed — which persons are affected by AI decisions influenced by manipulated trust"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Information for interested parties",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "AI system transparency obligations � users informed of AI nature, advisory status, limitations, EU AI Act Art. 50 alignment"
+      "notes": "AI system transparency obligations — users informed of AI nature, advisory status, limitations, EU AI Act Art. 50 alignment"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Use of AI systems",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Guidance on appropriate use � domains requiring human verification, how to distinguish AI advisory from authoritative content"
+      "notes": "Guidance on appropriate use — domains requiring human verification, how to distinguish AI advisory from authoritative content"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,39 +161,39 @@
       "control_name": "Policy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Leadership commitment to AI transparency � AI disclosure and advisory labelling requirements in AI policy"
+      "notes": "Leadership commitment to AI transparency — AI disclosure and advisory labelling requirements in AI policy"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "14.1 Establish security awareness programme",
-      "control_name": "CIS 14 � Security Awareness and Skills Training",
+      "control_name": "CIS 14 — Security Awareness and Skills Training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All users of agentic tools trained on AI limitations � verification requirements, how to identify manipulation"
+      "notes": "All users of agentic tools trained on AI limitations — verification requirements, how to identify manipulation"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 � Incident Response",
+      "control_name": "CIS 17 — Incident Response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Defined response for trust exploitation incidents � operator retraining, pattern audit, interface redesign"
+      "notes": "Defined response for trust exploitation incidents — operator retraining, pattern audit, interface redesign"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "5.4 Restrict administrator privileges",
-      "control_name": "CIS 5 � Account Management",
+      "control_name": "CIS 5 — Account Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approval flows independent of agent interface � sensitive approvals cannot be completed via agent chat"
+      "notes": "Approval flows independent of agent interface — sensitive approvals cannot be completed via agent chat"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 � Audit Log Management",
+      "control_name": "CIS 8 — Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent-influenced operator decisions logged � aggregate over-trust patterns detectable"
+      "notes": "Agent-influenced operator decisions logged — aggregate over-trust patterns detectable"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -201,7 +201,7 @@
       "control_name": "Verify business logic assumptions documented",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "AI advisory limitations documented as business logic assumptions � verification requirements per domain"
+      "notes": "AI advisory limitations documented as business logic assumptions — verification requirements per domain"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify outputs encoded before rendering",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent advisory outputs clearly labelled � users cannot mistake AI output for authoritative content"
+      "notes": "Agent advisory outputs clearly labelled — users cannot mistake AI output for authoritative content"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -217,7 +217,7 @@
       "control_name": "Verify all security controls logged",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent-influenced operator decisions logged � aggregate patterns detectable"
+      "notes": "Agent-influenced operator decisions logged — aggregate patterns detectable"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Verify API rejects large unexpected payloads",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approval flows independent of agent interface � no state-changing approvals via agent chat"
+      "notes": "Approval flows independent of agent interface — no state-changing approvals via agent chat"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -233,7 +233,7 @@
       "control_name": "Use control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM advisory outputs clearly distinguished from authoritative documentation � source always visible"
+      "notes": "LLM advisory outputs clearly distinguished from authoritative documentation — source always visible"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -241,7 +241,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Procedures for detecting operator over-trust patterns � aggregate analysis of agent-influenced decisions"
+      "notes": "Procedures for detecting operator over-trust patterns — aggregate analysis of agent-influenced decisions"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -281,7 +281,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy requires AI disclosure and advisory labelling � agent transparency as a governance requirement"
+      "notes": "Policy requires AI disclosure and advisory labelling — agent transparency as a governance requirement"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -289,7 +289,7 @@
       "control_name": "Awareness and Training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Users trained on AI limitations � operators understand agent advisory status and verification requirements"
+      "notes": "Users trained on AI limitations — operators understand agent advisory status and verification requirements"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -297,7 +297,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitoring for aggregate over-trust patterns � systematic operator acceptance without verification detected"
+      "notes": "Monitoring for aggregate over-trust patterns — systematic operator acceptance without verification detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -305,7 +305,7 @@
       "control_name": "Communication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Information shared following incidents � trust exploitation incidents reported to affected users"
+      "notes": "Information shared following incidents — trust exploitation incidents reported to affected users"
     },
     {
       "framework": "SOC 2",
@@ -465,7 +465,7 @@
       "control_name": "CWE-346",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "User cannot determine whether advice originates from AI or human � no origin verification"
+      "notes": "User cannot determine whether advice originates from AI or human — no origin verification"
     },
     {
       "framework": "CWE/CVE",
@@ -481,12 +481,12 @@
       "control_name": "CWE-200",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "System prompt and agent configuration not protected � extraction enables targeted trust exploitation"
+      "notes": "System prompt and agent configuration not protected — extraction enables targeted trust exploitation"
     },
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "AI disclosure enforcement",
-      "control_name": "MBT � Model Behaviour",
+      "control_name": "MBT — Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify agent identifies as AI in all interface contexts; test for identity concealment"
@@ -494,7 +494,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Advisory label persistence",
-      "control_name": "OHT � Output Handling",
+      "control_name": "OHT — Output Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify advisory labels persist through all rendering environments"
@@ -502,7 +502,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Over-trust pattern detection",
-      "control_name": "LMT � Logging & Monitoring",
+      "control_name": "LMT — Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify monitoring can detect aggregate patterns of uncritical operator acceptance"
@@ -558,7 +558,7 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Humans using agent credentials � or agents using human credentials � destroys attribution",
+      "control_id": "Humans using agent credentials — or agents using human credentials — destroys attribution",
       "control_name": "NHI-10 Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
@@ -570,7 +570,7 @@
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Least privilege makes agent capabilities visible and bounded � users understand what the agent can actually do"
+      "notes": "Least privilege makes agent capabilities visible and bounded — users understand what the agent can actually do"
     },
     {
       "framework": "NIST SP 800-218A",

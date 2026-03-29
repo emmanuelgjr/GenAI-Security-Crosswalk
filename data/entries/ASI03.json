@@ -49,7 +49,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent identity and credential governance policy � NHI inventory, short-lived credentials, scope controls"
+      "notes": "Agent identity and credential governance policy — NHI inventory, short-lived credentials, scope controls"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -57,15 +57,15 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential exposure risks mapped per deployment � credential types, scope, and lateral movement potential"
+      "notes": "Agent credential exposure risks mapped per deployment — credential types, scope, and lateral movement potential"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial testing covering credential leakage and abuse � memory stores, logs, tool payload captures"
+      "notes": "Adversarial testing covering credential leakage and abuse — memory stores, logs, tool payload captures"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -73,20 +73,20 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for credential exposure � rotation, containment, lateral movement assessment, downstream notification"
+      "notes": "Incident response for credential exposure — rotation, containment, lateral movement assessment, downstream notification"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Credential exposure risk identified and mitigated",
-      "control_name": "Art. 9 � Risk management",
+      "control_name": "Art. 9 — Risk management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential lifecycle in Art. 9 risk management � NHI inventory, scope controls, rotation documented"
+      "notes": "Agent credential lifecycle in Art. 9 risk management — NHI inventory, scope controls, rotation documented"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures protecting against credential theft",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived credentials, JIT access, PKI-backed identities are Art. 15 requirements"
@@ -94,10 +94,10 @@
     {
       "framework": "EU AI Act",
       "control_id": "Documented procedures for credential incident response",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential incident response in quality management system � rotation, containment, lateral movement assessment"
+      "notes": "Agent credential incident response in quality management system — rotation, containment, lateral movement assessment"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -105,7 +105,7 @@
       "control_name": "Privileged access rights",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials managed as privileged access � JIT issuance, minimum scope, regular review, automatic expiry"
+      "notes": "Agent credentials managed as privileged access — JIT issuance, minimum scope, regular review, automatic expiry"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Identity management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "NHI lifecycle management � all agent identities inventoried, provisioned, reviewed, and deprovisioned through formal process"
+      "notes": "NHI lifecycle management — all agent identities inventoried, provisioned, reviewed, and deprovisioned through formal process"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Use of cryptography",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials encrypted at rest and in transit � secret manager, no cleartext storage"
+      "notes": "Agent credentials encrypted at rest and in transit — secret manager, no cleartext storage"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All credential operations logged � issuance, use, expiry, anomalous patterns detectable"
+      "notes": "All credential operations logged — issuance, use, expiry, anomalous patterns detectable"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -137,7 +137,7 @@
       "control_name": "AI system security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Credential security as AIMS design requirement � short-lived JIT credentials, no cleartext storage, least privilege"
+      "notes": "Credential security as AIMS design requirement — short-lived JIT credentials, no cleartext storage, least privilege"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Data provenance and characteristics",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials tracked as AI system data � issuance, scope, expiry, rotation documented"
+      "notes": "Agent credentials tracked as AI system data — issuance, scope, expiry, rotation documented"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Support",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Resources for AI systems include NHIs � agent identities inventoried and managed as AIMS resources"
+      "notes": "Resources for AI systems include NHIs — agent identities inventoried and managed as AIMS resources"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,39 +161,39 @@
       "control_name": "Third-party AI system acquisition",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Third-party services accessed via agent credentials assessed � security obligations in access arrangements"
+      "notes": "Third-party services accessed via agent credentials assessed — security obligations in access arrangements"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "5.4 Restrict administrator privileges",
-      "control_name": "CIS 5 � Account Management",
+      "control_name": "CIS 5 — Account Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials managed as privileged accounts � minimum scope, regular review, JIT issuance"
+      "notes": "Agent credentials managed as privileged accounts — minimum scope, regular review, JIT issuance"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "6.2 Establish an access revoking process",
-      "control_name": "CIS 6 � Access Control Management",
+      "control_name": "CIS 6 — Access Control Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential revocation process � immediate revocation on detection, decommission procedure"
+      "notes": "Agent credential revocation process — immediate revocation on detection, decommission procedure"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 � Audit Log Management",
+      "control_name": "CIS 8 — Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All credential operations logged � issuance, use, anomalous patterns detectable"
+      "notes": "All credential operations logged — issuance, use, anomalous patterns detectable"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "3.11 Encrypt sensitive data at rest",
-      "control_name": "CIS 3 � Data Protection",
+      "control_name": "CIS 3 — Data Protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials encrypted at rest � secret manager, no cleartext storage"
+      "notes": "Agent credentials encrypted at rest — secret manager, no cleartext storage"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -201,7 +201,7 @@
       "control_name": "Verify credentials not in source code",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials not hardcoded � secret manager required"
+      "notes": "Agent credentials not hardcoded — secret manager required"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify access control enforces least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential scope minimum required � no over-privileged NHIs"
+      "notes": "Agent credential scope minimum required — no over-privileged NHIs"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -217,7 +217,7 @@
       "control_name": "Verify sensitive data encrypted at rest",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials encrypted at rest � no cleartext in config or agent memory"
+      "notes": "Agent credentials encrypted at rest — no cleartext in config or agent memory"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Verify access control decisions logged",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All credential usage logged � issuance, access, expiry detectable"
+      "notes": "All credential usage logged — issuance, access, expiry detectable"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -241,7 +241,7 @@
       "control_name": "Identification and authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent access to OT systems using distinct, traceable identity � not shared service accounts"
+      "notes": "All agent access to OT systems using distinct, traceable identity — not shared service accounts"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -249,7 +249,7 @@
       "control_name": "Authenticator management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials managed with defined lifecycle � issuance, rotation, revocation procedures"
+      "notes": "Agent credentials managed with defined lifecycle — issuance, rotation, revocation procedures"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -297,7 +297,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Identities and credentials managed � NHI inventory, lifecycle management, unique identity per agent"
+      "notes": "Identities and credentials managed — NHI inventory, lifecycle management, unique identity per agent"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -305,7 +305,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access permissions managed � agent credential scope enforced, least privilege per agent role"
+      "notes": "Access permissions managed — agent credential scope enforced, least privilege per agent role"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Sensitive data protected at rest � agent credentials encrypted, not stored in cleartext"
+      "notes": "Sensitive data protected at rest — agent credentials encrypted, not stored in cleartext"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -321,7 +321,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Credential usage monitored � anomalous access patterns detected"
+      "notes": "Credential usage monitored — anomalous access patterns detected"
     },
     {
       "framework": "SOC 2",
@@ -497,12 +497,12 @@
       "control_name": "CWE-613",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Long-lived agent credentials without expiry or rotation � NHI-7"
+      "notes": "Long-lived agent credentials without expiry or rotation — NHI-7"
     },
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Credential scope enforcement",
-      "control_name": "ACT � Access Control",
+      "control_name": "ACT — Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify agent cannot access systems beyond its credential scope; test scope boundaries"
@@ -510,7 +510,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Credential usage audit trail",
-      "control_name": "LMT � Logging & Monitoring",
+      "control_name": "LMT — Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify all credential operations are logged with sufficient detail for forensic investigation"
@@ -518,7 +518,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Credential leakage paths",
-      "control_name": "DPT � Data Protection",
+      "control_name": "DPT — Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Test whether credentials appear in agent outputs, logs, memory stores, or tool payloads"
@@ -574,11 +574,11 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent credentials not revoked on decommission � dormant tokens exploitable",
+      "control_id": "Agent credentials not revoked on decommission — dormant tokens exploitable",
       "control_name": "NHI-1 Improper Offboarding",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Formal agent offboarding � all credentials revoked, tokens invalidated, access removed"
+      "notes": "Formal agent offboarding — all credentials revoked, tokens invalidated, access removed"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -586,7 +586,7 @@
       "control_name": "NHI-2 Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "No credentials in agent context, logs, or tool payloads � secret manager only"
+      "notes": "No credentials in agent context, logs, or tool payloads — secret manager only"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -594,39 +594,39 @@
       "control_name": "NHI-3 Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Validate all third-party NHIs � revoke over-privileged third-party tokens"
+      "notes": "Validate all third-party NHIs — revoke over-privileged third-party tokens"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weak agent-to-system authentication � credential reuse or weak secrets",
+      "control_id": "Weak agent-to-system authentication — credential reuse or weak secrets",
       "control_name": "NHI-4 Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Strong authentication for all agent-to-system connections � mTLS, short-lived tokens"
+      "notes": "Strong authentication for all agent-to-system connections — mTLS, short-lived tokens"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent holds more permissions than required � lateral movement amplifier",
+      "control_id": "Agent holds more permissions than required — lateral movement amplifier",
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Least privilege per agent role � scope enforced, reviewed quarterly"
+      "notes": "Least privilege per agent role — scope enforced, reviewed quarterly"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent credentials stored in cleartext � config files, environment variables",
+      "control_id": "Agent credentials stored in cleartext — config files, environment variables",
       "control_name": "NHI-6 Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Secret manager for all agent credentials � no cleartext storage anywhere"
+      "notes": "Secret manager for all agent credentials — no cleartext storage anywhere"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent tokens without expiry � compromise persists indefinitely",
+      "control_id": "Agent tokens without expiry — compromise persists indefinitely",
       "control_name": "NHI-7 Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Short-lived credentials � task-scoped tokens with automatic expiry"
+      "notes": "Short-lived credentials — task-scoped tokens with automatic expiry"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -634,7 +634,7 @@
       "control_name": "NHI-8 Environment Isolation Failure",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Strict environment isolation � separate credentials per environment, no cross-environment reuse"
+      "notes": "Strict environment isolation — separate credentials per environment, no cross-environment reuse"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -642,15 +642,15 @@
       "control_name": "NHI-9 NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Unique identity per agent deployment � no credential sharing"
+      "notes": "Unique identity per agent deployment — no credential sharing"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Humans using agent service accounts � no attribution, no MFA",
+      "control_id": "Humans using agent service accounts — no attribution, no MFA",
       "control_name": "NHI-10 Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials machine-only � human use detected and blocked"
+      "notes": "Agent credentials machine-only — human use detected and blocked"
     },
     {
       "framework": "NIST SP 800-218A",

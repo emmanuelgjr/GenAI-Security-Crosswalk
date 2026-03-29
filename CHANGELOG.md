@@ -539,9 +539,9 @@ Also added `reports/` and `evals/results/` to `.gitignore` (generated output, no
 
 ---
 
-## [1.1.0] � 2026-03-26
+## [1.1.0] — 2026-03-26
 
-### Sprint completion � all three source lists fully mapped
+### Sprint completion — all three source lists fully mapped
 
 All planned framework mappings are now complete.
 
@@ -571,9 +571,9 @@ All planned framework mappings are now complete.
 
 #### Infrastructure files added
 
-- `CODE_OF_CONDUCT.md` � Contributor Covenant 2.1
-- `SECURITY.md` � Vulnerability disclosure policy
-- `i18n/README.md` � Translation contribution guide
+- `CODE_OF_CONDUCT.md` — Contributor Covenant 2.1
+- `SECURITY.md` — Vulnerability disclosure policy
+- `i18n/README.md` — Translation contribution guide
 
 #### Totals at v1.1.0
 
@@ -585,9 +585,9 @@ All planned framework mappings are now complete.
 | Implementation recipes | 13 |
 | Tools catalogued | 40+ |
 
-## [1.0.0] � 2026-03-24
+## [1.0.0] — 2026-03-24
 
-### First public release � v1.0
+### First public release — v1.0
 
 The GenAI Security Crosswalk v1.0 is the most comprehensive publicly
 available mapping of OWASP GenAI security risks to industry frameworks.
@@ -598,15 +598,15 @@ available mapping of OWASP GenAI security risks to industry frameworks.
 
 | List | Entries | Version |
 |---|---|---|
-| OWASP LLM Top 10 | LLM01�LLM10 | 2025 |
-| OWASP Agentic Top 10 | ASI01�ASI10 | 2026 |
-| OWASP GenAI Data Security Risks | DSGAI01�DSGAI21 | 2026 |
+| OWASP LLM Top 10 | LLM01—LLM10 | 2025 |
+| OWASP Agentic Top 10 | ASI01—ASI10 | 2026 |
+| OWASP GenAI Data Security Risks | DSGAI01—DSGAI21 | 2026 |
 
 ---
 
 ### Framework mappings added (18 files)
 
-#### LLM Top 10 � frameworks
+#### LLM Top 10 — frameworks
 
 | File | Framework |
 |---|---|
@@ -619,7 +619,7 @@ available mapping of OWASP GenAI security risks to industry frameworks.
 | `llm-top10/LLM_ISA62443.md` | ISA/IEC 62443 (OT) |
 | `llm-top10/LLM_NISTSP80082.md` | NIST SP 800-82 Rev 3 (OT) |
 
-#### Agentic Top 10 � frameworks
+#### Agentic Top 10 — frameworks
 
 | File | Framework |
 |---|---|
@@ -630,7 +630,7 @@ available mapping of OWASP GenAI security risks to industry frameworks.
 | `agentic-top10/Agentic_ISA62443.md` | ISA/IEC 62443 (OT) |
 | `agentic-top10/Agentic_OWASP_NHI.md` | OWASP NHI Top 10 |
 
-#### DSGAI 2026 � frameworks
+#### DSGAI 2026 — frameworks
 
 | File | Framework |
 |---|---|
@@ -642,8 +642,8 @@ available mapping of OWASP GenAI security risks to industry frameworks.
 
 | File | Contents |
 |---|---|
-| `shared/RECIPES.md` | 13 security implementation patterns � RAG, MCP, OT |
-| `shared/TOOLS.md` | Open-source security tools catalogue � 40+ tools |
+| `shared/RECIPES.md` | 13 security implementation patterns — RAG, MCP, OT |
+| `shared/TOOLS.md` | Open-source security tools catalogue — 40+ tools |
 | `shared/GLOSSARY.md` | Unified terminology across LLM/ASI/DSGAI |
 | `shared/SEVERITY.md` | Severity definitions and AIVSS alignment |
 
@@ -660,29 +660,29 @@ available mapping of OWASP GenAI security risks to industry frameworks.
 
 ### Highlights
 
-**OT/ICS coverage** � The only publicly available comprehensive mapping
+**OT/ICS coverage** — The only publicly available comprehensive mapping
 of OWASP GenAI risks to ISA/IEC 62443 and NIST SP 800-82 Rev 3, covering
 both static LLM deployments and autonomous agentic AI in industrial
 environments. Includes zone model, security level ratings, foundational
 requirement references, and pre-deployment checklists.
 
-**Agentic AI identity** � Full mapping of all 10 Agentic Top 10 entries
+**Agentic AI identity** — Full mapping of all 10 Agentic Top 10 entries
 to the OWASP NHI Top 10, translating agentic risks into the NHI controls
 that IAM teams already manage. The most actionable file in the repo for
 security engineers.
 
-**DSGAI full coverage** � All 21 DSGAI 2026 entries mapped to three
-regulatory frameworks (ISO 27001, NIST AI RMF, EU AI Act) � the first
+**DSGAI full coverage** — All 21 DSGAI 2026 entries mapped to three
+regulatory frameworks (ISO 27001, NIST AI RMF, EU AI Act) — the first
 public mapping of the complete DSGAI taxonomy.
 
-**Implementation recipes** � 13 production-ready security patterns with
+**Implementation recipes** — 13 production-ready security patterns with
 copy-paste Python code covering access-controlled RAG retrieval, MCP
 descriptor integrity verification, per-session JIT credentials, OT kill
 switch implementation, agent behavioural baselines, cascade containment,
 and human confirmation gates.
 
-**EU AI Act compliance** � August 2026 deadline compliance checklists
-in every EU AI Act mapping file � Article-level obligations, fines
+**EU AI Act compliance** — August 2026 deadline compliance checklists
+in every EU AI Act mapping file — Article-level obligations, fines
 exposure per entry, and GPAI vs high-risk applicability clearly marked.
 
 ---
@@ -720,6 +720,6 @@ Quick reference:
 
 ---
 
-*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) �
+*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) —
 maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org)*
 

@@ -550,10 +550,10 @@ Find your entry point in under 60 seconds.
 → [LLM_FedRAMP.md](llm-top10/LLM_FedRAMP.md) · [Agentic_FedRAMP.md](agentic-top10/Agentic_FedRAMP.md) · [DSGAI_FedRAMP.md](dsgai-2026/DSGAI_FedRAMP.md)
 
 **EU financial sector (DORA compliance)**
-��� [LLM_DORA.md](llm-top10/LLM_DORA.md) · [Agentic_DORA.md](agentic-top10/Agentic_DORA.md) · [DSGAI_DORA.md](dsgai-2026/DSGAI_DORA.md)
+——— [LLM_DORA.md](llm-top10/LLM_DORA.md) · [Agentic_DORA.md](agentic-top10/Agentic_DORA.md) · [DSGAI_DORA.md](dsgai-2026/DSGAI_DORA.md)
 
 **Secure AI development lifecycle (SSDF extension)**
-→ [LLM_SP800218A.md](llm-top10/LLM_SP800218A.md) �� [Agentic_SP800218A.md](agentic-top10/Agentic_SP800218A.md) · [DSGAI_SP800218A.md](dsgai-2026/DSGAI_SP800218A.md)
+→ [LLM_SP800218A.md](llm-top10/LLM_SP800218A.md) —— [Agentic_SP800218A.md](agentic-top10/Agentic_SP800218A.md) · [DSGAI_SP800218A.md](dsgai-2026/DSGAI_SP800218A.md)
 
 **All risks across all three source lists**
 → [CROSSREF.md](CROSSREF.md) — master cross-reference
