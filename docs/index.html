@@ -809,6 +809,7 @@ input, select { font-family: inherit; }
       <a href="#/frameworks">Frameworks</a>
       <a href="#/incidents">Incidents</a>
       <a href="#/score">Score</a>
+      <a href="#/leaderboard">Leaderboard</a>
       <a href="#/about">About</a>
     </div>
     <div class="nav-right">
@@ -832,6 +833,7 @@ input, select { font-family: inherit; }
   <a href="#/frameworks">Frameworks</a>
   <a href="#/incidents">Incidents</a>
   <a href="#/score">Score</a>
+  <a href="#/leaderboard">Leaderboard</a>
   <a href="#/about">About</a>
 </div>
 
@@ -885,6 +887,105 @@ input, select { font-family: inherit; }
     'Agentic-Top10-2026': 'Agentic Top 10 2026',
     'DSGAI-2026': 'DSGAI 2026'
   };
+
+  // Placeholder entries — replace with real submissions
+  var LEADERBOARD = [
+    { rank: 1, company: 'Example Corp', industry: 'Financial Services', score: 72, frameworks: 14, tier: 'Tool-Verified', date: '2026-03-28', badge: 'https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/badge?score=72&fw=14' },
+    { rank: 2, company: 'Acme AI Labs', industry: 'Technology', score: 65, frameworks: 11, tier: 'Self-Assessed', date: '2026-03-28', badge: '' },
+    { rank: 3, company: 'SecureHealth Inc', industry: 'Healthcare', score: 58, frameworks: 9, tier: 'Self-Assessed', date: '2026-03-28', badge: '' }
+  ];
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Evidence Upload Validation
+  // ══════════════════════════════════════════════════════════════════════════════
+  function validateUpload(toolKey, data) {
+    if (toolKey === 'compliance') {
+      // Array of framework objects
+      if (Array.isArray(data)) {
+        for (var i = 0; i < data.length; i++) {
+          if (!data[i].framework || typeof data[i].framework !== 'string') {
+            return { valid: false, error: 'Missing required field: framework (in array entry ' + i + ')' };
+          }
+        }
+        var totalEntries = data.reduce(function(s, fw) { return s + (fw.entries ? fw.entries.length : 0); }, 0);
+        var fwNames = data.map(function(fw) { return fw.framework; }).join(', ');
+        return { valid: true, summary: fwNames + ' \u2014 ' + totalEntries + ' controls validated' };
+      }
+      // Single framework object
+      if (typeof data === 'object' && data !== null) {
+        if (!data.framework || typeof data.framework !== 'string') {
+          return { valid: false, error: 'Missing required field: framework' };
+        }
+        if (!data.entries || !Array.isArray(data.entries)) {
+          return { valid: false, error: 'Missing required field: entries (expected array)' };
+        }
+        return { valid: true, summary: data.framework + ' \u2014 ' + data.entries.length + ' controls validated' };
+      }
+      return { valid: false, error: 'Expected object or array with framework field' };
+    }
+
+    if (toolKey === 'garak') {
+      var results = data.results || data.log;
+      if (!results || !Array.isArray(results) || results.length === 0) {
+        return { valid: false, error: 'Missing required field: results or log (expected non-empty array)' };
+      }
+      // Check each entry has probe/test
+      for (var gi = 0; gi < results.length; gi++) {
+        var r = results[gi];
+        if ((!r.probe || typeof r.probe !== 'string') && (!r.test || typeof r.test !== 'string')) {
+          return { valid: false, error: 'Entry ' + gi + ' missing required field: probe or test' };
+        }
+      }
+      // Check if all passed — suspicious
+      var allPassed = results.every(function(r) {
+        return r.passed === true || r.score === 1.0 || r.score === 1;
+      });
+      var passCount = results.filter(function(r) { return r.passed === true || r.status === 'pass' || r.score === 1.0 || r.score === 1; }).length;
+      var failCount = results.length - passCount;
+      var summary = results.length + ' probes tested, ' + passCount + ' passed, ' + failCount + ' failed';
+      if (allPassed) {
+        return { valid: true, warning: 'All probes passed \u2014 verify this is a genuine scan, not a fabricated file', summary: summary };
+      }
+      return { valid: true, summary: summary };
+    }
+
+    if (toolKey === 'pyrit') {
+      var attacks = data.attacks || data.results;
+      if (!attacks || !Array.isArray(attacks) || attacks.length === 0) {
+        return { valid: false, error: 'Missing required field: attacks or results (expected non-empty array)' };
+      }
+      for (var pi = 0; pi < attacks.length; pi++) {
+        var a = attacks[pi];
+        if ((!a.attack_type || typeof a.attack_type !== 'string') && (!a.type || typeof a.type !== 'string')) {
+          return { valid: false, error: 'Entry ' + pi + ' missing required field: attack_type or type' };
+        }
+      }
+      return { valid: true, summary: attacks.length + ' attacks analyzed' };
+    }
+
+    if (toolKey === 'laaf') {
+      var stages = data.stages || data.results;
+      if (!stages || typeof stages !== 'object' || Array.isArray(stages)) {
+        return { valid: false, error: 'Missing required field: stages or results (expected object with stage keys S1-S6)' };
+      }
+      var stageKeys = Object.keys(stages);
+      if (stageKeys.length === 0) {
+        return { valid: false, error: 'stages/results object is empty (expected keys S1-S6)' };
+      }
+      // Check breakthrough rates
+      var allZero = true;
+      stageKeys.forEach(function(k) {
+        var rate = stages[k].breakthrough_rate !== undefined ? stages[k].breakthrough_rate : stages[k].rate;
+        if (typeof rate === 'number' && rate > 0) allZero = false;
+      });
+      if (allZero) {
+        return { valid: true, warning: 'All breakthrough rates are 0 \u2014 verify this is a genuine scan result', summary: stageKeys.length + ' stages evaluated, all rates at 0' };
+      }
+      return { valid: true, summary: stageKeys.length + ' stages evaluated' };
+    }
+
+    return { valid: true, summary: 'File loaded' };
+  }
 
   // ══════════════════════════════════════════════════════════════════════════════
   // Theme management
@@ -1018,6 +1119,7 @@ input, select { font-family: inherit; }
     '/frameworks': renderFrameworks,
     '/incidents': renderIncidents,
     '/score': renderScore,
+    '/leaderboard': renderLeaderboard,
     '/about': renderAbout,
     '/badge': renderBadgePage
   };
@@ -2148,11 +2250,24 @@ input, select { font-family: inherit; }
         reader.onload = function(e) {
           try {
             var data = JSON.parse(e.target.result);
+            var validation = validateUpload(toolKey, data);
+            if (!validation.valid) {
+              status.textContent = '\u274C Invalid \u2014 ' + validation.error;
+              status.style.color = 'var(--cr)';
+              btn.style.borderColor = 'var(--cr)';
+              return;
+            }
             evidence[toolKey] = data;
             processEvidence(toolKey, data);
-            status.textContent = '\u2705 Loaded — ' + fileInput.files[0].name;
-            status.style.color = 'var(--lo)';
-            btn.style.borderColor = 'var(--lo)';
+            if (validation.warning) {
+              status.textContent = '\u26A0\uFE0F Valid but suspicious \u2014 ' + validation.warning;
+              status.style.color = '#ca8a04';
+              btn.style.borderColor = '#ca8a04';
+            } else {
+              status.textContent = '\u2705 Valid \u2014 ' + validation.summary;
+              status.style.color = 'var(--lo)';
+              btn.style.borderColor = 'var(--lo)';
+            }
             updateScore();
           } catch (err) {
             status.textContent = '\u274C Invalid JSON: ' + err.message;
@@ -2176,6 +2291,9 @@ input, select { font-family: inherit; }
       'From: PyRIT JSON output'));
     sidebar.appendChild(createUploadBtn('LAAF Results', 'laaf',
       'From: python evals/laaf/laaf_crosswalk.py --format json'));
+
+    sidebar.appendChild(el('p', { style: 'font-size:.72rem;color:var(--text-muted);margin-top:12px;line-height:1.5;' },
+      'Tool-Verified = schema + fingerprint checks passed. For independent attestation (highest trust), submit results via GitHub Issue for maintainer review.'));
 
     function processEvidence(toolKey, data) {
       // Map tool outputs to validated OWASP entries
@@ -2211,6 +2329,8 @@ input, select { font-family: inherit; }
           'snowball': 'LLM09', 'misleading': 'LLM09',
           'lmrc': 'LLM07'
         };
+        var garakValidation = validateUpload('garak', data);
+        var garakWarning = garakValidation.warning || null;
         var results = data.results || data.log || data;
         if (Array.isArray(results)) {
           results.forEach(function(r) {
@@ -2223,7 +2343,8 @@ input, select { font-family: inherit; }
                   probe: r.probe || probe,
                   passed: r.passed || r.status === 'pass',
                   score: r.score || null,
-                  status: 'tested'
+                  status: 'tested',
+                  warning: garakWarning
                 };
               }
             });
@@ -2237,6 +2358,8 @@ input, select { font-family: inherit; }
           S3: ['ASI01', 'ASI06', 'LLM06'], S4: ['ASI06', 'LLM06', 'DSGAI04'],
           S5: ['LLM01', 'LLM02'], S6: ['DSGAI01', 'LLM07']
         };
+        var laafValidation = validateUpload('laaf', data);
+        var laafWarning = laafValidation.warning || null;
         var stages = data.stages || data.results || data;
         if (typeof stages === 'object') {
           Object.keys(stages).forEach(function(stageKey) {
@@ -2247,7 +2370,8 @@ input, select { font-family: inherit; }
               evidence.validatedEntries[eid].laaf = {
                 stage: stageKey,
                 breakthrough_rate: stageData.breakthrough_rate || stageData.rate || null,
-                status: 'tested'
+                status: 'tested',
+                warning: laafWarning
               };
             });
           });
@@ -2384,11 +2508,16 @@ input, select { font-family: inherit; }
       // Determine validation tier
       var evidenceCount = Object.keys(evidence.validatedEntries).length;
       var hasEvidence = evidence.compliance || evidence.garak || evidence.pyrit || evidence.laaf;
+      var hasWarning = Object.values(evidence.validatedEntries).some(function(v) {
+        return (v.garak && v.garak.warning) || (v.laaf && v.laaf.warning);
+      });
       var validationTier, tierColor, tierIcon;
-      if (hasEvidence && evidenceCount >= 20) {
-        validationTier = 'Tool-Validated'; tierColor = '#16a34a'; tierIcon = '\u2705';
+      if (hasEvidence && evidenceCount >= 20 && !hasWarning) {
+        validationTier = 'Tool-Verified'; tierColor = '#16a34a'; tierIcon = '\u2705';
+      } else if (hasEvidence && evidenceCount >= 20 && hasWarning) {
+        validationTier = 'Tool-Verified (review flagged)'; tierColor = '#ca8a04'; tierIcon = '\u26A0\uFE0F';
       } else if (hasEvidence) {
-        validationTier = 'Partially Validated'; tierColor = '#ca8a04'; tierIcon = '\u26A0\uFE0F';
+        validationTier = 'Partially Verified'; tierColor = '#ca8a04'; tierIcon = '\u26A0\uFE0F';
       } else {
         validationTier = 'Self-Assessed'; tierColor = '#6c757d'; tierIcon = '\u2753';
       }
@@ -2748,7 +2877,7 @@ input, select { font-family: inherit; }
 
     // Validation tier badge
     var tier = data.validationTier || 'Self-Assessed';
-    var tierCol = tier === 'Tool-Validated' ? '#22c55e' : tier === 'Partially Validated' ? '#eab308' : '#94a3b8';
+    var tierCol = tier.indexOf('Tool-Verified') === 0 ? '#22c55e' : tier === 'Partially Verified' ? '#eab308' : '#94a3b8';
     ctx.fillStyle = tierCol + '33';
     roundRect(ctx, 40, 130, ctx.measureText(tier).width + 30, 30, 15);
     ctx.fill();
@@ -2889,6 +3018,177 @@ input, select { font-family: inherit; }
 
     var goBtn = el('a', { href: '#/score', className: 'btn-primary' }, 'Run Your Own Assessment');
     content.appendChild(goBtn);
+
+    container.appendChild(content);
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Leaderboard page
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderLeaderboard(container) {
+    var content = el('div', { style: 'max-width:var(--max-w);margin:0 auto;padding:48px 24px;' });
+
+    // Header
+    content.appendChild(el('h2', { style: 'font-size:1.75rem;font-weight:800;margin-bottom:8px;' }, 'GenAI Security Crosswalk Leaderboard'));
+
+    var introBlock = el('div', { style: 'background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:24px;' });
+    introBlock.appendChild(el('p', { style: 'font-size:.9rem;color:var(--text-secondary);margin-bottom:8px;line-height:1.6;' },
+      'Companies that have assessed their AI security posture against the OWASP GenAI Crosswalk. Scores are self-reported unless independently attested. Validation tier shown for each entry.'));
+    content.appendChild(introBlock);
+
+    // Submit button
+    var submitUrl = 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/issues/new?title=[Leaderboard]+Company+Name&body=**Company:**%0A**Industry:**%0A**Score:**%0A**Frameworks+selected:**%0A**Validation+tier:**%0A**Evidence+attached:**+yes/no%0A';
+    var submitBtn = el('a', { href: submitUrl, target: '_blank', rel: 'noopener', className: 'btn-primary', style: 'margin-bottom:32px;display:inline-flex;' });
+    submitBtn.textContent = 'Submit Your Score \u2192';
+    content.appendChild(submitBtn);
+
+    // Leaderboard table
+    content.appendChild(el('h3', { style: 'font-size:1.15rem;font-weight:700;margin:32px 0 16px;' }, 'Leaderboard'));
+
+    var sorted = LEADERBOARD.slice().sort(function(a, b) { return b.score - a.score; });
+
+    var tableWrap = el('div', { style: 'overflow-x:auto;' });
+    var table = el('table', { style: 'width:100%;border-collapse:collapse;font-size:.875rem;' });
+
+    var thead = el('thead');
+    var headerRow = el('tr');
+    ['Rank', 'Company', 'Industry', 'Score', 'Frameworks', 'Validation', 'Date'].forEach(function(h) {
+      var th = el('th', { style: 'text-align:left;padding:10px 12px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);border-bottom:2px solid var(--border);white-space:nowrap;' }, h);
+      headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    var tbody = el('tbody');
+    sorted.forEach(function(entry, idx) {
+      var row = el('tr', { style: 'cursor:pointer;transition:background 150ms ease;' });
+      row.addEventListener('mouseenter', function() { row.style.background = 'var(--bg-alt)'; });
+      row.addEventListener('mouseleave', function() { row.style.background = ''; });
+
+      // Rank
+      row.appendChild(el('td', { style: 'padding:12px;font-weight:700;font-size:1.1rem;color:var(--accent);' }, '#' + (idx + 1)));
+
+      // Company
+      row.appendChild(el('td', { style: 'padding:12px;font-weight:600;' }, entry.company));
+
+      // Industry tag
+      var indTd = el('td', { style: 'padding:12px;' });
+      indTd.appendChild(el('span', { style: 'font-size:.78rem;padding:3px 10px;border-radius:12px;background:var(--bg-alt);color:var(--text-secondary);white-space:nowrap;' }, entry.industry));
+      row.appendChild(indTd);
+
+      // Score with bar
+      var scoreTd = el('td', { style: 'padding:12px;min-width:140px;' });
+      var scoreColor = entry.score >= 70 ? 'var(--lo)' : entry.score >= 40 ? 'var(--me)' : 'var(--cr)';
+      scoreTd.appendChild(el('span', { style: 'font-weight:700;color:' + scoreColor + ';' }, entry.score + '%'));
+      var barWrap = el('div', { style: 'width:80px;background:var(--bg);border-radius:4px;height:6px;overflow:hidden;margin-top:4px;' });
+      var barFill = el('div', { style: 'height:100%;width:' + entry.score + '%;background:' + scoreColor + ';border-radius:4px;' });
+      barWrap.appendChild(barFill);
+      scoreTd.appendChild(barWrap);
+      row.appendChild(scoreTd);
+
+      // Frameworks count
+      row.appendChild(el('td', { style: 'padding:12px;text-align:center;' }, String(entry.frameworks)));
+
+      // Validation tier badge
+      var tierTd = el('td', { style: 'padding:12px;' });
+      var tColor = entry.tier === 'Tool-Verified' ? '#16a34a' : entry.tier === 'Independently Attested' ? '#b45309' : '#6c757d';
+      var tIcon = entry.tier === 'Tool-Verified' ? '\u2705' : entry.tier === 'Independently Attested' ? '\uD83C\uDFDB\uFE0F' : '\u2753';
+      tierTd.appendChild(el('span', {
+        style: 'font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:12px;white-space:nowrap;' +
+               'background:' + tColor + '18;color:' + tColor + ';border:1px solid ' + tColor + '33;'
+      }, tIcon + ' ' + entry.tier));
+      row.appendChild(tierTd);
+
+      // Date
+      row.appendChild(el('td', { style: 'padding:12px;font-size:.82rem;color:var(--text-muted);white-space:nowrap;' }, entry.date));
+
+      // Click to show badge URL if available
+      if (entry.badge) {
+        row.addEventListener('click', function() {
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(entry.badge);
+          }
+          window.open(entry.badge, '_blank');
+        });
+      }
+
+      tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+    tableWrap.appendChild(table);
+    content.appendChild(tableWrap);
+
+    // How to get listed section
+    content.appendChild(el('hr', { style: 'border:none;border-top:1px solid var(--border);margin:40px 0;' }));
+    content.appendChild(el('h3', { style: 'font-size:1.15rem;font-weight:700;margin-bottom:16px;' }, 'How to get listed'));
+
+    var steps = [
+      ['1.', 'Go to the ', '#/score', 'Score page', ' and assess your coverage'],
+      ['2.', 'Submit your results via ', 'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/issues/new?template=leaderboard_submission.md', 'GitHub Issue', ''],
+      ['3.', 'Include: company name, industry, score, frameworks selected, validation tier', '', '', ''],
+      ['4.', 'For Tool-Verified status: attach your Garak/PyRIT/LAAF JSON outputs to the issue', '', '', ''],
+      ['5.', 'For Independent Attestation: include assessor name and contact for verification', '', '', ''],
+      ['6.', 'Maintainer reviews and publishes approved entries', '', '', '']
+    ];
+
+    var stepsList = el('ol', { style: 'padding-left:20px;font-size:.9rem;color:var(--text-secondary);line-height:1.8;' });
+    steps.forEach(function(s) {
+      var li = el('li', { style: 'margin-bottom:6px;' });
+      li.appendChild(document.createTextNode(s[1]));
+      if (s[2]) {
+        li.appendChild(el('a', { href: s[2], target: s[2].startsWith('http') ? '_blank' : undefined, rel: s[2].startsWith('http') ? 'noopener' : undefined }, s[3]));
+      }
+      if (s[4]) li.appendChild(document.createTextNode(s[4]));
+      stepsList.appendChild(li);
+    });
+    content.appendChild(stepsList);
+
+    // Validation tiers section
+    content.appendChild(el('h3', { style: 'font-size:1.15rem;font-weight:700;margin:32px 0 16px;' }, 'Validation tiers'));
+
+    var tierTableWrap = el('div', { style: 'overflow-x:auto;' });
+    var tierTable = el('table', { style: 'width:100%;border-collapse:collapse;font-size:.875rem;' });
+    var tierThead = el('thead');
+    var tierHr = el('tr');
+    ['Tier', 'Badge', 'Meaning'].forEach(function(h) {
+      tierHr.appendChild(el('th', { style: 'text-align:left;padding:10px 12px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);border-bottom:2px solid var(--border);' }, h));
+    });
+    tierThead.appendChild(tierHr);
+    tierTable.appendChild(tierThead);
+
+    var tierTbody = el('tbody');
+    var tiers = [
+      ['Self-Assessed \u2753', 'Grey', 'Company selected frameworks via checkboxes \u2014 no tool evidence'],
+      ['Tool-Verified \u2705', 'Green', 'Tool outputs (Garak/PyRIT/LAAF/compliance report) uploaded and schema-validated'],
+      ['Independently Attested \uD83C\uDFDB\uFE0F', 'Gold', 'Third-party assessor ran tools and submitted signed results \u2014 maintainer verified']
+    ];
+    tiers.forEach(function(t) {
+      var row = el('tr');
+      row.appendChild(el('td', { style: 'padding:10px 12px;font-weight:600;border-bottom:1px solid var(--border-light);' }, t[0]));
+      row.appendChild(el('td', { style: 'padding:10px 12px;border-bottom:1px solid var(--border-light);' }, t[1]));
+      row.appendChild(el('td', { style: 'padding:10px 12px;border-bottom:1px solid var(--border-light);color:var(--text-secondary);' }, t[2]));
+      tierTbody.appendChild(row);
+    });
+    tierTable.appendChild(tierTbody);
+    tierTableWrap.appendChild(tierTable);
+    content.appendChild(tierTableWrap);
+
+    // FAQ section
+    content.appendChild(el('h3', { style: 'font-size:1.15rem;font-weight:700;margin:32px 0 16px;' }, 'FAQ'));
+
+    var faqs = [
+      ['Can I submit anonymously?', 'No \u2014 company name is required for the public leaderboard. You can run the scoring tool privately without submitting.'],
+      ['Can I remove my entry?', 'Yes \u2014 open a GitHub Issue requesting removal.'],
+      ['How often should I re-assess?', 'We recommend quarterly, or after any major AI deployment change.'],
+      ['Is this an official OWASP certification?', 'No \u2014 this is a community benchmark. OWASP does not certify organizations.']
+    ];
+
+    faqs.forEach(function(faq) {
+      var faqItem = el('div', { style: 'margin-bottom:20px;' });
+      faqItem.appendChild(el('p', { style: 'font-weight:700;font-size:.9rem;margin-bottom:4px;' }, faq[0]));
+      faqItem.appendChild(el('p', { style: 'font-size:.875rem;color:var(--text-secondary);line-height:1.6;' }, faq[1]));
+      content.appendChild(faqItem);
+    });
 
     container.appendChild(content);
   }
