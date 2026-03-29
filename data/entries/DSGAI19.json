@@ -604,7 +604,14 @@
       "url": "https://www.servicenow.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-044"
+    }
+  ],
   "crossrefs": {
     "dsgai_2026": [
       "DSGAI07",

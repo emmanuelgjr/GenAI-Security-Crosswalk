@@ -640,7 +640,14 @@
       "url": "https://www.collibra.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "Uber ML platform data lineage audit — fragmented provenance across 30+ feature stores",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-042"
+    }
+  ],
   "crossrefs": {
     "agentic_top10": [
       "ASI02",

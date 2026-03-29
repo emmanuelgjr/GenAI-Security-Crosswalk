@@ -634,6 +634,16 @@
       "name": "Fiddler AI",
       "type": "commercial",
       "url": "https://www.fiddler.ai"
+    },
+    {
+      "name": "Evidently",
+      "url": "https://github.com/evidentlyai/evidently",
+      "type": "open-source"
+    },
+    {
+      "name": "WhyLogs",
+      "url": "https://github.com/whylabs/whylogs",
+      "type": "open-source"
     }
   ],
   "incidents": [

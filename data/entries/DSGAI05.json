@@ -622,6 +622,16 @@
       "name": "Collibra",
       "type": "commercial",
       "url": "https://www.collibra.com"
+    },
+    {
+      "name": "WhyLogs",
+      "url": "https://github.com/whylabs/whylogs",
+      "type": "open-source"
+    },
+    {
+      "name": "MLflow",
+      "url": "https://github.com/mlflow/mlflow",
+      "type": "open-source"
     }
   ],
   "incidents": [
@@ -642,6 +652,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2025,
       "incident_id": "INC-039"
+    },
+    {
+      "name": "Uber ML platform data lineage audit — fragmented provenance across 30+ feature stores",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-042"
     }
   ],
   "crossrefs": {

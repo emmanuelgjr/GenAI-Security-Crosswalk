@@ -700,6 +700,16 @@
       "name": "OWASP ZAP",
       "type": "open-source",
       "url": "https://www.zaproxy.org"
+    },
+    {
+      "name": "Foolbox",
+      "url": "https://github.com/bethgelab/foolbox",
+      "type": "open-source"
+    },
+    {
+      "name": "TextAttack",
+      "url": "https://github.com/QData/TextAttack",
+      "type": "open-source"
     }
   ],
   "incidents": [

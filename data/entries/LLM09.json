@@ -688,6 +688,11 @@
       "name": "LangSmith",
       "type": "commercial",
       "url": "https://smith.langchain.com"
+    },
+    {
+      "name": "Evidently",
+      "url": "https://github.com/evidentlyai/evidently",
+      "type": "open-source"
     }
   ],
   "incidents": [

@@ -1,8 +1,8 @@
 <!--
-  GenAI Security Crosswalk — Shared Resources
-  File        : TOOLS.md — Open-Source Security Tools for GenAI Systems
+  GenAI Security Crosswalk ï¿½ Shared Resources
+  File        : TOOLS.md ï¿½ Open-Source Security Tools for GenAI Systems
   Version     : 2026-Q1
-  Maintained by: OWASP GenAI Data Security Initiative — https://genai.owasp.org
+  Maintained by: OWASP GenAI Data Security Initiative ï¿½ https://genai.owasp.org
   License     : CC BY-SA 4.0
 -->
 
@@ -18,7 +18,7 @@ description of what it does, what risks it addresses (mapped to
 OWASP source list entries), and a link. Commercial tools are listed
 only where no open-source equivalent exists for a critical function.
 
-This file is a living reference — contributions welcome via PR.
+This file is a living reference ï¿½ contributions welcome via PR.
 See CONTRIBUTING.md for the tool addition template.
 
 ---
@@ -48,11 +48,18 @@ patterns before production deployment.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| Garak | LLM vulnerability scanner — probes for prompt injection, jailbreaks, data extraction, hallucination, and dozens of other failure modes across 100+ detectors | LLM01, LLM02, LLM09, ASI01 | https://github.com/leondz/garak |
-| PyRIT | Microsoft Python Risk Identification Toolkit — adversarial probing framework for LLM applications with orchestrators for multi-turn attack simulation | LLM01, LLM06, ASI01, ASI02 | https://github.com/Azure/PyRIT |
-| Promptfoo | LLM testing framework — runs automated test suites against LLM responses, supports red team scenarios and regression testing | LLM01, LLM09, ASI01 | https://github.com/promptfoo/promptfoo |
-| Invariant Analyzer | Agentic system security analyser — detects policy violations in agent traces, validates tool call sequences, identifies unsafe action chains | ASI01, ASI02, ASI10 | https://github.com/invariantlabs-ai/invariant |
-| PurpleLlama CyberSecEval | Meta benchmark suite for LLM cybersecurity evaluation — covers insecure code generation, prompt injection, and cyberattack assistance detection | LLM01, LLM05, LLM07 | https://github.com/meta-llama/PurpleLlama |
+| Garak | LLM vulnerability scanner ï¿½ probes for prompt injection, jailbreaks, data extraction, hallucination, and dozens of other failure modes across 100+ detectors | LLM01, LLM02, LLM09, ASI01 | https://github.com/leondz/garak |
+| PyRIT | Microsoft Python Risk Identification Toolkit ï¿½ adversarial probing framework for LLM applications with orchestrators for multi-turn attack simulation | LLM01, LLM06, ASI01, ASI02 | https://github.com/Azure/PyRIT |
+| Promptfoo | LLM testing framework ï¿½ runs automated test suites against LLM responses, supports red team scenarios and regression testing | LLM01, LLM09, ASI01 | https://github.com/promptfoo/promptfoo |
+| Invariant Analyzer | Agentic system security analyser ï¿½ detects policy violations in agent traces, validates tool call sequences, identifies unsafe action chains | ASI01, ASI02, ASI10 | https://github.com/invariantlabs-ai/invariant |
+| Inspect AI | UK AI Safety Institute evaluation framework â€” structured LLM evals with solvers, scorers, and dataset support for reproducible safety testing | LLM01, LLM09, ASI01 | https://github.com/UKGovernmentBEIS/inspect_ai |
+| TextAttack | Adversarial NLP attack library â€” 16+ attack recipes for text classification, NLI, and sequence-to-sequence models; includes augmentation and training modules | LLM01, LLM08 | https://github.com/QData/TextAttack |
+| Counterfit | Microsoft adversarial ML attack framework â€” automated attacks against AI models including evasion, inversion, and extraction | LLM01, LLM08, ASI01 | https://github.com/Azure/counterfit |
+| Foolbox | Python adversarial attack library â€” gradient-based, decision-based, and score-based attacks for neural networks; most-cited adversarial ML library | LLM08, LLM03 | https://github.com/bethgelab/foolbox |
+| Mindgard | AI security testing platform â€” automated adversarial testing, model vulnerability scanning, and continuous security monitoring for production AI | LLM01, ASI01, LLM08 | https://github.com/Mindgard/cli |
+| Agentic Security | Open-source scanner for agentic AI systems â€” tests for goal hijacking, tool abuse, lateral movement, and cascade failures in multi-agent deployments | ASI01, ASI02, ASI07, ASI08 | https://github.com/msoedov/agentic_security |
+| OpenAI Evals | OpenAI evaluation framework â€” build and run custom eval suites for LLMs with structured datasets, completion functions, and metric reporting | LLM01, LLM09, LLM06 | https://github.com/openai/evals |
+| PurpleLlama CyberSecEval | Meta benchmark suite for LLM cybersecurity evaluation ï¿½ covers insecure code generation, prompt injection, and cyberattack assistance detection | LLM01, LLM05, LLM07 | https://github.com/meta-llama/PurpleLlama |
 
 ---
 
@@ -63,9 +70,10 @@ retrieved content before they reach the model.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| LLM Guard | Production-grade input and output scanning library — detects prompt injection, toxic content, PII leakage, secrets, and insecure output patterns in real time | LLM01, LLM02, LLM07 | https://github.com/protectai/llm-guard |
-| Rebuff | Self-hardening prompt injection detector — two-layer defence combining heuristics and a dedicated LLM-based classifier | LLM01, ASI01 | https://github.com/protectai/rebuff |
-| LangKit | WhyLabs LLM monitoring toolkit — includes prompt injection and jailbreak detection, toxicity scoring, and semantic drift detection | LLM01, LLM09 | https://github.com/whylabs/langkit |
+| LLM Guard | Production-grade input and output scanning library ï¿½ detects prompt injection, toxic content, PII leakage, secrets, and insecure output patterns in real time | LLM01, LLM02, LLM07 | https://github.com/protectai/llm-guard |
+| Rebuff | Self-hardening prompt injection detector ï¿½ two-layer defence combining heuristics and a dedicated LLM-based classifier | LLM01, ASI01 | https://github.com/protectai/rebuff |
+| Vigil | LLM prompt injection detection library â€” scans inputs for injection patterns using vector similarity, YARA rules, and canary token detection | LLM01, LLM07 | https://github.com/deadbits/vigil-llm |
+| LangKit | WhyLabs LLM monitoring toolkit ï¿½ includes prompt injection and jailbreak detection, toxicity scoring, and semantic drift detection | LLM01, LLM09 | https://github.com/whylabs/langkit |
 
 ---
 
@@ -76,10 +84,10 @@ before they reach users or downstream systems.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| Microsoft Presidio | PII detection and anonymisation framework — supports 20+ entity types, multiple languages, extensible with custom recognisers, integrates with RAG pipelines | LLM02, DSGAI01, DSGAI09 | https://github.com/microsoft/presidio |
-| spaCy | Industrial-strength NLP — used as the base NER engine for many PII detection pipelines, supports custom entity recognition | LLM02, DSGAI01 | https://github.com/explosion/spaCy |
-| detect-secrets | Yelp secrets scanner — detects API keys, tokens, and credentials in text, integrates as a pre-commit hook and CI gate | LLM02, DSGAI02, ASI03 | https://github.com/Yelp/detect-secrets |
-| Trufflehog | Secrets scanning for git repos, filesystems, and S3 — useful for scanning agent memory stores and LLM application codebases for leaked credentials | DSGAI02, ASI03 | https://github.com/trufflesecurity/trufflehog |
+| Microsoft Presidio | PII detection and anonymisation framework ï¿½ supports 20+ entity types, multiple languages, extensible with custom recognisers, integrates with RAG pipelines | LLM02, DSGAI01, DSGAI09 | https://github.com/microsoft/presidio |
+| spaCy | Industrial-strength NLP ï¿½ used as the base NER engine for many PII detection pipelines, supports custom entity recognition | LLM02, DSGAI01 | https://github.com/explosion/spaCy |
+| detect-secrets | Yelp secrets scanner ï¿½ detects API keys, tokens, and credentials in text, integrates as a pre-commit hook and CI gate | LLM02, DSGAI02, ASI03 | https://github.com/Yelp/detect-secrets |
+| Trufflehog | Secrets scanning for git repos, filesystems, and S3 ï¿½ useful for scanning agent memory stores and LLM application codebases for leaked credentials | DSGAI02, ASI03 | https://github.com/trufflesecurity/trufflehog |
 
 ---
 
@@ -90,11 +98,13 @@ RAG pipelines, training datasets, or embedding stores.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| Great Expectations | Data quality and validation framework — define expectations on dataset structure, statistical properties, and content; validate at ingestion with full reporting | LLM04, DSGAI05, DSGAI21 | https://greatexpectations.io |
-| Pandera | DataFrame validation library — schema validation, statistical tests, and custom checks for pandas and polars DataFrames in training pipelines | LLM04, DSGAI05 | https://pandera.readthedocs.io |
-| CleanLab | Data-centric AI toolbox — detects label errors, outliers, and data quality issues in training datasets, including AI-generated annotation quality assessment | LLM04, DSGAI05 | https://github.com/cleanlab/cleanlab |
-| OWASP ZAP | Web application security scanner — DAST for LLM API endpoints, tests for injection vulnerabilities in interfaces consuming LLM output | LLM05, DSGAI12 | https://www.zaproxy.org |
-| Semgrep | Static analysis for code security — rules for detecting insecure LLM output handling patterns in application code | LLM05, DSGAI12 | https://semgrep.dev |
+| Great Expectations | Data quality and validation framework ï¿½ define expectations on dataset structure, statistical properties, and content; validate at ingestion with full reporting | LLM04, DSGAI05, DSGAI21 | https://greatexpectations.io |
+| Pandera | DataFrame validation library ï¿½ schema validation, statistical tests, and custom checks for pandas and polars DataFrames in training pipelines | LLM04, DSGAI05 | https://pandera.readthedocs.io |
+| CleanLab | Data-centric AI toolbox ï¿½ detects label errors, outliers, and data quality issues in training datasets, including AI-generated annotation quality assessment | LLM04, DSGAI05 | https://github.com/cleanlab/cleanlab |
+| OWASP ZAP | Web application security scanner ï¿½ DAST for LLM API endpoints, tests for injection vulnerabilities in interfaces consuming LLM output | LLM05, DSGAI12 | https://www.zaproxy.org |
+| WhyLogs | Data profiling and drift detection for ML pipelines â€” statistical profiling, data quality constraints, and monitoring with WhyLabs integration | DSGAI05, DSGAI17, LLM03 | https://github.com/whylabs/whylogs |
+| Evidently | ML model and data monitoring â€” data drift detection, model performance tracking, bias analysis, and automated reporting | DSGAI17, LLM09, DSGAI05 | https://github.com/evidentlyai/evidently |
+| Semgrep | Static analysis for code security ï¿½ rules for detecting insecure LLM output handling patterns in application code | LLM05, DSGAI12 | https://semgrep.dev |
 
 ---
 
@@ -105,11 +115,11 @@ underpin RAG systems and agentic memory.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| Weaviate | Open-source vector database — built-in RBAC, multi-tenancy, authentication, encrypted storage, and audit logging; the most security-mature open-source vector store | LLM08, DSGAI13, ASI06 | https://weaviate.io |
-| Qdrant | High-performance vector database — collection-level API key authentication, payload filtering, and access control; patch CVE-2024-3584 before production deployment | LLM08, DSGAI13 | https://qdrant.tech |
-| Chroma | Lightweight embedding store — suitable for development; requires additional hardening before production use | LLM08, DSGAI13 | https://www.trychroma.com |
-| Pinecone Canopy | Open-source RAG framework — includes context engine, query engine, and chat engine with namespace-based isolation | DSGAI11, DSGAI13 | https://github.com/pinecone-io/canopy |
-| ML Privacy Meter | Measures privacy risks of ML models — membership inference attacks, attribute inference, and reconstruction attack simulation | DSGAI18, LLM02 | https://github.com/privacytrustlab/ml_privacy_meter |
+| Weaviate | Open-source vector database ï¿½ built-in RBAC, multi-tenancy, authentication, encrypted storage, and audit logging; the most security-mature open-source vector store | LLM08, DSGAI13, ASI06 | https://weaviate.io |
+| Qdrant | High-performance vector database ï¿½ collection-level API key authentication, payload filtering, and access control; patch CVE-2024-3584 before production deployment | LLM08, DSGAI13 | https://qdrant.tech |
+| Chroma | Lightweight embedding store ï¿½ suitable for development; requires additional hardening before production use | LLM08, DSGAI13 | https://www.trychroma.com |
+| Pinecone Canopy | Open-source RAG framework ï¿½ includes context engine, query engine, and chat engine with namespace-based isolation | DSGAI11, DSGAI13 | https://github.com/pinecone-io/canopy |
+| ML Privacy Meter | Measures privacy risks of ML models ï¿½ membership inference attacks, attribute inference, and reconstruction attack simulation | DSGAI18, LLM02 | https://github.com/privacytrustlab/ml_privacy_meter |
 
 ---
 
@@ -119,25 +129,26 @@ Tools for managing the software supply chain of LLM components.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| CycloneDX | Software Bill of Materials standard and toolchain — ML-BOM supports model components, training datasets, and AI-specific metadata; 20+ language plugins | LLM03, DSGAI04, ASI04 | https://cyclonedx.org |
-| ModelScan | Scanning tool for ML model files — detects malicious code embedded in serialised model formats before loading | LLM03, DSGAI04, ASI04 | https://github.com/protectai/modelscan |
-| OWASP Dependency-Check | Identifies known vulnerable components in project dependencies — integrates with CI/CD pipelines to gate on CVE findings | LLM03, ASI04 | https://owasp.org/www-project-dependency-check/ |
-| Syft | SBOM generation tool by Anchore — generates SBOMs in CycloneDX and SPDX formats from container images and filesystems | LLM03, ASI04 | https://github.com/anchore/syft |
-| Grype | Vulnerability scanner that pairs with Syft — scans SBOMs for known CVEs in LLM dependencies and inference runtime packages | LLM03, ASI04 | https://github.com/anchore/grype |
+| CycloneDX | Software Bill of Materials standard and toolchain ï¿½ ML-BOM supports model components, training datasets, and AI-specific metadata; 20+ language plugins | LLM03, DSGAI04, ASI04 | https://cyclonedx.org |
+| ModelScan | Scanning tool for ML model files ï¿½ detects malicious code embedded in serialised model formats before loading | LLM03, DSGAI04, ASI04 | https://github.com/protectai/modelscan |
+| OWASP Dependency-Check | Identifies known vulnerable components in project dependencies ï¿½ integrates with CI/CD pipelines to gate on CVE findings | LLM03, ASI04 | https://owasp.org/www-project-dependency-check/ |
+| Syft | SBOM generation tool by Anchore ï¿½ generates SBOMs in CycloneDX and SPDX formats from container images and filesystems | LLM03, ASI04 | https://github.com/anchore/syft |
+| MLflow | ML lifecycle management â€” experiment tracking, model registry, model serving, and artifact versioning for end-to-end ML pipeline governance | LLM05, DSGAI05, DSGAI06 | https://github.com/mlflow/mlflow |
+| Grype | Vulnerability scanner that pairs with Syft ï¿½ scans SBOMs for known CVEs in LLM dependencies and inference runtime packages | LLM03, ASI04 | https://github.com/anchore/grype |
 
 ---
 
 ## Agent Identity and Credentials
 
-Tools for managing Non-Human Identities — agent service accounts,
+Tools for managing Non-Human Identities ï¿½ agent service accounts,
 API keys, OAuth tokens, and short-lived credentials.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| HashiCorp Vault | Secrets management platform — dynamic secret generation, short-lived credential issuance, automatic rotation, audit logging | ASI03, DSGAI02 | https://www.vaultproject.io |
-| SPIFFE and SPIRE | Workload identity framework — issues cryptographic identity documents to workloads, enabling mutual TLS for A2A communication without long-lived secrets | ASI03, ASI07 | https://spiffe.io |
-| Teleport | Identity-aware infrastructure access — zero-trust access for agents, full session recording, short-lived certificates | ASI03, ASI07 | https://goteleport.com |
-| cert-manager | Kubernetes certificate manager — automates TLS certificate issuance and rotation for agent-to-agent communication | ASI07 | https://cert-manager.io |
+| HashiCorp Vault | Secrets management platform ï¿½ dynamic secret generation, short-lived credential issuance, automatic rotation, audit logging | ASI03, DSGAI02 | https://www.vaultproject.io |
+| SPIFFE and SPIRE | Workload identity framework ï¿½ issues cryptographic identity documents to workloads, enabling mutual TLS for A2A communication without long-lived secrets | ASI03, ASI07 | https://spiffe.io |
+| Teleport | Identity-aware infrastructure access ï¿½ zero-trust access for agents, full session recording, short-lived certificates | ASI03, ASI07 | https://goteleport.com |
+| cert-manager | Kubernetes certificate manager ï¿½ automates TLS certificate issuance and rotation for agent-to-agent communication | ASI07 | https://cert-manager.io |
 
 ---
 
@@ -148,11 +159,16 @@ behaviour in production.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| Langfuse | Open-source LLM observability platform — traces, spans, scores, and session-level analytics with self-hosting option; supports PII masking before storage | DSGAI14, ASI10 | https://langfuse.com |
-| Helicone | LLM observability and gateway — request/response logging, cost tracking, user analytics; open-source self-hosted version available | DSGAI14, LLM10 | https://www.helicone.ai |
-| OpenTelemetry | Vendor-neutral observability framework — standard for traces, metrics, and logs across LLM infrastructure | DSGAI14, LLM10, ASI08 | https://opentelemetry.io |
-| TruLens | LLM application evaluation and monitoring — RAG triad evaluation, hallucination detection, feedback functions | LLM09, DSGAI21 | https://github.com/truera/trulens |
-| Deepchecks | ML testing and monitoring — data integrity checks, model performance monitoring, RAG evaluation, and drift detection | DSGAI05, DSGAI21 | https://deepchecks.com |
+| Langfuse | Open-source LLM observability platform ï¿½ traces, spans, scores, and session-level analytics with self-hosting option; supports PII masking before storage | DSGAI14, ASI10 | https://langfuse.com |
+| Helicone | LLM observability and gateway ï¿½ request/response logging, cost tracking, user analytics; open-source self-hosted version available | DSGAI14, LLM10 | https://www.helicone.ai |
+| OpenTelemetry | Vendor-neutral observability framework ï¿½ standard for traces, metrics, and logs across LLM infrastructure | DSGAI14, LLM10, ASI08 | https://opentelemetry.io |
+| TruLens | LLM application evaluation and monitoring ï¿½ RAG triad evaluation, hallucination detection, feedback functions | LLM09, DSGAI21 | https://github.com/truera/trulens |
+| Arize Phoenix | Open-source LLM observability â€” tracing, evaluation, embedding visualization, and retrieval quality analysis for LLM applications | LLM09, ASI06, DSGAI01 | https://github.com/Arize-AI/phoenix |
+| AgentOps | Agent observability platform â€” session replay, cost tracking, error analysis, and compliance monitoring for autonomous AI agents | ASI01, ASI07, ASI08, ASI10 | https://github.com/AgentOps-AI/agentops |
+| LangSmith | LangChain tracing and evaluation platform â€” production monitoring, dataset management, and automated testing for LLM applications (free tier available) | LLM01, LLM06, ASI01 | https://smith.langchain.com |
+| Weave | Weights & Biases LLM evaluation and tracing framework â€” track experiments, evaluate outputs, and monitor production LLM applications | LLM09, LLM01, ASI01 | https://github.com/wandb/weave |
+| OpenLLMetry | OpenTelemetry instrumentation for LLMs â€” vendor-neutral observability with automatic tracing for OpenAI, Anthropic, Cohere, and 20+ providers | DSGAI01, DSGAI14, ASI07 | https://github.com/traceloop/openllmetry |
+| Deepchecks | ML testing and monitoring ï¿½ data integrity checks, model performance monitoring, RAG evaluation, and drift detection | DSGAI05, DSGAI21 | https://deepchecks.com |
 
 ---
 
@@ -163,23 +179,23 @@ and denial-of-service attacks.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| LiteLLM | LLM API gateway and proxy — unified interface for 100+ LLMs with built-in rate limiting, cost tracking, per-user budgets, and request/response logging | LLM10, ASI08 | https://github.com/BerriAI/litellm |
-| Kong Gateway | API gateway — rate limiting, authentication, request transformation, and plugin ecosystem | LLM10, DSGAI17 | https://github.com/Kong/kong |
-| Traefik | Cloud-native reverse proxy and load balancer — rate limiting, circuit breakers, middleware for LLM API traffic management | LLM10, ASI08 | https://traefik.io |
+| LiteLLM | LLM API gateway and proxy ï¿½ unified interface for 100+ LLMs with built-in rate limiting, cost tracking, per-user budgets, and request/response logging | LLM10, ASI08 | https://github.com/BerriAI/litellm |
+| Kong Gateway | API gateway ï¿½ rate limiting, authentication, request transformation, and plugin ecosystem | LLM10, DSGAI17 | https://github.com/Kong/kong |
+| Traefik | Cloud-native reverse proxy and load balancer ï¿½ rate limiting, circuit breakers, middleware for LLM API traffic management | LLM10, ASI08 | https://traefik.io |
 
 ---
 
 ## Guardrails and Policy Enforcement
 
 Tools for enforcing safe behaviour boundaries on LLM and agentic
-systems at runtime — independent of model instruction.
+systems at runtime ï¿½ independent of model instruction.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| Guardrails AI | Open-source framework for adding guardrails to LLM applications — validators for output structure, content policy, PII detection, SQL injection prevention | LLM06, ASI01, ASI02 | https://github.com/guardrails-ai/guardrails |
-| NeMo Guardrails | NVIDIA programmable guardrails toolkit — Colang-based policy language for defining topical, safety, and action guardrails | LLM06, ASI01, ASI02 | https://github.com/NVIDIA/NeMo-Guardrails |
-| LlamaIndex | Data framework for LLM applications — RAG pipeline primitives with metadata filtering, access control integration, and context assembly controls | LLM02, DSGAI01, DSGAI15 | https://www.llamaindex.ai |
-| LangChain | LLM application framework — includes prompt management, chain composition, and tool integration | LLM06, ASI02 | https://github.com/langchain-ai/langchain |
+| Guardrails AI | Open-source framework for adding guardrails to LLM applications ï¿½ validators for output structure, content policy, PII detection, SQL injection prevention | LLM06, ASI01, ASI02 | https://github.com/guardrails-ai/guardrails |
+| NeMo Guardrails | NVIDIA programmable guardrails toolkit ï¿½ Colang-based policy language for defining topical, safety, and action guardrails | LLM06, ASI01, ASI02 | https://github.com/NVIDIA/NeMo-Guardrails |
+| LlamaIndex | Data framework for LLM applications ï¿½ RAG pipeline primitives with metadata filtering, access control integration, and context assembly controls | LLM02, DSGAI01, DSGAI15 | https://www.llamaindex.ai |
+| LangChain | LLM application framework ï¿½ includes prompt management, chain composition, and tool integration | LLM06, ASI02 | https://github.com/langchain-ai/langchain |
 
 ---
 
@@ -190,11 +206,11 @@ operational technology environments where AI is being deployed.
 
 | Tool | Description | OT risks addressed | Link |
 |---|---|---|---|
-| Velociraptor | Digital forensics and incident response platform — endpoint visibility and hunting capability for OT Windows hosts running LLM applications | LLM01, LLM04, ASI10 | https://github.com/Velocidex/velociraptor |
-| OpenSearch | Open-source search and analytics — SIEM capability for correlating OT security events, LLM audit logs, and agent behaviour anomalies | LLM10, ASI08, ASI10 | https://opensearch.org |
-| Wazuh | Open-source security platform — SIEM, XDR, and compliance management; integrates with OT environments for file integrity monitoring and log analysis | LLM01, ASI10 | https://wazuh.com |
-| MITRE Caldera for OT | Adversary emulation framework with ICS/OT plugins — test detection capabilities against MITRE ATT&CK for ICS techniques | LLM01, LLM04, ASI01 | https://github.com/mitre/caldera |
-| GNS3 | Network simulation platform — model OT network zones and test LLM deployment architectures before production rollout | All OT entries | https://www.gns3.com |
+| Velociraptor | Digital forensics and incident response platform ï¿½ endpoint visibility and hunting capability for OT Windows hosts running LLM applications | LLM01, LLM04, ASI10 | https://github.com/Velocidex/velociraptor |
+| OpenSearch | Open-source search and analytics ï¿½ SIEM capability for correlating OT security events, LLM audit logs, and agent behaviour anomalies | LLM10, ASI08, ASI10 | https://opensearch.org |
+| Wazuh | Open-source security platform ï¿½ SIEM, XDR, and compliance management; integrates with OT environments for file integrity monitoring and log analysis | LLM01, ASI10 | https://wazuh.com |
+| MITRE Caldera for OT | Adversary emulation framework with ICS/OT plugins ï¿½ test detection capabilities against MITRE ATT&CK for ICS techniques | LLM01, LLM04, ASI01 | https://github.com/mitre/caldera |
+| GNS3 | Network simulation platform ï¿½ model OT network zones and test LLM deployment architectures before production rollout | All OT entries | https://www.gns3.com |
 
 ---
 
@@ -205,10 +221,10 @@ accuracy before and after deployment.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| RAGAS | RAG evaluation framework — measures faithfulness, answer relevance, context precision, and context recall | LLM09, DSGAI21 | https://github.com/explodinggradients/ragas |
-| DeepEval | LLM evaluation framework — 14+ evaluation metrics including hallucination, bias, toxicity, answer relevance, and custom metrics | LLM09, DSGAI21 | https://github.com/confident-ai/deepeval |
-| EleutherAI LM Eval Harness | Standardised evaluation framework — runs models against 200+ academic benchmarks; detect unexpected capability changes post fine-tuning | LLM04, DSGAI04 | https://github.com/EleutherAI/lm-evaluation-harness |
-| IBM Adversarial Robustness Toolbox | ML adversarial robustness library — poisoning attacks, evasion attacks, membership inference, model extraction, and defences | LLM04, DSGAI04, DSGAI18 | https://github.com/Trusted-AI/adversarial-robustness-toolbox |
+| RAGAS | RAG evaluation framework ï¿½ measures faithfulness, answer relevance, context precision, and context recall | LLM09, DSGAI21 | https://github.com/explodinggradients/ragas |
+| DeepEval | LLM evaluation framework ï¿½ 14+ evaluation metrics including hallucination, bias, toxicity, answer relevance, and custom metrics | LLM09, DSGAI21 | https://github.com/confident-ai/deepeval |
+| EleutherAI LM Eval Harness | Standardised evaluation framework ï¿½ runs models against 200+ academic benchmarks; detect unexpected capability changes post fine-tuning | LLM04, DSGAI04 | https://github.com/EleutherAI/lm-evaluation-harness |
+| IBM Adversarial Robustness Toolbox | ML adversarial robustness library ï¿½ poisoning attacks, evasion attacks, membership inference, model extraction, and defences | LLM04, DSGAI04, DSGAI18 | https://github.com/Trusted-AI/adversarial-robustness-toolbox |
 
 ---
 
@@ -219,9 +235,9 @@ server deployments.
 
 | Tool | Description | Risks addressed | Link |
 |---|---|---|---|
-| MCP Inspector | Official MCP debugging and testing tool — inspect tool schemas, test tool calls, validate descriptor integrity | ASI02, ASI04, DSGAI06 | https://github.com/modelcontextprotocol/inspector |
-| MCP Python SDK | Official Python SDK for MCP servers — use as the base for building secure MCP servers with typed schemas and validation | ASI02, ASI04 | https://github.com/modelcontextprotocol/python-sdk |
-| MCP TypeScript SDK | Official TypeScript SDK — same as Python SDK for Node.js deployments | ASI02, ASI04 | https://github.com/modelcontextprotocol/typescript-sdk |
+| MCP Inspector | Official MCP debugging and testing tool ï¿½ inspect tool schemas, test tool calls, validate descriptor integrity | ASI02, ASI04, DSGAI06 | https://github.com/modelcontextprotocol/inspector |
+| MCP Python SDK | Official Python SDK for MCP servers ï¿½ use as the base for building secure MCP servers with typed schemas and validation | ASI02, ASI04 | https://github.com/modelcontextprotocol/python-sdk |
+| MCP TypeScript SDK | Official TypeScript SDK ï¿½ same as Python SDK for Node.js deployments | ASI02, ASI04 | https://github.com/modelcontextprotocol/typescript-sdk |
 
 ---
 

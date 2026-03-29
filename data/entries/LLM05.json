@@ -709,6 +709,11 @@
       "name": "Sigstore",
       "type": "open-source",
       "url": "https://www.sigstore.dev"
+    },
+    {
+      "name": "Vigil",
+      "url": "https://github.com/deadbits/vigil-llm",
+      "type": "open-source"
     }
   ],
   "incidents": [

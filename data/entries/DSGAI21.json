@@ -820,6 +820,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2025,
       "incident_id": "INC-039"
+    },
+    {
+      "name": "TikTok EU data localization enforcement — Project Clover + EUR 345M GDPR fine",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-043"
     }
   ],
   "crossrefs": {

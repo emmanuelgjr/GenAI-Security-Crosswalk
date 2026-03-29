@@ -64,10 +64,10 @@ Every file answers one question: **which controls from framework X address vulne
 | **20** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC · Financial |
 | **67** mapping files | Every source list entry × every applicable framework |
 | **13** implementation recipes | Production-ready Python patterns |
-| **40+** open-source tools | Catalogued and organised by function |
-| **10** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
+| **57+** open-source tools | Catalogued and organised by function |
+| **16** eval profiles | Runnable Garak + PyRIT tests mapped to OWASP entries |
 | **20** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
-| **31** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
+| **44** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
 
 All free. All open-source. Built for practitioners.
@@ -388,7 +388,7 @@ See `evals/laaf/README.md` for the full LPCI attack vector → OWASP → MAESTRO
 
 ## Incident tracker
 
-31 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
+44 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
 
 ```bash
 node scripts/incidents-report.js                      # all incidents → reports/incidents.md
@@ -412,7 +412,7 @@ No install required. Works on desktop and mobile.
 | [**Score**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score) | Select your frameworks, see coverage gaps. Upload Garak/PyRIT/LAAF results to validate. Share your score card on LinkedIn. |
 | [**Explorer**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) | Search and filter all 41 entries. Click any entry to see controls across all 20 frameworks. |
 | [**Frameworks**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/frameworks) | Interactive 41×23 coverage matrix. Click any cell to see the specific controls mapped. |
-| [**Incidents**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents) | Browse 31 AI security incidents. Filter by severity, year, MAESTRO layer. Full attribution details. |
+| [**Incidents**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents) | Browse 44 AI security incidents. Filter by severity, year, MAESTRO layer. Full attribution details. |
 
 **Evidence-based scoring** — three validation tiers:
 - **Self-Assessed** — checkbox only (unvalidated)
@@ -451,7 +451,7 @@ import { getEntry, getFramework, searchEntries, incidents } from '@owasp/genai-c
 const llm01 = getEntry('LLM01');        // typed Entry object
 const euai  = getFramework('EU AI Act'); // { framework, entries, controls }
 const hits  = searchEntries('injection');  // Entry[]
-const incs  = incidents;                   // 31 Incident[] with MAESTRO layers
+const incs  = incidents;                   // 44 Incident[] with MAESTRO layers
 ```
 
 Full TypeScript types included for all data structures.

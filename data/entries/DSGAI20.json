@@ -637,7 +637,14 @@
       "url": "https://www.onetrust.com"
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "name": "TikTok EU data localization enforcement — Project Clover + EUR 345M GDPR fine",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-043"
+    }
+  ],
   "crossrefs": {
     "llm_top10": [
       "LLM02",

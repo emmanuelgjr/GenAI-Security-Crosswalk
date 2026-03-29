@@ -728,6 +728,16 @@
       "name": "PagerDuty",
       "type": "commercial",
       "url": "https://www.pagerduty.com"
+    },
+    {
+      "name": "AgentOps",
+      "url": "https://github.com/AgentOps-AI/agentops",
+      "type": "open-source"
+    },
+    {
+      "name": "Agentic Security",
+      "url": "https://github.com/msoedov/agentic_security",
+      "type": "open-source"
     }
   ],
   "incidents": [

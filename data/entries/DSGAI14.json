@@ -656,6 +656,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2025,
       "incident_id": "INC-036"
+    },
+    {
+      "name": "TikTok EU data localization enforcement — Project Clover + EUR 345M GDPR fine",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-043"
+    },
+    {
+      "name": "Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-044"
     }
   ],
   "crossrefs": {

@@ -775,6 +775,11 @@
       "name": "Istio",
       "type": "open-source",
       "url": "https://istio.io"
+    },
+    {
+      "name": "AgentOps",
+      "url": "https://github.com/AgentOps-AI/agentops",
+      "type": "open-source"
     }
   ],
   "incidents": [

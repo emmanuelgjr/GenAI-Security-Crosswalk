@@ -753,6 +753,16 @@
       "name": "Sigstore",
       "type": "open-source",
       "url": "https://www.sigstore.dev"
+    },
+    {
+      "name": "Counterfit",
+      "url": "https://github.com/Azure/counterfit",
+      "type": "open-source"
+    },
+    {
+      "name": "WhyLogs",
+      "url": "https://github.com/whylabs/whylogs",
+      "type": "open-source"
     }
   ],
   "incidents": [
@@ -767,6 +777,12 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2025,
       "incident_id": "INC-038"
+    },
+    {
+      "name": "Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-044"
     }
   ],
   "crossrefs": {

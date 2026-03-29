@@ -733,6 +733,16 @@
       "name": "Guardrails AI",
       "type": "open-source",
       "url": "https://github.com/guardrails-ai/guardrails"
+    },
+    {
+      "name": "AgentOps",
+      "url": "https://github.com/AgentOps-AI/agentops",
+      "type": "open-source"
+    },
+    {
+      "name": "Agentic Security",
+      "url": "https://github.com/msoedov/agentic_security",
+      "type": "open-source"
     }
   ],
   "incidents": [

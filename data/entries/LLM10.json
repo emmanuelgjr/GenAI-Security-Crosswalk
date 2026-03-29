@@ -699,6 +699,11 @@
       "name": "AWS Budgets / Azure Cost Management",
       "type": "commercial",
       "url": "https://aws.amazon.com/aws-cost-management/aws-budgets/"
+    },
+    {
+      "name": "Inspect AI",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai",
+      "type": "open-source"
     }
   ],
   "incidents": [
