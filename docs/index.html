@@ -413,6 +413,10 @@ input, select { font-family: inherit; }
 .mapping-table {
   width: 100%; border-collapse: collapse; font-size: .85rem;
 }
+.mapping-table.fw-mapping { table-layout: fixed; }
+.mapping-table.fw-mapping th:nth-child(1) { width: 18%; }
+.mapping-table.fw-mapping th:nth-child(2) { width: 60%; }
+.mapping-table.fw-mapping th:nth-child(3) { width: 22%; }
 .mapping-table th {
   text-align: left; padding: 8px 12px; font-size: .75rem;
   font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
@@ -429,7 +433,7 @@ input, select { font-family: inherit; }
 .mapping-table tr:hover td { background: var(--bg-alt); }
 .mapping-table .ctrl-id {
   font-family: var(--font-mono); font-size: .78rem; color: var(--accent);
-  white-space: nowrap;
+  word-break: break-word; white-space: normal;
 }
 .mapping-table .ctrl-id a { color: inherit; }
 .mapping-table .tier-badge {
@@ -495,23 +499,53 @@ input, select { font-family: inherit; }
 }
 
 .fw-grid {
-  max-width: var(--max-w); margin: 0 auto; padding: 0 24px 24px;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px; max-width: var(--max-w); margin: 0 auto; padding: 24px;
 }
-.fw-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 16px; cursor: pointer;
-  transition: border-color .15s, box-shadow .15s;
+.badge-coverage {
+  font-size: .72rem; font-weight: 600; padding: 2px 8px;
+  border-radius: 4px;
 }
-.fw-card:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(37,99,235,.1); }
-.fw-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-.fw-card-name { font-weight: 700; font-size: .95rem; }
-.fw-card-pct { font-weight: 700; font-size: 1.1rem; }
-.fw-card-bar { height: 8px; background: var(--bg-alt); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
-.fw-card-bar-fill { height: 100%; border-radius: 4px; transition: width .3s; }
-.fw-card-detail { display: flex; gap: 16px; font-size: .78rem; color: var(--text-secondary); flex-wrap: wrap; }
-.fw-card-detail span { white-space: nowrap; }
-.fw-card-sources { display: flex; gap: 4px; margin-top: 8px; }
+.badge-coverage.cov-high { background: var(--lo-bg); color: var(--lo); }
+.badge-coverage.cov-mid { background: var(--me-bg); color: var(--me); }
+.badge-coverage.cov-low { background: var(--cr-bg); color: var(--cr); }
+.fw-detail-page {
+  max-width: var(--max-w); margin: 0 auto; padding: 24px;
+}
+.fw-detail-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .85rem; color: var(--accent); text-decoration: none;
+  margin-bottom: 20px; font-weight: 500;
+  transition: opacity var(--transition);
+}
+.fw-detail-back:hover { opacity: .7; }
+.fw-detail-header {
+  margin-bottom: 28px;
+}
+.fw-detail-title {
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3;
+}
+.fw-detail-desc {
+  font-size: .9rem; color: var(--text-secondary); line-height: 1.6; max-width: 720px;
+}
+.fw-detail-section {
+  margin-bottom: 32px;
+}
+.fw-detail-section:last-child { margin-bottom: 0; }
+.fw-entry-group {
+  margin-bottom: 16px; border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.fw-entry-group:last-child { margin-bottom: 0; }
+.fw-entry-group-header {
+  display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+  background: var(--bg-alt); border-bottom: 1px solid var(--border-light);
+  transition: background var(--transition);
+}
+.fw-entry-group-header:hover { background: var(--accent-bg); }
+.fw-entry-group .mapping-table { margin: 0; }
+.fw-entry-group .mapping-table th { background: var(--surface); }
 .fw-source-dot { padding: 2px 8px; border-radius: 10px; font-size: .68rem; font-weight: 600; }
 .fw-source-dot.llm { background: #2563eb22; color: #2563eb; }
 .fw-source-dot.asi { background: #7c3aed22; color: #7c3aed; }
@@ -1174,13 +1208,15 @@ input, select { font-family: inherit; }
     var app = document.getElementById('app');
     app.innerHTML = '';
 
-    // Check for deep-link patterns: /explorer/ENTRY_ID or /incidents/INC_ID
+    // Check for deep-link patterns: /explorer/ENTRY_ID, /incidents/INC_ID, /frameworks/FW_NAME
     var explorerMatch = path.match(/^\/explorer\/(.+)$/);
     var incidentMatch = path.match(/^\/incidents\/(.+)$/);
+    var frameworkMatch = path.match(/^\/frameworks\/(.+)$/);
 
     var basePath = path;
     if (explorerMatch) basePath = '/explorer';
     if (incidentMatch) basePath = '/incidents';
+    if (frameworkMatch) basePath = '/frameworks';
 
     // Update nav active state
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(a) {
@@ -1188,6 +1224,16 @@ input, select { font-family: inherit; }
       var linkPath = href ? href.slice(1) : '/';
       a.classList.toggle('active', linkPath === basePath);
     });
+
+    // Framework detail is a full page, not a modal
+    if (frameworkMatch) {
+      var fwName = decodeURIComponent(frameworkMatch[1]);
+      if (FRAMEWORKS.indexOf(fwName) !== -1) {
+        renderFrameworkDetail(app, fwName);
+        window.scrollTo(0, 0);
+        return;
+      }
+    }
 
     var renderFn = routes[basePath] || routes[path] || renderLanding;
     renderFn(app);
@@ -1729,73 +1775,186 @@ input, select { font-family: inherit; }
       var llm = entries.filter(function(e) { return e.source_list === 'LLM-Top10-2025'; }).length;
       var asi = entries.filter(function(e) { return e.source_list === 'Agentic-Top10-2026'; }).length;
       var dsg = entries.filter(function(e) { return e.source_list === 'DSGAI-2026'; }).length;
-      return { name: fw, entries: entries.length, controls: totalControls, pct: Math.round(entries.length / DATA.length * 100), llm: llm, asi: asi, dsg: dsg };
+      var covLevel = Math.round(entries.length / DATA.length * 100) >= 90 ? 'High' : Math.round(entries.length / DATA.length * 100) >= 70 ? 'Medium' : 'Low';
+      // Collect unique source lists
+      var srcLists = [];
+      if (llm > 0) srcLists.push('LLM');
+      if (asi > 0) srcLists.push('Agentic');
+      if (dsg > 0) srcLists.push('DSGAI');
+      return { name: fw, entries: entries.length, controls: totalControls, pct: Math.round(entries.length / DATA.length * 100), llm: llm, asi: asi, dsg: dsg, covLevel: covLevel, srcLists: srcLists };
     }).sort(function(a, b) { return b.entries - a.entries; });
 
     var totalMapped = 0;
     DATA.forEach(function(e) { totalMapped += new Set(e.mappings.map(function(m) { return m.framework; })).size; });
 
-    // Header
-    var header = el('div', { className: 'fw-page-header' });
-    header.appendChild(el('h2', {}, 'Framework Coverage'));
-    header.appendChild(el('p', {}, FRAMEWORKS.length + ' frameworks mapped across ' + DATA.length + ' OWASP entries. Click any framework to see its full control list.'));
-    container.appendChild(header);
+    var state = { coverage: '', source: '', search: '' };
 
-    // Stats
-    var statsRow = el('div', { className: 'fw-stats' });
-    [
-      [FRAMEWORKS.length, 'Frameworks'],
-      [DATA.length, 'Entries'],
-      [totalMapped, 'Mapped Cells'],
-      [Math.round(totalMapped / (DATA.length * FRAMEWORKS.length) * 100) + '%', 'Coverage']
-    ].forEach(function(s) {
+    // Summary stats (incident style)
+    var summary = el('div', { className: 'incident-summary' });
+    var covHigh = fwData.filter(function(f) { return f.covLevel === 'High'; }).length;
+    var covMid = fwData.filter(function(f) { return f.covLevel === 'Medium'; }).length;
+    var covLow = fwData.filter(function(f) { return f.covLevel === 'Low'; }).length;
+    var summaryItems = [
+      ['Total Frameworks', FRAMEWORKS.length],
+      ['High Coverage', covHigh],
+      ['Medium Coverage', covMid],
+      ['Low Coverage', covLow],
+      ['OWASP Entries', DATA.length],
+      ['Mapped Cells', totalMapped]
+    ];
+    summaryItems.forEach(function(s) {
       var card = el('div', { className: 'fw-stat-card' });
-      card.appendChild(el('div', { className: 'num' }, String(s[0])));
-      card.appendChild(el('div', { className: 'label' }, s[1]));
-      statsRow.appendChild(card);
+      card.appendChild(el('div', { className: 'num' }, String(s[1])));
+      card.appendChild(el('div', { className: 'label' }, s[0]));
+      summary.appendChild(card);
     });
-    container.appendChild(statsRow);
+    container.appendChild(summary);
 
-    // View toggle
-    var toggleRow = el('div', { className: 'fw-view-toggle' });
-    var cardViewBtn = el('button', { className: 'pill active' }, 'Card View');
-    var matrixViewBtn = el('button', { className: 'pill' }, 'Matrix View');
-    toggleRow.appendChild(cardViewBtn);
-    toggleRow.appendChild(matrixViewBtn);
-    container.appendChild(toggleRow);
+    // Filter bar (incident style)
+    var filterBar = el('div', { className: 'filter-bar' });
+    var filterInner = el('div', { className: 'filter-bar-inner' });
 
-    // Card grid
-    var grid = el('div', { className: 'fw-grid' });
-    fwData.forEach(function(fw) {
-      var card = el('div', { className: 'fw-card', tabindex: '0', role: 'button', 'aria-label': fw.name });
-
-      var hdr = el('div', { className: 'fw-card-header' });
-      hdr.appendChild(el('div', { className: 'fw-card-name' }, fw.name));
-      var pctColor = fw.pct >= 90 ? 'var(--lo)' : fw.pct >= 70 ? 'var(--me)' : 'var(--cr)';
-      hdr.appendChild(el('div', { className: 'fw-card-pct', style: 'color:' + pctColor }, fw.pct + '%'));
-      card.appendChild(hdr);
-
-      var bar = el('div', { className: 'fw-card-bar' });
-      var fill = el('div', { className: 'fw-card-bar-fill', style: 'width:' + fw.pct + '%;background:' + pctColor });
-      bar.appendChild(fill);
-      card.appendChild(bar);
-
-      var detail = el('div', { className: 'fw-card-detail' });
-      detail.appendChild(el('span', {}, fw.entries + '/' + DATA.length + ' entries'));
-      detail.appendChild(el('span', {}, fw.controls + ' controls'));
-      card.appendChild(detail);
-
-      var sources = el('div', { className: 'fw-card-sources' });
-      if (fw.llm > 0) sources.appendChild(el('span', { className: 'fw-source-dot llm' }, 'LLM ' + fw.llm));
-      if (fw.asi > 0) sources.appendChild(el('span', { className: 'fw-source-dot asi' }, 'Agentic ' + fw.asi));
-      if (fw.dsg > 0) sources.appendChild(el('span', { className: 'fw-source-dot dsg' }, 'DSGAI ' + fw.dsg));
-      card.appendChild(sources);
-
-      card.addEventListener('click', function() { openFrameworkModal(fw.name); });
-      card.addEventListener('keydown', function(e) { if (e.key === 'Enter') openFrameworkModal(fw.name); });
-      grid.appendChild(card);
+    // Search
+    var searchWrap = el('div', { className: 'search-wrap' });
+    var searchSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    searchSvg.setAttribute('width', '14');
+    searchSvg.setAttribute('height', '14');
+    searchSvg.setAttribute('viewBox', '0 0 24 24');
+    searchSvg.setAttribute('fill', 'none');
+    searchSvg.setAttribute('stroke', 'currentColor');
+    searchSvg.setAttribute('stroke-width', '2');
+    searchSvg.innerHTML = '<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>';
+    searchWrap.appendChild(searchSvg);
+    var searchInput = el('input', {
+      className: 'search-input',
+      type: 'search',
+      placeholder: 'Search frameworks\u2026',
+      'aria-label': 'Search frameworks'
     });
+    searchWrap.appendChild(searchInput);
+    filterInner.appendChild(searchWrap);
+
+    // Coverage pills
+    var covGroup = el('div', { className: 'pill-group' });
+    [['All', ''], ['High', 'High'], ['Medium', 'Medium'], ['Low', 'Low']].forEach(function(item) {
+      var cls = 'pill' + (item[0] === 'All' ? ' active' : '') +
+        (item[1] === 'High' ? ' sev-lo' : item[1] === 'Medium' ? ' sev-me' : item[1] === 'Low' ? ' sev-cr' : '');
+      var p = el('button', { className: cls }, item[0]);
+      p.addEventListener('click', function() {
+        covGroup.querySelectorAll('.pill').forEach(function(b) { b.classList.remove('active'); });
+        p.classList.add('active');
+        state.coverage = item[1];
+        renderFwCards();
+      });
+      covGroup.appendChild(p);
+    });
+    filterInner.appendChild(covGroup);
+
+    // Source list pills
+    var srcGroup = el('div', { className: 'pill-group' });
+    [['All', ''], ['LLM', 'LLM'], ['Agentic', 'Agentic'], ['DSGAI', 'DSGAI']].forEach(function(item) {
+      var p = el('button', { className: 'pill' + (item[0] === 'All' ? ' active' : '') }, item[0]);
+      p.addEventListener('click', function() {
+        srcGroup.querySelectorAll('.pill').forEach(function(b) { b.classList.remove('active'); });
+        p.classList.add('active');
+        state.source = item[1];
+        renderFwCards();
+      });
+      srcGroup.appendChild(p);
+    });
+    filterInner.appendChild(srcGroup);
+
+    // View toggle (inline in filter bar)
+    var viewGroup = el('div', { className: 'pill-group' });
+    var cardViewBtn = el('button', { className: 'pill active' }, 'Cards');
+    var matrixViewBtn = el('button', { className: 'pill' }, 'Matrix');
+    viewGroup.appendChild(cardViewBtn);
+    viewGroup.appendChild(matrixViewBtn);
+    filterInner.appendChild(viewGroup);
+
+    var countLabel = el('span', { className: 'filter-count' });
+    filterInner.appendChild(countLabel);
+    filterBar.appendChild(filterInner);
+    container.appendChild(filterBar);
+
+    // Card grid (uses same class as incidents for consistent styling)
+    var grid = el('div', { className: 'card-grid' });
     container.appendChild(grid);
+
+    searchInput.addEventListener('input', debounce(function() {
+      state.search = searchInput.value.trim().toLowerCase();
+      renderFwCards();
+    }, 150));
+
+    function filterFrameworks() {
+      return fwData.filter(function(fw) {
+        if (state.coverage && fw.covLevel !== state.coverage) return false;
+        if (state.source && fw.srcLists.indexOf(state.source) === -1) return false;
+        if (state.search && fw.name.toLowerCase().indexOf(state.search) === -1) return false;
+        return true;
+      });
+    }
+
+    function buildFwCard(fw) {
+      var card = el('div', {
+        className: 'incident-card',
+        tabindex: '0',
+        role: 'button',
+        'aria-label': fw.name
+      });
+      var inner = el('div', { className: 'incident-card-inner' });
+
+      // Head row: coverage badge + controls badge (mirrors incident head: ID + severity + category)
+      var head = el('div', { className: 'incident-card-head' });
+      var covCls = fw.covLevel === 'High' ? 'cov-high' : fw.covLevel === 'Medium' ? 'cov-mid' : 'cov-low';
+      head.appendChild(el('span', { className: 'badge-coverage ' + covCls }, fw.entries + '/' + DATA.length + ' entries'));
+      head.appendChild(el('span', { className: 'badge-cat' }, fw.controls + ' controls'));
+      inner.appendChild(head);
+
+      // Title (mirrors incident-card-title)
+      inner.appendChild(el('div', { className: 'incident-card-title' }, fw.name));
+
+      // Meta line (mirrors incident-card-date)
+      var metaParts = [];
+      if (fw.llm > 0) metaParts.push('LLM: ' + fw.llm);
+      if (fw.asi > 0) metaParts.push('Agentic: ' + fw.asi);
+      if (fw.dsg > 0) metaParts.push('DSGAI: ' + fw.dsg);
+      inner.appendChild(el('div', { className: 'incident-card-date' }, metaParts.join(' \u00B7 ')));
+
+      // Source list badges (mirrors incident-card-entries with entry badges)
+      var badges = el('div', { className: 'incident-card-entries' });
+      if (fw.llm > 0) badges.appendChild(el('span', { className: 'incident-entry-badge', style: 'background:#2563eb15;color:#2563eb;' }, 'LLM Top 10'));
+      if (fw.asi > 0) badges.appendChild(el('span', { className: 'incident-entry-badge', style: 'background:#7c3aed15;color:#7c3aed;' }, 'Agentic Top 10'));
+      if (fw.dsg > 0) badges.appendChild(el('span', { className: 'incident-entry-badge', style: 'background:#05966915;color:#059669;' }, 'DSGAI'));
+      inner.appendChild(badges);
+
+      card.appendChild(inner);
+      card.addEventListener('click', function() { openFrameworkModal(fw.name); });
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFrameworkModal(fw.name); }
+      });
+      return card;
+    }
+
+    function renderFwCards() {
+      var visible = filterFrameworks();
+      countLabel.textContent = visible.length + ' of ' + FRAMEWORKS.length + ' frameworks';
+      grid.innerHTML = '';
+
+      if (visible.length === 0) {
+        var empty = el('div', { className: 'empty-state' });
+        empty.appendChild(el('h3', {}, 'No frameworks match'));
+        empty.appendChild(el('p', {}, 'Try adjusting your filters.'));
+        grid.appendChild(empty);
+        return;
+      }
+
+      visible.forEach(function(fw) {
+        grid.appendChild(buildFwCard(fw));
+      });
+    }
+
+    renderFwCards();
 
     // Matrix table (hidden by default)
     var wrap = el('div', { className: 'matrix-wrap' });
@@ -1842,10 +2001,16 @@ input, select { font-family: inherit; }
     cardViewBtn.addEventListener('click', function() {
       grid.style.display = 'grid'; wrap.style.display = 'none';
       cardViewBtn.classList.add('active'); matrixViewBtn.classList.remove('active');
+      // Show filters relevant to card view
+      searchWrap.style.display = ''; covGroup.style.display = ''; srcGroup.style.display = '';
+      countLabel.style.display = '';
     });
     matrixViewBtn.addEventListener('click', function() {
       grid.style.display = 'none'; wrap.style.display = 'block';
       cardViewBtn.classList.remove('active'); matrixViewBtn.classList.add('active');
+      // Hide card-only filters in matrix view
+      searchWrap.style.display = 'none'; covGroup.style.display = 'none'; srcGroup.style.display = 'none';
+      countLabel.style.display = 'none';
     });
   }
 
@@ -1860,64 +2025,136 @@ input, select { font-family: inherit; }
   }
 
   function openFrameworkModal(fw) {
-    openModal(function(modal) {
-      var header = el('div', { className: 'modal-header' });
-      var info = el('div', { className: 'modal-header-info' });
-      info.appendChild(el('h2', { style: 'font-size:1.15rem;font-weight:700;' }, fw));
-      var coveredEntries = DATA.filter(function(e) { return e.mappings.some(function(m) { return m.framework === fw; }); });
-      info.appendChild(el('p', { style: 'font-size:.85rem;color:var(--text-secondary);margin-top:4px;' }, coveredEntries.length + ' of ' + DATA.length + ' entries covered (' + Math.round(coveredEntries.length / DATA.length * 100) + '%)'));
-      header.appendChild(info);
+    // Navigate to full-page detail view
+    window.location.hash = '#/frameworks/' + encodeURIComponent(fw);
+  }
 
-      var closeBtn = el('button', { className: 'modal-close', 'aria-label': 'Close' });
-      closeBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
-      closeBtn.addEventListener('click', closeModal);
-      header.appendChild(closeBtn);
-      modal.appendChild(header);
+  function renderFrameworkDetail(container, fwName) {
+    var coveredEntries = DATA.filter(function(e) { return e.mappings.some(function(m) { return m.framework === fwName; }); });
+    var pct = Math.round(coveredEntries.length / DATA.length * 100);
+    var covLevel = pct >= 90 ? 'High' : pct >= 70 ? 'Medium' : 'Low';
+    var covCls = covLevel === 'High' ? 'cov-high' : covLevel === 'Medium' ? 'cov-mid' : 'cov-low';
+    var totalCtrl = 0;
+    coveredEntries.forEach(function(e) { totalCtrl += e.mappings.filter(function(m) { return m.framework === fwName; }).length; });
 
-      var body = el('div', { className: 'modal-body' });
-      var table = el('table', { className: 'mapping-table' });
+    var wrap = el('div', { className: 'fw-detail-page' });
+
+    // Back link
+    var backLink = el('a', { href: '#/frameworks', className: 'fw-detail-back' });
+    backLink.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>';
+    backLink.appendChild(document.createTextNode(' Back to Frameworks'));
+    wrap.appendChild(backLink);
+
+    // Header
+    var header = el('div', { className: 'fw-detail-header' });
+    var badges = el('div', { style: 'display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px;' });
+    badges.appendChild(el('span', { className: 'badge-coverage ' + covCls }, coveredEntries.length + '/' + DATA.length + ' entries'));
+    badges.appendChild(el('span', { className: 'badge-cat' }, totalCtrl + ' controls'));
+
+    // Share button
+    var shareFwBtn = el('button', { className: 'share-entry-btn', 'aria-label': 'Share this framework', title: 'Copy link to this framework', style: 'margin-left:auto;' });
+    shareFwBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
+    shareFwBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var shareUrl = window.location.origin + window.location.pathname + '#/frameworks/' + encodeURIComponent(fwName);
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareUrl).then(function() {
+          shareFwBtn.title = 'Copied!';
+          shareFwBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--lo)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
+          setTimeout(function() {
+            shareFwBtn.title = 'Copy link to this framework';
+            shareFwBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
+          }, 2000);
+        });
+      }
+    });
+    badges.appendChild(shareFwBtn);
+    header.appendChild(badges);
+
+    header.appendChild(el('h1', { className: 'fw-detail-title' }, fwName));
+    header.appendChild(el('p', { className: 'fw-detail-desc' },
+      'This framework maps to ' + coveredEntries.length + ' of ' + DATA.length + ' OWASP GenAI entries with ' + totalCtrl + ' total control mappings across LLM Top 10, Agentic Top 10, and DSGAI source lists.'
+    ));
+    wrap.appendChild(header);
+
+    // Group controls by entry
+    var byEntry = {};
+    var entryOrder = [];
+    DATA.forEach(function(e) {
+      var mappings = e.mappings.filter(function(m) { return m.framework === fwName; });
+      if (mappings.length > 0) {
+        byEntry[e.id] = { entry: e, mappings: mappings };
+        entryOrder.push(e.id);
+      }
+    });
+
+    // Covered OWASP entries chips
+    var owaspSection = el('div', { className: 'fw-detail-section' });
+    owaspSection.appendChild(el('div', { className: 'modal-section-title' }, 'Covered OWASP Entries'));
+    var xrefChips = el('div', { className: 'xref-chips' });
+    entryOrder.forEach(function(eid) {
+      var chip = el('span', { className: 'xref-chip', tabindex: '0', role: 'button' });
+      chip.textContent = eid;
+      chip.addEventListener('click', function() {
+        var target = ENTRY_MAP[eid];
+        if (target) openEntryModal(target);
+      });
+      xrefChips.appendChild(chip);
+    });
+    owaspSection.appendChild(xrefChips);
+    wrap.appendChild(owaspSection);
+
+    // Control mappings grouped by entry
+    var mappingSection = el('div', { className: 'fw-detail-section' });
+    mappingSection.appendChild(el('div', { className: 'modal-section-title' }, 'Control Mappings (' + totalCtrl + ')'));
+
+    entryOrder.forEach(function(eid) {
+      var group = byEntry[eid];
+      var entryBlock = el('div', { className: 'fw-entry-group' });
+
+      // Entry header row
+      var entryHeader = el('div', { className: 'fw-entry-group-header' });
+      entryHeader.appendChild(el('span', { className: 'badge-id ' + group.entry.severity, style: 'cursor:pointer;' }, group.entry.id));
+      entryHeader.appendChild(el('span', { style: 'font-size:.85rem;font-weight:600;' }, group.entry.name));
+      var countBadge = el('span', { style: 'margin-left:auto;font-size:.75rem;color:var(--text-muted);' }, group.mappings.length + ' control' + (group.mappings.length > 1 ? 's' : ''));
+      entryHeader.appendChild(countBadge);
+      entryHeader.style.cursor = 'pointer';
+      entryHeader.addEventListener('click', function() {
+        openEntryModal(group.entry);
+      });
+      entryBlock.appendChild(entryHeader);
+
+      // Controls table for this entry
+      var table = el('table', { className: 'mapping-table fw-mapping' });
       var thead = el('thead');
       var tr = el('tr');
-      ['Entry', 'Control ID', 'Control Name', 'Tier'].forEach(function(h) {
+      ['Control ID', 'Control Name', 'Tier'].forEach(function(h) {
         tr.appendChild(el('th', {}, h));
       });
       thead.appendChild(tr);
       table.appendChild(thead);
-
       var tbody = el('tbody');
-      var allControls = [];
-      DATA.forEach(function(e) {
-        e.mappings.forEach(function(m) {
-          if (m.framework === fw) allControls.push({ entry: e, mapping: m });
-        });
-      });
-      allControls.sort(function(a, b) { return a.entry.id.localeCompare(b.entry.id); });
-
-      allControls.forEach(function(item) {
+      group.mappings.forEach(function(m) {
         var row = el('tr');
-        var entryTd = el('td');
-        entryTd.appendChild(el('span', { className: 'badge-id ' + item.entry.severity, style: 'cursor:pointer;' }, item.entry.id));
-        entryTd.addEventListener('click', function() {
-          closeModal();
-          setTimeout(function() { openEntryModal(item.entry); }, 200);
-        });
-        row.appendChild(entryTd);
-
         var ctrlTd = el('td', { className: 'ctrl-id' });
-        if (item.mapping.url) {
-          ctrlTd.appendChild(el('a', { href: item.mapping.url, target: '_blank', rel: 'noopener' }, item.mapping.control_id));
+        if (m.url) {
+          ctrlTd.appendChild(el('a', { href: m.url, target: '_blank', rel: 'noopener' }, m.control_id));
         } else {
-          ctrlTd.textContent = item.mapping.control_id;
+          ctrlTd.textContent = m.control_id;
         }
         row.appendChild(ctrlTd);
-        row.appendChild(el('td', {}, item.mapping.control_name));
-        row.appendChild(el('td', {}, el('span', { className: 'tier-badge tier-' + (item.mapping.tier || '') }, item.mapping.tier || '')));
+        row.appendChild(el('td', {}, m.control_name || ''));
+        var tierSpan = el('span', { className: 'tier-badge tier-' + (m.tier || '') }, m.tier || '');
+        row.appendChild(el('td', {}, tierSpan));
         tbody.appendChild(row);
       });
       table.appendChild(tbody);
-      body.appendChild(table);
-      modal.appendChild(body);
+      entryBlock.appendChild(table);
+      mappingSection.appendChild(entryBlock);
     });
+
+    wrap.appendChild(mappingSection);
+    container.appendChild(wrap);
   }
 
   // ══════════════════════════════════════════════════════════════════════════════
