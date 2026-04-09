@@ -601,6 +601,119 @@ input, select { font-family: inherit; }
 .cell-popup-title { font-weight: 700; margin-bottom: 6px; }
 
 /* ══════════════════════════════════════════════════════════════════════════════
+   Crosswalk Visualizer page
+   ══════════════════════════════════════════════════════════════════════════════ */
+.cw-page { max-width: var(--max-w); margin: 0 auto; padding: 24px; }
+.cw-header { margin-bottom: 16px; }
+.cw-header h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+.cw-header p { color: var(--text-secondary); font-size: .9rem; }
+.cw-toolbar {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  padding: 12px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); margin-bottom: 12px;
+}
+.cw-breadcrumb {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  padding: 10px 14px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  margin-bottom: 12px; font-size: .85rem;
+}
+.cw-breadcrumb .crumb {
+  cursor: pointer; color: var(--accent); padding: 2px 6px;
+  border-radius: var(--radius); transition: background var(--transition);
+}
+.cw-breadcrumb .crumb:hover { background: var(--bg-alt); }
+.cw-breadcrumb .crumb.current { color: var(--text); font-weight: 600; cursor: default; }
+.cw-breadcrumb .crumb.current:hover { background: transparent; }
+.cw-breadcrumb .sep { color: var(--text-secondary); font-size: .75rem; }
+.cw-breadcrumb .back-btn {
+  margin-left: auto; padding: 4px 10px; font-size: .75rem;
+  border: 1px solid var(--border); background: var(--bg);
+  color: var(--text); border-radius: var(--radius); cursor: pointer;
+}
+.cw-breadcrumb .back-btn:hover { background: var(--bg-alt); }
+.cw-breadcrumb .back-btn:disabled { opacity: .4; cursor: not-allowed; }
+.cw-hint {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 6px 10px; font-size: .7rem;
+  color: var(--text-secondary); pointer-events: none; max-width: 240px;
+}
+.cw-toolbar input[type="search"] {
+  flex: 1; min-width: 180px; padding: 6px 10px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg); color: var(--text); font-size: .85rem;
+}
+.cw-fw-toggles { display: flex; flex-wrap: wrap; gap: 6px; }
+.cw-fw-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px; font-size: .75rem;
+  border: 1px solid var(--border); cursor: pointer; user-select: none;
+  background: var(--bg); color: var(--text-secondary);
+}
+.cw-fw-chip.active { color: #fff; border-color: transparent; }
+.cw-fw-chip .dot { width: 8px; height: 8px; border-radius: 50%; }
+.cw-layout {
+  display: grid; grid-template-columns: 1fr 320px; gap: 12px;
+  height: calc(100vh - 280px); min-height: 520px;
+}
+.cw-graph-wrap {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden; position: relative;
+}
+.cw-graph-wrap svg { width: 100%; height: 100%; display: block; cursor: grab; }
+.cw-graph-wrap svg:active { cursor: grabbing; }
+.cw-legend {
+  position: absolute; bottom: 10px; left: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 8px 10px; font-size: .7rem;
+  display: flex; flex-direction: column; gap: 3px; pointer-events: none;
+  box-shadow: var(--card-shadow);
+}
+.cw-legend-row { display: flex; align-items: center; gap: 6px; }
+.cw-legend-row .dot { width: 10px; height: 10px; border-radius: 50%; }
+.cw-stats {
+  position: absolute; top: 10px; right: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 6px 10px; font-size: .7rem;
+  color: var(--text-secondary); pointer-events: none;
+}
+.cw-side {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 14px; overflow-y: auto;
+}
+.cw-side .empty { color: var(--text-secondary); font-size: .85rem; font-style: italic; }
+.cw-side h3 { font-size: 1rem; margin-bottom: 4px; }
+.cw-side .fw-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 999px;
+  font-size: .65rem; font-weight: 600; color: #fff; margin-bottom: 8px;
+}
+.cw-side .ctrl-id-line { font-family: ui-monospace, Menlo, monospace; font-size: .8rem; color: var(--text-secondary); margin-bottom: 8px; }
+.cw-side .notes { font-size: .8rem; color: var(--text); line-height: 1.45; margin-bottom: 10px; }
+.cw-side .neighbors { margin-top: 10px; }
+.cw-side .neighbors h4 { font-size: .75rem; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 6px; letter-spacing: .04em; }
+.cw-side .neighbor {
+  display: block; padding: 6px 8px; margin-bottom: 4px;
+  border-radius: var(--radius); background: var(--bg-alt);
+  font-size: .78rem; cursor: pointer; border: 1px solid transparent;
+}
+.cw-side .neighbor:hover { border-color: var(--accent); }
+.cw-side .neighbor .nb-fw { font-size: .65rem; color: var(--text-secondary); display: block; }
+.cw-node { stroke: #fff; stroke-width: 1.5px; cursor: pointer; }
+.cw-node.dim { opacity: .15; }
+.cw-node.selected { stroke: var(--accent); stroke-width: 3px; }
+.cw-link { stroke: #999; stroke-opacity: .35; }
+.cw-link.dim { stroke-opacity: .05; }
+.cw-link.highlight { stroke: var(--accent); stroke-opacity: .9; stroke-width: 2px; }
+.cw-label { font-size: 9px; pointer-events: none; fill: var(--text); user-select: none; }
+.cw-label.dim { opacity: .15; }
+[data-theme="dark"] .cw-link { stroke: #cbd5e1; }
+@media (max-width: 900px) {
+  .cw-layout { grid-template-columns: 1fr; height: auto; }
+  .cw-graph-wrap { height: 60vh; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
    Incidents page
    ══════════════════════════════════════════════════════════════════════════════ */
 .incident-summary {
@@ -895,6 +1008,7 @@ input, select { font-family: inherit; }
     <div class="nav-links" id="nav-links">
       <a href="#/explorer">Explorer</a>
       <a href="#/frameworks">Frameworks</a>
+      <a href="#/crosswalk">Crosswalk</a>
       <a href="#/incidents">Incidents</a>
       <a href="#/tools">Tools</a>
       <a href="#/recipes">Recipes</a>
@@ -922,6 +1036,7 @@ input, select { font-family: inherit; }
   <a href="#/">Home</a>
   <a href="#/explorer">Explorer</a>
   <a href="#/frameworks">Frameworks</a>
+  <a href="#/crosswalk">Crosswalk</a>
   <a href="#/incidents">Incidents</a>
   <a href="#/tools">Tools</a>
   <a href="#/recipes">Recipes</a>
@@ -1424,6 +1539,7 @@ input, select { font-family: inherit; }
     '/': renderLanding,
     '/explorer': renderExplorer,
     '/frameworks': renderFrameworks,
+    '/crosswalk': renderCrosswalk,
     '/incidents': renderIncidents,
     '/tools': renderTools,
     '/recipes': renderRecipes,
@@ -2830,6 +2946,419 @@ input, select { font-family: inherit; }
     }
 
     renderCards();
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Crosswalk Visualizer page
+  // ══════════════════════════════════════════════════════════════════════════════
+  var CW_D3_LOADED = false;
+  function loadD3(cb) {
+    if (window.d3) { CW_D3_LOADED = true; return cb(); }
+    if (CW_D3_LOADED) return cb();
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js';
+    s.onload = function() { CW_D3_LOADED = true; cb(); };
+    s.onerror = function() { cb(new Error('Failed to load D3')); };
+    document.head.appendChild(s);
+  }
+
+  // Stable color per framework. OWASP source lists get distinct colors too.
+  var CW_PALETTE = [
+    '#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6',
+    '#ec4899', '#14b8a6', '#f97316', '#6366f1', '#84cc16',
+    '#06b6d4', '#a855f7', '#eab308', '#22c55e', '#dc2626'
+  ];
+  var CW_OWASP_COLOR = {
+    'LLM-Top10-2025': '#dc2626',
+    'Agentic-Top10-2026': '#7c3aed',
+    'DSGAI-2026': '#0891b2'
+  };
+  function cwColorFor(framework, colorMap) {
+    if (CW_OWASP_COLOR[framework]) return CW_OWASP_COLOR[framework];
+    if (!colorMap[framework]) {
+      var i = Object.keys(colorMap).length % CW_PALETTE.length;
+      colorMap[framework] = CW_PALETTE[i];
+    }
+    return colorMap[framework];
+  }
+
+  // Build {nodes, links} from DATA. Owasp entries are nodes; each unique
+  // (framework, control_id) is a node; mapping → edge.
+  function buildCrosswalkGraph() {
+    var nodes = [];
+    var nodeIndex = {};
+    var links = [];
+    var colorMap = {};
+
+    function addNode(n) {
+      if (nodeIndex[n.id] != null) return nodeIndex[n.id];
+      n.color = cwColorFor(n.framework, colorMap);
+      nodeIndex[n.id] = nodes.length;
+      nodes.push(n);
+      return nodes.length - 1;
+    }
+
+    DATA.forEach(function(e) {
+      addNode({
+        id: 'OWASP::' + e.id,
+        label: e.id,
+        name: e.name,
+        framework: e.source_list,
+        kind: 'owasp',
+        entry: e,
+        severity: e.severity
+      });
+    });
+
+    DATA.forEach(function(e) {
+      var srcId = 'OWASP::' + e.id;
+      (e.mappings || []).forEach(function(m) {
+        var ctrlId = m.framework + '::' + m.control_id;
+        addNode({
+          id: ctrlId,
+          label: m.control_id,
+          name: m.control_name || m.control_id,
+          framework: m.framework,
+          kind: 'control',
+          tier: m.tier,
+          notes: m.notes,
+          url: m.url
+        });
+        links.push({ source: srcId, target: ctrlId, notes: m.notes });
+      });
+    });
+
+    return { nodes: nodes, links: links, colorMap: colorMap };
+  }
+
+  // Pre-compute source list metadata for level 0
+  var CW_SOURCE_META = {
+    'LLM-Top10-2025': { label: 'LLM Top 10', sub: '2025' },
+    'Agentic-Top10-2026': { label: 'Agentic Top 10', sub: '2026' },
+    'DSGAI-2026': { label: 'DSGAI', sub: '2026' }
+  };
+
+  function renderCrosswalk(container) {
+    var page = el('div', { className: 'cw-page' });
+
+    var header = el('div', { className: 'cw-header' });
+    header.appendChild(el('h2', {}, 'Crosswalk Visualizer'));
+    header.appendChild(el('p', {}, 'Interactive map of OWASP GenAI risks and the security frameworks that map to them. Filter by category, click any node for details.'));
+    page.appendChild(header);
+
+    var colorMap = {};
+
+    // Build a flat graph: OWASP risk nodes + framework nodes. Edges weighted by # of mapped controls.
+    function buildFlatGraph(filter) {
+      var nodes = [];
+      var nodeIdx = {};
+      var links = [];
+
+      function add(n) {
+        if (nodeIdx[n.id] != null) return;
+        nodeIdx[n.id] = nodes.length;
+        nodes.push(n);
+      }
+
+      // OWASP risk nodes
+      DATA.forEach(function(e) {
+        if (filter !== 'all' && filter !== 'risks' && filter !== e.source_list) return;
+        add({
+          id: 'R::' + e.id,
+          kind: 'risk',
+          entry: e,
+          label: e.id,
+          name: e.name,
+          framework: e.source_list,
+          color: cwColorFor(e.source_list, colorMap),
+          radius: 16
+        });
+      });
+
+      // Framework nodes — aggregate across all entries (or filtered subset)
+      var fwAgg = {};
+      DATA.forEach(function(e) {
+        if (filter !== 'all' && filter !== 'frameworks' && filter !== e.source_list) return;
+        (e.mappings || []).forEach(function(m) {
+          if (!fwAgg[m.framework]) fwAgg[m.framework] = { count: 0, controls: 0, perEntry: {} };
+          fwAgg[m.framework].controls += 1;
+          fwAgg[m.framework].perEntry[e.id] = (fwAgg[m.framework].perEntry[e.id] || 0) + 1;
+        });
+      });
+      Object.keys(fwAgg).forEach(function(fw) {
+        var agg = fwAgg[fw];
+        var entryIds = Object.keys(agg.perEntry);
+        add({
+          id: 'F::' + fw,
+          kind: 'framework',
+          label: fw,
+          framework: fw,
+          color: cwColorFor(fw, colorMap),
+          controls: agg.controls,
+          riskCount: entryIds.length,
+          radius: 14 + Math.sqrt(agg.controls) * 2
+        });
+        entryIds.forEach(function(eid) {
+          if (nodeIdx['R::' + eid] != null) {
+            links.push({
+              source: 'R::' + eid,
+              target: 'F::' + fw,
+              count: agg.perEntry[eid]
+            });
+          }
+        });
+      });
+
+      return { nodes: nodes, links: links };
+    }
+
+    // Filter chips (Rico-style)
+    var FILTERS = [
+      { id: 'all', label: 'All' },
+      { id: 'LLM-Top10-2025', label: 'LLM Top 10' },
+      { id: 'Agentic-Top10-2026', label: 'Agentic Top 10' },
+      { id: 'DSGAI-2026', label: 'DSGAI' },
+      { id: 'risks', label: 'Risks only' },
+      { id: 'frameworks', label: 'Frameworks only' }
+    ];
+    var currentFilter = 'all';
+
+    var toolbar = el('div', { className: 'cw-toolbar' });
+    var search = el('input', { type: 'search', placeholder: 'Search risks or frameworks…' });
+    toolbar.appendChild(search);
+    var togglesWrap = el('div', { className: 'cw-fw-toggles' });
+    var chipEls = {};
+    FILTERS.forEach(function(f) {
+      var chip = el('span', { className: 'cw-fw-chip' + (f.id === 'all' ? ' active' : '') }, f.label);
+      chip.style.background = f.id === 'all' ? 'var(--accent)' : 'transparent';
+      chip.style.color = f.id === 'all' ? '#fff' : 'var(--text-secondary)';
+      chip.addEventListener('click', function() {
+        currentFilter = f.id;
+        Object.keys(chipEls).forEach(function(k) {
+          var c = chipEls[k];
+          c.classList.remove('active');
+          c.style.background = 'transparent';
+          c.style.color = 'var(--text-secondary)';
+        });
+        chip.classList.add('active');
+        chip.style.background = 'var(--accent)';
+        chip.style.color = '#fff';
+        renderGraph();
+      });
+      chipEls[f.id] = chip;
+      togglesWrap.appendChild(chip);
+    });
+    toolbar.appendChild(togglesWrap);
+    page.appendChild(toolbar);
+
+    // Layout
+    var layout = el('div', { className: 'cw-layout' });
+    var graphWrap = el('div', { className: 'cw-graph-wrap' });
+    var sidePanel = el('div', { className: 'cw-side' });
+    sidePanel.innerHTML = '<div class="empty">Click any node to see details. Scroll to zoom · drag to pan.</div>';
+    layout.appendChild(graphWrap);
+    layout.appendChild(sidePanel);
+    page.appendChild(layout);
+
+    var stats = el('div', { className: 'cw-stats' });
+    graphWrap.appendChild(stats);
+
+    container.appendChild(page);
+
+    var loading = el('div', {});
+    loading.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--text-secondary);font-size:.9rem;';
+    loading.textContent = 'Loading visualization…';
+    graphWrap.appendChild(loading);
+
+    var d3 = null, svg = null, gZoom = null, sim = null;
+    var width = 0, height = 0;
+    var lastSelection = null;
+
+    function showDetail(d) {
+      lastSelection = d.id;
+      sidePanel.innerHTML = '';
+      var closeBtn = el('button', {}, '✕');
+      closeBtn.style.cssText = 'float:right;background:transparent;border:none;color:var(--text-secondary);font-size:1.1rem;cursor:pointer;padding:0;';
+      closeBtn.addEventListener('click', function() {
+        sidePanel.innerHTML = '<div class="empty">Click any node to see details. Scroll to zoom · drag to pan.</div>';
+        if (gZoom) gZoom.selectAll('.cw-node').classed('selected', false);
+        if (gZoom) gZoom.selectAll('.cw-link').classed('highlight', false);
+        lastSelection = null;
+      });
+      sidePanel.appendChild(closeBtn);
+
+      var tag = el('span', { className: 'fw-tag' }, d.kind === 'risk' ? d.framework : 'Framework');
+      tag.style.background = d.color;
+      sidePanel.appendChild(tag);
+      sidePanel.appendChild(el('h3', {}, d.kind === 'risk' ? (d.label + ' — ' + d.name) : d.label));
+
+      if (d.kind === 'risk') {
+        var e = d.entry;
+        sidePanel.appendChild(el('div', { className: 'ctrl-id-line' }, 'Severity: ' + (e.severity || '—')));
+        var fwSet = {};
+        (e.mappings || []).forEach(function(m) { fwSet[m.framework] = (fwSet[m.framework] || 0) + 1; });
+        sidePanel.appendChild(el('div', { className: 'notes' }, (e.mappings || []).length + ' control mappings across ' + Object.keys(fwSet).length + ' frameworks.'));
+
+        var openLink = el('a', { href: '#/explorer/' + encodeURIComponent(e.id) }, 'Open Resource →');
+        openLink.style.cssText = 'display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:var(--radius);font-size:.8rem;text-decoration:none;margin-bottom:12px;';
+        sidePanel.appendChild(openLink);
+
+        var nbWrap = el('div', { className: 'neighbors' });
+        nbWrap.appendChild(el('h4', {}, 'Mapped Frameworks'));
+        Object.keys(fwSet).sort().forEach(function(fw) {
+          var row = el('div', { className: 'neighbor' });
+          row.style.borderLeft = '3px solid ' + cwColorFor(fw, colorMap);
+          row.appendChild(document.createTextNode(fw));
+          var sub = el('span', { className: 'nb-fw' }, fwSet[fw] + ' control' + (fwSet[fw] === 1 ? '' : 's'));
+          row.appendChild(sub);
+          nbWrap.appendChild(row);
+        });
+        sidePanel.appendChild(nbWrap);
+      } else {
+        // framework node — list all OWASP risks that map to it, with control IDs
+        sidePanel.appendChild(el('div', { className: 'ctrl-id-line' }, d.controls + ' controls · maps to ' + d.riskCount + ' OWASP risks'));
+        var nbWrap = el('div', { className: 'neighbors' });
+        nbWrap.appendChild(el('h4', {}, 'Risks Covered'));
+        DATA.forEach(function(e) {
+          var matching = (e.mappings || []).filter(function(m) { return m.framework === d.framework; });
+          if (!matching.length) return;
+          var row = el('div', { className: 'neighbor' });
+          row.style.borderLeft = '3px solid ' + cwColorFor(e.source_list, colorMap);
+          row.appendChild(document.createTextNode(e.id + ' — ' + e.name));
+          var sub = el('span', { className: 'nb-fw' }, matching.map(function(m) { return m.control_id; }).join(', '));
+          row.appendChild(sub);
+          row.addEventListener('click', function() {
+            var rn = (gZoom ? gZoom.selectAll('.cw-node').data().find(function(n) { return n.id === 'R::' + e.id; }) : null);
+            if (rn) showDetail(rn);
+          });
+          nbWrap.appendChild(row);
+        });
+        sidePanel.appendChild(nbWrap);
+      }
+
+      if (gZoom) {
+        gZoom.selectAll('.cw-node').classed('selected', function(n) { return n.id === d.id; });
+        gZoom.selectAll('.cw-link').classed('highlight', function(l) {
+          return (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id;
+        });
+      }
+    }
+
+    function applySearch() {
+      if (!gZoom) return;
+      var q = (search.value || '').toLowerCase().trim();
+      gZoom.selectAll('.cw-node-group').classed('dim', function(d) {
+        if (!q) return false;
+        var hay = (d.label + ' ' + (d.name || '') + ' ' + (d.framework || '')).toLowerCase();
+        return hay.indexOf(q) === -1;
+      });
+      gZoom.selectAll('.cw-link').classed('dim', function(l) {
+        if (!q) return false;
+        var s = l.source, t = l.target;
+        var hayS = ((s.label || '') + ' ' + (s.name || '') + ' ' + (s.framework || '')).toLowerCase();
+        var hayT = ((t.label || '') + ' ' + (t.name || '') + ' ' + (t.framework || '')).toLowerCase();
+        return hayS.indexOf(q) === -1 && hayT.indexOf(q) === -1;
+      });
+    }
+    search.addEventListener('input', applySearch);
+
+    function renderGraph() {
+      if (!d3) return;
+      var data = buildFlatGraph(currentFilter);
+      stats.textContent = data.nodes.length + ' nodes · ' + data.links.length + ' mappings';
+
+      gZoom.selectAll('*').remove();
+      if (sim) sim.stop();
+
+      width = graphWrap.clientWidth;
+      height = graphWrap.clientHeight;
+
+      var linkSel = gZoom.append('g').attr('class', 'cw-links')
+        .selectAll('line').data(data.links).enter().append('line')
+        .attr('class', 'cw-link')
+        .attr('stroke-width', function(l) { return Math.min(5, 0.8 + Math.sqrt(l.count) * 0.9); });
+
+      var nodeG = gZoom.append('g').attr('class', 'cw-nodes')
+        .selectAll('g').data(data.nodes).enter().append('g')
+        .attr('class', 'cw-node-group')
+        .style('cursor', 'pointer')
+        .on('click', function(event, d) { event.stopPropagation(); showDetail(d); })
+        .call(d3.drag()
+          .on('start', function(event, d) { if (!event.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+          .on('drag', function(event, d) { d.fx = event.x; d.fy = event.y; })
+          .on('end', function(event, d) { if (!event.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+      nodeG.append('circle')
+        .attr('class', 'cw-node')
+        .attr('r', function(d) { return d.radius; })
+        .attr('fill', function(d) { return d.color; });
+
+      nodeG.append('title').text(function(d) {
+        return d.kind === 'risk'
+          ? d.label + ' — ' + d.name + ' (' + d.framework + ')'
+          : d.label + ' (' + d.controls + ' controls, ' + d.riskCount + ' risks)';
+      });
+
+      // Label inside circle for risks (compact ID); below circle for frameworks
+      nodeG.filter(function(d) { return d.kind === 'risk'; })
+        .append('text')
+        .attr('text-anchor', 'middle').attr('dy', '0.35em')
+        .style('font-size', '9px').style('font-weight', '700').style('fill', '#fff')
+        .style('pointer-events', 'none')
+        .text(function(d) { return d.label; });
+
+      nodeG.filter(function(d) { return d.kind === 'framework'; })
+        .append('text')
+        .attr('text-anchor', 'middle')
+        .attr('dy', function(d) { return d.radius + 12; })
+        .style('font-size', '11px').style('font-weight', '600').style('fill', 'var(--text)')
+        .style('pointer-events', 'none')
+        .text(function(d) { return d.label.length > 22 ? d.label.slice(0, 20) + '…' : d.label; });
+
+      sim = d3.forceSimulation(data.nodes)
+        .force('link', d3.forceLink(data.links).id(function(d) { return d.id; }).distance(220).strength(0.18))
+        .force('charge', d3.forceManyBody().strength(function(d) { return d.kind === 'framework' ? -2200 : -1100; }).distanceMax(900))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('collide', d3.forceCollide().radius(function(d) { return d.radius + 38; }).strength(1))
+        .force('x', d3.forceX(width / 2).strength(0.04))
+        .force('y', d3.forceY(height / 2).strength(0.04))
+        .alpha(1).alphaDecay(0.025);
+
+      sim.on('tick', function() {
+        linkSel
+          .attr('x1', function(d) { return d.source.x; })
+          .attr('y1', function(d) { return d.source.y; })
+          .attr('x2', function(d) { return d.target.x; })
+          .attr('y2', function(d) { return d.target.y; });
+        nodeG.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+      });
+
+      // Restore selection if still present
+      if (lastSelection) {
+        var still = data.nodes.find(function(n) { return n.id === lastSelection; });
+        if (still) showDetail(still);
+      }
+      applySearch();
+    }
+
+    loadD3(function(err) {
+      loading.remove();
+      if (err) {
+        graphWrap.appendChild(el('div', { style: 'padding:20px;color:var(--text-secondary);' }, 'Failed to load D3 from CDN. Check your network connection.'));
+        return;
+      }
+      d3 = window.d3;
+      width = graphWrap.clientWidth;
+      height = graphWrap.clientHeight;
+
+      svg = d3.select(graphWrap).append('svg').attr('viewBox', [0, 0, width, height]);
+      gZoom = svg.append('g');
+      svg.call(d3.zoom().scaleExtent([0.3, 4]).on('zoom', function(event) {
+        gZoom.attr('transform', event.transform);
+      }));
+
+      renderGraph();
+    });
   }
 
   // ══════════════════════════════════════════════════════════════════════════════
