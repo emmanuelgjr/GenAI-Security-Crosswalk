@@ -3206,8 +3206,10 @@ input, select { font-family: inherit; }
         var nbWrap = el('div', { className: 'neighbors' });
         nbWrap.appendChild(el('h4', {}, 'Mapped Frameworks'));
         Object.keys(fwSet).sort().forEach(function(fw) {
-          var row = el('div', { className: 'neighbor' });
+          var row = el('a', { className: 'neighbor', href: '#/frameworks/' + encodeURIComponent(fw) });
           row.style.borderLeft = '3px solid ' + cwColorFor(fw, colorMap);
+          row.style.textDecoration = 'none';
+          row.style.color = 'inherit';
           row.appendChild(document.createTextNode(fw));
           var sub = el('span', { className: 'nb-fw' }, fwSet[fw] + ' control' + (fwSet[fw] === 1 ? '' : 's'));
           row.appendChild(sub);
@@ -3222,15 +3224,13 @@ input, select { font-family: inherit; }
         DATA.forEach(function(e) {
           var matching = (e.mappings || []).filter(function(m) { return m.framework === d.framework; });
           if (!matching.length) return;
-          var row = el('div', { className: 'neighbor' });
+          var row = el('a', { className: 'neighbor', href: '#/explorer/' + encodeURIComponent(e.id) });
           row.style.borderLeft = '3px solid ' + cwColorFor(e.source_list, colorMap);
+          row.style.textDecoration = 'none';
+          row.style.color = 'inherit';
           row.appendChild(document.createTextNode(e.id + ' — ' + e.name));
           var sub = el('span', { className: 'nb-fw' }, matching.map(function(m) { return m.control_id; }).join(', '));
           row.appendChild(sub);
-          row.addEventListener('click', function() {
-            var rn = (gZoom ? gZoom.selectAll('.cw-node').data().find(function(n) { return n.id === 'R::' + e.id; }) : null);
-            if (rn) showDetail(rn);
-          });
           nbWrap.appendChild(row);
         });
         sidePanel.appendChild(nbWrap);
