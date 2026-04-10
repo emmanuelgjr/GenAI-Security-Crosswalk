@@ -705,6 +705,8 @@ input, select { font-family: inherit; }
 .cw-link { stroke: #999; stroke-opacity: .35; }
 .cw-link.dim { stroke-opacity: .05; }
 .cw-link.highlight { stroke: var(--accent); stroke-opacity: .9; stroke-width: 2px; }
+.cw-link-suggested { stroke: var(--accent); }
+.cw-link-suggested.highlight { stroke-opacity: .7; }
 .cw-label { font-size: 9px; pointer-events: none; fill: var(--text); user-select: none; }
 .cw-label.dim { opacity: .15; }
 [data-theme="dark"] .cw-link { stroke: #cbd5e1; }
@@ -1068,6 +1070,7 @@ input, select { font-family: inherit; }
 <script src="incidents.js"></script>
 <script src="backlinks.js"></script>
 <script src="frameworks-registry.js"></script>
+<script src="classifier-predictions.js"></script>
 
 <script>
 (function() {
@@ -1244,6 +1247,22 @@ input, select { font-family: inherit; }
   // Framework registry lookup by display name
   var FW_REGISTRY_MAP = {};
   FW_REGISTRY.forEach(function(fw) { FW_REGISTRY_MAP[fw.name] = fw; });
+
+  // Classifier predictions
+  var PREDICTIONS = window.CROSSWALK_PREDICTIONS || [];
+  // Index: entry_id → array of predictions
+  var PRED_BY_ENTRY = {};
+  PREDICTIONS.forEach(function(p) {
+    if (!PRED_BY_ENTRY[p.entry_id]) PRED_BY_ENTRY[p.entry_id] = [];
+    PRED_BY_ENTRY[p.entry_id].push(p);
+  });
+  // Index: "entry_id::framework" → array of predictions
+  var PRED_BY_ENTRY_FW = {};
+  PREDICTIONS.forEach(function(p) {
+    var k = p.entry_id + '::' + p.framework;
+    if (!PRED_BY_ENTRY_FW[k]) PRED_BY_ENTRY_FW[k] = [];
+    PRED_BY_ENTRY_FW[k].push(p);
+  });
 
   var SOURCE_LABELS = {
     'LLM-Top10-2025': 'LLM Top 10 2025',
@@ -3285,6 +3304,8 @@ input, select { font-family: inherit; }
 
     var colorMap = {};
 
+    var showSuggested = false; // toggle for model-suggested edges
+
     // Build a flat graph: OWASP risk nodes + framework nodes. Edges weighted by # of mapped controls.
     function buildFlatGraph(filter) {
       var nodes = [];
@@ -3312,8 +3333,9 @@ input, select { font-family: inherit; }
         });
       });
 
-      // Framework nodes — aggregate across all entries (or filtered subset)
+      // Framework nodes — aggregate curated mappings
       var fwAgg = {};
+      var linkSet = {}; // track unique links to avoid duplicates
       DATA.forEach(function(e) {
         if (filter !== 'all' && filter !== 'frameworks' && filter !== e.source_list) return;
         (e.mappings || []).forEach(function(m) {
@@ -3322,6 +3344,17 @@ input, select { font-family: inherit; }
           fwAgg[m.framework].perEntry[e.id] = (fwAgg[m.framework].perEntry[e.id] || 0) + 1;
         });
       });
+
+      // Add model-suggested frameworks if predictions exist and toggle is on
+      if (showSuggested && PREDICTIONS.length) {
+        PREDICTIONS.forEach(function(p) {
+          if (p.curated) return; // already counted above
+          if (filter !== 'all' && filter !== 'frameworks' && filter !== p.source_list) return;
+          if (!fwAgg[p.framework]) fwAgg[p.framework] = { count: 0, controls: 0, perEntry: {}, suggested: true };
+          // Don't inflate curated counts
+        });
+      }
+
       Object.keys(fwAgg).forEach(function(fw) {
         var agg = fwAgg[fw];
         var entryIds = Object.keys(agg.perEntry);
@@ -3337,14 +3370,62 @@ input, select { font-family: inherit; }
         });
         entryIds.forEach(function(eid) {
           if (nodeIdx['R::' + eid] != null) {
-            links.push({
-              source: 'R::' + eid,
-              target: 'F::' + fw,
-              count: agg.perEntry[eid]
-            });
+            var lk = eid + '::' + fw;
+            if (!linkSet[lk]) {
+              links.push({
+                source: 'R::' + eid,
+                target: 'F::' + fw,
+                count: agg.perEntry[eid],
+                kind: 'curated',
+                confidence: 1.0
+              });
+              linkSet[lk] = true;
+            }
           }
         });
       });
+
+      // Add model-suggested edges (dashed, with confidence)
+      if (showSuggested && PREDICTIONS.length) {
+        // Aggregate predictions by entry+framework
+        var predAgg = {};
+        PREDICTIONS.forEach(function(p) {
+          if (p.curated) return;
+          if (filter !== 'all' && filter !== 'frameworks' && filter !== p.source_list) return;
+          var k = p.entry_id + '::' + p.framework;
+          if (!predAgg[k]) predAgg[k] = { entryId: p.entry_id, fw: p.framework, count: 0, maxConf: 0 };
+          predAgg[k].count += 1;
+          predAgg[k].maxConf = Math.max(predAgg[k].maxConf, p.confidence || 0);
+        });
+
+        Object.keys(predAgg).forEach(function(k) {
+          var pa = predAgg[k];
+          // Ensure framework node exists
+          if (!nodeIdx['F::' + pa.fw]) {
+            add({
+              id: 'F::' + pa.fw,
+              kind: 'framework',
+              label: pa.fw,
+              framework: pa.fw,
+              color: cwColorFor(pa.fw, colorMap),
+              controls: pa.count,
+              riskCount: 1,
+              radius: 14 + Math.sqrt(pa.count) * 2
+            });
+          }
+          var lk = pa.entryId + '::' + pa.fw;
+          if (!linkSet[lk] && nodeIdx['R::' + pa.entryId] != null) {
+            links.push({
+              source: 'R::' + pa.entryId,
+              target: 'F::' + pa.fw,
+              count: pa.count,
+              kind: 'suggested',
+              confidence: pa.maxConf
+            });
+            linkSet[lk] = true;
+          }
+        });
+      }
 
       return { nodes: nodes, links: links };
     }
@@ -3359,6 +3440,7 @@ input, select { font-family: inherit; }
       { id: 'frameworks', label: 'Frameworks only' }
     ];
     var currentFilter = 'all';
+    var hasPredictions = PREDICTIONS.length > 0;
 
     var toolbar = el('div', { className: 'cw-toolbar' });
     var search = el('input', { type: 'search', placeholder: 'Search risks or frameworks…' });
@@ -3386,6 +3468,23 @@ input, select { font-family: inherit; }
       togglesWrap.appendChild(chip);
     });
     toolbar.appendChild(togglesWrap);
+
+    // Model-suggested edges toggle
+    if (hasPredictions) {
+      var suggestToggle = el('label', { style: 'display:flex;align-items:center;gap:6px;margin-left:12px;font-size:.8rem;color:var(--text-secondary);cursor:pointer;white-space:nowrap;' });
+      var suggestCb = el('input', { type: 'checkbox' });
+      suggestCb.style.cssText = 'accent-color:var(--accent);cursor:pointer;';
+      suggestCb.addEventListener('change', function() {
+        showSuggested = suggestCb.checked;
+        renderGraph();
+      });
+      suggestToggle.appendChild(suggestCb);
+      suggestToggle.appendChild(document.createTextNode('Show ML suggestions'));
+      var dashIcon = el('span', { style: 'display:inline-block;width:18px;height:2px;border-top:2px dashed var(--accent);vertical-align:middle;margin-left:2px;' });
+      suggestToggle.appendChild(dashIcon);
+      toolbar.appendChild(suggestToggle);
+    }
+
     page.appendChild(toolbar);
 
     // Layout
@@ -3453,6 +3552,61 @@ input, select { font-family: inherit; }
           nbWrap.appendChild(row);
         });
         sidePanel.appendChild(nbWrap);
+
+        // Confidence histogram for ML predictions
+        var preds = PRED_BY_ENTRY[e.id];
+        if (preds && preds.length) {
+          var confSection = el('div', { className: 'neighbors', style: 'margin-top:12px;' });
+          confSection.appendChild(el('h4', {}, 'ML Confidence'));
+          var curated = preds.filter(function(p) { return p.curated; });
+          var suggested = preds.filter(function(p) { return !p.curated; });
+          confSection.appendChild(el('div', { style: 'font-size:.8rem;color:var(--text-secondary);margin-bottom:8px;' },
+            curated.length + ' curated (solid) / ' + suggested.length + ' suggested (dashed)'));
+
+          // Mini bar chart
+          var chartWrap = el('div', { style: 'display:flex;align-items:flex-end;gap:1px;height:40px;' });
+          var bins = [0,0,0,0,0,0,0,0,0,0];
+          preds.forEach(function(p) {
+            var b = Math.min(9, Math.floor((p.confidence || 0) * 10));
+            bins[b]++;
+          });
+          var maxBin = Math.max.apply(null, bins) || 1;
+          bins.forEach(function(count, i) {
+            var bar = el('div');
+            var h = Math.round(count / maxBin * 36);
+            var isSuggested = i < 5;
+            bar.style.cssText = 'width:100%;height:' + Math.max(1, h) + 'px;background:' +
+              (i >= 7 ? 'var(--accent)' : i >= 4 ? '#f59e0b' : '#94a3b8') +
+              ';border-radius:1px;flex:1;';
+            bar.title = (i*10) + '-' + ((i+1)*10) + '%: ' + count + ' predictions';
+            chartWrap.appendChild(bar);
+          });
+          confSection.appendChild(chartWrap);
+          var labels = el('div', { style: 'display:flex;justify-content:space-between;font-size:.6rem;color:var(--text-muted);margin-top:2px;' });
+          labels.appendChild(el('span', {}, '0%'));
+          labels.appendChild(el('span', {}, '50%'));
+          labels.appendChild(el('span', {}, '100%'));
+          confSection.appendChild(labels);
+
+          // Top suggested controls
+          if (suggested.length) {
+            var topSug = el('div', { style: 'margin-top:8px;' });
+            topSug.appendChild(el('div', { style: 'font-size:.75rem;color:var(--text-muted);text-transform:uppercase;margin-bottom:4px;' }, 'Top Suggestions'));
+            suggested.sort(function(a,b) { return b.confidence - a.confidence; });
+            suggested.slice(0,5).forEach(function(p) {
+              var sRow = el('div', { style: 'display:flex;justify-content:space-between;font-size:.8rem;padding:2px 0;border-bottom:1px dashed var(--border);' });
+              sRow.appendChild(el('span', {}, p.framework.slice(0,18) + ' ' + p.control_id));
+              var confBadge = el('span', { style: 'font-size:.7rem;padding:1px 5px;border-radius:6px;background:' +
+                (p.confidence >= 0.7 ? 'var(--accent)' : p.confidence >= 0.4 ? '#f59e0b' : '#94a3b8') + ';color:#fff;' });
+              confBadge.textContent = Math.round(p.confidence * 100) + '%';
+              sRow.appendChild(confBadge);
+              topSug.appendChild(sRow);
+            });
+            confSection.appendChild(topSug);
+          }
+          sidePanel.appendChild(confSection);
+        }
+
       } else {
         // framework node — list all OWASP risks that map to it, with control IDs
         sidePanel.appendChild(el('div', { className: 'ctrl-id-line' }, d.controls + ' controls · maps to ' + d.riskCount + ' OWASP risks'));
@@ -3527,8 +3681,16 @@ input, select { font-family: inherit; }
 
       var linkSel = gZoom.append('g').attr('class', 'cw-links')
         .selectAll('line').data(data.links).enter().append('line')
-        .attr('class', 'cw-link')
-        .attr('stroke-width', function(l) { return Math.min(5, 0.8 + Math.sqrt(l.count) * 0.9); });
+        .attr('class', function(l) { return 'cw-link' + (l.kind === 'suggested' ? ' cw-link-suggested' : ''); })
+        .attr('stroke-width', function(l) {
+          if (l.kind === 'suggested') return Math.max(0.5, l.confidence * 2.5);
+          return Math.min(5, 0.8 + Math.sqrt(l.count) * 0.9);
+        })
+        .attr('stroke-dasharray', function(l) { return l.kind === 'suggested' ? '4,3' : null; })
+        .attr('stroke-opacity', function(l) {
+          if (l.kind === 'suggested') return 0.2 + (l.confidence || 0) * 0.5;
+          return null;
+        });
 
       var nodeG = gZoom.append('g').attr('class', 'cw-nodes')
         .selectAll('g').data(data.nodes).enter().append('g')
