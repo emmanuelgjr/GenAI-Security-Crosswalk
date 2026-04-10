@@ -1,0 +1,35 @@
+{
+  "id": "cis-controls",
+  "name": "CIS Controls v8.1",
+  "short_name": "CIS v8.1",
+  "version": "8.1",
+  "url": "https://www.cisecurity.org/controls",
+  "license": "CC BY-NC-SA 4.0",
+  "publisher": "Center for Internet Security",
+  "category": "infosec",
+  "last_synced": "2026-04-09",
+  "source_sha": null,
+  "controls": [
+    { "control_id": "CIS-1", "title": "Inventory and Control of Enterprise Assets", "description": "Actively manage all enterprise assets connected to the infrastructure.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-2", "title": "Inventory and Control of Software Assets", "description": "Actively manage all software on the network so only authorized software is installed.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-3", "title": "Data Protection", "description": "Develop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-4", "title": "Secure Configuration of Enterprise Assets and Software", "description": "Establish and maintain the secure configuration of enterprise assets and software.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-5", "title": "Account Management", "description": "Use processes and tools to assign and manage authorization to credentials for user accounts.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-6", "title": "Access Control Management", "description": "Use processes and tools to create, assign, manage, and revoke access credentials and privileges.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-7", "title": "Continuous Vulnerability Management", "description": "Develop a plan to continuously assess and track vulnerabilities on all enterprise assets.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-8", "title": "Audit Log Management", "description": "Collect, alert, review, and retain audit logs of events.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-9", "title": "Email and Web Browser Protections", "description": "Improve protections and detections of threats from email and web vectors.", "parent": null, "function": "Basic Cyber Hygiene" },
+    { "control_id": "CIS-10", "title": "Malware Defenses", "description": "Prevent or control the installation, spread, and execution of malicious applications.", "parent": null, "function": "Foundational" },
+    { "control_id": "CIS-11", "title": "Data Recovery", "description": "Establish and maintain data recovery practices sufficient to restore in-scope enterprise assets.", "parent": null, "function": "Foundational" },
+    { "control_id": "CIS-12", "title": "Network Infrastructure Management", "description": "Establish and maintain the secure configuration of network infrastructure.", "parent": null, "function": "Foundational" },
+    { "control_id": "CIS-13", "title": "Network Monitoring and Defense", "description": "Operate processes and tooling to establish and maintain comprehensive network monitoring and defense.", "parent": null, "function": "Foundational" },
+    { "control_id": "CIS-14", "title": "Security Awareness and Skills Training", "description": "Establish and maintain a security awareness program for all workforce members.", "parent": null, "function": "Foundational" },
+    { "control_id": "CIS-15", "title": "Service Provider Management", "description": "Develop a process to evaluate service providers who hold sensitive data or are responsible for IT platform or processes.", "parent": null, "function": "Foundational" },
+    { "control_id": "CIS-16", "title": "Application Software Security", "description": "Manage the security life cycle of in-house developed, hosted, or acquired software.", "parent": null, "function": "Organizational" },
+    { "control_id": "CIS-17", "title": "Incident Response Management", "description": "Establish a program to develop and maintain an incident response capability.", "parent": null, "function": "Organizational" },
+    { "control_id": "CIS-18", "title": "Penetration Testing", "description": "Test the effectiveness and resiliency of enterprise assets through identifying and exploiting weaknesses.", "parent": null, "function": "Organizational" }
+  ],
+  "changelog": [
+    { "date": "2026-04-09", "change": "Initial seed — 18 CIS Controls v8.1 top-level safeguard groups", "author": "emmanuelgjr" }
+  ]
+}

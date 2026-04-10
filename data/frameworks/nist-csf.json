@@ -1,0 +1,39 @@
+{
+  "id": "nist-csf",
+  "name": "NIST CSF 2.0",
+  "short_name": "CSF 2.0",
+  "version": "2.0",
+  "url": "https://www.nist.gov/cyberframework",
+  "license": "Public Domain",
+  "publisher": "NIST",
+  "category": "infosec",
+  "last_synced": "2026-04-09",
+  "source_sha": null,
+  "controls": [
+    { "control_id": "GV.OC", "title": "Organizational Context", "description": "Circumstances surrounding cybersecurity risk management decisions are understood.", "parent": null, "function": "GOVERN" },
+    { "control_id": "GV.RM", "title": "Risk Management Strategy", "description": "The organization's priorities, constraints, risk tolerance, and appetite are established, communicated, and adjusted.", "parent": null, "function": "GOVERN" },
+    { "control_id": "GV.RR", "title": "Roles, Responsibilities, and Authorities", "description": "Cybersecurity roles, responsibilities, and authorities are established and communicated.", "parent": null, "function": "GOVERN" },
+    { "control_id": "GV.PO", "title": "Policy", "description": "Organizational cybersecurity policy is established, communicated, and enforced.", "parent": null, "function": "GOVERN" },
+    { "control_id": "GV.OV", "title": "Oversight", "description": "Results of organization-wide cybersecurity risk management activities are used to inform, improve, and adjust the risk management strategy.", "parent": null, "function": "GOVERN" },
+    { "control_id": "GV.SC", "title": "Cybersecurity Supply Chain Risk Management", "description": "Cyber supply chain risk management processes are identified, established, managed, monitored, and improved.", "parent": null, "function": "GOVERN" },
+    { "control_id": "ID.AM", "title": "Asset Management", "description": "Assets (data, hardware, software, systems, facilities, services, people) are identified and managed.", "parent": null, "function": "IDENTIFY" },
+    { "control_id": "ID.RA", "title": "Risk Assessment", "description": "The cybersecurity risk to the organization, assets, and individuals is understood.", "parent": null, "function": "IDENTIFY" },
+    { "control_id": "ID.IM", "title": "Improvement", "description": "Improvements to cybersecurity risk management processes, procedures, and activities are identified across all CSF Functions.", "parent": null, "function": "IDENTIFY" },
+    { "control_id": "PR.AA", "title": "Identity Management, Authentication, and Access Control", "description": "Access to assets is limited to authorized users, services, and hardware.", "parent": null, "function": "PROTECT" },
+    { "control_id": "PR.AT", "title": "Awareness and Training", "description": "The organization's personnel are provided cybersecurity awareness and training.", "parent": null, "function": "PROTECT" },
+    { "control_id": "PR.DS", "title": "Data Security", "description": "Data are managed consistent with the organization's risk strategy to protect confidentiality, integrity, and availability.", "parent": null, "function": "PROTECT" },
+    { "control_id": "PR.PS", "title": "Platform Security", "description": "The hardware, software, and services of physical and virtual platforms are managed consistent with the risk strategy.", "parent": null, "function": "PROTECT" },
+    { "control_id": "PR.IR", "title": "Technology Infrastructure Resilience", "description": "Security architectures are managed with the goal of protecting asset confidentiality, integrity, and availability.", "parent": null, "function": "PROTECT" },
+    { "control_id": "DE.CM", "title": "Continuous Monitoring", "description": "Assets are monitored to find anomalies, indicators of compromise, and other potentially adverse events.", "parent": null, "function": "DETECT" },
+    { "control_id": "DE.AE", "title": "Adverse Event Analysis", "description": "Anomalies, indicators of compromise, and other potentially adverse events are analysed.", "parent": null, "function": "DETECT" },
+    { "control_id": "RS.MA", "title": "Incident Management", "description": "Responses to detected cybersecurity incidents are managed.", "parent": null, "function": "RESPOND" },
+    { "control_id": "RS.AN", "title": "Incident Analysis", "description": "Investigations are conducted to ensure effective response and support forensics and recovery activities.", "parent": null, "function": "RESPOND" },
+    { "control_id": "RS.CO", "title": "Incident Response Reporting and Communication", "description": "Response activities are coordinated with internal and external stakeholders.", "parent": null, "function": "RESPOND" },
+    { "control_id": "RS.MI", "title": "Incident Mitigation", "description": "Activities are performed to prevent expansion of an event and mitigate its effects.", "parent": null, "function": "RESPOND" },
+    { "control_id": "RC.RP", "title": "Incident Recovery Plan Execution", "description": "Restoration activities are performed to ensure operational availability of systems and services.", "parent": null, "function": "RECOVER" },
+    { "control_id": "RC.CO", "title": "Incident Recovery Communication", "description": "Restoration activities and progress are communicated to designated internal and external stakeholders.", "parent": null, "function": "RECOVER" }
+  ],
+  "changelog": [
+    { "date": "2026-04-09", "change": "Initial seed — 22 CSF 2.0 categories across GOVERN/IDENTIFY/PROTECT/DETECT/RESPOND/RECOVER", "author": "emmanuelgjr" }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "eu-ai-act",
+  "name": "EU AI Act",
+  "short_name": "EU AI Act",
+  "version": "2024/1689",
+  "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+  "license": "Public",
+  "publisher": "European Parliament and Council",
+  "category": "regulation",
+  "last_synced": "2026-04-09",
+  "source_sha": null,
+  "controls": [
+    { "control_id": "Art. 6", "title": "Classification rules for high-risk AI systems", "description": "Rules for determining which AI systems are classified as high-risk.", "parent": null, "function": "Classification" },
+    { "control_id": "Art. 9", "title": "Risk management system", "description": "Providers of high-risk AI must implement a risk management system covering all reasonably foreseeable risks.", "parent": null, "function": "Risk Management" },
+    { "control_id": "Art. 10", "title": "Data and data governance", "description": "Training, validation and testing data sets shall meet quality criteria including relevance, representativeness, and freedom from errors.", "parent": null, "function": "Data Governance" },
+    { "control_id": "Art. 11", "title": "Technical documentation", "description": "Technical documentation shall be drawn up before placing on the market and kept up-to-date.", "parent": null, "function": "Documentation" },
+    { "control_id": "Art. 12", "title": "Record-keeping", "description": "High-risk AI systems shall allow automatic recording of events (logs).", "parent": null, "function": "Logging" },
+    { "control_id": "Art. 13", "title": "Transparency and provision of information to deployers", "description": "High-risk AI systems shall be designed to ensure sufficient transparency for deployers.", "parent": null, "function": "Transparency" },
+    { "control_id": "Art. 14", "title": "Human oversight", "description": "High-risk AI systems shall be designed to allow effective oversight by natural persons.", "parent": null, "function": "Human Oversight" },
+    { "control_id": "Art. 15", "title": "Accuracy, robustness and cybersecurity", "description": "High-risk AI systems shall achieve appropriate levels of accuracy, robustness and cybersecurity.", "parent": null, "function": "Security" },
+    { "control_id": "Art. 16", "title": "Obligations of providers of high-risk AI systems", "description": "Providers shall ensure compliance with requirements, establish quality management, and maintain documentation.", "parent": null, "function": "Provider Obligations" },
+    { "control_id": "Art. 17", "title": "Quality management system", "description": "Providers shall put a quality management system in place ensuring compliance with the regulation.", "parent": null, "function": "Quality Management" },
+    { "control_id": "Art. 25", "title": "Responsibilities along the AI value chain", "description": "Distributors, importers, deployers, and other third parties have defined responsibilities.", "parent": null, "function": "Value Chain" },
+    { "control_id": "Art. 26", "title": "Obligations of deployers of high-risk AI systems", "description": "Deployers shall use AI systems in accordance with instructions, ensure human oversight, and monitor operation.", "parent": null, "function": "Deployer Obligations" },
+    { "control_id": "Art. 27", "title": "Fundamental rights impact assessments", "description": "Deployers of high-risk AI shall carry out an assessment of impact on fundamental rights before use.", "parent": null, "function": "Impact Assessment" },
+    { "control_id": "Art. 50", "title": "Transparency obligations for certain AI systems", "description": "AI systems that interact with people, generate deepfakes, or produce synthetic content must disclose this.", "parent": null, "function": "Transparency" },
+    { "control_id": "Art. 51", "title": "Classification of GPAI models as systemic risk", "description": "GPAI models with systemic risk are classified based on high-impact capabilities or cumulative compute thresholds.", "parent": null, "function": "GPAI" },
+    { "control_id": "Art. 53", "title": "Obligations for providers of GPAI models", "description": "All GPAI providers must prepare technical documentation, provide information to downstream providers, comply with copyright, and publish training data summaries.", "parent": null, "function": "GPAI" },
+    { "control_id": "Art. 54", "title": "Authorised representatives of GPAI model providers", "description": "GPAI providers outside the EU must appoint an authorised representative.", "parent": null, "function": "GPAI" },
+    { "control_id": "Art. 55", "title": "Obligations of GPAI models with systemic risk", "description": "Providers of GPAI with systemic risk must conduct model evaluations, assess and mitigate systemic risks, track incidents, and ensure adequate cybersecurity.", "parent": null, "function": "GPAI" },
+    { "control_id": "Art. 56", "title": "Codes of practice", "description": "The AI Office shall encourage development of codes of practice for GPAI obligations.", "parent": null, "function": "GPAI" },
+    { "control_id": "Art. 60", "title": "AI regulatory sandboxes", "description": "National authorities may establish regulatory sandboxes for development and testing of innovative AI.", "parent": null, "function": "Innovation" },
+    { "control_id": "Art. 62", "title": "Reporting of serious incidents", "description": "Providers and deployers shall report serious incidents to market surveillance authorities.", "parent": null, "function": "Incident Reporting" },
+    { "control_id": "Art. 71", "title": "Post-market monitoring by providers", "description": "Providers shall establish a post-market monitoring system proportionate to the AI system.", "parent": null, "function": "Post-Market" },
+    { "control_id": "Art. 72", "title": "Reporting of serious incidents", "description": "Detailed requirements for reporting serious incidents involving AI systems.", "parent": null, "function": "Incident Reporting" },
+    { "control_id": "Annex III", "title": "High-risk AI systems", "description": "List of areas where AI systems are classified as high-risk (biometrics, critical infrastructure, education, employment, essential services, law enforcement, migration, justice).", "parent": null, "function": "Classification" },
+    { "control_id": "Annex IV", "title": "Technical documentation", "description": "Detailed requirements for technical documentation of high-risk AI systems.", "parent": null, "function": "Documentation" }
+  ],
+  "changelog": [
+    { "date": "2026-04-09", "change": "Initial seed — 25 key articles and annexes from Regulation 2024/1689", "author": "emmanuelgjr" }
+  ]
+}
