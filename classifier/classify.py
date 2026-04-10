@@ -31,7 +31,8 @@ def load_index():
 
 
 def classify(source_id: str, target_framework: str | None = None,
-             top_k: int = DEFAULT_TOP_K, output_json: bool = False) -> list[dict]:
+             top_k: int = DEFAULT_TOP_K, output_json: bool = False,
+             use_reranker: bool = False) -> list[dict]:
     """Retrieve top-k candidate controls for an OWASP entry."""
     # Load entry
     entries = load_entries()
@@ -51,8 +52,10 @@ def classify(source_id: str, target_framework: str | None = None,
     q_emb = model.encode([query], normalize_embeddings=True)
     q_emb = np.array(q_emb, dtype=np.float32)
 
-    # Search — retrieve more if filtering by framework
-    search_k = top_k * 5 if target_framework else top_k
+    # Search — retrieve more for reranking or framework filtering
+    search_k = top_k * 5 if (target_framework or use_reranker) else top_k
+    if use_reranker:
+        search_k = max(search_k, 50)
     search_k = min(search_k, index.ntotal)
     scores, indices = index.search(q_emb, search_k)
 
@@ -71,9 +74,19 @@ def classify(source_id: str, target_framework: str | None = None,
             "title": m["title"],
             "function": m["function"],
             "score": round(float(score), 4),
+            "text": f"{m['framework']} -- {m['control_id']}: {m['title']}",
         })
-        if len(results) >= top_k:
+        if not use_reranker and len(results) >= top_k:
             break
+
+    # Cross-encoder reranking
+    if use_reranker and results:
+        from .reranker import rerank
+        results = rerank(query, results, top_k=top_k)
+
+    # Remove internal fields from output
+    for r in results:
+        r.pop("text", None)
 
     # Check against existing mappings
     existing = {
@@ -118,9 +131,10 @@ def main():
     parser.add_argument("--target", default=None, help="Target framework name (optional)")
     parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K, help=f"Number of candidates (default {DEFAULT_TOP_K})")
     parser.add_argument("--json", action="store_true", help="Output as JSON")
+    parser.add_argument("--rerank", action="store_true", help="Use cross-encoder reranker")
     args = parser.parse_args()
 
-    classify(args.source, args.target, args.top_k, args.json)
+    classify(args.source, args.target, args.top_k, args.json, args.rerank)
 
 
 if __name__ == "__main__":
