@@ -10,3 +10,4 @@ data/.watch-state.json
 dist/
 sbom.cdx.json
 sbom-content.cdx.json
+classifier/index/

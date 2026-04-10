@@ -1,4 +1,4 @@
-.PHONY: install index splits eval eval-biencoder eval-reranker contamination classify clean
+.PHONY: install index splits eval eval-biencoder eval-reranker contamination classify export clean
 
 PYTHON ?= python
 
@@ -32,6 +32,9 @@ contamination:
 
 classify:
 	$(PYTHON) -m classifier.classify $(ARGS)
+
+export:
+	$(PYTHON) -m classifier.export_predictions --rerank --top-k 15
 
 clean:
 	rm -rf index/ splits/*.json __pycache__ *.pyc

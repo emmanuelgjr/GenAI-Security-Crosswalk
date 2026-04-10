@@ -50,6 +50,52 @@ node scripts/incidents-report.js --format stix              # SIEM/SOAR export
 | **GRC / auditor** | `compliance-report.js --format oscal` → import into ServiceNow/Archer |
 | **Developer** | `npm install genai-security-crosswalk` → query risks + controls programmatically |
 | **Threat intel analyst** | `incidents-report.js --format stix` → ingest 50 AI incidents into Sentinel/Splunk |
+| **Framework author** | [Submit your standard](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/submit) → classifier maps it automatically |
+
+---
+
+## Submit a Standard
+
+Have a framework that should be in the crosswalk? The **Submit-a-Standard** pipeline automates it:
+
+1. **[Paste your JSON](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/submit)** — structured controls with IDs and titles
+2. **Classifier runs** — BGE bi-encoder + cross-encoder reranker proposes mappings to all 41 OWASP entries
+3. **PR opens** — proposed mappings with confidence scores, ready for human review
+4. **[Review & merge](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/review)** — accept, reject, or edit each mapping
+
+No server required — runs entirely via GitHub Actions on the static site.
+
+---
+
+## Framework Registry
+
+The crosswalk maintains a first-class registry of framework control inventories in `data/frameworks/`. Each framework has full metadata (version, URL, license, publisher) and a complete controls array.
+
+```bash
+node scripts/ingest-framework.mjs --list          # list all 14 registered frameworks
+node scripts/ingest-framework.mjs fw.json          # ingest a new framework
+node scripts/ingest-framework.mjs fw.json --validate  # validate only
+```
+
+The registry powers the [control-level pivot views](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/frameworks) — click any framework, then click a control to see all OWASP entries that map to it.
+
+---
+
+## Classifier Pipeline
+
+The `classifier/` directory contains a research-grade retrieval pipeline for automated framework-to-OWASP mapping:
+
+```bash
+cd classifier/
+pip install -r requirements.txt
+python -m classifier.index_builder            # build FAISS index (505 controls, ~2s)
+python -m classifier.classify --source LLM01 --top-k 10          # bi-encoder retrieval
+python -m classifier.classify --source LLM01 --top-k 10 --rerank # + cross-encoder reranker
+python -m classifier.eval_harness --rerank    # full eval with bootstrap CIs
+python -m classifier.contamination_probe      # generalization probe
+```
+
+See [PREREGISTRATION.md](classifier/PREREGISTRATION.md) for hypotheses and [EVAL_REPORT.md](classifier/EVAL_REPORT.md) for results.
 
 ---
 
@@ -68,6 +114,9 @@ Every file answers one question: **which controls from framework X address vulne
 | **20** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL) |
 | **50** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
+| **14** framework registries | First-class control inventories (505 controls) with backlink index |
+| **Classifier pipeline** | BGE bi-encoder + cross-encoder reranker — auto-maps new frameworks to OWASP entries |
+| **Submit-a-Standard** | Paste framework JSON → classifier proposes mappings → PR opened for review |
 
 All free. All open-source. Built for practitioners.
  
