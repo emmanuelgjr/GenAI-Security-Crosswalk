@@ -1280,6 +1280,8 @@ input, select { font-family: inherit; }
   DATA.forEach(function(e) {
     e.mappings.forEach(function(m) { FW_SET.add(m.framework); });
   });
+  // Also include registry-only frameworks (e.g. CoSAI, EU AI Act CoP)
+  FW_REGISTRY.forEach(function(fw) { FW_SET.add(fw.name); });
   FRAMEWORKS = Array.from(FW_SET).sort();
 
   var ENTRY_MAP = {};
