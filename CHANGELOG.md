@@ -13,6 +13,49 @@ Next: npm publish to npmjs.com, custom domain (crosswalk.owasp.org), vendor inte
 
 ---
 
+## [3.1.0] — 2026-04-10
+
+### Added
+
+#### Registry Expansion (8% → 100% coverage)
+- `scripts/extract-registry.js` — auto-extracts controls from 41 entry JSON files into the registry
+- 11 new framework registry files: OWASP NHI Top 10, PCI DSS v4.0, CWE/CVE, NIST SP 800-82 Rev 3, OWASP AI Testing Guide, NIST SP 800-218A, AIUC-1, FedRAMP, OWASP SAMM v2.0, ENISA Multilayer Framework, STRIDE
+- 12 existing frameworks updated with missing controls
+- Registry: 14 → **25 frameworks**, 505 → **1,514 controls**, 100% ground-truth coverage
+- Classifier P@1 improved from 0.073 to **0.585** (8× improvement)
+
+#### Gap Analysis Visualization (`#/gaps`)
+- Interactive framework multi-select with red/yellow/green heatmap
+- Summary cards: full/partial/no coverage counts + overall score
+- PDF export (landscape print layout) and CSV export
+- URL-persisted framework selection
+
+#### Bi-encoder Fine-tuning Pipeline (`classifier/finetune.py`)
+- Contrastive fine-tuning of BGE-small using MultipleNegativesRankingLoss
+- Trains on 150 calibration pairs with in-batch negatives
+- Evaluation against test split with similarity metrics
+- `--eval-only` mode for baseline measurement
+
+#### Framework Version Diffing (`scripts/framework-diff.js`)
+- `--old`/`--new` comparison showing added/removed/modified controls
+- `--git` mode: diff against last committed version
+- `--apply` mode: updates file in-place and appends changelog entry
+- Prints classifier command to propose mappings for delta controls only
+
+#### Enhanced OSCAL + GRC Export
+- `--format oscal-catalog`: OSCAL 1.1.2 Catalog with controls grouped by function and OWASP coverage annotations
+- `--format grc`: ServiceNow/Archer/Drata-ready JSON with control objectives, risk mappings, evidence requirements, and gap register
+
+### Fixed
+- REPORT_FRAMEWORKS list updated with 3 new frameworks (CWE/CVE, OWASP AI Testing Guide, STRIDE)
+- FW_META entries added for all report frameworks
+- `.gitignore` updated to exclude `classifier/models/`
+- Command injection fix in `framework-diff.js` (`execFileSync` instead of `execSync`)
+- Gap analysis source list mismatch (`Agentic-Top10-2025` → `Agentic-Top10-2026`)
+- Stale meta tags, README badges, and framework counts updated throughout
+
+---
+
 ## [3.0.0] — 2026-04-09
 
 ### Added

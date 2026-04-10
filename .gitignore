@@ -11,3 +11,4 @@ dist/
 sbom.cdx.json
 sbom-content.cdx.json
 classifier/index/
+classifier/models/
