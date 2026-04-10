@@ -31,7 +31,7 @@
       "control_name": "Membership Inference",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversary determines whether specific sensitive records were used in training — confirms presence of target data"
+      "notes": "Adversary determines whether specific sensitive records were used in training � confirms presence of target data"
     },
     {
       "framework": "MITRE ATLAS",
@@ -55,28 +55,28 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Sensitive data leakage categorised and rated in AI system risk register — specific to each deployment"
+      "notes": "Sensitive data leakage categorised and rated in AI system risk register � specific to each deployment"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Evaluation programme includes data leakage testing — training data, RAG over-retrieval, output redaction"
+      "notes": "Evaluation programme includes data leakage testing � training data, RAG over-retrieval, output redaction"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response — data",
+      "control_name": "Risk response � data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Defined incident response for sensitive data disclosure — notification, containment, regulatory reporting"
+      "notes": "Defined incident response for sensitive data disclosure � notification, containment, regulatory reporting"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Training data must be relevant, representative, and subject to appropriate privacy measures",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data governance controls preventing sensitive data ingestion and memorisation are Art. 10 requirements"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "High-risk AI must be resilient and implement cybersecurity measures",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Output scanning, DLP, and access controls on RAG retrieval are Art. 15 technical requirements"
@@ -92,10 +92,10 @@
     {
       "framework": "EU AI Act",
       "control_id": "GPAI providers must maintain technical documentation including training data governance",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_name": "Art. 53(1)(a) � GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data governance for training data — sources, quality, privacy measures — is a GPAI documentation obligation"
+      "notes": "Data governance for training data � sources, quality, privacy measures � is a GPAI documentation obligation"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -111,7 +111,7 @@
       "control_name": "Data leakage prevention",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "DLP controls on all GenAI output channels — model API, chat interfaces, logs"
+      "notes": "DLP controls on all GenAI output channels � model API, chat interfaces, logs"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -119,7 +119,7 @@
       "control_name": "Classification of information",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All data in GenAI scope classified — training data, RAG corpora, outputs, embeddings"
+      "notes": "All data in GenAI scope classified � training data, RAG corpora, outputs, embeddings"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -135,7 +135,7 @@
       "control_name": "Labelling of information",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classification labels propagated to derived assets — embeddings, caches, summaries"
+      "notes": "Classification labels propagated to derived assets � embeddings, caches, summaries"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -238,7 +238,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All OT data flowing through GenAI systems encrypted — historian exports, embedding stores, prompt caches"
+      "notes": "All OT data flowing through GenAI systems encrypted � historian exports, embedding stores, prompt caches"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -254,7 +254,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access to GenAI systems in OT scope authenticated — each user with unique, traceable identity"
+      "notes": "Access to GenAI systems in OT scope authenticated � each user with unique, traceable identity"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -262,7 +262,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Sensitive OT data disclosure treated as security event — agent suspended, disclosure scope assessed"
+      "notes": "Sensitive OT data disclosure treated as security event � agent suspended, disclosure scope assessed"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -294,7 +294,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Sensitive data at rest protected — training data, embeddings, RAG stores, prompt caches encrypted"
+      "notes": "Sensitive data at rest protected � training data, embeddings, RAG stores, prompt caches encrypted"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -302,7 +302,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Sensitive data in transit protected — all GenAI API calls and RAG retrieval paths encrypted"
+      "notes": "Sensitive data in transit protected � all GenAI API calls and RAG retrieval paths encrypted"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -310,7 +310,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Networks and assets monitored — DLP on all GenAI output channels"
+      "notes": "Networks and assets monitored � DLP on all GenAI output channels"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -318,40 +318,40 @@
       "control_name": "Risk Management Strategy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Risk tolerance established — acceptable sensitive data disclosure risk defined per GenAI use case"
+      "notes": "Risk tolerance established � acceptable sensitive data disclosure risk defined per GenAI use case"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy identifying confidential information in GenAI scope — training data, RAG corpus, embeddings, outputs",
-      "control_name": "C1.1 — Confidentiality policy",
+      "control_id": "Policy identifying confidential information in GenAI scope � training data, RAG corpus, embeddings, outputs",
+      "control_name": "C1.1 � Confidentiality policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Technical controls protecting confidential data in GenAI pipelines — encryption, access controls, output scanning",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "Technical controls protecting confidential data in GenAI pipelines � encryption, access controls, output scanning",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access controls on RAG retrieval — users retrieve only data they are authorised to access",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "Access controls on RAG retrieval � users retrieve only data they are authorised to access",
+      "control_name": "CC6.1 � Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information in GenAI scope used only for authorised purposes — LLM processing limited to agreed use cases",
-      "control_name": "P5.1 — Personal information use",
+      "control_id": "Personal information in GenAI scope used only for authorised purposes � LLM processing limited to agreed use cases",
+      "control_name": "P5.1 � Personal information use",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "DLP monitoring on all GenAI output channels — sensitive patterns detected before delivery to users",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "DLP monitoring on all GenAI output channels � sensitive patterns detected before delivery to users",
+      "control_name": "CC7.2 � Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -361,7 +361,7 @@
       "control_name": "PAN rendering unreadable",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "PANs in GenAI outputs masked — only first six/last four digits in any response"
+      "notes": "PANs in GenAI outputs masked � only first six/last four digits in any response"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -369,7 +369,7 @@
       "control_name": "Protect stored account data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All CHD in GenAI scope encrypted — training data, RAG stores, embeddings, prompt caches"
+      "notes": "All CHD in GenAI scope encrypted � training data, RAG stores, embeddings, prompt caches"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -377,7 +377,7 @@
       "control_name": "Encryption in transit",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All GenAI data flows carrying CHD encrypted — TLS 1.2 minimum"
+      "notes": "All GenAI data flows carrying CHD encrypted � TLS 1.2 minimum"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -385,7 +385,7 @@
       "control_name": "Restrict access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "RAG retrieval access controls — users retrieve only CHD they are authorised to access"
+      "notes": "RAG retrieval access controls � users retrieve only CHD they are authorised to access"
     },
     {
       "framework": "ENISA Multilayer Framework",

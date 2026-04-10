@@ -39,7 +39,7 @@
       "control_name": "Data from Information Repositories",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Observability databases and log stores accessed as information repositories — sensitive content available at scale"
+      "notes": "Observability databases and log stores accessed as information repositories � sensitive content available at scale"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -47,7 +47,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Telemetry governance policy — least-logging defaults, classification of captured data, retention limits"
+      "notes": "Telemetry governance policy � least-logging defaults, classification of captured data, retention limits"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -55,36 +55,36 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Telemetry leakage risks mapped — identify which pipelines capture full payload and at what retention"
+      "notes": "Telemetry leakage risks mapped � identify which pipelines capture full payload and at what retention"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Data leakage testing on telemetry stores — sensitive content in logs and traces"
+      "notes": "Data leakage testing on telemetry stores � sensitive content in logs and traces"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response — data",
+      "control_name": "Risk response � data",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Response for telemetry data leakage incidents — access log review, data deletion, notification"
+      "notes": "Response for telemetry data leakage incidents � access log review, data deletion, notification"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Data governance applies to all data in AI system scope — including telemetry and monitoring data",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Data governance applies to all data in AI system scope � including telemetry and monitoring data",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Telemetry data governance — classification, access controls, retention — is an Art. 10 requirement"
+      "notes": "Telemetry data governance � classification, access controls, retention � is an Art. 10 requirement"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Post-market monitoring required — but the monitoring infrastructure must itself be secured",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Post-market monitoring required � but the monitoring infrastructure must itself be secured",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Telemetry security is both an Art. 17 obligation and an Art. 10 data governance requirement"
@@ -95,7 +95,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Logging controls applied to AI telemetry — least-logging defaults, no full payload capture by default"
+      "notes": "Logging controls applied to AI telemetry � least-logging defaults, no full payload capture by default"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -103,7 +103,7 @@
       "control_name": "Data leakage prevention",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "DLP applied to telemetry streams — sensitive content redacted before storage"
+      "notes": "DLP applied to telemetry streams � sensitive content redacted before storage"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -111,7 +111,7 @@
       "control_name": "Classification of information",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Telemetry data classified — full prompt captures classified at same level as content they contain"
+      "notes": "Telemetry data classified � full prompt captures classified at same level as content they contain"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -215,7 +215,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT GenAI telemetry stores classified and protected — process data in logs requires same protection as live data"
+      "notes": "OT GenAI telemetry stores classified and protected � process data in logs requires same protection as live data"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -223,7 +223,7 @@
       "control_name": "Use of physical diagnostic and test interfaces",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT-specific data masking before telemetry capture — tag IDs, equipment identifiers masked before logging"
+      "notes": "OT-specific data masking before telemetry capture � tag IDs, equipment identifiers masked before logging"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -231,7 +231,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access controls on OT GenAI telemetry stores — need-to-know enforced"
+      "notes": "Access controls on OT GenAI telemetry stores � need-to-know enforced"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -263,7 +263,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Telemetry governance policy — least-logging defaults, classification of captured data, retention limits"
+      "notes": "Telemetry governance policy � least-logging defaults, classification of captured data, retention limits"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -271,7 +271,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Telemetry stores containing sensitive data protected — same requirements as production data stores"
+      "notes": "Telemetry stores containing sensitive data protected � same requirements as production data stores"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -279,7 +279,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access controls on telemetry stores — need-to-know enforced, not open access because \"just logs\""
+      "notes": "Access controls on telemetry stores � need-to-know enforced, not open access because \"just logs\""
     },
     {
       "framework": "NIST CSF 2.0",
@@ -287,33 +287,33 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Telemetry store access monitored — anomalous access patterns detected"
+      "notes": "Telemetry store access monitored � anomalous access patterns detected"
     },
     {
       "framework": "SOC 2",
-      "control_id": "GenAI telemetry classified and encrypted — content captured in traces protected at same level as source data",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "GenAI telemetry classified and encrypted � content captured in traces protected at same level as source data",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information in telemetry used only for authorised purposes — same restrictions as production data",
-      "control_name": "P5.1 — Personal information use",
+      "control_id": "Personal information in telemetry used only for authorised purposes � same restrictions as production data",
+      "control_name": "P5.1 � Personal information use",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access controls on telemetry stores — same rigour as production data stores",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "Access controls on telemetry stores � same rigour as production data stores",
+      "control_name": "CC6.1 � Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access anomaly monitoring on telemetry stores — bulk access patterns detected",
-      "control_name": "CC7.2 — Monitoring",
+      "control_id": "Access anomaly monitoring on telemetry stores � bulk access patterns detected",
+      "control_name": "CC7.2 � Monitoring",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -323,7 +323,7 @@
       "control_name": "Protect stored account data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Telemetry stores containing CHD encrypted — observability data is CHD if it contains PANs"
+      "notes": "Telemetry stores containing CHD encrypted � observability data is CHD if it contains PANs"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -331,7 +331,7 @@
       "control_name": "PAN rendering",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "PANs in telemetry masked before logging — cleartext PANs in observability data is a Req 3 finding"
+      "notes": "PANs in telemetry masked before logging � cleartext PANs in observability data is a Req 3 finding"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -339,7 +339,7 @@
       "control_name": "Restrict access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access controls on CDE telemetry stores — Req 7 need-to-know applies"
+      "notes": "Access controls on CDE telemetry stores � Req 7 need-to-know applies"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -347,7 +347,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access to CDE telemetry stores logged — accessing observability data containing CHD requires Req 10 trail"
+      "notes": "Access to CDE telemetry stores logged � accessing observability data containing CHD requires Req 10 trail"
     },
     {
       "framework": "ENISA Multilayer Framework",

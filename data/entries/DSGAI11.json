@@ -47,23 +47,23 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Session isolation risks mapped per deployment — shared infrastructure components assessed"
+      "notes": "Session isolation risks mapped per deployment � shared infrastructure components assessed"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Multi-tenant isolation testing — verify cross-session data access is prevented"
+      "notes": "Multi-tenant isolation testing � verify cross-session data access is prevented"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Data leakage testing across session boundaries — KV cache, vector store, conversation history"
+      "notes": "Data leakage testing across session boundaries � KV cache, vector store, conversation history"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,12 +71,12 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Incident response for detected cross-session leakage — impact scoping, user notification"
+      "notes": "Incident response for detected cross-session leakage � impact scoping, user notification"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Data governance covering multi-tenant deployments — session isolation as a data handling requirement",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Data governance covering multi-tenant deployments � session isolation as a data handling requirement",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Session isolation controls are an Art. 10 data governance obligation for multi-user deployments"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures preventing cross-session data exposure",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Session isolation and tenant separation are Art. 15 technical requirements"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Post-market monitoring detecting and responding to session bleed incidents",
-      "control_name": "Art. 17 — Quality management",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Cross-session leakage detection in post-market monitoring programme"
@@ -103,7 +103,7 @@
       "control_name": "Information access restriction",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Strict session and tenant isolation — one user's context cannot be accessed by another"
+      "notes": "Strict session and tenant isolation � one user's context cannot be accessed by another"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -111,7 +111,7 @@
       "control_name": "Information transfer",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Controls on context transfer between sessions — prohibition on cross-session data leakage"
+      "notes": "Controls on context transfer between sessions � prohibition on cross-session data leakage"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -216,7 +216,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Per-operator session isolation — each operator's context inaccessible to all other sessions"
+      "notes": "Per-operator session isolation � each operator's context inaccessible to all other sessions"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -224,7 +224,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Per-operator session data encrypted — KV cache isolation prevents cross-session OT data exposure"
+      "notes": "Per-operator session data encrypted � KV cache isolation prevents cross-session OT data exposure"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -232,7 +232,7 @@
       "control_name": "Information flow restriction",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Cross-session data flows restricted — Zone 3 GenAI enforces strict operator session boundaries"
+      "notes": "Cross-session data flows restricted � Zone 3 GenAI enforces strict operator session boundaries"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -256,7 +256,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access permissions managed — per-user session isolation, per-tenant RAG namespaces enforced"
+      "notes": "Access permissions managed � per-user session isolation, per-tenant RAG namespaces enforced"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -264,7 +264,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Session data protected — per-user context encrypted, KV cache isolation prevents cross-session exposure"
+      "notes": "Session data protected � per-user context encrypted, KV cache isolation prevents cross-session exposure"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -272,7 +272,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Session isolation monitored — cross-session access anomalies detected"
+      "notes": "Session isolation monitored � cross-session access anomalies detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -280,33 +280,33 @@
       "control_name": "Risk Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Session isolation risks documented per deployment — shared infrastructure components assessed"
+      "notes": "Session isolation risks documented per deployment � shared infrastructure components assessed"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Strict session isolation — each user's context inaccessible to all other sessions",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "Strict session isolation � each user's context inaccessible to all other sessions",
+      "control_name": "CC6.1 � Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "User session context classified as confidential — technical isolation controls",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "User session context classified as confidential � technical isolation controls",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information in user sessions used only for that user's authorised purposes — cross-session leakage is a P5 violation",
-      "control_name": "P5.1 — Personal information use",
+      "control_id": "Personal information in user sessions used only for that user's authorised purposes � cross-session leakage is a P5 violation",
+      "control_name": "P5.1 � Personal information use",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Cross-session access anomalies monitored — unusual retrieval patterns detected",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "Cross-session access anomalies monitored � unusual retrieval patterns detected",
+      "control_name": "CC7.2 � Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -316,7 +316,7 @@
       "control_name": "Restrict access by need to know",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Strict session isolation — each user's CHD context inaccessible to all other sessions"
+      "notes": "Strict session isolation � each user's CHD context inaccessible to all other sessions"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -324,7 +324,7 @@
       "control_name": "Protect stored account data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Per-user session CHD encrypted — KV cache isolation prevents cross-session PAN exposure"
+      "notes": "Per-user session CHD encrypted � KV cache isolation prevents cross-session PAN exposure"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -332,7 +332,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Cross-session access anomalies logged — unusual retrieval patterns in PCI scope detected"
+      "notes": "Cross-session access anomalies logged � unusual retrieval patterns in PCI scope detected"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -340,7 +340,7 @@
       "control_name": "Penetration testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Multi-tenant isolation tested in CDE penetration testing — cross-session CHD access attempted"
+      "notes": "Multi-tenant isolation tested in CDE penetration testing � cross-session CHD access attempted"
     },
     {
       "framework": "ENISA Multilayer Framework",

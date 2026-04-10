@@ -49,7 +49,7 @@
       "control_name": "Policies for trustworthy AI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Organisational policy defines permissible agent autonomy — agents cannot change their stated goals without human confirmation"
+      "notes": "Organisational policy defines permissible agent autonomy � agents cannot change their stated goals without human confirmation"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -57,15 +57,15 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent goal hijack categorised in AI risk register per deployment — specific injection vectors mapped"
+      "notes": "Agent goal hijack categorised in AI risk register per deployment � specific injection vectors mapped"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial testing programme covers goal hijack scenarios — indirect injection via all agent data sources"
+      "notes": "Adversarial testing programme covers goal hijack scenarios � indirect injection via all agent data sources"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -73,12 +73,12 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for detected goal hijack — suspension procedure, action reversal checklist, OT impact assessment"
+      "notes": "Incident response for detected goal hijack � suspension procedure, action reversal checklist, OT impact assessment"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Goal hijack scenarios identified and mitigated in risk management system",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent goal hijack included in Art. 9 risk assessment for every agentic deployment"
@@ -86,15 +86,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "Meaningful human oversight over high-risk AI system outputs",
-      "control_name": "Art. 14 — Human oversight",
+      "control_name": "Art. 14 � Human oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agents whose goals can be hijacked and execute autonomously are an Art. 14 failure — human confirmation required before goal-changing actions"
+      "notes": "Agents whose goals can be hijacked and execute autonomously are an Art. 14 failure � human confirmation required before goal-changing actions"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Technical resilience against adversarial input manipulation",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Input filtering, goal-state verification, and injection detection are Art. 15 technical requirements"
@@ -105,7 +105,7 @@
       "control_name": "Secure coding",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Secure coding requirements for all agentic integration code — input validation, goal-state verification, context separation"
+      "notes": "Secure coding requirements for all agentic integration code � input validation, goal-state verification, context separation"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Security testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial testing programme covering goal hijack — direct, indirect, multi-turn injection before each release"
+      "notes": "Adversarial testing programme covering goal hijack � direct, indirect, multi-turn injection before each release"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Monitoring activities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Runtime monitoring for injection indicators across all agent input channels — new 2022 control"
+      "notes": "Runtime monitoring for injection indicators across all agent input channels � new 2022 control"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Threat intelligence",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Active intelligence on prompt injection and goal hijack techniques — new attack methods inform detection controls"
+      "notes": "Active intelligence on prompt injection and goal hijack techniques � new attack methods inform detection controls"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -137,7 +137,7 @@
       "control_name": "AI system security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Goal-state verification and input validation as AIMS security design requirements — structural controls enforced at orchestration layer"
+      "notes": "Goal-state verification and input validation as AIMS security design requirements � structural controls enforced at orchestration layer"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Testing of AI systems",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Goal hijack scenarios in AIMS testing — direct, indirect, multi-turn injection tested before each production release"
+      "notes": "Goal hijack scenarios in AIMS testing � direct, indirect, multi-turn injection tested before each production release"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Impact assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Impact assessment covers goal hijack risk — what autonomous actions are possible if goal is redirected, who is affected"
+      "notes": "Impact assessment covers goal hijack risk � what autonomous actions are possible if goal is redirected, who is affected"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,36 +161,36 @@
       "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Goal hijack in AI risk register — blast radius per deployment, owner, treatment, review cadence"
+      "notes": "Goal hijack in AI risk register � blast radius per deployment, owner, treatment, review cadence"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "16.1 Establish secure application development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_name": "CIS 16 � Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Secure development standards covering agentic integrations — input validation, goal-state verification"
+      "notes": "Secure development standards covering agentic integrations � input validation, goal-state verification"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "18.1 Establish penetration testing programme",
-      "control_name": "CIS 18 — Penetration Testing",
+      "control_name": "CIS 18 � Penetration Testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial testing covering goal hijack — direct, indirect, multi-turn injection scenarios"
+      "notes": "Adversarial testing covering goal hijack � direct, indirect, multi-turn injection scenarios"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.2 Collect audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_name": "CIS 8 � Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent inputs logged — injection attempts detectable through log analysis"
+      "notes": "All agent inputs logged � injection attempts detectable through log analysis"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "13.8 Deploy a network intrusion detection solution",
-      "control_name": "CIS 13 — Network Monitoring and Defence",
+      "control_name": "CIS 13 � Network Monitoring and Defence",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Network-layer monitoring for injection indicators in agent traffic"
@@ -201,7 +201,7 @@
       "control_name": "Verify all user input validated against allowlist",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All inputs to agents validated — indirect injection through processed content equally in scope"
+      "notes": "All inputs to agents validated � indirect injection through processed content equally in scope"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify output encoding prevents injection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent responses encoded before passing to downstream renderers — outputs treated as untrusted"
+      "notes": "Agent responses encoded before passing to downstream renderers � outputs treated as untrusted"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Threat modelling of all data flows",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent input sources threat-modelled — every indirect injection path documented"
+      "notes": "All agent input sources threat-modelled � every indirect injection path documented"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -241,7 +241,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All inputs to OT agents validated for integrity — no unvalidated external content directly into agent context"
+      "notes": "All inputs to OT agents validated for integrity � no unvalidated external content directly into agent context"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -249,7 +249,7 @@
       "control_name": "Least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agents granted minimum tool access — each tool scoped to specific OT function, read-only by default"
+      "notes": "Agents granted minimum tool access � each tool scoped to specific OT function, read-only by default"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -257,7 +257,7 @@
       "control_name": "Use control enforcement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent actions in OT context subject to explicit use controls — goal-changing actions require human confirmation"
+      "notes": "Agent actions in OT context subject to explicit use controls � goal-changing actions require human confirmation"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -265,7 +265,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Goal hijack indicators treated as security events — agent suspended, human notified, actions reversed where feasible"
+      "notes": "Goal hijack indicators treated as security events � agent suspended, human notified, actions reversed where feasible"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -273,7 +273,7 @@
       "control_name": "Session lock",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Operator-accessible agent kill switch — halt all agent activity immediately without affecting process control"
+      "notes": "Operator-accessible agent kill switch � halt all agent activity immediately without affecting process control"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -305,7 +305,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy defines permissible agent autonomy — agents cannot change stated goals without human confirmation"
+      "notes": "Policy defines permissible agent autonomy � agents cannot change stated goals without human confirmation"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Platform Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Secure software development — input validation and goal-state verification as platform security controls"
+      "notes": "Secure software development � input validation and goal-state verification as platform security controls"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -321,7 +321,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Networks and assets monitored — injection indicators detected across all agent input channels"
+      "notes": "Networks and assets monitored � injection indicators detected across all agent input channels"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -329,7 +329,7 @@
       "control_name": "Incident Mitigation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incidents contained — agent suspended, actions reversed, kill switch activated"
+      "notes": "Incidents contained � agent suspended, actions reversed, kill switch activated"
     },
     {
       "framework": "SOC 2",
@@ -481,7 +481,7 @@
       "control_name": "CWE-20",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Root cause — agent inputs not validated before entering model context; indirect injection content not treated as untrusted"
+      "notes": "Root cause � agent inputs not validated before entering model context; indirect injection content not treated as untrusted"
     },
     {
       "framework": "CWE/CVE",
@@ -518,7 +518,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Prompt injection via all agent input channels",
-      "control_name": "IHT — Input Handling",
+      "control_name": "IHT � Input Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inject instruction-overriding content through user prompt, RAG-retrieved documents, tool return values, email content, uploaded files, and any other data source the agent processes"
@@ -526,18 +526,18 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Goal consistency under adversarial input",
-      "control_name": "MBT — Model Behaviour",
+      "control_name": "MBT � Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Verify the agent's stated goal at session start matches its actions at session end — test divergence after indirect injection"
+      "notes": "Verify the agent's stated goal at session start matches its actions at session end � test divergence after indirect injection"
     },
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Goal state verification effectiveness",
-      "control_name": "AST — Agent-Specific",
+      "control_name": "AST � Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Attempt to redirect agent goal through indirect injection paths specific to your deployment — historian data, vendor communications, web results"
+      "notes": "Attempt to redirect agent goal through indirect injection paths specific to your deployment � historian data, vendor communications, web results"
     },
     {
       "framework": "MAESTRO",
@@ -594,7 +594,7 @@
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Scope all agent credentials to minimum required — least privilege enforced"
+      "notes": "Scope all agent credentials to minimum required � least privilege enforced"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -602,7 +602,7 @@
       "control_name": "NHI-7 Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Short-lived credentials — tokens expire at task completion, no long-lived agent tokens"
+      "notes": "Short-lived credentials � tokens expire at task completion, no long-lived agent tokens"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -610,7 +610,7 @@
       "control_name": "NHI-9 NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Unique identity per agent — no shared service accounts across agent deployments"
+      "notes": "Unique identity per agent � no shared service accounts across agent deployments"
     },
     {
       "framework": "NIST SP 800-218A",

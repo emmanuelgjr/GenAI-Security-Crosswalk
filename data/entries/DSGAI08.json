@@ -23,7 +23,7 @@
       "control_name": "Data from Information Repositories",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Regulatory violations often arise from ungoverned data repositories — adversary exploits what compliance missed"
+      "notes": "Regulatory violations often arise from ungoverned data repositories � adversary exploits what compliance missed"
     },
     {
       "framework": "MITRE ATLAS",
@@ -55,28 +55,28 @@
       "control_name": "Organisational teams",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Cross-functional team accountable for GenAI regulatory compliance — legal, privacy, security, AI"
+      "notes": "Cross-functional team accountable for GenAI regulatory compliance � legal, privacy, security, AI"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Compliance testing — lawful basis verification, data subject rights fulfilment, retention compliance"
+      "notes": "Compliance testing � lawful basis verification, data subject rights fulfilment, retention compliance"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response — data",
+      "control_name": "Risk response � data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Regulatory incident response — breach notification timelines, regulatory reporting obligations"
+      "notes": "Regulatory incident response � breach notification timelines, regulatory reporting obligations"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Mandatory risk management system for high-risk AI",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Absence of a documented risk management system is an Art. 9 violation"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Documented quality management system including post-market monitoring",
-      "control_name": "Art. 17 — Quality management",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Absence of a quality management system is an Art. 17 violation"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Graduated fines based on violation type",
-      "control_name": "Art. 72 — Fines",
+      "control_name": "Art. 72 � Fines",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Understanding fine exposure is the starting point for compliance prioritisation"
@@ -111,7 +111,7 @@
       "control_name": "Privacy and PII protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Privacy requirements for GenAI-processed personal data — lawful basis, minimisation, rights support"
+      "notes": "Privacy requirements for GenAI-processed personal data � lawful basis, minimisation, rights support"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -119,7 +119,7 @@
       "control_name": "Compliance with policies",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Internal policies for GenAI compliance — reviewed and enforced"
+      "notes": "Internal policies for GenAI compliance � reviewed and enforced"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -209,7 +209,7 @@
       "control_name": "62443-2-1",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT security management system updated to cover GenAI deployments — policy, roles, assessment"
+      "notes": "OT security management system updated to cover GenAI deployments � policy, roles, assessment"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -217,7 +217,7 @@
       "control_name": "62443-2-4",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "GenAI vendors assessed under OT supplier security programme — same requirements as OT software vendors"
+      "notes": "GenAI vendors assessed under OT supplier security programme � same requirements as OT software vendors"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -225,7 +225,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Non-compliance incidents trigger defined response — regulatory notification procedures documented"
+      "notes": "Non-compliance incidents trigger defined response � regulatory notification procedures documented"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -257,7 +257,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Regulatory obligations inform cybersecurity risk management — GenAI regulatory scope assessed and documented"
+      "notes": "Regulatory obligations inform cybersecurity risk management � GenAI regulatory scope assessed and documented"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -265,7 +265,7 @@
       "control_name": "Risk Management Strategy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Risk management strategy includes regulatory compliance risk — GenAI-specific obligations in risk programme"
+      "notes": "Risk management strategy includes regulatory compliance risk � GenAI-specific obligations in risk programme"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -273,7 +273,7 @@
       "control_name": "Risk Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Compliance risks identified per GenAI deployment — applicable regulations, triggered obligations, controls gaps"
+      "notes": "Compliance risks identified per GenAI deployment � applicable regulations, triggered obligations, controls gaps"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -281,33 +281,33 @@
       "control_name": "Communication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Regulatory incident communication — breach notification, regulatory reporting, authority contact procedures"
+      "notes": "Regulatory incident communication � breach notification, regulatory reporting, authority contact procedures"
     },
     {
       "framework": "SOC 2",
       "control_id": "Commitment to compliance with applicable laws and regulations including AI-specific obligations",
-      "control_name": "CC5.1 — Control environment",
+      "control_name": "CC5.1 � Control environment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Regulatory risks identified in GenAI risk assessment — GDPR, EU AI Act, sector-specific regulations",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "Regulatory risks identified in GenAI risk assessment � GDPR, EU AI Act, sector-specific regulations",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Privacy programme covers GenAI processing of personal information — policies, notices, accountability",
-      "control_name": "P1.1 — Privacy management",
+      "control_id": "Privacy programme covers GenAI processing of personal information � policies, notices, accountability",
+      "control_name": "P1.1 � Privacy management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Regulatory compliance status communicated to management — AI Act obligations, NIS2 requirements",
-      "control_name": "CC2.1 — Communication",
+      "control_id": "Regulatory compliance status communicated to management � AI Act obligations, NIS2 requirements",
+      "control_name": "CC2.1 � Communication",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -317,7 +317,7 @@
       "control_name": "Security policy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "PCI security policy covers GenAI processing of CHD — updated to reflect AI system deployments"
+      "notes": "PCI security policy covers GenAI processing of CHD � updated to reflect AI system deployments"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -333,7 +333,7 @@
       "control_name": "Programme oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Executive accountability for GenAI PCI compliance — CISO or equivalent with oversight documented"
+      "notes": "Executive accountability for GenAI PCI compliance � CISO or equivalent with oversight documented"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -341,7 +341,7 @@
       "control_name": "Security awareness",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Security awareness covers PCI obligations in GenAI context — staff understand scope implications"
+      "notes": "Security awareness covers PCI obligations in GenAI context � staff understand scope implications"
     },
     {
       "framework": "ENISA Multilayer Framework",

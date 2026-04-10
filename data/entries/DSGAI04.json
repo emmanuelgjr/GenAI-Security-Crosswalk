@@ -23,7 +23,7 @@
       "control_name": "Poison Training Data",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Adversary introduces malicious data into training pipeline — corrupts model behaviour in ways baked into weights"
+      "notes": "Adversary introduces malicious data into training pipeline � corrupts model behaviour in ways baked into weights"
     },
     {
       "framework": "MITRE ATLAS",
@@ -31,7 +31,7 @@
       "control_name": "Backdoor ML Model",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Hidden functionality embedded in model weights — triggered by specific inputs, invisible to standard testing"
+      "notes": "Hidden functionality embedded in model weights � triggered by specific inputs, invisible to standard testing"
     },
     {
       "framework": "MITRE ATLAS",
@@ -47,12 +47,12 @@
       "control_name": "Risk categorisation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data and model poisoning categorised as Critical — specific attack vectors mapped per training pipeline"
+      "notes": "Data and model poisoning categorised as Critical � specific attack vectors mapped per training pipeline"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Adversarial testing covering poisoning detection in training pipelines before each production promotion"
@@ -75,8 +75,8 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Training data must be subject to governance practices — relevant, representative, free of errors",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Training data must be subject to governance practices � relevant, representative, free of errors",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Data quality controls and provenance requirements preventing poisoning are binding Art. 10 obligations"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "High-risk AI must be resilient to attempts to alter performance through data manipulation",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Technical robustness against poisoning is a binding Art. 15 requirement with conformity assessment evidence"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Systemic risk GPAI providers must conduct adversarial testing to identify and mitigate systemic risks",
-      "control_name": "Art. 55(1)(b) — Systemic risk GPAI adversarial testing",
+      "control_name": "Art. 55(1)(b) � Systemic risk GPAI adversarial testing",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Poisoning detection adversarial testing is a binding obligation for systemic risk models"
@@ -224,7 +224,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Training data integrity controls — source allowlisting, anomaly detection, provenance tracking"
+      "notes": "Training data integrity controls � source allowlisting, anomaly detection, provenance tracking"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -232,7 +232,7 @@
       "control_name": "Software and information integrity monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Continuous monitoring of OT GenAI model outputs — systematic anomalies indicating poisoning detected"
+      "notes": "Continuous monitoring of OT GenAI model outputs � systematic anomalies indicating poisoning detected"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -240,7 +240,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Poisoning events treated as Critical security incidents — model suspended, process control fallback activated"
+      "notes": "Poisoning events treated as Critical security incidents � model suspended, process control fallback activated"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -248,7 +248,7 @@
       "control_name": "Denial of service protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Poisoned model availability impact contained — fallback procedure prevents physical process disruption"
+      "notes": "Poisoned model availability impact contained � fallback procedure prevents physical process disruption"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -280,7 +280,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Training data providers treated as suppliers — provenance, quality, integrity requirements in contracts"
+      "notes": "Training data providers treated as suppliers � provenance, quality, integrity requirements in contracts"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -288,7 +288,7 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Training data protected at rest — integrity verification, source allowlisting, provenance tracking"
+      "notes": "Training data protected at rest � integrity verification, source allowlisting, provenance tracking"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -296,7 +296,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Monitoring for unauthorised software — model integrity verification at deployment, output anomaly detection"
+      "notes": "Monitoring for unauthorised software � model integrity verification at deployment, output anomaly detection"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -304,33 +304,33 @@
       "control_name": "Incident Analysis",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Poisoning incidents analysed — affected training runs, deployed models, downstream impact assessed"
+      "notes": "Poisoning incidents analysed � affected training runs, deployed models, downstream impact assessed"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Poisoning threats documented in GenAI risk assessment — training data, supply chain, model update vectors",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "Poisoning threats documented in GenAI risk assessment � training data, supply chain, model update vectors",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Model promotions through change management — integrity verification before production deployment",
-      "control_name": "CC8.1 — Change management",
+      "control_id": "Model promotions through change management � integrity verification before production deployment",
+      "control_name": "CC8.1 � Change management",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Training data providers in vendor risk programme — provenance, quality, integrity requirements assessed",
-      "control_name": "CC9.1 — Vendor risk",
+      "control_id": "Training data providers in vendor risk programme � provenance, quality, integrity requirements assessed",
+      "control_name": "CC9.1 � Vendor risk",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Model output anomaly monitoring — poisoning indicators detected before operational impact",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "Model output anomaly monitoring � poisoning indicators detected before operational impact",
+      "control_name": "CC7.2 � Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -340,7 +340,7 @@
       "control_name": "Secure system changes",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All model promotions tested for unexpected functionality — poisoning detection as Req 6.5 testing requirement"
+      "notes": "All model promotions tested for unexpected functionality � poisoning detection as Req 6.5 testing requirement"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -348,7 +348,7 @@
       "control_name": "Audit log review",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Automated monitoring of GenAI outputs in CDE — systematic anomalies indicating poisoning detected"
+      "notes": "Automated monitoring of GenAI outputs in CDE � systematic anomalies indicating poisoning detected"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -364,7 +364,7 @@
       "control_name": "TPSP programme",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Training data providers as TPSPs — data quality and integrity requirements in vendor agreements"
+      "notes": "Training data providers as TPSPs � data quality and integrity requirements in vendor agreements"
     },
     {
       "framework": "ENISA Multilayer Framework",

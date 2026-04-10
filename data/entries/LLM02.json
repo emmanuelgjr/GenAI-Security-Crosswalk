@@ -49,7 +49,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Organisational policies for data privacy in AI systems — classification, handling, and disclosure controls"
+      "notes": "Organisational policies for data privacy in AI systems � classification, handling, and disclosure controls"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -62,7 +62,7 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Evaluation programme includes data leakage and privacy disclosure testing"
@@ -70,15 +70,15 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response — data",
+      "control_name": "Risk response � data",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Defined procedures for responding to sensitive data disclosure incidents"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Training data for high-risk AI must be relevant, representative, free of errors, and complete — must address privacy",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Training data for high-risk AI must be relevant, representative, free of errors, and complete � must address privacy",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Privacy-preserving training data practices are a compliance requirement for high-risk LLMs"
@@ -86,7 +86,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Users must receive information about capabilities, limitations, and conditions of use",
-      "control_name": "Art. 13 — Transparency",
+      "control_name": "Art. 13 � Transparency",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Disclosure of potential data disclosure risks is a transparency obligation"
@@ -94,7 +94,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Documented quality management system including post-market monitoring",
-      "control_name": "Art. 17 — Quality management",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Post-market monitoring must detect and respond to sensitive disclosure incidents"
@@ -102,7 +102,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "GPAI providers must maintain technical documentation including training data governance",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_name": "Art. 53(1)(a) � GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data governance for GPAI training data is a binding documentation obligation from Aug 2025"
@@ -121,7 +121,7 @@
       "control_name": "Data leakage prevention",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "DLP on all LLM output channels — API, chat interface, logs"
+      "notes": "DLP on all LLM output channels � API, chat interface, logs"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Classification of information",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All data in LLM scope classified — training data, RAG sources, outputs, embeddings"
+      "notes": "All data in LLM scope classified � training data, RAG sources, outputs, embeddings"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -137,7 +137,7 @@
       "control_name": "Information access restriction",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access controls on RAG retrieval — users retrieve only data they are authorised to access"
+      "notes": "Access controls on RAG retrieval � users retrieve only data they are authorised to access"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Data quality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Training data and RAG content quality requirements — sensitivity, completeness, appropriateness assessed before use"
+      "notes": "Training data and RAG content quality requirements � sensitivity, completeness, appropriateness assessed before use"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Data provenance and characteristics",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data provenance documented — source, classification, handling requirements tracked from ingestion through all derived forms"
+      "notes": "Data provenance documented � source, classification, handling requirements tracked from ingestion through all derived forms"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,7 +161,7 @@
       "control_name": "AI system security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Output scanning and redaction as AIMS security controls — DLP enforced at the system boundary"
+      "notes": "Output scanning and redaction as AIMS security controls � DLP enforced at the system boundary"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -169,12 +169,12 @@
       "control_name": "Impact assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Impact assessment covers data disclosure risk — what data is in LLM scope, what is the disclosure impact per stakeholder"
+      "notes": "Impact assessment covers data disclosure risk � what data is in LLM scope, what is the disclosure impact per stakeholder"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "3.1 Establish and maintain data management process",
-      "control_name": "CIS 3 — Data Protection",
+      "control_name": "CIS 3 � Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data classification and handling requirements applied to all LLM data assets"
@@ -182,7 +182,7 @@
     {
       "framework": "CIS Controls v8.1",
       "control_id": "3.11 Encrypt sensitive data at rest",
-      "control_name": "CIS 3 — Data Protection",
+      "control_name": "CIS 3 � Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Embeddings, training data, and RAG caches containing sensitive data encrypted"
@@ -190,18 +190,18 @@
     {
       "framework": "CIS Controls v8.1",
       "control_id": "14.1 Establish security awareness programme",
-      "control_name": "CIS 14 — Security Awareness",
+      "control_name": "CIS 14 � Security Awareness",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "User training on LLM data handling — what data should not be shared with LLMs"
+      "notes": "User training on LLM data handling � what data should not be shared with LLMs"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_name": "CIS 8 � Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Detailed logging of all LLM data access — RAG queries, data retrieved, outputs generated"
+      "notes": "Detailed logging of all LLM data access � RAG queries, data retrieved, outputs generated"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Verify access control decisions enforce least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "RAG retrieval access controls — users retrieve only data they are authorised to access"
+      "notes": "RAG retrieval access controls � users retrieve only data they are authorised to access"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -241,7 +241,7 @@
       "control_name": "Verify all sensitive data encrypted in transit",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM API communication and data flows encrypted in transit — TLS 1.2 minimum"
+      "notes": "All LLM API communication and data flows encrypted in transit � TLS 1.2 minimum"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -278,7 +278,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Information disclosure and OT espionage",
-      "control_name": "Section 5.4 — Threats",
+      "control_name": "Section 5.4 � Threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLMs with historian access as a new vector for automated OT intelligence gathering"
@@ -286,7 +286,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Assess confidentiality of OT data",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_name": "Section 6.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "OT data classification applied to all data accessible by LLMs"
@@ -294,7 +294,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Protecting OT data at rest and in transit",
-      "control_name": "Section 7.3 — Data protection",
+      "control_name": "Section 7.3 � Data protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Encryption and access controls on all OT data paths feeding LLM context"
@@ -313,7 +313,7 @@
       "control_name": "SC-28",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT data used in LLM context encrypted at rest — historian exports, embedding stores, prompt caches"
+      "notes": "OT data used in LLM context encrypted at rest � historian exports, embedding stores, prompt caches"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -321,7 +321,7 @@
       "control_name": "AC-3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM access to OT data enforced by classification — sensitive process and network data requires elevated access tier"
+      "notes": "LLM access to OT data enforced by classification � sensitive process and network data requires elevated access tier"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -329,7 +329,7 @@
       "control_name": "AU-9",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM access logs to OT data protected — audit trail of all OT data accessed by LLM"
+      "notes": "LLM access logs to OT data protected � audit trail of all OT data accessed by LLM"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -337,7 +337,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data-at-rest protected — training data, embeddings, RAG stores containing sensitive information encrypted"
+      "notes": "Data-at-rest protected � training data, embeddings, RAG stores containing sensitive information encrypted"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -345,7 +345,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data-in-transit protected — all LLM API calls and RAG retrieval paths encrypted"
+      "notes": "Data-in-transit protected � all LLM API calls and RAG retrieval paths encrypted"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -353,7 +353,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM output channels monitored for sensitive data patterns — DLP coverage"
+      "notes": "LLM output channels monitored for sensitive data patterns � DLP coverage"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -361,66 +361,66 @@
       "control_name": "Risk Management Strategy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Risk tolerance established — acceptable levels of sensitive data disclosure risk defined per use case"
+      "notes": "Risk tolerance established � acceptable levels of sensitive data disclosure risk defined per use case"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy identifying confidential information in LLM scope and how it is handled — training data, RAG corpus, outputs",
-      "control_name": "C1.1 — Confidentiality policy",
+      "control_id": "Policy identifying confidential information in LLM scope and how it is handled � training data, RAG corpus, outputs",
+      "control_name": "C1.1 � Confidentiality policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Technical controls protecting confidential data in LLM pipelines — encryption, access controls, output scanning",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "Technical controls protecting confidential data in LLM pipelines � encryption, access controls, output scanning",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information in LLM scope identified — training data, RAG sources, outputs — collection documented",
-      "control_name": "P3.1 — Personal information collection",
+      "control_id": "Personal information in LLM scope identified � training data, RAG sources, outputs � collection documented",
+      "control_name": "P3.1 � Personal information collection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information used only for purposes disclosed — LLM processing of customer PII limited to agreed use cases",
-      "control_name": "P5.1 — Personal information use",
+      "control_id": "Personal information used only for purposes disclosed � LLM processing of customer PII limited to agreed use cases",
+      "control_name": "P5.1 � Personal information use",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access controls on RAG data sources — users retrieve only data they are authorised to access",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "Access controls on RAG data sources � users retrieve only data they are authorised to access",
+      "control_name": "CC6.1 � Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "PCI DSS v4.0",
       "control_id": "Req 3.3.1",
-      "control_name": "Protect stored account data — SAD prohibition",
+      "control_name": "Protect stored account data � SAD prohibition",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "SAD (CVV, PIN) must never be in LLM training data or RAG — stored after authorisation is prohibited"
+      "notes": "SAD (CVV, PIN) must never be in LLM training data or RAG � stored after authorisation is prohibited"
     },
     {
       "framework": "PCI DSS v4.0",
       "control_id": "Req 3.4.1",
-      "control_name": "Protect stored account data — PAN rendering",
+      "control_name": "Protect stored account data � PAN rendering",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "PANs in LLM outputs masked — only first six and last four digits displayed in any LLM response"
+      "notes": "PANs in LLM outputs masked � only first six and last four digits displayed in any LLM response"
     },
     {
       "framework": "PCI DSS v4.0",
       "control_id": "Req 3.5.1",
-      "control_name": "Protect stored account data — encryption",
+      "control_name": "Protect stored account data � encryption",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Any PAN in LLM scope encrypted with strong cryptography — AES-256 or equivalent"
+      "notes": "Any PAN in LLM scope encrypted with strong cryptography � AES-256 or equivalent"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -428,7 +428,7 @@
       "control_name": "Protect cardholder data in transit",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM API calls and RAG retrieval paths carrying CHD encrypted in transit — TLS 1.2 minimum"
+      "notes": "All LLM API calls and RAG retrieval paths carrying CHD encrypted in transit � TLS 1.2 minimum"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -436,7 +436,7 @@
       "control_name": "Restrict access by need to know",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM access to CHD restricted to minimum required — retrieval access controls prevent over-broad PAN access"
+      "notes": "LLM access to CHD restricted to minimum required � retrieval access controls prevent over-broad PAN access"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -444,7 +444,7 @@
       "control_name": "Data and Model Security (DMS)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All data in LLM scope classified and governed — training corpora, RAG sources, embeddings, outputs"
+      "notes": "All data in LLM scope classified and governed � training corpora, RAG sources, embeddings, outputs"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -452,7 +452,7 @@
       "control_name": "Monitoring and Detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "DLP on all LLM output channels — AI-specific monitoring covering sensitive data patterns"
+      "notes": "DLP on all LLM output channels � AI-specific monitoring covering sensitive data patterns"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -465,7 +465,7 @@
     {
       "framework": "ENISA Multilayer Framework",
       "control_id": "L1",
-      "control_name": "General ICT — Data Protection",
+      "control_name": "General ICT � Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Training data, embeddings, and RAG stores encrypted at rest and in transit"
@@ -484,7 +484,7 @@
       "control_name": "Secure Build",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Output redaction and DLP implemented in code — LLM output scanned before delivery, reviewed in build"
+      "notes": "Output redaction and DLP implemented in code � LLM output scanned before delivery, reviewed in build"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -492,7 +492,7 @@
       "control_name": "Requirements-Driven Testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data protection requirements verified in testing — PII patterns confirmed not to appear in LLM outputs"
+      "notes": "Data protection requirements verified in testing � PII patterns confirmed not to appear in LLM outputs"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -500,7 +500,7 @@
       "control_name": "Operational Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Production DLP monitoring on LLM output channels — operational data protection as ongoing practice"
+      "notes": "Production DLP monitoring on LLM output channels � operational data protection as ongoing practice"
     },
     {
       "framework": "STRIDE",

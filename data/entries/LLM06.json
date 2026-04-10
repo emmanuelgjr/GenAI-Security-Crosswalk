@@ -53,7 +53,7 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Autonomy boundary testing included in adversarial evaluation programme"
@@ -69,15 +69,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "Autonomy-related risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Excessive agency scenarios required in risk management system"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI systems designed to allow effective human oversight — ability to pause, stop, and override",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "High-risk AI systems designed to allow effective human oversight � ability to pause, stop, and override",
+      "control_name": "Art. 14 � Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Human-in-the-loop requirements are a binding Art. 14 compliance obligation"
@@ -85,7 +85,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Deployers must ensure human oversight as instructed by provider",
-      "control_name": "Art. 29 — Deployer obligations",
+      "control_name": "Art. 29 � Deployer obligations",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Deployers cannot waive Art. 14 human oversight requirements"
@@ -96,7 +96,7 @@
       "control_name": "Privileged access rights",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "LLM tool access managed as privileged access — minimum scope, reviewed regularly"
+      "notes": "LLM tool access managed as privileged access � minimum scope, reviewed regularly"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -104,7 +104,7 @@
       "control_name": "Acceptable use of assets",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Policy defining acceptable LLM autonomous actions — approved tool use cases documented"
+      "notes": "Policy defining acceptable LLM autonomous actions � approved tool use cases documented"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -112,7 +112,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "All LLM tool invocations logged with full context — every tool call auditable"
+      "notes": "All LLM tool invocations logged with full context � every tool call auditable"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -120,7 +120,7 @@
       "control_name": "Identity management",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "LLM tool access governed through identity management — tool permissions scoped per deployment"
+      "notes": "LLM tool access governed through identity management � tool permissions scoped per deployment"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -128,7 +128,7 @@
       "control_name": "Responsible AI system management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM tool access managed responsibly — minimum permissions, human oversight requirements documented as AIMS responsibilities"
+      "notes": "LLM tool access managed responsibly � minimum permissions, human oversight requirements documented as AIMS responsibilities"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -136,7 +136,7 @@
       "control_name": "AI system security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool permission enforcement as AIMS security control — scope enforced at orchestration layer"
+      "notes": "Tool permission enforcement as AIMS security control � scope enforced at orchestration layer"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -144,7 +144,7 @@
       "control_name": "Impact assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Impact assessment covers excessive agency risk — what actions can the LLM take autonomously, what is the worst-case impact"
+      "notes": "Impact assessment covers excessive agency risk � what actions can the LLM take autonomously, what is the worst-case impact"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -152,31 +152,31 @@
       "control_name": "Policy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Leadership commitment to human oversight — autonomous action scope defined in AI policy, signed off at executive level"
+      "notes": "Leadership commitment to human oversight � autonomous action scope defined in AI policy, signed off at executive level"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "5.4 Restrict administrator privileges",
-      "control_name": "CIS 5 — Account Management",
+      "control_name": "CIS 5 � Account Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM tool access managed as privileged access — minimum scope, regular review"
+      "notes": "LLM tool access managed as privileged access � minimum scope, regular review"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "6.1 Establish access granting process",
-      "control_name": "CIS 6 — Access Control Management",
+      "control_name": "CIS 6 � Access Control Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Formal process for granting LLM tool access — documented justification required"
+      "notes": "Formal process for granting LLM tool access � documented justification required"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_name": "CIS 8 � Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM tool invocations logged — every tool call auditable with parameters"
+      "notes": "All LLM tool invocations logged � every tool call auditable with parameters"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -184,7 +184,7 @@
       "control_name": "Verify access control enforces least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM tool access enforced at minimum required scope — read-only by default"
+      "notes": "LLM tool access enforced at minimum required scope � read-only by default"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -200,7 +200,7 @@
       "control_name": "Verify all business logic decisions logged",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM tool invocations logged with full context — every tool call auditable"
+      "notes": "All LLM tool invocations logged with full context � every tool call auditable"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -245,7 +245,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Unauthorised command execution via IT/OT interfaces",
-      "control_name": "Section 5.3 — Threats",
+      "control_name": "Section 5.3 � Threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM autonomous actions as a new path for unauthorised command execution"
@@ -253,7 +253,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Assess impact of unauthorised access and control",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_name": "Section 6.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM excessive agency assessed as an unauthorised access risk for each OT interface"
@@ -261,10 +261,10 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Minimal necessary connectivity at IT/OT boundary",
-      "control_name": "Section 7.1 — Architecture",
+      "control_name": "Section 7.1 � Architecture",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM access to OT systems restricted to minimum required — read-only by default"
+      "notes": "LLM access to OT systems restricted to minimum required � read-only by default"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -280,7 +280,7 @@
       "control_name": "AC-6",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM granted minimum necessary OT access — read-only to historian, no write access without documented justification"
+      "notes": "LLM granted minimum necessary OT access � read-only to historian, no write access without documented justification"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -288,7 +288,7 @@
       "control_name": "AC-3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM access to OT systems enforced by policy — scope cannot be exceeded regardless of model instruction"
+      "notes": "LLM access to OT systems enforced by policy � scope cannot be exceeded regardless of model instruction"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -296,7 +296,7 @@
       "control_name": "AU-12",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM actions in OT context logged — full accountability for every OT data access and any recommended action"
+      "notes": "All LLM actions in OT context logged � full accountability for every OT data access and any recommended action"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -304,7 +304,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access permissions managed — LLM tool access managed as privileged access with least privilege enforcement"
+      "notes": "Access permissions managed � LLM tool access managed as privileged access with least privilege enforcement"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -312,7 +312,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Identities managed — LLM service identities inventoried and managed, tool permissions scoped per identity"
+      "notes": "Identities managed � LLM service identities inventoried and managed, tool permissions scoped per identity"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -320,7 +320,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Networks and assets monitored — all LLM tool invocations logged and monitored for anomalous scope"
+      "notes": "Networks and assets monitored � all LLM tool invocations logged and monitored for anomalous scope"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -328,33 +328,33 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Acceptable use of LLM autonomous actions defined — policy specifies what actions require human confirmation"
+      "notes": "Acceptable use of LLM autonomous actions defined � policy specifies what actions require human confirmation"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM tool access managed under least privilege — minimum scope, documented justification, regular review",
-      "control_name": "CC6.1 — Logical access restrictions",
+      "control_id": "LLM tool access managed under least privilege � minimum scope, documented justification, regular review",
+      "control_name": "CC6.1 � Logical access restrictions",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM tool permissions removed promptly when no longer required — access review process covers LLM tool scope",
-      "control_name": "CC6.3 — Access removal",
+      "control_id": "LLM tool permissions removed promptly when no longer required � access review process covers LLM tool scope",
+      "control_name": "CC6.3 � Access removal",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Human oversight procedures for LLM autonomous actions — confirmation requirements documented and enforced",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "Human oversight procedures for LLM autonomous actions � confirmation requirements documented and enforced",
+      "control_name": "CC5.2 � Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Excessive agency risks identified — what autonomous actions can the LLM take, what is the blast radius",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "Excessive agency risks identified � what autonomous actions can the LLM take, what is the blast radius",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -364,7 +364,7 @@
       "control_name": "Restrict access to system components",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM tool access to CDE systems restricted to minimum required — read-only by default, write access formally approved"
+      "notes": "LLM tool access to CDE systems restricted to minimum required � read-only by default, write access formally approved"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -372,7 +372,7 @@
       "control_name": "Access control system",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access control system enforces LLM tool scope — agent cannot exceed defined CDE access without explicit authorisation"
+      "notes": "Access control system enforces LLM tool scope � agent cannot exceed defined CDE access without explicit authorisation"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -380,7 +380,7 @@
       "control_name": "Logging and monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM tool invocations in CDE logged — tool identity, parameters, invoking user identity, timestamp"
+      "notes": "All LLM tool invocations in CDE logged � tool identity, parameters, invoking user identity, timestamp"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -388,7 +388,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for LLM autonomous action scope in CDE — blast radius documented and accepted"
+      "notes": "Targeted risk analysis for LLM autonomous action scope in CDE � blast radius documented and accepted"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -396,7 +396,7 @@
       "control_name": "Governance and Risk (GOV)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Human oversight requirements for autonomous LLM actions — acceptable autonomy scope defined in AI governance policy"
+      "notes": "Human oversight requirements for autonomous LLM actions � acceptable autonomy scope defined in AI governance policy"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -404,7 +404,7 @@
       "control_name": "AI System Integrity (ASI)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool permission enforcement and action guardrails as ASI controls — LLM cannot exceed defined scope"
+      "notes": "Tool permission enforcement and action guardrails as ASI controls � LLM cannot exceed defined scope"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -412,15 +412,15 @@
       "control_name": "Monitoring and Detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM tool invocations logged and monitored — anomalous scope detected through AI-specific monitoring"
+      "notes": "All LLM tool invocations logged and monitored � anomalous scope detected through AI-specific monitoring"
     },
     {
       "framework": "ENISA Multilayer Framework",
       "control_id": "L1",
-      "control_name": "General ICT — Access Control",
+      "control_name": "General ICT � Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM tool access managed as privileged access — minimum permissions, regular review"
+      "notes": "LLM tool access managed as privileged access � minimum permissions, regular review"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -428,7 +428,7 @@
       "control_name": "Strategy & Metrics",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "AI autonomy policy as security programme strategy — acceptable autonomous action scope defined and communicated"
+      "notes": "AI autonomy policy as security programme strategy � acceptable autonomous action scope defined and communicated"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -436,7 +436,7 @@
       "control_name": "Security Architecture",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Least privilege architecture for LLM tool access — action scope enforced by design, not just policy"
+      "notes": "Least privilege architecture for LLM tool access � action scope enforced by design, not just policy"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -444,7 +444,7 @@
       "control_name": "Threat Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Excessive agency threat modelled — what happens if each tool is invoked autonomously with adversarial parameters"
+      "notes": "Excessive agency threat modelled � what happens if each tool is invoked autonomously with adversarial parameters"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -452,7 +452,7 @@
       "control_name": "Operational Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM tool invocations logged and monitored — anomalous scope detected as operational control"
+      "notes": "All LLM tool invocations logged and monitored � anomalous scope detected as operational control"
     },
     {
       "framework": "STRIDE",

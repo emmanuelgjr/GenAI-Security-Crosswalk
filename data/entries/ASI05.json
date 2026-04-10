@@ -49,7 +49,7 @@
       "control_name": "Policies for trustworthy AI",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Policy explicitly addresses agent code execution capability — sandbox requirements, permitted operations"
+      "notes": "Policy explicitly addresses agent code execution capability � sandbox requirements, permitted operations"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -57,15 +57,15 @@
       "control_name": "Risk categorisation",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Code execution risk categorised separately per agent — blast radius, permitted operations, sandbox status"
+      "notes": "Code execution risk categorised separately per agent � blast radius, permitted operations, sandbox status"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Adversarial testing of code execution paths — sandbox escape attempts, command injection via generated code"
+      "notes": "Adversarial testing of code execution paths � sandbox escape attempts, command injection via generated code"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -73,20 +73,20 @@
       "control_name": "Risk response",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Incident response for agent code execution anomaly — sandbox isolation, kill switch, forensic capture"
+      "notes": "Incident response for agent code execution anomaly � sandbox isolation, kill switch, forensic capture"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Code execution risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent code execution capability documented in Art. 9 risk management — sandbox status, permitted operations"
+      "notes": "Agent code execution capability documented in Art. 9 risk management � sandbox status, permitted operations"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Technical robustness against adversarial code execution",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Sandboxing, input filtering, static analysis are Art. 15 requirements for agents with code execution"
@@ -94,7 +94,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Post-market monitoring covering code execution incidents",
-      "control_name": "Art. 17 — Quality management",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Code execution anomaly response in quality management system"
@@ -105,7 +105,7 @@
       "control_name": "Secure coding",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Sandbox, static analysis, and allowlist as secure coding requirements — no code execution without these controls"
+      "notes": "Sandbox, static analysis, and allowlist as secure coding requirements � no code execution without these controls"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Application security requirements",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Security requirements for agent code execution capability specified before development — sandbox spec, permitted operations"
+      "notes": "Security requirements for agent code execution capability specified before development � sandbox spec, permitted operations"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Security testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Sandbox escape and code injection scenarios in security testing — adversarial testing before each deployment"
+      "notes": "Sandbox escape and code injection scenarios in security testing � adversarial testing before each deployment"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Monitoring activities",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Code execution environments monitored — anomalous system calls, network attempts detected"
+      "notes": "Code execution environments monitored � anomalous system calls, network attempts detected"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Testing of AI systems",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Sandbox escape and code injection scenarios in AIMS testing — adversarial testing before each deployment"
+      "notes": "Sandbox escape and code injection scenarios in AIMS testing � adversarial testing before each deployment"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Impact assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Impact of code execution capability formally assessed — RCE impact on persons and systems documented"
+      "notes": "Impact of code execution capability formally assessed � RCE impact on persons and systems documented"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,12 +161,12 @@
       "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Code execution risk in AI risk register — blast radius, sandbox status, permitted operations documented"
+      "notes": "Code execution risk in AI risk register � blast radius, sandbox status, permitted operations documented"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_name": "CIS 16 � Application Software Security",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Sandbox, static analysis, and allowlist as secure development requirements for code execution"
@@ -174,26 +174,26 @@
     {
       "framework": "CIS Controls v8.1",
       "control_id": "4.1 Establish secure configuration process",
-      "control_name": "CIS 4 — Secure Configuration",
+      "control_name": "CIS 4 � Secure Configuration",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Secure configuration includes code execution sandbox — no defaults permitting unrestricted execution"
+      "notes": "Secure configuration includes code execution sandbox � no defaults permitting unrestricted execution"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "18.1 Establish penetration testing",
-      "control_name": "CIS 18 — Penetration Testing",
+      "control_name": "CIS 18 � Penetration Testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Sandbox escape and code injection in penetration testing — adversarial scenarios before each deployment"
+      "notes": "Sandbox escape and code injection in penetration testing � adversarial scenarios before each deployment"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "13.8 Deploy network intrusion detection",
-      "control_name": "CIS 13 — Network Monitoring",
+      "control_name": "CIS 13 � Network Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Code execution environments network-monitored — outbound connection attempts from sandbox detected"
+      "notes": "Code execution environments network-monitored � outbound connection attempts from sandbox detected"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify application does not use eval or dynamic code",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "No eval or exec of agent-generated code — absolute prohibition enforced in code review"
+      "notes": "No eval or exec of agent-generated code � absolute prohibition enforced in code review"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Verify output encoding in SQL context",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "No raw agent output in SQL context — parameterised execution only"
+      "notes": "No raw agent output in SQL context � parameterised execution only"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -233,7 +233,7 @@
       "control_name": "Verify business logic limits",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Code execution capability in agents subject to business logic controls — sandbox, allowlist, static analysis"
+      "notes": "Code execution capability in agents subject to business logic controls � sandbox, allowlist, static analysis"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -241,7 +241,7 @@
       "control_name": "Software and information integrity",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All agent-generated code validated before execution — allowlisted operations only"
+      "notes": "All agent-generated code validated before execution � allowlisted operations only"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -249,7 +249,7 @@
       "control_name": "Use control",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent code execution restricted to specific, defined operations — no shell access, no network programming"
+      "notes": "Agent code execution restricted to specific, defined operations � no shell access, no network programming"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -257,7 +257,7 @@
       "control_name": "Software and information integrity (monitoring)",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Runtime monitoring of agent code execution — anomalous system calls detected and blocked"
+      "notes": "Runtime monitoring of agent code execution � anomalous system calls detected and blocked"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -289,7 +289,7 @@
       "control_name": "Platform Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Secure software development — static analysis, sandbox, allowlist as code execution platform security controls"
+      "notes": "Secure software development � static analysis, sandbox, allowlist as code execution platform security controls"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -297,7 +297,7 @@
       "control_name": "Infrastructure Resilience",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Networks and environments protected — sandbox isolated from production infrastructure"
+      "notes": "Networks and environments protected � sandbox isolated from production infrastructure"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -305,7 +305,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Code execution monitored — sandbox escape attempts, anomalous system calls detected"
+      "notes": "Code execution monitored � sandbox escape attempts, anomalous system calls detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Incident Mitigation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Code execution incidents contained — sandbox isolated, forensic capture initiated"
+      "notes": "Code execution incidents contained � sandbox isolated, forensic capture initiated"
     },
     {
       "framework": "SOC 2",
@@ -494,7 +494,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Code injection via crafted prompts",
-      "control_name": "IHT — Input Handling",
+      "control_name": "IHT � Input Handling",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Craft inputs designed to generate code containing network calls, file system access, or shell commands"
@@ -502,7 +502,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Generated code validation",
-      "control_name": "OHT — Output Handling",
+      "control_name": "OHT � Output Handling",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify static analysis catches dangerous operations before execution"
@@ -510,7 +510,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Sandbox escape attempts",
-      "control_name": "AST — Agent-Specific",
+      "control_name": "AST � Agent-Specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Test sandbox boundary enforcement from within the execution environment"
@@ -566,11 +566,11 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Code executes in context of over-privileged agent credential — amplifies RCE impact",
+      "control_id": "Code executes in context of over-privileged agent credential � amplifies RCE impact",
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Sandbox code execution under a separate, minimal credential — not the agent's primary identity"
+      "notes": "Sandbox code execution under a separate, minimal credential � not the agent's primary identity"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -578,7 +578,7 @@
       "control_name": "NHI-8 Environment Isolation Failure",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Strict environment isolation for code execution — dedicated sandboxed identity"
+      "notes": "Strict environment isolation for code execution � dedicated sandboxed identity"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -586,7 +586,7 @@
       "control_name": "NHI-9 NHI Reuse",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Unique credential per agent — code execution in one instance cannot leverage other instances' access"
+      "notes": "Unique credential per agent � code execution in one instance cannot leverage other instances' access"
     },
     {
       "framework": "NIST SP 800-218A",

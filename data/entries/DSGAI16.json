@@ -31,7 +31,7 @@
       "control_name": "Data from Information Repositories",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Browser assistant accesses sensitive data across tabs and applications — adversary controls assistant to exfiltrate"
+      "notes": "Browser assistant accesses sensitive data across tabs and applications � adversary controls assistant to exfiltrate"
     },
     {
       "framework": "MITRE ATLAS",
@@ -39,7 +39,7 @@
       "control_name": "Exfiltrate via ML Inference API",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Compromised browser assistant used as exfiltration channel — sensitive data from accessible applications transmitted"
+      "notes": "Compromised browser assistant used as exfiltration channel � sensitive data from accessible applications transmitted"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -47,7 +47,7 @@
       "control_name": "Policies for trustworthy AI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Endpoint AI agent governance policy — approved extensions, permission scoping, mandatory updates"
+      "notes": "Endpoint AI agent governance policy � approved extensions, permission scoping, mandatory updates"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -55,15 +55,15 @@
       "control_name": "AI system impact",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Impact assessment of endpoint AI agents — data access scope, exfiltration paths, user risk"
+      "notes": "Impact assessment of endpoint AI agents � data access scope, exfiltration paths, user risk"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial testing of approved browser extensions — prompt injection via web content scenarios"
+      "notes": "Adversarial testing of approved browser extensions � prompt injection via web content scenarios"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,28 +71,28 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for endpoint AI agent compromise — extension disable, data impact assessment"
+      "notes": "Incident response for endpoint AI agent compromise � extension disable, data impact assessment"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Endpoint AI agent risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Browser and endpoint agent deployments assessed in Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI designed to allow human oversight — users must be able to stop and override",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "High-risk AI designed to allow human oversight � users must be able to stop and override",
+      "control_name": "Art. 14 � Human oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Users must be able to pause and override endpoint AI agents — Art. 14 human oversight requirement"
+      "notes": "Users must be able to pause and override endpoint AI agents � Art. 14 human oversight requirement"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Deployers ensure human oversight as instructed by provider",
-      "control_name": "Art. 29 — Deployer obligations",
+      "control_name": "Art. 29 � Deployer obligations",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Deployers responsible for ensuring endpoint AI agents operate within Art. 14 human oversight scope"
@@ -103,7 +103,7 @@
       "control_name": "Endpoint device management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Endpoint AI agents managed under device management policy — approved versions, permissions scoped"
+      "notes": "Endpoint AI agents managed under device management policy � approved versions, permissions scoped"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -111,7 +111,7 @@
       "control_name": "Protection against malware",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Endpoint AI agents subject to malware protection — extension integrity verification"
+      "notes": "Endpoint AI agents subject to malware protection � extension integrity verification"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -209,7 +209,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Browser AI extensions assessed as third-party software — 62443-2-4 requirements before Zone 3 deployment"
+      "notes": "Browser AI extensions assessed as third-party software � 62443-2-4 requirements before Zone 3 deployment"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -217,7 +217,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approved extensions only on Zone 3 workstations — unapproved AI extensions blocked at device management"
+      "notes": "Approved extensions only on Zone 3 workstations � unapproved AI extensions blocked at device management"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -265,7 +265,7 @@
       "control_name": "Platform Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Software managed to reduce risk — browser AI extensions version-controlled, patched, approved before deployment"
+      "notes": "Software managed to reduce risk � browser AI extensions version-controlled, patched, approved before deployment"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -281,33 +281,33 @@
       "control_name": "Asset Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approved browser AI extensions inventoried — data access scope, security assessment status"
+      "notes": "Approved browser AI extensions inventoried � data access scope, security assessment status"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Approved AI assistants with scoped permissions — permission minimisation documented and enforced",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "Approved AI assistants with scoped permissions � permission minimisation documented and enforced",
+      "control_name": "CC6.1 � Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Browser AI extension providers assessed in vendor risk programme — data handling, telemetry, update security",
-      "control_name": "CC9.1 — Vendor risk",
+      "control_id": "Browser AI extension providers assessed in vendor risk programme � data handling, telemetry, update security",
+      "control_name": "CC9.1 � Vendor risk",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Endpoint AI acceptable use procedures — approved extension list, prohibited data access, employee acknowledgement",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "Endpoint AI acceptable use procedures � approved extension list, prohibited data access, employee acknowledgement",
+      "control_name": "CC5.2 � Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Endpoint AI overreach risks identified — data access scope, exfiltration paths assessed",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "Endpoint AI overreach risks identified � data access scope, exfiltration paths assessed",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -317,7 +317,7 @@
       "control_name": "TPSP programme",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Browser AI extension providers with CDE access are TPSPs — add to TPSP list, initiate compliance process"
+      "notes": "Browser AI extension providers with CDE access are TPSPs � add to TPSP list, initiate compliance process"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -325,7 +325,7 @@
       "control_name": "Vulnerability management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Browser AI extensions patched and version-controlled — vulnerable extensions are Req 6.3 findings in CDE"
+      "notes": "Browser AI extensions patched and version-controlled � vulnerable extensions are Req 6.3 findings in CDE"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -333,7 +333,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "AI assistant access to CDE data on endpoint logged — Req 10 audit trail requirement"
+      "notes": "AI assistant access to CDE data on endpoint logged � Req 10 audit trail requirement"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -341,7 +341,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for endpoint AI assistant scope in CDE — data accessible, exfiltration paths"
+      "notes": "Targeted risk analysis for endpoint AI assistant scope in CDE � data accessible, exfiltration paths"
     },
     {
       "framework": "ENISA Multilayer Framework",

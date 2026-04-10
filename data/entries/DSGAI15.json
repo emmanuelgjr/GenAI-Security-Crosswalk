@@ -31,7 +31,7 @@
       "control_name": "Exfiltrate via Cyber Means",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Over-broad context window content exfiltrated through successful injection — adversary retrieves aggregated sensitive data"
+      "notes": "Over-broad context window content exfiltrated through successful injection � adversary retrieves aggregated sensitive data"
     },
     {
       "framework": "MITRE ATLAS",
@@ -47,23 +47,23 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Context window risks mapped — identify which deployments aggregate data across trust domains"
+      "notes": "Context window risks mapped � identify which deployments aggregate data across trust domains"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Adversarial testing of context window content — cross-trust-domain aggregation and injection scenarios"
+      "notes": "Adversarial testing of context window content � cross-trust-domain aggregation and injection scenarios"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Data leakage testing on context window content — sensitive data accessible to injection attacks"
+      "notes": "Data leakage testing on context window content � sensitive data accessible to injection attacks"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,20 +71,20 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Response for context window exploitation — session containment, content audit, impact scoping"
+      "notes": "Response for context window exploitation � session containment, content audit, impact scoping"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Data governance applies to all data in AI system scope — including context window content",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Data governance applies to all data in AI system scope � including context window content",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Context window data governance — minimum content, classification tracking — is Art. 10 requirement"
+      "notes": "Context window data governance � minimum content, classification tracking � is Art. 10 requirement"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity against adversarial exploitation of context window content",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Context minimisation and access controls are Art. 15 cybersecurity measures"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Post-market monitoring covering context window exploitation incidents",
-      "control_name": "Art. 17 — Quality management",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Context window security in post-market monitoring programme"
@@ -103,7 +103,7 @@
       "control_name": "Information access restriction",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Context window content restricted to minimum required — no cross-trust-domain aggregation without access control"
+      "notes": "Context window content restricted to minimum required � no cross-trust-domain aggregation without access control"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -111,7 +111,7 @@
       "control_name": "Classification of information",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "All content injected into context window classified — highest classification drives handling requirement"
+      "notes": "All content injected into context window classified � highest classification drives handling requirement"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -127,7 +127,7 @@
       "control_name": "Information transfer",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Controls on content transfer into context windows — documented data flow for each RAG pipeline"
+      "notes": "Controls on content transfer into context windows � documented data flow for each RAG pipeline"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -209,7 +209,7 @@
       "control_name": "Least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT context assembly restricted to minimum data required for the specific query — not broad process datasets"
+      "notes": "OT context assembly restricted to minimum data required for the specific query � not broad process datasets"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -217,7 +217,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT context window classification tracking — highest classification drives response handling"
+      "notes": "OT context window classification tracking � highest classification drives response handling"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -225,7 +225,7 @@
       "control_name": "Information flow restriction",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Context assembly limits in Zone 3 — cross-trust-domain aggregation restricted"
+      "notes": "Context assembly limits in Zone 3 � cross-trust-domain aggregation restricted"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -257,7 +257,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access permissions applied to context assembly — minimum-necessary context injection enforced"
+      "notes": "Access permissions applied to context assembly � minimum-necessary context injection enforced"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -265,7 +265,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Context window content protected — highest classification of any included document drives handling"
+      "notes": "Context window content protected � highest classification of any included document drives handling"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -273,7 +273,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Context assembly monitored — over-broad injection patterns detected"
+      "notes": "Context assembly monitored � over-broad injection patterns detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -281,33 +281,33 @@
       "control_name": "Risk Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Context window risks documented — which deployments aggregate data across trust domains"
+      "notes": "Context window risks documented � which deployments aggregate data across trust domains"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Context window assembly respects user authorisation — no content from higher classification tier than user's access level",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "Context window assembly respects user authorisation � no content from higher classification tier than user's access level",
+      "control_name": "CC6.1 � Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Highest classification in context window drives handling — response treated as confidential if context contains confidential data",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "Highest classification in context window drives handling � response treated as confidential if context contains confidential data",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Minimum-necessary context injection procedures — documented and enforced",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "Minimum-necessary context injection procedures � documented and enforced",
+      "control_name": "CC5.2 � Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Over-broad context risks identified — cross-trust-domain aggregation assessed",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "Over-broad context risks identified � cross-trust-domain aggregation assessed",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -317,7 +317,7 @@
       "control_name": "Restrict access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Context assembly restricted to minimum CHD required — users cannot access CHD beyond their authorised scope through context injection"
+      "notes": "Context assembly restricted to minimum CHD required � users cannot access CHD beyond their authorised scope through context injection"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -325,7 +325,7 @@
       "control_name": "PAN rendering",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "PANs in context window masked — cleartext PANs in LLM context is a Req 3 exposure"
+      "notes": "PANs in context window masked � cleartext PANs in LLM context is a Req 3 exposure"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -333,7 +333,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for context window CHD exposure — blast radius of over-broad injection documented"
+      "notes": "Targeted risk analysis for context window CHD exposure � blast radius of over-broad injection documented"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -341,7 +341,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Context window assembly logged — all CHD accessed through context injection traceable"
+      "notes": "Context window assembly logged � all CHD accessed through context injection traceable"
     },
     {
       "framework": "ENISA Multilayer Framework",

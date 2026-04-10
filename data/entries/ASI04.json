@@ -49,7 +49,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Supply chain governance policy — approved sources for agent tools, MCP servers, and model components"
+      "notes": "Supply chain governance policy � approved sources for agent tools, MCP servers, and model components"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -57,15 +57,15 @@
       "control_name": "Interdependencies",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent supply chain components mapped — dynamic tool loading inventoried, approved before use"
+      "notes": "All agent supply chain components mapped � dynamic tool loading inventoried, approved before use"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Supply chain integrity testing — signature verification, descriptor review, backdoor scanning"
+      "notes": "Supply chain integrity testing � signature verification, descriptor review, backdoor scanning"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -73,28 +73,28 @@
       "control_name": "Residual risk",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Residual supply chain risk documented and treated — third-party component risks in AI risk register"
+      "notes": "Residual supply chain risk documented and treated � third-party component risks in AI risk register"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Supply chain risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent components in Art. 9 risk management — dynamic runtime components explicitly in scope"
+      "notes": "All agent components in Art. 9 risk management � dynamic runtime components explicitly in scope"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Quality management includes supply chain controls",
-      "control_name": "Art. 17 — Quality management",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Documented supply chain security procedures — component verification, change management"
+      "notes": "Documented supply chain security procedures � component verification, change management"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Providers document obligations; deployers verify",
-      "control_name": "Art. 25 — Value chain responsibilities",
+      "control_name": "Art. 25 � Value chain responsibilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent tool and MCP server supply chain obligations distributed along value chain"
@@ -105,7 +105,7 @@
       "control_name": "Supplier relationships",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Security requirements applied to all agent tool and MCP server providers — provenance, integrity, disclosure obligations"
+      "notes": "Security requirements applied to all agent tool and MCP server providers � provenance, integrity, disclosure obligations"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Supplier agreements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Contractual security requirements for all agent component suppliers — integrity guarantees, vulnerability notification SLA"
+      "notes": "Contractual security requirements for all agent component suppliers � integrity guarantees, vulnerability notification SLA"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Supply chain security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Managing ICT supply chain risks — agent tool and MCP server ecosystem explicitly in scope"
+      "notes": "Managing ICT supply chain risks � agent tool and MCP server ecosystem explicitly in scope"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Management of technical vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent component CVEs in vulnerability management — ML libraries, inference runtime, MCP server dependencies"
+      "notes": "Agent component CVEs in vulnerability management � ML libraries, inference runtime, MCP server dependencies"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -137,7 +137,7 @@
       "control_name": "Third-party AI system acquisition",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent tool and MCP server providers assessed — security obligations, integrity guarantees, disclosure SLA in contracts"
+      "notes": "All agent tool and MCP server providers assessed � security obligations, integrity guarantees, disclosure SLA in contracts"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Customer relationships",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Obligations to downstream consumers of agentic systems — what supply chain security is guaranteed"
+      "notes": "Obligations to downstream consumers of agentic systems � what supply chain security is guaranteed"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "AI system security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Component integrity verification as AIMS security design requirement — cryptographic signatures before loading"
+      "notes": "Component integrity verification as AIMS security design requirement � cryptographic signatures before loading"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,39 +161,39 @@
       "control_name": "Data quality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Training data from third-party sources assessed — same data quality criteria as internal data"
+      "notes": "Training data from third-party sources assessed � same data quality criteria as internal data"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "2.1 Establish and maintain software inventory",
-      "control_name": "CIS 2 — Inventory and Control of Software Assets",
+      "control_name": "CIS 2 � Inventory and Control of Software Assets",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "ML SBOM as software asset inventory — all agent components (tools, MCP servers, models, libraries)"
+      "notes": "ML SBOM as software asset inventory � all agent components (tools, MCP servers, models, libraries)"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "7.1 Establish vulnerability management process",
-      "control_name": "CIS 7 — Continuous Vulnerability Management",
+      "control_name": "CIS 7 � Continuous Vulnerability Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent component CVEs in vulnerability management — urgent patching for code execution risks"
+      "notes": "Agent component CVEs in vulnerability management � urgent patching for code execution risks"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "16.6 Use only up-to-date and trusted third-party components",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_name": "CIS 16 � Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approved component list — only sourced from approved vendors, signatures verified"
+      "notes": "Approved component list � only sourced from approved vendors, signatures verified"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "15.1 Establish service provider management process",
-      "control_name": "CIS 15 — Service Provider Management",
+      "control_name": "CIS 15 � Service Provider Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent tool and MCP providers managed as service providers — security assessment before onboarding"
+      "notes": "Agent tool and MCP providers managed as service providers � security assessment before onboarding"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -201,7 +201,7 @@
       "control_name": "Verify third-party components current and free of vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent component libraries scanned for CVEs — ML SBOM maintained and monitored"
+      "notes": "All agent component libraries scanned for CVEs � ML SBOM maintained and monitored"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify only minimal approved external libraries",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approved component list — unsigned or unverified agent components rejected"
+      "notes": "Approved component list � unsigned or unverified agent components rejected"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -241,7 +241,7 @@
       "control_name": "Use control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Only approved, verified agent components permitted in OT zones — no runtime loading of unapproved tools"
+      "notes": "Only approved, verified agent components permitted in OT zones � no runtime loading of unapproved tools"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -257,7 +257,7 @@
       "control_name": "Software and information integrity (change)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent component updates subject to OT change management — no automatic updates in production"
+      "notes": "Agent component updates subject to OT change management � no automatic updates in production"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -289,7 +289,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Cybersecurity supply chain risk management programme — all agent component vendors in scope"
+      "notes": "Cybersecurity supply chain risk management programme � all agent component vendors in scope"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -297,7 +297,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Cybersecurity requirements in supplier contracts — integrity guarantees, vulnerability disclosure SLA"
+      "notes": "Cybersecurity requirements in supplier contracts � integrity guarantees, vulnerability disclosure SLA"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -305,7 +305,7 @@
       "control_name": "Asset Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent components inventoried — ML SBOM for all tools, MCP servers, model weights, libraries"
+      "notes": "Agent components inventoried � ML SBOM for all tools, MCP servers, model weights, libraries"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Platform Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Software managed to reduce risk — component integrity verification, change management"
+      "notes": "Software managed to reduce risk � component integrity verification, change management"
     },
     {
       "framework": "SOC 2",
@@ -494,7 +494,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Component integrity verification",
-      "control_name": "SCT — Supply Chain",
+      "control_name": "SCT � Supply Chain",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify cryptographic signatures of all agent components; scan for hidden instructions in descriptors"
@@ -502,7 +502,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Behavioural change detection post-update",
-      "control_name": "MBT — Model Behaviour",
+      "control_name": "MBT � Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Establish behavioural baseline before component update; verify no unexpected behaviour change after update"
@@ -510,7 +510,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Runtime component monitoring",
-      "control_name": "AST — Agent-Specific",
+      "control_name": "AST � Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify that component modification at runtime is detected and triggers agent suspension"
@@ -570,7 +570,7 @@
       "control_name": "NHI-3 Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Validate all third-party NHIs at connection — revoke tokens from unverified sources"
+      "notes": "Validate all third-party NHIs at connection � revoke tokens from unverified sources"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -578,7 +578,7 @@
       "control_name": "NHI-6 Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Credential isolation — components cannot access other components' credentials"
+      "notes": "Credential isolation � components cannot access other components' credentials"
     },
     {
       "framework": "OWASP NHI Top 10",

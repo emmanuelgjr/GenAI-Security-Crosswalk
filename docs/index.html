@@ -1066,6 +1066,8 @@ input, select { font-family: inherit; }
 <!-- Data scripts -->
 <script src="data.js"></script>
 <script src="incidents.js"></script>
+<script src="backlinks.js"></script>
+<script src="frameworks-registry.js"></script>
 
 <script>
 (function() {
@@ -1218,6 +1220,8 @@ input, select { font-family: inherit; }
   // ══════════════════════════════════════════════════════════════════════════════
   var DATA = window.CROSSWALK_DATA || [];
   var INCIDENTS = window.CROSSWALK_INCIDENTS || [];
+  var BACKLINKS = window.CROSSWALK_BACKLINKS || [];
+  var FW_REGISTRY = window.CROSSWALK_FRAMEWORKS || [];
 
   // Pre-compute some lookups
   var FRAMEWORKS = [];
@@ -1232,6 +1236,14 @@ input, select { font-family: inherit; }
 
   var INCIDENT_MAP = {};
   INCIDENTS.forEach(function(inc) { INCIDENT_MAP[inc.id] = inc; });
+
+  // Backlink index: "framework::control_id" → backlink record
+  var BACKLINK_MAP = {};
+  BACKLINKS.forEach(function(bl) { BACKLINK_MAP[bl.framework + '::' + bl.control_id] = bl; });
+
+  // Framework registry lookup by display name
+  var FW_REGISTRY_MAP = {};
+  FW_REGISTRY.forEach(function(fw) { FW_REGISTRY_MAP[fw.name] = fw; });
 
   var SOURCE_LABELS = {
     'LLM-Top10-2025': 'LLM Top 10 2025',
@@ -1563,15 +1575,16 @@ input, select { font-family: inherit; }
     var app = document.getElementById('app');
     app.innerHTML = '';
 
-    // Check for deep-link patterns: /explorer/ENTRY_ID, /incidents/INC_ID, /frameworks/FW_NAME
+    // Check for deep-link patterns: /explorer/ENTRY_ID, /incidents/INC_ID, /frameworks/FW_NAME, /frameworks/FW_NAME/CONTROL_ID
     var explorerMatch = path.match(/^\/explorer\/(.+)$/);
     var incidentMatch = path.match(/^\/incidents\/(.+)$/);
-    var frameworkMatch = path.match(/^\/frameworks\/(.+)$/);
+    var fwControlMatch = path.match(/^\/frameworks\/([^/]+)\/(.+)$/);
+    var frameworkMatch = !fwControlMatch ? path.match(/^\/frameworks\/(.+)$/) : null;
 
     var basePath = path;
     if (explorerMatch) basePath = '/explorer';
     if (incidentMatch) basePath = '/incidents';
-    if (frameworkMatch) basePath = '/frameworks';
+    if (frameworkMatch || fwControlMatch) basePath = '/frameworks';
 
     // Update nav active state
     document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(a) {
@@ -1580,6 +1593,14 @@ input, select { font-family: inherit; }
       a.classList.toggle('active', linkPath === basePath);
     });
 
+    // Framework control detail — e.g. #/frameworks/NIST%20AI%20RMF%201.0/GV-1.7
+    if (fwControlMatch) {
+      var fwNameCtrl = decodeURIComponent(fwControlMatch[1]);
+      var ctrlId = decodeURIComponent(fwControlMatch[2]);
+      renderControlDetail(app, fwNameCtrl, ctrlId);
+      window.scrollTo(0, 0);
+      return;
+    }
     // Framework detail is a full page, not a modal
     if (frameworkMatch) {
       var fwName = decodeURIComponent(frameworkMatch[1]);
@@ -2462,11 +2483,12 @@ input, select { font-family: inherit; }
       group.mappings.forEach(function(m) {
         var row = el('tr');
         var ctrlTd = el('td', { className: 'ctrl-id' });
-        if (m.url) {
-          ctrlTd.appendChild(el('a', { href: m.url, target: '_blank', rel: 'noopener' }, m.control_id));
-        } else {
-          ctrlTd.textContent = m.control_id;
-        }
+        // Link to control detail view (pivot page)
+        var ctrlLink = el('a', { href: '#/frameworks/' + encodeURIComponent(fwName) + '/' + encodeURIComponent(m.control_id) }, m.control_id);
+        ctrlLink.style.textDecoration = 'none';
+        ctrlLink.style.color = 'var(--accent)';
+        ctrlLink.style.fontWeight = '600';
+        ctrlTd.appendChild(ctrlLink);
         row.appendChild(ctrlTd);
         row.appendChild(el('td', {}, m.control_name || ''));
         var tierSpan = el('span', { className: 'tier-badge tier-' + (m.tier || '') }, m.tier || '');
@@ -2479,6 +2501,221 @@ input, select { font-family: inherit; }
     });
 
     wrap.appendChild(mappingSection);
+
+    // ── Control Registry section (if framework is in the registry) ──
+    var regFw = FW_REGISTRY_MAP[fwName];
+    if (regFw && regFw.controls && regFw.controls.length) {
+      var regSection = el('div', { className: 'fw-detail-section' });
+      regSection.appendChild(el('div', { className: 'modal-section-title' }, 'Control Registry (' + regFw.controls.length + ' controls)'));
+      var regDesc = el('p', { style: 'font-size:.85rem;color:var(--text-secondary);margin:0 0 12px;' });
+      regDesc.textContent = 'Full control inventory from ' + regFw.publisher + '. Click any control to see which OWASP entries map to it.';
+      regSection.appendChild(regDesc);
+
+      // Group by function
+      var byFunc = {};
+      var funcOrder = [];
+      regFw.controls.forEach(function(c) {
+        var fn = c.function || 'General';
+        if (!byFunc[fn]) { byFunc[fn] = []; funcOrder.push(fn); }
+        byFunc[fn].push(c);
+      });
+
+      funcOrder.forEach(function(fn) {
+        var funcBlock = el('div', { style: 'margin-bottom:16px;' });
+        funcBlock.appendChild(el('h4', { style: 'font-size:.85rem;font-weight:700;color:var(--text);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;' }, fn));
+        var ctrlList = el('div', { style: 'display:flex;flex-wrap:wrap;gap:6px;' });
+        byFunc[fn].forEach(function(c) {
+          var bl = BACKLINK_MAP[fwName + '::' + c.control_id];
+          var count = bl ? bl.entries.length : 0;
+          var chip = el('a', {
+            href: '#/frameworks/' + encodeURIComponent(fwName) + '/' + encodeURIComponent(c.control_id),
+            className: 'xref-chip',
+            title: c.title + (count ? ' — ' + count + ' OWASP entries' : ' — no OWASP mappings yet'),
+            style: 'text-decoration:none;' + (count ? '' : 'opacity:0.5;')
+          });
+          chip.textContent = c.control_id;
+          if (count) {
+            var badge = el('span', { style: 'font-size:.65rem;background:var(--accent);color:#fff;border-radius:8px;padding:1px 5px;margin-left:4px;' });
+            badge.textContent = count;
+            chip.appendChild(badge);
+          }
+          ctrlList.appendChild(chip);
+        });
+        funcBlock.appendChild(ctrlList);
+        regSection.appendChild(funcBlock);
+      });
+      wrap.appendChild(regSection);
+    }
+
+    container.appendChild(wrap);
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Control Detail page — framework-rooted pivot view
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderControlDetail(container, fwName, controlId) {
+    var wrap = el('div', { className: 'fw-detail-page' });
+
+    // Back link to framework
+    var backLink = el('a', { href: '#/frameworks/' + encodeURIComponent(fwName), className: 'fw-detail-back' });
+    backLink.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>';
+    backLink.appendChild(document.createTextNode(' Back to ' + fwName));
+    wrap.appendChild(backLink);
+
+    // Find registry info
+    var regFw = FW_REGISTRY_MAP[fwName];
+    var regControl = regFw ? regFw.controls.find(function(c) { return c.control_id === controlId; }) : null;
+
+    // Find backlinks
+    var bl = BACKLINK_MAP[fwName + '::' + controlId];
+
+    // Also scan DATA directly if no backlink (handles controls mapped with slightly different names)
+    var matchedEntries = [];
+    if (bl) {
+      matchedEntries = bl.entries;
+    } else {
+      DATA.forEach(function(e) {
+        (e.mappings || []).forEach(function(m) {
+          if (m.framework === fwName && m.control_id === controlId) {
+            matchedEntries.push({
+              id: e.id,
+              name: e.name,
+              source_list: e.source_list,
+              severity: e.severity,
+              tier: m.tier,
+              scope: m.scope,
+              notes: m.notes || null
+            });
+          }
+        });
+      });
+    }
+
+    // Header
+    var header = el('div', { className: 'fw-detail-header' });
+    var badges = el('div', { style: 'display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px;' });
+    badges.appendChild(el('span', { className: 'badge-cat' }, fwName));
+    badges.appendChild(el('span', { className: 'badge-coverage cov-high' }, matchedEntries.length + ' OWASP entries'));
+    if (regControl && regControl.function) {
+      badges.appendChild(el('span', { className: 'badge-cat', style: 'background:var(--accent);color:#fff;' }, regControl.function));
+    }
+
+    // Share button
+    var ctrlShareUrl = window.location.origin + window.location.pathname + '#/frameworks/' + encodeURIComponent(fwName) + '/' + encodeURIComponent(controlId);
+    badges.appendChild(buildShareButton(ctrlShareUrl, controlId, 'margin-left:auto;'));
+    header.appendChild(badges);
+
+    header.appendChild(el('h1', { className: 'fw-detail-title' }, controlId));
+    if (regControl) {
+      header.appendChild(el('h2', { style: 'font-size:1.1rem;font-weight:400;color:var(--text-secondary);margin:4px 0 0;' }, regControl.title));
+    }
+    if (bl && bl.control_name) {
+      header.appendChild(el('p', { style: 'font-size:.9rem;color:var(--text-secondary);margin:8px 0 0;' }, bl.control_name));
+    }
+    if (regControl && regControl.description) {
+      header.appendChild(el('p', { className: 'fw-detail-desc', style: 'margin-top:12px;' }, regControl.description));
+    }
+    // External link
+    var extUrl = regControl && regControl.url ? regControl.url : null;
+    if (extUrl) {
+      var extLink = el('a', { href: extUrl, target: '_blank', rel: 'noopener', style: 'display:inline-block;margin-top:8px;font-size:.85rem;color:var(--accent);' });
+      extLink.textContent = 'View in framework source →';
+      header.appendChild(extLink);
+    }
+    wrap.appendChild(header);
+
+    // Parent/child controls (if registry exists)
+    if (regFw && regControl) {
+      var children = regFw.controls.filter(function(c) { return c.parent === controlId; });
+      var parent = regControl.parent ? regFw.controls.find(function(c) { return c.control_id === regControl.parent; }) : null;
+      if (parent || children.length) {
+        var hierSection = el('div', { className: 'fw-detail-section' });
+        hierSection.appendChild(el('div', { className: 'modal-section-title' }, 'Control Hierarchy'));
+        if (parent) {
+          var parentRow = el('div', { style: 'margin-bottom:8px;' });
+          parentRow.appendChild(el('span', { style: 'font-size:.75rem;color:var(--text-muted);text-transform:uppercase;' }, 'Parent: '));
+          var parentLink = el('a', { href: '#/frameworks/' + encodeURIComponent(fwName) + '/' + encodeURIComponent(parent.control_id), style: 'color:var(--accent);text-decoration:none;font-weight:600;' });
+          parentLink.textContent = parent.control_id + ' — ' + parent.title;
+          parentRow.appendChild(parentLink);
+          hierSection.appendChild(parentRow);
+        }
+        if (children.length) {
+          var childLabel = el('div', { style: 'font-size:.75rem;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px;' });
+          childLabel.textContent = 'Sub-controls (' + children.length + ')';
+          hierSection.appendChild(childLabel);
+          var childChips = el('div', { style: 'display:flex;flex-wrap:wrap;gap:6px;' });
+          children.forEach(function(ch) {
+            var chBl = BACKLINK_MAP[fwName + '::' + ch.control_id];
+            var chCount = chBl ? chBl.entries.length : 0;
+            var chLink = el('a', {
+              href: '#/frameworks/' + encodeURIComponent(fwName) + '/' + encodeURIComponent(ch.control_id),
+              className: 'xref-chip',
+              style: 'text-decoration:none;' + (chCount ? '' : 'opacity:0.5;')
+            });
+            chLink.textContent = ch.control_id;
+            if (chCount) {
+              var chBadge = el('span', { style: 'font-size:.65rem;background:var(--accent);color:#fff;border-radius:8px;padding:1px 5px;margin-left:4px;' });
+              chBadge.textContent = chCount;
+              chLink.appendChild(chBadge);
+            }
+            childChips.appendChild(chLink);
+          });
+          hierSection.appendChild(childChips);
+        }
+        wrap.appendChild(hierSection);
+      }
+    }
+
+    // OWASP Entries that map to this control (the pivot!)
+    if (matchedEntries.length) {
+      var pivotSection = el('div', { className: 'fw-detail-section' });
+      pivotSection.appendChild(el('div', { className: 'modal-section-title' }, 'OWASP Entries Mapped to ' + controlId));
+      var pivotTable = el('table', { className: 'mapping-table fw-mapping' });
+      var pivotHead = el('thead');
+      var pivotHr = el('tr');
+      ['Entry', 'Name', 'Source List', 'Severity', 'Tier', 'Scope'].forEach(function(h) { pivotHr.appendChild(el('th', {}, h)); });
+      pivotHead.appendChild(pivotHr);
+      pivotTable.appendChild(pivotHead);
+      var pivotBody = el('tbody');
+      matchedEntries.forEach(function(me) {
+        var row = el('tr', { style: 'cursor:pointer;' });
+        row.addEventListener('click', function() { window.location.hash = '#/explorer/' + encodeURIComponent(me.id); });
+        var idTd = el('td');
+        idTd.appendChild(el('span', { className: 'badge-id ' + me.severity, style: 'cursor:pointer;' }, me.id));
+        row.appendChild(idTd);
+        row.appendChild(el('td', { style: 'font-weight:600;' }, me.name));
+        row.appendChild(el('td', {}, (SOURCE_LABELS[me.source_list] || me.source_list)));
+        row.appendChild(el('td', {}, el('span', { className: 'sev-badge sev-' + (me.severity || '').toLowerCase() }, me.severity || '—')));
+        row.appendChild(el('td', {}, el('span', { className: 'tier-badge tier-' + (me.tier || '') }, me.tier || '')));
+        row.appendChild(el('td', {}, me.scope || ''));
+        pivotBody.appendChild(row);
+      });
+      pivotTable.appendChild(pivotBody);
+      pivotSection.appendChild(pivotTable);
+
+      // Notes (if any entries have notes)
+      var hasNotes = matchedEntries.some(function(me) { return me.notes; });
+      if (hasNotes) {
+        var notesBlock = el('div', { style: 'margin-top:12px;' });
+        notesBlock.appendChild(el('div', { className: 'modal-section-title', style: 'font-size:.8rem;' }, 'Implementation Notes'));
+        matchedEntries.forEach(function(me) {
+          if (!me.notes) return;
+          var noteRow = el('div', { style: 'padding:6px 0;border-bottom:1px solid var(--border);font-size:.85rem;' });
+          noteRow.appendChild(el('strong', { style: 'color:var(--accent);' }, me.id + ': '));
+          noteRow.appendChild(document.createTextNode(me.notes));
+          notesBlock.appendChild(noteRow);
+        });
+        pivotSection.appendChild(notesBlock);
+      }
+
+      wrap.appendChild(pivotSection);
+    } else {
+      var emptySection = el('div', { className: 'fw-detail-section' });
+      emptySection.appendChild(el('div', { className: 'modal-section-title' }, 'OWASP Entries'));
+      emptySection.appendChild(el('p', { style: 'color:var(--text-muted);font-size:.9rem;' }, 'No OWASP entries currently map to this control.'));
+      wrap.appendChild(emptySection);
+    }
+
     container.appendChild(wrap);
   }
 
@@ -3219,18 +3456,33 @@ input, select { font-family: inherit; }
       } else {
         // framework node — list all OWASP risks that map to it, with control IDs
         sidePanel.appendChild(el('div', { className: 'ctrl-id-line' }, d.controls + ' controls · maps to ' + d.riskCount + ' OWASP risks'));
+
+        var fwLink = el('a', { href: '#/frameworks/' + encodeURIComponent(d.framework) }, 'View Framework Details →');
+        fwLink.style.cssText = 'display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:var(--radius);font-size:.8rem;text-decoration:none;margin-bottom:12px;';
+        sidePanel.appendChild(fwLink);
+
         var nbWrap = el('div', { className: 'neighbors' });
         nbWrap.appendChild(el('h4', {}, 'Risks Covered'));
         DATA.forEach(function(e) {
           var matching = (e.mappings || []).filter(function(m) { return m.framework === d.framework; });
           if (!matching.length) return;
-          var row = el('a', { className: 'neighbor', href: '#/explorer/' + encodeURIComponent(e.id) });
+          var row = el('div', { className: 'neighbor' });
           row.style.borderLeft = '3px solid ' + cwColorFor(e.source_list, colorMap);
-          row.style.textDecoration = 'none';
-          row.style.color = 'inherit';
-          row.appendChild(document.createTextNode(e.id + ' — ' + e.name));
-          var sub = el('span', { className: 'nb-fw' }, matching.map(function(m) { return m.control_id; }).join(', '));
-          row.appendChild(sub);
+          var entryLink = el('a', { href: '#/explorer/' + encodeURIComponent(e.id), style: 'text-decoration:none;color:inherit;font-weight:600;' });
+          entryLink.textContent = e.id + ' — ' + e.name;
+          row.appendChild(entryLink);
+          // Render control IDs as individual clickable links
+          var ctrlWrap = el('span', { className: 'nb-fw', style: 'display:flex;flex-wrap:wrap;gap:3px;margin-top:2px;' });
+          matching.forEach(function(m, idx) {
+            var ctrlLink = el('a', {
+              href: '#/frameworks/' + encodeURIComponent(d.framework) + '/' + encodeURIComponent(m.control_id),
+              style: 'color:var(--accent);text-decoration:none;font-size:.75rem;'
+            });
+            ctrlLink.textContent = m.control_id;
+            ctrlWrap.appendChild(ctrlLink);
+            if (idx < matching.length - 1) ctrlWrap.appendChild(document.createTextNode(', '));
+          });
+          row.appendChild(ctrlWrap);
           nbWrap.appendChild(row);
         });
         sidePanel.appendChild(nbWrap);

@@ -37,7 +37,7 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Resource exhaustion and denial-of-service scenarios included in adversarial testing"
@@ -53,7 +53,7 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-3.2",
-      "control_name": "Residual risk — availability",
+      "control_name": "Residual risk � availability",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Residual availability risk from resource exhaustion documented and treated"
@@ -69,7 +69,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Availability risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Resource exhaustion and DoS scenarios included in risk management system"
@@ -77,7 +77,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "High-risk AI must remain available under adversarial conditions",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Technical resilience against denial-of-service attacks is an Art. 15 requirement"
@@ -85,7 +85,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Operational continuity procedures documented",
-      "control_name": "Art. 17 — Quality management",
+      "control_name": "Art. 17 � Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Post-market monitoring and incident response for availability failures required"
@@ -96,7 +96,7 @@
       "control_name": "Monitoring activities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Real-time monitoring of LLM resource consumption — cost anomaly detection and alerting"
+      "notes": "Real-time monitoring of LLM resource consumption � cost anomaly detection and alerting"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -104,7 +104,7 @@
       "control_name": "ICT readiness for business continuity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM availability requirements in BCP — RTO/RPO defined, rate limiting as resilience control"
+      "notes": "LLM availability requirements in BCP � RTO/RPO defined, rate limiting as resilience control"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -112,7 +112,7 @@
       "control_name": "Backup",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Backup and recovery for LLM service infrastructure — failover capability tested"
+      "notes": "Backup and recovery for LLM service infrastructure � failover capability tested"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -128,7 +128,7 @@
       "control_name": "AI system security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rate limiting and resource controls as AIMS security design requirements — enforced at deployment"
+      "notes": "Rate limiting and resource controls as AIMS security design requirements � enforced at deployment"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -136,7 +136,7 @@
       "control_name": "Monitoring of AI systems",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Resource consumption monitored in operation — cost anomaly detection as AIMS monitoring control"
+      "notes": "Resource consumption monitored in operation � cost anomaly detection as AIMS monitoring control"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -144,7 +144,7 @@
       "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Consumption risk in AI risk assessment — impact on service availability, cost exposure documented"
+      "notes": "Consumption risk in AI risk assessment � impact on service availability, cost exposure documented"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -152,20 +152,20 @@
       "control_name": "Performance evaluation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Resource consumption metrics in AIMS performance evaluation — consumption trends in management review"
+      "notes": "Resource consumption metrics in AIMS performance evaluation � consumption trends in management review"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "4.1 Establish secure configuration process",
-      "control_name": "CIS 4 — Secure Configuration",
+      "control_name": "CIS 4 � Secure Configuration",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Secure configuration includes resource limits — token caps, rate limits, cost budgets"
+      "notes": "Secure configuration includes resource limits � token caps, rate limits, cost budgets"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "12.6 Use of network-based URL filters",
-      "control_name": "CIS 12 — Network Infrastructure Management",
+      "control_name": "CIS 12 � Network Infrastructure Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Rate limiting and traffic controls at the API gateway and network layer"
@@ -173,10 +173,10 @@
     {
       "framework": "CIS Controls v8.1",
       "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 — Incident Response",
+      "control_name": "CIS 17 � Incident Response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Defined response for consumption anomalies — automated rate limiting, session suspension, alerting"
+      "notes": "Defined response for consumption anomalies � automated rate limiting, session suspension, alerting"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -184,7 +184,7 @@
       "control_name": "Verify API rate limiting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rate limiting on all LLM API endpoints — per user, per session, per API key"
+      "notes": "Rate limiting on all LLM API endpoints � per user, per session, per API key"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -192,7 +192,7 @@
       "control_name": "Verify API rejects large unexpected payloads",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Token limits on LLM API inputs — requests exceeding limits rejected at the gateway"
+      "notes": "Token limits on LLM API inputs � requests exceeding limits rejected at the gateway"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -200,7 +200,7 @@
       "control_name": "Verify business logic rate limits",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Business logic controls on LLM usage — per-tenant cost budgets, rate limit policies"
+      "notes": "Business logic controls on LLM usage � per-tenant cost budgets, rate limit policies"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -208,7 +208,7 @@
       "control_name": "Verify error handling does not expose sensitive data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM resource exhaustion errors handled gracefully — no sensitive information in error responses"
+      "notes": "LLM resource exhaustion errors handled gracefully � no sensitive information in error responses"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -237,7 +237,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Denial of service attacks targeting OT availability",
-      "control_name": "Section 5.6 — DoS threats",
+      "control_name": "Section 5.6 � DoS threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM-induced resource exhaustion as a DoS vector affecting shared OT network infrastructure"
@@ -245,7 +245,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Assess availability risks for OT systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_name": "Section 6.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM resource consumption impact assessed on shared OT network and compute infrastructure"
@@ -253,10 +253,10 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Network architecture preventing DoS propagation",
-      "control_name": "Section 7.2 — Network segmentation",
+      "control_name": "Section 7.2 � Network segmentation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM infrastructure isolated from OT control network — bandwidth caps at DMZ boundary"
+      "notes": "LLM infrastructure isolated from OT control network � bandwidth caps at DMZ boundary"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -280,7 +280,7 @@
       "control_name": "SI-17",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM service degradation has defined fail-safe behaviour — process control continues without LLM"
+      "notes": "LLM service degradation has defined fail-safe behaviour � process control continues without LLM"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -288,7 +288,7 @@
       "control_name": "AU-12",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM resource consumption logged — patterns indicating exhaustion attacks detectable"
+      "notes": "LLM resource consumption logged � patterns indicating exhaustion attacks detectable"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -296,7 +296,7 @@
       "control_name": "Infrastructure Resilience",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Networks and environments protected to achieve resilience — rate limiting and resource controls as resilience measures"
+      "notes": "Networks and environments protected to achieve resilience � rate limiting and resource controls as resilience measures"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -304,7 +304,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM resource consumption monitored — anomalous usage patterns detected and alerted"
+      "notes": "LLM resource consumption monitored � anomalous usage patterns detected and alerted"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -312,7 +312,7 @@
       "control_name": "Incident Mitigation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incidents contained — automated rate limiting, circuit breakers, cost budgets as containment controls"
+      "notes": "Incidents contained � automated rate limiting, circuit breakers, cost budgets as containment controls"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -320,33 +320,33 @@
       "control_name": "Risk Management Strategy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Risk management strategy established — LLM availability requirements and acceptable consumption risk defined"
+      "notes": "Risk management strategy established � LLM availability requirements and acceptable consumption risk defined"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM service availability commitments documented — SLAs, RTO/RPO, resource limits that protect availability",
-      "control_name": "A1.1 — Availability policies",
+      "control_id": "LLM service availability commitments documented � SLAs, RTO/RPO, resource limits that protect availability",
+      "control_name": "A1.1 � Availability policies",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Rate limiting and resource controls protect LLM service availability — implemented and monitored",
-      "control_name": "A1.2 — Environmental protections",
+      "control_id": "Rate limiting and resource controls protect LLM service availability � implemented and monitored",
+      "control_name": "A1.2 � Environmental protections",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Real-time monitoring of LLM resource consumption — cost anomalies and unusual volume patterns alerted",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "Real-time monitoring of LLM resource consumption � cost anomalies and unusual volume patterns alerted",
+      "control_name": "CC7.2 � Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Resource exhaustion risks identified in LLM risk assessment — DoS and sponge attack vectors assessed",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "Resource exhaustion risks identified in LLM risk assessment � DoS and sponge attack vectors assessed",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -356,7 +356,7 @@
       "control_name": "Network security controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Network controls restrict inbound traffic to CDE — rate limiting at network layer for LLM applications"
+      "notes": "Network controls restrict inbound traffic to CDE � rate limiting at network layer for LLM applications"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -364,7 +364,7 @@
       "control_name": "Public-facing application protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM-powered public-facing applications protected against DoS — rate limiting and payload limits enforced"
+      "notes": "LLM-powered public-facing applications protected against DoS � rate limiting and payload limits enforced"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -372,7 +372,7 @@
       "control_name": "Audit log review",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Automated monitoring for resource exhaustion patterns — unusual consumption volumes alerted"
+      "notes": "Automated monitoring for resource exhaustion patterns � unusual consumption volumes alerted"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -380,15 +380,15 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for LLM availability in CDE — DoS impact on payment processing, controls documented"
+      "notes": "Targeted risk analysis for LLM availability in CDE � DoS impact on payment processing, controls documented"
     },
     {
       "framework": "ENISA Multilayer Framework",
       "control_id": "L1",
-      "control_name": "General ICT — Availability",
+      "control_name": "General ICT � Availability",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rate limiting and resource controls as L1 availability practices — LLM infrastructure protected against exhaustion"
+      "notes": "Rate limiting and resource controls as L1 availability practices � LLM infrastructure protected against exhaustion"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -396,7 +396,7 @@
       "control_name": "Monitoring and Detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM resource consumption monitored — cost anomaly detection as ENISA monitoring practice"
+      "notes": "LLM resource consumption monitored � cost anomaly detection as ENISA monitoring practice"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -404,7 +404,7 @@
       "control_name": "Incident Response (IRS)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for consumption anomalies — automated rate limiting, circuit breakers, cost budgets"
+      "notes": "Incident response for consumption anomalies � automated rate limiting, circuit breakers, cost budgets"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -412,7 +412,7 @@
       "control_name": "Governance and Risk (GOV)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM availability in risk management — RTO/RPO defined, consumption risk in AI risk register"
+      "notes": "LLM availability in risk management � RTO/RPO defined, consumption risk in AI risk register"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -420,7 +420,7 @@
       "control_name": "Security Requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rate limiting and resource caps as security requirements — specified before LLM infrastructure deployment"
+      "notes": "Rate limiting and resource caps as security requirements � specified before LLM infrastructure deployment"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -428,7 +428,7 @@
       "control_name": "Secure Deployment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rate limiting and resource controls deployed with every LLM deployment — not optional post-deployment hardening"
+      "notes": "Rate limiting and resource controls deployed with every LLM deployment � not optional post-deployment hardening"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -436,7 +436,7 @@
       "control_name": "Incident Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Consumption anomaly detection as incident management control — automated response, escalation procedure"
+      "notes": "Consumption anomaly detection as incident management control � automated response, escalation procedure"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -444,7 +444,7 @@
       "control_name": "Environment Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Resource limits as environment configuration — documented, version-controlled, reviewed on change"
+      "notes": "Resource limits as environment configuration � documented, version-controlled, reviewed on change"
     },
     {
       "framework": "STRIDE",

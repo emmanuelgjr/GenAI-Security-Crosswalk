@@ -47,7 +47,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Multimodal data governance policy — classification propagation from source modality to all extracted forms"
+      "notes": "Multimodal data governance policy � classification propagation from source modality to all extracted forms"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -55,28 +55,28 @@
       "control_name": "Risk categorisation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Multimodal leakage risks mapped per modality — image, audio, video, document — in risk register"
+      "notes": "Multimodal leakage risks mapped per modality � image, audio, video, document � in risk register"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data leakage testing extended to multimodal pipelines — OCR output, transcripts, derived embeddings"
+      "notes": "Data leakage testing extended to multimodal pipelines � OCR output, transcripts, derived embeddings"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response — data",
+      "control_name": "Risk response � data",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Incident response for multimodal data leakage — content identification, deletion, regulatory notification"
+      "notes": "Incident response for multimodal data leakage � content identification, deletion, regulatory notification"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Data governance covers all input modalities — images, audio, video — not only text",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Data governance covers all input modalities � images, audio, video � not only text",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Multimodal input governance is an Art. 10 requirement for high-risk systems processing such inputs"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures covering all data channels including multimodal inputs",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "DLP and access controls on multimodal pipelines are Art. 15 requirements"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Technical documentation covers all input modalities processed by the model",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_name": "Art. 53(1)(a) � GPAI documentation",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Multimodal data governance documented in GPAI technical documentation"
@@ -103,7 +103,7 @@
       "control_name": "Data masking",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Masking and redaction applied to extracted text from OCR and audio transcription — same as source"
+      "notes": "Masking and redaction applied to extracted text from OCR and audio transcription � same as source"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -111,7 +111,7 @@
       "control_name": "Data leakage prevention",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "DLP applied to all modality-extracted content — text, OCR output, transcripts"
+      "notes": "DLP applied to all modality-extracted content � text, OCR output, transcripts"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -209,7 +209,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Extracted OT content from multimodal inputs classified and protected — OCR output of P&ID is as sensitive as the P&ID"
+      "notes": "Extracted OT content from multimodal inputs classified and protected � OCR output of P&ID is as sensitive as the P&ID"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -217,7 +217,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Multimodal extraction pipelines validated — no uncontrolled OT data entering unclassified processing"
+      "notes": "Multimodal extraction pipelines validated � no uncontrolled OT data entering unclassified processing"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -257,7 +257,7 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Extracted content from multimodal inputs protected — OCR output of sensitive document classified and protected"
+      "notes": "Extracted content from multimodal inputs protected � OCR output of sensitive document classified and protected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -265,7 +265,7 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Extracted sensitive content encrypted in transit — multimodal extraction pipelines covered"
+      "notes": "Extracted sensitive content encrypted in transit � multimodal extraction pipelines covered"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -273,7 +273,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Multimodal extraction output monitored — DLP on OCR results, transcription outputs"
+      "notes": "Multimodal extraction output monitored � DLP on OCR results, transcription outputs"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -281,33 +281,33 @@
       "control_name": "Asset Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Multimodal processing pipelines inventoried — what modalities are processed, what is extracted and stored"
+      "notes": "Multimodal processing pipelines inventoried � what modalities are processed, what is extracted and stored"
     },
     {
       "framework": "SOC 2",
       "control_id": "Multimodal derived content (OCR output, transcripts) protected at same level as source uploads",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "Personal information extracted from multimodal inputs subject to same use restrictions as source data",
-      "control_name": "P5.1 — Personal information use",
+      "control_name": "P5.1 � Personal information use",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access controls on multimodal content stores — same rigour as equivalent text data stores",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "Access controls on multimodal content stores � same rigour as equivalent text data stores",
+      "control_name": "CC6.1 � Logical access",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "DLP monitoring on multimodal extraction pipelines — PII in OCR output and transcripts detected",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "DLP monitoring on multimodal extraction pipelines � PII in OCR output and transcripts detected",
+      "control_name": "CC7.2 � Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -317,7 +317,7 @@
       "control_name": "PAN rendering",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "PANs extracted from multimodal content masked in all outputs — OCR-extracted PANs are CHD requiring Req 3 treatment"
+      "notes": "PANs extracted from multimodal content masked in all outputs � OCR-extracted PANs are CHD requiring Req 3 treatment"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -325,7 +325,7 @@
       "control_name": "Protect stored CHD",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All CHD extracted from multimodal inputs encrypted at rest — OCR output of a payment document is CHD"
+      "notes": "All CHD extracted from multimodal inputs encrypted at rest � OCR output of a payment document is CHD"
     },
     {
       "framework": "PCI DSS v4.0",

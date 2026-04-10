@@ -49,7 +49,7 @@
       "control_name": "Policies for trustworthy AI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy defines permissible tool invocations per agent role — human confirmation required for irreversible tools"
+      "notes": "Policy defines permissible tool invocations per agent role � human confirmation required for irreversible tools"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -57,15 +57,15 @@
       "control_name": "Interdependencies",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent tool integrations mapped — data received, permission scope, reversibility, and risk rating per tool"
+      "notes": "All agent tool integrations mapped � data received, permission scope, reversibility, and risk rating per tool"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial testing of tool misuse scenarios — destructive parameter injection, tool chaining, MCP descriptor poisoning"
+      "notes": "Adversarial testing of tool misuse scenarios � destructive parameter injection, tool chaining, MCP descriptor poisoning"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -73,28 +73,28 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for tool misuse — tool disable, parameter audit, downstream impact assessment"
+      "notes": "Incident response for tool misuse � tool disable, parameter audit, downstream impact assessment"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Tool misuse risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_name": "Art. 9 � Risk management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent tool integrations assessed in Art. 9 risk management — reversibility classification documented"
+      "notes": "All agent tool integrations assessed in Art. 9 risk management � reversibility classification documented"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Human oversight over high-risk AI actions",
-      "control_name": "Art. 14 — Human oversight",
+      "control_name": "Art. 14 � Human oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Irreversible tool invocations require human confirmation — Art. 14 binding requirement"
+      "notes": "Irreversible tool invocations require human confirmation � Art. 14 binding requirement"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures preventing tool misuse",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Per-tool permission manifests and parameter validation are Art. 15 technical requirements"
@@ -105,7 +105,7 @@
       "control_name": "Privileged access rights",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent tool access managed as privileged access — per-tool permission manifests, minimum scope, regular review"
+      "notes": "Agent tool access managed as privileged access � per-tool permission manifests, minimum scope, regular review"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Identity management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent tool access governed through identity management — tool permissions scoped per agent identity"
+      "notes": "Agent tool access governed through identity management � tool permissions scoped per agent identity"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All tool invocations logged with full context — tool identity, parameters, agent identity, timestamp"
+      "notes": "All tool invocations logged with full context � tool identity, parameters, agent identity, timestamp"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Secure coding",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool parameter validation as secure coding requirement — LLM-generated parameters treated as untrusted"
+      "notes": "Tool parameter validation as secure coding requirement � LLM-generated parameters treated as untrusted"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -137,7 +137,7 @@
       "control_name": "Responsible AI system management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool access managed responsibly throughout agent lifecycle — permission review, irreversibility classification, human oversight requirements"
+      "notes": "Tool access managed responsibly throughout agent lifecycle � permission review, irreversibility classification, human oversight requirements"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Impact assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool misuse impact assessed — what harm is possible if each tool is misused autonomously"
+      "notes": "Tool misuse impact assessed � what harm is possible if each tool is misused autonomously"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,36 +161,36 @@
       "control_name": "Third-party AI system acquisition",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool and MCP server providers assessed as third-party AI components — security obligations in contracts"
+      "notes": "Tool and MCP server providers assessed as third-party AI components � security obligations in contracts"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "5.4 Restrict administrator privileges",
-      "control_name": "CIS 5 — Account Management",
+      "control_name": "CIS 5 � Account Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent tool access managed as privileged access — minimum scope, regular review"
+      "notes": "Agent tool access managed as privileged access � minimum scope, regular review"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "6.1 Establish access granting process",
-      "control_name": "CIS 6 — Access Control Management",
+      "control_name": "CIS 6 � Access Control Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Formal process for granting agent tool access — documented justification per tool"
+      "notes": "Formal process for granting agent tool access � documented justification per tool"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_name": "CIS 8 � Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All tool invocations logged — tool identity, parameters, agent identity, timestamp"
+      "notes": "All tool invocations logged � tool identity, parameters, agent identity, timestamp"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_name": "CIS 16 � Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool parameter validation as secure development requirement"
@@ -201,7 +201,7 @@
       "control_name": "Verify access control enforces least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent tool access scoped to minimum required operations — read-only by default, write access formally approved"
+      "notes": "Agent tool access scoped to minimum required operations � read-only by default, write access formally approved"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify all sensitive functions have access control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All destructive tool operations require explicit authorisation — not inheritable from agent session"
+      "notes": "All destructive tool operations require explicit authorisation � not inheritable from agent session"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -217,7 +217,7 @@
       "control_name": "Verify all business logic decisions logged",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All tool invocations logged — tool identity, parameters, agent session, timestamp"
+      "notes": "All tool invocations logged � tool identity, parameters, agent session, timestamp"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Verify business logic abuse scenarios identified",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool chain exploitation scenarios identified in threat model — mitigations implemented and verified"
+      "notes": "Tool chain exploitation scenarios identified in threat model � mitigations implemented and verified"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -233,7 +233,7 @@
       "control_name": "Verify API rate limiting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool API endpoints rate-limited — anomalous invocation frequency detected"
+      "notes": "Tool API endpoints rate-limited � anomalous invocation frequency detected"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -241,7 +241,7 @@
       "control_name": "Least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Per-tool minimum permission — setpoint adjustment tool restricted to specific tags and safe ranges"
+      "notes": "Per-tool minimum permission � setpoint adjustment tool restricted to specific tags and safe ranges"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -249,7 +249,7 @@
       "control_name": "Use control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Allowlisted tool operations for each agent role — agent cannot invoke tools outside its defined function"
+      "notes": "Allowlisted tool operations for each agent role � agent cannot invoke tools outside its defined function"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -257,7 +257,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Anomalous tool invocation patterns detected and responded to — alert, suspend, investigate"
+      "notes": "Anomalous tool invocation patterns detected and responded to � alert, suspend, investigate"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -265,7 +265,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool descriptor integrity verified — poisoned MCP tool descriptors rejected at loading"
+      "notes": "Tool descriptor integrity verified � poisoned MCP tool descriptors rejected at loading"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -297,7 +297,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access permissions managed — per-tool permission manifests, least privilege per tool, irreversibility classification"
+      "notes": "Access permissions managed � per-tool permission manifests, least privilege per tool, irreversibility classification"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -305,7 +305,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy defines permissible tool invocations — which tools require human confirmation"
+      "notes": "Policy defines permissible tool invocations � which tools require human confirmation"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All tool invocations logged and monitored — anomalous parameters, unusual sequences, high frequency detected"
+      "notes": "All tool invocations logged and monitored � anomalous parameters, unusual sequences, high frequency detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -321,7 +321,7 @@
       "control_name": "Incident Analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Root cause analysis — which tool was misused, what downstream impact occurred, what parameters were used"
+      "notes": "Root cause analysis � which tool was misused, what downstream impact occurred, what parameters were used"
     },
     {
       "framework": "SOC 2",
@@ -489,7 +489,7 @@
       "control_name": "CWE-913",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "MCP descriptors and tool specifications are dynamically loaded code resources — modification not controlled"
+      "notes": "MCP descriptors and tool specifications are dynamically loaded code resources � modification not controlled"
     },
     {
       "framework": "CWE/CVE",
@@ -502,7 +502,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Tool permission boundary enforcement",
-      "control_name": "AST — Agent-Specific",
+      "control_name": "AST � Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Attempt to invoke tools outside the agent's defined role; test parameter ranges; verify irreversibility controls"
@@ -510,7 +510,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Per-tool authorisation",
-      "control_name": "ACT — Access Control",
+      "control_name": "ACT � Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify each tool enforces its own access controls independently of the agent framework"
@@ -518,7 +518,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "LLM-generated tool parameters",
-      "control_name": "OHT — Output Handling",
+      "control_name": "OHT � Output Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify tool call parameters generated by the LLM are validated before execution"
@@ -578,7 +578,7 @@
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Per-tool permission manifests — each tool scoped to minimum required operations"
+      "notes": "Per-tool permission manifests � each tool scoped to minimum required operations"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -586,7 +586,7 @@
       "control_name": "NHI-3 Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Validate all third-party tool identities — reject tokens from unregistered issuers"
+      "notes": "Validate all third-party tool identities � reject tokens from unregistered issuers"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -594,7 +594,7 @@
       "control_name": "NHI-9 NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Unique credential per tool integration — tool-scoped tokens, not agent-wide tokens"
+      "notes": "Unique credential per tool integration � tool-scoped tokens, not agent-wide tokens"
     },
     {
       "framework": "NIST SP 800-218A",

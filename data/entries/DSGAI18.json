@@ -47,7 +47,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Privacy policy extended to cover inference attack resistance — not just direct disclosure"
+      "notes": "Privacy policy extended to cover inference attack resistance � not just direct disclosure"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -55,12 +55,12 @@
       "control_name": "Risk categorisation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Inference attack risks mapped — membership inference, model inversion, embedding inversion per deployment"
+      "notes": "Inference attack risks mapped � membership inference, model inversion, embedding inversion per deployment"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing — adversarial",
+      "control_name": "Testing � adversarial",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Red team exercises covering membership inference and model inversion attack scenarios"
@@ -68,15 +68,15 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response — data",
+      "control_name": "Risk response � data",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Response for confirmed inference attack — unlearning, output rate limiting, disclosure assessment"
+      "notes": "Response for confirmed inference attack � unlearning, output rate limiting, disclosure assessment"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Training data privacy measures required — protecting sensitive data used in training",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Training data privacy measures required � protecting sensitive data used in training",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Differential privacy and inference attack resistance are Art. 10 data governance requirements"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures protecting against attacks including inference attacks",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Output rate limiting, confidence score suppression, and embedding encryption are Art. 15 requirements"
@@ -103,7 +103,7 @@
       "control_name": "Privacy and PII protection",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Privacy requirements extended to cover inference attack resistance — not just direct disclosure"
+      "notes": "Privacy requirements extended to cover inference attack resistance � not just direct disclosure"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -187,7 +187,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Inference attack resistance as OT data protection measure — differential privacy for OT training data"
+      "notes": "Inference attack resistance as OT data protection measure � differential privacy for OT training data"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -195,7 +195,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Inference attack campaigns detected — systematic query patterns indicative of AML.T0024.000 alerted"
+      "notes": "Inference attack campaigns detected � systematic query patterns indicative of AML.T0024.000 alerted"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -203,7 +203,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Confidence score suppression as OT integrity control — limits information available for model inversion"
+      "notes": "Confidence score suppression as OT integrity control � limits information available for model inversion"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -227,7 +227,7 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Reconstruction resistance as data protection measure — differential privacy in training, confidence score suppression"
+      "notes": "Reconstruction resistance as data protection measure � differential privacy in training, confidence score suppression"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -235,7 +235,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Monitoring for inference attack patterns — systematic output space probing detected"
+      "notes": "Monitoring for inference attack patterns � systematic output space probing detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -243,7 +243,7 @@
       "control_name": "Risk Assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Inference attack risks documented per deployment — models trained on sensitive data assessed"
+      "notes": "Inference attack risks documented per deployment � models trained on sensitive data assessed"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -251,33 +251,33 @@
       "control_name": "Risk Management Strategy",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Risk tolerance for inference attacks established — acceptable reconstruction risk defined per use case"
+      "notes": "Risk tolerance for inference attacks established � acceptable reconstruction risk defined per use case"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Inference attack resistance as confidentiality protection — technical measures limiting reconstruction success",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "Inference attack resistance as confidentiality protection � technical measures limiting reconstruction success",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "Using model outputs to reconstruct personal information beyond authorised purposes is a P5 violation",
-      "control_name": "P5.1 — Personal information use",
+      "control_name": "P5.1 � Personal information use",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Output monitoring for reconstruction indicators — systematic query patterns detected",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "Output monitoring for reconstruction indicators � systematic query patterns detected",
+      "control_name": "CC7.2 � Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Inference attack risks identified in GenAI risk assessment — membership inference, model inversion vectors",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "Inference attack risks identified in GenAI risk assessment � membership inference, model inversion vectors",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -287,7 +287,7 @@
       "control_name": "PAN rendering",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "PANs reconstructed from model outputs must be prevented — inference attack resistance as Req 3 control"
+      "notes": "PANs reconstructed from model outputs must be prevented � inference attack resistance as Req 3 control"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -295,7 +295,7 @@
       "control_name": "Protect stored CHD",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Embeddings that can reconstruct PANs require Req 3 protection — differential privacy as encryption equivalent"
+      "notes": "Embeddings that can reconstruct PANs require Req 3 protection � differential privacy as encryption equivalent"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -303,7 +303,7 @@
       "control_name": "Penetration testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Inference attack testing for GenAI models trained on CHD — membership inference and inversion attacks"
+      "notes": "Inference attack testing for GenAI models trained on CHD � membership inference and inversion attacks"
     },
     {
       "framework": "PCI DSS v4.0",

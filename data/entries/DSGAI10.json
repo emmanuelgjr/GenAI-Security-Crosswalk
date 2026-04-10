@@ -47,12 +47,12 @@
       "control_name": "Policies for data privacy",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Anonymisation governance policy — legal standard, not technical checkbox"
+      "notes": "Anonymisation governance policy � legal standard, not technical checkbox"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing — data leakage",
+      "control_name": "Testing � data leakage",
       "tier": "Hardening",
       "scope": "Build",
       "notes": "Re-identification risk testing and membership inference testing on synthetic datasets"
@@ -63,7 +63,7 @@
       "control_name": "Data quality",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Data quality measurement of synthetic datasets — statistical fidelity vs privacy tradeoffs"
+      "notes": "Data quality measurement of synthetic datasets � statistical fidelity vs privacy tradeoffs"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -75,16 +75,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Training data must be subject to appropriate data governance — privacy measures must be effective",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Training data must be subject to appropriate data governance � privacy measures must be effective",
+      "control_name": "Art. 10 � Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Anonymisation effectiveness is an Art. 10 data governance requirement, not a self-certification"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "GPAI training data governance documented — privacy measures included",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_id": "GPAI training data governance documented � privacy measures included",
+      "control_name": "Art. 53(1)(a) � GPAI documentation",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Synthetic data generation methodology and re-identification risk assessment documented for GPAI"
@@ -95,7 +95,7 @@
       "control_name": "Privacy and PII protection",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Anonymisation must meet the standard required by applicable privacy law — not just technical anonymisation"
+      "notes": "Anonymisation must meet the standard required by applicable privacy law � not just technical anonymisation"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -187,7 +187,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Synthetic OT datasets not automatically excluded from protection — assessed before classification change"
+      "notes": "Synthetic OT datasets not automatically excluded from protection � assessed before classification change"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -195,7 +195,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Synthetic data generation pipeline validated — source OT data integrity maintained"
+      "notes": "Synthetic data generation pipeline validated � source OT data integrity maintained"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -203,7 +203,7 @@
       "control_name": "62443-2-1",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT synthetic data governance policy — when synthetic data removes OT classification obligation"
+      "notes": "OT synthetic data governance policy � when synthetic data removes OT classification obligation"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -227,7 +227,7 @@
       "control_name": "Risk Management Strategy",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Risk tolerance defined for re-identification risk in synthetic datasets — legal standard, not technical checkbox"
+      "notes": "Risk tolerance defined for re-identification risk in synthetic datasets � legal standard, not technical checkbox"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -243,7 +243,7 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Synthetic datasets not automatically excluded from data protection — protected until re-identification risk formally assessed"
+      "notes": "Synthetic datasets not automatically excluded from data protection � protected until re-identification risk formally assessed"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -256,28 +256,28 @@
     {
       "framework": "SOC 2",
       "control_id": "Synthetic datasets that are not truly anonymous subject to same retention obligations as source personal data",
-      "control_name": "P4.2 — Retention of personal information",
+      "control_name": "P4.2 � Retention of personal information",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "Synthetic data use must respect underlying privacy commitments if re-identification risk exists",
-      "control_name": "P5.1 — Personal information use",
+      "control_name": "P5.1 � Personal information use",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "Re-identification risk in synthetic datasets identified in risk assessment",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_name": "CC3.2 � Risk assessment",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "Synthetic OT data and business data protected at source classification level until re-identification risk formally assessed",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_name": "C2.1 � Confidential information protection",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -295,7 +295,7 @@
       "control_name": "SAD prohibition",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Synthetic data generated from SAD retains SAD classification — generation does not remove the prohibition"
+      "notes": "Synthetic data generated from SAD retains SAD classification � generation does not remove the prohibition"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -303,7 +303,7 @@
       "control_name": "PAN rendering",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Synthetic PANs that pass Luhn check treated as CHD — format-preserving synthetic PANs are in PCI scope"
+      "notes": "Synthetic PANs that pass Luhn check treated as CHD � format-preserving synthetic PANs are in PCI scope"
     },
     {
       "framework": "PCI DSS v4.0",
