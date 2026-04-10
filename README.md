@@ -16,7 +16,7 @@
 
 <p align="center">
   <strong>The most comprehensive mapping of AI security risks to compliance frameworks.</strong><br>
-  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,210 mappings &middot; 80 incidents &middot; ML classifier pipeline
+  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,210 mappings &middot; 114 incidents &middot; ML classifier pipeline
 </p>
 
 <p align="center">
@@ -382,7 +382,7 @@ GenAI-Security-Crosswalk/
 │   ├── framework-schema.json        ← JSON Schema for framework registries
 │   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
 │   ├── backlinks.json               ← 1,097 control-to-entry reverse index
-│   ├── incidents.json               ← 80 incidents with MAESTRO layer attribution
+│   ├── incidents.json               ← 114 incidents with MAESTRO layer attribution
 │   ├── incidents-schema.json        ← JSON Schema for incidents
 │   ├── tools-supplement.json        ← Supplemental tools merged at generation time
 │   └── README.md                    ← Data layer docs, jq query examples

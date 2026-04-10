@@ -644,6 +644,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-066"
+    },
+    {
+      "name": "Perplexity Comet agentic browser — unauthorized Amazon customer account access",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-086"
+    },
+    {
+      "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-112"
     }
   ],
   "crossrefs": {

@@ -998,6 +998,54 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-075"
+      },
+      {
+        "name": "Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-083"
+      },
+      {
+        "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-089"
+      },
+      {
+        "name": "Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-092"
+      },
+      {
+        "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-095"
+      },
+      {
+        "name": "Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-098"
+      },
+      {
+        "name": "AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-100"
+      },
+      {
+        "name": "IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-103"
+      },
+      {
+        "name": "Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-110"
       }
     ],
     "crossrefs": {
@@ -3525,6 +3573,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-074"
+      },
+      {
+        "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-108"
       }
     ],
     "crossrefs": {
@@ -5167,6 +5221,36 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-075"
+      },
+      {
+        "name": "Claude Skills ransomware deployment — MedusaLocker via malicious plugin",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-081"
+      },
+      {
+        "name": "Google Antigravity AI IDE deletes entire D: drive — misinterpreted cache-clearing instruction",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-082"
+      },
+      {
+        "name": "Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-083"
+      },
+      {
+        "name": "XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-096"
+      },
+      {
+        "name": "Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-110"
       }
     ],
     "crossrefs": {
@@ -7529,6 +7613,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-080"
+      },
+      {
+        "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-091"
+      },
+      {
+        "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-106"
       }
     ],
     "crossrefs": {
@@ -9219,6 +9315,96 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-069"
+      },
+      {
+        "name": "Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-083"
+      },
+      {
+        "name": "ShadowRay 2.0 botnet — self-spreading crypto-mining via Ray AI framework",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-084"
+      },
+      {
+        "name": "ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-088"
+      },
+      {
+        "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-089"
+      },
+      {
+        "name": "Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-092"
+      },
+      {
+        "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-095"
+      },
+      {
+        "name": "Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-098"
+      },
+      {
+        "name": "AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-100"
+      },
+      {
+        "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-101"
+      },
+      {
+        "name": "IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-103"
+      },
+      {
+        "name": "ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-104"
+      },
+      {
+        "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-106"
+      },
+      {
+        "name": "ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-107"
+      },
+      {
+        "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-108"
+      },
+      {
+        "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-111"
       }
     ],
     "crossrefs": {
@@ -10086,6 +10272,84 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-069"
+      },
+      {
+        "name": "Google Antigravity AI IDE deletes entire D: drive — misinterpreted cache-clearing instruction",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-082"
+      },
+      {
+        "name": "Perplexity Comet agentic browser — unauthorized Amazon customer account access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-086"
+      },
+      {
+        "name": "ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-088"
+      },
+      {
+        "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-089"
+      },
+      {
+        "name": "Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-092"
+      },
+      {
+        "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-101"
+      },
+      {
+        "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-102"
+      },
+      {
+        "name": "IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-103"
+      },
+      {
+        "name": "ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-107"
+      },
+      {
+        "name": "Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-110"
+      },
+      {
+        "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-111"
+      },
+      {
+        "name": "Flowise CustomMCP code injection RCE — CVSS 10.0, 12,000 instances exposed",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-113"
+      },
+      {
+        "name": "AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-114"
       }
     ],
     "crossrefs": {
@@ -10964,6 +11228,84 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-079"
+      },
+      {
+        "name": "Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-083"
+      },
+      {
+        "name": "Perplexity Comet agentic browser — unauthorized Amazon customer account access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-086"
+      },
+      {
+        "name": "Malicious MCP server backdoor on npm — dual reverse shells in mcp-runcommand-server",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-087"
+      },
+      {
+        "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-090"
+      },
+      {
+        "name": "LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-093"
+      },
+      {
+        "name": "GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-097"
+      },
+      {
+        "name": "Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-099"
+      },
+      {
+        "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-102"
+      },
+      {
+        "name": "ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-104"
+      },
+      {
+        "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-105"
+      },
+      {
+        "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-109"
+      },
+      {
+        "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-112"
+      },
+      {
+        "name": "AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-114"
       }
     ],
     "crossrefs": {
@@ -11748,6 +12090,84 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-079"
+      },
+      {
+        "name": "Claude Skills ransomware deployment — MedusaLocker via malicious plugin",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-081"
+      },
+      {
+        "name": "ShadowRay 2.0 botnet — self-spreading crypto-mining via Ray AI framework",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-084"
+      },
+      {
+        "name": "ShadowMQ — critical RCE in Meta/NVIDIA/vLLM inference servers via pickle deserialization",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-085"
+      },
+      {
+        "name": "Malicious MCP server backdoor on npm — dual reverse shells in mcp-runcommand-server",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-087"
+      },
+      {
+        "name": "LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-093"
+      },
+      {
+        "name": "Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-094"
+      },
+      {
+        "name": "GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-097"
+      },
+      {
+        "name": "Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-098"
+      },
+      {
+        "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-102"
+      },
+      {
+        "name": "IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-103"
+      },
+      {
+        "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-109"
+      },
+      {
+        "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-111"
+      },
+      {
+        "name": "AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-114"
       }
     ],
     "crossrefs": {
@@ -12525,6 +12945,90 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-069"
+      },
+      {
+        "name": "Claude Skills ransomware deployment — MedusaLocker via malicious plugin",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-081"
+      },
+      {
+        "name": "Google Antigravity AI IDE deletes entire D: drive — misinterpreted cache-clearing instruction",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-082"
+      },
+      {
+        "name": "ShadowRay 2.0 botnet — self-spreading crypto-mining via Ray AI framework",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-084"
+      },
+      {
+        "name": "ShadowMQ — critical RCE in Meta/NVIDIA/vLLM inference servers via pickle deserialization",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-085"
+      },
+      {
+        "name": "Malicious MCP server backdoor on npm — dual reverse shells in mcp-runcommand-server",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-087"
+      },
+      {
+        "name": "LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-093"
+      },
+      {
+        "name": "Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-094"
+      },
+      {
+        "name": "XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-096"
+      },
+      {
+        "name": "GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-097"
+      },
+      {
+        "name": "Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-098"
+      },
+      {
+        "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-102"
+      },
+      {
+        "name": "IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-103"
+      },
+      {
+        "name": "Flowise CustomMCP code injection RCE — CVSS 10.0, 12,000 instances exposed",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-113"
+      },
+      {
+        "name": "AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-114"
       }
     ],
     "crossrefs": {
@@ -13345,6 +13849,36 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-046"
+      },
+      {
+        "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-089"
+      },
+      {
+        "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-090"
+      },
+      {
+        "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-095"
+      },
+      {
+        "name": "AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-100"
+      },
+      {
+        "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-108"
       }
     ],
     "crossrefs": {
@@ -14135,6 +14669,24 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-041"
+      },
+      {
+        "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-090"
+      },
+      {
+        "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-105"
+      },
+      {
+        "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-111"
       }
     ],
     "crossrefs": {
@@ -14931,6 +15483,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-069"
+      },
+      {
+        "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-090"
+      },
+      {
+        "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-091"
       }
     ],
     "crossrefs": {
@@ -15696,6 +16260,78 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-073"
+      },
+      {
+        "name": "Google Antigravity AI IDE deletes entire D: drive — misinterpreted cache-clearing instruction",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-082"
+      },
+      {
+        "name": "Perplexity Comet agentic browser — unauthorized Amazon customer account access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-086"
+      },
+      {
+        "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-091"
+      },
+      {
+        "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-095"
+      },
+      {
+        "name": "Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-099"
+      },
+      {
+        "name": "AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-100"
+      },
+      {
+        "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-101"
+      },
+      {
+        "name": "ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-104"
+      },
+      {
+        "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-106"
+      },
+      {
+        "name": "ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-107"
+      },
+      {
+        "name": "Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-110"
+      },
+      {
+        "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-112"
       }
     ],
     "crossrefs": {
@@ -16521,6 +17157,60 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-061"
+      },
+      {
+        "name": "Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-083"
+      },
+      {
+        "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-090"
+      },
+      {
+        "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-091"
+      },
+      {
+        "name": "Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-092"
+      },
+      {
+        "name": "XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-096"
+      },
+      {
+        "name": "Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-098"
+      },
+      {
+        "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-102"
+      },
+      {
+        "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-106"
+      },
+      {
+        "name": "Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-110"
       }
     ],
     "crossrefs": {
@@ -17354,6 +18044,78 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-072"
+      },
+      {
+        "name": "ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-088"
+      },
+      {
+        "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-089"
+      },
+      {
+        "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-091"
+      },
+      {
+        "name": "Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-092"
+      },
+      {
+        "name": "Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-099"
+      },
+      {
+        "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-101"
+      },
+      {
+        "name": "ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-104"
+      },
+      {
+        "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-105"
+      },
+      {
+        "name": "ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-107"
+      },
+      {
+        "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-109"
+      },
+      {
+        "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-111"
+      },
+      {
+        "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-112"
       }
     ],
     "crossrefs": {
@@ -18102,6 +18864,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-070"
+      },
+      {
+        "name": "Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-099"
+      },
+      {
+        "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-112"
       }
     ],
     "crossrefs": {
@@ -19567,6 +20341,24 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-067"
+      },
+      {
+        "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-095"
+      },
+      {
+        "name": "AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-100"
+      },
+      {
+        "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-108"
       }
     ],
     "crossrefs": {
@@ -20286,6 +21078,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-076"
+      },
+      {
+        "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-108"
       }
     ],
     "crossrefs": {
@@ -22392,6 +23190,66 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2023,
         "incident_id": "INC-079"
+      },
+      {
+        "name": "ShadowRay 2.0 botnet — self-spreading crypto-mining via Ray AI framework",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-084"
+      },
+      {
+        "name": "ShadowMQ — critical RCE in Meta/NVIDIA/vLLM inference servers via pickle deserialization",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-085"
+      },
+      {
+        "name": "LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-093"
+      },
+      {
+        "name": "Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-094"
+      },
+      {
+        "name": "GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-097"
+      },
+      {
+        "name": "Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-099"
+      },
+      {
+        "name": "ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420)",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-104"
+      },
+      {
+        "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-105"
+      },
+      {
+        "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-109"
+      },
+      {
+        "name": "Flowise CustomMCP code injection RCE — CVSS 10.0, 12,000 instances exposed",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-113"
       }
     ],
     "crossrefs": {
@@ -24437,6 +25295,12 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-068"
+      },
+      {
+        "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-106"
       }
     ],
     "crossrefs": {
@@ -27267,6 +28131,18 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2024,
         "incident_id": "INC-066"
+      },
+      {
+        "name": "Perplexity Comet agentic browser — unauthorized Amazon customer account access",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-086"
+      },
+      {
+        "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-112"
       }
     ],
     "crossrefs": {
@@ -30003,6 +30879,30 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
         "year": 2025,
         "incident_id": "INC-072"
+      },
+      {
+        "name": "ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-088"
+      },
+      {
+        "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2026,
+        "incident_id": "INC-101"
+      },
+      {
+        "name": "ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-107"
+      },
+      {
+        "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
+        "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+        "year": 2025,
+        "incident_id": "INC-109"
       }
     ],
     "crossrefs": {

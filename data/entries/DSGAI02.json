@@ -721,6 +721,18 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-070"
+    },
+    {
+      "name": "Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-099"
+    },
+    {
+      "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2026,
+      "incident_id": "INC-112"
     }
   ],
   "crossrefs": {
