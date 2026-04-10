@@ -610,6 +610,24 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
       "incident_id": "INC-044"
+    },
+    {
+      "name": "AI-generated Biden robocalls — deepfake voice used to suppress voter turnout",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-058"
+    },
+    {
+      "name": "Snowflake customer data breach via stolen credentials — 165+ organisations affected",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-070"
+    },
+    {
+      "name": "DeepSeek R1 data exfiltration — Chinese AI model sends data to China-linked servers",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-072"
     }
   ],
   "crossrefs": {

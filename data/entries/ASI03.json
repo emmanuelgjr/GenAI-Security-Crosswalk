@@ -828,6 +828,30 @@
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2026,
       "incident_id": "INC-021"
+    },
+    {
+      "name": "Rabbit R1 hardcoded API keys — all user data accessible to anyone with firmware",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-054"
+    },
+    {
+      "name": "MCP tool poisoning — hidden instructions in Model Context Protocol tool descriptions",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-062"
+    },
+    {
+      "name": "Snowflake customer data breach via stolen credentials — 165+ organisations affected",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-070"
+    },
+    {
+      "name": "Lasso Security — 1,500+ HuggingFace API tokens exposed in code repositories",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2023,
+      "incident_id": "INC-079"
     }
   ],
   "crossrefs": {

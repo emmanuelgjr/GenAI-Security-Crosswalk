@@ -16,7 +16,7 @@
 
 <p align="center">
   <strong>The most comprehensive mapping of AI security risks to compliance frameworks.</strong><br>
-  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,210 mappings &middot; 50+ incidents &middot; ML classifier pipeline
+  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,210 mappings &middot; 80 incidents &middot; ML classifier pipeline
 </p>
 
 <p align="center">
@@ -65,7 +65,7 @@ node scripts/incidents-report.js --format stix              # SIEM/SOAR export
 | **Red teamer** | [LAAF guide](evals/laaf/README.md) → run S1–S6 attack stages, map results to OWASP |
 | **GRC / auditor** | `compliance-report.js --format grc` → import into ServiceNow/Archer/Drata |
 | **Developer** | `npm install genai-security-crosswalk` → query risks + controls programmatically |
-| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 50 AI incidents into Sentinel/Splunk |
+| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 80 AI incidents into Sentinel/Splunk |
 | **Framework author** | [Submit your standard](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/submit) → classifier maps it automatically |
 
 ---
@@ -382,7 +382,7 @@ GenAI-Security-Crosswalk/
 │   ├── framework-schema.json        ← JSON Schema for framework registries
 │   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
 │   ├── backlinks.json               ← 1,097 control-to-entry reverse index
-│   ├── incidents.json               ← 50+ incidents with MAESTRO layer attribution
+│   ├── incidents.json               ← 80 incidents with MAESTRO layer attribution
 │   ├── incidents-schema.json        ← JSON Schema for incidents
 │   ├── tools-supplement.json        ← Supplemental tools merged at generation time
 │   └── README.md                    ← Data layer docs, jq query examples
@@ -486,7 +486,7 @@ See `evals/laaf/README.md` for the full LPCI attack vector → OWASP → MAESTRO
 
 ## Incident tracker
 
-50 real-world and research-demonstrated incidents, each mapped to OWASP entries and MAESTRO architectural layers:
+80 real-world, research-demonstrated, and red-team incidents, each mapped to OWASP entries and MAESTRO architectural layers:
 
 ```bash
 node scripts/incidents-report.js                      # all incidents → reports/incidents.md
@@ -510,7 +510,7 @@ No install required. Works on desktop and mobile.
 | [**Explorer**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer) | Search and filter all 41 entries. Click any entry to see controls across all 25 frameworks. |
 | [**Frameworks**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/frameworks) | Interactive 41×25 coverage matrix. Click any cell to see the specific controls mapped. Drill into any control. |
 | [**Crosswalk**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/crosswalk) | Entry-to-control mapping explorer. Filter by severity, tier, scope. |
-| [**Incidents**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents) | Browse 50+ AI security incidents. Filter by severity, year, MAESTRO layer. Full attribution details. |
+| [**Incidents**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/incidents) | Browse 80 AI security incidents. Filter by severity, year, MAESTRO layer. Full attribution details. |
 | [**Score**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/score) | Select your frameworks, see coverage score. Upload Garak/PyRIT/LAAF results to validate. Export badge. |
 | [**Gap Analysis**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/gaps) | Select frameworks you implement, see red/yellow/green heatmap of OWASP risk coverage. Export PDF or CSV. |
 | [**Submit**](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/submit) | Paste any framework's controls JSON and the ML classifier proposes mappings to all 41 OWASP entries. |
