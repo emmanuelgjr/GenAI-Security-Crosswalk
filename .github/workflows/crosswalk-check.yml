@@ -1,0 +1,178 @@
+name: GenAI Security Crosswalk Check
+
+# This action can be used by OTHER repos to check their AI code against the crosswalk.
+# Add to any repo: copy this file to .github/workflows/crosswalk-check.yml
+# It will comment on PRs with relevant OWASP risks and framework controls.
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  crosswalk-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install crosswalk
+        run: npm install genai-security-crosswalk
+
+      - name: Analyze PR for AI security risks
+        id: analyze
+        run: |
+          cat > analyze.mjs << 'SCRIPT'
+          import { readFileSync } from 'fs';
+          import { execSync } from 'child_process';
+
+          // Get changed files in PR
+          const diff = execSync('git diff --name-only origin/${{ github.base_ref }}...HEAD', { encoding: 'utf-8' });
+          const files = diff.trim().split('\n').filter(f => f);
+
+          // AI-relevant file patterns
+          const AI_PATTERNS = [
+            /\.(py|ts|js|mjs)$/,
+            /prompt|llm|agent|rag|embed|vector|chat|completion|openai|anthropic|gemini|bedrock/i,
+            /mcp|tool_use|function_call|plugin/i,
+            /model|inference|predict|classify|train/i,
+          ];
+
+          // Keyword → OWASP entry mapping
+          const RISK_KEYWORDS = {
+            'LLM01': ['prompt', 'injection', 'user_input', 'system_prompt', 'instructions', 'jailbreak'],
+            'LLM02': ['sensitive', 'pii', 'secret', 'credential', 'api_key', 'password', 'token'],
+            'LLM03': ['supply_chain', 'model_download', 'huggingface', 'pickle', 'deserializ'],
+            'LLM04': ['training', 'fine_tun', 'dataset', 'poison', 'backdoor'],
+            'LLM06': ['tool_call', 'function_call', 'execute', 'shell', 'subprocess', 'eval(', 'exec('],
+            'LLM07': ['system_prompt', 'metaprompt', 'instructions'],
+            'LLM09': ['hallucin', 'ground', 'factual', 'citation'],
+            'ASI01': ['agent', 'autonomous', 'goal', 'objective', 'task_plan'],
+            'ASI02': ['tool', 'mcp', 'plugin', 'extension', 'function_call'],
+            'ASI03': ['credential', 'oauth', 'api_key', 'service_account', 'iam'],
+            'ASI04': ['npm_install', 'pip_install', 'requirements', 'package.json', 'supply_chain'],
+            'ASI05': ['exec', 'eval', 'subprocess', 'shell', 'command', 'code_execution'],
+            'DSGAI01': ['data_leak', 'exfiltrat', 'sensitive_data', 'personal_data', 'pii'],
+            'DSGAI04': ['rag', 'retrieval', 'knowledge_base', 'embedding', 'vector_store'],
+            'DSGAI08': ['config', 'environment', 'deployment', '.env', 'secrets'],
+          };
+
+          // OWASP entry names
+          const ENTRY_NAMES = {
+            'LLM01': 'Prompt Injection', 'LLM02': 'Sensitive Information Disclosure',
+            'LLM03': 'Supply Chain', 'LLM04': 'Data & Model Poisoning',
+            'LLM06': 'Excessive Agency', 'LLM07': 'System Prompt Leakage',
+            'LLM09': 'Misinformation', 'ASI01': 'Agent Goal Hijack',
+            'ASI02': 'Tool Misuse', 'ASI03': 'Credential Misuse',
+            'ASI04': 'Supply Chain', 'ASI05': 'Code Execution',
+            'DSGAI01': 'Data Leakage', 'DSGAI04': 'RAG Poisoning',
+            'DSGAI08': 'Configuration & Deployment',
+          };
+
+          // Scan changed files
+          const aiFiles = files.filter(f => AI_PATTERNS.some(p => p.test(f)));
+
+          if (aiFiles.length === 0) {
+            console.log('NO_AI_FILES');
+            process.exit(0);
+          }
+
+          const detectedRisks = new Map();
+
+          for (const file of aiFiles) {
+            try {
+              const content = readFileSync(file, 'utf-8').toLowerCase();
+              for (const [entry, keywords] of Object.entries(RISK_KEYWORDS)) {
+                for (const kw of keywords) {
+                  if (content.includes(kw)) {
+                    if (!detectedRisks.has(entry)) detectedRisks.set(entry, new Set());
+                    detectedRisks.get(entry).add(file);
+                    break;
+                  }
+                }
+              }
+            } catch {}
+          }
+
+          if (detectedRisks.size === 0) {
+            console.log('NO_RISKS');
+            process.exit(0);
+          }
+
+          // Build comment
+          let comment = '## 🛡️ OWASP GenAI Security Crosswalk\n\n';
+          comment += `This PR modifies **${aiFiles.length} AI-related file(s)**. `;
+          comment += `The following OWASP GenAI risks may be relevant:\n\n`;
+          comment += '| Risk | Entry | Files | Action |\n|------|-------|-------|--------|\n';
+
+          for (const [entry, fileSet] of [...detectedRisks.entries()].sort()) {
+            const name = ENTRY_NAMES[entry] || entry;
+            const fileList = [...fileSet].slice(0, 3).map(f => '`' + f + '`').join(', ');
+            const link = `https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/explorer/${entry}`;
+            comment += `| [${entry}](${link}) | ${name} | ${fileList} | [View controls](${link}) |\n`;
+          }
+
+          comment += '\n---\n';
+          comment += `<sub>🔍 Scanned ${files.length} changed files · Found ${detectedRisks.size} potential risks · `;
+          comment += `[Full crosswalk](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/) · `;
+          comment += `[Gap analysis](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/gaps)</sub>`;
+
+          // Output for GitHub Actions
+          const fs = await import('fs');
+          const outputFile = process.env.GITHUB_OUTPUT;
+          if (outputFile) {
+            fs.appendFileSync(outputFile, `has_risks=true\n`);
+            // Use file for multiline output
+            const commentFile = '/tmp/crosswalk-comment.md';
+            fs.writeFileSync(commentFile, comment);
+            fs.appendFileSync(outputFile, `comment_file=${commentFile}\n`);
+          }
+
+          console.log(comment);
+          SCRIPT
+
+          node --experimental-vm-modules analyze.mjs || true
+
+      - name: Comment on PR
+        if: steps.analyze.outputs.has_risks == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const commentFile = '${{ steps.analyze.outputs.comment_file }}';
+            if (!commentFile || !fs.existsSync(commentFile)) return;
+            const body = fs.readFileSync(commentFile, 'utf-8');
+
+            // Find existing crosswalk comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('OWASP GenAI Security Crosswalk')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }

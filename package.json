@@ -24,6 +24,7 @@
     "ingest": "node scripts/ingest-framework.mjs",
     "extract-registry": "node scripts/extract-registry.js",
     "framework-diff": "node scripts/framework-diff.js",
+    "state-report": "node scripts/state-report.js",
     "build": "npm run generate && npm run validate",
     "build:reports": "npm run compliance && npm run incidents",
     "ci": "npm run build && npm run build:reports",
