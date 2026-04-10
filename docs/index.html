@@ -1578,7 +1578,9 @@ input, select { font-family: inherit; }
     '/score': renderScore,
     '/leaderboard': renderLeaderboard,
     '/about': renderAbout,
-    '/badge': renderBadgePage
+    '/badge': renderBadgePage,
+    '/submit': renderSubmit,
+    '/review': renderReview
   };
 
   function getRoute() {
@@ -5150,6 +5152,386 @@ input, select { font-family: inherit; }
     content.appendChild(el('p', {}, 'This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). You are free to share and adapt the material for any purpose, including commercial, as long as you give appropriate credit and distribute under the same license.'));
 
     container.appendChild(content);
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Submit-a-Standard page
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderSubmit(container) {
+    var REPO = 'emmanuelgjr/GenAI-Security-Crosswalk';
+    var page = el('div', { style: 'max-width:800px;margin:0 auto;' });
+
+    page.appendChild(el('h2', {}, 'Submit a Standard'));
+    page.appendChild(el('p', { style: 'color:var(--text-secondary);margin-bottom:20px;' },
+      'Submit a security framework for automated mapping to all 41 OWASP GenAI entries. ' +
+      'Paste your framework controls as JSON below. Our classifier will propose mappings and open a PR for review.'));
+
+    // Example template
+    var exampleBtn = el('button', { style: 'font-size:.8rem;padding:4px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;color:var(--text-secondary);margin-bottom:12px;' });
+    exampleBtn.textContent = 'Load example template';
+    page.appendChild(exampleBtn);
+
+    // Form
+    var form = el('div', { style: 'display:flex;flex-direction:column;gap:14px;' });
+
+    var nameRow = el('div', { style: 'display:grid;grid-template-columns:1fr 1fr;gap:12px;' });
+    var nameLabel = el('label', { style: 'font-size:.85rem;font-weight:600;' }, 'Framework Name *');
+    var nameInput = el('input', { type: 'text', placeholder: 'e.g., NIST SP 800-53 Rev 5', style: 'padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);font-size:.9rem;' });
+    var nameDiv = el('div');
+    nameDiv.appendChild(nameLabel);
+    nameDiv.appendChild(nameInput);
+    nameRow.appendChild(nameDiv);
+
+    var verLabel = el('label', { style: 'font-size:.85rem;font-weight:600;' }, 'Version *');
+    var verInput = el('input', { type: 'text', placeholder: 'e.g., Rev 5', style: 'padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);font-size:.9rem;' });
+    var verDiv = el('div');
+    verDiv.appendChild(verLabel);
+    verDiv.appendChild(verInput);
+    nameRow.appendChild(verDiv);
+    form.appendChild(nameRow);
+
+    var urlRow = el('div', { style: 'display:grid;grid-template-columns:1fr 1fr;gap:12px;' });
+    var urlLabel = el('label', { style: 'font-size:.85rem;font-weight:600;' }, 'Framework URL *');
+    var urlInput = el('input', { type: 'url', placeholder: 'https://...', style: 'padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);font-size:.9rem;' });
+    var urlDiv = el('div');
+    urlDiv.appendChild(urlLabel);
+    urlDiv.appendChild(urlInput);
+    urlRow.appendChild(urlDiv);
+
+    var pubLabel = el('label', { style: 'font-size:.85rem;font-weight:600;' }, 'Publisher');
+    var pubInput = el('input', { type: 'text', placeholder: 'e.g., NIST', style: 'padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);font-size:.9rem;' });
+    var pubDiv = el('div');
+    pubDiv.appendChild(pubLabel);
+    pubDiv.appendChild(pubInput);
+    urlRow.appendChild(pubDiv);
+    form.appendChild(urlRow);
+
+    // JSON textarea
+    var jsonLabel = el('label', { style: 'font-size:.85rem;font-weight:600;' }, 'Framework Controls (JSON) *');
+    form.appendChild(jsonLabel);
+    var jsonArea = el('textarea', {
+      rows: '16',
+      placeholder: '{\n  "id": "my-framework",\n  "name": "My Framework v1.0",\n  "version": "1.0",\n  "url": "https://...",\n  "controls": [\n    { "control_id": "C-1", "title": "Control name", "description": "..." }\n  ]\n}',
+      style: 'padding:12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);font-family:monospace;font-size:.85rem;resize:vertical;'
+    });
+    form.appendChild(jsonArea);
+
+    // Validation status
+    var statusDiv = el('div', { style: 'font-size:.85rem;min-height:24px;' });
+    form.appendChild(statusDiv);
+
+    // Buttons
+    var btnRow = el('div', { style: 'display:flex;gap:10px;' });
+    var validateBtn = el('button', { style: 'padding:8px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;font-weight:600;color:var(--text);' });
+    validateBtn.textContent = 'Validate';
+    var submitBtn = el('button', { style: 'padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:600;opacity:0.5;' });
+    submitBtn.textContent = 'Submit to GitHub';
+    submitBtn.disabled = true;
+    btnRow.appendChild(validateBtn);
+    btnRow.appendChild(submitBtn);
+    form.appendChild(btnRow);
+
+    page.appendChild(form);
+
+    // Example template loader
+    exampleBtn.addEventListener('click', function() {
+      var example = {
+        id: 'example-framework',
+        name: nameInput.value || 'Example Framework',
+        version: verInput.value || '1.0',
+        url: urlInput.value || 'https://example.com',
+        license: 'Public Domain',
+        publisher: pubInput.value || 'Example Org',
+        category: 'ai-governance',
+        controls: [
+          { control_id: 'EX-1', title: 'Risk assessment', description: 'Conduct risk assessments for AI systems.', parent: null, function: 'Governance' },
+          { control_id: 'EX-2', title: 'Data governance', description: 'Establish data governance for training data.', parent: null, function: 'Data' },
+          { control_id: 'EX-3', title: 'Model validation', description: 'Validate models before deployment.', parent: null, function: 'Testing' }
+        ]
+      };
+      jsonArea.value = JSON.stringify(example, null, 2);
+    });
+
+    // Validation
+    function validate() {
+      var text = jsonArea.value.trim();
+      if (!text) { statusDiv.textContent = ''; submitBtn.disabled = true; submitBtn.style.opacity = '0.5'; return null; }
+      try {
+        var fw = JSON.parse(text);
+        var errors = [];
+        if (!fw.id) errors.push('Missing "id"');
+        if (!fw.name) errors.push('Missing "name"');
+        if (!fw.controls || !Array.isArray(fw.controls)) errors.push('Missing or invalid "controls" array');
+        if (fw.controls) {
+          var ids = {};
+          fw.controls.forEach(function(c, i) {
+            if (!c.control_id) errors.push('controls[' + i + ']: missing control_id');
+            if (!c.title) errors.push('controls[' + i + ']: missing title');
+            if (ids[c.control_id]) errors.push('controls[' + i + ']: duplicate control_id "' + c.control_id + '"');
+            ids[c.control_id] = true;
+          });
+        }
+        if (errors.length) {
+          statusDiv.innerHTML = '<span style="color:#ef4444;">Validation errors: ' + errors.join(', ') + '</span>';
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.5';
+          return null;
+        }
+        // Auto-fill from JSON
+        if (fw.name && !nameInput.value) nameInput.value = fw.name;
+        if (fw.version && !verInput.value) verInput.value = fw.version;
+        if (fw.url && !urlInput.value) urlInput.value = fw.url;
+        if (fw.publisher && !pubInput.value) pubInput.value = fw.publisher;
+        statusDiv.innerHTML = '<span style="color:#22c55e;">Valid: ' + fw.controls.length + ' controls in "' + fw.name + '"</span>';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        return fw;
+      } catch (e) {
+        statusDiv.innerHTML = '<span style="color:#ef4444;">JSON parse error: ' + e.message + '</span>';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.5';
+        return null;
+      }
+    }
+
+    validateBtn.addEventListener('click', validate);
+    jsonArea.addEventListener('input', function() {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.5';
+      statusDiv.textContent = '';
+    });
+
+    // Submit — opens pre-filled GitHub Issue
+    submitBtn.addEventListener('click', function() {
+      var fw = validate();
+      if (!fw) return;
+      var name = nameInput.value || fw.name;
+      var version = verInput.value || fw.version || '';
+      var url = urlInput.value || fw.url || '';
+      var publisher = pubInput.value || fw.publisher || '';
+      var jsonText = jsonArea.value.trim();
+
+      var issueUrl = 'https://github.com/' + REPO + '/issues/new?' +
+        'template=submit-framework.yml' +
+        '&title=' + encodeURIComponent('[Framework Submission] ' + name) +
+        '&framework-name=' + encodeURIComponent(name) +
+        '&framework-url=' + encodeURIComponent(url) +
+        '&framework-version=' + encodeURIComponent(version) +
+        '&publisher=' + encodeURIComponent(publisher) +
+        '&framework-json=' + encodeURIComponent(jsonText);
+
+      window.open(issueUrl, '_blank');
+    });
+
+    // How it works section
+    var howSection = el('div', { style: 'margin-top:32px;padding:20px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);' });
+    howSection.appendChild(el('h3', { style: 'margin-top:0;' }, 'How it works'));
+    var steps = [
+      ['1. Submit', 'Paste your framework controls as JSON and submit. This opens a GitHub Issue.'],
+      ['2. Classify', 'A GitHub Action runs the classifier pipeline (BGE bi-encoder + cross-encoder reranker) to propose mappings to all 41 OWASP entries.'],
+      ['3. Review', 'The classifier opens a PR with proposed mappings. Reviewers accept, reject, or edit each mapping.'],
+      ['4. Merge', 'Accepted mappings are merged into the crosswalk. Your framework appears on the live site.']
+    ];
+    steps.forEach(function(s) {
+      var step = el('div', { style: 'margin-bottom:10px;' });
+      step.appendChild(el('strong', {}, s[0] + ': '));
+      step.appendChild(document.createTextNode(s[1]));
+      howSection.appendChild(step);
+    });
+    page.appendChild(howSection);
+
+    container.appendChild(page);
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════════
+  // Reviewer UI page
+  // ══════════════════════════════════════════════════════════════════════════════
+  function renderReview(container) {
+    var REPO = 'emmanuelgjr/GenAI-Security-Crosswalk';
+    var page = el('div', { style: 'max-width:900px;margin:0 auto;' });
+
+    page.appendChild(el('h2', {}, 'Mapping Review Queue'));
+    page.appendChild(el('p', { style: 'color:var(--text-secondary);margin-bottom:20px;' },
+      'Review classifier-proposed mappings from framework submissions. ' +
+      'Each row shows a proposed mapping with confidence score and alternatives.'));
+
+    // Status bar
+    var statusBar = el('div', { style: 'padding:12px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:16px;font-size:.85rem;' });
+    statusBar.textContent = 'Loading pending reviews from GitHub...';
+    page.appendChild(statusBar);
+
+    // PR list
+    var prList = el('div', { className: 'review-pr-list' });
+    page.appendChild(prList);
+
+    // Local review mode (from classifier-predictions.js)
+    var localSection = el('div', { style: 'margin-top:24px;' });
+    localSection.appendChild(el('h3', {}, 'Local Predictions Review'));
+    localSection.appendChild(el('p', { style: 'color:var(--text-secondary);font-size:.85rem;margin-bottom:12px;' },
+      'Review the ' + PREDICTIONS.length + ' classifier predictions loaded from the current build. ' +
+      'Model-suggested mappings (not yet curated) are shown below.'));
+
+    // Filter to suggested-only
+    var suggested = PREDICTIONS.filter(function(p) { return !p.curated; });
+    var curatedPreds = PREDICTIONS.filter(function(p) { return p.curated; });
+
+    // Stats
+    var statsRow = el('div', { style: 'display:flex;gap:16px;margin-bottom:16px;' });
+    [
+      ['Total Predictions', PREDICTIONS.length],
+      ['Curated (verified)', curatedPreds.length],
+      ['Suggested (new)', suggested.length],
+      ['Avg Confidence', suggested.length ? (suggested.reduce(function(s,p){ return s + p.confidence; }, 0) / suggested.length * 100).toFixed(0) + '%' : 'N/A']
+    ].forEach(function(s) {
+      var card = el('div', { className: 'fw-stat-card' });
+      card.appendChild(el('div', { className: 'num' }, String(s[1])));
+      card.appendChild(el('div', { className: 'label' }, s[0]));
+      statsRow.appendChild(card);
+    });
+    localSection.appendChild(statsRow);
+
+    // Confidence threshold slider
+    var sliderRow = el('div', { style: 'display:flex;align-items:center;gap:10px;margin-bottom:12px;' });
+    sliderRow.appendChild(el('label', { style: 'font-size:.85rem;font-weight:600;white-space:nowrap;' }, 'Min confidence:'));
+    var slider = el('input', { type: 'range', min: '0', max: '100', value: '50', style: 'flex:1;accent-color:var(--accent);' });
+    var sliderVal = el('span', { style: 'font-size:.85rem;font-weight:600;min-width:36px;' }, '50%');
+    sliderRow.appendChild(slider);
+    sliderRow.appendChild(sliderVal);
+    localSection.appendChild(sliderRow);
+
+    // Review table
+    var tableWrap = el('div', { style: 'overflow-x:auto;' });
+    var table = el('table', { className: 'mapping-table fw-mapping' });
+
+    function renderTable(minConf) {
+      table.innerHTML = '';
+      var thead = el('thead');
+      var hr = el('tr');
+      ['Entry', 'Framework', 'Control', 'Title', 'Confidence', 'Action'].forEach(function(h) {
+        hr.appendChild(el('th', {}, h));
+      });
+      thead.appendChild(hr);
+      table.appendChild(thead);
+
+      var tbody = el('tbody');
+      var shown = 0;
+      suggested.sort(function(a, b) { return b.confidence - a.confidence; });
+      suggested.forEach(function(p) {
+        if (p.confidence * 100 < minConf) return;
+        shown++;
+        if (shown > 100) return; // cap at 100 rows
+
+        var row = el('tr');
+        // Entry
+        var entryTd = el('td');
+        var entryLink = el('a', { href: '#/explorer/' + encodeURIComponent(p.entry_id), style: 'text-decoration:none;color:var(--accent);font-weight:600;' });
+        entryLink.textContent = p.entry_id;
+        entryTd.appendChild(entryLink);
+        row.appendChild(entryTd);
+
+        // Framework
+        row.appendChild(el('td', { style: 'font-size:.85rem;' }, p.framework.length > 20 ? p.framework.slice(0, 18) + '...' : p.framework));
+
+        // Control
+        var ctrlTd = el('td');
+        var ctrlLink = el('a', {
+          href: '#/frameworks/' + encodeURIComponent(p.framework) + '/' + encodeURIComponent(p.control_id),
+          style: 'text-decoration:none;color:var(--accent);font-weight:600;font-size:.85rem;'
+        });
+        ctrlLink.textContent = p.control_id;
+        ctrlTd.appendChild(ctrlLink);
+        row.appendChild(ctrlTd);
+
+        // Title
+        row.appendChild(el('td', { style: 'font-size:.85rem;' }, (p.title || '').slice(0, 35)));
+
+        // Confidence
+        var confTd = el('td');
+        var confPct = Math.round(p.confidence * 100);
+        var confBar = el('div', { style: 'display:flex;align-items:center;gap:6px;' });
+        var bar = el('div', { style: 'flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;min-width:40px;' });
+        var fill = el('div', { style: 'height:100%;width:' + confPct + '%;background:' + (confPct >= 70 ? 'var(--accent)' : confPct >= 40 ? '#f59e0b' : '#94a3b8') + ';border-radius:3px;' });
+        bar.appendChild(fill);
+        confBar.appendChild(bar);
+        confBar.appendChild(el('span', { style: 'font-size:.75rem;font-weight:600;min-width:30px;' }, confPct + '%'));
+        confTd.appendChild(confBar);
+        row.appendChild(confTd);
+
+        // Action buttons
+        var actTd = el('td', { style: 'white-space:nowrap;' });
+        var acceptBtn = el('button', { style: 'font-size:.7rem;padding:2px 8px;background:#22c55e;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-right:4px;' });
+        acceptBtn.textContent = 'Accept';
+        acceptBtn.addEventListener('click', function() {
+          row.style.background = 'rgba(34,197,94,0.1)';
+          acceptBtn.disabled = true;
+          rejectBtn.disabled = true;
+          acceptBtn.textContent = 'Accepted';
+        });
+        var rejectBtn = el('button', { style: 'font-size:.7rem;padding:2px 8px;background:#ef4444;color:#fff;border:none;border-radius:4px;cursor:pointer;' });
+        rejectBtn.textContent = 'Reject';
+        rejectBtn.addEventListener('click', function() {
+          row.style.opacity = '0.3';
+          acceptBtn.disabled = true;
+          rejectBtn.disabled = true;
+        });
+        actTd.appendChild(acceptBtn);
+        actTd.appendChild(rejectBtn);
+        row.appendChild(actTd);
+
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+
+      if (shown === 0) {
+        var emptyRow = el('tr');
+        emptyRow.appendChild(el('td', { colSpan: '6', style: 'text-align:center;color:var(--text-muted);padding:20px;' }, 'No suggestions above this confidence threshold.'));
+        tbody.appendChild(emptyRow);
+      }
+    }
+
+    renderTable(50);
+    slider.addEventListener('input', function() {
+      var v = parseInt(slider.value);
+      sliderVal.textContent = v + '%';
+      renderTable(v);
+    });
+
+    tableWrap.appendChild(table);
+    localSection.appendChild(tableWrap);
+    page.appendChild(localSection);
+
+    // Try to load PRs from GitHub (best-effort, no auth required for public repos)
+    try {
+      fetch('https://api.github.com/repos/' + REPO + '/pulls?state=open&per_page=20')
+        .then(function(r) { return r.json(); })
+        .then(function(prs) {
+          var classifierPRs = prs.filter(function(pr) {
+            return pr.labels && pr.labels.some(function(l) { return l.name === 'classifier-output'; });
+          });
+          if (classifierPRs.length === 0) {
+            statusBar.textContent = 'No pending classifier PRs found. Submit a framework to get started!';
+            statusBar.style.background = 'var(--surface)';
+          } else {
+            statusBar.innerHTML = '<strong>' + classifierPRs.length + '</strong> pending classifier PR(s):';
+            classifierPRs.forEach(function(pr) {
+              var prRow = el('a', { href: pr.html_url, target: '_blank', rel: 'noopener', style: 'display:block;padding:8px 12px;margin-top:8px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--text);' });
+              prRow.appendChild(el('strong', {}, '#' + pr.number + ' '));
+              prRow.appendChild(document.createTextNode(pr.title));
+              var dateBadge = el('span', { style: 'float:right;font-size:.75rem;color:var(--text-muted);' });
+              dateBadge.textContent = new Date(pr.created_at).toLocaleDateString();
+              prRow.appendChild(dateBadge);
+              prList.appendChild(prRow);
+            });
+          }
+        })
+        .catch(function() {
+          statusBar.textContent = 'Could not fetch PRs from GitHub. Check your network connection.';
+        });
+    } catch(e) {
+      statusBar.textContent = 'GitHub API not available in this environment.';
+    }
+
+    container.appendChild(page);
   }
 
   // ══════════════════════════════════════════════════════════════════════════════

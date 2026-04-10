@@ -1,0 +1,226 @@
+name: Classify Framework Submission
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  classify:
+    if: contains(github.event.label.name, 'framework-submission')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r classifier/requirements.txt
+
+      - name: Extract framework JSON from issue
+        id: extract
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+
+            // Extract JSON from the "Framework Controls (JSON)" field
+            // The YAML form puts it in a ```json code block or raw text
+            let jsonStr = '';
+            const jsonMatch = body.match(/```json\s*([\s\S]*?)```/);
+            if (jsonMatch) {
+              jsonStr = jsonMatch[1].trim();
+            } else {
+              // Try to find raw JSON object
+              const rawMatch = body.match(/(\{[\s\S]*"controls"[\s\S]*\})/);
+              if (rawMatch) jsonStr = rawMatch[1].trim();
+            }
+
+            if (!jsonStr) {
+              core.setFailed('Could not extract framework JSON from issue body');
+              return;
+            }
+
+            // Validate JSON parses
+            try {
+              const fw = JSON.parse(jsonStr);
+              if (!fw.id || !fw.name || !fw.controls) {
+                core.setFailed('JSON missing required fields: id, name, controls');
+                return;
+              }
+              core.setOutput('framework_id', fw.id);
+              core.setOutput('framework_name', fw.name);
+              core.setOutput('control_count', fw.controls.length);
+            } catch (e) {
+              core.setFailed('Invalid JSON: ' + e.message);
+              return;
+            }
+
+            // Write to file
+            const fs = require('fs');
+            fs.writeFileSync('_submission.json', jsonStr);
+            core.setOutput('json_path', '_submission.json');
+
+      - name: Validate and ingest framework
+        run: |
+          node scripts/ingest-framework.mjs _submission.json
+          echo "Framework ingested successfully"
+
+      - name: Build FAISS index
+        run: python -m classifier.index_builder --force
+
+      - name: Run classifier on all entries
+        run: |
+          FW_NAME=$(python -c "import json; print(json.load(open('_submission.json'))['name'])")
+          mkdir -p _output
+
+          # Classify each entry against the new framework
+          python -c "
+          import json, sys
+          sys.path.insert(0, '.')
+          from classifier.classify import load_index, classify
+          from classifier.data_loader import load_entries
+
+          entries = load_entries()
+          fw_name = '$FW_NAME'
+          all_results = []
+
+          for entry in entries:
+              results = classify(entry['id'], target_framework=fw_name, top_k=10, output_json=False)
+              for r in results:
+                  r['entry_id'] = entry['id']
+                  r['entry_name'] = entry['name']
+                  r['severity'] = entry['severity']
+                  r['source_list'] = entry['source_list']
+              all_results.extend(results)
+
+          with open('_output/proposed_mappings.json', 'w') as f:
+              json.dump(all_results, f, indent=2)
+          print(f'Generated {len(all_results)} proposed mappings')
+          "
+
+      - name: Generate mapping summary
+        id: summary
+        run: |
+          python -c "
+          import json
+
+          fw = json.load(open('_submission.json'))
+          mappings = json.load(open('_output/proposed_mappings.json'))
+
+          # Group by entry
+          by_entry = {}
+          for m in mappings:
+              eid = m.get('entry_id', '?')
+              if eid not in by_entry:
+                  by_entry[eid] = []
+              by_entry[eid].append(m)
+
+          lines = []
+          lines.append(f'## Proposed Mappings: {fw[\"name\"]}')
+          lines.append(f'')
+          lines.append(f'**{len(mappings)} proposed control mappings** across {len(by_entry)} OWASP entries.')
+          lines.append(f'**{fw.get(\"controls\", []).__len__()} controls** in the framework registry.')
+          lines.append(f'')
+          lines.append(f'| Entry | Name | Top Control | Score | Curated |')
+          lines.append(f'|---|---|---|---|---|')
+
+          for eid in sorted(by_entry.keys()):
+              group = by_entry[eid]
+              top = group[0] if group else {}
+              curated = 'Yes' if top.get('curated') else 'No'
+              lines.append(f'| {eid} | {top.get(\"entry_name\",\"\")} | {top.get(\"control_id\",\"\")} — {top.get(\"title\",\"\")[:40]} | {top.get(\"score\",0):.4f} | {curated} |')
+
+          lines.append(f'')
+          lines.append(f'> Auto-generated by the GenAI Security Crosswalk classifier.')
+          lines.append(f'> Review proposed mappings in the PR files.')
+
+          with open('_output/summary.md', 'w') as f:
+              f.write('\n'.join(lines))
+          print('\n'.join(lines))
+          "
+
+      - name: Create branch and PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          FW_ID=$(python -c "import json; print(json.load(open('_submission.json'))['id'])")
+          FW_NAME=$(python -c "import json; print(json.load(open('_submission.json'))['name'])")
+          BRANCH="classifier/${FW_ID}-issue-${ISSUE_NUMBER}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+
+          # Copy framework to registry
+          cp _submission.json "data/frameworks/${FW_ID}.json"
+
+          # Copy proposed mappings
+          mkdir -p "classifier/proposals"
+          cp _output/proposed_mappings.json "classifier/proposals/${FW_ID}_mappings.json"
+
+          git add "data/frameworks/${FW_ID}.json" "classifier/proposals/${FW_ID}_mappings.json"
+          git commit -m "Add ${FW_NAME} framework + classifier-proposed mappings
+
+          Resolves #${ISSUE_NUMBER}
+
+          Co-Authored-By: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+
+          git push origin "$BRANCH"
+
+          # Create PR
+          SUMMARY=$(cat _output/summary.md)
+          gh pr create \
+            --title "Add ${FW_NAME} — classifier-proposed mappings" \
+            --body "$(cat <<PREOF
+          Closes #${ISSUE_NUMBER}
+
+          ${SUMMARY}
+
+          ---
+
+          ### Review Instructions
+
+          1. Check \`data/frameworks/${FW_ID}.json\` — framework registry entry
+          2. Check \`classifier/proposals/${FW_ID}_mappings.json\` — proposed mappings
+          3. Use the [Reviewer UI](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/review) to accept/reject mappings
+          4. Approved mappings will be incorporated into the next crosswalk release
+
+          ### Labels
+          - \`classifier-output\` — auto-generated by classifier pipeline
+          - \`framework-submission\` — originated from community submission
+          PREOF
+          )" \
+            --label "classifier-output" \
+            --label "framework-submission"
+
+      - name: Comment on issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          FW_NAME=$(python -c "import json; print(json.load(open('_submission.json'))['name'])")
+          MAPPING_COUNT=$(python -c "import json; print(len(json.load(open('_output/proposed_mappings.json'))))")
+
+          gh issue comment ${{ github.event.issue.number }} --body "$(cat <<EOF
+          **Classifier pipeline complete!**
+
+          - Framework: **${FW_NAME}**
+          - Proposed mappings: **${MAPPING_COUNT}** control-to-entry mappings
+          - A PR has been opened with the proposed mappings for review.
+
+          Next steps:
+          1. Review the PR linked above
+          2. Use the [Reviewer UI](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/review) for detailed mapping review
+          3. Accepted mappings will be merged into the crosswalk
+          EOF
+          )"

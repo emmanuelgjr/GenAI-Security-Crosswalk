@@ -1,0 +1,108 @@
+name: "Submit a Standard / Framework"
+description: "Submit a new security framework for automated mapping to OWASP GenAI entries"
+title: "[Framework Submission] "
+labels: ["framework-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Submit a Framework for Automated Mapping
+
+        Paste your framework's controls as JSON below, or provide a URL to the source.
+        Our classifier will automatically propose mappings to all 41 OWASP GenAI entries
+        and open a PR for review.
+
+        **Format:** Use the [framework registry schema](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/framework-schema.json).
+
+  - type: input
+    id: framework-name
+    attributes:
+      label: Framework Name
+      description: "Official name (e.g., 'NIST SP 800-53 Rev 5')"
+      placeholder: "Framework Name vX.Y"
+    validations:
+      required: true
+
+  - type: input
+    id: framework-url
+    attributes:
+      label: Framework URL
+      description: "Official URL for the framework document"
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: input
+    id: framework-version
+    attributes:
+      label: Version
+      description: "Framework version identifier"
+      placeholder: "e.g., 5.0, 2024, Rev 3"
+    validations:
+      required: true
+
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher
+      description: "Organization that publishes this framework"
+      placeholder: "e.g., NIST, ISO, OWASP"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: "Primary category"
+      options:
+        - ai-governance
+        - regulation
+        - infosec
+        - appsec
+        - threat-model
+        - ot-ics
+        - identity
+        - architecture
+        - testing
+        - financial
+        - certification
+    validations:
+      required: true
+
+  - type: textarea
+    id: framework-json
+    attributes:
+      label: Framework Controls (JSON)
+      description: |
+        Paste the full framework JSON here. Must conform to the
+        [framework-schema.json](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/framework-schema.json).
+
+        Minimum required: `id`, `name`, `version`, `url`, and `controls` array
+        where each control has `control_id` and `title`.
+      render: json
+      placeholder: |
+        {
+          "id": "my-framework",
+          "name": "My Framework v1.0",
+          "version": "1.0",
+          "url": "https://example.com/framework",
+          "controls": [
+            { "control_id": "C-1", "title": "Control name", "description": "..." }
+          ]
+        }
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: "License or access terms for this framework"
+      placeholder: "e.g., Public Domain, CC BY 4.0, Proprietary"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: "Any context about why this framework should be included, who uses it, etc."
