@@ -47,7 +47,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent identity and credential governance policy � NHI inventory, lifecycle, and access controls"
+      "notes": "Agent identity and credential governance policy — NHI inventory, lifecycle, and access controls"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -60,10 +60,10 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial testing covering credential leakage paths � memory, logs, tool payloads"
+      "notes": "Adversarial testing covering credential leakage paths — memory, logs, tool payloads"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,12 +71,12 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for detected credential exposure � rotation, containment, lateral movement assessment"
+      "notes": "Incident response for detected credential exposure — rotation, containment, lateral movement assessment"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Credential exposure must be identified as a foreseeable risk and mitigated",
-      "control_name": "Art. 9 � Risk management",
+      "control_name": "Art. 9 — Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent credential lifecycle included in Art. 9 risk management system"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures protecting against credential theft and misuse",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived credentials, NHI inventory, and access controls are Art. 15 requirements"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Documented procedures for credential management and incident response",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent identity governance procedures documented in quality management system"
@@ -103,7 +103,7 @@
       "control_name": "Privileged access rights",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials managed as privileged access � short-lived, scoped, reviewed"
+      "notes": "Agent credentials managed as privileged access — short-lived, scoped, reviewed"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -119,7 +119,7 @@
       "control_name": "Authentication information",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Secure management of agent credentials � no hardcoding, rotation enforced"
+      "notes": "Secure management of agent credentials — no hardcoding, rotation enforced"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -127,7 +127,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent credential use logged with full context � issuance, invocation, expiry"
+      "notes": "All agent credential use logged with full context — issuance, invocation, expiry"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -231,7 +231,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent credentials unique and traceable � no shared service accounts for OT-accessing agents"
+      "notes": "All agent credentials unique and traceable — no shared service accounts for OT-accessing agents"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -239,7 +239,7 @@
       "control_name": "Authenticator management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential lifecycle managed � issuance, rotation, revocation documented per agent"
+      "notes": "Agent credential lifecycle managed — issuance, rotation, revocation documented per agent"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -255,7 +255,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential exposure treated as security event � immediate rotation, lateral movement assessment"
+      "notes": "Agent credential exposure treated as security event — immediate rotation, lateral movement assessment"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -287,7 +287,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Identities and credentials managed � NHI inventory, lifecycle, short-lived JIT issuance"
+      "notes": "Identities and credentials managed — NHI inventory, lifecycle, short-lived JIT issuance"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -295,7 +295,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Access permissions managed � agent credential scope enforced at minimum required"
+      "notes": "Access permissions managed — agent credential scope enforced at minimum required"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -303,7 +303,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Credential usage monitored � anomalous access patterns, lateral movement detected"
+      "notes": "Credential usage monitored — anomalous access patterns, lateral movement detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -311,40 +311,40 @@
       "control_name": "Risk Management Strategy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credential exposure in risk register � blast radius per deployment documented"
+      "notes": "Agent credential exposure in risk register — blast radius per deployment documented"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Agent credentials managed as privileged access � minimum scope, documented justification, regular review",
-      "control_name": "CC6.1 � Logical access",
+      "control_id": "Agent credentials managed as privileged access — minimum scope, documented justification, regular review",
+      "control_name": "CC6.1 — Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Agent credentials revoked on decommission and anomaly detection � no dormant agent NHIs",
-      "control_name": "CC6.3 � Access removal",
+      "control_id": "Agent credentials revoked on decommission and anomaly detection — no dormant agent NHIs",
+      "control_name": "CC6.3 — Access removal",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Agent tool providers assessed � data handling, credential security requirements in vendor agreements",
-      "control_name": "CC9.1 � Vendor risk",
+      "control_id": "Agent tool providers assessed — data handling, credential security requirements in vendor agreements",
+      "control_name": "CC9.1 — Vendor risk",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Agent credential anomaly monitoring � unusual usage patterns detected and alerted",
-      "control_name": "CC7.2 � Anomaly detection",
+      "control_id": "Agent credential anomaly monitoring — unusual usage patterns detected and alerted",
+      "control_name": "CC7.2 — Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Agent credential lifecycle procedures � issuance, rotation, revocation documented",
-      "control_name": "CC5.2 � Control activities",
+      "control_id": "Agent credential lifecycle procedures — issuance, rotation, revocation documented",
+      "control_name": "CC5.2 — Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -354,7 +354,7 @@
       "control_name": "Restrict access by need to know",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Agent credentials scoped to minimum CDE access � least privilege, quarterly review"
+      "notes": "Agent credentials scoped to minimum CDE access — least privilege, quarterly review"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -362,7 +362,7 @@
       "control_name": "Unique IDs for access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Each agent has a unique service identity � no shared credentials across CDE-facing agents"
+      "notes": "Each agent has a unique service identity — no shared credentials across CDE-facing agents"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -370,7 +370,7 @@
       "control_name": "Logging of all access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All agent credential operations in CDE logged � issuance, use, anomalous patterns"
+      "notes": "All agent credential operations in CDE logged — issuance, use, anomalous patterns"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -378,7 +378,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for agent credential scope in CDE � blast radius if credentials compromised"
+      "notes": "Targeted risk analysis for agent credential scope in CDE — blast radius if credentials compromised"
     },
     {
       "framework": "ENISA Multilayer Framework",

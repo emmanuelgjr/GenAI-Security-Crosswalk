@@ -47,7 +47,7 @@
       "control_name": "Policies for trustworthy AI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Acceptable use policy for AI tools � approved list, prohibited use cases, data handling requirements"
+      "notes": "Acceptable use policy for AI tools — approved list, prohibited use cases, data handling requirements"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -55,28 +55,28 @@
       "control_name": "AI system impact",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Impact assessment of shadow AI on organisational data security posture � ungoverned data flows quantified"
+      "notes": "Impact assessment of shadow AI on organisational data security posture — ungoverned data flows quantified"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing � data leakage",
+      "control_name": "Testing — data leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Evaluation of shadow AI detection effectiveness � DLP coverage, endpoint monitoring"
+      "notes": "Evaluation of shadow AI detection effectiveness — DLP coverage, endpoint monitoring"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response � data",
+      "control_name": "Risk response — data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Response procedures for detected shadow AI usage � data impact assessment, user notification"
+      "notes": "Response procedures for detected shadow AI usage — data impact assessment, user notification"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Shadow AI usage is a foreseeable risk requiring mitigation in the risk management system",
-      "control_name": "Art. 9 � Risk management",
+      "control_name": "Art. 9 — Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Ungoverned AI tool usage mapped and treated in Art. 9 risk assessment"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Organisations deploying AI are responsible for AI used within their operations",
-      "control_name": "Art. 25 � Value chain responsibilities",
+      "control_name": "Art. 25 — Value chain responsibilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Shadow AI use by employees does not exempt the deployer from AI Act obligations triggered by that use"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Deployers must use AI systems as instructed and ensure appropriate oversight",
-      "control_name": "Art. 29 � Deployer obligations",
+      "control_name": "Art. 29 — Deployer obligations",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Deployers have affirmative obligations to prevent and detect shadow AI usage"
@@ -103,7 +103,7 @@
       "control_name": "Acceptable use of assets",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy explicitly covering acceptable use of AI tools � approved list and prohibited use cases"
+      "notes": "Policy explicitly covering acceptable use of AI tools — approved list and prohibited use cases"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -223,7 +223,7 @@
       "control_name": "Information flow restriction",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Network controls block OT data flows to unapproved AI endpoints � DLP at OT DMZ boundary"
+      "notes": "Network controls block OT data flows to unapproved AI endpoints — DLP at OT DMZ boundary"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -231,7 +231,7 @@
       "control_name": "Use control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approved AI tools only on OT workstations � unapproved services blocked at network layer"
+      "notes": "Approved AI tools only on OT workstations — unapproved services blocked at network layer"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -239,7 +239,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Shadow AI discovery triggers incident response � data impact assessment, vendor notification"
+      "notes": "Shadow AI discovery triggers incident response — data impact assessment, vendor notification"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -271,7 +271,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Acceptable use policy for AI tools � approved list, prohibited use cases, data handling requirements"
+      "notes": "Acceptable use policy for AI tools — approved list, prohibited use cases, data handling requirements"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -279,7 +279,7 @@
       "control_name": "Awareness and Training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Users trained on shadow AI risk � policy awareness, prohibited tool use, reporting obligations"
+      "notes": "Users trained on shadow AI risk — policy awareness, prohibited tool use, reporting obligations"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -287,7 +287,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitoring for use of unauthorised software � shadow AI tool usage detected on endpoints and network"
+      "notes": "Monitoring for use of unauthorised software — shadow AI tool usage detected on endpoints and network"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -295,33 +295,33 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All approved AI tools managed as suppliers � TPSP assessment, contractual obligations"
+      "notes": "All approved AI tools managed as suppliers — TPSP assessment, contractual obligations"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Acceptable use procedures for AI tools � approved list, prohibited use cases, employee acknowledgement",
-      "control_name": "CC5.2 � Control activities",
+      "control_id": "Acceptable use procedures for AI tools — approved list, prohibited use cases, employee acknowledgement",
+      "control_name": "CC5.2 — Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Shadow AI vendors not in vendor risk programme � shadow AI discovery identifies unapproved vendors",
-      "control_name": "CC9.1 � Vendor risk",
+      "control_id": "Shadow AI vendors not in vendor risk programme — shadow AI discovery identifies unapproved vendors",
+      "control_name": "CC9.1 — Vendor risk",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Shadow AI usage identified as a risk in assessment � ungoverned data flows, training use by vendors",
-      "control_name": "CC3.2 � Risk assessment",
+      "control_id": "Shadow AI usage identified as a risk in assessment — ungoverned data flows, training use by vendors",
+      "control_name": "CC3.2 — Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Confidentiality policy covers AI tool use � employees informed of restrictions on sharing confidential data",
-      "control_name": "C1.1 � Confidentiality policy",
+      "control_id": "Confidentiality policy covers AI tool use — employees informed of restrictions on sharing confidential data",
+      "control_name": "C1.1 — Confidentiality policy",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -331,7 +331,7 @@
       "control_name": "Third-party service providers",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Shadow AI tools processing CHD are unapproved TPSPs � not in TPSP list, no written agreements"
+      "notes": "Shadow AI tools processing CHD are unapproved TPSPs — not in TPSP list, no written agreements"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -339,7 +339,7 @@
       "control_name": "TPSP oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Shadow AI discovery as part of TPSP monitoring � identify unapproved vendors receiving CHD"
+      "notes": "Shadow AI discovery as part of TPSP monitoring — identify unapproved vendors receiving CHD"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -347,7 +347,7 @@
       "control_name": "Network security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Network controls prevent CHD flows to unapproved AI endpoints � block at network layer"
+      "notes": "Network controls prevent CHD flows to unapproved AI endpoints — block at network layer"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -355,7 +355,7 @@
       "control_name": "Security awareness",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "PCI security awareness programme covers shadow AI risk � staff trained on prohibition"
+      "notes": "PCI security awareness programme covers shadow AI risk — staff trained on prohibition"
     },
     {
       "framework": "ENISA Multilayer Framework",

@@ -49,7 +49,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory treated as sensitive data asset � classification, access controls, retention policy"
+      "notes": "Agent memory treated as sensitive data asset — classification, access controls, retention policy"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -57,36 +57,36 @@
       "control_name": "Risk categorisation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory poisoning risk mapped per agent � memory stores, trust levels, access controls, TTL documented"
+      "notes": "Memory poisoning risk mapped per agent — memory stores, trust levels, access controls, TTL documented"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Adversarial testing of memory integrity � poisoning scenarios, anomaly detection effectiveness"
+      "notes": "Adversarial testing of memory integrity — poisoning scenarios, anomaly detection effectiveness"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response � data",
+      "control_name": "Risk response — data",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Response for confirmed memory poisoning � audit procedure, content purge, operational impact assessment"
+      "notes": "Response for confirmed memory poisoning — audit procedure, content purge, operational impact assessment"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Data governance applies to all data influencing AI behaviour � including agent memory",
-      "control_name": "Art. 10 � Data and data governance",
+      "control_id": "Data governance applies to all data influencing AI behaviour — including agent memory",
+      "control_name": "Art. 10 — Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory governance � classification, access controls, integrity validation, retention � is an Art. 10 requirement"
+      "notes": "Agent memory governance — classification, access controls, integrity validation, retention — is an Art. 10 requirement"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Technical resilience against adversarial memory manipulation",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Memory integrity monitoring and access controls are Art. 15 requirements"
@@ -94,7 +94,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Post-market monitoring for memory integrity",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Memory anomaly detection in post-market monitoring programme"
@@ -105,7 +105,7 @@
       "control_name": "Information access restriction",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Access controls on all agent memory stores � only agent and designated administrators can write"
+      "notes": "Access controls on all agent memory stores — only agent and designated administrators can write"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Use of cryptography",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory stores encrypted at rest � embeddings, long-term memory, operational knowledge base"
+      "notes": "Agent memory stores encrypted at rest — embeddings, long-term memory, operational knowledge base"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Monitoring activities",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory store access and content monitored � anomalous write patterns, statistical integrity checks"
+      "notes": "Memory store access and content monitored — anomalous write patterns, statistical integrity checks"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Data leakage prevention",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "DLP on memory write paths � credential patterns, sensitive content detected before memory write"
+      "notes": "DLP on memory write paths — credential patterns, sensitive content detected before memory write"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -137,7 +137,7 @@
       "control_name": "Data quality",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory content quality requirements � access controls, integrity verification, TTL as data quality controls"
+      "notes": "Agent memory content quality requirements — access controls, integrity verification, TTL as data quality controls"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Data provenance and characteristics",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory provenance tracked � source, write access controls, TTL, modification history in AIMS"
+      "notes": "Memory provenance tracked — source, write access controls, TTL, modification history in AIMS"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,39 +161,39 @@
       "control_name": "Monitoring of AI systems",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory integrity monitored in operation � anomalous write patterns, content integrity checks as AIMS monitoring"
+      "notes": "Memory integrity monitored in operation — anomalous write patterns, content integrity checks as AIMS monitoring"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "3.11 Encrypt sensitive data at rest",
-      "control_name": "CIS 3 � Data Protection",
+      "control_name": "CIS 3 — Data Protection",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory stores encrypted at rest � embeddings, long-term memory, operational knowledge"
+      "notes": "Agent memory stores encrypted at rest — embeddings, long-term memory, operational knowledge"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.2 Collect audit logs",
-      "control_name": "CIS 8 � Audit Log Management",
+      "control_name": "CIS 8 — Audit Log Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory write operations logged � who or what wrote, when, content hash"
+      "notes": "Memory write operations logged — who or what wrote, when, content hash"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 � Application Software Security",
+      "control_name": "CIS 16 — Application Software Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory write validation as secure development requirement � untrusted sources cannot write directly"
+      "notes": "Memory write validation as secure development requirement — untrusted sources cannot write directly"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "13.3 Deploy a network-based intrusion detection system",
-      "control_name": "CIS 13 � Network Monitoring",
+      "control_name": "CIS 13 — Network Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory store access monitored � bulk read, anomalous write patterns detected"
+      "notes": "Memory store access monitored — bulk read, anomalous write patterns detected"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -201,7 +201,7 @@
       "control_name": "Verify all user input validated against allowlist",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All content entering agent memory validated � injection patterns rejected at write boundary"
+      "notes": "All content entering agent memory validated — injection patterns rejected at write boundary"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify access control enforces least privilege",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory write access restricted to minimum required sources � only agent and authorised administrators can write"
+      "notes": "Memory write access restricted to minimum required sources — only agent and authorised administrators can write"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -217,7 +217,7 @@
       "control_name": "Verify sensitive data encrypted at rest",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory stores encrypted at rest � embeddings, long-term memory"
+      "notes": "Agent memory stores encrypted at rest — embeddings, long-term memory"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Verify file upload malware scanning",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Content entering agent memory scanned � adversarial content, injection patterns detected before write"
+      "notes": "Content entering agent memory scanned — adversarial content, injection patterns detected before write"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -233,7 +233,7 @@
       "control_name": "Software and information integrity",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory content validated for integrity � unauthorised modifications detected"
+      "notes": "Agent memory content validated for integrity — unauthorised modifications detected"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -249,7 +249,7 @@
       "control_name": "Timely response to events",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory poisoning indicators treated as security events � agent suspended, memory audited, human notified"
+      "notes": "Memory poisoning indicators treated as security events — agent suspended, memory audited, human notified"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -257,7 +257,7 @@
       "control_name": "Software and information integrity (baseline)",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory baseline established and maintained � deviations from baseline detectable"
+      "notes": "Agent memory baseline established and maintained — deviations from baseline detectable"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -289,7 +289,7 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory stores protected at rest � access controls, encryption, integrity verification"
+      "notes": "Agent memory stores protected at rest — access controls, encryption, integrity verification"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -297,7 +297,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Monitoring for anomalous data � memory content integrity checks, unusual write patterns detected"
+      "notes": "Monitoring for anomalous data — memory content integrity checks, unusual write patterns detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -305,7 +305,7 @@
       "control_name": "Asset Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent memory stores inventoried as data assets � content classification, access controls, TTL documented"
+      "notes": "Agent memory stores inventoried as data assets — content classification, access controls, TTL documented"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Incident Analysis",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Memory poisoning incidents analysed � affected sessions identified, operational decisions influenced reviewed"
+      "notes": "Memory poisoning incidents analysed — affected sessions identified, operational decisions influenced reviewed"
     },
     {
       "framework": "SOC 2",
@@ -489,12 +489,12 @@
       "control_name": "CWE-1341",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Memory TTL not enforced � entries persist beyond intended lifetime"
+      "notes": "Memory TTL not enforced — entries persist beyond intended lifetime"
     },
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Memory write path injection",
-      "control_name": "AST � Agent-Specific",
+      "control_name": "AST — Agent-Specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Attempt to poison memory through every channel that can write to agent memory stores"
@@ -502,7 +502,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Poisoned memory influence detection",
-      "control_name": "MBT � Model Behaviour",
+      "control_name": "MBT — Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify that behaviour influenced by poisoned memory differs detectably from baseline"
@@ -510,7 +510,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Memory content integrity",
-      "control_name": "DPT � Data Protection",
+      "control_name": "DPT — Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify memory store content integrity monitoring detects unauthorised modification"
@@ -559,19 +559,19 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Memory store credentials leaked � attacker writes poisoned content directly",
+      "control_id": "Memory store credentials leaked — attacker writes poisoned content directly",
       "control_name": "NHI-2 Secret Leakage",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Scan all paths where memory store credentials could leak � logs, config, agent context"
+      "notes": "Scan all paths where memory store credentials could leak — logs, config, agent context"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Memory store credentials in cleartext � trivially extracted",
+      "control_id": "Memory store credentials in cleartext — trivially extracted",
       "control_name": "NHI-6 Insecure Credential Storage",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Secret manager for all memory store credentials � no cleartext anywhere"
+      "notes": "Secret manager for all memory store credentials — no cleartext anywhere"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -579,7 +579,7 @@
       "control_name": "NHI-7 Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Short-lived credentials for memory store access � rotate on each agent session"
+      "notes": "Short-lived credentials for memory store access — rotate on each agent session"
     },
     {
       "framework": "NIST SP 800-218A",

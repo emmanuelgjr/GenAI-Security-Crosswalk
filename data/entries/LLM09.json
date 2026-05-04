@@ -45,7 +45,7 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing � output quality",
+      "control_name": "Testing — output quality",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Accuracy and hallucination testing included in AI evaluation programme"
@@ -61,7 +61,7 @@
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MG-2.4",
-      "control_name": "Risk response � data",
+      "control_name": "Risk response — data",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Procedures for responding to detected misinformation incidents"
@@ -69,15 +69,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "High-risk AI system information must include accuracy metrics and known limitations",
-      "control_name": "Art. 13 � Transparency",
+      "control_name": "Art. 13 — Transparency",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hallucination rates and accuracy limitations must be disclosed to deployers and users"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "AI-generated content must be marked as such � chatbots must disclose AI nature",
-      "control_name": "Art. 50 � Transparency for certain AI systems",
+      "control_id": "AI-generated content must be marked as such — chatbots must disclose AI nature",
+      "control_name": "Art. 50 — Transparency for certain AI systems",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Mandatory AI disclosure prevents users from treating hallucinated content as authoritative human output"
@@ -85,7 +85,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Systemic risk GPAI providers must assess and mitigate risks including disinformation",
-      "control_name": "Art. 55(1)(a) � Systemic risk GPAI",
+      "control_name": "Art. 55(1)(a) — Systemic risk GPAI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Misinformation risk assessment and mitigation is a binding obligation for systemic risk models"
@@ -96,7 +96,7 @@
       "control_name": "Monitoring activities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Production monitoring for output accuracy � hallucination rate tracking, anomaly detection on model drift"
+      "notes": "Production monitoring for output accuracy — hallucination rate tracking, anomaly detection on model drift"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -112,7 +112,7 @@
       "control_name": "Information security awareness training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "User training on LLM output limitations � verification requirements and critical evaluation"
+      "notes": "User training on LLM output limitations — verification requirements and critical evaluation"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -120,7 +120,7 @@
       "control_name": "Compliance with policies",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy on AI-generated content accuracy � disclosure requirements, human verification thresholds"
+      "notes": "Policy on AI-generated content accuracy — disclosure requirements, human verification thresholds"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -128,7 +128,7 @@
       "control_name": "Impact assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "AI impact assessment covers misinformation risk � which domains are affected, what is the consequence of incorrect output per stakeholder"
+      "notes": "AI impact assessment covers misinformation risk — which domains are affected, what is the consequence of incorrect output per stakeholder"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -136,7 +136,7 @@
       "control_name": "Monitoring of AI systems",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Production monitoring for accuracy degradation � hallucination rates tracked as AIMS operational monitoring"
+      "notes": "Production monitoring for accuracy degradation — hallucination rates tracked as AIMS operational monitoring"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -144,7 +144,7 @@
       "control_name": "Information for interested parties",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Transparency about AI system limitations � users informed of advisory status, accuracy limitations, verification requirements"
+      "notes": "Transparency about AI system limitations — users informed of advisory status, accuracy limitations, verification requirements"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -152,31 +152,31 @@
       "control_name": "Use of AI systems",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Guidance on appropriate AI system use � domains requiring human verification documented as AIMS use guidance"
+      "notes": "Guidance on appropriate AI system use — domains requiring human verification documented as AIMS use guidance"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "14.1 Establish security awareness programme",
-      "control_name": "CIS 14 � Security Awareness",
+      "control_name": "CIS 14 — Security Awareness",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "User training on LLM output limitations � verification requirements and critical evaluation"
+      "notes": "User training on LLM output limitations — verification requirements and critical evaluation"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 � Incident Response",
+      "control_name": "CIS 17 — Incident Response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Defined response for LLM misinformation incidents � correction, notification, root cause"
+      "notes": "Defined response for LLM misinformation incidents — correction, notification, root cause"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "3.1 Establish data management process",
-      "control_name": "CIS 3 � Data Protection",
+      "control_name": "CIS 3 — Data Protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "RAG data governance � quality and freshness controls on retrieval sources"
+      "notes": "RAG data governance — quality and freshness controls on retrieval sources"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -184,7 +184,7 @@
       "control_name": "Verify business logic assumptions documented",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM accuracy limitations documented as business logic assumptions � verification requirements defined"
+      "notes": "LLM accuracy limitations documented as business logic assumptions — verification requirements defined"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -192,7 +192,7 @@
       "control_name": "Verify all security controls logged",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM accuracy metrics and hallucination rate logged � production monitoring for output quality"
+      "notes": "LLM accuracy metrics and hallucination rate logged — production monitoring for output quality"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -200,7 +200,7 @@
       "control_name": "Verify outputs encoded before rendering",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM advisory outputs clearly labelled � users cannot mistake model output for authoritative source"
+      "notes": "LLM advisory outputs clearly labelled — users cannot mistake model output for authoritative source"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -229,7 +229,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Attacks degrading the reliability of OT decision-support",
-      "control_name": "Section 5.3 � Integrity threats",
+      "control_name": "Section 5.3 — Integrity threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM misinformation as an integrity attack on operator decision-making"
@@ -237,7 +237,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Assess reliability of OT advisory systems",
-      "control_name": "Section 6.2 � Risk assessment",
+      "control_name": "Section 6.2 — Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM accuracy limitations assessed in OT risk assessment per use case"
@@ -245,7 +245,7 @@
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "OT security awareness and training",
-      "control_name": "Section 8.2 � Training",
+      "control_name": "Section 8.2 — Training",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Operator training on LLM limitations and verification requirements"
@@ -272,7 +272,7 @@
       "control_name": "AC-3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM advisory outputs restricted to defined advisory roles � never authoritative source for safety-critical procedures"
+      "notes": "LLM advisory outputs restricted to defined advisory roles — never authoritative source for safety-critical procedures"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -280,7 +280,7 @@
       "control_name": "AT-3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Operator training on LLM advisory limitations � mandatory for all operators using LLM decision-support tools"
+      "notes": "Operator training on LLM advisory limitations — mandatory for all operators using LLM decision-support tools"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -288,7 +288,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Acceptable use policy defines which LLM outputs require verification � high-stakes domains identified"
+      "notes": "Acceptable use policy defines which LLM outputs require verification — high-stakes domains identified"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -296,7 +296,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Production monitoring for accuracy degradation � hallucination rates tracked per domain"
+      "notes": "Production monitoring for accuracy degradation — hallucination rates tracked per domain"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -304,7 +304,7 @@
       "control_name": "Risk Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM misinformation risk assessed per use case � what decisions are influenced, what is the consequence"
+      "notes": "LLM misinformation risk assessed per use case — what decisions are influenced, what is the consequence"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -312,33 +312,33 @@
       "control_name": "Awareness and Training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Users trained on LLM output limitations � verification requirements for each use case"
+      "notes": "Users trained on LLM output limitations — verification requirements for each use case"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy on LLM output accuracy � acceptable accuracy thresholds, verification requirements for high-stakes use cases",
-      "control_name": "PI1.1 � Processing integrity policy",
+      "control_id": "Policy on LLM output accuracy — acceptable accuracy thresholds, verification requirements for high-stakes use cases",
+      "control_name": "PI1.1 — Processing integrity policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM inputs (RAG sources, training data) quality controls � authoritative, current, verified sources",
-      "control_name": "PI1.2 � System inputs are complete and accurate",
+      "control_id": "LLM inputs (RAG sources, training data) quality controls — authoritative, current, verified sources",
+      "control_name": "PI1.2 — System inputs are complete and accurate",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Misinformation risk identified in LLM risk assessment � harm potential of incorrect outputs per use case",
-      "control_name": "CC3.2 � Risk assessment",
+      "control_id": "Misinformation risk identified in LLM risk assessment — harm potential of incorrect outputs per use case",
+      "control_name": "CC3.2 — Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Production monitoring for accuracy degradation and hallucination patterns � drift detection",
-      "control_name": "CC7.2 � Anomaly detection",
+      "control_id": "Production monitoring for accuracy degradation and hallucination patterns — drift detection",
+      "control_name": "CC7.2 — Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -348,7 +348,7 @@
       "control_name": "Targeted risk analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Targeted risk analysis for LLM advisory outputs in payment context � what decisions are influenced, what is the consequence of incorrect output"
+      "notes": "Targeted risk analysis for LLM advisory outputs in payment context — what decisions are influenced, what is the consequence of incorrect output"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -356,7 +356,7 @@
       "control_name": "Bespoke software security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM integration code specifies accuracy requirements � high-stakes payment outputs require verification before action"
+      "notes": "LLM integration code specifies accuracy requirements — high-stakes payment outputs require verification before action"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -364,7 +364,7 @@
       "control_name": "Audit log review",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitoring for LLM accuracy degradation � output quality metrics reviewed"
+      "notes": "Monitoring for LLM accuracy degradation — output quality metrics reviewed"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -372,7 +372,7 @@
       "control_name": "Security awareness programme",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "PCI staff trained on LLM output limitations � advisory status of AI recommendations communicated"
+      "notes": "PCI staff trained on LLM output limitations — advisory status of AI recommendations communicated"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -380,7 +380,7 @@
       "control_name": "Governance and Risk (GOV)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Acceptable accuracy thresholds defined per use case � domains requiring human verification documented in AI governance"
+      "notes": "Acceptable accuracy thresholds defined per use case — domains requiring human verification documented in AI governance"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -388,7 +388,7 @@
       "control_name": "AI System Integrity (ASI)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Production accuracy monitoring as ASI practice � hallucination rates tracked per domain, drift detected"
+      "notes": "Production accuracy monitoring as ASI practice — hallucination rates tracked per domain, drift detected"
     },
     {
       "framework": "ENISA Multilayer Framework",
@@ -396,15 +396,15 @@
       "control_name": "Monitoring and Detection (MON)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Accuracy degradation monitoring � ENISA L2 monitoring covering AI-specific failure modes"
+      "notes": "Accuracy degradation monitoring — ENISA L2 monitoring covering AI-specific failure modes"
     },
     {
       "framework": "ENISA Multilayer Framework",
       "control_id": "L1",
-      "control_name": "General ICT � Awareness",
+      "control_name": "General ICT — Awareness",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Users of LLM decision-support tools trained on output limitations � ENISA awareness practice"
+      "notes": "Users of LLM decision-support tools trained on output limitations — ENISA awareness practice"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -412,7 +412,7 @@
       "control_name": "Education & Guidance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All users of LLM decision-support tools trained on output limitations � SAMM awareness practice applied to AI limitations"
+      "notes": "All users of LLM decision-support tools trained on output limitations — SAMM awareness practice applied to AI limitations"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -420,7 +420,7 @@
       "control_name": "Security Requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Accuracy thresholds as security requirements � domains requiring verification documented before development"
+      "notes": "Accuracy thresholds as security requirements — domains requiring verification documented before development"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -428,7 +428,7 @@
       "control_name": "Requirements-Driven Testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Accuracy requirements verified in testing � hallucination rates measured against thresholds per domain"
+      "notes": "Accuracy requirements verified in testing — hallucination rates measured against thresholds per domain"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -436,7 +436,7 @@
       "control_name": "Operational Management (O-OM)",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Production accuracy monitoring as operational management � drift detection, degradation alerted"
+      "notes": "Production accuracy monitoring as operational management — drift detection, degradation alerted"
     },
     {
       "framework": "STRIDE",

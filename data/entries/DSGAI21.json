@@ -31,7 +31,7 @@
       "control_name": "Poison Training Data",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Adversary introduces false content into RAG corpus through ingestion path � no public publication required"
+      "notes": "Adversary introduces false content into RAG corpus through ingestion path — no public publication required"
     },
     {
       "framework": "MITRE ATLAS",
@@ -47,15 +47,15 @@
       "control_name": "Policies for trustworthy AI",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Policy on information integrity for AI outputs � source trust verification, cross-verification requirements"
+      "notes": "Policy on information integrity for AI outputs — source trust verification, cross-verification requirements"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Adversarial testing of RAG pipeline integrity � source poisoning and retrieval manipulation scenarios"
+      "notes": "Adversarial testing of RAG pipeline integrity — source poisoning and retrieval manipulation scenarios"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -63,7 +63,7 @@
       "control_name": "Data quality",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data quality controls on all RAG ingestion � provenance, source trust scoring, anomaly detection"
+      "notes": "Data quality controls on all RAG ingestion — provenance, source trust scoring, anomaly detection"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,12 +71,12 @@
       "control_name": "Risk response",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Response for detected RAG poisoning � source quarantine, index rebuild, output correction"
+      "notes": "Response for detected RAG poisoning — source quarantine, index rebuild, output correction"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Training and retrieval data free from errors � source integrity required",
-      "control_name": "Art. 10 � Data and data governance",
+      "control_id": "Training and retrieval data free from errors — source integrity required",
+      "control_name": "Art. 10 — Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "RAG corpus integrity controls and source verification are Art. 10 requirements"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "High-risk AI accurate and resilient against adversarial data manipulation",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Source trust scoring and ingestion validation are Art. 15 robustness requirements"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Systemic risk GPAI providers must assess and mitigate risks including disinformation",
-      "control_name": "Art. 55(1)(a) � Systemic risk GPAI",
+      "control_name": "Art. 55(1)(a) — Systemic risk GPAI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Disinformation risk assessment and RAG integrity controls are binding Art. 55 obligations"
@@ -100,10 +100,10 @@
     {
       "framework": "EU AI Act",
       "control_id": "AI-generated content that could be mistaken as human must be disclosed",
-      "control_name": "Art. 50 � Transparency",
+      "control_name": "Art. 50 — Transparency",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Disinformation risk amplified when users cannot distinguish AI-generated content � Art. 50 applies"
+      "notes": "Disinformation risk amplified when users cannot distinguish AI-generated content — Art. 50 applies"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -135,7 +135,7 @@
       "control_name": "Security testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Integrity testing of RAG corpora � anomaly detection, source validation, content verification"
+      "notes": "Integrity testing of RAG corpora — anomaly detection, source validation, content verification"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -210,7 +210,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT RAG corpus integrity controls � source allowlisting, hash verification, ingestion gates"
+      "notes": "OT RAG corpus integrity controls — source allowlisting, hash verification, ingestion gates"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -218,7 +218,7 @@
       "control_name": "Software and information integrity monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Continuous OT RAG corpus monitoring � unauthorised modifications detected before reaching operators"
+      "notes": "Continuous OT RAG corpus monitoring — unauthorised modifications detected before reaching operators"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -226,7 +226,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT RAG poisoning treated as Critical security event � source quarantine, index rebuild, process control assessment"
+      "notes": "OT RAG poisoning treated as Critical security event — source quarantine, index rebuild, process control assessment"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -234,7 +234,7 @@
       "control_name": "Denial of service protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Poisoned advisory output blast radius contained � process control fallback if advisory system compromised"
+      "notes": "Poisoned advisory output blast radius contained — process control fallback if advisory system compromised"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -258,7 +258,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "RAG data source providers treated as suppliers � content integrity requirements in contracts"
+      "notes": "RAG data source providers treated as suppliers — content integrity requirements in contracts"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -266,7 +266,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "RAG corpus integrity monitored � anomalous content changes, unusual ingestion patterns detected"
+      "notes": "RAG corpus integrity monitored — anomalous content changes, unusual ingestion patterns detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -274,7 +274,7 @@
       "control_name": "Incident Analysis",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "RAG poisoning incidents analysed � affected content identified, operational decisions influenced reviewed"
+      "notes": "RAG poisoning incidents analysed — affected content identified, operational decisions influenced reviewed"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -282,33 +282,33 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "RAG corpus content integrity protected � hash-based verification, source trust tiering"
+      "notes": "RAG corpus content integrity protected — hash-based verification, source trust tiering"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG corpus integrity controls � only accurate, verified content enters the retrieval index",
-      "control_name": "PI1.2 � System inputs complete and accurate",
+      "control_id": "RAG corpus integrity controls — only accurate, verified content enters the retrieval index",
+      "control_name": "PI1.2 — System inputs complete and accurate",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM outputs derived from poisoned RAG are a processing integrity failure � detection before delivery",
-      "control_name": "PI1.3 � Outputs complete and accurate",
+      "control_id": "LLM outputs derived from poisoned RAG are a processing integrity failure — detection before delivery",
+      "control_name": "PI1.3 — Outputs complete and accurate",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG corpus data source providers assessed � content quality, update process, integrity guarantees",
-      "control_name": "CC9.1 � Vendor risk",
+      "control_id": "RAG corpus data source providers assessed — content quality, update process, integrity guarantees",
+      "control_name": "CC9.1 — Vendor risk",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG corpus anomaly detection � unusual content or modifications detected before reaching production",
-      "control_name": "CC7.2 � Anomaly detection",
+      "control_id": "RAG corpus anomaly detection — unusual content or modifications detected before reaching production",
+      "control_name": "CC7.2 — Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -318,7 +318,7 @@
       "control_name": "Secure system changes",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "RAG corpus updates tested for unexpected content � integrity verification before production indexing"
+      "notes": "RAG corpus updates tested for unexpected content — integrity verification before production indexing"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -326,7 +326,7 @@
       "control_name": "TPSP programme",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "RAG data source providers as TPSPs � content quality and integrity requirements in agreements"
+      "notes": "RAG data source providers as TPSPs — content quality and integrity requirements in agreements"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -334,7 +334,7 @@
       "control_name": "Audit log review",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "RAG corpus monitoring � anomalous content detected and reviewed as part of Req 10 log analysis"
+      "notes": "RAG corpus monitoring — anomalous content detected and reviewed as part of Req 10 log analysis"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -342,7 +342,7 @@
       "control_name": "Penetration testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Adversarial RAG integrity testing for payment advisory systems � false content injection attempts documented"
+      "notes": "Adversarial RAG integrity testing for payment advisory systems — false content injection attempts documented"
     },
     {
       "framework": "ENISA Multilayer Framework",
