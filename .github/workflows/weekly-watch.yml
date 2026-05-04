@@ -23,10 +23,10 @@ jobs:
     name: Monitor external sources
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
 
@@ -50,16 +50,16 @@ jobs:
 
   monthly-regenerate:
     name: Monthly report regeneration
-    if: github.event.schedule == '0 9 * * 1' && (github.event.schedule != '' || github.event_name == 'workflow_dispatch')
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
 
@@ -77,7 +77,7 @@ jobs:
       - name: Create PR with updated reports
         if: steps.diff.outputs.changed == 'true'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH="auto/monthly-regenerate-$(date +%Y%m%d)"
           git checkout -b "$BRANCH"
@@ -86,7 +86,14 @@ jobs:
           git add -A
           git commit -m "chore: monthly regeneration of data layer and compliance reports"
           git push origin "$BRANCH"
-          gh pr create \
+
+          # Tolerate the "GitHub Actions is not permitted to create PRs" repo setting:
+          # branch is pushed regardless; PR creation is best-effort.
+          if ! gh pr create \
             --title "chore: monthly report regeneration ($(date +%Y-%m-%d))" \
             --body "Automated monthly regeneration of data/entries/, reports/, and docs/data.js." \
-            --label automated-watch
+            --label automated-watch 2> pr-err.log; then
+            echo "::warning::gh pr create failed — branch '$BRANCH' was pushed but no PR was opened. See pr-err.log."
+            cat pr-err.log
+            echo "To enable automated PRs: Settings → Actions → General → Workflow permissions → 'Allow GitHub Actions to create and approve pull requests'."
+          fi
