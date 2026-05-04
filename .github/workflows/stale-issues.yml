@@ -1,0 +1,28 @@
+name: Close stale automated-watch issues
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # Daily at 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          only-labels: 'automated-watch'
+          days-before-stale: 21
+          days-before-close: 7
+          stale-issue-label: 'stale'
+          stale-issue-message: |
+            This automated-watch issue has had no activity for 21 days.
+            It will close in 7 days unless it is triaged (label `keep` or comment to keep open).
+          close-issue-message: |
+            Closing as stale. Re-open if this finding still warrants tracking
+            in the GenAI Security Crosswalk.
+          exempt-issue-labels: 'keep,pinned'
+          operations-per-run: 200
