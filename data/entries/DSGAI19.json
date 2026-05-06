@@ -47,7 +47,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "HITL data governance policy � data minimisation, contractor handling requirements, retention limits"
+      "notes": "HITL data governance policy — data minimisation, contractor handling requirements, retention limits"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -55,15 +55,15 @@
       "control_name": "Interdependencies",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All labelling vendors and HITL providers mapped � data access scope, contractual protections"
+      "notes": "All labelling vendors and HITL providers mapped — data access scope, contractual protections"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.6",
-      "control_name": "Testing � data leakage",
+      "control_name": "Testing — data leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Privacy assessment of labelling workflows � annotator data access scope, anonymisation effectiveness"
+      "notes": "Privacy assessment of labelling workflows — annotator data access scope, anonymisation effectiveness"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -76,15 +76,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "Training data governance includes human annotation workflows",
-      "control_name": "Art. 10 � Data and data governance",
+      "control_name": "Art. 10 — Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Labeller data access controls and data minimisation are Art. 10 requirements for high-risk training data"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Labelling vendors are part of the AI value chain � obligations distributed accordingly",
-      "control_name": "Art. 25 � Value chain responsibilities",
+      "control_id": "Labelling vendors are part of the AI value chain — obligations distributed accordingly",
+      "control_name": "Art. 25 — Value chain responsibilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Labelling vendor security requirements and contractual controls are Art. 25 value chain obligations"
@@ -103,7 +103,7 @@
       "control_name": "Information security awareness training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Security training for all labellers � internal and third-party � covering data handling requirements"
+      "notes": "Security training for all labellers — internal and third-party — covering data handling requirements"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -201,7 +201,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Labelling vendors with OT data access assessed under 62443-2-4 � same requirements as OT software vendors"
+      "notes": "Labelling vendors with OT data access assessed under 62443-2-4 — same requirements as OT software vendors"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -209,7 +209,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT data minimisation in labelling tasks � annotators see minimum content needed, not full process records"
+      "notes": "OT data minimisation in labelling tasks — annotators see minimum content needed, not full process records"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -249,7 +249,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Labelling vendors treated as suppliers � data handling requirements in contracts, compliance monitored"
+      "notes": "Labelling vendors treated as suppliers — data handling requirements in contracts, compliance monitored"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -257,7 +257,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data minimisation � annotators access minimum content required for annotation function"
+      "notes": "Data minimisation — annotators access minimum content required for annotation function"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -265,7 +265,7 @@
       "control_name": "Organisational Context",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Acceptable use policy covers labelling activities � what data may be used in labelling workflows"
+      "notes": "Acceptable use policy covers labelling activities — what data may be used in labelling workflows"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -273,33 +273,33 @@
       "control_name": "Awareness and Training",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Labelling staff trained on data handling � classification, prohibited use, incident reporting"
+      "notes": "Labelling staff trained on data handling — classification, prohibited use, incident reporting"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Labelling vendors assessed in vendor risk programme � data access scope, handling requirements, sub-processor chain",
-      "control_name": "CC9.1 � Vendor risk",
+      "control_id": "Labelling vendors assessed in vendor risk programme — data access scope, handling requirements, sub-processor chain",
+      "control_name": "CC9.1 — Vendor risk",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Contractual data handling obligations for labelling vendors � data minimisation, retention, permitted use",
-      "control_name": "CC9.2 � Vendor agreements",
+      "control_id": "Contractual data handling obligations for labelling vendors — data minimisation, retention, permitted use",
+      "control_name": "CC9.2 — Vendor agreements",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information accessed by labellers documented � purpose, scope, and safeguards",
-      "control_name": "P3.1 � Personal information collection",
+      "control_id": "Personal information accessed by labellers documented — purpose, scope, and safeguards",
+      "control_name": "P3.1 — Personal information collection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Labelling vendor use of personal information restricted � no secondary use, training, or retention beyond task",
-      "control_name": "P5.1 � Personal information use",
+      "control_id": "Labelling vendor use of personal information restricted — no secondary use, training, or retention beyond task",
+      "control_name": "P5.1 — Personal information use",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -309,7 +309,7 @@
       "control_name": "TPSP programme",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Labelling vendors with access to CHD are TPSPs � add to TPSP list, initiate compliance process"
+      "notes": "Labelling vendors with access to CHD are TPSPs — add to TPSP list, initiate compliance process"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -325,7 +325,7 @@
       "control_name": "SAD prohibition",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "SAD must never appear in labelling tasks � labels cannot expose CVV or full magnetic stripe data"
+      "notes": "SAD must never appear in labelling tasks — labels cannot expose CVV or full magnetic stripe data"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -333,7 +333,7 @@
       "control_name": "Restrict access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Labelling task data minimised � annotators see minimum CHD required for annotation function"
+      "notes": "Labelling task data minimised — annotators see minimum CHD required for annotation function"
     },
     {
       "framework": "ENISA Multilayer Framework",

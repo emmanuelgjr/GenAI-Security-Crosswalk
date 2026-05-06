@@ -31,7 +31,7 @@
       "control_name": "Data from Information Repositories",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Database accessed through LLM-generated queries � adversary extracts sensitive records without direct database access"
+      "notes": "Database accessed through LLM-generated queries — adversary extracts sensitive records without direct database access"
     },
     {
       "framework": "MITRE ATLAS",
@@ -47,12 +47,12 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "LLM-to-database interface risks mapped � privilege level, query scope, and data exposure per interface"
+      "notes": "LLM-to-database interface risks mapped — privilege level, query scope, and data exposure per interface"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "SQL injection, privilege escalation, and bulk extraction testing on all LLM gateway interfaces"
@@ -63,7 +63,7 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Incident response for LLM gateway misuse � query log forensics, data exposure scoping"
+      "notes": "Incident response for LLM gateway misuse — query log forensics, data exposure scoping"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -76,15 +76,15 @@
     {
       "framework": "EU AI Act",
       "control_id": "LLM gateway risks identified and mitigated",
-      "control_name": "Art. 9 � Risk management",
+      "control_name": "Art. 9 — Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All LLM-to-database interfaces mapped in Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI designed to allow effective human oversight � ability to pause, stop, and override",
-      "control_name": "Art. 14 � Human oversight",
+      "control_id": "High-risk AI designed to allow effective human oversight — ability to pause, stop, and override",
+      "control_name": "Art. 14 — Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM-generated destructive database queries executing autonomously are an Art. 14 human oversight failure"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures protecting against adversarial misuse",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least-privilege execution, query allowlisting, and SQL injection prevention are Art. 15 requirements"
@@ -100,7 +100,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Documented procedures for LLM gateway security",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Security testing procedures and query log retention documented in quality management"
@@ -111,7 +111,7 @@
       "control_name": "Application security requirements",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Security requirements for LLM-to-SQL interfaces � read-only by default, parameterisation mandatory"
+      "notes": "Security requirements for LLM-to-SQL interfaces — read-only by default, parameterisation mandatory"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -224,7 +224,7 @@
       "control_name": "Least privilege",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "NL gateway executes under requesting operator's permissions � never shared high-privilege OT service account"
+      "notes": "NL gateway executes under requesting operator's permissions — never shared high-privilege OT service account"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -232,7 +232,7 @@
       "control_name": "Use control enforcement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "NL gateway query allowlisting � only pre-approved query patterns permitted to OT data systems"
+      "notes": "NL gateway query allowlisting — only pre-approved query patterns permitted to OT data systems"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -240,7 +240,7 @@
       "control_name": "Software and information integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "NL gateway input validation � injection addressed as a known vulnerability class in Zone 3"
+      "notes": "NL gateway input validation — injection addressed as a known vulnerability class in Zone 3"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -248,7 +248,7 @@
       "control_name": "Timely response to events",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "NL gateway misuse treated as Critical security event � query log forensics, data exposure scope"
+      "notes": "NL gateway misuse treated as Critical security event — query log forensics, data exposure scope"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -280,7 +280,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM-generated queries execute under requesting user's permissions � not shared high-privilege service account"
+      "notes": "LLM-generated queries execute under requesting user's permissions — not shared high-privilege service account"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -288,7 +288,7 @@
       "control_name": "Platform Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Secure development � query allowlisting, parameterised execution as platform security requirements"
+      "notes": "Secure development — query allowlisting, parameterised execution as platform security requirements"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -296,7 +296,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM-generated queries to data systems logged and monitored � bulk extraction patterns detected"
+      "notes": "All LLM-generated queries to data systems logged and monitored — bulk extraction patterns detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -304,40 +304,40 @@
       "control_name": "Risk Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "NL gateway interfaces documented in risk assessment � privilege level, query scope, data categories accessible"
+      "notes": "NL gateway interfaces documented in risk assessment — privilege level, query scope, data categories accessible"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM-generated queries execute under requesting user's permissions � least privilege, no shared high-privilege accounts",
-      "control_name": "CC6.1 � Logical access",
+      "control_id": "LLM-generated queries execute under requesting user's permissions — least privilege, no shared high-privilege accounts",
+      "control_name": "CC6.1 — Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy requiring LLM-generated queries to be validated before execution � only authorised processing permitted",
-      "control_name": "PI1.1 � Processing integrity policy",
+      "control_id": "Policy requiring LLM-generated queries to be validated before execution — only authorised processing permitted",
+      "control_name": "PI1.1 — Processing integrity policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM-generated query results validated � destructive or over-broad queries blocked before execution",
-      "control_name": "PI1.3 � Outputs complete and accurate",
+      "control_id": "LLM-generated query results validated — destructive or over-broad queries blocked before execution",
+      "control_name": "PI1.3 — Outputs complete and accurate",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM-generated query anomaly monitoring � bulk extraction, unusual patterns, out-of-scope queries alerted",
-      "control_name": "CC7.2 � Anomaly detection",
+      "control_id": "LLM-generated query anomaly monitoring — bulk extraction, unusual patterns, out-of-scope queries alerted",
+      "control_name": "CC7.2 — Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
       "control_id": "Query allowlisting and human confirmation procedures documented",
-      "control_name": "CC5.2 � Control activities",
+      "control_name": "CC5.2 — Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -347,7 +347,7 @@
       "control_name": "Restrict access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM-generated queries execute under requesting user's CDE permissions � never shared high-privilege account"
+      "notes": "LLM-generated queries execute under requesting user's CDE permissions — never shared high-privilege account"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -355,7 +355,7 @@
       "control_name": "Bespoke software",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM-to-SQL interfaces address injection as a known vulnerability class � query allowlisting, parameterised execution"
+      "notes": "LLM-to-SQL interfaces address injection as a known vulnerability class — query allowlisting, parameterised execution"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -363,7 +363,7 @@
       "control_name": "Public-facing application protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "LLM-powered query interfaces in CDE scope protected � WAF or equivalent, input validation"
+      "notes": "LLM-powered query interfaces in CDE scope protected — WAF or equivalent, input validation"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -371,7 +371,7 @@
       "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All LLM-generated queries to CDE systems logged � full audit trail with user identity"
+      "notes": "All LLM-generated queries to CDE systems logged — full audit trail with user identity"
     },
     {
       "framework": "ENISA Multilayer Framework",

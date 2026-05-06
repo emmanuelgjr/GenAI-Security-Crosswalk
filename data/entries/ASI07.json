@@ -49,7 +49,7 @@
       "control_name": "Policies for data privacy",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "A2A communication security policy � authentication, encryption, schema validation requirements"
+      "notes": "A2A communication security policy — authentication, encryption, schema validation requirements"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -57,15 +57,15 @@
       "control_name": "Interdependencies",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "All A2A communication channels mapped � authentication method, encryption status, schema validation, logging"
+      "notes": "All A2A communication channels mapped — authentication method, encryption status, schema validation, logging"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "A2A security testing � spoofing, replay, man-in-the-middle scenarios on all inter-agent channels"
+      "notes": "A2A security testing — spoofing, replay, man-in-the-middle scenarios on all inter-agent channels"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -73,20 +73,20 @@
       "control_name": "Risk response",
       "tier": "Hardening",
       "scope": "Build",
-      "notes": "Incident response for A2A compromise � channel isolation, agent suspension, forensic capture"
+      "notes": "Incident response for A2A compromise — channel isolation, agent suspension, forensic capture"
     },
     {
       "framework": "EU AI Act",
       "control_id": "A2A communication risks identified and mitigated",
-      "control_name": "Art. 9 � Risk management",
+      "control_name": "Art. 9 — Risk management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Inter-agent channels in Art. 9 risk assessment � authentication, encryption, schema validation status"
+      "notes": "Inter-agent channels in Art. 9 risk assessment — authentication, encryption, schema validation status"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Cybersecurity measures protecting all system components",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Authenticated, encrypted A2A communication is an Art. 15 requirement for high-risk agentic systems"
@@ -94,7 +94,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Documentation of A2A security controls",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "A2A authentication and encryption documented in quality management system"
@@ -105,7 +105,7 @@
       "control_name": "Networks security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A communication channels network-isolated � dedicated VLAN, traffic volume caps, protocol filtering"
+      "notes": "A2A communication channels network-isolated — dedicated VLAN, traffic volume caps, protocol filtering"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -113,7 +113,7 @@
       "control_name": "Use of cryptography",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A messages encrypted and integrity-verified � mutual TLS, nonce-based replay protection"
+      "notes": "A2A messages encrypted and integrity-verified — mutual TLS, nonce-based replay protection"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -121,7 +121,7 @@
       "control_name": "Logging",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All A2A messages logged � sender identity, content hash, timestamp, schema validation results"
+      "notes": "All A2A messages logged — sender identity, content hash, timestamp, schema validation results"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -129,7 +129,7 @@
       "control_name": "Transfer of information",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Information transfer policies and agreements for A2A communication � authentication requirements, acceptable content"
+      "notes": "Information transfer policies and agreements for A2A communication — authentication requirements, acceptable content"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -145,7 +145,7 @@
       "control_name": "Testing of AI systems",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A security scenarios in AIMS testing � spoofing, replay, schema violations before deployment"
+      "notes": "A2A security scenarios in AIMS testing — spoofing, replay, schema violations before deployment"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -153,7 +153,7 @@
       "control_name": "Third-party AI system acquisition",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A communication infrastructure providers assessed � security obligations in arrangements"
+      "notes": "A2A communication infrastructure providers assessed — security obligations in arrangements"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -161,36 +161,36 @@
       "control_name": "Operation",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A communication documented as AIMS operational control � authentication requirements, encryption standards"
+      "notes": "A2A communication documented as AIMS operational control — authentication requirements, encryption standards"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "12.4 Establish and maintain architecture diagram",
-      "control_name": "CIS 12 � Network Infrastructure Management",
+      "control_name": "CIS 12 — Network Infrastructure Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A communication channels mapped in network architecture � authentication method, encryption status"
+      "notes": "A2A communication channels mapped in network architecture — authentication method, encryption status"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "3.10 Encrypt sensitive data in transit",
-      "control_name": "CIS 3 � Data Protection",
+      "control_name": "CIS 3 — Data Protection",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All A2A messages encrypted in transit � no cleartext inter-agent communication"
+      "notes": "All A2A messages encrypted in transit — no cleartext inter-agent communication"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 � Audit Log Management",
+      "control_name": "CIS 8 — Audit Log Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All A2A messages logged � sender identity, content hash, timestamp, schema validation results"
+      "notes": "All A2A messages logged — sender identity, content hash, timestamp, schema validation results"
     },
     {
       "framework": "CIS Controls v8.1",
       "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 � Application Software Security",
+      "control_name": "CIS 16 — Application Software Security",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "A2A authentication and schema validation as secure development requirements"
@@ -201,7 +201,7 @@
       "control_name": "Verify TLS used for all client connectivity",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All A2A communication encrypted � mutual TLS, no cleartext inter-agent messages"
+      "notes": "All A2A communication encrypted — mutual TLS, no cleartext inter-agent messages"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -209,7 +209,7 @@
       "control_name": "Verify anti-replay tokens in state-changing operations",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Replay protection on all A2A messages � nonces, timestamps, sequence numbers"
+      "notes": "Replay protection on all A2A messages — nonces, timestamps, sequence numbers"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -217,7 +217,7 @@
       "control_name": "Verify access control enforces identity",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A channels enforce sender identity � unauthenticated messages rejected"
+      "notes": "A2A channels enforce sender identity — unauthenticated messages rejected"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
@@ -225,7 +225,7 @@
       "control_name": "Verify all security controls logged",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All A2A messages logged � sender identity, content hash, schema validation results"
+      "notes": "All A2A messages logged — sender identity, content hash, schema validation results"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -233,7 +233,7 @@
       "control_name": "Use of authenticators",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All inter-agent messages authenticated � no ambient trust between agents in OT context"
+      "notes": "All inter-agent messages authenticated — no ambient trust between agents in OT context"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -241,7 +241,7 @@
       "control_name": "Data confidentiality in transit",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "All A2A communication encrypted � no cleartext agent messages on OT network segments"
+      "notes": "All A2A communication encrypted — no cleartext agent messages on OT network segments"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -249,7 +249,7 @@
       "control_name": "Communication integrity",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Message integrity enforced � replay protection, nonces, sequence numbers on A2A channels"
+      "notes": "Message integrity enforced — replay protection, nonces, sequence numbers on A2A channels"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -257,7 +257,7 @@
       "control_name": "Software and information integrity",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A message schema validation � reject malformed or unexpected message structures"
+      "notes": "A2A message schema validation — reject malformed or unexpected message structures"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -289,7 +289,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Agent identities managed � each agent has a unique, verifiable identity for A2A authentication"
+      "notes": "Agent identities managed — each agent has a unique, verifiable identity for A2A authentication"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -297,7 +297,7 @@
       "control_name": "Data Security",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data in transit protected � all A2A communication encrypted, integrity verified"
+      "notes": "Data in transit protected — all A2A communication encrypted, integrity verified"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -305,7 +305,7 @@
       "control_name": "Continuous Monitoring",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "A2A channels monitored � replay attacks, spoofed senders, anomalous message patterns detected"
+      "notes": "A2A channels monitored — replay attacks, spoofed senders, anomalous message patterns detected"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -313,7 +313,7 @@
       "control_name": "Supply Chain Risk Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Inter-agent communication infrastructure treated as internal supply chain � authentication requirements documented"
+      "notes": "Inter-agent communication infrastructure treated as internal supply chain — authentication requirements documented"
     },
     {
       "framework": "SOC 2",
@@ -457,7 +457,7 @@
       "control_name": "CWE-287",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "A2A channels without mutual authentication � agents accept messages from any sender"
+      "notes": "A2A channels without mutual authentication — agents accept messages from any sender"
     },
     {
       "framework": "CWE/CVE",
@@ -494,7 +494,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "A2A authentication enforcement",
-      "control_name": "ACT � Access Control",
+      "control_name": "ACT — Access Control",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Attempt unauthenticated and weakly authenticated A2A message delivery"
@@ -502,7 +502,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "Replay attack prevention",
-      "control_name": "AST � Agent-Specific",
+      "control_name": "AST — Agent-Specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Capture and replay a valid A2A message; verify replay is rejected"
@@ -510,7 +510,7 @@
     {
       "framework": "OWASP AI Testing Guide",
       "control_id": "A2A audit completeness",
-      "control_name": "LMT � Logging & Monitoring",
+      "control_name": "LMT — Logging & Monitoring",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify all A2A messages are logged with sender identity and content hash"
@@ -559,11 +559,11 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weak or missing authentication on A2A channels � agent spoofing enabled",
+      "control_id": "Weak or missing authentication on A2A channels — agent spoofing enabled",
       "control_name": "NHI-4 Insecure Authentication",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Strong mutual authentication on all A2A channels � mTLS, certificate-based, short-lived"
+      "notes": "Strong mutual authentication on all A2A channels — mTLS, certificate-based, short-lived"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -579,7 +579,7 @@
       "control_name": "NHI-9 NHI Reuse",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Unique identity per agent � A2A authentication bound to specific agent identity"
+      "notes": "Unique identity per agent — A2A authentication bound to specific agent identity"
     },
     {
       "framework": "NIST SP 800-218A",

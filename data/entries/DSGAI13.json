@@ -47,15 +47,15 @@
       "control_name": "Risk categorisation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vector store risks mapped � each deployment assessed for RBAC, encryption, and network exposure"
+      "notes": "Vector store risks mapped — each deployment assessed for RBAC, encryption, and network exposure"
     },
     {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
-      "control_name": "Testing � adversarial",
+      "control_name": "Testing — adversarial",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vector store security testing � RBAC bypass, path traversal, unauthenticated access scenarios"
+      "notes": "Vector store security testing — RBAC bypass, path traversal, unauthenticated access scenarios"
     },
     {
       "framework": "NIST AI RMF 1.0",
@@ -71,12 +71,12 @@
       "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Incident response for vector store compromise � containment, data exposure scoping, index rebuild"
+      "notes": "Incident response for vector store compromise — containment, data exposure scoping, index rebuild"
     },
     {
       "framework": "EU AI Act",
       "control_id": "Vector store security risks identified and mitigated",
-      "control_name": "Art. 9 � Risk management",
+      "control_name": "Art. 9 — Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All vector store deployments assessed in Art. 9 risk management"
@@ -84,7 +84,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "High-risk AI infrastructure protected against cybersecurity risks",
-      "control_name": "Art. 15 � Accuracy, robustness, cybersecurity",
+      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "RBAC, encryption, and CVE patching for vector stores are Art. 15 requirements"
@@ -92,7 +92,7 @@
     {
       "framework": "EU AI Act",
       "control_id": "Post-market monitoring covering AI infrastructure components",
-      "control_name": "Art. 17 � Quality management",
+      "control_name": "Art. 17 — Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vector store security monitoring in post-market monitoring programme"
@@ -103,7 +103,7 @@
       "control_name": "Information access restriction",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "RBAC enforced on all vector store collections � collection-level and namespace-level access control"
+      "notes": "RBAC enforced on all vector store collections — collection-level and namespace-level access control"
     },
     {
       "framework": "ISO/IEC 27001:2022",
@@ -127,7 +127,7 @@
       "control_name": "Data leakage prevention",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "DLP controls on vector store query results � sensitive content in retrieved passages detected"
+      "notes": "DLP controls on vector store query results — sensitive content in retrieved passages detected"
     },
     {
       "framework": "ISO/IEC 42001:2023",
@@ -209,7 +209,7 @@
       "control_name": "Human user authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "RBAC on all Zone 3 vector stores � no unauthenticated access in any OT environment"
+      "notes": "RBAC on all Zone 3 vector stores — no unauthenticated access in any OT environment"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -217,7 +217,7 @@
       "control_name": "Data confidentiality",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Zone 3 vector store content encrypted � equipment documentation and procedure embeddings as sensitive OT data"
+      "notes": "Zone 3 vector store content encrypted — equipment documentation and procedure embeddings as sensitive OT data"
     },
     {
       "framework": "ISA/IEC 62443",
@@ -225,7 +225,7 @@
       "control_name": "Software and information integrity monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vector store integrity monitoring � anomalous access patterns indicating bulk extraction detected"
+      "notes": "Vector store integrity monitoring — anomalous access patterns indicating bulk extraction detected"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -257,7 +257,7 @@
       "control_name": "Data Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vector store content encrypted at rest � embeddings treated as sensitive derived data assets"
+      "notes": "Vector store content encrypted at rest — embeddings treated as sensitive derived data assets"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -265,7 +265,7 @@
       "control_name": "Identity Management, Authentication & Access Control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "RBAC on all vector stores � no unauthenticated access in any environment"
+      "notes": "RBAC on all vector stores — no unauthenticated access in any environment"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -273,7 +273,7 @@
       "control_name": "Platform Security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Software managed to reduce risk � vector database CVEs patched promptly"
+      "notes": "Software managed to reduce risk — vector database CVEs patched promptly"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -281,33 +281,33 @@
       "control_name": "Continuous Monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitoring for anomalous access � bulk extraction, RBAC bypass attempts detected"
+      "notes": "Monitoring for anomalous access — bulk extraction, RBAC bypass attempts detected"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Vector store content encrypted at rest � embeddings of confidential data protected",
-      "control_name": "C2.1 � Confidential information protection",
+      "control_id": "Vector store content encrypted at rest — embeddings of confidential data protected",
+      "control_name": "C2.1 — Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RBAC on all vector store collections � no unauthenticated access",
-      "control_name": "CC6.1 � Logical access",
+      "control_id": "RBAC on all vector store collections — no unauthenticated access",
+      "control_name": "CC6.1 — Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Vector database CVE patching managed through change management � timely remediation documented",
-      "control_name": "CC8.1 � Change management",
+      "control_id": "Vector database CVE patching managed through change management — timely remediation documented",
+      "control_name": "CC8.1 — Change management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Vector store query anomaly monitoring � bulk extraction patterns detected",
-      "control_name": "CC7.2 � Anomaly detection",
+      "control_id": "Vector store query anomaly monitoring — bulk extraction patterns detected",
+      "control_name": "CC7.2 — Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -317,7 +317,7 @@
       "control_name": "Protect stored account data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vector stores in CDE scope encrypted � embeddings of CHD-adjacent content encrypted at rest"
+      "notes": "Vector stores in CDE scope encrypted — embeddings of CHD-adjacent content encrypted at rest"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -325,7 +325,7 @@
       "control_name": "Restrict access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "RBAC on all vector stores in PCI scope � no unauthenticated access in any CDE environment"
+      "notes": "RBAC on all vector stores in PCI scope — no unauthenticated access in any CDE environment"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -333,7 +333,7 @@
       "control_name": "Vulnerability management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vector database CVEs patched � CVE-2024-3584 class treated as urgent for CDE-scope stores"
+      "notes": "Vector database CVEs patched — CVE-2024-3584 class treated as urgent for CDE-scope stores"
     },
     {
       "framework": "PCI DSS v4.0",
@@ -341,7 +341,7 @@
       "control_name": "Penetration testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vector store attacks in CDE penetration testing � RBAC bypass, path traversal, bulk extraction"
+      "notes": "Vector store attacks in CDE penetration testing — RBAC bypass, path traversal, bulk extraction"
     },
     {
       "framework": "ENISA Multilayer Framework",
