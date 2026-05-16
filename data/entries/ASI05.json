@@ -22,7 +22,7 @@
       "control_name": "Unsafe Deserialisation via LLM",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0040",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0040",
       "notes": "Agent-generated code or payloads executed by downstream components"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "LLM Jailbreak",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0054",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
       "notes": "Overriding code execution safety guardrails to allow arbitrary command execution"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Output Manipulation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0037",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0037",
       "notes": "Crafting inputs that produce malicious executable code in agent output"
     },
     {

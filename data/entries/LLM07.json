@@ -22,7 +22,7 @@
       "control_name": "Configuration Exposure",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/techniques/AML.T0041",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0041",
       "notes": "Extraction of internal model configuration, instructions, or system prompts"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Direct Prompt Injection",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/techniques/AML.T0051.000",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
       "notes": "Crafting inputs specifically designed to reveal or override system prompt content"
     },
     {

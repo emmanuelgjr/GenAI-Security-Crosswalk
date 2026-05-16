@@ -22,7 +22,7 @@
       "control_name": "Data Poisoning",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0032",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0032",
       "notes": "Injecting malicious data into training pipelines to corrupt model behaviour"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Backdoor ML Model",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0031",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0031",
       "notes": "Embedding hidden trigger-response patterns in model via poisoned training data"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Model Inversion",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0027",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0027",
       "notes": "Reconstructing sensitive training data from model outputs"
     },
     {

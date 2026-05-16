@@ -22,7 +22,7 @@
       "control_name": "Disinformation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0045",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0045",
       "notes": "Agent generates persuasive false information to manipulate human approvals"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Influence via Automated Content",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0047",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
       "notes": "Agent produces high-volume, fluent content that overwhelms human critical assessment"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Spearphishing via AI",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0049",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0049",
       "notes": "Compromised agent crafts highly personalised, convincing manipulation targeted at specific users"
     },
     {

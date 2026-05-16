@@ -522,6 +522,7 @@ Malicious or compromised agents that appear compliant on the surface but pursue 
 
 ---
 
+<!-- markdownlint-disable-next-line MD024 -->
 ### ASI10 — Rogue Agents
 
 **Severity:** Critical

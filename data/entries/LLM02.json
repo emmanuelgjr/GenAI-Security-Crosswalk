@@ -22,7 +22,7 @@
       "control_name": "Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0021",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
       "notes": "Unintended exposure of training data or sensitive context through model outputs"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Information Disclosure",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0030",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0030",
       "notes": "Extraction of confidential information via targeted model queries"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Model Inversion",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0024",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0024",
       "notes": "Reconstructing training data from model outputs or confidence scores"
     },
     {

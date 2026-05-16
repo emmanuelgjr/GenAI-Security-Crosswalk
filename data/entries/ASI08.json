@@ -22,7 +22,7 @@
       "control_name": "Denial of ML Service",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0029",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
       "notes": "Triggering cascading failure propagation to exhaust system resources or degrade service"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Cost Harvesting",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0034",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0034",
       "notes": "Crafting inputs that trigger runaway agent loops generating unbounded costs"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Exploit Public-Facing ML Application",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0057",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
       "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally"
     },
     {

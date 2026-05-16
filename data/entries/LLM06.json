@@ -22,7 +22,7 @@
       "control_name": "LLM Capability Escalation",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/techniques/AML.T0015",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0015",
       "notes": "Exploiting overly permissive LLM tool access to perform actions beyond intended scope"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Automated Collection",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/techniques/AML.T0068",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0068",
       "notes": "LLM autonomously collecting data beyond its intended access scope"
     },
     {

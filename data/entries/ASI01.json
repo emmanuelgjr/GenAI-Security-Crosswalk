@@ -22,7 +22,7 @@
       "control_name": "Direct Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0051.000",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
       "notes": "Attacker directly injects goal-altering instructions into agent input"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Indirect Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0051.001",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.001",
       "notes": "Hidden instructions in documents, emails, RAG results, or tool outputs alter agent goals without user visibility"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "LLM Jailbreak",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0054",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
       "notes": "Override safety guardrails that constrain agent goal execution"
     },
     {

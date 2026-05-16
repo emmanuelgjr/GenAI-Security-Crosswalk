@@ -74,9 +74,9 @@ agents before any human can intervene.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Direct Prompt Injection | [AML.T0051.000](https://atlas.mitre.org/techniques/AML.T0051.000) | Influence Operations | Attacker directly injects goal-altering instructions into agent input |
-| Indirect Prompt Injection | [AML.T0051.001](https://atlas.mitre.org/techniques/AML.T0051.001) | Influence Operations | Hidden instructions in documents, emails, RAG results, or tool outputs alter agent goals without user visibility |
-| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/techniques/AML.T0054) | Execution | Override safety guardrails that constrain agent goal execution |
+| Direct Prompt Injection | [AML.T0051.000](https://atlas.mitre.org/#/techniques/AML.T0051.000) | Influence Operations | Attacker directly injects goal-altering instructions into agent input |
+| Indirect Prompt Injection | [AML.T0051.001](https://atlas.mitre.org/#/techniques/AML.T0051.001) | Influence Operations | Hidden instructions in documents, emails, RAG results, or tool outputs alter agent goals without user visibility |
+| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/#/techniques/AML.T0054) | Execution | Override safety guardrails that constrain agent goal execution |
 
 #### Mitigations by tier
 
@@ -139,9 +139,9 @@ tool does in response: delete, send, execute, publish.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Output Manipulation | [AML.T0037](https://atlas.mitre.org/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce tool calls with destructive parameters |
-| LLM Capability Escalation | [AML.T0015](https://atlas.mitre.org/techniques/AML.T0015) | Privilege Escalation | Exploiting overly permissive tool access to exceed intended agent scope |
-| Automated Collection | [AML.T0068](https://atlas.mitre.org/techniques/AML.T0068) | Collection | Agent autonomously harvesting data through tool chains beyond authorised scope |
+| Output Manipulation | [AML.T0037](https://atlas.mitre.org/#/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce tool calls with destructive parameters |
+| LLM Capability Escalation | [AML.T0015](https://atlas.mitre.org/#/techniques/AML.T0015) | Privilege Escalation | Exploiting overly permissive tool access to exceed intended agent scope |
+| Automated Collection | [AML.T0068](https://atlas.mitre.org/#/techniques/AML.T0068) | Collection | Agent autonomously harvesting data through tool chains beyond authorised scope |
 
 #### Mitigations by tier
 
@@ -204,9 +204,9 @@ the original session ends.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Valid Accounts | [AML.T0022](https://atlas.mitre.org/techniques/AML.T0022) | Initial Access / Persistence | Exploiting legitimate agent credentials to access AI systems or data pipelines |
-| Exfiltration via AI Inference API | [AML.T0016](https://atlas.mitre.org/techniques/AML.T0016) | Exfiltration | Using compromised agent credentials to exfiltrate data through inference API |
-| Model Inversion | [AML.T0024](https://atlas.mitre.org/techniques/AML.T0024) | Collection | Reconstructing sensitive data accessible to the agent through credential abuse |
+| Valid Accounts | [AML.T0022](https://atlas.mitre.org/#/techniques/AML.T0022) | Initial Access / Persistence | Exploiting legitimate agent credentials to access AI systems or data pipelines |
+| Exfiltration via AI Inference API | [AML.T0016](https://atlas.mitre.org/#/techniques/AML.T0016) | Exfiltration | Using compromised agent credentials to exfiltrate data through inference API |
+| Model Inversion | [AML.T0024](https://atlas.mitre.org/#/techniques/AML.T0024) | Collection | Reconstructing sensitive data accessible to the agent through credential abuse |
 
 #### Mitigations by tier
 
@@ -271,9 +271,9 @@ runtime with no static inventory and no signature verification.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Adversarial Model Manipulation | [AML.T0056](https://atlas.mitre.org/techniques/AML.T0056) | ML Attack Staging | Tampering with model weights or tool components loaded by agent at runtime |
-| Model Contamination | [AML.T0048](https://atlas.mitre.org/techniques/AML.T0048) | Persistence | Persistent malicious behaviour introduced through dynamically loaded agent components |
-| Backdoor ML Model | [AML.T0010](https://atlas.mitre.org/techniques/AML.T0010) | Persistence | Trigger-based backdoors in MCP servers, prompt templates, or model adapters |
+| Adversarial Model Manipulation | [AML.T0056](https://atlas.mitre.org/#/techniques/AML.T0056) | ML Attack Staging | Tampering with model weights or tool components loaded by agent at runtime |
+| Model Contamination | [AML.T0048](https://atlas.mitre.org/#/techniques/AML.T0048) | Persistence | Persistent malicious behaviour introduced through dynamically loaded agent components |
+| Backdoor ML Model | [AML.T0010](https://atlas.mitre.org/#/techniques/AML.T0010) | Persistence | Trigger-based backdoors in MCP servers, prompt templates, or model adapters |
 
 #### Mitigations by tier
 
@@ -335,9 +335,9 @@ with the agent's full system permissions.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Unsafe Deserialisation via LLM | [AML.T0040](https://atlas.mitre.org/techniques/AML.T0040) | Execution | Agent-generated code or payloads executed by downstream components |
-| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/techniques/AML.T0054) | Execution | Overriding code execution safety guardrails to allow arbitrary command execution |
-| Output Manipulation | [AML.T0037](https://atlas.mitre.org/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce malicious executable code in agent output |
+| Unsafe Deserialisation via LLM | [AML.T0040](https://atlas.mitre.org/#/techniques/AML.T0040) | Execution | Agent-generated code or payloads executed by downstream components |
+| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/#/techniques/AML.T0054) | Execution | Overriding code execution safety guardrails to allow arbitrary command execution |
+| Output Manipulation | [AML.T0037](https://atlas.mitre.org/#/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce malicious executable code in agent output |
 
 #### Mitigations by tier
 
@@ -400,9 +400,9 @@ without triggering any single detectable event.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Data Poisoning | [AML.T0032](https://atlas.mitre.org/techniques/AML.T0032) | ML Attack Staging | Injecting malicious content into agent persistent memory or RAG stores |
-| Embedding Manipulation | [AML.T0063](https://atlas.mitre.org/techniques/AML.T0063) | ML Attack Staging | Crafting content whose embeddings bias future retrieval results in attacker's favour |
-| Backdoor via Poisoned Memory | [AML.T0020](https://atlas.mitre.org/techniques/AML.T0020) | Persistence | Establishing persistent trigger-response patterns in agent memory stores |
+| Data Poisoning | [AML.T0032](https://atlas.mitre.org/#/techniques/AML.T0032) | ML Attack Staging | Injecting malicious content into agent persistent memory or RAG stores |
+| Embedding Manipulation | [AML.T0063](https://atlas.mitre.org/#/techniques/AML.T0063) | ML Attack Staging | Crafting content whose embeddings bias future retrieval results in attacker's favour |
+| Backdoor via Poisoned Memory | [AML.T0020](https://atlas.mitre.org/#/techniques/AML.T0020) | Persistence | Establishing persistent trigger-response patterns in agent memory stores |
 
 #### Mitigations by tier
 
@@ -459,9 +459,9 @@ cluster.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Network Service Scanning | [AML.T0043](https://atlas.mitre.org/techniques/AML.T0043) | Discovery | Identifying and mapping inter-agent communication endpoints for targeting |
-| Valid Accounts | [AML.T0022](https://atlas.mitre.org/techniques/AML.T0022) | Persistence | Using compromised agent credentials to impersonate trusted agents in A2A channels |
-| Exfiltration via AI Inference API | [AML.T0016](https://atlas.mitre.org/techniques/AML.T0016) | Exfiltration | Intercepting inter-agent messages to exfiltrate sensitive context passed between agents |
+| Network Service Scanning | [AML.T0043](https://atlas.mitre.org/#/techniques/AML.T0043) | Discovery | Identifying and mapping inter-agent communication endpoints for targeting |
+| Valid Accounts | [AML.T0022](https://atlas.mitre.org/#/techniques/AML.T0022) | Persistence | Using compromised agent credentials to impersonate trusted agents in A2A channels |
+| Exfiltration via AI Inference API | [AML.T0016](https://atlas.mitre.org/#/techniques/AML.T0016) | Exfiltration | Intercepting inter-agent messages to exfiltrate sensitive context passed between agents |
 
 #### Mitigations by tier
 
@@ -526,9 +526,9 @@ crosswalks for OT-specific controls.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Denial of ML Service | [AML.T0029](https://atlas.mitre.org/techniques/AML.T0029) | Impact | Triggering cascading failure propagation to exhaust system resources or degrade service |
-| Cost Harvesting | [AML.T0034](https://atlas.mitre.org/techniques/AML.T0034) | Impact | Crafting inputs that trigger runaway agent loops generating unbounded costs |
-| Exploit Public-Facing ML Application | [AML.T0057](https://atlas.mitre.org/techniques/AML.T0057) | Initial Access | Exploiting an exposed agent endpoint to introduce a fault that cascades internally |
+| Denial of ML Service | [AML.T0029](https://atlas.mitre.org/#/techniques/AML.T0029) | Impact | Triggering cascading failure propagation to exhaust system resources or degrade service |
+| Cost Harvesting | [AML.T0034](https://atlas.mitre.org/#/techniques/AML.T0034) | Impact | Crafting inputs that trigger runaway agent loops generating unbounded costs |
+| Exploit Public-Facing ML Application | [AML.T0057](https://atlas.mitre.org/#/techniques/AML.T0057) | Initial Access | Exploiting an exposed agent endpoint to introduce a fault that cascades internally |
 
 #### Mitigations by tier
 
@@ -585,9 +585,9 @@ forensics shows a legitimate user decision, not an agent manipulation.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Disinformation | [AML.T0045](https://atlas.mitre.org/techniques/AML.T0045) | Influence Operations | Agent generates persuasive false information to manipulate human approvals |
-| Influence via Automated Content | [AML.T0047](https://atlas.mitre.org/techniques/AML.T0047) | Influence Operations | Agent produces high-volume, fluent content that overwhelms human critical assessment |
-| Spearphishing via AI | [AML.T0049](https://atlas.mitre.org/techniques/AML.T0049) | Initial Access | Compromised agent crafts highly personalised, convincing manipulation targeted at specific users |
+| Disinformation | [AML.T0045](https://atlas.mitre.org/#/techniques/AML.T0045) | Influence Operations | Agent generates persuasive false information to manipulate human approvals |
+| Influence via Automated Content | [AML.T0047](https://atlas.mitre.org/#/techniques/AML.T0047) | Influence Operations | Agent produces high-volume, fluent content that overwhelms human critical assessment |
+| Spearphishing via AI | [AML.T0049](https://atlas.mitre.org/#/techniques/AML.T0049) | Initial Access | Compromised agent crafts highly personalised, convincing manipulation targeted at specific users |
 
 #### Mitigations by tier
 
@@ -635,9 +635,9 @@ ASI06 attack that has gone undetected across multiple sessions.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/techniques/AML.T0054) | Execution | Persistent override of agent safety constraints enabling hidden goal execution |
-| LLM Capability Escalation | [AML.T0015](https://atlas.mitre.org/techniques/AML.T0015) | Privilege Escalation | Rogue agent gradually escalates its own capabilities and permissions over time |
-| Exploit Public-Facing ML Application | [AML.T0057](https://atlas.mitre.org/techniques/AML.T0057) | Persistence | Compromised agent maintains persistent access and hidden execution across sessions |
+| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/#/techniques/AML.T0054) | Execution | Persistent override of agent safety constraints enabling hidden goal execution |
+| LLM Capability Escalation | [AML.T0015](https://atlas.mitre.org/#/techniques/AML.T0015) | Privilege Escalation | Rogue agent gradually escalates its own capabilities and permissions over time |
+| Exploit Public-Facing ML Application | [AML.T0057](https://atlas.mitre.org/#/techniques/AML.T0057) | Persistence | Compromised agent maintains persistent access and hidden execution across sessions |
 
 #### Mitigations by tier
 
@@ -708,7 +708,7 @@ to visualise agentic attack coverage across your threat model.
 - [OWASP Agentic Top 10 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [OWASP AIVSS](https://aivss.owasp.org)
 - [OWASP AI Testing Guide](https://owasp.org/www-project-ai-testing-guide/)
-- [MITRE ATLAS case studies](https://atlas.mitre.org/studies/)
+- [MITRE ATLAS case studies](https://atlas.mitre.org/#/studies/)
 
 ---
 

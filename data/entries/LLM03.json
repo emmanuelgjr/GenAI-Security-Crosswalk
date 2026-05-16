@@ -22,7 +22,7 @@
       "control_name": "Adversarial Model Manipulation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0056",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
       "notes": "Tampering with model weights, adapters, or configurations during supply chain"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Model Contamination",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0048",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
       "notes": "Introducing persistent malicious behaviour into model through supply chain"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Backdoor ML Model",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0010",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
       "notes": "Embedding trigger-based backdoors in model weights via training or fine-tuning supply chain"
     },
     {
