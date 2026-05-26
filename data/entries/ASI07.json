@@ -22,7 +22,7 @@
       "control_name": "Network Service Scanning",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0043",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
       "notes": "Identifying and mapping inter-agent communication endpoints for targeting"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Valid Accounts",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0022",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0022",
       "notes": "Using compromised agent credentials to impersonate trusted agents in A2A channels"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Exfiltration via AI Inference API",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0016",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
       "notes": "Intercepting inter-agent messages to exfiltrate sensitive context passed between agents"
     },
     {

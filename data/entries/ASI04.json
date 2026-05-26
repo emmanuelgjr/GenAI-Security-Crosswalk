@@ -22,7 +22,7 @@
       "control_name": "Adversarial Model Manipulation",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0056",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
       "notes": "Tampering with model weights or tool components loaded by agent at runtime"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Model Contamination",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0048",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
       "notes": "Persistent malicious behaviour introduced through dynamically loaded agent components"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Backdoor ML Model",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0010",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
       "notes": "Trigger-based backdoors in MCP servers, prompt templates, or model adapters"
     },
     {

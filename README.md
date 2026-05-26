@@ -65,7 +65,7 @@ node scripts/incidents-report.js --format stix              # SIEM/SOAR export
 | **Red teamer** | [LAAF guide](evals/laaf/README.md) → run S1–S6 attack stages, map results to OWASP |
 | **GRC / auditor** | `compliance-report.js --format grc` → import into ServiceNow/Archer/Drata |
 | **Developer** | `npm install genai-security-crosswalk` → query risks + controls programmatically |
-| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 80 AI incidents into Sentinel/Splunk |
+| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 114 AI incidents into Sentinel/Splunk |
 | **Framework author** | [Submit your standard](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/submit) → classifier maps it automatically |
 
 ---

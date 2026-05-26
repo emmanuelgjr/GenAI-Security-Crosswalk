@@ -22,7 +22,7 @@
       "control_name": "Disinformation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0045",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0045",
       "notes": "Using AI-generated content to deliberately spread false information"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Influence via Automated Content",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0047",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
       "notes": "Generating high-volume automated content to shape perception or overwhelm fact-checking"
     },
     {

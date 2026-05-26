@@ -1078,8 +1078,8 @@ Functional model replica constructed without training access
 ## References
 
 - [MITRE ATLAS](https://atlas.mitre.org)
-- [MITRE ATLAS Techniques](https://atlas.mitre.org/techniques)
-- [MITRE ATLAS Case Studies](https://atlas.mitre.org/studies)
+- [MITRE ATLAS Techniques](https://atlas.mitre.org/#/techniques)
+- [MITRE ATLAS Case Studies](https://atlas.mitre.org/#/studies)
 - [OWASP GenAI Data Security Risks 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
 - [LLM Top 10 × MITRE ATLAS](../llm-top10/LLM_MITREATLAS.md)
 - [Agentic Top 10 × MITRE ATLAS](../agentic-top10/Agentic_MITREATLAS.md)

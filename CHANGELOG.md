@@ -829,10 +829,11 @@ exposure per entry, and GPAI vs high-risk applicability clearly marked.
 
 ---
 
-## [Unreleased]
+## Roadmap
 
-No planned items — framework coverage matrix is complete.
-All 17 frameworks have full coverage across all 3 source lists (58 mapping files).
+Framework coverage matrix is complete across the 25 included frameworks
+and 65 mapping files. Future expansion is tracked in the Unreleased
+section above.
 
 ---
 

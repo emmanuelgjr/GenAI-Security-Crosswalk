@@ -22,7 +22,7 @@
       "control_name": "Output Manipulation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0037",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0037",
       "notes": "Crafting inputs that produce tool calls with destructive parameters"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "LLM Capability Escalation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0015",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0015",
       "notes": "Exploiting overly permissive tool access to exceed intended agent scope"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Automated Collection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0068",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0068",
       "notes": "Agent autonomously harvesting data through tool chains beyond authorised scope"
     },
     {
