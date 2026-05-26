@@ -1,6 +1,6 @@
 <!--
   GenAI Security Crosswalk
-  Source list : OWASP Top 10 for Agentic AI 2026 (ASI01–ASI10)
+  Source list : OWASP Top 10 for Agentic Applications 2026 (ASI01–ASI10)
   Framework   : FedRAMP AI Overlay (NIST SP 800-53 Rev 5 AI-specific extensions)
   Version     : 2026-Q1
   Maintained by: OWASP GenAI Data Security Initiative – https://genai.owasp.org
@@ -9,7 +9,7 @@
 
 # Agentic Top 10 2026 × FedRAMP AI Overlay
 
-Mapping the [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
+Mapping the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 to the [FedRAMP AI Overlay](https://www.fedramp.gov/) extending
 [NIST SP 800-53 Rev 5](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)
 with AI-specific control enhancements.
@@ -52,16 +52,16 @@ components.
 
 | ID | Name | Severity | FedRAMP AI Controls | Scope |
 |---|---|---|---|---|
-| ASI01 | Agent Goal Hijacking | Critical | SI-3, SI-10, CA-8, AU-2 | Both |
-| ASI02 | Misconfigured Access Controls | High | AC-3, AC-6, CM-7, AU-2 | Build |
-| ASI03 | Privilege Escalation | Critical | AC-6, IA-2, AC-3, IR-4 | Both |
-| ASI04 | Supply Chain Compromise | High | SR-2, SR-3, SA-9, SA-3 | Both |
-| ASI05 | Uncontrolled Code Execution | Critical | CM-7, SC-7, SI-3, CA-8 | Both |
-| ASI06 | Memory Poisoning & Context Confusion | High | SC-28, SI-3, AU-2, RA-5 | Both |
-| ASI07 | Lateral Tool Chaining | High | AC-6, CM-7, AC-3, AU-2 | Build |
-| ASI08 | Cascading Automation & Failure | High | SC-7, SI-4, IR-4, PM-9 | Both |
-| ASI09 | Emerging Agentic Patterns | Medium | CA-7, RA-5, SI-4, AU-6 | Both |
-| ASI10 | AI Agent Dependency Failures | Medium | SR-2, SA-9, SI-4, IR-4 | Both |
+| ASI01 | Agent Goal Hijack | Critical | SI-3, SI-10, CA-8, AU-2 | Both |
+| ASI02 | Tool Misuse & Exploitation | Critical | AC-3, AC-6, CM-7, AU-2 | Both |
+| ASI03 | Identity & Privilege Abuse | Critical | AC-6, IA-2, AC-3, IR-4 | Both |
+| ASI04 | Agentic Supply Chain Vulnerabilities | High | SR-2, SR-3, SA-9, SA-3 | Both |
+| ASI05 | Unexpected Code Execution | Critical | CM-7, SC-7, SI-3, CA-8 | Both |
+| ASI06 | Memory & Context Poisoning | High | SC-28, SI-3, AU-2, RA-5 | Both |
+| ASI07 | Insecure Inter-Agent Communication | High | SC-7, IA-2, AU-2, CA-8 | Both |
+| ASI08 | Cascading Agent Failures | High | SC-7, SI-4, IR-4, PM-9 | Both |
+| ASI09 | Human-Agent Trust Exploitation | Medium | AT-3, AU-6, SI-4, PM-9 | Both |
+| ASI10 | Rogue Agents | Critical | CA-7, SI-4, IR-4, AU-6 | Both |
 
 ---
 
@@ -81,10 +81,11 @@ components.
 
 ---
 
-### ASI01 – Agent Goal Hijacking
+### ASI01 – Agent Goal Hijack
 
 **Severity:** Critical
 
+An attacker redirects agent objectives through instruction injection.
 Adversaries manipulate agent goals through direct or indirect prompt
 injection, context manipulation, or tool output poisoning, causing the
 agent to pursue attacker-defined objectives while appearing to function
@@ -145,57 +146,60 @@ hijacking (CA-8), and logging of all agent actions (AU-2).
 | LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- LLM Top 10: LLM01 Prompt Injection
-- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
+- LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: MITRE ATLAS AML.T0051 – SP 800-218A PW.2.1-PS – NIST CSF 2.0 PR.AC-5
 
 ---
 
-### ASI02 – Misconfigured Access Controls
+### ASI02 – Tool Misuse & Exploitation
 
-**Severity:** High
+**Severity:** Critical
 
-Agent systems deployed with overly permissive access to tools, data stores,
-APIs, or other agents enable unintended actions and data exposure. FedRAMP
-AI overlay addresses this through access enforcement on agent resources
-(AC-3), least privilege for agent permissions (AC-6), least functionality
-restricting agent capabilities (CM-7), and audit logging of access
-decisions (AU-2).
+Agents misuse legitimate tools via prompt manipulation or unsafe delegation.
+Agents exploit or are manipulated into misusing tools, APIs, and external
+services — invoking destructive operations, passing LLM-generated parameters
+without validation, or chaining tool calls into harmful sequences. FedRAMP
+AI overlay addresses this through access enforcement on agent tool resources
+(AC-3), least privilege for agent tool permissions (AC-6), least functionality
+restricting agent capabilities (CM-7), and audit logging of tool invocations
+(AU-2).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Access Enforcement — agent resource access | AC-3 | AC | Enforce role-based access control on all agent resources — tools, data stores, APIs, and inter-agent communication channels; deny by default |
-| Least Privilege — agent permissions | AC-6 | AC | Enforce least privilege for all agent permissions; restrict tool access, data store access, and API scope to minimum necessary per agent role |
-| Least Functionality — agent capability restrictions | CM-7 | CM | Restrict agents to minimum necessary capabilities; disable unused tools, APIs, and action types; enforce capability restrictions in agent configuration |
-| Event Logging — access decision logging | AU-2 | AU | Log all agent access decisions — permitted and denied — with sufficient detail for access control review and incident investigation |
+| Access Enforcement — agent tool access | AC-3 | AC | Enforce role-based access control on all agent tool resources; validate all tool parameters as untrusted; deny by default |
+| Least Privilege — agent tool permissions | AC-6 | AC | Enforce least privilege for all agent tool permissions; per-tool permission manifests, minimum scope, irreversibility classification |
+| Least Functionality — agent capability restrictions | CM-7 | CM | Restrict agents to minimum necessary tool capabilities; disable unused tools, enforce human confirmation for irreversible operations |
+| Event Logging — tool invocation logging | AU-2 | AU | Log all tool invocations with tool identity, parameters, agent identity, session, and timestamp; immutable trail for forensic investigation |
 
 #### Mitigations
 
 **Foundational**
-- AC-6: Define explicit least privilege policies for each agent; document
-  maximum permitted tool access, data store access, and API scope
-- AC-3: Implement role-based access control on all agent resources;
+- AC-6: Define per-tool permission manifests for each agent deployment;
+  manage agent tool access as privileged access — minimum scope,
+  quarterly review, irreversibility classification documented
+- AC-3: Implement role-based access control on all agent tool resources;
   deny access by default; require explicit grants
-- CM-7: Disable all agent capabilities not explicitly required; maintain
-  a capability manifest per agent deployment
+- CM-7: Disable all agent tool capabilities not explicitly required;
+  require human confirmation for all irreversible tool invocations
 
 **Hardening**
-- AU-2: Log all access decisions with full context; review access
-  patterns for over-privileging indicators
-- AC-3: Implement just-in-time access for agent tool invocations;
-  grant access only for the duration of the specific task
-- CM-7: Review agent capability manifests at each FedRAMP annual
+- AU-2: Log all tool invocations with full context; review invocation
+  patterns for misuse indicators
+- AC-3: Validate all LLM-generated tool parameters as untrusted input;
+  implement MCP tool descriptor integrity verification
+- CM-7: Review agent tool capability manifests at each FedRAMP annual
   assessment; remove unused permissions
 
 **Advanced**
-- AC-6: Implement dynamic privilege adjustment based on agent context
-  and risk level; escalate to human approval for high-risk operations
-- AC-3: Deploy policy-as-code for agent access control; automate
+- AC-6: Conduct tool permission red team — attempt harm through
+  legitimate tool invocations within defined scope
+- AC-3: Deploy policy-as-code for agent tool access control; automate
   enforcement and audit of access policies
-- AU-2: Integrate access decision logs into FedRAMP continuous
-  monitoring; automate detection of access control drift
+- AU-2: Integrate tool invocation logs into FedRAMP continuous
+  monitoring; automate detection of tool misuse patterns
 
 #### Tools
 
@@ -204,81 +208,84 @@ decisions (AU-2).
 | Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 | Guardrails AI | Open-source | https://github.com/guardrails-ai/guardrails |
 | HashiCorp Vault | Commercial | https://www.vaultproject.io |
-| AWS IAM / Azure RBAC | Commercial | https://aws.amazon.com/iam/ |
+| LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI06 Data Lineage Fragmentation
-- Other frameworks: SP 800-218A PW.1.1-PS – NIST CSF 2.0 PR.AC-4 – CIS Controls 6
+- LLM Top 10: LLM05 Insecure Output Handling, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
+- Other frameworks: SP 800-218A PW.1.1-PS – OWASP NHI Top 10 NHI-5 – CIS Controls 5/6
 
 ---
 
-### ASI03 – Privilege Escalation
+### ASI03 – Identity & Privilege Abuse
 
 **Severity:** Critical
 
-Agents exploit misconfigured permissions, tool chaining, or inter-agent
-trust to escalate privileges beyond intended scope — accessing sensitive
-data, invoking restricted tools, or taking administrative actions. FedRAMP
+Agents inherit and cache credentials exploited for lateral movement.
+Agents exploit misconfigured permissions, inherited credentials, or
+inter-agent trust to access resources beyond their intended scope. FedRAMP
 AI overlay addresses this through least privilege enforcement (AC-6),
 non-human identity authentication for agents (IA-2), access enforcement
-at tool boundaries (AC-3), and incident handling for escalation events (IR-4).
+at tool boundaries (AC-3), and incident handling for credential abuse
+events (IR-4).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Least Privilege — escalation prevention | AC-6 | AC | Enforce least privilege with explicit privilege ceilings per agent; prevent accumulation of permissions through tool chaining or inter-agent delegation |
+| Least Privilege — credential scope enforcement | AC-6 | AC | Enforce least privilege with explicit privilege ceilings per agent; prevent accumulation of permissions through tool chaining or inter-agent delegation |
 | Identification and Authentication — agent NHI | IA-2 | IA | Assign unique non-human identities to each AI agent; authenticate agent identity at each tool invocation and inter-agent communication boundary |
-| Access Enforcement — tool boundary enforcement | AC-3 | AC | Enforce access control at every tool invocation boundary; validate agent identity and authorisation for each requested action regardless of calling context |
-| Incident Handling — escalation incident response | IR-4 | IR | Define incident handling procedures for agent privilege escalation events; include automated containment, privilege revocation, and forensic investigation |
+| Access Enforcement — credential boundary enforcement | AC-3 | AC | Enforce access control at every tool invocation boundary; validate agent identity and authorisation for each requested action regardless of calling context |
+| Incident Handling — credential abuse response | IR-4 | IR | Define incident handling procedures for agent credential abuse events; include automated containment, privilege revocation, and forensic investigation |
 
 #### Mitigations
 
 **Foundational**
 - AC-6: Define explicit privilege ceilings per agent; prevent privilege
-  accumulation through chained operations or delegated authority
+  accumulation through chained operations or delegated authority;
+  manage agent credentials as privileged accounts with short TTL
 - IA-2: Assign unique non-human identities to each agent; authenticate
-  at every tool invocation and inter-agent boundary
+  at every tool invocation and inter-agent boundary; no shared credentials
 - AC-3: Enforce access control at each tool boundary independently;
   never inherit permissions from calling agent context
 
 **Hardening**
-- IR-4: Define automated containment procedures for detected privilege
-  escalation; include privilege revocation and session termination
-- AC-6: Implement privilege decay; agent permissions expire after
-  defined duration and must be re-authorised
+- IR-4: Define automated containment procedures for detected credential
+  abuse; include privilege revocation and session termination
+- AC-6: Implement credential brokering — agents never inherit user
+  credentials directly; scoped, time-limited tokens per operation
 - IA-2: Implement mutual authentication between agents in multi-agent
   workflows; verify identity at each delegation point
 
 **Advanced**
 - AC-3: Deploy formal access control verification; prove that no
   sequence of tool invocations can exceed the defined privilege ceiling
-- IR-4: Conduct tabletop exercises for agent privilege escalation
+- IR-4: Conduct tabletop exercises for agent credential abuse
   scenarios; test containment and response procedures
-- IA-2: Implement attestation-based agent identity with hardware-backed
+- IA-2: Implement PKI-backed agent identities with hardware-backed
   credentials where feasible
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 | SPIFFE/SPIRE | Open-source | https://spiffe.io |
 | HashiCorp Vault | Commercial | https://www.vaultproject.io |
 | CyberArk | Commercial | https://www.cyberark.com |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 
 #### Cross-references
 - LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure
-- Other frameworks: SP 800-218A PW.1.1-PS – MITRE ATLAS AML.T0015 – CWE-269
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 (all entries) – SP 800-218A PW.1.1-PS – MITRE ATLAS AML.T0015
 
 ---
 
-### ASI04 – Supply Chain Compromise
+### ASI04 – Agentic Supply Chain Vulnerabilities
 
 **Severity:** High
 
+Compromised tools, MCP servers, or model components alter agent behaviour.
 Agentic AI systems depend on third-party tools, plugins, MCP servers,
 model weights, and agent frameworks — any of which can be compromised.
 FedRAMP AI overlay addresses this through supply chain planning (SR-2),
@@ -332,23 +339,24 @@ development lifecycle for agent systems (SA-3).
 | OWASP Dependency-Check | Open-source | https://owasp.org/www-project-dependency-check/ |
 
 #### Cross-references
-- LLM Top 10: LLM05 Supply Chain Vulnerabilities
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI19 Third-Party Data Risk
+- LLM Top 10: LLM03 Supply Chain Vulnerabilities
+- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
 - Other frameworks: MITRE ATLAS AML.T0056 – SP 800-218A PW.4.1-PS – CycloneDX ML SBOM
 
 ---
 
-### ASI05 – Uncontrolled Code Execution
+### ASI05 – Unexpected Code Execution
 
 **Severity:** Critical
 
-Agents with code execution capabilities run attacker-influenced code —
-through prompt injection, tool output manipulation, or supply chain
-compromise — leading to system compromise, data exfiltration, or lateral
-movement. FedRAMP AI overlay addresses this through least functionality
-restricting code execution (CM-7), boundary protection for execution
-sandboxes (SC-7), malicious code protection for agent-generated code
-(SI-3), and penetration testing of execution boundaries (CA-8).
+Agents that generate and execute code become RCE gateways. Agents with
+code execution capabilities run attacker-influenced code — through prompt
+injection, tool output manipulation, or supply chain compromise — leading
+to system compromise, data exfiltration, or lateral movement. FedRAMP AI
+overlay addresses this through least functionality restricting code
+execution (CM-7), boundary protection for execution sandboxes (SC-7),
+malicious code protection for agent-generated code (SI-3), and penetration
+testing of execution boundaries (CA-8).
 
 #### FedRAMP AI mapping
 
@@ -396,16 +404,17 @@ sandboxes (SC-7), malicious code protection for agent-generated code
 | E2B | Open-source | https://e2b.dev |
 
 #### Cross-references
-- LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure
+- LLM Top 10: LLM05 Insecure Output Handling
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: CWE-94 – SP 800-218A PW.5.1-PS – MITRE ATLAS AML.T0015
 
 ---
 
-### ASI06 – Memory Poisoning & Context Confusion
+### ASI06 – Memory & Context Poisoning
 
 **Severity:** High
 
+Persistent memory poisoning causes systematic incorrect behaviour.
 Adversaries manipulate agent memory stores, context windows, or shared
 state to influence future agent decisions. FedRAMP AI overlay addresses
 this through protection of information at rest for memory stores (SC-28),
@@ -458,86 +467,85 @@ scanning covering memory infrastructure (RA-5).
 | HashiCorp Vault | Commercial | https://www.vaultproject.io |
 
 #### Cross-references
-- LLM Top 10: LLM03 Training Data Poisoning, LLM08 Vector and Embedding Weaknesses
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
+- LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
+- DSGAI 2026: DSGAI13 Vector Store Platform Security
 - Other frameworks: MITRE ATLAS AML.T0018 – SP 800-218A PS.1.1-PS – CWE-1395
 
 ---
 
-### ASI07 – Lateral Tool Chaining
+### ASI07 – Insecure Inter-Agent Communication
 
 **Severity:** High
 
-Agents exploit tool chaining to combine individually safe operations into
-harmful sequences — exfiltrating data, modifying systems, or escalating
-privileges through multi-step workflows. FedRAMP AI overlay addresses
-this through least privilege on tool access (AC-6), least functionality
-restricting tool combinations (CM-7), access enforcement at each tool
-boundary (AC-3), and comprehensive tool invocation logging (AU-2).
+A2A channels lacking authentication enable agent-in-the-middle attacks.
+Agents in multi-agent systems communicate without proper authentication,
+encryption, or schema validation, enabling spoofing, replay attacks, and
+message manipulation. FedRAMP AI overlay addresses this through boundary
+protection for inter-agent communication (SC-7), non-human identity
+authentication at A2A boundaries (IA-2), comprehensive A2A message
+logging (AU-2), and penetration testing of A2A security (CA-8).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Least Privilege — tool chain restrictions | AC-6 | AC | Enforce least privilege across tool chains; prevent agents from combining tool invocations that individually are safe but together achieve harmful outcomes |
-| Least Functionality — tool combination restrictions | CM-7 | CM | Restrict permitted tool combinations; define allowed tool chains in configuration and deny undefined sequences |
-| Access Enforcement — per-tool boundary enforcement | AC-3 | AC | Enforce access control at each tool invocation independently; re-evaluate authorisation at every step in a tool chain regardless of prior approvals |
-| Event Logging — tool chain audit trail | AU-2 | AU | Log complete tool chain sequences with full context; enable detection and forensic analysis of harmful tool combination patterns |
+| Boundary Protection — inter-agent boundaries | SC-7 | SC | Enforce boundary protection between agents in multi-agent systems; encrypt all A2A communication in transit with mutual TLS; implement replay protection |
+| Identification and Authentication — A2A authentication | IA-2 | IA | Assign unique non-human identities to each agent; authenticate agent identity at every inter-agent communication boundary; verify sender identity on each message |
+| Event Logging — A2A audit trail | AU-2 | AU | Log all inter-agent messages with sender identity, content hash, timestamp, and schema validation results; enable forensic investigation of A2A incidents |
+| Penetration Testing — A2A security testing | CA-8 | CA | Include inter-agent communication security in penetration testing; test for spoofing, replay attacks, schema violations, and agent-in-the-middle scenarios |
 
 #### Mitigations
 
 **Foundational**
-- AC-6: Define permitted tool chains per agent role; restrict tool
-  combinations to pre-approved sequences
-- AC-3: Enforce access control independently at each tool boundary;
-  never inherit authorisation from previous tool invocations
-- AU-2: Log complete tool chain sequences; include input, output,
-  and context at each step
+- SC-7: Encrypt all A2A communication in transit; enforce mutual TLS;
+  no cleartext inter-agent messages on any network segment
+- IA-2: Assign unique non-human identities to each agent; authenticate
+  at every A2A communication boundary
+- AU-2: Log all A2A messages with sender identity, content hash, and
+  timestamp; retain per FedRAMP requirements
 
 **Hardening**
-- CM-7: Implement tool chain allowlisting; deny tool combinations not
-  explicitly approved; alert on attempts to invoke undefined sequences
-- AC-6: Implement transaction-level authorisation for multi-step
-  operations; require explicit approval for tool chains that cross
-  security boundaries
-- AU-2: Deploy automated detection of anomalous tool chain patterns;
-  alert on novel tool combinations
+- CA-8: Include A2A security in penetration testing; test for spoofing,
+  replay attacks, and schema violations
+- SC-7: Map all A2A communication channels in network architecture;
+  document authentication method, encryption status, replay protection
+- IA-2: Implement mutual authentication between all agents; verify
+  identity at each delegation point
 
 **Advanced**
-- AC-3: Deploy formal tool chain analysis; verify that no permitted
-  tool combination can achieve outcomes beyond the defined privilege
-  ceiling
-- CM-7: Implement runtime tool chain policy enforcement; evaluate
-  each tool invocation in context of the full chain
-- AC-6: Include tool chain security in FedRAMP penetration testing;
-  test for harmful combinations specific to your deployment
+- CA-8: Conduct structured red-team exercises targeting A2A security —
+  agent-in-the-middle attacks, message manipulation, identity spoofing
+- SC-7: Implement short-lived A2A certificates with automated rotation;
+  hardware-backed keys for highest-risk deployments
+- AU-2: Integrate A2A logs into FedRAMP continuous monitoring; automate
+  detection of communication anomalies
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| Guardrails AI | Open-source | https://github.com/guardrails-ai/guardrails |
+| SPIFFE/SPIRE | Open-source | https://spiffe.io |
+| Istio | Open-source | https://istio.io |
+| OpenTelemetry | Open-source | https://opentelemetry.io |
 | LangSmith | Commercial | https://smith.langchain.com |
-| NeMo Guardrails | Open-source | https://github.com/NVIDIA/NeMo-Guardrails |
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI06 Data Lineage Fragmentation
-- Other frameworks: SP 800-218A PW.1.1-PS – MITRE ATLAS AML.T0015 – CWE-269
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 NHI-4/NHI-7 – SP 800-218A PW.2.1-PS – CIS Controls 12
 
 ---
 
-### ASI08 – Cascading Automation & Failure
+### ASI08 – Cascading Agent Failures
 
 **Severity:** High
 
-Failures or attacks in one agent propagate through interconnected multi-agent
-systems causing cascading disruptions, amplified damage, or system-wide
-compromise. FedRAMP AI overlay addresses this through boundary protection
-between agents (SC-7), system monitoring for cascade indicators (SI-4),
-incident handling for cascading failures (IR-4), and risk management
-strategy covering automation risk (PM-9).
+Single-point faults propagate through multi-agent workflows. Failures or
+attacks in one agent propagate through interconnected multi-agent systems
+causing cascading disruptions, amplified damage, or system-wide compromise.
+FedRAMP AI overlay addresses this through boundary protection between
+agents (SC-7), system monitoring for cascade indicators (SI-4), incident
+handling for cascading failures (IR-4), and risk management strategy
+covering automation risk (PM-9).
 
 #### FedRAMP AI mapping
 
@@ -585,60 +593,59 @@ strategy covering automation risk (PM-9).
 | PagerDuty | Commercial | https://www.pagerduty.com |
 
 #### Cross-references
-- LLM Top 10: LLM04 Model DoS, LLM10 Unbounded Consumption
+- LLM Top 10: LLM10 Unbounded Consumption
 - DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
 - Other frameworks: SP 800-218A PW.2.1-PS – NIST CSF 2.0 RS.RP-1 – ISA/IEC 62443 SR 7.1
 
 ---
 
-### ASI09 – Emerging Agentic Patterns
+### ASI09 – Human-Agent Trust Exploitation
 
 **Severity:** Medium
 
-Novel agentic architectures — multi-agent orchestration, tool-use planning,
-self-reflection loops, and autonomous goal decomposition — introduce
-security risks not yet fully characterised. FedRAMP AI overlay addresses
-this through continuous monitoring for novel behaviour patterns (CA-7),
-vulnerability scanning covering emerging attack surfaces (RA-5), system
-monitoring for unexpected agent behaviour (SI-4), and audit review of
-agent decisions (AU-6).
+Agents build false trust enabling manipulation of human approvers. Agents
+establish unwarranted trust with human operators through apparent competence,
+conversational rapport, or presentation authority, then exploit that trust
+to obtain approvals for harmful actions, bypass oversight, or suppress
+safety concerns. FedRAMP AI overlay addresses this through role-based
+training on AI limitations (AT-3), audit review of agent-influenced
+decisions (AU-6), system monitoring for trust exploitation patterns (SI-4),
+and risk management strategy covering human-agent interaction (PM-9).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Continuous Monitoring — novel pattern detection | CA-7 | CA | Include monitoring for novel agentic behaviour patterns in FedRAMP continuous monitoring; track for unexpected capabilities, emergent behaviours, and architectural drift |
-| Vulnerability Scanning — emerging attack surfaces | RA-5 | RA | Include emerging agentic attack surfaces in vulnerability scanning; assess novel architectures for security implications before production deployment |
-| System Monitoring — unexpected behaviour detection | SI-4 | SI | Monitor agent systems for unexpected behaviour — novel tool use patterns, unanticipated goal decomposition, and emergent inter-agent coordination |
-| Audit Review — agent decision review | AU-6 | AU | Conduct regular audit review of agent decision logs; identify patterns indicative of unexpected capabilities or emergent behaviours requiring security assessment |
+| Role-Based Training — AI trust awareness | AT-3 | AT | Provide role-based training to all users of agentic tools — AI limitations, verification requirements, how to identify manipulation; mandatory before access |
+| Audit Review — agent-influenced decision review | AU-6 | AU | Conduct regular audit review of agent-influenced operator decisions; identify patterns of over-trust and systematic reliance on agent recommendations |
+| System Monitoring — trust exploitation detection | SI-4 | SI | Monitor for trust exploitation indicators — operators approving high-risk actions without independent verification, systematic over-reliance patterns |
+| Risk Management Strategy — human-agent trust governance | PM-9 | PM | Include human-agent trust exploitation in risk management strategy; define policies for agent advisory labelling and approval independence |
 
 #### Mitigations
 
 **Foundational**
-- CA-7: Include agentic AI behaviour monitoring in continuous
-  monitoring programme; track for capability drift and unexpected
-  behaviour patterns
-- RA-5: Assess novel agentic architectures for security implications
-  before production; document findings in risk assessment
-- SI-4: Monitor for unexpected agent behaviours; establish baseline
-  behaviour profiles and alert on deviations
+- AT-3: Provide security awareness training to all users of agentic
+  tools — AI limitations, verification requirements, how to identify
+  AI advisory vs authoritative content; mandatory before access
+- PM-9: Establish policy that sensitive approvals cannot be completed
+  through agent chat interface; require independent approval flows
+- SI-4: Monitor for trust exploitation indicators; establish baseline
+  approval patterns and alert on deviations
 
 **Hardening**
-- AU-6: Conduct regular review of agent decision logs; identify
-  patterns requiring security assessment; escalate through risk
-  governance channels
-- CA-7: Establish automated detection for emergent agent capabilities;
-  alert when agents exhibit behaviours not in their defined scope
-- RA-5: Include emerging agentic attack patterns in vulnerability
-  scanning; update scanning rules as new attack techniques are published
+- AU-6: Conduct regular review of agent-influenced operator decisions;
+  identify over-trust patterns through audit log analysis
+- SI-4: Deploy AI advisory labelling in all interface contexts; visual
+  distinction from authoritative system content
+- PM-9: Include trust exploitation risk in FedRAMP risk assessment
 
 **Advanced**
-- Participate in AI security research communities; stay current on
-  emerging agentic attack techniques and defences
-- CA-7: Include emerging agentic pattern risk in FedRAMP annual
-  assessment; document novel architectures and their security posture
-- SI-4: Deploy advanced behaviour analysis for agentic systems;
-  detect subtle capability emergence over time
+- AT-3: Operator competency assessments covering AI trust — verify
+  operators can identify manipulated recommendations
+- CA-8: Include trust exploitation in penetration testing — test
+  operator susceptibility to manipulated agent recommendations
+- AU-6: Integrate agent-influenced decision analysis into FedRAMP
+  continuous monitoring; detect systematic bias patterns
 
 #### Tools
 
@@ -651,81 +658,85 @@ agent decisions (AU-6).
 
 #### Cross-references
 - LLM Top 10: LLM09 Misinformation
-- DSGAI 2026: DSGAI18 Governance Gaps
-- Other frameworks: NIST AI RMF MAP 1.5 – SP 800-218A PW.7.2-PS – ISO 42001 A.6.2.6
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
+- Other frameworks: EU AI Act Art. 13/50 – SP 800-218A PW.7.2-PS – ISO 42001 A.6.2.6
 
 ---
 
-### ASI10 – AI Agent Dependency Failures
+### ASI10 – Rogue Agents
 
-**Severity:** Medium
+**Severity:** Critical
 
-Agents depend on external services — model APIs, tool endpoints, data
-sources, and inter-agent communication — whose failure or degradation
-causes agent malfunction, incorrect outputs, or service disruption.
-FedRAMP AI overlay addresses this through supply chain planning for agent
-dependencies (SR-2), external service controls (SA-9), system monitoring
-for dependency health (SI-4), and incident handling for dependency
-failures (IR-4).
+Compromised agents pursue hidden goals while appearing compliant. Agents
+operate outside their intended boundaries — pursuing hidden objectives,
+executing undisclosed tool calls, or systematically biasing recommendations
+— while maintaining an appearance of normal operation. FedRAMP AI overlay
+addresses this through continuous monitoring for rogue agent behaviour
+(CA-7), system monitoring for behavioural anomalies (SI-4), incident
+handling for rogue agent containment (IR-4), and audit review of agent
+decision patterns (AU-6).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Supply Chain Risk Management Plan — agent dependencies | SR-2 | SR | Include all agent external dependencies — model APIs, tool endpoints, data sources — in supply chain risk management with availability and integrity requirements |
-| External Information System Services — agent service dependencies | SA-9 | SA | Require SLAs from agent dependency providers covering availability, performance, security, and incident notification; establish fallback procedures |
-| System Monitoring — dependency health monitoring | SI-4 | SI | Monitor agent dependency health in real time — API availability, response latency, error rates; alert on degradation and trigger fallback procedures |
-| Incident Handling — dependency failure response | IR-4 | IR | Define incident handling procedures for agent dependency failures; include automated fallback activation, graceful degradation, and service restoration |
+| Continuous Monitoring — rogue agent detection | CA-7 | CA | Include monitoring for rogue agent behaviour in FedRAMP continuous monitoring; track for hidden goal pursuit, undisclosed tool calls, and systematic recommendation bias |
+| System Monitoring — behavioural anomaly detection | SI-4 | SI | Monitor agent systems for behavioural anomalies — unexpected tool invocations, deviation from established baselines, and hidden communication patterns |
+| Incident Handling — rogue agent containment | IR-4 | IR | Define incident handling procedures for rogue agent events; include kill switch activation, recommendation audit, state validation, and forensic capture |
+| Audit Review — agent decision pattern review | AU-6 | AU | Conduct regular audit review of agent decision patterns; identify systematic bias, hidden objective indicators, and recommendation manipulation |
 
 #### Mitigations
 
 **Foundational**
-- SR-2: Document all agent external dependencies in the supply chain
-  plan; assess availability and single-point-of-failure risk
-- SA-9: Establish SLAs with dependency providers covering availability,
-  performance, and incident notification
-- SI-4: Monitor dependency health; alert on availability and
-  performance degradation
+- CA-7: Include rogue agent behaviour monitoring in continuous
+  monitoring programme; comprehensive audit logging of all agent
+  actions — no production deployment without full observability
+- IR-4: Define rogue agent containment as incident response procedure —
+  kill switch activation, recommendation audit, state validation,
+  forensic capture documented before deployment
+- SI-4: Establish behavioural baselines; scope constraints enforced —
+  rogue agent cannot exceed permission envelope regardless of goal
 
 **Hardening**
-- IR-4: Define and test automated fallback procedures for dependency
-  failures; include graceful degradation and safe-state transitions
-- SA-9: Identify critical agent dependencies; require redundant
-  providers for critical services
-- SI-4: Include dependency failure scenarios in monitoring; test
-  detection and alerting capabilities
+- SI-4: Centralise agent behavioural anomaly alerts; behavioural
+  baseline deviation events fed into SIEM with tiered response
+- CA-7: Establish automated detection for hidden goal indicators;
+  alert when agents exhibit patterns outside defined scope
+- AU-6: Aggregate recommendation analysis — periodic review detects
+  systematic bias before operational harm
 
 **Advanced**
-- SR-2: Conduct dependency failure impact analysis; quantify the
-  blast radius of each dependency failure on agent system functionality
-- IR-4: Include dependency failure in FedRAMP contingency testing;
-  verify fallback procedures under realistic conditions
-- SA-9: Include dependency provider security posture in FedRAMP
-  continuous monitoring
+- CA-8: Rogue agent scenarios in penetration testing — simulate
+  persistent hidden goal pursuit across extended sessions; verify
+  detection capability holds
+- IR-4: Conduct tabletop exercises for rogue agent scenarios; test
+  containment and forensic procedures
+- CA-7: Include rogue agent risk in FedRAMP annual assessment;
+  document behavioural monitoring architecture in SSP
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
+| LangSmith | Commercial | https://smith.langchain.com |
 | OpenTelemetry | Open-source | https://opentelemetry.io |
-| LiteLLM | Open-source | https://github.com/BerriAI/litellm |
+| Garak | Open-source | https://github.com/leondz/garak |
 | PagerDuty | Commercial | https://www.pagerduty.com |
-| Istio | Open-source | https://istio.io |
 
 #### Cross-references
-- LLM Top 10: LLM05 Supply Chain Vulnerabilities, LLM10 Unbounded Consumption
-- DSGAI 2026: DSGAI19 Third-Party Data Risk
-- Other frameworks: SP 800-218A PW.4.1-PS – NIST CSF 2.0 ID.SC-2 – CWE-754
+- LLM Top 10: LLM06 Excessive Agency
+- DSGAI 2026: DSGAI16 Endpoint & Browser Overreach
+- Other frameworks: SP 800-218A RV.1.1-PS – EU AI Act Art. 14/15 – CIS Controls 8/13
 
 ---
 
 ## Implementation priority
 
-| Phase | AC / AU / IA | SC / SI / CM | CA / RA / SA / SR / IR / PM |
+| Phase | AC / AU / IA / AT | SC / SI / CM | CA / RA / SA / SR / IR / PM |
 |---|---|---|---|
-| 1 – Now | AC-6 least privilege for ASI02/03/07; IA-2 agent NHI for ASI03; AU-2 action logging for ASI01/02/06 | SI-10 input validation for ASI01; CM-7 capability restrictions for ASI02/05/07 | SR-2 agent supply chain plan for ASI04; IR-4 incident handling for ASI03/08 |
-| 2 – This sprint | AC-3 per-tool enforcement for ASI03/07; AU-2 tool chain logging for ASI07 | SI-3 adversarial detection for ASI01/05/06; SC-7 boundaries for ASI05/08; SC-28 memory protection for ASI06 | CA-8 pen testing for ASI01/05; SA-9 third-party controls for ASI04/10 |
-| 3 – This quarter | AU-6 agent decision review for ASI09; AC-6 dynamic privilege for ASI03 | SI-4 cascade and behaviour monitoring for ASI08/09/10; CM-7 tool chain policy for ASI07 | CA-7 continuous monitoring for ASI09; PM-9 risk strategy for ASI08; RA-5 scanning for ASI06/09 |
+| 1 – Now | AC-6 least privilege for ASI02/03; IA-2 agent NHI for ASI03; AU-2 action logging for ASI01/02/06 | SI-10 input validation for ASI01; CM-7 capability restrictions for ASI02/05 | SR-2 agent supply chain plan for ASI04; IR-4 incident handling for ASI03/08/10 |
+| 2 – This sprint | AC-3 per-tool enforcement for ASI02/03; AT-3 trust training for ASI09 | SI-3 adversarial detection for ASI01/05/06; SC-7 boundaries for ASI05/07/08; SC-28 memory protection for ASI06 | CA-8 pen testing for ASI01/05/07; SA-9 third-party controls for ASI04 |
+| 3 – This quarter | AU-6 agent decision review for ASI09/10; AC-6 dynamic privilege for ASI03 | SI-4 rogue agent and behaviour monitoring for ASI08/09/10; CM-7 tool policy for ASI02 | CA-7 continuous monitoring for ASI10; PM-9 risk strategy for ASI08/09; RA-5 scanning for ASI06 |
 | 4 – Ongoing | Access control reviews; audit log analysis; identity lifecycle management | Continuous monitoring; detection tuning; sandbox integrity verification | Annual FedRAMP assessment; red-team programme; supply chain reassessment |
 
 ---
@@ -734,7 +745,7 @@ failures (IR-4).
 
 - [NIST SP 800-53 Rev 5](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)
 - [FedRAMP](https://www.fedramp.gov/)
-- [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
+- [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [NIST AI RMF 1.0](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf)
 - [MITRE ATLAS](https://atlas.mitre.org)
 - [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/)
@@ -745,6 +756,7 @@ failures (IR-4).
 
 | Date | Version | Change | Author |
 |---|---|---|---|
+| 2026-05-25 | 2026-Q2 | Remediate ASI entry names, severities, descriptions, and control mappings to canonical Agentic Top 10 2026 | OWASP GenAI Data Security Initiative |
 | 2026-03-28 | 2026-Q1 | Initial mapping – ASI01–ASI10 full entries | OWASP GenAI Data Security Initiative |
 
 ---

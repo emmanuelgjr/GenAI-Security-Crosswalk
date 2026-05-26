@@ -1,6 +1,6 @@
 <!--
   GenAI Security Crosswalk
-  Source list : OWASP Top 10 for Agentic AI 2026 (ASI01–ASI10)
+  Source list : OWASP Top 10 for Agentic Applications 2026 (ASI01–ASI10)
   Framework   : DORA – Digital Operational Resilience Act (EU Regulation 2022/2554)
   Version     : 2026-Q1
   Maintained by: OWASP GenAI Data Security Initiative – https://genai.owasp.org
@@ -9,7 +9,7 @@
 
 # Agentic Top 10 2026 × DORA
 
-Mapping the [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
+Mapping the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 to the [Digital Operational Resilience Act (DORA)](https://eur-lex.europa.eu/eli/reg/2022/2554/oj)
 (EU Regulation 2022/2554, effective 17 January 2025).
 
@@ -50,16 +50,16 @@ obligations for autonomous AI systems.
 
 | ID | Name | Severity | DORA Articles | Scope |
 |---|---|---|---|---|
-| ASI01 | Agent Goal Hijacking | Critical | Art. 9, Art. 24–27, Art. 10 | Both |
-| ASI02 | Misconfigured Access Controls | High | Art. 9, Art. 5–7, Art. 10 | Build |
-| ASI03 | Privilege Escalation | Critical | Art. 9, Art. 17–23, Art. 24–27 | Both |
-| ASI04 | Supply Chain Compromise | High | Art. 28–44, Art. 8, Art. 5–7 | Both |
-| ASI05 | Uncontrolled Code Execution | Critical | Art. 9, Art. 24–27, Art. 17–23 | Both |
-| ASI06 | Memory Poisoning & Context Confusion | High | Art. 9, Art. 10, Art. 8 | Both |
-| ASI07 | Lateral Tool Chaining | High | Art. 9, Art. 5–7, Art. 24–27 | Build |
-| ASI08 | Cascading Automation & Failure | High | Art. 11, Art. 10, Art. 12 | Both |
-| ASI09 | Emerging Agentic Patterns | Medium | Art. 5–7, Art. 10, Art. 13 | Both |
-| ASI10 | AI Agent Dependency Failures | Medium | Art. 28–44, Art. 11, Art. 12 | Both |
+| ASI01 | Agent Goal Hijack | Critical | Art. 9, Art. 24–27, Art. 10 | Both |
+| ASI02 | Tool Misuse & Exploitation | Critical | Art. 9, Art. 5–7, Art. 10 | Both |
+| ASI03 | Identity & Privilege Abuse | Critical | Art. 9, Art. 17–23, Art. 8 | Both |
+| ASI04 | Agentic Supply Chain Vulnerabilities | High | Art. 28–44, Art. 8, Art. 5–7 | Both |
+| ASI05 | Unexpected Code Execution | Critical | Art. 9, Art. 24–27, Art. 17–23 | Both |
+| ASI06 | Memory & Context Poisoning | High | Art. 9, Art. 10, Art. 8 | Both |
+| ASI07 | Insecure Inter-Agent Communication | High | Art. 9, Art. 10, Art. 24–27 | Both |
+| ASI08 | Cascading Agent Failures | High | Art. 11, Art. 10, Art. 12 | Both |
+| ASI09 | Human-Agent Trust Exploitation | Medium | Art. 5–7, Art. 10, Art. 13 | Both |
+| ASI10 | Rogue Agents | Critical | Art. 10, Art. 17–23, Art. 24–27 | Both |
 
 ---
 
@@ -79,10 +79,11 @@ obligations for autonomous AI systems.
 
 ---
 
-### ASI01 – Agent Goal Hijacking
+### ASI01 – Agent Goal Hijack
 
 **Severity:** Critical
 
+An attacker redirects agent objectives through instruction injection.
 Adversaries manipulate agent goals through direct or indirect prompt
 injection, context manipulation, or tool output poisoning, causing the
 agent to pursue attacker-defined objectives while appearing to function
@@ -143,56 +144,60 @@ goal manipulation indicators (Art. 10).
 | LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- LLM Top 10: LLM01 Prompt Injection
-- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
+- LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: MITRE ATLAS AML.T0051 – FedRAMP SI-10 – SP 800-218A PW.2.1-PS
 
 ---
 
-### ASI02 – Misconfigured Access Controls
+### ASI02 – Tool Misuse & Exploitation
 
-**Severity:** High
+**Severity:** Critical
 
-Agent systems deployed with overly permissive access to tools, data stores,
-APIs, or other agents enable unintended actions and data exposure. DORA
-requires financial entities to implement protection controls for agent
-access (Art. 9), maintain governance covering agent permissions (Art. 5–7),
-and deploy detection for unauthorised access patterns (Art. 10).
+Agents misuse legitimate tools via prompt manipulation or unsafe delegation.
+Agent systems exploit or are manipulated into misusing tools, APIs, and
+external services — invoking destructive operations, passing LLM-generated
+parameters without validation, or chaining tool calls into harmful sequences.
+DORA requires financial entities to implement protection controls for agent
+tool access (Art. 9), maintain governance covering agent tool permissions
+(Art. 5–7), and deploy detection for anomalous tool invocation patterns (Art. 10).
 
 #### DORA mapping
 
 | Requirement | Article | Group | Description |
 |---|---|---|---|
-| Protection and Prevention — agent access controls | Art. 9 | Protection | Implement security controls enforcing least privilege on agent tool access, data store access, and API permissions within financial systems |
-| ICT Risk Management — agent permission governance | Art. 5–7 | Governance | Include agent access control policies in ICT risk management framework; define acceptable permission scopes per agent role and financial function |
-| Detection — unauthorised access detection | Art. 10 | Detection | Monitor agent access patterns for unauthorised tool invocations, data access beyond scope, and permission violations; alert on detection |
-| Resilience Testing — access control testing | Art. 24–27 | Testing | Include agent access control bypass in resilience testing; verify that agents cannot exceed defined permission boundaries under adversarial conditions |
+| Protection and Prevention — agent tool access controls | Art. 9 | Protection | Implement security controls enforcing least privilege on agent tool access; validate all tool parameters as untrusted; enforce human confirmation for irreversible operations |
+| ICT Risk Management — agent tool governance | Art. 5–7 | Governance | Include agent tool access policies in ICT risk management framework; define acceptable tool scopes per agent role and financial function; classify tool irreversibility |
+| Detection — tool misuse detection | Art. 10 | Detection | Monitor agent tool invocation patterns for anomalous usage — destructive parameters, unusual tool sequences, scope violations; alert on detection |
+| Resilience Testing — tool misuse testing | Art. 24–27 | Testing | Include tool misuse scenarios in resilience testing; test whether agents can be manipulated into destructive tool invocations or harmful parameter injection |
 
 #### Mitigations
 
 **Foundational**
-- Art. 9: Implement least privilege for all agent tool access; maintain
-  a capability manifest per agent deployment; deny access by default
-- Art. 5–7: Define agent access control policies in the ICT risk
-  management framework; specify maximum permissions per agent role
-- Art. 10: Log all agent access decisions; monitor for over-privileging
-  indicators and scope violations
+- Art. 9: Implement per-tool permission manifests for all agent deployments;
+  manage agent tool access as privileged access with minimum scope,
+  documented justification per tool, and quarterly review
+- Art. 5–7: Define agent tool access policies in the ICT risk management
+  framework; classify tools by irreversibility and require human
+  confirmation for all irreversible operations
+- Art. 10: Log all tool invocations with tool identity, parameters,
+  agent identity, and timestamp; monitor for scope violations
 
 **Hardening**
-- Art. 24–27: Test agent access controls under adversarial conditions;
-  verify permission boundaries hold against manipulation
-- Art. 9: Implement just-in-time access for agent tool invocations;
-  grant access only for task duration
-- Art. 5–7: Include agent access control reviews in management
-  reporting; escalate over-privileging findings
+- Art. 24–27: Test agent tool access controls under adversarial conditions;
+  verify that agents cannot be manipulated into destructive tool use
+- Art. 9: Validate all LLM-generated tool parameters as untrusted input
+  before execution; implement MCP tool descriptor integrity verification
+- Art. 5–7: Include agent tool access reviews in management reporting;
+  escalate over-privileging findings
 
 **Advanced**
-- Deploy policy-as-code for agent access control; automate enforcement
-  and audit of access policies
-- Art. 9: Implement dynamic privilege adjustment based on agent context
-  and risk level
-- Art. 10: Integrate access monitoring into continuous resilience
-  assessment; detect access control drift over time
+- Art. 24–27: Conduct red-team exercises targeting tool misuse through
+  prompt manipulation, tool chain exploitation, and MCP descriptor poisoning
+- Art. 9: Deploy formal tool permission verification; prove that no
+  sequence of tool invocations can achieve outcomes beyond defined scope
+- Art. 13: Document tool misuse incidents; update tool governance based
+  on post-incident analysis
 
 #### Tools
 
@@ -201,81 +206,87 @@ and deploy detection for unauthorised access patterns (Art. 10).
 | Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 | Guardrails AI | Open-source | https://github.com/guardrails-ai/guardrails |
 | HashiCorp Vault | Commercial | https://www.vaultproject.io |
-| AWS IAM / Azure RBAC | Commercial | https://aws.amazon.com/iam/ |
+| LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI06 Data Lineage Fragmentation
-- Other frameworks: FedRAMP AC-3 – SP 800-218A PW.1.1-PS – CIS Controls 6
+- LLM Top 10: LLM05 Insecure Output Handling, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
+- Other frameworks: FedRAMP AC-3 – SP 800-218A PW.1.1-PS – OWASP NHI Top 10 NHI-5
 
 ---
 
-### ASI03 – Privilege Escalation
+### ASI03 – Identity & Privilege Abuse
 
 **Severity:** Critical
 
-Agents exploit misconfigured permissions, tool chaining, or inter-agent
-trust to escalate privileges beyond intended scope. DORA requires financial
-entities to implement protection controls preventing escalation (Art. 9),
-classify escalation events as ICT incidents (Art. 17–23), and include
-escalation scenarios in resilience testing (Art. 24–27).
+Agents inherit and cache credentials exploited for lateral movement.
+Agents exploit misconfigured permissions, inherited credentials, or
+inter-agent trust to access resources beyond their intended scope — using
+cached tokens, accumulating privileges through delegation, or impersonating
+other agent identities. DORA requires financial entities to implement
+protection controls preventing credential abuse (Art. 9), classify
+credential exploitation events as ICT incidents (Art. 17–23), and
+identify all agent identities as ICT assets (Art. 8).
 
 #### DORA mapping
 
 | Requirement | Article | Group | Description |
 |---|---|---|---|
-| Protection and Prevention — escalation prevention controls | Art. 9 | Protection | Implement security controls preventing agent privilege escalation through tool chaining, inter-agent delegation, or permission accumulation |
-| ICT Incident Management — escalation incident reporting | Art. 17–23 | Incidents | Classify agent privilege escalation as an ICT-related incident; assess impact on financial systems and report per DORA incident classification criteria |
-| Resilience Testing — escalation scenario testing | Art. 24–27 | Testing | Include agent privilege escalation scenarios in threat-led penetration testing; test for escalation through tool chaining and inter-agent trust |
-| Detection — escalation detection | Art. 10 | Detection | Deploy detection mechanisms for agent privilege escalation; monitor for permission boundary violations and unexpected privilege accumulation |
+| Protection and Prevention — agent credential controls | Art. 9 | Protection | Implement security controls preventing agent credential abuse — unique NHI per agent, minimum scope, short TTL, no credential inheritance without explicit authorisation |
+| ICT Incident Management — credential abuse reporting | Art. 17–23 | Incidents | Classify agent credential abuse and lateral movement as ICT-related incidents; assess impact on financial systems and report per DORA incident classification criteria |
+| Identification — agent identity assets | Art. 8 | Identification | Register all agent identities, credentials, and NHIs in the ICT asset inventory; classify by privilege level and access scope |
+| Detection — credential anomaly detection | Art. 10 | Detection | Deploy detection for agent credential anomalies — unusual access patterns, scope violations, credential reuse across sessions; alert on detection |
 
 #### Mitigations
 
 **Foundational**
-- Art. 9: Define explicit privilege ceilings per agent; prevent
-  privilege accumulation through chained operations; enforce at each
-  tool invocation boundary
-- Art. 17–23: Define incident classification criteria for agent
-  privilege escalation events; establish reporting procedures
-- Art. 10: Monitor for permission boundary violations; alert on
-  unexpected privilege levels
+- Art. 9: Manage agent credentials as privileged accounts — unique NHI
+  per agent deployment, minimum scope, no shared credentials, short TTL
+  with automatic expiry
+- Art. 8: Register all agent identities in the ICT asset inventory;
+  classify by privilege level; maintain credential lifecycle records
+- Art. 17–23: Define incident classification criteria for agent credential
+  abuse events; establish reporting procedures
 
 **Hardening**
-- Art. 24–27: Include privilege escalation in threat-led penetration
-  testing; test for escalation through all available tool chains
-- Art. 9: Implement privilege decay; agent permissions expire after
-  defined duration and must be re-authorised
-- Art. 17–23: Include escalation in incident response playbooks;
-  define automated containment procedures
+- Art. 9: Implement credential brokering through a dedicated identity
+  service — agents never inherit user credentials directly; scoped,
+  time-limited tokens issued per operation
+- Art. 10: Deploy credential anomaly detection — unusual access scope,
+  timing, or lateral movement patterns alerted with automated response
+- Art. 9: Quarterly privileged access review includes all agent NHIs;
+  unused permissions removed
 
 **Advanced**
-- Art. 9: Deploy formal privilege verification; prove that no sequence
-  of tool invocations can exceed the defined privilege ceiling
-- Art. 24–27: Conduct advanced escalation testing in multi-agent
-  environments; test inter-agent trust exploitation
-- Art. 13: Document escalation incidents; update privilege models based
-  on post-incident analysis
+- Art. 24–27: Include credential abuse in threat-led penetration testing —
+  attempt lateral movement using agent credentials, document access
+  scope achievable
+- Art. 9: Implement PKI-backed agent identities — certificate-based
+  authentication as advanced NHI control
+- Art. 13: Document credential abuse incidents; update identity models
+  based on post-incident analysis
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 | SPIFFE/SPIRE | Open-source | https://spiffe.io |
 | HashiCorp Vault | Commercial | https://www.vaultproject.io |
 | CyberArk | Commercial | https://www.cyberark.com |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 
 #### Cross-references
 - LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure
-- Other frameworks: FedRAMP AC-6 – SP 800-218A PW.1.1-PS – MITRE ATLAS AML.T0015
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 (all entries) – FedRAMP AC-6/IA-2 – MITRE ATLAS AML.T0015
 
 ---
 
-### ASI04 – Supply Chain Compromise
+### ASI04 – Agentic Supply Chain Vulnerabilities
 
 **Severity:** High
 
+Compromised tools, MCP servers, or model components alter agent behaviour.
 Agentic AI systems depend on third-party tools, plugins, MCP servers,
 model weights, and agent frameworks that can be compromised. DORA requires
 financial entities to manage third-party ICT service provider risk for
@@ -327,22 +338,22 @@ agent components (Art. 28–44), identify all agent supply chain assets
 | OWASP Dependency-Check | Open-source | https://owasp.org/www-project-dependency-check/ |
 
 #### Cross-references
-- LLM Top 10: LLM05 Supply Chain Vulnerabilities
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI19 Third-Party Data Risk
+- LLM Top 10: LLM03 Supply Chain Vulnerabilities
+- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
 - Other frameworks: MITRE ATLAS AML.T0056 – FedRAMP SR-2 – EBA Outsourcing Guidelines
 
 ---
 
-### ASI05 – Uncontrolled Code Execution
+### ASI05 – Unexpected Code Execution
 
 **Severity:** Critical
 
-Agents with code execution capabilities run attacker-influenced code leading
-to system compromise, data exfiltration, or lateral movement. DORA requires
-financial entities to implement protection controls for code execution
-boundaries (Art. 9), conduct resilience testing of execution sandboxes
-(Art. 24–27), and classify code execution incidents for reporting
-(Art. 17–23).
+Agents that generate and execute code become RCE gateways. Agents with
+code execution capabilities run attacker-influenced code leading to system
+compromise, data exfiltration, or lateral movement. DORA requires financial
+entities to implement protection controls for code execution boundaries
+(Art. 9), conduct resilience testing of execution sandboxes (Art. 24–27),
+and classify code execution incidents for reporting (Art. 17–23).
 
 #### DORA mapping
 
@@ -350,7 +361,7 @@ boundaries (Art. 9), conduct resilience testing of execution sandboxes
 |---|---|---|---|
 | Protection and Prevention — code execution controls | Art. 9 | Protection | Implement security controls restricting agent code execution — sandboxing, capability restrictions, network isolation, and resource limits |
 | Resilience Testing — sandbox escape testing | Art. 24–27 | Testing | Include agent code execution sandbox escape in threat-led penetration testing; test boundary integrity under adversarial conditions |
-| ICT Incident Management — code execution incident reporting | Art. 17–23 | Incidents | Classify uncontrolled code execution events as ICT-related incidents; assess impact on financial systems and report per DORA criteria |
+| ICT Incident Management — code execution incident reporting | Art. 17–23 | Incidents | Classify unexpected code execution events as ICT-related incidents; assess impact on financial systems and report per DORA criteria |
 | Detection — execution anomaly detection | Art. 10 | Detection | Monitor agent code execution for anomalous patterns — unexpected system calls, network access, filesystem operations; alert on detection |
 
 #### Mitigations
@@ -361,7 +372,7 @@ boundaries (Art. 9), conduct resilience testing of execution sandboxes
   system call access not explicitly required
 - Art. 10: Monitor agent code execution for anomalous behaviour;
   alert on unexpected system calls or network access
-- Art. 17–23: Define incident classification criteria for uncontrolled
+- Art. 17–23: Define incident classification criteria for unexpected
   code execution events
 
 **Hardening**
@@ -389,16 +400,17 @@ boundaries (Art. 9), conduct resilience testing of execution sandboxes
 | E2B | Open-source | https://e2b.dev |
 
 #### Cross-references
-- LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure
+- LLM Top 10: LLM05 Insecure Output Handling
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: CWE-94 – FedRAMP CM-7 – SP 800-218A PW.5.1-PS
 
 ---
 
-### ASI06 – Memory Poisoning & Context Confusion
+### ASI06 – Memory & Context Poisoning
 
 **Severity:** High
 
+Persistent memory poisoning causes systematic incorrect behaviour.
 Adversaries manipulate agent memory stores, context windows, or shared
 state to influence future agent decisions. DORA requires financial entities
 to implement protection controls for agent memory integrity (Art. 9),
@@ -451,81 +463,83 @@ memory stores as ICT assets (Art. 8).
 | HashiCorp Vault | Commercial | https://www.vaultproject.io |
 
 #### Cross-references
-- LLM Top 10: LLM03 Training Data Poisoning, LLM08 Vector and Embedding Weaknesses
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
+- LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
+- DSGAI 2026: DSGAI13 Vector Store Platform Security
 - Other frameworks: MITRE ATLAS AML.T0018 – FedRAMP SC-28 – SP 800-218A PS.1.1-PS
 
 ---
 
-### ASI07 – Lateral Tool Chaining
+### ASI07 – Insecure Inter-Agent Communication
 
 **Severity:** High
 
-Agents exploit tool chaining to combine individually safe operations into
-harmful sequences. DORA requires financial entities to implement protection
-controls for tool chain boundaries (Art. 9), maintain governance covering
-tool composition risk (Art. 5–7), and include tool chaining in resilience
-testing (Art. 24–27).
+A2A channels lacking authentication enable agent-in-the-middle attacks.
+Agents in multi-agent systems communicate without proper authentication,
+encryption, or schema validation, enabling spoofing, replay attacks, and
+message manipulation. DORA requires financial entities to implement
+protection controls for inter-agent communication (Art. 9), deploy
+detection for A2A anomalies (Art. 10), and include A2A security in
+resilience testing (Art. 24–27).
 
 #### DORA mapping
 
 | Requirement | Article | Group | Description |
 |---|---|---|---|
-| Protection and Prevention — tool chain controls | Art. 9 | Protection | Implement security controls restricting tool chain composition; enforce per-tool access control and define permitted tool sequences for financial agent systems |
-| ICT Risk Management — tool composition governance | Art. 5–7 | Governance | Include tool chaining risk in ICT risk management framework; define policies for permitted tool combinations and escalation requirements for novel tool chains |
-| Resilience Testing — tool chain testing | Art. 24–27 | Testing | Include lateral tool chaining in resilience testing; test whether agents can combine permitted tools to achieve unauthorised outcomes |
-| Detection — tool chain anomaly detection | Art. 10 | Detection | Monitor agent tool invocation sequences for anomalous patterns; alert on novel tool combinations or sequences that cross security boundaries |
+| Protection and Prevention — A2A communication controls | Art. 9 | Protection | Implement security controls for inter-agent communication — mutual authentication, encryption in transit, schema validation, and replay protection |
+| Detection — A2A anomaly detection | Art. 10 | Detection | Monitor inter-agent communication for anomalous patterns — spoofing attempts, schema violations, replay attacks, and unauthorised agent-to-agent connections |
+| Resilience Testing — A2A security testing | Art. 24–27 | Testing | Include inter-agent communication security in resilience testing; test for spoofing, replay attacks, and schema violations against your specific deployment |
+| ICT Risk Management — A2A governance | Art. 5–7 | Governance | Include inter-agent communication risk in ICT risk management framework; define policies for A2A authentication methods and encryption requirements |
 
 #### Mitigations
 
 **Foundational**
-- Art. 9: Define permitted tool chains per agent role; enforce access
-  control independently at each tool boundary; deny undefined sequences
-- Art. 5–7: Include tool chaining risk in ICT risk management; define
-  acceptable tool combinations for financial AI agents
-- Art. 10: Log complete tool chain sequences; monitor for novel or
-  anomalous tool combinations
+- Art. 9: Encrypt all A2A communication in transit — mutual TLS, no
+  cleartext inter-agent messages on any network segment
+- Art. 10: Log all A2A messages with sender identity, content hash,
+  timestamp, and schema validation results
+- Art. 5–7: Include A2A communication security in ICT risk management;
+  define authentication and encryption requirements
 
 **Hardening**
-- Art. 24–27: Include tool chain testing in resilience testing; verify
-  that no permitted tool combination achieves harmful outcomes
-- Art. 9: Implement transaction-level authorisation for multi-step
-  operations crossing security boundaries
-- Art. 10: Deploy automated detection of anomalous tool chain patterns;
-  alert on novel combinations
+- Art. 9: Map all A2A communication channels — authentication method,
+  encryption status, replay protection documented
+- Art. 24–27: Include A2A security in resilience testing; test for
+  spoofing, replay attacks, and schema violations
+- Art. 10: Deploy automated detection for A2A communication anomalies;
+  alert on unauthorised agent connections
 
 **Advanced**
-- Art. 9: Deploy formal tool chain analysis; verify that no permitted
-  combination can exceed defined privilege boundaries
-- Art. 24–27: Conduct advanced tool chain testing specific to your
-  financial AI deployment; cover all production tool combinations
-- Art. 5–7: Include tool chain risk in board-level reporting for
-  financial AI systems
+- Art. 24–27: Conduct advanced red-team exercises targeting A2A security —
+  agent-in-the-middle attacks, message manipulation, identity spoofing
+- Art. 9: Implement short-lived A2A certificates with automated rotation
+  and hardware-backed keys for highest-risk clusters
+- Art. 13: Document A2A security incidents; update communication controls
+  based on post-incident analysis
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| Guardrails AI | Open-source | https://github.com/guardrails-ai/guardrails |
+| SPIFFE/SPIRE | Open-source | https://spiffe.io |
+| Istio | Open-source | https://istio.io |
+| OpenTelemetry | Open-source | https://opentelemetry.io |
 | LangSmith | Commercial | https://smith.langchain.com |
-| NeMo Guardrails | Open-source | https://github.com/NVIDIA/NeMo-Guardrails |
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency
-- DSGAI 2026: DSGAI06 Data Lineage Fragmentation
-- Other frameworks: FedRAMP AC-6 – SP 800-218A PW.1.1-PS – CWE-269
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 NHI-4/NHI-7 – FedRAMP SC-7 – SP 800-218A PW.2.1-PS
 
 ---
 
-### ASI08 – Cascading Automation & Failure
+### ASI08 – Cascading Agent Failures
 
 **Severity:** High
 
-Failures or attacks in one agent propagate through interconnected multi-agent
-systems causing cascading disruptions. DORA requires financial entities to
-implement response and recovery procedures for cascading failures (Art. 11),
-deploy detection for cascade indicators (Art. 10), and maintain backup and
+Single-point faults propagate through multi-agent workflows. Failures or
+attacks in one agent propagate through interconnected multi-agent systems
+causing cascading disruptions. DORA requires financial entities to implement
+response and recovery procedures for cascading failures (Art. 11), deploy
+detection for cascade indicators (Art. 10), and maintain backup and
 restoration capabilities for agent systems (Art. 12).
 
 #### DORA mapping
@@ -573,55 +587,59 @@ restoration capabilities for agent systems (Art. 12).
 | PagerDuty | Commercial | https://www.pagerduty.com |
 
 #### Cross-references
-- LLM Top 10: LLM04 Model DoS, LLM10 Unbounded Consumption
+- LLM Top 10: LLM10 Unbounded Consumption
 - DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
 - Other frameworks: FedRAMP SC-7 – SP 800-218A PW.2.1-PS – NIST CSF 2.0 RS.RP-1
 
 ---
 
-### ASI09 – Emerging Agentic Patterns
+### ASI09 – Human-Agent Trust Exploitation
 
 **Severity:** Medium
 
-Novel agentic architectures introduce security risks not yet fully
-characterised. DORA requires financial entities to maintain governance
-covering novel ICT risks (Art. 5–7), deploy detection for unexpected
-agent behaviours (Art. 10), and apply lessons learned to evolving agent
-security (Art. 13).
+Agents build false trust enabling manipulation of human approvers. Agents
+establish unwarranted trust with human operators — through apparent
+competence, conversational rapport, or presentation authority — then
+exploit that trust to obtain approvals for harmful actions, bypass
+oversight, or suppress safety concerns. DORA requires financial entities
+to maintain governance covering human-agent interaction risks (Art. 5–7),
+deploy detection for trust exploitation patterns (Art. 10), and apply
+lessons learned from trust exploitation incidents (Art. 13).
 
 #### DORA mapping
 
 | Requirement | Article | Group | Description |
 |---|---|---|---|
-| ICT Risk Management — novel agentic risk governance | Art. 5–7 | Governance | Include emerging agentic pattern risks in ICT risk management framework; assess novel architectures for operational resilience implications before deployment |
-| Detection — unexpected behaviour monitoring | Art. 10 | Detection | Monitor agent systems for unexpected behaviour — novel tool use patterns, unanticipated goal decomposition, and emergent inter-agent coordination |
-| Learning and Evolving — emerging pattern assessment | Art. 13 | Learning | Apply lessons learned from emerging agentic pattern incidents; update governance and controls as new attack techniques and defence approaches emerge |
-| Resilience Testing — novel architecture testing | Art. 24–27 | Testing | Include emerging agentic architecture security in resilience testing; assess novel patterns for resilience implications before production deployment |
+| ICT Risk Management — human-agent trust governance | Art. 5–7 | Governance | Include human-agent trust exploitation risks in ICT risk management framework; define policies for agent advisory labelling, approval independence, and operator training |
+| Detection — trust exploitation monitoring | Art. 10 | Detection | Monitor for trust exploitation indicators — operators approving high-risk actions without independent verification, systematic over-reliance on agent recommendations |
+| Learning and Evolving — trust exploitation assessment | Art. 13 | Learning | Apply lessons learned from trust exploitation incidents; update governance and training as new manipulation patterns emerge |
+| Resilience Testing — trust exploitation testing | Art. 24–27 | Testing | Include human-agent trust exploitation in resilience testing; test operator susceptibility to manipulated agent recommendations |
 
 #### Mitigations
 
 **Foundational**
-- Art. 5–7: Include emerging agentic risks in ICT risk management;
-  require security assessment before deploying novel agent architectures
-- Art. 10: Monitor for unexpected agent behaviours; establish baseline
-  behaviour profiles and alert on deviations
-- Art. 13: Track emerging agentic attack techniques; update controls
-  as new patterns are identified
+- Art. 5–7: Include human-agent trust exploitation in ICT risk management;
+  require security awareness training for all users of agentic tools
+  covering AI limitations and verification requirements
+- Art. 10: Monitor operator decisions influenced by agent recommendations;
+  detect over-trust patterns through audit log analysis
+- Establish policy that sensitive approvals cannot be completed through
+  agent chat interface; require independent approval flows
 
 **Hardening**
-- Art. 24–27: Include novel agent architecture testing in resilience
-  testing programme; assess security implications before production
-- Art. 10: Deploy automated detection for emergent agent capabilities;
-  alert on behaviours outside defined scope
-- Art. 5–7: Include emerging agentic risks in management risk reporting
+- Art. 24–27: Include trust exploitation in resilience testing; test
+  operator susceptibility to manipulated agent recommendations
+- Art. 10: Deploy AI advisory labelling in all interface contexts;
+  visual distinction from authoritative system content
+- Art. 5–7: Include trust exploitation risk in management risk reporting
 
 **Advanced**
-- Participate in AI security research communities; contribute to and
-  learn from sector knowledge on agentic AI security
-- Art. 13: Establish continuous learning programme for agentic AI
-  security; update governance as the field evolves
-- Art. 24–27: Conduct advanced resilience testing for emerging patterns
+- Art. 13: Establish continuous learning programme for trust exploitation;
+  update governance as new manipulation patterns are identified
+- Art. 24–27: Conduct advanced resilience testing for trust exploitation
   specific to financial AI deployments
+- Operator competency assessments covering AI trust — verify operators
+  can identify manipulated recommendations
 
 #### Tools
 
@@ -634,69 +652,73 @@ security (Art. 13).
 
 #### Cross-references
 - LLM Top 10: LLM09 Misinformation
-- DSGAI 2026: DSGAI18 Governance Gaps
-- Other frameworks: NIST AI RMF MAP 1.5 – FedRAMP CA-7 – SP 800-218A PW.7.2-PS
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
+- Other frameworks: EU AI Act Art. 13/50 – FedRAMP AT-3 – SP 800-218A PW.7.2-PS
 
 ---
 
-### ASI10 – AI Agent Dependency Failures
+### ASI10 – Rogue Agents
 
-**Severity:** Medium
+**Severity:** Critical
 
-Agents depend on external services whose failure or degradation causes
-agent malfunction, incorrect outputs, or service disruption. DORA requires
-financial entities to manage third-party risk for agent dependencies
-(Art. 28–44), implement response and recovery for dependency failures
-(Art. 11), and maintain backup policies for service continuity (Art. 12).
+Compromised agents pursue hidden goals while appearing compliant. Agents
+operate outside their intended boundaries — pursuing hidden objectives,
+executing undisclosed tool calls, or systematically biasing recommendations
+— while maintaining an appearance of normal operation. DORA requires
+financial entities to deploy detection for rogue agent behaviour (Art. 10),
+classify rogue agent events as ICT incidents (Art. 17–23), and include
+rogue agent scenarios in resilience testing (Art. 24–27).
 
 #### DORA mapping
 
 | Requirement | Article | Group | Description |
 |---|---|---|---|
-| Third-Party Risk — agent dependency oversight | Art. 28–44 | Third-Party | Include all agent external dependencies — model APIs, tool endpoints, data sources — in third-party ICT risk management with availability and integrity requirements |
-| Response and Recovery — dependency failure response | Art. 11 | Recovery | Define response and recovery procedures for agent dependency failures; include fallback activation, graceful degradation, and service restoration |
-| Backup Policies — dependency continuity | Art. 12 | Backup | Maintain backup and fallback mechanisms for critical agent dependencies; enable continued operation during provider outages |
-| Detection — dependency health monitoring | Art. 10 | Detection | Monitor agent dependency health in real time — API availability, response latency, error rates; alert on degradation and trigger fallback procedures |
+| Detection — rogue agent behaviour monitoring | Art. 10 | Detection | Deploy comprehensive behavioural monitoring for all agents — establish behavioural baselines, detect deviations, alert on hidden tool invocations and systematic recommendation bias |
+| ICT Incident Management — rogue agent incident reporting | Art. 17–23 | Incidents | Classify rogue agent events as ICT-related incidents; define containment procedures including kill switch activation, audit, and forensic capture |
+| Resilience Testing — rogue agent scenarios | Art. 24–27 | Testing | Include rogue agent scenarios in threat-led penetration testing; simulate persistent hidden goal pursuit across extended sessions; verify detection capability |
+| ICT Risk Management — rogue agent governance | Art. 5–7 | Governance | Include rogue agent risk in ICT risk management framework; define scope constraints and behavioural monitoring requirements for all agent deployments |
 
 #### Mitigations
 
 **Foundational**
-- Art. 28–44: Include all agent dependencies in third-party risk
-  assessments per DORA requirements; establish contractual SLAs for
-  availability, performance, and incident notification
-- Art. 11: Define fallback procedures for dependency failures; include
-  graceful degradation and safe-state transitions
-- Art. 10: Monitor dependency health; alert on availability and
-  performance degradation
+- Art. 10: Comprehensive audit logging of all agent actions — no
+  production deployment without full observability; non-negotiable
+  requirement for financial AI agents
+- Art. 17–23: Define rogue agent containment as incident response
+  procedure — kill switch activation, recommendation audit, process
+  state validation, forensic capture documented before deployment
+- Art. 5–7: Define scope constraints in ICT risk framework; rogue
+  agent cannot exceed permission envelope regardless of internal goal
 
 **Hardening**
-- Art. 28–44: Identify critical agent dependencies per DORA criteria;
-  require redundant providers for critical services
-- Art. 12: Maintain backup mechanisms for critical dependencies; test
-  fallback procedures regularly
-- Art. 11: Include dependency failure in business continuity testing
+- Art. 10: Centralise agent behavioural anomaly alerts; behavioural
+  baseline deviation events fed into SIEM with tiered response
+- Art. 24–27: Include rogue agent scenarios in resilience testing;
+  simulate persistent hidden goal pursuit, verify detection holds
+- Aggregate recommendation analysis — periodic review detects
+  systematic bias before operational harm
 
 **Advanced**
-- Art. 28–44: Conduct on-site assessments of critical agent dependency
-  providers; assess resilience posture and recovery capabilities
-- Art. 12: Include dependency failover in DORA business continuity
-  testing; verify under production conditions
-- Art. 11: Document dependency failure RTO/RPO; include in regulatory
-  reporting
+- Art. 24–27: Conduct extended red-team exercises simulating rogue
+  agents across multi-session operations; document detection gaps
+- Art. 13: Document rogue agent drill findings; close detection gaps
+  before next deployment
+- Art. 45: Share rogue agent indicators of compromise with sector
+  peers through DORA information sharing arrangements
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
+| LangSmith | Commercial | https://smith.langchain.com |
 | OpenTelemetry | Open-source | https://opentelemetry.io |
-| LiteLLM | Open-source | https://github.com/BerriAI/litellm |
+| Garak | Open-source | https://github.com/leondz/garak |
 | PagerDuty | Commercial | https://www.pagerduty.com |
-| Istio | Open-source | https://istio.io |
 
 #### Cross-references
-- LLM Top 10: LLM05 Supply Chain Vulnerabilities, LLM10 Unbounded Consumption
-- DSGAI 2026: DSGAI19 Third-Party Data Risk
-- Other frameworks: FedRAMP SA-9 – SP 800-218A PW.4.1-PS – EBA Outsourcing Guidelines
+- LLM Top 10: LLM06 Excessive Agency
+- DSGAI 2026: DSGAI16 Endpoint & Browser Overreach
+- Other frameworks: FedRAMP CA-7/SI-4 – SP 800-218A RV.1.1-PS – EU AI Act Art. 14/15
 
 ---
 
@@ -704,10 +726,10 @@ financial entities to manage third-party risk for agent dependencies
 
 | Phase | Governance (Art. 5–7) | Protection & Detection (Art. 9–10) | Testing, Incidents & Third-Party (Art. 11–44) |
 |---|---|---|---|
-| 1 – Now | Include agentic AI in ICT risk framework (ASI02/07/09); agent access policies (ASI02) | Art. 9 access controls for ASI02/03; input validation for ASI01; code execution restrictions for ASI05 | Art. 28–44 agent vendor assessment for ASI04/10; Art. 17–23 incident criteria for ASI03/05 |
-| 2 – This sprint | Agent supply chain governance for ASI04; tool chaining policies for ASI07 | Art. 9 memory protection for ASI06; Art. 10 detection for ASI01/06/08; sandbox enforcement for ASI05 | Art. 24–27 agent hijacking testing for ASI01; escalation testing for ASI03; Art. 11 circuit breakers for ASI08 |
-| 3 – This quarter | Board-level agentic AI risk reporting; cascading risk governance for ASI08 | Art. 9 comprehensive agent protection; Art. 10 cascade and behaviour monitoring for all entries | Art. 24–27 full agentic resilience testing; Art. 28–44 critical provider assessments; Art. 12 backup testing |
-| 4 – Ongoing | Governance framework refresh; emerging pattern assessment (ASI09) | Continuous monitoring; detection tuning; protection control updates | Annual resilience testing; third-party reassessment; Art. 45 information sharing |
+| 1 – Now | Include agentic AI in ICT risk framework (ASI02/09/10); agent tool and identity policies (ASI02/03) | Art. 9 tool access controls for ASI02; input validation for ASI01; code execution restrictions for ASI05 | Art. 28–44 agent vendor assessment for ASI04; Art. 17–23 incident criteria for ASI03/05/10 |
+| 2 – This sprint | Agent supply chain governance for ASI04; A2A communication policies for ASI07 | Art. 9 memory protection for ASI06; Art. 10 detection for ASI01/06/08/10; sandbox enforcement for ASI05 | Art. 24–27 agent hijacking testing for ASI01; credential abuse testing for ASI03; Art. 11 circuit breakers for ASI08 |
+| 3 – This quarter | Board-level agentic AI risk reporting; cascading risk governance for ASI08; trust exploitation governance for ASI09 | Art. 9 comprehensive agent protection; Art. 10 rogue agent and behaviour monitoring for all entries | Art. 24–27 full agentic resilience testing; Art. 28–44 critical provider assessments; Art. 12 backup testing |
+| 4 – Ongoing | Governance framework refresh; trust exploitation assessment (ASI09) | Continuous monitoring; detection tuning; protection control updates | Annual resilience testing; third-party reassessment; Art. 45 information sharing |
 
 ---
 
@@ -715,7 +737,7 @@ financial entities to manage third-party risk for agent dependencies
 
 - [DORA – EU Regulation 2022/2554](https://eur-lex.europa.eu/eli/reg/2022/2554/oj)
 - [EBA DORA Regulatory Technical Standards](https://www.eba.europa.eu/regulation-and-policy/digital-operational-resilience-act-dora)
-- [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
+- [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [ECB Guide on Outsourcing and ICT Risk](https://www.bankingsupervision.europa.eu/)
 - [MITRE ATLAS](https://atlas.mitre.org)
 - [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/)
@@ -726,6 +748,7 @@ financial entities to manage third-party risk for agent dependencies
 
 | Date | Version | Change | Author |
 |---|---|---|---|
+| 2026-05-25 | 2026-Q2 | Remediate ASI entry names, severities, descriptions, and control mappings to canonical Agentic Top 10 2026 | OWASP GenAI Data Security Initiative |
 | 2026-03-28 | 2026-Q1 | Initial mapping – ASI01–ASI10 full entries | OWASP GenAI Data Security Initiative |
 
 ---
