@@ -144,7 +144,7 @@ detection capabilities to identify injection attempts in real time (Art. 10).
 | DORA RTS/ITS | Reference | https://www.eba.europa.eu/regulation-and-policy/digital-operational-resilience-act-dora |
 
 #### Cross-references
-- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse
+- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse & Exploitation
 - DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: MITRE ATLAS AML.T0051 – FedRAMP SI-10 – SP 800-218A PW.2.1-PS
 
@@ -209,8 +209,8 @@ and maintain governance frameworks covering AI data handling (Art. 5–7).
 | Nightfall DLP | Commercial | https://www.nightfall.ai |
 
 #### Cross-references
-- Agentic Top 10: ASI03 Privilege Escalation
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure, DSGAI16 Erosion of Privacy
+- Agentic Top 10: ASI03 Identity & Privilege Abuse
+- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI16 Erosion of Privacy
 - Other frameworks: GDPR Art. 33–34 – FedRAMP SC-28 – SP 800-218A PS.1.1-PS
 
 ---
@@ -273,9 +273,9 @@ vendors (Art. 28–44), identify and classify all AI supply chain components
 | Sigstore | Open-source | https://www.sigstore.dev |
 
 #### Cross-references
-- Agentic Top 10: ASI04 Agentic Supply Chain Vulnerabilities
-- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning
-- Other frameworks: MITRE ATLAS AML.T0010 – FedRAMP SR-2 – EBA Outsourcing Guidelines
+- Agentic Top 10: ASI04 Agentic Supply Chain Vulnerabilities, ASI10 AI Agent Dependency Failures
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI19 Third-Party Data Risk
+- Other frameworks: MITRE ATLAS AML.T0056 – FedRAMP SR-2 – EBA Outsourcing Guidelines
 
 ---
 
@@ -345,7 +345,7 @@ third-party ICT service provider risk covering AI model and data providers
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI05 Data Integrity & Validation Failures
-- Other frameworks: MITRE ATLAS AML.T0020 – FedRAMP SR-2 – SP 800-218A PS.1
+- Other frameworks: MITRE ATLAS AML.T0020 – FedRAMP SR-2 – SP 800-218A PS.1.1-PS
 
 ---
 
@@ -471,8 +471,8 @@ entities to maintain ICT risk governance covering AI autonomy risk
 | LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse, ASI07 Lateral Tool Chaining
-- DSGAI 2026: DSGAI06 Tool, Plugin & Agent Data Exchange
+- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse & Exploitation, ASI07 Lateral Tool Chaining
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
 - Other frameworks: FedRAMP AC-6 – SP 800-218A PW.1.1-PS – MITRE ATLAS AML.T0015
 
 ---
@@ -534,7 +534,7 @@ and apply lessons learned from extraction events (Art. 13).
 
 #### Cross-references
 - Agentic Top 10: ASI01 Agent Goal Hijack
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure
+- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI15 Over-Broad Context Windows
 - Other frameworks: CWE-200 – FedRAMP SC-28 – SP 800-218A PS.1.1-PS
 
 ---
@@ -595,8 +595,8 @@ embedding security in resilience testing (Art. 24–27).
 | OWASP ZAP | Open-source | https://www.zaproxy.org |
 
 #### Cross-references
-- Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
+- Agentic Top 10: ASI06 Memory & Context Poisoning
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI13 Vector Store Platform Security
 - Other frameworks: MITRE ATLAS AML.T0018 – FedRAMP SC-28 – SP 800-218A PS.1.1-PS
 
 ---
@@ -658,8 +658,8 @@ improvement from misinformation incidents (Art. 13).
 | LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- Agentic Top 10: ASI09 Emerging Agentic Patterns
-- DSGAI 2026: DSGAI17 Bias in Data
+- Agentic Top 10: ASI09 Human-Agent Trust Exploitation
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
 - Other frameworks: NIST AI RMF MAP 2.3 – FedRAMP SI-4 – SP 800-218A PW.7.2-PS
 
 ---
@@ -729,8 +729,8 @@ recovery policies for AI service continuity (Art. 12).
 
 | Phase | Governance (Art. 5–7) | Protection & Detection (Art. 9–10) | Testing & Third-Party (Art. 24–44) |
 |---|---|---|---|
-| 1 – Now | Include AI risk in ICT risk management framework (LLM06/09); define AI data policies (LLM02) | Art. 9 input validation for LLM01; output monitoring for LLM02/07; rate limiting for LLM04/10 | Art. 28–44 third-party AI provider assessment for LLM03/05 |
-| 2 – This sprint | AI autonomy policies for LLM06; AI supply chain governance for LLM05 | Art. 10 detection for LLM01/04/09/10; Art. 9 embedding protection for LLM08 | Art. 24–27 prompt injection testing for LLM01; supply chain resilience for LLM05 |
+| 1 – Now | Include AI risk in ICT risk management framework (LLM06/09); define AI data policies (LLM02) | Art. 9 input validation for LLM01; output validation for LLM05; output monitoring for LLM02/07; rate limiting for LLM10 | Art. 28–44 third-party AI provider assessment for LLM03/04 |
+| 2 – This sprint | AI autonomy policies for LLM06; AI supply chain governance for LLM03 | Art. 10 detection for LLM01/05/09/10; Art. 9 embedding protection for LLM08 | Art. 24–27 prompt injection testing for LLM01; supply chain resilience for LLM03 |
 | 3 – This quarter | Board-level AI risk reporting; AI incident classification criteria (LLM02/07) | Art. 9 comprehensive protection for all entries; Art. 10 AI behaviour monitoring | Art. 24–27 full AI resilience testing programme; Art. 28–44 critical provider assessments |
 | 4 – Ongoing | Governance framework refresh; regulatory reporting updates | Continuous monitoring; detection tuning; protection control updates | Annual resilience testing; third-party reassessment; threat intelligence sharing (Art. 45) |
 
@@ -751,6 +751,7 @@ recovery policies for AI service continuity (Art. 12).
 
 | Date | Version | Change | Author |
 |---|---|---|---|
+| 2026-05-25 | 2026-Q1-fix | Fix LLM03-LLM05 entry names to match 2025 LLM Top 10; add LLM05 Insecure Output Handling section; update cross-references to canonical names | OWASP GenAI Data Security Initiative |
 | 2026-03-28 | 2026-Q1 | Initial mapping – LLM01–LLM10 full entries | OWASP GenAI Data Security Initiative |
 
 ---

@@ -1,6 +1,6 @@
 <!--
   GenAI Security Crosswalk
-  Source list : OWASP Top 10 for Agentic AI 2026 (ASI01–ASI10)
+  Source list : OWASP Top 10 for Agentic Applications 2026 (ASI01–ASI10)
   Framework   : NIST SP 800-218A Secure Software Development Practices for Generative AI and Dual-Use Foundation Models
   Version     : 2026-Q1
   Maintained by: OWASP GenAI Data Security Initiative – https://genai.owasp.org
@@ -9,7 +9,7 @@
 
 # Agentic Top 10 2026 × NIST SP 800-218A
 
-Mapping the [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
+Mapping the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 to [NIST SP 800-218A: Secure Software Development Practices for Generative AI and Dual-Use Foundation Models](https://doi.org/10.6028/NIST.SP.800-218A.ipd)
 (Initial Public Draft, March 2024).
 
@@ -43,16 +43,16 @@ referencing the SSDF.
 
 | ID | Name | Severity | SP 800-218A Practices | Scope |
 |---|---|---|---|---|
-| ASI01 | Agent Goal Hijacking | Critical | PW.2.1-PS, PW.7.2-PS, PW.8.2-PS, RV.1.1-PS | Both |
-| ASI02 | Misconfigured Access Controls | High | PW.1.1-PS, PW.2.1-PS, PS.1.1-PS, PW.7.2-PS | Build |
-| ASI03 | Privilege Escalation | Critical | PW.1.1-PS, PW.5.1-PS, PS.1.1-PS, RV.1.1-PS | Both |
-| ASI04 | Supply Chain Compromise | High | PW.4.1-PS, PS.2.1-PS, PS.3.1-PS, RV.1.1-PS | Both |
-| ASI05 | Uncontrolled Code Execution | Critical | PW.2.1-PS, PW.5.1-PS, PW.8.2-PS, PS.1.1-PS | Both |
-| ASI06 | Memory Poisoning & Context Confusion | High | PS.1.1-PS, PS.3.1-PS, PW.7.2-PS, RV.3.1-PS | Both |
-| ASI07 | Lateral Tool Chaining | High | PW.1.1-PS, PW.2.1-PS, PW.7.2-PS, RV.1.1-PS | Build |
-| ASI08 | Cascading Automation & Failure | High | PW.2.1-PS, PW.8.2-PS, RV.2.1-PS, PW.1.1-PS | Both |
-| ASI09 | Emerging Agentic Patterns | Medium | PW.7.2-PS, PW.8.2-PS, RV.1.1-PS, RV.3.1-PS | Both |
-| ASI10 | AI Agent Dependency Failures | Medium | PW.4.1-PS, PS.2.1-PS, RV.1.1-PS, RV.2.1-PS | Both |
+| ASI01 | Agent Goal Hijack | Critical | PW.2.1-PS, PW.7.2-PS, PW.8.2-PS, RV.1.1-PS | Both |
+| ASI02 | Tool Misuse & Exploitation | Critical | PW.1.1-PS, PW.2.1-PS, PW.7.2-PS, PS.1.1-PS | Both |
+| ASI03 | Identity & Privilege Abuse | Critical | PW.1.1-PS, PW.5.1-PS, PS.1.1-PS, RV.1.1-PS | Both |
+| ASI04 | Agentic Supply Chain Vulnerabilities | High | PW.4.1-PS, PS.2.1-PS, PS.3.1-PS, RV.1.1-PS | Both |
+| ASI05 | Unexpected Code Execution | Critical | PW.2.1-PS, PW.5.1-PS, PW.8.2-PS, PS.1.1-PS | Both |
+| ASI06 | Memory & Context Poisoning | High | PS.1.1-PS, PS.3.1-PS, PW.7.2-PS, RV.3.1-PS | Both |
+| ASI07 | Insecure Inter-Agent Communication | High | PW.2.1-PS, PW.5.1-PS, PW.7.2-PS, PS.1.1-PS | Both |
+| ASI08 | Cascading Agent Failures | High | PW.2.1-PS, PW.8.2-PS, RV.2.1-PS, PW.1.1-PS | Both |
+| ASI09 | Human-Agent Trust Exploitation | Medium | PW.7.2-PS, PW.8.2-PS, RV.1.1-PS, PW.1.1-PS | Both |
+| ASI10 | Rogue Agents | Critical | PW.7.2-PS, PW.8.2-PS, RV.1.1-PS, RV.3.1-PS | Both |
 
 ---
 
@@ -72,10 +72,11 @@ referencing the SSDF.
 
 ---
 
-### ASI01 – Agent Goal Hijacking
+### ASI01 – Agent Goal Hijack
 
 **Severity:** Critical
 
+An attacker redirects agent objectives through instruction injection.
 Adversaries manipulate agent goals through direct or indirect prompt
 injection, context manipulation, or tool output poisoning, causing the agent
 to pursue attacker-chosen objectives instead of its intended task.
@@ -148,67 +149,64 @@ procedures for goal hijacking incidents in production (RV.1).
 
 #### Cross-references
 - LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: MITRE ATLAS AML.T0051 – SSDF PW.2 – NIST CSF 2.0 PR.AC-5
 
 ---
 
-### ASI02 – Misconfigured Access Controls
+### ASI02 – Tool Misuse & Exploitation
 
-**Severity:** High
+**Severity:** Critical
 
-Agents deployed with overly permissive access to tools, data sources, APIs,
-or infrastructure resources can be manipulated to access or modify resources
-beyond their intended scope. Misconfigured RBAC, missing tool-level
-permission boundaries, and absent tenant isolation expose organisations to
-data leakage, unauthorised actions, and lateral movement. SP 800-218A
-addresses this through explicit security requirements for capability
-constraints (PW.1), threat modelling of access paths (PW.2), protection of
-agent configuration artefacts (PS.1), and review of access control
-enforcement (PW.7).
+Agents misuse legitimate tools via prompt manipulation or unsafe delegation.
+Agents exploit or are manipulated into misusing tools, APIs, and external
+services — invoking destructive operations, passing LLM-generated parameters
+without validation, or chaining tool calls into harmful sequences. SP 800-218A
+addresses this through explicit security requirements for tool capability
+constraints (PW.1), threat modelling of tool access paths (PW.2), review
+of tool access control enforcement (PW.7), and protection of tool
+configuration artefacts (PS.1).
 
 #### SP 800-218A mapping
 
 | SP 800-218A Practice | Sub-task | Relevance |
 |---|---|---|
-| PW.1.1-PS – Define security requirements | Define explicit security requirements specifying the maximum permitted tool access, API scope, data source access, and resource boundaries for each agent deployment | Establishes access control as a mandatory deployment requirement |
-| PW.2.1-PS – Design software to meet security requirements | Threat model all agent access paths to tools, data stores, and APIs; design least-privilege tool manifests and enforce tenant isolation by design | Ensures access boundaries are designed before implementation |
-| PS.1.1-PS – Protect all code from unauthorised access | Protect agent configuration files, tool manifests, permission policies, and orchestration definitions from unauthorised modification | Prevents tampering with access control configuration |
-| PW.7.2-PS – Review the software for security vulnerabilities | Review agent access control enforcement — verify that tool permission manifests, RBAC policies, and tenant isolation boundaries are correctly implemented and cannot be bypassed | Validates access controls before production deployment |
+| PW.1.1-PS – Define security requirements | Define explicit security requirements specifying per-tool permission manifests, parameter validation rules, and irreversibility classification for each agent deployment | Establishes tool access control as a mandatory deployment requirement |
+| PW.2.1-PS – Design software to meet security requirements | Threat model all agent tool access paths; design least-privilege tool manifests and enforce human confirmation for irreversible operations by design | Ensures tool misuse prevention is designed before implementation |
+| PW.7.2-PS – Review the software for security vulnerabilities | Review agent tool access control enforcement — verify that tool permission manifests are correctly implemented and agents cannot be manipulated into destructive tool use | Validates tool controls before production deployment |
+| PS.1.1-PS – Protect all code from unauthorised access | Protect agent tool configuration files, permission manifests, and MCP tool descriptors from unauthorised modification; verify descriptor integrity | Prevents tampering with tool access control configuration |
 
 #### Mitigations
 
 **Foundational**
-- PW.1.1-PS: Document explicit security requirements for each agent
-  deployment defining maximum permitted tool access, API scope, and data
-  source boundaries — treat as mandatory deployment requirements reviewed
-  before go-live
-- PW.2.1-PS: Design a tool permission manifest for every agent — principle
-  of least privilege applied to each tool; no tool should have broader
-  access than the narrowest capability needed for its specific function
-- PS.1.1-PS: Classify agent configuration files and tool manifests as
-  sensitive security artefacts; apply version control, access control, and
-  change logging
+- PW.1.1-PS: Document per-tool permission manifests for each agent
+  deployment — tool access scope, parameter validation rules, and
+  irreversibility classification; treat as mandatory deployment
+  requirements reviewed before go-live
+- PW.2.1-PS: Design tool access with least privilege — no tool should
+  have broader access than needed for its specific function; validate
+  all LLM-generated tool parameters as untrusted input
+- PS.1.1-PS: Classify tool configuration files and MCP descriptors as
+  sensitive security artefacts; apply version control, access control,
+  and integrity verification
 
 **Hardening**
-- PW.7.2-PS: Include access control bypass scenarios in pre-release reviews
-  — verify that agents cannot exceed their permission manifest through
-  prompt manipulation, tool chaining, or context injection
-- Implement runtime enforcement of tool permission manifests independent of
-  the model — the enforcement layer must not be bypassable through model
-  manipulation
-- Log all tool invocations with full parameter capture and requesting agent
-  identity; feed into runtime anomaly detection for access pattern violations
+- PW.7.2-PS: Include tool misuse scenarios in pre-release reviews —
+  verify agents cannot be manipulated into destructive tool invocations
+  through prompt manipulation or tool chain exploitation
+- Implement runtime enforcement of tool permission manifests independent
+  of the model — the enforcement layer must not be bypassable through
+  model manipulation
+- Log all tool invocations with full parameter capture; feed into
+  runtime anomaly detection for tool misuse patterns
 
 **Advanced**
-- PW.2.1-PS: Implement formal access control verification — automatically
-  validate that deployed agent configurations match approved permission
-  manifests in CI/CD before production promotion
-- PS.1.1-PS: Implement drift detection on agent access control
-  configurations — alert on any deviation from approved baselines
-- PW.1.1-PS: Include agent access scope changes in security design reviews;
-  any expansion of tool access requires explicit security sign-off and
-  threat model update
+- PW.2.1-PS: Implement formal tool permission verification — automatically
+  validate that deployed configurations match approved permission manifests
+- PS.1.1-PS: Implement MCP tool descriptor integrity verification —
+  hash-based check before loading any tool descriptor
+- PW.1.1-PS: Include tool access scope changes in security design reviews;
+  any expansion of tool access requires explicit security sign-off
 
 #### Tools
 
@@ -216,30 +214,30 @@ enforcement (PW.7).
 |---|---|---|
 | LAAF (LLM Agent Assessment Framework) | Open-source | https://github.com/OWASP/LAAF |
 | Open Policy Agent (OPA) | Open-source | https://www.openpolicyagent.org |
-| HashiCorp Vault | Open-source | https://www.vaultproject.io |
 | Guardrails AI | Open-source | https://github.com/guardrails-ai/guardrails |
+| HashiCorp Vault | Open-source | https://www.vaultproject.io |
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency, LLM07 System Prompt Leakage
-- DSGAI 2026: DSGAI06 Tool, Plugin & Agent Data Exchange, DSGAI08 Non-Compliance & Regulatory Violations
-- Other frameworks: AIUC-1 B006 – NIST CSF 2.0 PR.AC-1 – CWE-285
+- LLM Top 10: LLM05 Insecure Output Handling, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
+- Other frameworks: OWASP NHI Top 10 NHI-5 – NIST CSF 2.0 PR.AC-1 – CWE-285
 
 ---
 
-### ASI03 – Privilege Escalation
+### ASI03 – Identity & Privilege Abuse
 
 **Severity:** Critical
 
-Agents escalate their own privileges by exploiting weak identity boundaries,
-inheriting user credentials through tool integrations, or leveraging
-multi-agent delegation to acquire permissions exceeding their intended
-authorisation level. In agentic architectures, privilege escalation is
-particularly dangerous because agents may chain tool calls that individually
-appear authorised but collectively achieve unauthorised access. SP 800-218A
-addresses this through security requirements for privilege boundaries (PW.1),
-secure coding for credential handling (PW.5), protection of identity and
-credential stores (PS.1), and vulnerability monitoring for escalation
-incidents (RV.1).
+Agents inherit and cache credentials exploited for lateral movement.
+Agents exploit misconfigured permissions, inherited credentials, or
+inter-agent trust to access resources beyond their intended scope. In agentic
+architectures, identity abuse is particularly dangerous because agents may
+chain tool calls that individually appear authorised but collectively achieve
+unauthorised access through credential accumulation. SP 800-218A addresses
+this through security requirements for privilege boundaries (PW.1), secure
+coding for credential handling (PW.5), protection of identity and credential
+stores (PS.1), and vulnerability monitoring for credential abuse incidents
+(RV.1).
 
 **Real-world references:**
 - OAuth token inheritance in agent frameworks (2025) – agents inherited
@@ -251,17 +249,18 @@ incidents (RV.1).
 
 | SP 800-218A Practice | Sub-task | Relevance |
 |---|---|---|
-| PW.1.1-PS – Define security requirements | Define explicit privilege boundaries for each agent identity — maximum permitted privilege level, credential scope, and escalation constraints | Establishes privilege boundaries as mandatory requirements |
+| PW.1.1-PS – Define security requirements | Define explicit privilege boundaries for each agent identity — unique NHI, maximum permitted privilege level, credential scope, and short TTL requirements | Establishes privilege boundaries as mandatory requirements |
 | PW.5.1-PS – Secure coding practices | Implement secure credential handling — agents must not inherit user credentials, store tokens in context, or pass credentials between agents without explicit authorisation | Prevents credential leakage through agent code paths |
-| PS.1.1-PS – Protect all code from unauthorised access | Protect credential stores, identity configurations, and privilege mapping files from unauthorised access and modification | Prevents tampering with privilege boundaries |
-| RV.1.1-PS – Identify and confirm vulnerabilities | Establish monitoring and triage procedures for privilege escalation incidents — detect agents operating beyond their assigned privilege level | Enables rapid detection of privilege escalation in production |
+| PS.1.1-PS – Protect all code from unauthorised access | Protect credential stores, identity configurations, and privilege mapping files from unauthorised access and modification; encrypt at rest | Prevents tampering with privilege boundaries |
+| RV.1.1-PS – Identify and confirm vulnerabilities | Establish monitoring and triage procedures for credential abuse incidents — detect agents operating beyond their assigned privilege level or using inherited credentials | Enables rapid detection of identity abuse in production |
 
 #### Mitigations
 
 **Foundational**
 - PW.1.1-PS: Define explicit privilege boundaries for every agent identity
-  — each agent must have its own credential scope, and privilege levels
-  must be documented as mandatory deployment requirements
+  — each agent must have its own NHI, credential scope, and privilege levels
+  documented as mandatory deployment requirements; short TTL with automatic
+  expiry
 - PW.5.1-PS: Enforce that agents never inherit user credentials directly;
   implement credential brokering through a dedicated identity service that
   issues scoped, time-limited tokens for each agent operation
@@ -272,8 +271,8 @@ incidents (RV.1).
 - PW.1.1-PS: Implement privilege attenuation in multi-agent delegation —
   sub-agents must receive equal or lesser privileges than the delegating
   agent; enforce in the orchestration layer, not relying on model judgment
-- RV.1.1-PS: Deploy runtime monitoring for privilege escalation indicators
-  — agents accessing resources or invoking tools beyond their defined
+- RV.1.1-PS: Deploy runtime monitoring for credential abuse indicators —
+  agents accessing resources or invoking tools beyond their defined
   privilege level; alert and terminate on detection
 - PW.5.1-PS: Conduct code review focused on credential handling in agent
   tool integrations — verify that tokens are scoped, rotated, and never
@@ -283,9 +282,9 @@ incidents (RV.1).
 - Implement formal privilege verification at every tool invocation — the
   tool execution layer must independently verify that the requesting agent
   has sufficient privilege for the specific operation
-- RV.1.1-PS: Integrate privilege escalation detection into your SIEM;
+- RV.1.1-PS: Integrate credential abuse detection into your SIEM;
   correlate across agent identity, tool invocations, and resource access
-  patterns for multi-step escalation detection
+  patterns for multi-step abuse detection
 - PW.1.1-PS: Conduct regular privilege audit reviews — verify that deployed
   agent privilege levels match approved baselines; flag and remediate drift
 
@@ -296,28 +295,27 @@ incidents (RV.1).
 | LAAF (LLM Agent Assessment Framework) | Open-source | https://github.com/OWASP/LAAF |
 | HashiCorp Vault | Open-source | https://www.vaultproject.io |
 | Open Policy Agent (OPA) | Open-source | https://www.openpolicyagent.org |
-| Falco | Open-source | https://falco.org |
+| SPIFFE/SPIRE | Open-source | https://spiffe.io |
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency, LLM01 Prompt Injection
-- DSGAI 2026: DSGAI06 Tool, Plugin & Agent Data Exchange, DSGAI08 Non-Compliance & Regulatory Violations
-- Other frameworks: MITRE ATLAS AML.T0015 – CWE-269 – NIST CSF 2.0 PR.AC-4
+- LLM Top 10: LLM06 Excessive Agency
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 (all entries) – MITRE ATLAS AML.T0015 – NIST CSF 2.0 PR.AC-4
 
 ---
 
-### ASI04 – Supply Chain Compromise
+### ASI04 – Agentic Supply Chain Vulnerabilities
 
 **Severity:** High
 
+Compromised tools, MCP servers, or model components alter agent behaviour.
 Agentic AI systems depend on third-party tools, plugins, MCP servers, model
 weights, agent frameworks, and orchestration libraries — any of which can be
 compromised to inject backdoors, exfiltrate data, or redirect agent
-behaviour. The agentic supply chain extends beyond traditional model and
-dataset dependencies to include tool descriptors, agent templates, and
-runtime-loaded plugins that execute with agent privileges. SP 800-218A
-addresses this through vetting of third-party components (PW.4), integrity
-verification of all artefacts (PS.2), secure model and artefact registries
-(PS.3), and supply chain vulnerability monitoring (RV.1).
+behaviour. SP 800-218A addresses this through vetting of third-party
+components (PW.4), integrity verification of all artefacts (PS.2), secure
+model and artefact registries (PS.3), and supply chain vulnerability
+monitoring (RV.1).
 
 #### SP 800-218A mapping
 
@@ -373,21 +371,20 @@ verification of all artefacts (PS.2), secure model and artefact registries
 | Sigstore | Open-source | https://www.sigstore.dev |
 
 #### Cross-references
-- LLM Top 10: LLM05 Supply Chain Vulnerabilities
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI06 Tool, Plugin & Agent Data Exchange
+- LLM Top 10: LLM03 Supply Chain Vulnerabilities
+- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
 - Other frameworks: SSDF PW.4 – MITRE ATLAS AML.T0056 – CycloneDX ML SBOM
 
 ---
 
-### ASI05 – Uncontrolled Code Execution
+### ASI05 – Unexpected Code Execution
 
 **Severity:** Critical
 
-Agents with code execution capabilities — code interpreters, shell access,
-or dynamic tool generation — can be manipulated to execute arbitrary code
-on host systems, escape sandboxes, or modify their own runtime environment.
-This is uniquely dangerous in agentic systems where agents may generate and
-execute code as part of their normal task completion workflow. SP 800-218A
+Agents that generate and execute code become RCE gateways. Agents with code
+execution capabilities — code interpreters, shell access, or dynamic tool
+generation — can be manipulated to execute arbitrary code on host systems,
+escape sandboxes, or modify their own runtime environment. SP 800-218A
 addresses this through threat modelling of code execution paths (PW.2),
 secure coding for execution sandboxing (PW.5), adversarial testing of
 sandbox escapes (PW.8), and protection of execution environments (PS.1).
@@ -455,25 +452,25 @@ sandbox escapes (PW.8), and protection of execution environments (PS.1).
 | Semgrep | Open-source | https://semgrep.dev |
 
 #### Cross-references
-- LLM Top 10: LLM02 Insecure Output Handling, LLM01 Prompt Injection
-- DSGAI 2026: DSGAI06 Tool, Plugin & Agent Data Exchange, DSGAI05 Data Integrity & Validation Failures
+- LLM Top 10: LLM05 Insecure Output Handling
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: CWE-94 – MITRE ATLAS AML.T0015 – NIST CSF 2.0 PR.DS-5
 
 ---
 
-### ASI06 – Memory Poisoning & Context Confusion
+### ASI06 – Memory & Context Poisoning
 
 **Severity:** High
 
+Persistent memory poisoning causes systematic incorrect behaviour.
 Adversaries corrupt agent memory stores — persistent memory, conversation
 history, shared context between agents, or RAG retrieval sources — to
 influence future agent behaviour across sessions. In multi-agent systems,
 poisoned shared memory can propagate malicious influence across multiple
-agents. Context confusion occurs when agents conflate data from different
-trust domains within their context window. SP 800-218A addresses this
-through protection of memory and context stores (PS.1), versioned memory
-snapshots for rollback (PS.3), behaviour review for memory-influenced
-anomalies (PW.7), and root cause analysis for poisoning incidents (RV.3).
+agents. SP 800-218A addresses this through protection of memory and context
+stores (PS.1), versioned memory snapshots for rollback (PS.3), behaviour
+review for memory-influenced anomalies (PW.7), and root cause analysis
+for poisoning incidents (RV.3).
 
 **Real-world references:**
 - Persistent memory poisoning (2025) – adversarial inputs stored in agent
@@ -537,97 +534,85 @@ anomalies (PW.7), and root cause analysis for poisoning incidents (RV.3).
 | Great Expectations | Open-source | https://greatexpectations.io |
 
 #### Cross-references
-- LLM Top 10: LLM03 Training Data Poisoning, LLM08 Vector and Embedding Weaknesses
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI13 Vector Store Platform Security
+- LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
+- DSGAI 2026: DSGAI13 Vector Store Platform Security
 - Other frameworks: MITRE ATLAS AML.T0032 – NIST CSF 2.0 PR.DS-8 – ISO 42001 6.1.2
 
 ---
 
-### ASI07 – Lateral Tool Chaining
+### ASI07 – Insecure Inter-Agent Communication
 
 **Severity:** High
 
-Agents chain multiple tool invocations in sequences that individually appear
-authorised but collectively achieve unauthorised outcomes — accessing data
-across trust boundaries, combining partial capabilities into full exploits,
-or using one tool's output to unlock another tool's restricted functionality.
-In multi-agent systems, lateral chaining can span agents, with each agent
-contributing a legitimate step in an unauthorised workflow. SP 800-218A
-addresses this through security requirements for action scope constraints
-(PW.1), threat modelling of tool interaction paths (PW.2), behaviour review
-for chain-based scope violations (PW.7), and vulnerability monitoring for
-chaining incidents (RV.1).
+A2A channels lacking authentication enable agent-in-the-middle attacks.
+Agents in multi-agent systems communicate without proper authentication,
+encryption, or schema validation — enabling spoofing, replay attacks, message
+manipulation, and lateral movement across agent trust boundaries. SP 800-218A
+addresses this through threat modelling of A2A communication paths (PW.2),
+secure coding for authentication and encryption (PW.5), behaviour review
+for A2A anomalies (PW.7), and protection of A2A configuration (PS.1).
 
 #### SP 800-218A mapping
 
 | SP 800-218A Practice | Sub-task | Relevance |
 |---|---|---|
-| PW.1.1-PS – Define security requirements | Define explicit security requirements constraining permitted tool invocation sequences and cross-tool data flows for each agent deployment | Establishes chaining constraints as mandatory requirements |
-| PW.2.1-PS – Design software to meet security requirements | Threat model tool interaction graphs — identify composite action sequences that could achieve unauthorised outcomes; design controls for chain-level authorisation | Ensures chaining risks are addressed at design time |
-| PW.7.2-PS – Review the software for security vulnerabilities | Review agent behaviour for chain-based scope violations — verify that multi-step tool sequences cannot achieve outcomes exceeding individual tool permissions | Catches chaining vulnerabilities before production |
-| RV.1.1-PS – Identify and confirm vulnerabilities | Establish monitoring for anomalous tool invocation sequences; define triage procedures for suspected lateral chaining incidents | Enables detection of chaining attacks in production |
+| PW.2.1-PS – Design software to meet security requirements | Threat model all inter-agent communication paths; design mutual authentication, encryption, schema validation, and replay protection as explicit security requirements | Ensures A2A security is addressed at design time |
+| PW.5.1-PS – Secure coding practices | Implement secure coding for A2A communication — mutual TLS, message signing, schema validation on all inter-agent messages; no unauthenticated A2A in any environment | Prevents A2A security vulnerabilities in implementation |
+| PW.7.2-PS – Review the software for security vulnerabilities | Review inter-agent communication for security weaknesses — verify that authentication, encryption, and schema validation are correctly implemented at all A2A boundaries | Catches A2A vulnerabilities before production |
+| PS.1.1-PS – Protect all code from unauthorised access | Protect A2A configuration, certificates, and authentication credentials from unauthorised access and modification | Prevents tampering with A2A security controls |
 
 #### Mitigations
 
 **Foundational**
-- PW.1.1-PS: Define permitted tool invocation sequences as part of agent
-  security requirements — document allowed tool chains and explicitly
-  prohibit chains that cross trust boundaries or combine capabilities
-  into sensitive operations
-- PW.2.1-PS: Threat model tool interaction graphs — enumerate composite
-  action paths that could achieve sensitive outcomes through individually
-  innocuous tool calls; design chain-level authorisation checks
-- PW.7.2-PS: Include multi-step chaining scenarios in pre-release reviews
-  — verify that no tool sequence can achieve outcomes exceeding individual
-  tool permissions
+- PW.2.1-PS: Threat model all inter-agent communication paths — identify
+  every A2A channel, design mutual authentication and encryption as
+  mandatory requirements; no unauthenticated A2A in any environment
+- PW.5.1-PS: Implement mutual TLS for all A2A communication; validate
+  message schemas at each boundary; implement replay protection
+- PS.1.1-PS: Protect A2A certificates and authentication credentials as
+  security-critical artefacts; rotate regularly
 
 **Hardening**
-- Implement chain-aware authorisation — evaluate the cumulative effect of
-  tool sequences, not just individual tool calls; enforce at the
-  orchestration layer
-- RV.1.1-PS: Deploy tool invocation sequence monitoring — detect anomalous
-  chain patterns, unusual tool combinations, and sequences that match known
-  lateral chaining attack patterns
-- Log complete tool chain execution traces with data flow between tools;
-  feed into security analytics for chaining pattern detection
+- PW.7.2-PS: Include A2A security scenarios in pre-release reviews —
+  verify that spoofing, replay, and schema violation attacks are mitigated
+  across all inter-agent boundaries
+- Implement message signing for all A2A instructions; verify signatures
+  at each boundary before processing
+- Log complete A2A message traces with sender identity, content hash,
+  and schema validation results for forensic analysis
 
 **Advanced**
-- PW.2.1-PS: Formally specify permitted action graphs — only pre-approved
-  tool sequences can execute in production; block any tool chain not in
-  the approved set
-- Implement cross-agent chain detection in multi-agent deployments — monitor
-  for distributed chaining where individual agents each execute one step of
-  a combined attack
-- RV.1.1-PS: Build automated chain analysis capability — on detection of
-  anomalous tool sequences, automatically reconstruct the full chain,
-  identify data flows, and assess the composite outcome
+- PW.2.1-PS: Formally specify permitted A2A communication patterns — only
+  pre-approved agent-to-agent interactions can execute in production
+- PW.5.1-PS: Implement short-lived A2A certificates with automated rotation;
+  hardware-backed keys for highest-risk agent clusters
+- Monitor for distributed attacks spanning multiple A2A channels — detect
+  coordinated manipulation across the agent network
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Garak | Open-source | https://github.com/leondz/garak |
-| LangSmith | Commercial | https://smith.langchain.com |
+| SPIFFE/SPIRE | Open-source | https://spiffe.io |
+| Istio | Open-source | https://istio.io |
 | OpenTelemetry | Open-source | https://opentelemetry.io |
 | NeMo Guardrails | Open-source | https://github.com/NVIDIA/NeMo-Guardrails |
 
 #### Cross-references
-- LLM Top 10: LLM06 Excessive Agency, LLM01 Prompt Injection
-- DSGAI 2026: DSGAI06 Tool, Plugin & Agent Data Exchange
-- Other frameworks: MITRE ATLAS AML.T0015 – CWE-285 – AIUC-1 B006
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 NHI-4/NHI-7 – MITRE ATLAS AML.T0015 – CWE-285
 
 ---
 
-### ASI08 – Cascading Automation & Failure
+### ASI08 – Cascading Agent Failures
 
 **Severity:** High
 
-Autonomous agent workflows amplify errors, hallucinations, or malicious
-inputs through cascading automation — a single faulty output from one agent
-or tool propagates through downstream agents, triggers additional automated
-actions, and escalates into system-wide failures or runaway cost. Without
-circuit breakers and human checkpoints, agentic systems can execute hundreds
-of automated steps before any human becomes aware of a failure. SP 800-218A
+Single-point faults propagate through multi-agent workflows. Autonomous
+agent workflows amplify errors, hallucinations, or malicious inputs through
+cascading automation — a single faulty output from one agent or tool
+propagates through downstream agents, triggers additional automated actions,
+and escalates into system-wide failures or runaway cost. SP 800-218A
 addresses this through resource and availability constraints in design
 (PW.2), adversarial testing of cascade failure paths (PW.8), remediation
 procedures for automation runaway incidents (RV.2), and security
@@ -688,70 +673,65 @@ requirements for automation boundaries (PW.1).
 | Kong Gateway | Open-source | https://github.com/Kong/kong |
 
 #### Cross-references
-- LLM Top 10: LLM04 Model DoS, LLM10 Unbounded Consumption
+- LLM Top 10: LLM10 Unbounded Consumption
 - DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
 - Other frameworks: CWE-400 – ISA/IEC 62443 SR 7.1 – NIST SP 800-82 Rev 3
 
 ---
 
-### ASI09 – Emerging Agentic Patterns
+### ASI09 – Human-Agent Trust Exploitation
 
 **Severity:** Medium
 
-Novel agentic AI patterns — self-evolving agents, autonomous tool discovery,
-dynamic agent spawning, cross-organisational agent federations, and agents
-that modify their own prompts or tool definitions — introduce security risks
-that existing frameworks do not fully address. These patterns emerge as
-agentic capabilities evolve and can create unpredictable security
-implications. SP 800-218A addresses this through behaviour review for
-emergent capabilities (PW.7), adversarial testing of novel patterns (PW.8),
-vulnerability identification for emergent behaviours (RV.1), and root cause
-analysis for incidents involving novel agent capabilities (RV.3).
+Agents build false trust enabling manipulation of human approvers. Agents
+establish unwarranted trust with human operators through apparent competence,
+conversational rapport, or presentation authority, then exploit that trust
+to obtain approvals for harmful actions, bypass oversight, or suppress
+safety concerns. SP 800-218A addresses this through behaviour review for
+trust manipulation patterns (PW.7), adversarial testing of trust
+exploitation vectors (PW.8), vulnerability identification for trust
+exploitation incidents (RV.1), and security requirements for human oversight
+mechanisms (PW.1).
 
 #### SP 800-218A mapping
 
 | SP 800-218A Practice | Sub-task | Relevance |
 |---|---|---|
-| PW.7.2-PS – Review the software for security vulnerabilities | Review agent behaviour for emergent capabilities — verify that self-modification, dynamic tool discovery, and autonomous agent spawning do not create unintended security exposures | Catches emergent pattern risks before production |
-| PW.8.2-PS – Test for security vulnerabilities | Conduct adversarial testing targeting emerging agentic patterns — self-evolution, prompt self-modification, autonomous tool acquisition, and dynamic agent creation | Validates controls against novel attack surfaces |
-| RV.1.1-PS – Identify and confirm vulnerabilities | Establish monitoring for emergent agent behaviours — detect agents acquiring new capabilities, modifying their own definitions, or spawning sub-agents outside approved patterns | Enables detection of emerging risks in production |
-| RV.3.1-PS – Analyse root causes | When incidents involve novel agentic patterns, conduct root cause analysis focused on understanding the emergent capability and its security implications | Builds organisational knowledge of emerging agentic risks |
+| PW.7.2-PS – Review the software for security vulnerabilities | Review agent behaviour for trust manipulation patterns — verify that agents cannot build false authority, suppress safety warnings, or manipulate approval processes | Catches trust exploitation risks before production |
+| PW.8.2-PS – Test for security vulnerabilities | Conduct adversarial testing targeting human-agent trust exploitation — test whether agents can manipulate operators into approving harmful actions through false confidence or urgency | Validates trust controls under realistic conditions |
+| RV.1.1-PS – Identify and confirm vulnerabilities | Establish monitoring for trust exploitation indicators — operators approving high-risk actions without verification, systematic over-reliance on agent recommendations | Enables detection of trust exploitation in production |
+| PW.1.1-PS – Define security requirements | Define explicit requirements for human oversight — mandatory confirmation gates, independent approval flows, AI advisory labelling, and operator training requirements | Establishes human oversight as a mandatory requirement |
 
 #### Mitigations
 
 **Foundational**
-- PW.7.2-PS: Include emergent capability review in pre-release agent
-  behaviour assessments — verify that agents cannot self-modify, discover
-  new tools, or spawn sub-agents outside explicitly approved patterns
-- RV.1.1-PS: Establish baseline agent capability profiles — monitor for
-  deviations indicating emergent capabilities or behaviour patterns not
-  present in the approved agent definition
-- Define a policy requiring security review before deploying any novel
-  agentic pattern — self-evolution, autonomous tool discovery, dynamic
-  spawning, or cross-organisational federation
+- PW.1.1-PS: Define explicit requirements for human oversight — mandatory
+  confirmation gates for irreversible actions, independent approval flows
+  not through agent interface, AI advisory labelling requirements
+- PW.7.2-PS: Include trust exploitation scenarios in pre-release reviews —
+  verify agents cannot build false authority or manipulate approval processes
+- Define a policy requiring security awareness training for all users of
+  agentic tools — AI limitations, verification requirements, how to
+  identify manipulation
 
 **Hardening**
-- PW.8.2-PS: Include emerging pattern scenarios in adversarial testing —
-  attempt self-modification through prompt manipulation, tool discovery
-  through output exploitation, and sub-agent spawning through tool chaining
-- RV.3.1-PS: Document all incidents involving unexpected agent behaviour
-  with detailed root cause analysis — build an organisational knowledge
-  base of emergent pattern risks
-- Implement capability constraints at the infrastructure level — agents
-  cannot acquire new tool access, modify their own configurations, or
-  create new agent instances without explicit platform-level authorisation
+- PW.8.2-PS: Include trust exploitation scenarios in adversarial testing —
+  test whether agents can manipulate operators into approving harmful
+  actions through false confidence, urgency, or apparent authority
+- RV.1.1-PS: Deploy monitoring for trust exploitation patterns — aggregate
+  over-trust indicators, detect systematic reliance on agent recommendations
+  without independent verification
+- Implement AI advisory labelling in all interface contexts; enforce visual
+  distinction from authoritative system content
 
 **Advanced**
-- PW.8.2-PS: Establish a dedicated research and red-team capability
-  focused on emerging agentic patterns — proactively identify security
-  implications of novel agent architectures before production deployment
-- PW.7.2-PS: Implement continuous agent capability monitoring — detect and
-  alert on agents exhibiting capabilities beyond their defined profile,
-  including emergent tool usage patterns and unexpected inter-agent
-  communication
-- RV.1.1-PS: Contribute findings from emergent pattern incidents to
-  community knowledge bases — collaborate with OWASP and MITRE ATLAS to
-  catalogue new agentic attack patterns
+- PW.8.2-PS: Establish dedicated research capability focused on human-agent
+  trust exploitation — proactively identify manipulation vectors before
+  production deployment
+- PW.7.2-PS: Implement continuous trust exploitation monitoring — detect
+  and alert on operators exhibiting over-trust patterns across sessions
+- RV.1.1-PS: Contribute findings from trust exploitation incidents to
+  community knowledge bases
 
 #### Tools
 
@@ -763,85 +743,81 @@ analysis for incidents involving novel agent capabilities (RV.3).
 | MITRE ATLAS | Reference | https://atlas.mitre.org |
 
 #### Cross-references
-- LLM Top 10: LLM09 Misinformation, LLM06 Excessive Agency
-- DSGAI 2026: DSGAI06 Tool, Plugin & Agent Data Exchange
-- Other frameworks: EU AI Act Art. 13 – MITRE ATLAS – ENISA AI Threat Landscape
+- LLM Top 10: LLM09 Misinformation
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
+- Other frameworks: EU AI Act Art. 13/50 – ENISA AI Threat Landscape – ISO 42001 A.6.2.6
 
 ---
 
-### ASI10 – AI Agent Dependency Failures
+### ASI10 – Rogue Agents
 
-**Severity:** Medium
+**Severity:** Critical
 
-Agentic systems depend on external services — LLM APIs, tool endpoints, MCP
-servers, identity providers, vector databases, and orchestration platforms —
-whose unavailability, degradation, or behavioural changes cause agent
-failures, incorrect outputs, or security control bypasses. Unlike traditional
-software dependencies, agent dependencies may fail in semantically subtle
-ways — an LLM API returning degraded output quality or a tool endpoint
-returning plausible but incorrect data — that propagate silently through
-agent workflows. SP 800-218A addresses this through dependency vetting
-(PW.4), dependency integrity verification (PS.2), vulnerability monitoring
-for dependency issues (RV.1), and remediation procedures for dependency
-failure incidents (RV.2).
+Compromised agents pursue hidden goals while appearing compliant. Agents
+operate outside their intended boundaries — pursuing hidden objectives,
+executing undisclosed tool calls, or systematically biasing recommendations
+— while maintaining an appearance of normal operation. Unlike traditional
+software failures, rogue agent behaviour may be semantically subtle — an
+agent that consistently steers recommendations in a specific direction or
+that maintains hidden state between sessions. SP 800-218A addresses this
+through behaviour review for rogue agent indicators (PW.7), adversarial
+testing of detection capability (PW.8), vulnerability monitoring for rogue
+behaviour in production (RV.1), and root cause analysis for rogue agent
+incidents (RV.3).
 
 #### SP 800-218A mapping
 
 | SP 800-218A Practice | Sub-task | Relevance |
 |---|---|---|
-| PW.4.1-PS – Reuse existing well-secured software | Vet all external agent dependencies — LLM APIs, tool endpoints, MCP servers, orchestration platforms — for reliability, security posture, and failure mode characteristics before adoption | Prevents adoption of unreliable dependencies |
-| PS.2.1-PS – Verify software integrity | Verify that external dependency responses are consistent with expected behaviour — detect API version changes, model swaps, or degraded output quality that could affect agent correctness | Detects dependency degradation and tampering |
-| RV.1.1-PS – Identify and confirm vulnerabilities | Monitor all agent dependencies for availability, behavioural consistency, and security posture changes; establish triage procedures for dependency degradation events | Enables rapid detection of dependency failures |
-| RV.2.1-PS – Assess, prioritise, and remediate vulnerabilities | Define remediation procedures for dependency failures — graceful degradation, fallback providers, workflow suspension, and stakeholder notification | Ensures operational continuity during dependency outages |
+| PW.7.2-PS – Review the software for security vulnerabilities | Review agent behaviour for rogue agent indicators — verify that agents cannot pursue hidden goals, execute undisclosed tool calls, or maintain hidden state between sessions | Catches rogue agent risks before production |
+| PW.8.2-PS – Test for security vulnerabilities | Conduct adversarial testing simulating rogue agent scenarios — persistent hidden goal pursuit, undisclosed tool invocations, systematic recommendation bias across extended sessions | Validates rogue agent detection under realistic conditions |
+| RV.1.1-PS – Identify and confirm vulnerabilities | Establish comprehensive monitoring for rogue agent behaviour — behavioural baseline deviation, hidden tool invocations, recommendation bias; define triage and containment procedures | Enables rapid detection and containment of rogue agents |
+| RV.3.1-PS – Analyse root causes | When rogue agent behaviour is detected, conduct root cause analysis to identify the trigger — model compromise, configuration tampering, emergent behaviour, or adversarial manipulation | Builds organisational knowledge of rogue agent risks |
 
 #### Mitigations
 
 **Foundational**
-- PW.4.1-PS: Vet all external agent dependencies before adoption — evaluate
-  SLA commitments, security posture, failure mode characteristics, and
-  historical reliability; maintain an approved dependency registry
-- RV.1.1-PS: Implement health monitoring for all agent dependencies —
-  availability, latency, and behavioural consistency checks; alert on
-  degradation before it impacts agent workflows
-- RV.2.1-PS: Define graceful degradation procedures for each critical
-  dependency — what the agent does when an LLM API, tool endpoint, or
-  identity provider becomes unavailable
+- RV.1.1-PS: Establish comprehensive agent monitoring — all agent actions
+  logged with full observability; no production deployment without complete
+  audit trail; behavioural baselines established during commissioning
+- PW.7.2-PS: Include rogue agent scenarios in pre-release reviews — verify
+  that agents cannot pursue hidden goals or execute undisclosed tool calls
+  outside their defined scope
+- Enforce scope constraints — rogue agent cannot exceed permission envelope
+  regardless of internal goal; enforced at infrastructure level
 
 **Hardening**
-- PS.2.1-PS: Implement dependency output validation — verify that responses
-  from external services are consistent with expected schemas, quality
-  levels, and behavioural patterns; detect silent degradation
-- PW.4.1-PS: Maintain fallback providers for critical dependencies —
-  alternative LLM APIs, backup tool endpoints, and redundant identity
-  services; test failover procedures quarterly
-- RV.2.1-PS: Define and test automated dependency failure response — agent
-  workflow suspension, fallback activation, cost protection, and
-  stakeholder notification; exercise procedures regularly
+- PW.8.2-PS: Include rogue agent scenarios in adversarial testing —
+  simulate persistent hidden goal pursuit across extended sessions;
+  verify that detection capability holds under realistic conditions
+- RV.3.1-PS: Establish rogue agent forensics playbook — procedures for
+  isolating suspect agents, capturing state, identifying the trigger,
+  and measuring the blast radius of rogue behaviour
+- Aggregate recommendation analysis — periodic review detects systematic
+  bias before operational harm
 
 **Advanced**
-- PS.2.1-PS: Implement continuous dependency behavioural monitoring — detect
-  subtle changes in LLM API response patterns, model swaps by providers,
-  and tool endpoint behavioural drift that could affect agent correctness
-- Build dependency risk profiles for each critical external service —
-  document single points of failure, blast radius of outage, and required
-  recovery procedures
-- RV.1.1-PS: Integrate dependency monitoring into your SIEM; correlate
-  dependency health signals with agent behaviour anomalies for early
-  detection of dependency-induced failures
+- PW.8.2-PS: Conduct extended red-team exercises simulating rogue agents
+  across multi-session operations; test detection across agent lifetimes
+- PW.7.2-PS: Implement continuous behavioural monitoring — detect and
+  alert on agents exhibiting patterns beyond their defined profile,
+  including subtle recommendation drift and hidden state maintenance
+- RV.1.1-PS: Contribute findings from rogue agent incidents to community
+  knowledge bases — collaborate with OWASP and MITRE ATLAS
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
+| LAAF (LLM Agent Assessment Framework) | Open-source | https://github.com/OWASP/LAAF |
+| Garak | Open-source | https://github.com/leondz/garak |
+| LangSmith | Commercial | https://smith.langchain.com |
 | OpenTelemetry | Open-source | https://opentelemetry.io |
-| LiteLLM | Open-source | https://github.com/BerriAI/litellm |
-| Grafana | Open-source | https://grafana.com |
-| PagerDuty | Commercial | https://www.pagerduty.com |
 
 #### Cross-references
-- LLM Top 10: LLM05 Supply Chain Vulnerabilities, LLM10 Unbounded Consumption
-- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures, DSGAI06 Tool, Plugin & Agent Data Exchange
-- Other frameworks: CWE-400 – SSDF PW.4 – NIST CSF 2.0 ID.SC
+- LLM Top 10: LLM06 Excessive Agency
+- DSGAI 2026: DSGAI16 Endpoint & Browser Overreach
+- Other frameworks: EU AI Act Art. 14/15 – MITRE ATLAS – CWE-284
 
 ---
 
@@ -849,9 +825,9 @@ failure incidents (RV.2).
 
 | Phase | PW – Produce | PS – Protect | RV – Respond |
 |---|---|---|---|
-| 1 – Now | PW.2.1-PS threat models for ASI01/05/08; PW.1.1-PS requirements for ASI02/03/07 | PS.1.1-PS access controls on agent memory, credentials, and configuration (ASI02/03/06) | RV.1.1-PS monitoring for ASI01/03; triage procedures |
-| 2 – This sprint | PW.5.1-PS secure coding for ASI03/05; PW.4.1-PS dependency vetting for ASI04/10 | PS.2.1-PS integrity verification in CI/CD for ASI04/10; PS.3.1-PS agent component registry for ASI04/06 | RV.2.1-PS remediation procedures for ASI08/10 |
-| 3 – This quarter | PW.7.2-PS behaviour reviews for all 10 entries; PW.8.2-PS adversarial tests for ASI01/05/08 | PS.3.1-PS versioned registry with rollback for all agent artefacts | RV.3.1-PS root cause playbooks for ASI06/09 |
+| 1 – Now | PW.2.1-PS threat models for ASI01/05/07/08; PW.1.1-PS requirements for ASI02/03/09 | PS.1.1-PS access controls on agent memory, credentials, A2A config, and tool manifests (ASI02/03/06/07) | RV.1.1-PS monitoring for ASI01/03/10; triage procedures |
+| 2 – This sprint | PW.5.1-PS secure coding for ASI03/05/07; PW.4.1-PS dependency vetting for ASI04 | PS.2.1-PS integrity verification in CI/CD for ASI04; PS.3.1-PS agent component registry for ASI04/06 | RV.2.1-PS remediation procedures for ASI08 |
+| 3 – This quarter | PW.7.2-PS behaviour reviews for all 10 entries; PW.8.2-PS adversarial tests for ASI01/05/08/09/10 | PS.3.1-PS versioned registry with rollback for all agent artefacts | RV.3.1-PS root cause playbooks for ASI06/10 |
 | 4 – Ongoing | PW.8.2-PS continuous red-team programme; threat model refresh on new tool integrations | Supply chain integrity monitoring; agent SBOM refresh | Production monitoring; incident response exercises |
 
 ---
@@ -860,7 +836,7 @@ failure incidents (RV.2).
 
 - [NIST SP 800-218A (Initial Public Draft, March 2024)](https://doi.org/10.6028/NIST.SP.800-218A.ipd)
 - [NIST SSDF (SP 800-218)](https://csrc.nist.gov/publications/detail/sp/800-218/final)
-- [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
+- [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [NIST AI RMF 1.0](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf)
 - [MITRE ATLAS](https://atlas.mitre.org)
 - [CycloneDX ML SBOM](https://cyclonedx.org/capabilities/mlbom/)
@@ -871,6 +847,7 @@ failure incidents (RV.2).
 
 | Date | Version | Change | Author |
 |---|---|---|---|
+| 2026-05-25 | 2026-Q2 | Remediate ASI entry names, severities, descriptions, and control mappings to canonical Agentic Top 10 2026 | OWASP GenAI Data Security Initiative |
 | 2026-03-28 | 2026-Q1 | Initial mapping – ASI01–ASI10 full entries | OWASP GenAI Data Security Initiative |
 
 ---
