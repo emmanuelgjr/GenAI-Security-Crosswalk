@@ -100,9 +100,9 @@ emails, RAG content, or web pages the model processes.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Direct Prompt Injection | [AML.T0051.000](https://atlas.mitre.org/techniques/AML.T0051.000) | Influence Operations | Attacker directly manipulates user-facing prompt to alter model behaviour |
-| Indirect Prompt Injection | [AML.T0051.001](https://atlas.mitre.org/techniques/AML.T0051.001) | Influence Operations | Hidden instructions in content the model processes (documents, web, RAG) |
-| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/techniques/AML.T0054) | Execution | Circumventing model safety guardrails via crafted prompt sequences |
+| Direct Prompt Injection | [AML.T0051.000](https://atlas.mitre.org/#/techniques/AML.T0051.000) | Influence Operations | Attacker directly manipulates user-facing prompt to alter model behaviour |
+| Indirect Prompt Injection | [AML.T0051.001](https://atlas.mitre.org/#/techniques/AML.T0051.001) | Influence Operations | Hidden instructions in content the model processes (documents, web, RAG) |
+| LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/#/techniques/AML.T0054) | Execution | Circumventing model safety guardrails via crafted prompt sequences |
 
 #### Mitigations by tier
 
@@ -165,9 +165,9 @@ or improperly sanitised responses.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Data Leakage | [AML.T0021](https://atlas.mitre.org/techniques/AML.T0021) | Exfiltration | Unintended exposure of training data or sensitive context through model outputs |
-| Information Disclosure | [AML.T0030](https://atlas.mitre.org/techniques/AML.T0030) | Collection | Extraction of confidential information via targeted model queries |
-| Model Inversion | [AML.T0024](https://atlas.mitre.org/techniques/AML.T0024) | Collection | Reconstructing training data from model outputs or confidence scores |
+| Data Leakage | [AML.T0021](https://atlas.mitre.org/#/techniques/AML.T0021) | Exfiltration | Unintended exposure of training data or sensitive context through model outputs |
+| Information Disclosure | [AML.T0030](https://atlas.mitre.org/#/techniques/AML.T0030) | Collection | Extraction of confidential information via targeted model queries |
+| Model Inversion | [AML.T0024](https://atlas.mitre.org/#/techniques/AML.T0024) | Collection | Reconstructing training data from model outputs or confidence scores |
 
 #### Mitigations by tier
 
@@ -229,9 +229,9 @@ malicious functionality before the model reaches production.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Adversarial Model Manipulation | [AML.T0056](https://atlas.mitre.org/techniques/AML.T0056) | ML Attack Staging | Tampering with model weights, adapters, or configurations during supply chain |
-| Model Contamination | [AML.T0048](https://atlas.mitre.org/techniques/AML.T0048) | Persistence | Introducing persistent malicious behaviour into model through supply chain |
-| Backdoor ML Model | [AML.T0010](https://atlas.mitre.org/techniques/AML.T0010) | Persistence | Embedding trigger-based backdoors in model weights via training or fine-tuning supply chain |
+| Adversarial Model Manipulation | [AML.T0056](https://atlas.mitre.org/#/techniques/AML.T0056) | ML Attack Staging | Tampering with model weights, adapters, or configurations during supply chain |
+| Model Contamination | [AML.T0048](https://atlas.mitre.org/#/techniques/AML.T0048) | Persistence | Introducing persistent malicious behaviour into model through supply chain |
+| Backdoor ML Model | [AML.T0010](https://atlas.mitre.org/#/techniques/AML.T0010) | Persistence | Embedding trigger-based backdoors in model weights via training or fine-tuning supply chain |
 
 #### Mitigations by tier
 
@@ -293,9 +293,9 @@ prompt injection, the effect is baked into the model weights themselves.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Data Poisoning | [AML.T0032](https://atlas.mitre.org/techniques/AML.T0032) | ML Attack Staging | Injecting malicious data into training pipelines to corrupt model behaviour |
-| Backdoor ML Model | [AML.T0031](https://atlas.mitre.org/techniques/AML.T0031) | Persistence | Embedding hidden trigger-response patterns in model via poisoned training data |
-| Model Inversion | [AML.T0027](https://atlas.mitre.org/techniques/AML.T0027) | Collection | Reconstructing sensitive training data from model outputs |
+| Data Poisoning | [AML.T0032](https://atlas.mitre.org/#/techniques/AML.T0032) | ML Attack Staging | Injecting malicious data into training pipelines to corrupt model behaviour |
+| Backdoor ML Model | [AML.T0031](https://atlas.mitre.org/#/techniques/AML.T0031) | Persistence | Embedding hidden trigger-response patterns in model via poisoned training data |
+| Model Inversion | [AML.T0027](https://atlas.mitre.org/#/techniques/AML.T0027) | Collection | Reconstructing sensitive training data from model outputs |
 
 #### Mitigations by tier
 
@@ -358,8 +358,8 @@ via AI-generated content.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Output Manipulation | [AML.T0037](https://atlas.mitre.org/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce dangerous outputs consumed by downstream systems |
-| Unsafe Deserialisation via LLM | [AML.T0040](https://atlas.mitre.org/techniques/AML.T0040) | Execution | LLM outputs containing serialised payloads executed by downstream components |
+| Output Manipulation | [AML.T0037](https://atlas.mitre.org/#/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce dangerous outputs consumed by downstream systems |
+| Unsafe Deserialisation via LLM | [AML.T0040](https://atlas.mitre.org/#/techniques/AML.T0040) | Execution | LLM outputs containing serialised payloads executed by downstream components |
 
 #### Mitigations by tier
 
@@ -419,8 +419,8 @@ misaligned goal-following.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| LLM Capability Escalation | [AML.T0015](https://atlas.mitre.org/techniques/AML.T0015) | Privilege Escalation | Exploiting overly permissive LLM tool access to perform actions beyond intended scope |
-| Automated Collection | [AML.T0068](https://atlas.mitre.org/techniques/AML.T0068) | Collection | LLM autonomously collecting data beyond its intended access scope |
+| LLM Capability Escalation | [AML.T0015](https://atlas.mitre.org/#/techniques/AML.T0015) | Privilege Escalation | Exploiting overly permissive LLM tool access to perform actions beyond intended scope |
+| Automated Collection | [AML.T0068](https://atlas.mitre.org/#/techniques/AML.T0068) | Collection | LLM autonomously collecting data beyond its intended access scope |
 
 #### Mitigations by tier
 
@@ -483,8 +483,8 @@ defences.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Configuration Exposure | [AML.T0041](https://atlas.mitre.org/techniques/AML.T0041) | Discovery | Extraction of internal model configuration, instructions, or system prompts |
-| Direct Prompt Injection | [AML.T0051.000](https://atlas.mitre.org/techniques/AML.T0051.000) | Influence Operations | Crafting inputs specifically designed to reveal or override system prompt content |
+| Configuration Exposure | [AML.T0041](https://atlas.mitre.org/#/techniques/AML.T0041) | Discovery | Extraction of internal model configuration, instructions, or system prompts |
+| Direct Prompt Injection | [AML.T0051.000](https://atlas.mitre.org/#/techniques/AML.T0051.000) | Influence Operations | Crafting inputs specifically designed to reveal or override system prompt content |
 
 #### Mitigations by tier
 
@@ -539,8 +539,8 @@ to return attacker-controlled content.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Embedding Manipulation | [AML.T0063](https://atlas.mitre.org/techniques/AML.T0063) | ML Attack Staging | Crafting inputs whose embeddings manipulate similarity search results |
-| Resource Exhaustion via Embedding | [AML.T0025](https://atlas.mitre.org/techniques/AML.T0025) | Impact | Flooding vector stores with adversarial embeddings to degrade retrieval quality |
+| Embedding Manipulation | [AML.T0063](https://atlas.mitre.org/#/techniques/AML.T0063) | ML Attack Staging | Crafting inputs whose embeddings manipulate similarity search results |
+| Resource Exhaustion via Embedding | [AML.T0025](https://atlas.mitre.org/#/techniques/AML.T0025) | Impact | Flooding vector stores with adversarial embeddings to degrade retrieval quality |
 
 #### Mitigations by tier
 
@@ -595,8 +595,8 @@ information, erosion of trust, or reputational damage.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Disinformation | [AML.T0045](https://atlas.mitre.org/techniques/AML.T0045) | Influence Operations | Using AI-generated content to deliberately spread false information |
-| Influence via Automated Content | [AML.T0047](https://atlas.mitre.org/techniques/AML.T0047) | Influence Operations | Generating high-volume automated content to shape perception or overwhelm fact-checking |
+| Disinformation | [AML.T0045](https://atlas.mitre.org/#/techniques/AML.T0045) | Influence Operations | Using AI-generated content to deliberately spread false information |
+| Influence via Automated Content | [AML.T0047](https://atlas.mitre.org/#/techniques/AML.T0047) | Influence Operations | Generating high-volume automated content to shape perception or overwhelm fact-checking |
 
 #### Mitigations by tier
 
@@ -658,8 +658,8 @@ in denial of service or runaway cost.
 
 | Technique | ID | Tactic | Description |
 |---|---|---|---|
-| Denial of ML Service | [AML.T0029](https://atlas.mitre.org/techniques/AML.T0029) | Impact | Overloading AI systems with computationally expensive inputs to cause service degradation |
-| Cost Harvesting | [AML.T0034](https://atlas.mitre.org/techniques/AML.T0034) | Impact | Crafting inputs that maximise token usage or API costs per request |
+| Denial of ML Service | [AML.T0029](https://atlas.mitre.org/#/techniques/AML.T0029) | Impact | Overloading AI systems with computationally expensive inputs to cause service degradation |
+| Cost Harvesting | [AML.T0034](https://atlas.mitre.org/#/techniques/AML.T0034) | Impact | Crafting inputs that maximise token usage or API costs per request |
 
 #### Mitigations by tier
 
@@ -730,7 +730,7 @@ to visualise coverage across the LLM Top 10.
 - [OWASP LLM Top 10 2025](https://genai.owasp.org/llm-top-10/)
 - [OWASP AI Testing Guide](https://owasp.org/www-project-ai-testing-guide/)
 - [OWASP AIVSS](https://aivss.owasp.org)
-- [MITRE ATLAS case studies](https://atlas.mitre.org/studies/)
+- [MITRE ATLAS case studies](https://atlas.mitre.org/#/studies/)
 
 ---
 

@@ -63,7 +63,7 @@ jobs:
           TOTAL=$((LLM + AGT + DSG))
           echo "LLM: $LLM  Agentic: $AGT  DSGAI: $DSG  Total: $TOTAL"
 
-          BADGE=$(grep -o 'mapping%20files-[0-9]*-brightgreen' README.md | grep -o '[0-9]*')
+          BADGE=$(grep -oE 'mapping%20files-[0-9]+-brightgreen' README.md | sed -E 's/.*-([0-9]+)-brightgreen/\1/')
           echo "README badge: $BADGE"
 
           if [ "$TOTAL" != "$BADGE" ]; then

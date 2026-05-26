@@ -22,7 +22,7 @@
       "control_name": "Embedding Manipulation",
       "tier": "Hardening",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/techniques/AML.T0063",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0063",
       "notes": "Crafting inputs whose embeddings manipulate similarity search results"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Resource Exhaustion via Embedding",
       "tier": "Hardening",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/techniques/AML.T0025",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0025",
       "notes": "Flooding vector stores with adversarial embeddings to degrade retrieval quality"
     },
     {

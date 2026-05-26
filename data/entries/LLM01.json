@@ -22,7 +22,7 @@
       "control_name": "Direct Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0051.000",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
       "notes": "Attacker directly manipulates user-facing prompt to alter model behaviour"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Indirect Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0051.001",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.001",
       "notes": "Hidden instructions in content the model processes (documents, web, RAG)"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "LLM Jailbreak",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0054",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
       "notes": "Circumventing model safety guardrails via crafted prompt sequences"
     },
     {

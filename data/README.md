@@ -39,7 +39,7 @@ Every mapping entry conforms to `schema.json`. Key fields:
       "control_name": "Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0054",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
       "notes": "Primary technique for goal hijack via indirect injection"
     }
   ],

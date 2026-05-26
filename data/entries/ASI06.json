@@ -22,7 +22,7 @@
       "control_name": "Data Poisoning",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0032",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0032",
       "notes": "Injecting malicious content into agent persistent memory or RAG stores"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Embedding Manipulation",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0063",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0063",
       "notes": "Crafting content whose embeddings bias future retrieval results in attacker's favour"
     },
     {
@@ -40,7 +40,7 @@
       "control_name": "Backdoor via Poisoned Memory",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0020",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0020",
       "notes": "Establishing persistent trigger-response patterns in agent memory stores"
     },
     {

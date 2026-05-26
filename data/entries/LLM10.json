@@ -22,7 +22,7 @@
       "control_name": "Denial of ML Service",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0029",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
       "notes": "Overloading AI systems with computationally expensive inputs to cause service degradation"
     },
     {
@@ -31,7 +31,7 @@
       "control_name": "Cost Harvesting",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/techniques/AML.T0034",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0034",
       "notes": "Crafting inputs that maximise token usage or API costs per request"
     },
     {
