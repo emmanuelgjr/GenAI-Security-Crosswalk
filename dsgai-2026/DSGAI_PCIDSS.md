@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# DSGAI 2026 x PCI DSS v4.0
+# DSGAI 2026 × PCI DSS v4.0
 
 Mapping the [OWASP GenAI Data Security Risks and Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
 (DSGAI01-DSGAI21) to [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/).

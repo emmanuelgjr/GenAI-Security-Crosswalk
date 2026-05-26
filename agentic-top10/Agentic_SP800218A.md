@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# Agentic Top 10 2026 – NIST SP 800-218A
+# Agentic Top 10 2026 × NIST SP 800-218A
 
 Mapping the [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
 to [NIST SP 800-218A: Secure Software Development Practices for Generative AI and Dual-Use Foundation Models](https://doi.org/10.6028/NIST.SP.800-218A.ipd)

@@ -131,7 +131,7 @@ const FRAMEWORK_FILES = [
   { rel: 'agentic-top10/Agentic_AITG.md',           framework: 'OWASP AI Testing Guide',  ids: ASI_IDS },
   { rel: 'agentic-top10/Agentic_MAESTRO.md',        framework: 'MAESTRO',                 ids: ASI_IDS },
   { rel: 'agentic-top10/Agentic_AIUC1.md',           framework: 'AIUC-1',                  ids: ASI_IDS },
-  { rel: 'agentic-top10/Agentic_OWASP_NHI.md',      framework: 'OWASP NHI Top 10',        ids: ASI_IDS },
+  { rel: 'agentic-top10/Agentic_NHI.md',      framework: 'OWASP NHI Top 10',        ids: ASI_IDS },
   { rel: 'agentic-top10/Agentic_SP800218A.md',     framework: 'NIST SP 800-218A',        ids: ASI_IDS },
   { rel: 'agentic-top10/Agentic_FedRAMP.md',      framework: 'FedRAMP',                ids: ASI_IDS },
   { rel: 'agentic-top10/Agentic_DORA.md',         framework: 'DORA',                   ids: ASI_IDS },

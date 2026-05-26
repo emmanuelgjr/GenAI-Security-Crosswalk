@@ -196,7 +196,7 @@ when compromised.
 
 - LLM Top 10: LLM06 (Excessive Agency)
 - DSGAI: DSGAI07 (Excessive Data Access)
-- See also: [Agentic_OWASP_NHI.md](Agentic_OWASP_NHI.md) NHI-2/NHI-3, [Agentic_ASVS.md](Agentic_ASVS.md)
+- See also: [Agentic_NHI.md](Agentic_NHI.md) NHI-2/NHI-3, [Agentic_ASVS.md](Agentic_ASVS.md)
 
 ---
 
@@ -281,7 +281,7 @@ across the agent network.
 #### Cross-references
 
 - LLM Top 10: LLM08 (Excessive Agency via Multi-Model)
-- See also: [Agentic_MITREATLAS.md](Agentic_MITREATLAS.md), [Agentic_OWASP_NHI.md](Agentic_OWASP_NHI.md) NHI-1
+- See also: [Agentic_MITREATLAS.md](Agentic_MITREATLAS.md), [Agentic_NHI.md](Agentic_NHI.md) NHI-1
 
 ---
 

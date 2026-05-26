@@ -770,7 +770,7 @@ available mapping of OWASP GenAI security risks to industry frameworks.
 | `agentic-top10/Agentic_NISTAIRMF.md` | NIST AI RMF 1.0 |
 | `agentic-top10/Agentic_EUAIAct.md` | EU AI Act (Regulation EU 2024/1689) |
 | `agentic-top10/Agentic_ISA62443.md` | ISA/IEC 62443 (OT) |
-| `agentic-top10/Agentic_OWASP_NHI.md` | OWASP NHI Top 10 |
+| `agentic-top10/Agentic_NHI.md` | OWASP NHI Top 10 |
 
 #### DSGAI 2026 — frameworks
 

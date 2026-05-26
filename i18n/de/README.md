@@ -116,7 +116,7 @@ Alles kostenlos. Alles Open Source. Entwickelt fuer Praktiker.
 | [Agentic_NISTCSF2.md](agentic-top10/Agentic_NISTCSF2.md) | NIST CSF 2.0 | GOVERN-priorisierte Autonomierichtlinien-Zuordnung, agentisches CSF 2.0-Profil |
 | [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) | ISA/IEC 62443 — OT/ICS | Agentisches OT-Zonenmodell, Notausschalter-Design, SL-Anhebungstabelle |
 | [Agentic_MAESTRO.md](agentic-top10/Agentic_MAESTRO.md) | MAESTRO — CSA | Sieben-Schichten-Architektur-Bedrohungsmodell, Schicht-zu-ASI-Zuordnung, Sitzungsleitfaden |
-| [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) | OWASP NHI Top 10 | Vollstaendige NHI-zu-ASI-Kreuzzuordnung, NHI-Programmreifetabelle |
+| [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) | OWASP NHI Top 10 | Vollstaendige NHI-zu-ASI-Kreuzzuordnung, NHI-Programmreifetabelle |
 | [Agentic_CISControls.md](agentic-top10/Agentic_CISControls.md) | CIS Controls v8.1 | IG1/IG2/IG3-Schutzmassnahmen, agentische NHI als CIS 5 privilegierter Zugang behandelt |
 | [Agentic_ASVS.md](agentic-top10/Agentic_ASVS.md) | OWASP ASVS 4.0.3 | L1/L2/L3-Verifizierungscheckliste fuer agentische Bereitstellungen |
 | [Agentic_AITG.md](agentic-top10/Agentic_AITG.md) | OWASP AI Testing Guide | 50 strukturierte Testfaelle fuer ASI01–ASI10 mit Vor-Bereitstellungstoren |
@@ -209,7 +209,7 @@ GenAI-Security-Crosswalk/
 │   ├── Agentic_NISTCSF2.md
 │   ├── Agentic_ISA62443.md          ← OT/ICS
 │   ├── Agentic_MAESTRO.md           ← Bedrohungsmodellierung — 7-Schichten-Architektur
-│   ├── Agentic_OWASP_NHI.md         ← Nicht-menschliche Identitaet
+│   ├── Agentic_NHI.md         ← Nicht-menschliche Identitaet
 │   ├── Agentic_CISControls.md
 │   ├── Agentic_ASVS.md
 │   ├── Agentic_AITG.md              ← KI-Testleitfaden — 50 Testfaelle
@@ -343,7 +343,7 @@ Finden Sie Ihren Einstiegspunkt in unter 60 Sekunden.
 → Start: [CROSSREF.md](CROSSREF.md) — Master-Kreuzreferenz ueber alle 41 Schwachstellen-IDs
 → Dann: [Agentic_MAESTRO.md](agentic-top10/Agentic_MAESTRO.md) — Architektur-Bedrohungsmodell (wo entsteht jedes Risiko?)
 → Dann: [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) — jedes Risiko bewerten; Autonomie fuegt durchschnittlich +1.79 Schweregrad hinzu
-→ Dann: [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) — Identitaets- und Anmeldedatenkontrollen
+→ Dann: [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) — Identitaets- und Anmeldedatenkontrollen
 
 **Ich bin SOC 2-Pruefer oder GRC-Fachperson und bereite eine GenAI-Kontrollbewertung vor**
 → Start: [LLM_SOC2.md](llm-top10/LLM_SOC2.md) — TSC-Zuordnung fuer SaaS-/Cloud-LLM-Bereitstellungen
@@ -374,7 +374,7 @@ Finden Sie Ihren Einstiegspunkt in unter 60 Sekunden.
 → [LLM_ISA62443.md](llm-top10/LLM_ISA62443.md) · [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) · [DSGAI_ISA62443.md](dsgai-2026/DSGAI_ISA62443.md) · [LLM_NISTSP80082.md](llm-top10/LLM_NISTSP80082.md)
 
 **Bereitstellung autonomer Agenten**
-→ [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) — Identitaetsgovernance
+→ [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) — Identitaetsgovernance
 → [Agentic_AIUC1.md](agentic-top10/Agentic_AIUC1.md) — Agentische Governance-Zertifizierung
 → [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) — Risikobewertung mit Autonomiepraemie
 
@@ -432,7 +432,7 @@ Zentrale Erkenntnis aus der DSGAI-Zuordnung: **L2 Datenoperationen ist die Urspr
 
 ### Vollstaendige agentische Identitaetsabdeckung
 
-[Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) ordnet jeden NHI Top 10-Eintrag jedem ASI-Eintrag zu — das einzige oeffentliche Dokument, das agentische Sicherheitsrisiken in die NHI-Kontrollen uebersetzt, die IAM-Teams bereits betreiben.
+[Agentic_NHI.md](agentic-top10/Agentic_NHI.md) ordnet jeden NHI Top 10-Eintrag jedem ASI-Eintrag zu — das einzige oeffentliche Dokument, das agentische Sicherheitsrisiken in die NHI-Kontrollen uebersetzt, die IAM-Teams bereits betreiben.
 
 ### SAMM-Reifegradbewertungskarte
 

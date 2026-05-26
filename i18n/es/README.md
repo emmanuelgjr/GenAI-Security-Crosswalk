@@ -116,7 +116,7 @@ Todo gratuito. Todo de código abierto. Construido para profesionales.
 | [Agentic_NISTCSF2.md](agentic-top10/Agentic_NISTCSF2.md) | NIST CSF 2.0 | Mapeo de política de autonomía GOVERN-first, perfil agéntico CSF 2.0 |
 | [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) | ISA/IEC 62443 — OT/ICS | Modelo de zonas OT agéntico, diseño de interruptor de emergencia, tabla de elevación SL |
 | [Agentic_MAESTRO.md](agentic-top10/Agentic_MAESTRO.md) | MAESTRO — CSA | Modelo de amenazas arquitectónico de siete capas, mapeo capa-a-ASI, guía de sesión |
-| [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) | OWASP NHI Top 10 | Mapeo cruzado completo NHI-a-ASI, tabla de madurez del programa NHI |
+| [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) | OWASP NHI Top 10 | Mapeo cruzado completo NHI-a-ASI, tabla de madurez del programa NHI |
 | [Agentic_CISControls.md](agentic-top10/Agentic_CISControls.md) | CIS Controls v8.1 | Salvaguardas IG1/IG2/IG3, NHI agéntico tratado como acceso privilegiado CIS 5 |
 | [Agentic_ASVS.md](agentic-top10/Agentic_ASVS.md) | OWASP ASVS 4.0.3 | Lista de verificación L1/L2/L3 para despliegues agénticos |
 | [Agentic_AITG.md](agentic-top10/Agentic_AITG.md) | OWASP AI Testing Guide | 50 casos de prueba estructurados para ASI01–ASI10 con puertas de pre-despliegue |
@@ -209,7 +209,7 @@ GenAI-Security-Crosswalk/
 │   ├── Agentic_NISTCSF2.md
 │   ├── Agentic_ISA62443.md          ← OT/ICS
 │   ├── Agentic_MAESTRO.md           ← Modelado de amenazas — arquitectura de 7 capas
-│   ├── Agentic_OWASP_NHI.md         ← Identidad no humana
+│   ├── Agentic_NHI.md         ← Identidad no humana
 │   ├── Agentic_CISControls.md
 │   ├── Agentic_ASVS.md
 │   ├── Agentic_AITG.md              ← Guía de pruebas de IA — 50 casos de prueba
@@ -343,7 +343,7 @@ Encuentre su punto de entrada en menos de 60 segundos.
 → Comience: [CROSSREF.md](CROSSREF.md) — referencia cruzada maestra de los 41 IDs de vulnerabilidad
 → Luego: [Agentic_MAESTRO.md](agentic-top10/Agentic_MAESTRO.md) — modelo de amenazas arquitectónico (¿dónde se origina cada riesgo?)
 → Luego: [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) — puntúe cada riesgo; la autonomía añade +1.79 de severidad promedio
-→ Luego: [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) — controles de identidad y credenciales
+→ Luego: [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) — controles de identidad y credenciales
 
 **Soy un auditor SOC 2 o profesional GRC preparando una evaluación de controles GenAI**
 → Comience: [LLM_SOC2.md](llm-top10/LLM_SOC2.md) — mapeo TSC para despliegues LLM en SaaS/nube
@@ -374,7 +374,7 @@ Encuentre su punto de entrada en menos de 60 segundos.
 → [LLM_ISA62443.md](llm-top10/LLM_ISA62443.md) · [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) · [DSGAI_ISA62443.md](dsgai-2026/DSGAI_ISA62443.md) · [LLM_NISTSP80082.md](llm-top10/LLM_NISTSP80082.md)
 
 **Desplegando agentes autónomos**
-→ [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) — gobernanza de identidad
+→ [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) — gobernanza de identidad
 → [Agentic_AIUC1.md](agentic-top10/Agentic_AIUC1.md) — certificación de gobernanza agéntica
 → [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) — puntuación de riesgos con prima de autonomía
 
@@ -432,7 +432,7 @@ Hallazgo clave del mapeo DSGAI: **L2 Operaciones de Datos es la capa de origen p
 
 ### Cobertura completa de identidad agéntica
 
-[Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) mapea cada entrada NHI Top 10 a cada entrada ASI — el único documento público que traduce los riesgos de seguridad agéntica en los controles NHI que los equipos de IAM ya operan.
+[Agentic_NHI.md](agentic-top10/Agentic_NHI.md) mapea cada entrada NHI Top 10 a cada entrada ASI — el único documento público que traduce los riesgos de seguridad agéntica en los controles NHI que los equipos de IAM ya operan.
 
 ### Tarjeta de puntuación de madurez SAMM
 

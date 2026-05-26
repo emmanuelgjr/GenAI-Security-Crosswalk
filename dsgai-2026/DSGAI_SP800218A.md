@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# DSGAI 2026 – NIST SP 800-218A
+# DSGAI 2026 × NIST SP 800-218A
 
 Mapping the [OWASP GenAI Data Security Risks 2026](https://genai.owasp.org/dsgai-2026/)
 to [NIST SP 800-218A: Secure Software Development Practices for Generative AI and Dual-Use Foundation Models](https://doi.org/10.6028/NIST.SP.800-218A.ipd)

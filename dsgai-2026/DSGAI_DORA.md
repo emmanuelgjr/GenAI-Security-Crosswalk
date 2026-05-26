@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# DSGAI 2026 – DORA
+# DSGAI 2026 × DORA
 
 Mapping the [OWASP GenAI Data Security Risks 2026](https://genai.owasp.org/dsgai-2026/)
 to the [Digital Operational Resilience Act (DORA)](https://eur-lex.europa.eu/eli/reg/2022/2554/oj)

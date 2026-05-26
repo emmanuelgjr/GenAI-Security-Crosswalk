@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 — OWASP AI Testing Guide
+# LLM Top 10 2025 × OWASP AI Testing Guide
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to the [OWASP AI Testing Guide (AITG)](https://owasp.org/www-project-ai-testing-guide/) —

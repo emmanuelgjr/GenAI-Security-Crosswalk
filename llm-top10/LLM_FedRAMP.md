@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 – FedRAMP AI Overlay
+# LLM Top 10 2025 × FedRAMP AI Overlay
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to the [FedRAMP AI Overlay](https://www.fedramp.gov/) extending

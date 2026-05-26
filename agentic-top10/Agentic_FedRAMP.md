@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# Agentic Top 10 2026 – FedRAMP AI Overlay
+# Agentic Top 10 2026 × FedRAMP AI Overlay
 
 Mapping the [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
 to the [FedRAMP AI Overlay](https://www.fedramp.gov/) extending

@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# DSGAI 2026 x SOC 2
+# DSGAI 2026 × SOC 2
 
 Mapping the [OWASP GenAI Data Security Risks and Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
 (DSGAI01-DSGAI21) to [SOC 2](https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services)

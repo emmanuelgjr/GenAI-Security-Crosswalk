@@ -376,7 +376,7 @@ blast radius.
 
 - [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/)
 - [OWASP LLM Top 10 2025](https://genai.owasp.org/llm-top-10/)
-- [Agentic_OWASP_NHI.md](../agentic-top10/Agentic_OWASP_NHI.md) — full NHI-to-ASI cross-mapping
+- [Agentic_NHI.md](../agentic-top10/Agentic_NHI.md) — full NHI-to-ASI cross-mapping
 - [LLM_SAMM.md](LLM_SAMM.md) — security programme maturity for LLM deployments
 - [shared/RECIPES.md](../shared/RECIPES.md) — Pattern 3: JIT Credential Issuance
 

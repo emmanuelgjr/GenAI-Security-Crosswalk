@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# DSGAI 2026 – FedRAMP AI Overlay
+# DSGAI 2026 × FedRAMP AI Overlay
 
 Mapping the [OWASP GenAI Data Security Risks 2026](https://genai.owasp.org/dsgai-2026/)
 to the [FedRAMP AI Overlay](https://www.fedramp.gov/) extending

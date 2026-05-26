@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# Agentic Top 10 2026 – DORA
+# Agentic Top 10 2026 × DORA
 
 Mapping the [OWASP Top 10 for Agentic AI 2026](https://genai.owasp.org/agentic-ai/)
 to the [Digital Operational Resilience Act (DORA)](https://eur-lex.europa.eu/eli/reg/2022/2554/oj)

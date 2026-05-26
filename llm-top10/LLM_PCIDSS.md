@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 x PCI DSS v4.0
+# LLM Top 10 2025 × PCI DSS v4.0
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/)
