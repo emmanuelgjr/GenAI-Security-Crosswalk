@@ -95,7 +95,7 @@ both data security and operational resilience regulatory obligations.
 
 ---
 
-### DSGAI01 – Data Access Logging
+### DSGAI01 – Sensitive Data Leakage
 
 **Severity:** High
 
@@ -165,7 +165,7 @@ demonstrate compliance with DORA operational resilience requirements.
 
 ---
 
-### DSGAI02 – Data Visibility
+### DSGAI02 – Agent Identity & Credential Exposure
 
 **Severity:** High
 
@@ -229,7 +229,7 @@ demonstrate regulatory compliance.
 
 ---
 
-### DSGAI03 – Shadow AI
+### DSGAI03 – Shadow AI & Unsanctioned Data Flows
 
 **Severity:** High
 
@@ -294,7 +294,7 @@ both DORA and GDPR oversight.
 
 ---
 
-### DSGAI04 – Data/Artifact Poisoning
+### DSGAI04 – Data Model & Artifact Poisoning
 
 **Severity:** Critical
 
@@ -366,7 +366,7 @@ or biased credit decisions.
 
 ---
 
-### DSGAI05 – Data Provenance
+### DSGAI05 – Data Integrity & Validation Failures
 
 **Severity:** High
 
@@ -434,7 +434,7 @@ or legally restricted data.
 
 ---
 
-### DSGAI06 – Data Lineage
+### DSGAI06 – Tool Plugin & Agent Data Exchange
 
 **Severity:** Medium
 
@@ -491,7 +491,7 @@ impact analysis when data quality issues or poisoning events are detected.
 
 ---
 
-### DSGAI07 – Excessive Aggregation
+### DSGAI07 – Data Governance & Lifecycle
 
 **Severity:** High
 
@@ -551,7 +551,7 @@ of the originals.
 
 ---
 
-### DSGAI08 – Data Leakage
+### DSGAI08 – Non-Compliance & Regulatory Violations
 
 **Severity:** Critical
 
@@ -619,7 +619,7 @@ PII, credit data, trading strategies, or regulatory-protected information.
 
 ---
 
-### DSGAI09 – IP Theft
+### DSGAI09 – Multimodal Cross-Channel Leakage
 
 **Severity:** High
 
@@ -679,7 +679,7 @@ advantages.
 
 ---
 
-### DSGAI10 – Synthetic Data Risk
+### DSGAI10 – Synthetic Data & Anonymization Pitfalls
 
 **Severity:** Medium
 
@@ -740,7 +740,7 @@ data for model training and testing, making privacy validation critical.
 
 ---
 
-### DSGAI11 – Retention/Deletion
+### DSGAI11 – Cross-Context Conversation Bleed
 
 **Severity:** High
 
@@ -802,7 +802,7 @@ particularly challenging.
 
 ---
 
-### DSGAI12 – Data Ownership
+### DSGAI12 – Unsafe NL Data Gateways
 
 **Severity:** Medium
 
@@ -861,7 +861,7 @@ derived data to avoid disputes and ensure regulatory compliance.
 
 ---
 
-### DSGAI13 – Data Misuse
+### DSGAI13 – Vector Store Platform Security
 
 **Severity:** High
 
@@ -920,7 +920,7 @@ respects both DORA requirements and data subject rights.
 
 ---
 
-### DSGAI14 – Consent Management
+### DSGAI14 – Excessive Telemetry & Monitoring Leakage
 
 **Severity:** High
 
@@ -979,7 +979,7 @@ governance.
 
 ---
 
-### DSGAI15 – Data Minimisation
+### DSGAI15 – Over-Broad Context Windows
 
 **Severity:** Medium
 
@@ -1036,7 +1036,7 @@ particularly for customer financial data.
 
 ---
 
-### DSGAI16 – Privacy Erosion
+### DSGAI16 – Endpoint & Browser Overreach
 
 **Severity:** High
 
@@ -1104,7 +1104,7 @@ data.
 
 ---
 
-### DSGAI17 – Bias in Data
+### DSGAI17 – Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -1170,7 +1170,7 @@ making bias detection a regulatory compliance requirement.
 
 ---
 
-### DSGAI18 – Governance Gaps
+### DSGAI18 – Inference & Data Reconstruction
 
 **Severity:** High
 
@@ -1231,7 +1231,7 @@ across AI deployments.
 
 ---
 
-### DSGAI19 – Third-Party Data Risk
+### DSGAI19 – Human-in-Loop & Labeler Overexposure
 
 **Severity:** High
 
@@ -1303,7 +1303,7 @@ of critical third-party providers by European Supervisory Authorities.
 
 ---
 
-### DSGAI20 – Data Localization
+### DSGAI20 – Model Exfiltration & IP Replication
 
 **Severity:** High
 
@@ -1369,7 +1369,7 @@ cloud-based providers may inadvertently cross jurisdictional boundaries.
 
 ---
 
-### DSGAI21 – Non-Compliance
+### DSGAI21 – Disinformation & Integrity Attacks
 
 **Severity:** Critical
 

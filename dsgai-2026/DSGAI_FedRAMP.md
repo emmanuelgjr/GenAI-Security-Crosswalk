@@ -91,7 +91,7 @@ to data retention, consent management, and cross-jurisdictional compliance.
 
 ---
 
-### DSGAI01 – Data Access Logging
+### DSGAI01 – Sensitive Data Leakage
 
 **Severity:** High
 
@@ -152,7 +152,7 @@ authenticated, logged access to AI data stores (AC-3).
 
 ---
 
-### DSGAI02 – Data Visibility & Transparency
+### DSGAI02 – Agent Identity & Credential Exposure
 
 **Severity:** High
 
@@ -212,7 +212,7 @@ change control for data pipelines (CM-3).
 
 ---
 
-### DSGAI03 – Shadow AI & Unvetted Tools
+### DSGAI03 – Shadow AI & Unsanctioned Data Flows
 
 **Severity:** High
 
@@ -333,7 +333,7 @@ at rest (SC-28).
 
 ---
 
-### DSGAI05 – Data Provenance & Quality
+### DSGAI05 – Data Integrity & Validation Failures
 
 **Severity:** High
 
@@ -391,7 +391,7 @@ configuration change control for data pipeline changes (CM-3).
 
 ---
 
-### DSGAI06 – Data Lineage Fragmentation
+### DSGAI06 – Tool Plugin & Agent Data Exchange
 
 **Severity:** Medium
 
@@ -450,7 +450,7 @@ visibility (PM-9).
 
 ---
 
-### DSGAI07 – Excessive Data Aggregation
+### DSGAI07 – Data Governance & Lifecycle
 
 **Severity:** High
 
@@ -508,7 +508,7 @@ aggregation risk (PM-9).
 
 ---
 
-### DSGAI08 – Data Leakage & Exposure
+### DSGAI08 – Non-Compliance & Regulatory Violations
 
 **Severity:** Critical
 
@@ -564,7 +564,7 @@ comprehensive logging (AU-2), and system monitoring for leakage indicators
 
 ---
 
-### DSGAI09 – Intellectual Property Theft
+### DSGAI09 – Multimodal Cross-Channel Leakage
 
 **Severity:** High
 
@@ -620,7 +620,7 @@ for IP access tracking (AU-12).
 
 ---
 
-### DSGAI10 – Synthetic Data Generation Risk
+### DSGAI10 – Synthetic Data & Anonymization Pitfalls
 
 **Severity:** Medium
 
@@ -673,7 +673,7 @@ covering synthetic data risks (RA-5).
 
 ---
 
-### DSGAI11 – Data Retention & Deletion
+### DSGAI11 – Cross-Context Conversation Bleed
 
 **Severity:** High
 
@@ -728,7 +728,7 @@ retention governance (PM-9).
 
 ---
 
-### DSGAI12 – Data Ownership & Monetisation
+### DSGAI12 – Unsafe NL Data Gateways
 
 **Severity:** Medium
 
@@ -779,7 +779,7 @@ access enforcement based on ownership (AC-3), and logging of data usage
 
 ---
 
-### DSGAI13 – Data Misuse & Manipulation
+### DSGAI13 – Vector Store Platform Security
 
 **Severity:** High
 
@@ -831,7 +831,7 @@ enforcement restricting data usage (AC-3), logging of all data operations
 
 ---
 
-### DSGAI14 – Consent Management Failures
+### DSGAI14 – Excessive Telemetry & Monitoring Leakage
 
 **Severity:** High
 
@@ -882,7 +882,7 @@ covering consent governance (PM-9), access enforcement aligned with consent
 
 ---
 
-### DSGAI15 – Data Minimisation Violations
+### DSGAI15 – Over-Broad Context Windows
 
 **Severity:** Medium
 
@@ -934,7 +934,7 @@ processing scope (CM-7), and risk management covering minimisation (PM-9).
 
 ---
 
-### DSGAI16 – Erosion of Privacy
+### DSGAI16 – Endpoint & Browser Overreach
 
 **Severity:** High
 
@@ -987,7 +987,7 @@ and system monitoring for privacy erosion indicators (SI-4).
 
 ---
 
-### DSGAI17 – Bias in Data
+### DSGAI17 – Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -1038,7 +1038,7 @@ scanning covering bias detection (RA-5).
 
 ---
 
-### DSGAI18 – Governance Gaps
+### DSGAI18 – Inference & Data Reconstruction
 
 **Severity:** High
 
@@ -1090,7 +1090,7 @@ assessment for governance completeness (RA-3).
 
 ---
 
-### DSGAI19 – Third-Party Data Risk
+### DSGAI19 – Human-in-Loop & Labeler Overexposure
 
 **Severity:** High
 
@@ -1140,7 +1140,7 @@ external service controls (SA-9), supply chain planning for data providers
 
 ---
 
-### DSGAI20 – Data Localization Violations
+### DSGAI20 – Model Exfiltration & IP Replication
 
 **Severity:** High
 
@@ -1193,7 +1193,7 @@ control for data location (CM-3).
 
 ---
 
-### DSGAI21 – Non-Compliance with Data Laws
+### DSGAI21 – Disinformation & Integrity Attacks
 
 **Severity:** Critical
 
