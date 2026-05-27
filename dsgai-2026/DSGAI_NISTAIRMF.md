@@ -28,6 +28,7 @@ governance programmes who need to operationalise the DSGAI risks within
 their existing framework.
 
 ---
+## Why # DSGAI 2026 × NIST AI RMF for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × NIST AI RMF controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × NIST AI RMF compliance and governance programmes.---
 
 ## AI RMF core functions — GenAI data security lens
 
@@ -1506,6 +1507,12 @@ A machine-readable version of this profile is available at:
 | 2 — This sprint | DSGAI03, DSGAI07, DSGAI14 | GV-1.7 policy, MP-1.6 inventory, MS-2.6 testing | Asset inventory and governance close shadow AI and telemetry gaps |
 | 3 — This quarter | DSGAI04, DSGAI05, DSGAI13 | MS-2.5 testing, MS-3.3 data quality, MG-2.2 IR | Integrity and vector store controls require pipeline-level changes |
 | 4 — Ongoing | DSGAI08–DSGAI11, DSGAI15–DSGAI21 | All subcategories | Defence-in-depth, privacy, resilience, and regulatory hardening |
+
+---
+
+## See also
+
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

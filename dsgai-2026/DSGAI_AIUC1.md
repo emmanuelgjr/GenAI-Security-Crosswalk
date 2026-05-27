@@ -20,6 +20,7 @@ map directly to the data security concerns across the DSGAI taxonomy —
 Domain A (Data & Privacy) alone covers a majority of the 21 DSGAI entries.
 
 ---
+## Why # DSGAI 2026 × AIUC-1 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × AIUC-1 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × AIUC-1 compliance and governance programmes.---
 
 ## AIUC-1 domains at a glance
 

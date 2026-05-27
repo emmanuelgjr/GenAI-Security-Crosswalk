@@ -22,6 +22,7 @@ enables security engineers and penetration testers to translate DSGAI threats in
 verifiable ASVS requirements for inclusion in security test plans.
 
 ---
+## Why # DSGAI 2026 × OWASP ASVS 4.0.3 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × OWASP ASVS 4.0.3 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × OWASP ASVS 4.0.3 compliance and governance programmes.---
 
 ## ASVS structure
 
@@ -1052,6 +1053,12 @@ targeting specific topics, entities, or user segments with malicious intent.
 | 2 — This sprint | DSGAI04, DSGAI11, DSGAI15 | V3, V5, V10 | Poisoning and context isolation close the next-highest risk paths |
 | 3 — This quarter | DSGAI03, DSGAI05, DSGAI06, DSGAI07 | V1, V7, V11 | Data governance, architecture, and tool exchange |
 | 4 — Ongoing | DSGAI08–10, DSGAI13–21 | V6, V7, V8, V13 | Compliance, resilience, inference privacy, and advanced hardening |
+
+---
+
+## See also
+
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

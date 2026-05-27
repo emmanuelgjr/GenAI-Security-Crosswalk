@@ -677,6 +677,7 @@ AI deployments against the Agentic Top 10 risk coverage:
 
 - [LLM Top 10 × NHI](../llm-top10/LLM_NHI.md)
 - [DSGAI 2026 × NHI](../dsgai-2026/DSGAI_NHI.md)
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
 
 ---
 

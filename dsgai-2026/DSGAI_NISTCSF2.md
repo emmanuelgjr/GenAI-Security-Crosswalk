@@ -21,6 +21,7 @@ data security — data governance policy, supply chain oversight,
 and acceptable use requirements are GOVERN responsibilities.
 
 ---
+## Why # DSGAI 2026 × NIST CSF 2.0 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × NIST CSF 2.0 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × NIST CSF 2.0 compliance and governance programmes.---
 
 ## Quick-reference summary
 
@@ -1006,6 +1007,15 @@ detection (DE.CM) govern RAG corpus integrity.
 | 2 — PROTECT | DSGAI02, DSGAI11, DSGAI12 | PR.AA, PR.DS, PR.PS-04 | Access control and NL gateway security close most common breach paths |
 | 3 — DETECT | DSGAI04, DSGAI21, DSGAI20 | DE.CM-09, DE.AE-02 | Poisoning, disinformation, and extraction detection programme |
 | 4 — RESPOND + RECOVER | All | RS.AN, RS.MI, RC.RP | Incident response tested, BCP covers all GenAI data scenarios |
+
+---
+
+## See also
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
+
+- [LLM Top 10 × NIST CSF 2.0](../llm-top10/LLM_NISTCSF2.md)
+- [Agentic Top 10 × NIST CSF 2.0](../agentic-top10/Agentic_NISTCSF2.md)
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

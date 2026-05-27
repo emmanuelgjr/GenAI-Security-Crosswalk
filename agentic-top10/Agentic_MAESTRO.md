@@ -1062,6 +1062,7 @@ The integration across OWASP artefacts is:
 
 - [LLM Top 10 × MAESTRO](../llm-top10/LLM_MAESTRO.md)
 - [DSGAI 2026 × SAMM](../dsgai-2026/DSGAI_SAMM.md)
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
 
 ---
 

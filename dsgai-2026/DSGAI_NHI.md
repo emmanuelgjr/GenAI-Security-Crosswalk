@@ -551,6 +551,13 @@ in lineage records.
 
 ---
 
+## See also
+
+- [Agentic Top 10 × NHI](../agentic-top10/Agentic_NHI.md)
+- [LLM Top 10 × NHI](../llm-top10/LLM_NHI.md)
+
+---
+
 ## References
 
 - [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/)

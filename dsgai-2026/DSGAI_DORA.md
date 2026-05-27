@@ -31,6 +31,7 @@ OWASP DSGAI risk to specific DORA articles and implement controls satisfying
 both data security and operational resilience regulatory obligations.
 
 ---
+## Why # DSGAI 2026 × DORA for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × DORA controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × DORA compliance and governance programmes.---
 
 ## DORA article groups
 

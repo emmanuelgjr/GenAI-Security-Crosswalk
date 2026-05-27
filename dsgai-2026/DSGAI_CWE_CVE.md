@@ -21,6 +21,7 @@ using the same taxonomy applied to the rest of the application stack. CVE entrie
 provide confirmed real-world exploitation evidence for DSGAI risk areas.
 
 ---
+## Why # DSGAI 2026 × CWE / CVE for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × CWE / CVE controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × CWE / CVE compliance and governance programmes.---
 
 ## CWE pillar families most relevant to DSGAI
 
@@ -991,6 +992,12 @@ systematically generate false outputs for targeted topics or entities.
 | 2 — This sprint | DSGAI04, DSGAI05, DSGAI11 | CWE-345, CWE-20, CWE-488 | Poisoning, validation, and context isolation |
 | 3 — This quarter | DSGAI03, DSGAI06, DSGAI07, DSGAI13–15 | CWE-284, CWE-268, CWE-312 | Access control, tool exchange, and data governance |
 | 4 — Ongoing | DSGAI08–10, DSGAI16–21 | CWE-359, CWE-400, CWE-327 | Compliance, resilience, and advanced threat mitigation |
+
+---
+
+## See also
+
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

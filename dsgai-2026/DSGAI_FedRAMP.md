@@ -27,6 +27,7 @@ training corpora, through access control and integrity of model artefacts,
 to data retention, consent management, and cross-jurisdictional compliance.
 
 ---
+## Why # DSGAI 2026 × FedRAMP AI Overlay for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × FedRAMP AI Overlay controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × FedRAMP AI Overlay compliance and governance programmes.---
 
 ## FedRAMP AI control families
 

@@ -29,6 +29,7 @@ are implicated throughout the DSGAI taxonomy, not only in the
 obviously data-focused entries.
 
 ---
+## Why # DSGAI 2026 × SOC 2 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × SOC 2 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × SOC 2 compliance and governance programmes.---
 
 ## Quick-reference summary
 
@@ -1183,6 +1184,13 @@ RAG data source providers as vendors) also applies.
 | 2 — This sprint | DSGAI07, DSGAI08, DSGAI17 | P4, CC5, A1 | Data governance, compliance documentation, and availability commitments |
 | 3 — This quarter | DSGAI04, DSGAI05, DSGAI21 | CC8, PI1, CC9 | Change management, processing integrity, and source trust controls |
 | 4 — Ongoing | DSGAI09-DSGAI16, DSGAI18-DSGAI20 | C2/P5, CC7 | Privacy, advanced monitoring, and IP protection hardening |
+
+---
+
+## See also
+
+- [Agentic Top 10 × SOC 2](../agentic-top10/Agentic_SOC2.md)
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

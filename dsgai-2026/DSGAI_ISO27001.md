@@ -28,6 +28,7 @@ certification does not substitute for those obligations but provides
 foundational evidence of security controls.
 
 ---
+## Why # DSGAI 2026 × ISO/IEC 27001:2022 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × ISO/IEC 27001:2022 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × ISO/IEC 27001:2022 compliance and governance programmes.---
 
 ## ISO 27001:2022 Annex A control domains
 
@@ -1526,6 +1527,12 @@ GenAI data security obligations:
 | 2 — This sprint | DSGAI03, DSGAI07, DSGAI14 | A.5.10, A.5.9, A.8.15 | Asset inventory and governance close the shadow AI and telemetry gaps |
 | 3 — This quarter | DSGAI04, DSGAI05, DSGAI13 | A.8.27, A.8.29, A.8.24 | Integrity and vector store controls require pipeline-level changes |
 | 4 — Ongoing | DSGAI08–DSGAI11, DSGAI15–DSGAI21 | All remaining | Defence-in-depth, privacy, and resilience hardening |
+
+---
+
+## See also
+
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 
