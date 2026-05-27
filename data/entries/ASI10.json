@@ -269,11 +269,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Availability risks",
-      "control_name": "§5.6",
+      "control_id": "ICS vulnerabilities",
+      "control_name": "§5.3",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Cascading failure across OT components"
+      "notes": "Rogue automation is the highest-severity OT threat category"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -281,7 +281,7 @@
       "control_name": "§6.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Cascade failure scenarios in OT risk register"
+      "notes": "Rogue agent scenarios must be in OT risk register"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -289,7 +289,7 @@
       "control_name": "§7.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Circuit breakers between OT automation layers"
+      "notes": "Behavioural monitoring and containment for all OT automation"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -421,11 +421,19 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Design circuit breakers and blast radius containment between agents"
+      "notes": "Model scenarios where agents pursue hidden goals; identify detection and containment requirements"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Red team: simulate persistent hidden goal pursuit across extended sessions"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -433,23 +441,15 @@
       "control_name": "Operations / Incident Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Detect correlated failures across multiple agents; alert before full cascade"
+      "notes": "Detect behavioural baseline deviations; alert on hidden tool invocations and recommendation bias"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-EM",
-      "control_name": "Operations / Environment Management",
+      "control_id": "O-OM",
+      "control_name": "Operations / Operational Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Continuous health checks; automatic isolation of degraded agents"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "V-AA",
-      "control_name": "Verification / Architecture Assessment",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Verify blast radius containment in architecture review"
+      "notes": "Continuous behavioural monitoring with baselines established during commissioning"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -457,7 +457,7 @@
       "control_name": "Operations / Incident Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Documented runbook for cascade scenarios including rollback procedures"
+      "notes": "Documented runbook: kill switch, audit, state validation, forensic capture"
     },
     {
       "framework": "CWE/CVE",
@@ -605,99 +605,99 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Vet all external agent dependencies — LLM APIs, tool endpoints, MCP servers, orchestration platforms — for reliability, security posture, and failure mode characteristics before adoption",
-      "control_name": "PW.4.1-PS – Reuse existing well-secured software",
+      "control_id": "Review agent behaviour for rogue agent indicators — verify that agents cannot pursue hidden goals, execute undisclosed tool calls, or maintain hidden state between sessions",
+      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Prevents adoption of unreliable dependencies"
+      "notes": "Catches rogue agent risks before production"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Verify that external dependency responses are consistent with expected behaviour — detect API version changes, model swaps, or degraded output quality that could affect agent correctness",
-      "control_name": "PS.2.1-PS – Verify software integrity",
+      "control_id": "Conduct adversarial testing simulating rogue agent scenarios — persistent hidden goal pursuit, undisclosed tool invocations, systematic recommendation bias across extended sessions",
+      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Detects dependency degradation and tampering"
+      "notes": "Validates rogue agent detection under realistic conditions"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Monitor all agent dependencies for availability, behavioural consistency, and security posture changes; establish triage procedures for dependency degradation events",
+      "control_id": "Establish comprehensive monitoring for rogue agent behaviour — behavioural baseline deviation, hidden tool invocations, recommendation bias; define triage and containment procedures",
       "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enables rapid detection of dependency failures"
+      "notes": "Enables rapid detection and containment of rogue agents"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Define remediation procedures for dependency failures — graceful degradation, fallback providers, workflow suspension, and stakeholder notification",
-      "control_name": "RV.2.1-PS – Assess, prioritise, and remediate vulnerabilities",
+      "control_id": "When rogue agent behaviour is detected, conduct root cause analysis to identify the trigger — model compromise, configuration tampering, emergent behaviour, or adversarial manipulation",
+      "control_name": "RV.3.1-PS – Analyse root causes",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Ensures operational continuity during dependency outages"
+      "notes": "Builds organisational knowledge of rogue agent risks"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SR-2",
-      "control_name": "Supply Chain Risk Management Plan — agent dependencies",
+      "control_id": "CA-7",
+      "control_name": "Continuous Monitoring — rogue agent detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include all agent external dependencies — model APIs, tool endpoints, data sources — in supply chain risk management with availability and integrity requirements"
-    },
-    {
-      "framework": "FedRAMP",
-      "control_id": "SA-9",
-      "control_name": "External Information System Services — agent service dependencies",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Require SLAs from agent dependency providers covering availability, performance, security, and incident notification; establish fallback procedures"
+      "notes": "Include monitoring for rogue agent behaviour in FedRAMP continuous monitoring; track for hidden goal pursuit, undisclosed tool calls, and systematic recommendation bias"
     },
     {
       "framework": "FedRAMP",
       "control_id": "SI-4",
-      "control_name": "System Monitoring — dependency health monitoring",
+      "control_name": "System Monitoring — behavioural anomaly detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor agent dependency health in real time — API availability, response latency, error rates; alert on degradation and trigger fallback procedures"
+      "notes": "Monitor agent systems for behavioural anomalies — unexpected tool invocations, deviation from established baselines, and hidden communication patterns"
     },
     {
       "framework": "FedRAMP",
       "control_id": "IR-4",
-      "control_name": "Incident Handling — dependency failure response",
+      "control_name": "Incident Handling — rogue agent containment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define incident handling procedures for agent dependency failures; include automated fallback activation, graceful degradation, and service restoration"
+      "notes": "Define incident handling procedures for rogue agent events; include kill switch activation, recommendation audit, state validation, and forensic capture"
     },
     {
-      "framework": "DORA",
-      "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — agent dependency oversight",
+      "framework": "FedRAMP",
+      "control_id": "AU-6",
+      "control_name": "Audit Review — agent decision pattern review",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include all agent external dependencies — model APIs, tool endpoints, data sources — in third-party ICT risk management with availability and integrity requirements"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 11",
-      "control_name": "Response and Recovery — dependency failure response",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Define response and recovery procedures for agent dependency failures; include fallback activation, graceful degradation, and service restoration"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 12",
-      "control_name": "Backup Policies — dependency continuity",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Maintain backup and fallback mechanisms for critical agent dependencies; enable continued operation during provider outages"
+      "notes": "Conduct regular audit review of agent decision patterns; identify systematic bias, hidden objective indicators, and recommendation manipulation"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 10",
-      "control_name": "Detection — dependency health monitoring",
+      "control_name": "Detection — rogue agent behaviour monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor agent dependency health in real time — API availability, response latency, error rates; alert on degradation and trigger fallback procedures"
+      "notes": "Deploy comprehensive behavioural monitoring for all agents — establish behavioural baselines, detect deviations, alert on hidden tool invocations and systematic recommendation bias"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — rogue agent incident reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify rogue agent events as ICT-related incidents; define containment procedures including kill switch activation, audit, and forensic capture"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing — rogue agent scenarios",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include rogue agent scenarios in threat-led penetration testing; simulate persistent hidden goal pursuit across extended sessions; verify detection capability"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management — rogue agent governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include rogue agent risk in ICT risk management framework; define scope constraints and behavioural monitoring requirements for all agent deployments"
     }
   ],
   "tools": [
@@ -752,29 +752,29 @@
       "url": "https://goteleport.com"
     },
     {
+      "name": "LAAF (LLM Agent Assessment Framework)",
+      "type": "open-source",
+      "url": "https://github.com/OWASP/LAAF"
+    },
+    {
+      "name": "Garak",
+      "type": "open-source",
+      "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "LangSmith",
+      "type": "commercial",
+      "url": "https://smith.langchain.com"
+    },
+    {
       "name": "OpenTelemetry",
       "type": "open-source",
       "url": "https://opentelemetry.io"
     },
     {
-      "name": "LiteLLM",
-      "type": "open-source",
-      "url": "https://github.com/BerriAI/litellm"
-    },
-    {
-      "name": "Grafana",
-      "type": "open-source",
-      "url": "https://grafana.com"
-    },
-    {
       "name": "PagerDuty",
       "type": "commercial",
       "url": "https://www.pagerduty.com"
-    },
-    {
-      "name": "Istio",
-      "type": "open-source",
-      "url": "https://istio.io"
     },
     {
       "name": "AgentOps",
@@ -858,9 +858,7 @@
   ],
   "crossrefs": {
     "llm_top10": [
-      "LLM06",
-      "LLM10",
-      "LLM05"
+      "LLM06"
     ],
     "agentic_top10": [
       "ASI01",
@@ -876,10 +874,7 @@
     "dsgai_2026": [
       "DSGAI16",
       "DSGAI03",
-      "DSGAI19",
-      "DSGAI02",
-      "DSGAI17",
-      "DSGAI06"
+      "DSGAI02"
     ]
   },
   "changelog": [

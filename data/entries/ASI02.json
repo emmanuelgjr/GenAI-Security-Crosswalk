@@ -273,7 +273,15 @@
       "control_name": "§5.3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Excessive privilege is specifically listed as OT vulnerability class"
+      "notes": "Tool misuse amplified by autonomous agent capabilities"
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "Supply chain risks",
+      "control_name": "§5.5",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Third-party OT tool components may enable misuse"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -281,7 +289,7 @@
       "control_name": "§6.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Assess agent permission scope as part of OT risk register"
+      "notes": "Assess agent tool misuse risk in OT risk register"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -289,7 +297,7 @@
       "control_name": "§7.1",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Least privilege must be enforced at zone boundary for all automated systems"
+      "notes": "Tool access controls enforced at zone boundary"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -421,35 +429,27 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
+      "control_id": "D-SR",
+      "control_name": "Design / Security Requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define per-agent permission sets; review in architecture assessment"
+      "notes": "Security requirements for every tool: auth, scope, parameter validation, irreversibility classification"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-SM",
-      "control_name": "Governance / Strategy & Metrics",
+      "control_id": "I-SB",
+      "control_name": "Implementation / Secure Build",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Formalise agent identity and permission lifecycle"
+      "notes": "Only approved tools can be registered; unsigned tools are rejected; MCP descriptor integrity verified"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-AA",
-      "control_name": "Verification / Architecture Assessment",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Periodic review of declared vs granted permissions per agent"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Alert when agent requests permissions outside declared scope"
+      "notes": "Automated checks on tool descriptors, parameters, and permissions; destructive parameter detection"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -457,7 +457,15 @@
       "control_name": "Governance / Policy & Compliance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Document what permissions each agent class is authorised to hold"
+      "notes": "Process for approving, reviewing, and revoking tool integrations; human confirmation for irreversible ops"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-OM",
+      "control_name": "Operations / Operational Management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Alert on tool calls outside normal operating parameters; misuse pattern detection"
     },
     {
       "framework": "CWE/CVE",
@@ -598,99 +606,99 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Define explicit security requirements specifying the maximum permitted tool access, API scope, data source access, and resource boundaries for each agent deployment",
+      "control_id": "Define explicit security requirements specifying per-tool permission manifests, parameter validation rules, and irreversibility classification for each agent deployment",
       "control_name": "PW.1.1-PS – Define security requirements",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Establishes access control as a mandatory deployment requirement"
+      "scope": "Both",
+      "notes": "Establishes tool access control as a mandatory deployment requirement"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Threat model all agent access paths to tools, data stores, and APIs; design least-privilege tool manifests and enforce tenant isolation by design",
+      "control_id": "Threat model all agent tool access paths; design least-privilege tool manifests and enforce human confirmation for irreversible operations by design",
       "control_name": "PW.2.1-PS – Design software to meet security requirements",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Ensures access boundaries are designed before implementation"
+      "scope": "Both",
+      "notes": "Ensures tool misuse prevention is designed before implementation"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Protect agent configuration files, tool manifests, permission policies, and orchestration definitions from unauthorised modification",
-      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
-      "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Prevents tampering with access control configuration"
-    },
-    {
-      "framework": "NIST SP 800-218A",
-      "control_id": "Review agent access control enforcement — verify that tool permission manifests, RBAC policies, and tenant isolation boundaries are correctly implemented and cannot be bypassed",
+      "control_id": "Review agent tool access control enforcement — verify that tool permission manifests are correctly implemented and agents cannot be manipulated into destructive tool use",
       "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Validates access controls before production deployment"
+      "scope": "Both",
+      "notes": "Validates tool controls before production deployment"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "Protect agent tool configuration files, permission manifests, and MCP tool descriptors from unauthorised modification; verify descriptor integrity",
+      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Prevents tampering with tool access control configuration"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AC-3",
-      "control_name": "Access Enforcement — agent resource access",
+      "control_name": "Access Enforcement — agent tool access",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Enforce role-based access control on all agent resources — tools, data stores, APIs, and inter-agent communication channels; deny by default"
+      "scope": "Both",
+      "notes": "Enforce role-based access control on all agent tool resources; validate all tool parameters as untrusted; deny by default"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AC-6",
-      "control_name": "Least Privilege — agent permissions",
+      "control_name": "Least Privilege — agent tool permissions",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Enforce least privilege for all agent permissions; restrict tool access, data store access, and API scope to minimum necessary per agent role"
+      "scope": "Both",
+      "notes": "Enforce least privilege for all agent tool permissions; per-tool permission manifests, minimum scope, irreversibility classification"
     },
     {
       "framework": "FedRAMP",
       "control_id": "CM-7",
       "control_name": "Least Functionality — agent capability restrictions",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Restrict agents to minimum necessary capabilities; disable unused tools, APIs, and action types; enforce capability restrictions in agent configuration"
+      "scope": "Both",
+      "notes": "Restrict agents to minimum necessary tool capabilities; disable unused tools, enforce human confirmation for irreversible operations"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AU-2",
-      "control_name": "Event Logging — access decision logging",
+      "control_name": "Event Logging — tool invocation logging",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Log all agent access decisions — permitted and denied — with sufficient detail for access control review and incident investigation"
+      "scope": "Both",
+      "notes": "Log all tool invocations with tool identity, parameters, agent identity, session, and timestamp; immutable trail for forensic investigation"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — agent access controls",
+      "control_name": "Protection and Prevention — agent tool access controls",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Implement security controls enforcing least privilege on agent tool access, data store access, and API permissions within financial systems"
+      "scope": "Both",
+      "notes": "Implement security controls enforcing least privilege on agent tool access; validate all tool parameters as untrusted; enforce human confirmation for irreversible operations"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — agent permission governance",
+      "control_name": "ICT Risk Management — agent tool governance",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Include agent access control policies in ICT risk management framework; define acceptable permission scopes per agent role and financial function"
+      "scope": "Both",
+      "notes": "Include agent tool access policies in ICT risk management framework; define acceptable tool scopes per agent role and financial function; classify tool irreversibility"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 10",
-      "control_name": "Detection — unauthorised access detection",
+      "control_name": "Detection — tool misuse detection",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Monitor agent access patterns for unauthorised tool invocations, data access beyond scope, and permission violations; alert on detection"
+      "scope": "Both",
+      "notes": "Monitor agent tool invocation patterns for anomalous usage — destructive parameters, unusual tool sequences, scope violations; alert on detection"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 24–27",
-      "control_name": "Resilience Testing — access control testing",
+      "control_name": "Resilience Testing — tool misuse testing",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Include agent access control bypass in resilience testing; verify that agents cannot exceed defined permission boundaries under adversarial conditions"
+      "scope": "Both",
+      "notes": "Include tool misuse scenarios in resilience testing; test whether agents can be manipulated into destructive tool invocations or harmful parameter injection"
     }
   ],
   "tools": [
@@ -760,9 +768,9 @@
       "url": "https://www.openpolicyagent.org"
     },
     {
-      "name": "AWS IAM / Azure RBAC",
+      "name": "LangSmith",
       "type": "commercial",
-      "url": "https://aws.amazon.com/iam/"
+      "url": "https://smith.langchain.com"
     },
     {
       "name": "LAAF v2.0",
@@ -925,14 +933,11 @@
   "crossrefs": {
     "llm_top10": [
       "LLM05",
-      "LLM06",
-      "LLM07"
+      "LLM06"
     ],
     "dsgai_2026": [
       "DSGAI06",
-      "DSGAI12",
-      "DSGAI07",
-      "DSGAI08"
+      "DSGAI12"
     ]
   },
   "changelog": [

@@ -744,7 +744,8 @@
     ],
     "dsgai_2026": [
       "DSGAI15",
-      "DSGAI08"
+      "DSGAI08",
+      "DSGAI01"
     ],
     "llm_top10": [
       "LLM01"
