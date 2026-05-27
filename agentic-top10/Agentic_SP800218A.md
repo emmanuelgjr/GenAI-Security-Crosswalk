@@ -29,6 +29,12 @@ referencing the SSDF.
 
 ---
 
+## Why NIST SP 800-218A for agentic AI security
+
+NIST SP 800-218A extends the Secure Software Development Framework (SSDF) with AI-specific practices covering the full lifecycle of generative AI and foundation model development, and is the primary US government reference for secure AI software development. For agentic AI deployments -- where autonomous agents invoke tools, persist memory, and orchestrate multi-agent workflows -- this mapping traces each OWASP Agentic Top 10 risk to specific SP 800-218A practices, enabling organisations to extend their existing SSDF programme to cover the expanded attack surface of agentic systems.
+
+---
+
 ## SP 800-218A practice groups
 
 | Group | ID | Purpose |

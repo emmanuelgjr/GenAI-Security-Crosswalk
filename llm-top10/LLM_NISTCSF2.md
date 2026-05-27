@@ -692,6 +692,13 @@ profile provides a starting point for LLM security programme alignment:
 
 ---
 
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [DSGAI 2026 × NIST CSF 2.0](../dsgai-2026/DSGAI_NISTCSF2.md)
+
+---
+
 ## References
 
 - [NIST CSF 2.0](https://www.nist.gov/cyberframework)

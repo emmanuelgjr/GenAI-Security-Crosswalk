@@ -625,6 +625,12 @@ Art. 14 (human oversight) and Art. 9 (risk management) compliance.
 
 ---
 
+## See also
+
+- [DSGAI 2026 × SAMM](../dsgai-2026/DSGAI_SAMM.md)
+
+---
+
 ## References
 
 - [OWASP SAMM v2.0](https://owaspsamm.org/)

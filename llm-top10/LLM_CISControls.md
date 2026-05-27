@@ -24,6 +24,12 @@ response (CIS 17), and penetration testing (CIS 18).
 
 ---
 
+## Why CIS Controls for LLM security
+
+CIS Controls v8.1 is a prioritised set of cybersecurity best practices used by over 20,000 organisations worldwide, with Implementation Groups (IG1-IG3) scaling from small organisations to enterprise security programmes. This mapping traces each OWASP LLM risk to specific CIS safeguards -- enabling security teams to operationalise AI-specific protections using the same action-oriented control framework already deployed across their infrastructure.
+
+---
+
 ## CIS Controls structure
 
 | Group | Controls | Scope |

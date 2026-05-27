@@ -859,6 +859,12 @@ For each automated test case:
 
 ---
 
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+
+---
+
 ## References
 
 - [OWASP AI Testing Guide](https://owasp.org/www-project-ai-testing-guide/)

@@ -621,6 +621,12 @@ Complete this checklist before deploying any autonomous AI agent in an OT enviro
 
 ---
 
+## See also
+
+- [DSGAI 2026 × NIST SP 800-82](../dsgai-2026/DSGAI_NISTSP80082.md)
+
+---
+
 ## References
 
 - [NIST SP 800-82 Rev 3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf) — May 2023

@@ -597,6 +597,12 @@ Use AIVSS scores to drive prioritisation in your AI risk register:
 
 ---
 
+## See also
+
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
+
+---
+
 ## References
 
 - [OWASP AIVSS](https://aivss.owasp.org)

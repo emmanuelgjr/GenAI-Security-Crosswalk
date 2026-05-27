@@ -846,6 +846,13 @@ DoS risks identified) also apply.
 
 ---
 
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [Agentic Top 10 × SOC 2](../agentic-top10/Agentic_SOC2.md)
+
+---
+
 ## References
 
 - AICPA SOC 2 Trust Services Criteria: https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services

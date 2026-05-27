@@ -27,6 +27,12 @@ implement them within their authorisation boundary.
 
 ---
 
+## Why FedRAMP for LLM security
+
+FedRAMP is the US federal government's standardised cloud security authorisation programme, extended with an AI overlay that adds AI-specific control enhancements to the NIST SP 800-53 Rev 5 baseline. For organisations deploying cloud-hosted LLM services in federal environments, this mapping traces each OWASP LLM risk to specific FedRAMP AI controls -- enabling authorisation teams to address model access, inference logging, adversarial testing, and AI supply chain risk within their authorisation boundary.
+
+---
+
 ## FedRAMP AI control families
 
 | Family | ID | Purpose |

@@ -28,6 +28,12 @@ obligations for autonomous AI systems.
 
 ---
 
+## Why DORA for agentic AI security
+
+The Digital Operational Resilience Act (DORA) is the EU's binding regulatory framework for ICT risk management in the financial sector, effective January 2025. Agentic AI introduces unique challenges for financial entities -- autonomous agents can chain operations, escalate privileges through tool composition, persist poisoned state across sessions, and cascade failures through interconnected multi-agent systems. This mapping traces each OWASP Agentic Top 10 risk to specific DORA articles, enabling financial institutions to satisfy regulatory obligations for operational resilience in autonomous AI deployments.
+
+---
+
 ## DORA article groups
 
 | Group | Articles | Purpose |

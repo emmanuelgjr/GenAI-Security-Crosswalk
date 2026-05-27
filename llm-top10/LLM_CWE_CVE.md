@@ -21,6 +21,12 @@ compliance reporting. CVE entries provide confirmed real-world evidence of explo
 
 ---
 
+## Why CWE/CVE for LLM security
+
+CWE (Common Weakness Enumeration) and CVE (Common Vulnerabilities and Exposures) are the universal catalogues for tracking software weaknesses and confirmed vulnerabilities, used by SAST/DAST tools, bug trackers, and vulnerability management programmes globally. This mapping traces each OWASP LLM risk to root-cause CWE weakness classifications and real-world CVE exploitation evidence -- enabling security teams to connect GenAI threats to the same taxonomy already used for tooling, compliance reporting, and remediation tracking.
+
+---
+
 ## CWE taxonomy structure relevant to LLM risks
 
 | CWE Pillar | What it covers | LLM relevance |
@@ -575,6 +581,13 @@ resulting in denial of service or runaway cost.
 | 2 — This sprint | LLM02, LLM07 | CWE-200, CWE-312 | Information disclosure — closes most common data exposure paths |
 | 3 — This quarter | LLM03, LLM04 | CWE-494, CWE-345 | Supply chain integrity — requires pipeline-level architectural changes |
 | 4 — Ongoing | LLM08, LLM09, LLM10 | CWE-327, CWE-400 | Defence-in-depth and resilience hardening |
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [Agentic Top 10 × SAMM](../agentic-top10/Agentic_SAMM.md)
 
 ---
 

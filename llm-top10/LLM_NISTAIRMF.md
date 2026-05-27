@@ -25,6 +25,12 @@ using the cybersecurity framework.
 
 ---
 
+## Why NIST AI RMF for LLM security
+
+The NIST AI Risk Management Framework (AI RMF 1.0) is the primary US federal AI risk management framework, widely adopted by enterprises, government agencies, and critical infrastructure operators globally, and required for US federal agencies under Executive Order 14110. This mapping traces each OWASP LLM risk to specific AI RMF subcategories across GOVERN, MAP, MEASURE, and MANAGE -- enabling organisations to operationalise LLM security within their existing AI governance programme.
+
+---
+
 ## AI RMF core functions
 
 | Function | Purpose | Key subcategories |

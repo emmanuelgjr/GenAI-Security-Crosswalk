@@ -22,6 +22,12 @@ using the same language already used for the rest of the application stack.
 
 ---
 
+## Why STRIDE for LLM security
+
+STRIDE is Microsoft's widely adopted threat modelling methodology, classifying threats into six categories: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. This mapping traces each OWASP LLM risk to its primary STRIDE categories -- enabling security architects and engineers to integrate GenAI threats into existing threat models using the same structured taxonomy already applied across the rest of the application stack.
+
+---
+
 ## STRIDE categories at a glance
 
 | Category | Letter | Core question | Classic example |
@@ -676,6 +682,12 @@ To integrate this mapping into a DFD-based threat model:
 3. **Score with DREAD or CVSS** — prioritise mitigations by risk score
 4. **Cross-reference MITRE ATLAS** — use the ATLAS crosswalk for technique-level
    detail on each identified threat
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
 
 ---
 

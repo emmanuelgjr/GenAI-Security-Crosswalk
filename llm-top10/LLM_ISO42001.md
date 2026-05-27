@@ -788,6 +788,13 @@ information security foundation, ISO 42001 adds the AI-specific layer.
 
 ---
 
+## See also
+
+- [Agentic Top 10 × ISO 42001](../agentic-top10/Agentic_ISO42001.md)
+- [DSGAI 2026 × ISO 42001](../dsgai-2026/DSGAI_ISO42001.md)
+
+---
+
 ## References
 
 - [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html)

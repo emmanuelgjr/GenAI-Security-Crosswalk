@@ -16,6 +16,12 @@ organised into 18 control groups with Implementation Groups (IG1/IG2/IG3).
 
 ---
 
+## Why CIS Controls for agentic AI security
+
+CIS Controls v8.1 is a prioritised set of cybersecurity best practices used by over 20,000 organisations worldwide, with Implementation Groups (IG1-IG3) scaling from small organisations to enterprise programmes. This mapping traces each OWASP Agentic Top 10 risk to specific CIS safeguards -- enabling security teams to operationalise agent-specific protections (tool access control, memory integrity, inter-agent communication security) using the same action-oriented framework already deployed across their infrastructure.
+
+---
+
 ## CIS Controls structure
 
 | Group | Controls | Scope |

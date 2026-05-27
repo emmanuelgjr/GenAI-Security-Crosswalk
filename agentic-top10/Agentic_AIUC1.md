@@ -15,6 +15,12 @@ AIUC-1 is an OWASP GenAI Security Project partner and explicitly covers all 10 A
 
 ---
 
+## Why AIUC-1 for agentic AI security
+
+AIUC-1 is the world's first AI agent security certification framework, developed with 100+ Fortune 500 CISOs and used as the SOC 2 analog for AI agents. It is the most complete single-framework match for the Agentic Top 10 -- its six domains explicitly cover all 10 ASI risks, enabling organisations deploying autonomous AI agents to demonstrate auditable security, safety, and reliability posture against the certification standard purpose-built for agentic systems.
+
+---
+
 ## AIUC-1 domains at a glance
 
 | Domain | ID | Focus |
@@ -547,6 +553,13 @@ For teams starting from zero, this is the recommended sequencing:
 AIUC-1 certification explicitly covers all 10 ASI risks. Achieving AIUC-1 certification provides documented, third-party-verified evidence of controls against the full Agentic Top 10 — directly usable in vendor assessments, compliance documentation, and enterprise procurement.
 
 See: [AIUC-1 covers all OWASP Agentic Top 10 threats](https://www.aiuc-1.com/research/aiuc-1-certification-covers-all-owasp-agentic-top-10-threats)
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](../llm-top10/LLM_AIUC1.md)
+- [DSGAI 2026 × AIUC-1](../dsgai-2026/DSGAI_AIUC1.md)
 
 ---
 

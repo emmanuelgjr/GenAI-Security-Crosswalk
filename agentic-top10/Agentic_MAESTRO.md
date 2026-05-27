@@ -1058,6 +1058,13 @@ The integration across OWASP artefacts is:
 
 ---
 
+## See also
+
+- [LLM Top 10 × MAESTRO](../llm-top10/LLM_MAESTRO.md)
+- [DSGAI 2026 × SAMM](../dsgai-2026/DSGAI_SAMM.md)
+
+---
+
 ## References
 
 - [MAESTRO Framework — CSA](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)

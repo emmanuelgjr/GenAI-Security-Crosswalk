@@ -23,6 +23,12 @@ on AI systems.
 
 ---
 
+## Why MITRE ATLAS for LLM security
+
+MITRE ATLAS is the authoritative adversarial threat landscape for AI systems -- the ATT&CK equivalent for machine learning, maintained by MITRE with contributions from Microsoft, NVIDIA, IBM, and the broader AI security community. This mapping traces each OWASP LLM risk to specific ATLAS tactics, techniques, and procedures (TTPs) -- providing red teams, threat modellers, and SOC analysts with the structured adversarial intelligence needed to detect, hunt, and respond to AI-targeted attacks.
+
+---
+
 ## MITRE ATLAS structure
 
 ATLAS organises adversarial AI techniques across a kill chain of tactics:
@@ -721,6 +727,13 @@ mapping is available at:
 This can be imported directly into
 [MITRE ATLAS Navigator](https://mitre-atlas.github.io/atlas-navigator/)
 to visualise coverage across the LLM Top 10.
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [DSGAI 2026 × MITRE ATLAS](../dsgai-2026/DSGAI_MITREATLAS.md)
 
 ---
 

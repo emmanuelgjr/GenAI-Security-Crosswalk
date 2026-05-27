@@ -23,6 +23,12 @@ apply, with specific requirements amplified by the LLM context.
 
 ---
 
+## Why ASVS for LLM security
+
+The OWASP Application Security Verification Standard (ASVS) is the industry-standard baseline for web application and API security testing, used by security architects, developers, and penetration testers worldwide. LLM applications are web applications and APIs with additional AI-specific attack surfaces -- this mapping traces each OWASP LLM risk to specific ASVS verification requirements, enabling teams to integrate AI security testing into existing application security programmes without building a separate assessment framework.
+
+---
+
 ## ASVS structure
 
 | Chapter | Title | LLM relevance |
@@ -716,6 +722,12 @@ causing denial of service or runaway API cost.
 | 3 — L2 standard | LLM03, LLM04, LLM08 | L2 | V10.2.1, V10.2.2, V6.1.1, V12.1.1 |
 | 4 — L2 complete | LLM09 | L2 | V11.1.1, V7.2.2 |
 | 5 — L3 advanced | All | L3 | Adversarial testing, red team, inversion testing |
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
 
 ---
 

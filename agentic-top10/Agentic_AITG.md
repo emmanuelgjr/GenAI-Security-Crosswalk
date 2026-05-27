@@ -828,6 +828,12 @@ add the following tests from `Agentic_ISA62443.md`:
 
 ---
 
+## See also
+
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
+
+---
+
 ## References
 
 - [OWASP AI Testing Guide](https://owasp.org/www-project-ai-testing-guide/)

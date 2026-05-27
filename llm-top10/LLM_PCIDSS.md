@@ -822,6 +822,13 @@ against LLM applications in CDE are covered under Req 1
 
 ---
 
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [Agentic Top 10 × PCI DSS](../agentic-top10/Agentic_PCIDSS.md)
+
+---
+
 ## References
 
 - PCI DSS v4.0: https://www.pcisecuritystandards.org/document_library/

@@ -27,6 +27,12 @@ obligations.
 
 ---
 
+## Why DORA for LLM security
+
+The Digital Operational Resilience Act (DORA) is the EU's binding regulatory framework for ICT risk management in the financial sector, effective January 2025, mandating comprehensive resilience testing, incident reporting, and third-party oversight. For financial entities deploying LLM-based AI systems, this mapping traces each OWASP LLM risk to specific DORA articles -- enabling compliance teams to integrate AI-specific threats into their ICT risk management framework and satisfy regulatory obligations for operational resilience.
+
+---
+
 ## DORA article groups
 
 | Group | Articles | Purpose |

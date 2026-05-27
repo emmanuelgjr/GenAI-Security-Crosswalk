@@ -29,6 +29,12 @@ components.
 
 ---
 
+## Why FedRAMP for agentic AI security
+
+FedRAMP is the US federal government's standardised cloud security authorisation programme, extended with an AI overlay adding AI-specific control enhancements to the NIST SP 800-53 Rev 5 baseline. For agentic AI deployments in federal environments -- where autonomous agents invoke tools, persist memory, and orchestrate multi-agent workflows -- this mapping traces each OWASP Agentic Top 10 risk to specific FedRAMP AI controls, enabling authorisation teams to address agent identity, privilege delegation, cascading automation risk, and supply chain integrity within their authorisation boundary.
+
+---
+
 ## FedRAMP AI control families
 
 | Family | ID | Purpose |

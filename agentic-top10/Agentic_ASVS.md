@@ -16,6 +16,12 @@ security, organised into 14 chapters with three verification levels.
 
 ---
 
+## Why ASVS for agentic AI security
+
+The OWASP Application Security Verification Standard (ASVS) is the industry-standard baseline for web application and API security testing, organised into 14 chapters with three verification levels. Agentic AI systems are web applications and APIs with dramatically expanded attack surfaces -- this mapping traces each OWASP Agentic Top 10 risk to specific ASVS verification requirements, enabling security engineers and penetration testers to assess autonomous agent deployments using the same structured framework already applied to the rest of the application portfolio.
+
+---
+
 ## ASVS and agentic AI
 
 Agentic systems are web applications and APIs with additional attack
@@ -638,6 +644,12 @@ Without complete audit trails, rogue behaviour cannot be detected.
 | 3 — L2 standard | ASI04, ASI06, ASI10 | L2 | V10.2.1, V7.2.1/V7.2.2, V6.1.1 |
 | 4 — L2 complete | ASI08, ASI09 | L2 | V11.1.1, V11.1.2 |
 | 5 — L3 advanced | All | L3 | Adversarial testing, red team, chaos engineering |
+
+---
+
+## See also
+
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
 
 ---
 
