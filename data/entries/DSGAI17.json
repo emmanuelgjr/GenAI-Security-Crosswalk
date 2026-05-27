@@ -20,7 +20,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0029",
-      "control_name": "Denial of ML Service",
+      "control_name": "Denial of AI Service",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Adversary saturates GenAI pipeline — vector store, RAG retrieval, or inference endpoint rendered unavailable"
@@ -36,7 +36,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Data from Information Repositories",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Pipeline failures may expose data through error messages or fallback paths that lack normal access controls"
@@ -447,32 +447,24 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B001",
-      "control_name": "Third-party adversarial robustness testing",
+      "control_id": "D",
+      "control_name": "Reliability domain",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B003",
-      "control_name": "Third-party security assessment",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Hardening"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B008",
-      "control_name": "Third-party NHI controls",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Hardening"
-    },
-    {
-      "framework": "AIUC-1",
       "control_id": "A",
       "control_name": "Data & Privacy domain",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Foundational"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "E",
+      "control_name": "Audit trails and logging",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
@@ -527,51 +519,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SI-4",
-      "control_name": "System Monitoring — bias detection",
+      "control_id": "CP-9",
+      "control_name": "Information System Backup — AI data asset backup",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor AI outputs for bias indicators; track fairness metrics across demographic groups and use cases"
+      "notes": "Implement versioned backups of critical AI data assets — embeddings, indices, training data, model weights — with verified restoration procedures"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "CP-10",
+      "control_name": "Information System Recovery and Reconstitution — pipeline restoration",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Define and test recovery procedures for AI data pipelines; implement failover for critical RAG and embedding services"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — pipeline health monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor all AI data pipelines for health — RAG retrieval latency, embedding index integrity, data freshness; alert on degradation"
     },
     {
       "framework": "FedRAMP",
       "control_id": "CA-7",
-      "control_name": "Continuous Monitoring — fairness monitoring",
+      "control_name": "Continuous Monitoring — availability metrics",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include bias and fairness metrics in continuous monitoring; track output equity over time"
-    },
-    {
-      "framework": "FedRAMP",
-      "control_id": "RA-5",
-      "control_name": "Vulnerability Scanning — bias assessment",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include bias detection and fairness assessment in vulnerability scanning; test for disparate impact"
+      "notes": "Include AI data pipeline availability in continuous monitoring; track uptime, latency, and data freshness metrics"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — fairness governance",
+      "control_id": "Art. 11",
+      "control_name": "Response and Recovery – AI data service recovery",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include AI bias and fairness in ICT risk management; define fairness requirements for financial AI systems and acceptable disparity thresholds"
+      "notes": "Implement response and recovery procedures for AI data pipeline failures; define recovery time objectives and fallback mechanisms"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies – AI data backup",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain versioned backups of critical AI data assets — embeddings, indices, training data, model weights; test restoration procedures"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 24–27",
-      "control_name": "Resilience Testing — bias testing",
+      "control_name": "Resilience Testing – data pipeline resilience",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include bias detection and fairness testing in resilience testing programme; test for disparate impact in financial AI outputs across demographic groups"
+      "notes": "Include AI data pipeline failure scenarios in resilience testing; test failover, degraded mode operation, and recovery procedures"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 13",
-      "control_name": "Learning and Evolving — fairness improvement",
+      "control_id": "Art. 10",
+      "control_name": "Detection – pipeline health monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply lessons learned from bias incidents; update training data, model parameters, and controls based on fairness assessments"
+      "notes": "Monitor AI data pipeline health; detect stale data, index corruption, and availability degradation in real time"
     }
   ],
   "tools": [
@@ -626,14 +634,24 @@
       "url": "https://github.com/dssg/aequitas"
     },
     {
-      "name": "IBM AI Fairness 360",
-      "type": "open-source",
-      "url": "https://aif360.mybluemix.net"
+      "name": "AWS Backup / Azure Backup",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/backup/"
     },
     {
-      "name": "Fiddler AI",
+      "name": "Prometheus",
+      "type": "open-source",
+      "url": "https://prometheus.io"
+    },
+    {
+      "name": "PagerDuty",
       "type": "commercial",
-      "url": "https://www.fiddler.ai"
+      "url": "https://www.pagerduty.com"
+    },
+    {
+      "name": "Great Expectations",
+      "type": "open-source",
+      "url": "https://greatexpectations.io"
     },
     {
       "name": "Evidently",

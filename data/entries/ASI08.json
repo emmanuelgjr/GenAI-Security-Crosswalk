@@ -19,7 +19,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0029",
-      "control_name": "Denial of ML Service",
+      "control_name": "Denial of AI Service",
       "tier": "Foundational",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
@@ -37,11 +37,11 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Exploit Public-Facing ML Application",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
-      "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally"
+      "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally, leaking data during failure"
     },
     {
       "framework": "NIST AI RMF 1.0",

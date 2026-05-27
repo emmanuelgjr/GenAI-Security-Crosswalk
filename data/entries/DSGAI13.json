@@ -42,6 +42,14 @@
       "notes": "Vector store content poisoned through path traversal or unauthenticated write (CVE-2024-3584)"
     },
     {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0070",
+      "control_name": "RAG Poisoning",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Malicious content injected into vector store RAG knowledge bases to manipulate retrieval results"
+    },
+    {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MP-2.3",
       "control_name": "Risk categorisation",
@@ -456,23 +464,15 @@
       "framework": "AIUC-1",
       "control_id": "A",
       "control_name": "Data & Privacy domain",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B003",
-      "control_name": "Third-party security assessment",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Hardening"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B007",
-      "control_name": "Third-party permission controls",
-      "tier": "Foundational",
+      "control_id": "B008",
+      "control_name": "Protect model deployment environment",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
     },
@@ -480,9 +480,9 @@
       "framework": "AIUC-1",
       "control_id": "E",
       "control_name": "Audit trails and logging",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -534,51 +534,67 @@
     },
     {
       "framework": "FedRAMP",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — embedding encryption",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Encrypt all vector embeddings and metadata at rest using FIPS 140-validated modules; enforce key management per FedRAMP requirements"
+    },
+    {
+      "framework": "FedRAMP",
       "control_id": "AC-3",
-      "control_name": "Access Enforcement — purpose-limited data access",
+      "control_name": "Access Enforcement — vector store access control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce purpose-limitation on AI data access; restrict usage to approved purposes documented in data processing agreements"
+      "notes": "Implement RBAC on vector stores; enforce namespace-level access controls; restrict query scope to authorised collections"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "AU-2",
-      "control_name": "Event Logging — data operation logging",
+      "control_id": "AU-12",
+      "control_name": "Audit Generation — vector store operation tracking",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Log all data operations with purpose context; enable detection of purpose drift and unauthorised usage"
+      "notes": "Generate audit records for all vector store queries, index modifications, and administrative operations"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SI-4",
-      "control_name": "System Monitoring — misuse detection",
+      "control_id": "CM-6",
+      "control_name": "Configuration Settings — vector database hardening",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor AI data usage patterns for misuse indicators; alert on data access inconsistent with approved purposes"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — data usage governance",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include data usage policies in ICT risk management; define approved purposes for each AI data category; restrict repurposing"
+      "notes": "Configure vector databases per security baselines; disable default credentials, restrict network access, enforce TLS"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — purpose-limited data controls",
+      "control_name": "Protection and Prevention – vector store security",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement controls enforcing purpose-limitation on AI data usage; restrict processing to approved purposes per data classification"
+      "notes": "Implement RBAC, encryption at rest and in transit, and integrity verification for all vector stores; enforce access controls on embedding queries"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 17–23",
-      "control_name": "ICT Incident Management — misuse incident reporting",
+      "control_id": "Art. 8",
+      "control_name": "Identification – vector store inventory",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify AI data misuse as ICT-related incidents where customer or regulatory impact occurs; report per DORA criteria"
+      "notes": "Register all vector databases and embedding stores in ICT asset inventory; classify sensitivity based on source data"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 12",
+      "control_name": "Backup Policies – embedding backup and recovery",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Maintain versioned backups of vector indices and embedding data; verify integrity on restoration; enable rollback"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection – vector store access monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor vector store queries and index modifications; detect bulk extraction, unauthorised access, and integrity violations"
     }
   ],
   "tools": [
@@ -628,6 +644,16 @@
       "url": "https://www.collibra.com"
     },
     {
+      "name": "HashiCorp Vault",
+      "type": "commercial",
+      "url": "https://www.vaultproject.io"
+    },
+    {
+      "name": "AWS KMS / Azure Key Vault",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/kms/"
+    },
+    {
       "name": "Open Policy Agent",
       "type": "open-source",
       "url": "https://www.openpolicyagent.org"
@@ -638,9 +664,14 @@
       "url": "https://opentelemetry.io"
     },
     {
-      "name": "Splunk",
+      "name": "Milvus",
+      "type": "open-source",
+      "url": "https://milvus.io"
+    },
+    {
+      "name": "Pinecone",
       "type": "commercial",
-      "url": "https://www.splunk.com"
+      "url": "https://www.pinecone.io"
     }
   ],
   "incidents": [
@@ -698,7 +729,8 @@
       "LLM08",
       "LLM07",
       "LLM06",
-      "LLM03"
+      "LLM03",
+      "LLM02"
     ],
     "agentic_top10": [
       "ASI06",

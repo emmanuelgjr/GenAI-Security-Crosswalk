@@ -20,7 +20,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0024.000",
-      "control_name": "Membership Inference",
+      "control_name": "Infer Membership",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Adversary determines whether specific sensitive records were used in training through systematic query analysis"
@@ -35,8 +35,8 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0027",
-      "control_name": "Model Inversion",
+      "control_id": "AML.T0024.001",
+      "control_name": "Invert ML Model",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Adversary reconstructs sensitive training examples from model outputs through systematic query campaigns"
@@ -418,17 +418,25 @@
       "framework": "AIUC-1",
       "control_id": "A",
       "control_name": "Data & Privacy domain",
-      "tier": "Foundational",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Hardening"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B004",
+      "control_name": "Prevent AI endpoint scraping",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "E",
-      "control_name": "Audit trails and logging",
-      "tier": "Foundational",
+      "control_id": "B006",
+      "control_name": "Prevent unauthorized AI actions",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -472,51 +480,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — AI governance framework",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — model and data protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Establish comprehensive AI data governance framework within risk management strategy; define roles, policies, and oversight mechanisms"
+      "notes": "Encrypt model weights and training data at rest; implement privacy-preserving storage to limit reconstruction attack surface"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "CM-3",
-      "control_name": "Configuration Change Control — governance policy management",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — inference API access control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain AI governance policies under change control; require approval for policy modifications; audit all changes"
+      "notes": "Enforce access controls on inference endpoints; rate-limit API access; restrict bulk query patterns enabling reconstruction"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "RA-3",
-      "control_name": "Risk Assessment — governance completeness",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — probing pattern detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Assess AI governance completeness; identify gaps in roles, policies, oversight, and accountability"
+      "notes": "Monitor inference endpoints for systematic probing patterns — membership inference, model inversion, attribute inference; alert on detection"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — reconstruction risk assessment",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include model inversion and membership inference attacks in vulnerability assessment; test deployed models for data reconstruction risk"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — AI governance framework",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention – inference attack controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Establish comprehensive AI data governance within ICT risk management; define roles, policies, accountability, and oversight mechanisms"
+      "notes": "Implement privacy-preserving model deployment; apply differential privacy during training; rate limiting and access controls on inference endpoints"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing – reconstruction testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include model inversion, membership inference, and attribute inference testing in resilience testing programme"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection – probing pattern detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor inference endpoints for systematic probing patterns; detect membership inference and model inversion attempts"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 13",
-      "control_name": "Learning and Evolving — governance improvement",
+      "control_name": "Learning and Evolving – inference attack improvement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply lessons learned to improve AI data governance; update policies and controls based on incident analysis and regulatory changes"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — governance scope mapping",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Map all AI systems subject to governance; ensure complete coverage of AI data assets in governance framework"
+      "notes": "Apply lessons learned from inference attacks; update privacy controls and detection mechanisms"
     }
   ],
   "tools": [
@@ -561,14 +585,24 @@
       "url": "https://www.openpolicyagent.org"
     },
     {
-      "name": "Alation",
-      "type": "commercial",
-      "url": "https://www.alation.com"
+      "name": "Opacus",
+      "type": "open-source",
+      "url": "https://opacus.ai"
     },
     {
-      "name": "ServiceNow GRC",
+      "name": "Microsoft Presidio",
+      "type": "open-source",
+      "url": "https://github.com/microsoft/presidio"
+    },
+    {
+      "name": "Fiddler AI",
       "type": "commercial",
-      "url": "https://www.servicenow.com"
+      "url": "https://www.fiddler.ai"
+    },
+    {
+      "name": "ARX Data Anonymization",
+      "type": "open-source",
+      "url": "https://arx.deidentifier.org"
     }
   ],
   "incidents": [
@@ -590,8 +624,7 @@
       "LLM02",
       "LLM08",
       "LLM06",
-      "LLM05",
-      "LLM09"
+      "LLM05"
     ],
     "dsgai_2026": [
       "DSGAI10",
@@ -599,7 +632,9 @@
     ],
     "agentic_top10": [
       "ASI04",
-      "ASI09"
+      "ASI09",
+      "ASI03",
+      "ASI01"
     ]
   },
   "changelog": [

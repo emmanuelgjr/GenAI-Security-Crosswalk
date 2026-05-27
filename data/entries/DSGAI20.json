@@ -19,8 +19,8 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0016",
-      "control_name": "Extract ML Model",
+      "control_id": "AML.T0016.000",
+      "control_name": "Obtain Capabilities",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Adversary systematically queries model to extract sufficient information to replicate its functionality"
@@ -448,33 +448,33 @@
       "framework": "AIUC-1",
       "control_id": "A",
       "control_name": "Data & Privacy domain",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "C",
-      "control_name": "Safety domain",
-      "tier": "Foundational",
+      "control_id": "B004",
+      "control_name": "Prevent AI endpoint scraping",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B006",
+      "control_name": "Prevent unauthorized AI actions",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Hardening"
     },
     {
       "framework": "AIUC-1",
       "control_id": "E",
-      "control_name": "Accountability domain",
-      "tier": "Foundational",
+      "control_name": "Audit trails and logging",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Foundational"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "F",
-      "control_name": "Society domain",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -518,51 +518,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SC-7",
-      "control_name": "Boundary Protection — data flow enforcement",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — model IP encryption",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce data flow controls preventing AI data from crossing jurisdictional boundaries; restrict to approved data centres and regions"
+      "notes": "Encrypt all intellectual property — model weights, proprietary training data, algorithms — at rest with FIPS 140-validated modules"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — localisation governance",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — model weight access control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data localisation in AI risk management; define data residency requirements per jurisdiction and data type"
+      "notes": "Enforce strict access control on AI intellectual property; restrict model weight access to minimum necessary personnel with approval workflow"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "CM-3",
-      "control_name": "Configuration Change Control — data location management",
+      "control_id": "AU-12",
+      "control_name": "Audit Generation — IP access tracking",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain documentation of AI data storage locations; require change control for data location modifications"
+      "notes": "Generate audit records for all access to AI intellectual property — model weights, architectures, training data; detect unauthorised access and exfiltration"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — extraction pattern detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor inference endpoints and model registries for systematic extraction patterns; detect model distillation, scraping, and side-channel attacks"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — localisation governance",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention – IP protection controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data localisation in ICT risk management; define residency requirements per jurisdiction and data type for AI systems"
+      "notes": "Implement encryption, access controls, and DLP for model weights, training data, and proprietary algorithms; enforce multi-factor authentication for IP asset access"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection – IP exfiltration detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor model weight access and download patterns; detect systematic querying indicative of model extraction; alert on anomalous access"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — cross-border data oversight",
+      "control_name": "Third-Party Risk – IP protection in vendor relationships",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Address data localisation in third-party agreements; verify provider data processing locations meet residency requirements; monitor for unauthorised cross-border transfers"
+      "notes": "Address IP protection in third-party agreements; ensure vendors cannot access, replicate, or misuse proprietary AI assets"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — data location mapping",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management – IP theft reporting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Map physical and logical locations of all AI data; document processing jurisdictions for training, inference, and storage"
+      "notes": "Classify IP exfiltration as ICT-related incidents; report per DORA criteria"
     }
   ],
   "tools": [
@@ -622,19 +638,19 @@
       "url": "https://privacera.com"
     },
     {
-      "name": "AWS Region Controls / Azure Policy",
+      "name": "HashiCorp Vault",
       "type": "commercial",
-      "url": "https://aws.amazon.com/compliance/data-residency/"
+      "url": "https://www.vaultproject.io"
     },
     {
-      "name": "Netskope",
+      "name": "Nightfall DLP",
       "type": "commercial",
-      "url": "https://www.netskope.com"
+      "url": "https://www.nightfall.ai"
     },
     {
-      "name": "OneTrust",
+      "name": "AWS KMS / Azure Key Vault",
       "type": "commercial",
-      "url": "https://www.onetrust.com"
+      "url": "https://aws.amazon.com/kms/"
     }
   ],
   "incidents": [

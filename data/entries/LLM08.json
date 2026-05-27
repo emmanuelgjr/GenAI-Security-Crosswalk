@@ -35,6 +35,24 @@
       "notes": "Flooding vector stores with adversarial embeddings to degrade retrieval quality"
     },
     {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0070",
+      "control_name": "RAG Poisoning",
+      "tier": "Hardening",
+      "scope": "Build",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0070",
+      "notes": "Injecting malicious content into RAG knowledge bases to manipulate retrieval results"
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0066",
+      "control_name": "Retrieval Content Crafting",
+      "tier": "Hardening",
+      "scope": "Build",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0066",
+      "notes": "Crafting content specifically designed to rank highly in semantic search and influence model outputs"
+    },
+    {
       "framework": "NIST AI RMF 1.0",
       "control_id": "MS-2.5",
       "control_name": "Testing — adversarial",

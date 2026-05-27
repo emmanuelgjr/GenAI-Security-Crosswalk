@@ -19,11 +19,11 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0045",
-      "control_name": "Publish Poisoned Datasets",
+      "control_id": "AML.T0060",
+      "control_name": "Publish Hallucinated Entities",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Adversary publishes false content in public repositories, documentation sites, or knowledge bases indexed by RAG systems"
+      "notes": "Adversary leverages AI-generated hallucinated content published in public repositories, documentation sites, or knowledge bases indexed by RAG systems"
     },
     {
       "framework": "MITRE ATLAS",
@@ -36,7 +36,23 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0031",
-      "control_name": "Craft Adversarial Data",
+      "control_name": "Erode AI Model Integrity",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "False content degrades model integrity by corrupting retrieval-augmented generation outputs"
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0070",
+      "control_name": "RAG Poisoning",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Injecting disinformation directly into RAG knowledge bases to corrupt downstream outputs"
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0066",
+      "control_name": "Retrieval Content Crafting",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "False content crafted to appear authoritative and rank highly in semantic similarity searches"
@@ -455,85 +471,51 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "A",
-      "control_name": "Data & Privacy domain",
-      "tier": "Foundational",
+      "control_id": "C",
+      "control_name": "Safety domain",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "E",
-      "control_name": "Audit trails and logging",
-      "tier": "Foundational",
+      "control_id": "F",
+      "control_name": "Society domain",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "Primary DSGAI entries",
-      "control_name": "AIUC-1 Domain",
-      "tier": "Foundational",
+      "control_id": "B002",
+      "control_name": "Detect adversarial input",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Status"
+      "notes": "Hardening"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "DSGAI02, DSGAI03, DSGAI06, DSGAI07, DSGAI08, DSGAI09, DSGAI14, DSGAI15, DSGAI18, DSGAI21",
-      "control_name": "A — Data & Privacy",
-      "tier": "Foundational",
-      "scope": "Both"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "DSGAI01, DSGAI04, DSGAI05, DSGAI10, DSGAI12, DSGAI16, DSGAI17",
-      "control_name": "B — Security",
-      "tier": "Foundational",
-      "scope": "Both"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "DSGAI05, DSGAI20",
-      "control_name": "C — Safety",
-      "tier": "Foundational",
-      "scope": "Both"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "DSGAI12, DSGAI19",
-      "control_name": "D — Reliability",
-      "tier": "Foundational",
-      "scope": "Both"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "DSGAI02, DSGAI06, DSGAI09, DSGAI13, DSGAI18, DSGAI20, DSGAI21",
-      "control_name": "E — Accountability",
-      "tier": "Foundational",
-      "scope": "Both"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "DSGAI20",
-      "control_name": "F — Society",
-      "tier": "Foundational",
-      "scope": "Both"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "Date",
-      "control_name": "Version",
-      "tier": "Foundational",
+      "control_id": "B005",
+      "control_name": "Implement real-time input filtering",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Change"
+      "notes": "Hardening"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "2026-03-27",
-      "control_name": "1.0.0",
-      "tier": "Foundational",
+      "control_id": "Version",
+      "control_name": "Date",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Initial release — full mapping DSGAI01–DSGAI21 to AIUC-1"
+      "notes": "Author"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "2026-Q1",
+      "control_name": "2026-05-26",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "OWASP GenAI Data Security Initiative"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -683,67 +665,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — regulatory compliance",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — adversarial content detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include regulatory compliance in AI risk management; map applicable data laws to AI processing activities and define compliance requirements"
+      "notes": "Extend malicious code protection to detect adversarial content injected into RAG knowledge bases and training data; identify poisoned or manipulated content"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "RA-3",
-      "control_name": "Risk Assessment — compliance gap analysis",
+      "control_id": "SI-7",
+      "control_name": "Software, Firmware, and Information Integrity — knowledge source integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans"
+      "notes": "Verify integrity and authenticity of RAG knowledge sources; detect unauthorised modifications to knowledge bases and training datasets"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AU-2",
-      "control_name": "Event Logging — regulatory evidence",
+      "control_name": "Event Logging — content provenance tracking",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain comprehensive logs for regulatory compliance evidence; ensure audit trails meet requirements of applicable data laws"
+      "notes": "Log provenance of all content entering knowledge bases and training pipelines; enable tracing of content from source through processing to output"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "AC-3",
-      "control_name": "Access Enforcement — legally mandated controls",
+      "control_id": "SR-3",
+      "control_name": "Supply Chain Controls — source credibility verification",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement access controls mandated by applicable data laws; enforce data subject rights, purpose limitation, and processing restrictions"
+      "notes": "Verify credibility and integrity of all knowledge sources before ingestion; implement source validation and fact-checking controls"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — regulatory compliance governance",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention – knowledge base integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities; define compliance requirements and accountability"
+      "notes": "Implement integrity controls for RAG knowledge bases and training data; verify source authenticity; prevent unauthorised content injection"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 17–23",
-      "control_name": "ICT Incident Management — compliance incident reporting",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing – disinformation testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify material regulatory non-compliance events as ICT incidents; report to competent authorities per DORA criteria; coordinate with DPO for GDPR notifications"
+      "notes": "Include disinformation and knowledge base poisoning scenarios in resilience testing; test detection capabilities and content verification"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 13",
-      "control_name": "Learning and Evolving — compliance improvement",
+      "control_name": "Learning and Evolving – integrity improvement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes, enforcement actions, and incident analysis"
+      "notes": "Apply lessons learned from integrity attacks; update knowledge base validation and content verification controls"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — regulated data mapping",
+      "control_id": "Art. 45",
+      "control_name": "Information Sharing – disinformation threat intelligence",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Map all AI data subject to regulatory requirements; ensure complete coverage in compliance programme"
+      "notes": "Participate in information sharing for AI disinformation threats; share indicators of knowledge base poisoning and content manipulation"
     }
   ],
   "tools": [
@@ -803,9 +785,24 @@
       "url": "https://transcend.io"
     },
     {
-      "name": "ServiceNow GRC",
+      "name": "LLM Guard",
+      "type": "open-source",
+      "url": "https://github.com/protectai/llm-guard"
+    },
+    {
+      "name": "Splunk",
       "type": "commercial",
-      "url": "https://www.servicenow.com"
+      "url": "https://www.splunk.com"
+    },
+    {
+      "name": "Sigstore",
+      "type": "open-source",
+      "url": "https://www.sigstore.dev"
+    },
+    {
+      "name": "C2PA",
+      "type": "open-source",
+      "url": "https://c2pa.org"
     }
   ],
   "incidents": [
@@ -851,13 +848,11 @@
       "LLM04",
       "LLM09",
       "LLM06",
-      "LLM07",
-      "LLM02"
+      "LLM07"
     ],
     "agentic_top10": [
       "ASI06",
-      "ASI09",
-      "ASI02"
+      "ASI09"
     ],
     "dsgai_2026": [
       "DSGAI01",

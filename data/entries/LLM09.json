@@ -18,21 +18,21 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0045",
-      "control_name": "Disinformation",
+      "control_id": "AML.T0060",
+      "control_name": "Publish Hallucinated Entities",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0045",
-      "notes": "Using AI-generated content to deliberately spread false information"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
+      "notes": "AI-generated hallucinated content published as fact, spreading false information"
     },
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0047",
-      "control_name": "Influence via Automated Content",
+      "control_name": "AI-Enabled Product or Service",
       "tier": "Foundational",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
-      "notes": "Generating high-volume automated content to shape perception or overwhelm fact-checking"
+      "notes": "Generating high-volume automated content via AI-enabled services to shape perception or overwhelm fact-checking"
     },
     {
       "framework": "NIST AI RMF 1.0",

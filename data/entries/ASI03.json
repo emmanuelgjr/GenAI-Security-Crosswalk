@@ -18,30 +18,30 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0022",
-      "control_name": "Valid Accounts",
+      "control_id": "AML.T0021",
+      "control_name": "Establish Accounts",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0022",
-      "notes": "Exploiting legitimate agent credentials to access AI systems or data pipelines"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
+      "notes": "Establishing or exploiting legitimate agent accounts to access AI systems or data pipelines"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0016",
-      "control_name": "Exfiltration via AI Inference API",
+      "control_id": "AML.T0016.000",
+      "control_name": "Obtain Capabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
-      "notes": "Using compromised agent credentials to exfiltrate data through inference API"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0016.000",
+      "notes": "Acquiring agent credentials or capabilities to exfiltrate data through AI inference APIs"
     },
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0024",
-      "control_name": "Model Inversion",
+      "control_name": "Exfiltration via AI Inference API",
       "tier": "Foundational",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0024",
-      "notes": "Reconstructing sensitive data accessible to the agent through credential abuse"
+      "notes": "Exfiltrating sensitive data accessible to the agent through inference API abuse"
     },
     {
       "framework": "NIST AI RMF 1.0",

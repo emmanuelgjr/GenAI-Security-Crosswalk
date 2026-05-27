@@ -20,7 +20,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0051",
-      "control_name": "Exploit Public-Facing Application",
+      "control_name": "LLM Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Prompt injection via LLM interface accesses all content injected into over-broad context window"
@@ -462,19 +462,19 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B006",
-      "control_name": "Prevent unauthorized AI actions",
+      "control_id": "B005",
+      "control_name": "Implement real-time input filtering",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "E",
-      "control_name": "Audit trails and logging",
+      "control_id": "B006",
+      "control_name": "Prevent unauthorized AI actions",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -511,50 +511,50 @@
     {
       "framework": "FedRAMP",
       "control_id": "AC-6",
-      "control_name": "Least Privilege — data collection restrictions",
+      "control_name": "Least Privilege — context data scoping",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Restrict AI data collection to minimum necessary for stated purpose; enforce at pipeline ingestion points"
+      "scope": "Both",
+      "notes": "Restrict context window content to minimum necessary for the task; enforce per-task context scope limits aligned with user authorisation"
     },
     {
       "framework": "FedRAMP",
       "control_id": "CM-7",
-      "control_name": "Least Functionality — data processing restrictions",
+      "control_name": "Least Functionality — context assembly restrictions",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Restrict AI data processing to minimum necessary scope; disable collection of non-essential data fields"
+      "scope": "Both",
+      "notes": "Restrict context assembly to approved data sources; disable inclusion of unnecessary system data, full documents, or unbounded conversation history"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — minimisation governance",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — context boundary enforcement",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Include data minimisation in AI risk management; define minimum necessary data per AI use case"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — minimisation governance",
-      "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Include data minimisation in ICT risk management; define minimum necessary data per AI use case and processing activity"
+      "scope": "Both",
+      "notes": "Validate and enforce context window boundaries; truncate or summarise content exceeding defined limits; strip unnecessary metadata"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — collection restrictions",
+      "control_name": "Protection and Prevention – context scope controls",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Implement controls restricting AI data collection to minimum necessary; enforce at pipeline ingestion points and model training configuration"
+      "scope": "Both",
+      "notes": "Implement data minimisation in context assembly; only include minimum necessary data; enforce per-task context scope limits"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — data necessity mapping",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management – context minimisation governance",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Document data necessity justification for each AI data asset; map minimum required data per use case"
+      "scope": "Both",
+      "notes": "Include context window data minimisation in ICT risk management; define maximum context scope per AI use case"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection – excessive context monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor context window assembly for excessive data inclusion; alert on context exceeding defined scope limits"
     }
   ],
   "tools": [
@@ -599,19 +599,19 @@
       "url": "https://github.com/google/differential-privacy"
     },
     {
-      "name": "Microsoft Presidio",
-      "type": "open-source",
-      "url": "https://github.com/microsoft/presidio"
-    },
-    {
       "name": "Open Policy Agent",
       "type": "open-source",
       "url": "https://www.openpolicyagent.org"
     },
     {
-      "name": "OneTrust",
+      "name": "Microsoft Presidio",
+      "type": "open-source",
+      "url": "https://github.com/microsoft/presidio"
+    },
+    {
+      "name": "Nightfall DLP",
       "type": "commercial",
-      "url": "https://www.onetrust.com"
+      "url": "https://www.nightfall.ai"
     }
   ],
   "incidents": [
@@ -663,7 +663,8 @@
       "LLM07",
       "LLM02",
       "LLM08",
-      "LLM06"
+      "LLM06",
+      "LLM01"
     ],
     "agentic_top10": [
       "ASI01",

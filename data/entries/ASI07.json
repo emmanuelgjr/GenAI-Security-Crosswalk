@@ -19,29 +19,29 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0043",
-      "control_name": "Network Service Scanning",
+      "control_name": "Craft Adversarial Data",
       "tier": "Hardening",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
-      "notes": "Identifying and mapping inter-agent communication endpoints for targeting"
+      "notes": "Crafting adversarial messages to exploit inter-agent communication protocols"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0022",
-      "control_name": "Valid Accounts",
+      "control_id": "AML.T0021",
+      "control_name": "Establish Accounts",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0022",
-      "notes": "Using compromised agent credentials to impersonate trusted agents in A2A channels"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
+      "notes": "Establishing or compromising agent accounts to impersonate trusted agents in A2A channels"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0016",
-      "control_name": "Exfiltration via AI Inference API",
+      "control_id": "AML.T0016.000",
+      "control_name": "Obtain Capabilities",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
-      "notes": "Intercepting inter-agent messages to exfiltrate sensitive context passed between agents"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0016.000",
+      "notes": "Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context"
     },
     {
       "framework": "NIST AI RMF 1.0",

@@ -506,24 +506,16 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B001",
-      "control_name": "Third-party adversarial robustness testing",
+      "control_id": "A",
+      "control_name": "Data & Privacy domain (all)",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B002",
-      "control_name": "Detect adversarial input",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Hardening"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B005",
-      "control_name": "Implement real-time input filtering",
+      "control_id": "B009",
+      "control_name": "Limit output over-exposure",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
@@ -535,6 +527,14 @@
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "E",
+      "control_name": "Audit trails and logging",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -570,59 +570,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "AU-2",
-      "control_name": "Event Logging — AI data access logging",
+      "control_id": "SC-28",
+      "control_name": "Protection of Information at Rest — AI data encryption",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Log all access to AI training data, model weights, inference inputs and outputs, and configuration; include user/service identity, timestamp, and access type"
-    },
-    {
-      "framework": "FedRAMP",
-      "control_id": "AU-12",
-      "control_name": "Audit Generation — inference audit trail",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Generate audit records for all model inference requests with sufficient detail for compliance and incident investigation"
+      "notes": "Encrypt all AI data at rest — training data, model weights, inference logs, embedding stores — using FIPS 140-validated modules"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AC-3",
-      "control_name": "Access Enforcement — authenticated data access",
+      "control_name": "Access Enforcement — AI data access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce authenticated, authorised access to all AI data stores; deny unauthenticated access; log all access decisions"
+      "notes": "Enforce role-based access control on all AI data stores; restrict access based on clearance, need-to-know, and data sensitivity"
     },
     {
-      "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — data asset classification",
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — leakage indicator detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Register all AI data stores in ICT asset inventory; ensure logging coverage for all identified data assets including training data, model weights, and inference stores"
+      "notes": "Monitor model outputs and data access patterns for leakage indicators — PII, credentials, classification markings in outputs; alert on detection"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — data access and output logging",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log all AI data access and model outputs with sufficient detail to detect data leakage; include output content metadata"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — data access controls",
+      "control_name": "Protection and Prevention – data leakage controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement security controls for AI data access — authentication, authorisation, and encryption; enforce least privilege on all data access paths"
+      "notes": "Implement DLP, output monitoring, access controls, and encryption for all financial AI data to prevent sensitive data from surfacing in model outputs"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 10",
-      "control_name": "Detection — data access monitoring",
+      "control_name": "Detection – leakage indicator monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Deploy detection mechanisms for anomalous AI data access; monitor for unauthorised access patterns, bulk extractions, and access outside normal parameters"
+      "notes": "Deploy detection for PII, credentials, and financial data patterns in model outputs; alert and block on detection"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 17–23",
-      "control_name": "ICT Incident Management — access incident reporting",
+      "control_name": "ICT Incident Management – data breach reporting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify material AI data access violations as ICT-related incidents; report to competent authorities per DORA incident classification and reporting requirements"
+      "notes": "Classify AI data leakage events as ICT-related incidents; report to competent authorities per DORA incident classification criteria"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 13",
+      "control_name": "Learning and Evolving – leakage post-mortem",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Conduct post-incident analysis for data leakage events; identify root cause and update controls"
     }
   ],
   "tools": [
@@ -677,19 +685,14 @@
       "url": "https://azure.microsoft.com/en-us/products/monitor"
     },
     {
-      "name": "AWS CloudTrail / Azure Monitor",
+      "name": "Nightfall DLP",
       "type": "commercial",
-      "url": "https://aws.amazon.com/cloudtrail/"
+      "url": "https://www.nightfall.ai"
     },
     {
-      "name": "Elasticsearch",
-      "type": "open-source",
-      "url": "https://www.elastic.co"
-    },
-    {
-      "name": "Splunk",
+      "name": "AWS Macie / Azure Purview",
       "type": "commercial",
-      "url": "https://www.splunk.com"
+      "url": "https://aws.amazon.com/macie/"
     }
   ],
   "incidents": [

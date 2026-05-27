@@ -451,31 +451,23 @@
       "control_name": "Data & Privacy domain",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B001",
-      "control_name": "Third-party adversarial robustness testing",
+      "control_id": "B009",
+      "control_name": "Limit output over-exposure",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B002",
-      "control_name": "Detect adversarial input",
+      "control_id": "B006",
+      "control_name": "Prevent unauthorized AI actions",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "E",
-      "control_name": "Audit trails and logging",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Foundational"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -519,51 +511,59 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SC-28",
-      "control_name": "Protection of Information at Rest — IP encryption",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — cross-modal data flow enforcement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Encrypt all intellectual property — model weights, proprietary training data, algorithms — at rest with FIPS 140-validated modules"
+      "notes": "Enforce boundary controls on data flows between AI modalities; prevent sensitive data from crossing modal boundaries without appropriate classification and authorisation"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AC-3",
-      "control_name": "Access Enforcement — IP access control",
+      "control_name": "Access Enforcement — cross-modal data access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce strict access control on AI intellectual property; restrict to minimum necessary personnel with audit trail"
+      "notes": "Enforce consistent access controls across all modalities; restrict cross-modal data access based on sensitivity classification"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "AU-12",
-      "control_name": "Audit Generation — IP access tracking",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — cross-modal leakage detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Generate audit records for all access to AI intellectual property; enable detection of unauthorised access and exfiltration"
+      "notes": "Monitor AI outputs across all modalities for cross-channel leakage indicators; detect sensitive content surfacing in unintended modalities"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — cross-channel data movement",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Log data movement across modality boundaries; enable detection and investigation of cross-channel leakage"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — IP protection controls",
+      "control_name": "Protection and Prevention – cross-modal controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement security controls protecting AI intellectual property — encryption, access controls, and DLP for model weights, training data, and proprietary algorithms"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — IP protection in vendor relationships",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Address IP protection in third-party agreements; ensure vendors cannot access, replicate, or misuse proprietary AI assets"
+      "notes": "Implement consistent data protection controls across all modalities; enforce classification and access controls at modality boundaries"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 10",
-      "control_name": "Detection — IP exfiltration detection",
+      "control_name": "Detection – cross-modal leakage monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Deploy detection for IP exfiltration attempts; monitor model weight access and download patterns"
+      "notes": "Monitor for sensitive data surfacing across modality boundaries; detect PII, financial data, and credentials in cross-modal outputs"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management – cross-modal breach reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify cross-modal data leakage as ICT-related incidents where customer or regulatory impact occurs"
     }
   ],
   "tools": [
@@ -618,9 +618,9 @@
       "url": "https://azure.microsoft.com/en-us/solutions/confidential-compute/"
     },
     {
-      "name": "HashiCorp Vault",
-      "type": "commercial",
-      "url": "https://www.vaultproject.io"
+      "name": "LLM Guard",
+      "type": "open-source",
+      "url": "https://github.com/protectai/llm-guard"
     },
     {
       "name": "Nightfall DLP",
@@ -628,9 +628,14 @@
       "url": "https://www.nightfall.ai"
     },
     {
-      "name": "AWS KMS / Azure Key Vault",
+      "name": "Netskope",
       "type": "commercial",
-      "url": "https://aws.amazon.com/kms/"
+      "url": "https://www.netskope.com"
+    },
+    {
+      "name": "AWS Macie / Azure Purview",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/macie/"
     }
   ],
   "incidents": [
@@ -703,7 +708,8 @@
     ],
     "agentic_top10": [
       "ASI03",
-      "ASI04"
+      "ASI04",
+      "ASI07"
     ]
   },
   "changelog": [

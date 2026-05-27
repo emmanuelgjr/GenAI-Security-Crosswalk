@@ -18,30 +18,30 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0032",
-      "control_name": "Data Poisoning",
+      "control_id": "AML.T0043",
+      "control_name": "Craft Adversarial Data",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0032",
-      "notes": "Injecting malicious data into training pipelines to corrupt model behaviour"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
+      "notes": "Crafting adversarial training examples designed to corrupt model behaviour"
     },
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0031",
-      "control_name": "Backdoor ML Model",
+      "control_name": "Erode AI Model Integrity",
       "tier": "Hardening",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0031",
-      "notes": "Embedding hidden trigger-response patterns in model via poisoned training data"
+      "notes": "Degrading model integrity through poisoned training data, embedding hidden trigger-response patterns"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0027",
-      "control_name": "Model Inversion",
+      "control_id": "AML.T0020",
+      "control_name": "Poison Training Data",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0027",
-      "notes": "Reconstructing sensitive training data from model outputs"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0020",
+      "notes": "Injecting malicious data into training pipelines to corrupt model behaviour at the data level"
     },
     {
       "framework": "NIST AI RMF 1.0",

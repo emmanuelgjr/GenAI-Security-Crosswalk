@@ -27,12 +27,12 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0068",
-      "control_name": "Automated Collection",
+      "control_id": "AML.T0053",
+      "control_name": "AI Agent Tool Invocation",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0068",
-      "notes": "LLM autonomously collecting data beyond its intended access scope"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
+      "notes": "LLM autonomously invoking tools or APIs beyond its intended access scope"
     },
     {
       "framework": "NIST AI RMF 1.0",

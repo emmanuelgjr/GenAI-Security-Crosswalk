@@ -409,27 +409,19 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B001",
-      "control_name": "Third-party adversarial robustness testing",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Foundational"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B002",
-      "control_name": "Detect adversarial input",
+      "control_id": "A",
+      "control_name": "Data & Privacy domain",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B005",
-      "control_name": "Implement real-time input filtering",
+      "control_id": "F",
+      "control_name": "Society domain",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -473,24 +465,24 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "CA-7",
-      "control_name": "Continuous Monitoring — synthetic data drift",
+      "control_id": "RA-5",
+      "control_name": "Vulnerability Scanning — re-identification risk",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Include synthetic data quality metrics in continuous monitoring; track for privacy degradation and bias drift"
+      "notes": "Include synthetic data re-identification and pattern leakage in vulnerability assessment; test for membership and attribute inference"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "RA-5",
-      "control_name": "Vulnerability Scanning — synthetic data risks",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — privacy guarantees",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Include synthetic data re-identification and pattern leakage in vulnerability assessment"
+      "notes": "Include synthetic data privacy risk in AI risk management; define formal privacy guarantees required for synthetic data generation"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — synthetic data privacy",
+      "control_name": "Protection and Prevention – synthetic data privacy",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Implement privacy controls for synthetic data generation; validate privacy preservation and absence of sensitive pattern leakage from source financial data"
@@ -498,7 +490,7 @@
     {
       "framework": "DORA",
       "control_id": "Art. 24–27",
-      "control_name": "Resilience Testing — synthetic data testing",
+      "control_name": "Resilience Testing – synthetic data testing",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Include synthetic data re-identification and privacy testing in resilience testing programme; test for linkage attacks and attribute inference"
@@ -506,7 +498,7 @@
     {
       "framework": "DORA",
       "control_id": "Art. 13",
-      "control_name": "Learning and Evolving — synthetic data improvement",
+      "control_name": "Learning and Evolving – synthetic data improvement",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Apply lessons learned from synthetic data privacy failures; update generation processes and validation controls"
@@ -626,7 +618,8 @@
       "LLM01",
       "LLM08",
       "LLM09",
-      "LLM03"
+      "LLM03",
+      "LLM04"
     ],
     "agentic_top10": [
       "ASI03",
