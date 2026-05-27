@@ -27,15 +27,30 @@ training corpora, through access control and integrity of model artefacts,
 to data retention, consent management, and cross-jurisdictional compliance.
 
 ---
-## Why # DSGAI 2026 × FedRAMP AI Overlay for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × FedRAMP AI Overlay controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × FedRAMP AI Overlay compliance and governance programmes.---
+
+## Why DSGAI 2026 × FedRAMP AI Overlay for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific
+FedRAMP AI overlay controls, enabling data security teams to address
+GenAI-specific data risks within their existing FedRAMP compliance and
+governance programmes. FedRAMP's comprehensive NIST SP 800-53 control
+catalogue — spanning access control, audit, encryption, supply chain,
+and programme management — provides a natural home for every DSGAI risk,
+while the AI overlay extensions add the AI-specific enhancements that
+generic controls alone cannot cover.
+
+---
 
 ## FedRAMP AI control families
 
 | Family | ID | Purpose |
 |---|---|---|
 | Access Control | AC | Data access enforcement, AI service account management, least privilege for data operations |
+| Awareness and Training | AT | Security training covering AI-specific data risks and handling |
 | Audit and Accountability | AU | Data access logging, AI decision audit trails, inference logging |
+| Assessment, Authorization, and Monitoring | CA | Continuous monitoring, security assessment for AI systems |
 | Configuration Management | CM | Data pipeline configuration, model versioning, data flow controls |
+| Contingency Planning | CP | Backup and recovery for AI data assets and pipelines |
 | Identification and Authentication | IA | Identity for AI data processors, NHI management |
 | Incident Response | IR | Data breach incident handling, AI-specific data incident reporting |
 | Program Management | PM | Data governance strategy, AI risk management, privacy programme |
@@ -51,27 +66,27 @@ to data retention, consent management, and cross-jurisdictional compliance.
 
 | ID | Name | Severity | FedRAMP AI Controls | Scope |
 |---|---|---|---|---|
-| DSGAI01 | Data Access Logging | High | AU-2, AU-12, AC-3 | Both |
-| DSGAI02 | Data Visibility & Transparency | High | PM-9, AU-2, CM-3 | Both |
-| DSGAI03 | Shadow AI & Unvetted Tools | High | CM-7, SA-9, AC-3 | Both |
+| DSGAI01 | Sensitive Data Leakage | Critical | SC-28, AC-3, SI-4, AU-2 | Both |
+| DSGAI02 | Agent Identity & Credential Exposure | Critical | IA-5, AC-6, AU-12, SC-28 | Both |
+| DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | CM-7, SA-9, AC-3, SI-4 | Both |
 | DSGAI04 | Data Model & Artifact Poisoning | Critical | SR-2, SR-3, SI-3, SC-28 | Both |
-| DSGAI05 | Data Provenance & Quality | High | SR-3, SI-10, CM-3 | Both |
-| DSGAI06 | Data Lineage Fragmentation | Medium | CM-3, AU-2, PM-9 | Build |
-| DSGAI07 | Excessive Data Aggregation | High | AC-6, SC-7, PM-9 | Both |
-| DSGAI08 | Data Leakage & Exposure | Critical | SC-28, AC-3, AU-2, SI-4 | Both |
-| DSGAI09 | Intellectual Property Theft | High | SC-28, AC-3, AU-12 | Both |
-| DSGAI10 | Synthetic Data Generation Risk | Medium | SI-4, CA-7, RA-5 | Build |
-| DSGAI11 | Data Retention & Deletion | High | CM-3, SC-28, PM-9 | Both |
-| DSGAI12 | Data Ownership & Monetisation | Medium | PM-9, AC-3, AU-2 | Both |
-| DSGAI13 | Data Misuse & Manipulation | High | AC-3, AU-2, SI-4 | Both |
-| DSGAI14 | Consent Management Failures | High | PM-9, AC-3, AU-2 | Both |
-| DSGAI15 | Data Minimisation Violations | Medium | AC-6, CM-7, PM-9 | Build |
-| DSGAI16 | Erosion of Privacy | High | SC-28, AC-3, PM-9, SI-4 | Both |
-| DSGAI17 | Bias in Data | High | SI-4, CA-7, RA-5 | Both |
-| DSGAI18 | Governance Gaps | High | PM-9, CM-3, RA-3 | Both |
-| DSGAI19 | Third-Party Data Risk | High | SA-9, SR-2, SR-3 | Both |
-| DSGAI20 | Data Localization Violations | High | SC-7, PM-9, CM-3 | Both |
-| DSGAI21 | Non-Compliance with Data Laws | Critical | PM-9, RA-3, AU-2, AC-3 | Both |
+| DSGAI05 | Data Integrity & Validation Failures | High | SI-10, SI-7, CM-3 | Both |
+| DSGAI06 | Tool Plugin & Agent Data Exchange | High | AC-3, SA-9, AU-2, SC-7 | Both |
+| DSGAI07 | Data Governance & Lifecycle | High | CM-3, PM-9, AU-2, SC-28 | Both |
+| DSGAI08 | Non-Compliance & Regulatory Violations | High | PM-9, RA-3, AU-2, CA-7 | Both |
+| DSGAI09 | Multimodal Cross-Channel Leakage | Medium | SC-7, AC-3, SI-4, AU-2 | Both |
+| DSGAI10 | Synthetic Data & Anonymization Pitfalls | Medium | SI-4, RA-5, PM-9 | Build |
+| DSGAI11 | Cross-Context Conversation Bleed | High | AC-4, SC-7, AU-2, AC-3 | Both |
+| DSGAI12 | Unsafe NL Data Gateways | Critical | SI-10, AC-3, AU-2, SC-7 | Both |
+| DSGAI13 | Vector Store Platform Security | High | SC-28, AC-3, AU-12, CM-6 | Both |
+| DSGAI14 | Excessive Telemetry & Monitoring Leakage | Medium | AC-3, AU-2, SI-4, PM-9 | Both |
+| DSGAI15 | Over-Broad Context Windows | High | AC-6, CM-7, SI-10 | Both |
+| DSGAI16 | Endpoint & Browser Overreach | High | AC-6, CM-7, SC-7, AU-2 | Both |
+| DSGAI17 | Data Availability & Resilience Failures | High | CP-9, CP-10, SI-4, CA-7 | Both |
+| DSGAI18 | Inference & Data Reconstruction | High | SC-28, AC-3, SI-4, RA-5 | Both |
+| DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | AC-3, PS-3, AT-2, AU-2 | Build |
+| DSGAI20 | Model Exfiltration & IP Replication | Critical | SC-28, AC-3, AU-12, SI-4 | Both |
+| DSGAI21 | Disinformation & Integrity Attacks | High | SI-3, SI-7, AU-2, SR-3 | Both |
 
 ---
 
@@ -94,122 +109,124 @@ to data retention, consent management, and cross-jurisdictional compliance.
 
 ### DSGAI01 – Sensitive Data Leakage
 
-**Severity:** High
+**Severity:** Critical
 
-Insufficient logging of data access events in AI systems prevents detection
-of unauthorised access, complicates incident investigation, and fails
-regulatory audit requirements. FedRAMP AI overlay addresses this through
-comprehensive event logging for AI data access (AU-2), audit generation
-covering model inference (AU-12), and access enforcement requiring
-authenticated, logged access to AI data stores (AC-3).
+Sensitive data — PII, credentials, financial records, proprietary code —
+leaks from GenAI systems through model outputs, RAG retrieval, embedding
+exposure, or observability pipelines. FedRAMP AI overlay addresses this
+through encryption at rest for all AI data stores (SC-28), access
+enforcement restricting who can retrieve sensitive data (AC-3), system
+monitoring detecting leakage indicators in model outputs (SI-4), and
+event logging for forensic reconstruction (AU-2).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Event Logging — AI data access logging | AU-2 | AU | Log all access to AI training data, model weights, inference inputs and outputs, and configuration; include user/service identity, timestamp, and access type |
-| Audit Generation — inference audit trail | AU-12 | AU | Generate audit records for all model inference requests with sufficient detail for compliance and incident investigation |
-| Access Enforcement — authenticated data access | AC-3 | AC | Enforce authenticated, authorised access to all AI data stores; deny unauthenticated access; log all access decisions |
+| Protection of Information at Rest — AI data encryption | SC-28 | SC | Encrypt all AI data at rest — training data, model weights, inference logs, embedding stores — using FIPS 140-validated modules |
+| Access Enforcement — AI data access | AC-3 | AC | Enforce role-based access control on all AI data stores; restrict access based on clearance, need-to-know, and data sensitivity |
+| System Monitoring — leakage indicator detection | SI-4 | SI | Monitor model outputs and data access patterns for leakage indicators — PII, credentials, classification markings in outputs; alert on detection |
+| Event Logging — data access and output logging | AU-2 | AU | Log all AI data access and model outputs with sufficient detail to detect data leakage; include output content metadata |
 
 #### Mitigations
 
 **Foundational**
-- AU-2: Implement comprehensive logging for all AI data access events;
-  cover training data, model weights, inference inputs/outputs, and
-  prompt configurations
-- AC-3: Enforce authenticated access to all AI data stores; deny
-  unauthenticated access by default
-- AU-12: Generate inference audit records per FedRAMP requirements
+- SC-28: Encrypt all AI data at rest using FIPS 140-validated modules;
+  enforce key management per FedRAMP requirements
+- AC-3: Implement role-based access on all AI data stores; deny by
+  default; restrict RAG retrieval to authorised scope
+- AU-2: Log all data access and model outputs at integration points
 
 **Hardening**
-- AU-2: Feed AI data access logs into FedRAMP continuous monitoring;
+- SI-4: Deploy output monitoring for sensitive data patterns — PII,
+  credentials, API keys; alert and block on detection
+- SC-28: Conduct data extraction testing; verify training data cannot
+  be extracted through targeted queries
+- AU-2: Feed data access logs into FedRAMP continuous monitoring;
   establish alerting for anomalous access patterns
-- AU-12: Implement tamper-evident logging for inference audit trails;
-  ensure log integrity for regulatory compliance
-- AC-3: Review data access patterns quarterly; identify and remediate
-  over-permissioned access
 
 **Advanced**
-- AU-2: Implement real-time analytics on data access logs; detect
-  anomalous access patterns indicative of data exfiltration
-- AU-12: Include AI data access logging in FedRAMP annual assessment;
-  demonstrate logging completeness and integrity
-- AC-3: Deploy dynamic access control based on data sensitivity and
-  user risk context
+- Apply differential privacy to training; bound memorisation risk
+- SI-4: Include data leakage testing in FedRAMP annual assessment
+- Deploy output classifiers detecting and redacting sensitive content
+  before responses reach users
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| OpenTelemetry | Open-source | https://opentelemetry.io |
-| AWS CloudTrail / Azure Monitor | Commercial | https://aws.amazon.com/cloudtrail/ |
-| Elasticsearch | Open-source | https://www.elastic.co |
-| Splunk | Commercial | https://www.splunk.com |
+| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
+| LLM Guard | Open-source | https://github.com/protectai/llm-guard |
+| Nightfall DLP | Commercial | https://www.nightfall.ai |
+| AWS Macie / Azure Purview | Commercial | https://aws.amazon.com/macie/ |
 
 #### Cross-references
 - LLM Top 10: LLM02 Sensitive Information Disclosure
-- Agentic Top 10: ASI02 Misconfigured Access Controls
-- Other frameworks: SP 800-218A PS.1.1-PS – NIST CSF 2.0 DE.AE-3 – ISO 27001 A.12.4
+- Agentic Top 10: ASI03 Privilege Escalation
+- Other frameworks: SP 800-218A PS.1.1-PS – CWE-200 – NIST CSF 2.0 PR.DS-5
 
 ---
 
 ### DSGAI02 – Agent Identity & Credential Exposure
 
-**Severity:** High
+**Severity:** Critical
 
-Lack of visibility into what data AI systems process, how it flows through
-pipelines, and what decisions are made based on it. FedRAMP AI overlay
-addresses this through risk management strategy requiring data visibility
-(PM-9), event logging for data flow tracking (AU-2), and configuration
-change control for data pipelines (CM-3).
+Agent credentials — session tokens, API keys, delegated permissions —
+are exposed through memory, logs, tool payloads, or inter-agent
+communication, enabling credential theft and lateral movement. FedRAMP
+AI overlay addresses this through authenticator management requiring
+secure credential storage (IA-5), least privilege scoping agent
+permissions (AC-6), audit generation tracking credential lifecycle
+events (AU-12), and encryption protecting stored credentials (SC-28).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Risk Management Strategy — data visibility requirements | PM-9 | PM | Include data visibility and transparency requirements in AI risk management strategy; define what data flows must be documented and monitored |
-| Event Logging — data flow tracking | AU-2 | AU | Log data movement through AI pipelines — ingestion, transformation, training, inference; enable end-to-end data flow traceability |
-| Configuration Change Control — data pipeline documentation | CM-3 | CM | Document and control changes to AI data pipeline configurations; maintain current data flow diagrams and processing documentation |
+| Authenticator Management — agent credential lifecycle | IA-5 | IA | Manage AI agent credentials with short-lived, task-scoped tokens; enforce rotation schedules; prohibit long-lived secrets in agent memory or logs |
+| Least Privilege — agent permission scoping | AC-6 | AC | Restrict agent permissions to minimum necessary for each task; enforce that agent privilege cannot exceed the authorising user's privilege |
+| Audit Generation — credential event tracking | AU-12 | AU | Generate audit records for all credential issuance, usage, rotation, and expiry events across agent operations |
+| Protection of Information at Rest — credential encryption | SC-28 | SC | Encrypt all stored agent credentials using FIPS 140-validated modules; enforce hardware-backed key management for high-value tokens |
 
 #### Mitigations
 
 **Foundational**
-- PM-9: Define data visibility requirements for all AI systems within
-  the FedRAMP boundary; specify what data flows must be documented
-- AU-2: Log data movement through AI pipelines with sufficient detail
-  for traceability; cover ingestion, transformation, and inference
-- CM-3: Maintain current data flow documentation; update on every
-  pipeline change
+- IA-5: Issue short-lived, task-scoped credentials per agent invocation;
+  prohibit long-lived API keys or tokens in agent context
+- AC-6: Enforce least privilege — agent maximum privilege equals
+  authorising user's privilege; deny privilege escalation
+- SC-28: Encrypt all stored credentials at rest with FIPS 140-validated
+  modules
 
 **Hardening**
-- PM-9: Include data visibility metrics in management reporting;
-  track coverage across AI systems
-- AU-2: Implement automated data flow tracing; visualise end-to-end
-  data movement through AI pipelines
-- CM-3: Implement automated documentation generation for data pipelines;
-  ensure documentation stays current
+- AU-12: Log all credential lifecycle events — issuance, use, rotation,
+  expiry; feed into FedRAMP continuous monitoring
+- IA-5: Implement automated credential rotation; detect and revoke
+  leaked credentials immediately
+- AC-6: Review agent permission grants quarterly; remove stale or
+  over-broad grants
 
 **Advanced**
-- PM-9: Include data visibility in FedRAMP SSP; demonstrate
-  comprehensive understanding of AI data flows
-- AU-2: Deploy real-time data flow monitoring dashboards; enable
-  immediate visibility into AI data processing
-- CM-3: Implement drift detection for data pipeline configurations;
-  alert on undocumented changes
+- IA-5: Deploy just-in-time credential issuance; agents receive
+  credentials only at invocation time with automatic expiry
+- AU-12: Include agent credential management in FedRAMP annual
+  assessment; demonstrate credential lifecycle completeness
+- SC-28: Implement hardware-backed key management for agent credential
+  encryption keys
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Apache Atlas | Open-source | https://atlas.apache.org |
-| OpenLineage | Open-source | https://openlineage.io |
-| OpenTelemetry | Open-source | https://opentelemetry.io |
-| Collibra | Commercial | https://www.collibra.com |
+| HashiCorp Vault | Commercial | https://www.vaultproject.io |
+| AWS Secrets Manager / Azure Key Vault | Commercial | https://aws.amazon.com/secrets-manager/ |
+| CyberArk | Commercial | https://www.cyberark.com |
+| SPIFFE/SPIRE | Open-source | https://spiffe.io |
 
 #### Cross-references
-- LLM Top 10: LLM09 Misinformation
-- Agentic Top 10: ASI09 Emerging Agentic Patterns
-- Other frameworks: SP 800-218A PW.1.1-PS – NIST AI RMF MAP 2.3 – ISO 42001 A.7.2
+- LLM Top 10: LLM02 Sensitive Information Disclosure
+- Agentic Top 10: ASI02 Misconfigured Access Controls
+- Other frameworks: SP 800-218A PW.1.1-PS – NIST CSF 2.0 PR.AC-7 – CWE-522
 
 ---
 
@@ -217,11 +234,13 @@ change control for data pipelines (CM-3).
 
 **Severity:** High
 
-Unauthorised or unvetted AI tools and services used within the organisation
-bypass security controls and data governance. FedRAMP AI overlay addresses
-this through least functionality restricting approved AI tools (CM-7),
-external service controls for third-party AI (SA-9), and access enforcement
-preventing unauthorised AI tool usage (AC-3).
+Employees or teams deploy unauthorised GenAI tools that process corporate
+data outside governed channels, creating invisible data flows beyond
+security and compliance controls. FedRAMP AI overlay addresses this
+through least functionality restricting approved AI tools (CM-7), external
+service controls for third-party AI (SA-9), access enforcement preventing
+unauthorised AI tool usage (AC-3), and system monitoring detecting shadow
+AI activity (SI-4).
 
 #### FedRAMP AI mapping
 
@@ -230,6 +249,7 @@ preventing unauthorised AI tool usage (AC-3).
 | Least Functionality — approved AI tools only | CM-7 | CM | Restrict AI tool usage to approved, vetted tools within the FedRAMP boundary; disable or block access to unauthorised AI services |
 | External Information System Services — third-party AI controls | SA-9 | SA | Require FedRAMP authorisation or equivalent for all third-party AI services; block data transfer to unauthorised AI tools |
 | Access Enforcement — AI tool access control | AC-3 | AC | Enforce access control preventing data transfer to unauthorised AI tools; monitor and block shadow AI usage |
+| System Monitoring — shadow AI detection | SI-4 | SI | Monitor network traffic and data flows for indicators of unauthorised AI service usage; alert on detection |
 
 #### Mitigations
 
@@ -242,7 +262,7 @@ preventing unauthorised AI tool usage (AC-3).
   unauthorised AI tools
 
 **Hardening**
-- CM-7: Implement automated discovery of AI tool usage; detect and
+- SI-4: Implement automated discovery of AI tool usage; detect and
   alert on shadow AI activity
 - SA-9: Conduct security assessment of all AI tools before approval;
   include in FedRAMP continuous monitoring
@@ -254,7 +274,7 @@ preventing unauthorised AI tool usage (AC-3).
   track and report on unauthorised AI tool usage
 - SA-9: Implement automated compliance verification for third-party
   AI services; alert on authorisation expiry
-- AC-3: Deploy advanced behavioural analytics to detect indirect
+- SI-4: Deploy advanced behavioural analytics to detect indirect
   shadow AI usage patterns
 
 #### Tools
@@ -277,12 +297,12 @@ preventing unauthorised AI tool usage (AC-3).
 
 **Severity:** Critical
 
-Attackers corrupt training data, model weights, or pipeline artefacts to
-embed backdoors or bias AI system behaviour. FedRAMP AI overlay addresses
-this through supply chain planning for AI data sources (SR-2), supply
-chain controls for artefact provenance (SR-3), malicious code protection
-for training pipelines (SI-3), and encryption of data and model artefacts
-at rest (SC-28).
+Training data, fine-tuning pipelines, or model weights are corrupted to
+embed backdoors, bias, or degraded behaviours that persist through
+deployment. FedRAMP AI overlay addresses this through supply chain
+planning for AI data sources (SR-2), supply chain controls for artefact
+provenance (SR-3), malicious code protection for training pipelines
+(SI-3), and encryption of data and model artefacts at rest (SC-28).
 
 #### FedRAMP AI mapping
 
@@ -338,41 +358,44 @@ at rest (SC-28).
 
 **Severity:** High
 
-Insufficient data provenance tracking and quality controls lead to use of
-unreliable, outdated, or inappropriately sourced data in AI systems.
-FedRAMP AI overlay addresses this through supply chain controls for data
-provenance (SR-3), input validation for data quality (SI-10), and
-configuration change control for data pipeline changes (CM-3).
+Insufficient validation on AI data ingestion interfaces allows corrupted,
+malformed, or adversarial data to enter processing pipelines, degrading
+output quality or enabling attacks. FedRAMP AI overlay addresses this
+through input validation enforcing data quality (SI-10), software and
+information integrity verification for pipeline artefacts (SI-7), and
+configuration change control tracking data pipeline modifications (CM-3).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Supply Chain Controls — data provenance tracking | SR-3 | SR | Implement provenance tracking for all AI training data; document source, collection method, processing history, and licensing for each dataset |
-| Information Input Validation — data quality controls | SI-10 | SI | Validate quality, completeness, and accuracy of data entering AI pipelines; reject data failing quality thresholds |
-| Configuration Change Control — data source changes | CM-3 | CM | Require formal change control for all data source additions, modifications, and removals; maintain audit trail |
+| Information Input Validation — data quality enforcement | SI-10 | SI | Validate quality, completeness, and format of all data entering AI pipelines; reject data failing quality thresholds or schema validation |
+| Software, Firmware, and Information Integrity — pipeline integrity | SI-7 | SI | Verify integrity of data artefacts at each pipeline stage; detect corruption, tampering, or unauthorised modifications |
+| Configuration Change Control — data pipeline changes | CM-3 | CM | Require formal change control for all data pipeline modifications; maintain audit trail of data source additions, schema changes, and validation rule updates |
 
 #### Mitigations
 
 **Foundational**
-- SR-3: Implement provenance tracking for all training data; document
-  source, collection method, and licensing
-- SI-10: Define and enforce data quality thresholds; reject data failing
-  validation checks
-- CM-3: Require change control for data source modifications
+- SI-10: Define and enforce data quality thresholds for all AI input
+  sources; reject data failing validation checks or schema validation
+- SI-7: Implement checksum verification for data artefacts at pipeline
+  ingestion points
+- CM-3: Require change control for data source and pipeline
+  modifications
 
 **Hardening**
-- SR-3: Implement automated provenance verification; validate data
-  source integrity at each pipeline stage
 - SI-10: Deploy continuous data quality monitoring; alert on quality
-  degradation
-- CM-3: Include data source changes in FedRAMP change management
+  degradation or anomalous input patterns
+- SI-7: Implement automated integrity verification at each pipeline
+  stage; quarantine failed artefacts
+- CM-3: Include data pipeline changes in FedRAMP change management;
+  track configuration drift
 
 **Advanced**
-- SR-3: Include data provenance in FedRAMP annual assessment;
-  demonstrate comprehensive provenance tracking
 - SI-10: Implement advanced data quality analytics; detect subtle
   quality issues affecting model performance
+- SI-7: Include data integrity verification in FedRAMP annual
+  assessment; demonstrate pipeline integrity controls
 - CM-3: Deploy automated data lineage tracking; maintain real-time
   data flow documentation
 
@@ -394,60 +417,63 @@ configuration change control for data pipeline changes (CM-3).
 
 ### DSGAI06 – Tool Plugin & Agent Data Exchange
 
-**Severity:** Medium
+**Severity:** High
 
-Fragmented or incomplete data lineage across AI pipelines prevents
-understanding of how data is transformed, combined, and used in model
-development. FedRAMP AI overlay addresses this through configuration change
-control for pipeline documentation (CM-3), event logging for data
-transformation tracking (AU-2), and risk management requiring lineage
-visibility (PM-9).
+Sensitive context — user data, credentials, conversation history — is
+exchanged with third-party tools, plugins, or MCP servers without
+adequate access controls or data minimisation, creating uncontrolled data
+flows. FedRAMP AI overlay addresses this through access enforcement on
+tool data exchange (AC-3), external service controls for plugin providers
+(SA-9), event logging of all tool interactions (AU-2), and boundary
+protection controlling data flow to external tools (SC-7).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Configuration Change Control — pipeline lineage documentation | CM-3 | CM | Maintain comprehensive data lineage documentation for all AI pipelines; update on every transformation, combination, or processing change |
-| Event Logging — data transformation logging | AU-2 | AU | Log all data transformation events in AI pipelines; enable end-to-end lineage reconstruction from source to model |
-| Risk Management Strategy — lineage requirements | PM-9 | PM | Include data lineage completeness in AI risk management strategy; define minimum lineage requirements per data sensitivity level |
+| Access Enforcement — tool data exchange controls | AC-3 | AC | Enforce access controls on all data exchanged with tools and plugins; restrict data sharing to minimum necessary per tool permission manifest |
+| External Information System Services — plugin provider controls | SA-9 | SA | Require security assessment for all third-party tool and plugin providers; establish data handling SLAs covering sensitivity and retention |
+| Event Logging — tool interaction logging | AU-2 | AU | Log all data exchanged with external tools and plugins; capture tool identity, data elements shared, and response data received |
+| Boundary Protection — tool data flow enforcement | SC-7 | SC | Enforce boundary controls on data flows to external tools; prevent uncontrolled data transfer to plugin endpoints |
 
 #### Mitigations
 
 **Foundational**
-- CM-3: Maintain data lineage documentation for all AI pipelines;
-  update on every change
-- AU-2: Log data transformation events with input/output references;
-  enable lineage reconstruction
-- PM-9: Define lineage requirements per data sensitivity level
+- AC-3: Enforce per-tool permission manifests; tools cannot access data
+  beyond authorised scope; apply data minimisation
+- SA-9: Require security assessment for all tool and plugin providers
+  before approval
+- AU-2: Log every data exchange with external tools for audit and
+  forensic reconstruction
 
 **Hardening**
-- CM-3: Implement automated lineage capture; reduce manual documentation
-  burden and ensure completeness
-- AU-2: Deploy end-to-end lineage tracing; visualise data flow from
-  source through transformation to model
-- PM-9: Include lineage completeness in management reporting
+- SC-7: Implement boundary controls preventing unauthorised data flows
+  to external tool endpoints
+- SA-9: Include tool provider security in FedRAMP continuous monitoring;
+  reassess on schedule
+- AC-3: Implement automated data minimisation — strip unnecessary
+  context before tool invocation
 
 **Advanced**
-- CM-3: Include data lineage in FedRAMP SSP; demonstrate comprehensive
-  lineage tracking
-- AU-2: Implement lineage-based impact analysis; assess how data source
-  changes affect downstream models
-- PM-9: Deploy lineage-based compliance verification; automate
-  regulatory traceability checks
+- AU-2: Deploy real-time analytics on tool data exchange patterns;
+  detect anomalous data transfers
+- SC-7: Include tool data flow controls in FedRAMP annual assessment
+- SA-9: Implement automated compliance verification for tool providers;
+  alert on security posture changes
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| OpenLineage | Open-source | https://openlineage.io |
-| Apache Atlas | Open-source | https://atlas.apache.org |
-| dbt | Open-source | https://www.getdbt.com |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
+| OpenTelemetry | Open-source | https://opentelemetry.io |
+| Netskope | Commercial | https://www.netskope.com |
 | Collibra | Commercial | https://www.collibra.com |
 
 #### Cross-references
-- LLM Top 10: LLM03 Training Data Poisoning
+- LLM Top 10: LLM05 Supply Chain Vulnerabilities
 - Agentic Top 10: ASI07 Lateral Tool Chaining
-- Other frameworks: SP 800-218A PS.3.1-PS – NIST AI RMF MAP 2.3 – ISO 42001 A.7.4
+- Other frameworks: SP 800-218A PW.4.1-PS – NIST CSF 2.0 PR.AC-3 – ISO 42001 A.7.2
 
 ---
 
@@ -455,99 +481,167 @@ visibility (PM-9).
 
 **Severity:** High
 
-AI systems aggregate data from multiple sources creating combined datasets
-with higher sensitivity than individual sources, enabling re-identification
-or inference of sensitive attributes. FedRAMP AI overlay addresses this
-through least privilege restricting data aggregation scope (AC-6), boundary
-protection controlling data flow (SC-7), and risk management covering
-aggregation risk (PM-9).
+Governance gaps for AI-derived data assets — embeddings, fine-tuned
+models, generated content, cached outputs — leave them outside retention,
+classification, and disposal policies. FedRAMP AI overlay addresses this
+through configuration change control for lifecycle management (CM-3),
+risk management strategy covering governance (PM-9), event logging for
+data lineage and disposal records (AU-2), and encryption of retained
+data assets (SC-28).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Least Privilege — data aggregation restrictions | AC-6 | AC | Restrict data aggregation scope to minimum necessary; enforce controls preventing combination of datasets that create higher-sensitivity aggregates |
-| Boundary Protection — data flow control | SC-7 | SC | Enforce boundary protection on data flows between systems; prevent uncontrolled data aggregation across security boundaries |
-| Risk Management Strategy — aggregation risk | PM-9 | PM | Include data aggregation risk in AI risk management strategy; assess combined sensitivity of aggregated datasets |
+| Configuration Change Control — data lifecycle management | CM-3 | CM | Define and enforce lifecycle policies for all AI-derived data; implement retention schedules, classification requirements, and automated disposal for embeddings, models, and generated content |
+| Risk Management Strategy — data governance framework | PM-9 | PM | Include AI-derived data assets in risk management strategy; define roles, ownership, and governance policies for all AI data categories |
+| Event Logging — lineage and disposal tracking | AU-2 | AU | Log data lineage events from source through all AI transformations; log disposal actions with evidence of completeness |
+| Protection of Information at Rest — retained data encryption | SC-28 | SC | Encrypt all retained AI data assets — embeddings, cached outputs, fine-tuned models — using FIPS 140-validated modules; support crypto-shredding for disposal |
 
 #### Mitigations
 
 **Foundational**
-- AC-6: Restrict data aggregation to minimum necessary per use case;
-  require justification for cross-source data combination
-- SC-7: Enforce boundary controls on data flows; prevent data from
-  crossing sensitivity boundaries without authorisation
-- PM-9: Assess aggregation risk for each AI data pipeline
+- CM-3: Extend data classification to all AI-derived assets; define
+  retention policies and automated disposal schedules
+- PM-9: Establish AI data governance framework; define roles,
+  ownership, and accountability
+- AU-2: Maintain data lineage records from source through all AI
+  transformations
 
 **Hardening**
-- AC-6: Implement automated aggregation controls; alert when combined
-  datasets exceed defined sensitivity thresholds
-- SC-7: Deploy data flow enforcement; block unauthorised data
-  combination across boundaries
-- PM-9: Include aggregation risk in management risk reporting
+- SC-28: Encrypt retained AI data with per-asset keys enabling
+  crypto-shredding for secure disposal
+- CM-3: Implement automated retention enforcement; verify disposal
+  completeness
+- PM-9: Include governance maturity metrics in management reporting
 
 **Advanced**
-- Apply privacy-enhancing technologies — differential privacy,
-  k-anonymity — to aggregated datasets
-- SC-7: Include data aggregation controls in FedRAMP annual assessment
-- PM-9: Deploy automated aggregation risk assessment; continuously
-  evaluate combined dataset sensitivity
+- CM-3: Include data lifecycle compliance in FedRAMP annual assessment
+- AU-2: Deploy automated lineage-based compliance verification across
+  all AI data stores
+- PM-9: Include AI data governance in FedRAMP SSP; demonstrate
+  comprehensive governance maturity
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
-| ARX Data Anonymization | Open-source | https://arx.deidentifier.org |
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 | Collibra | Commercial | https://www.collibra.com |
+| Apache Atlas | Open-source | https://atlas.apache.org |
+| AWS S3 Lifecycle / Azure Lifecycle Management | Commercial | https://aws.amazon.com/s3/ |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 
 #### Cross-references
 - LLM Top 10: LLM02 Sensitive Information Disclosure
-- Agentic Top 10: ASI03 Privilege Escalation
-- Other frameworks: SP 800-218A PW.1.1-PS – NIST Privacy Framework – ISO 27701
+- Agentic Top 10: ASI09 Emerging Agentic Patterns
+- Other frameworks: SP 800-218A PW.1.1-PS – NIST CSF 2.0 PR.DS-3 – ISO 42001 A.7.2
 
 ---
 
 ### DSGAI08 – Non-Compliance & Regulatory Violations
 
-**Severity:** Critical
+**Severity:** High
 
-Sensitive data is exposed through model outputs, training data extraction,
-side channels, or misconfigured data stores. FedRAMP AI overlay addresses
-this through encryption at rest (SC-28), access enforcement (AC-3),
-comprehensive logging (AU-2), and system monitoring for leakage indicators
-(SI-4).
+GenAI systems fail to meet regulatory obligations — GDPR, EU AI Act,
+sector-specific requirements — due to inadequate data handling, missing
+documentation, or uncontrolled processing. FedRAMP AI overlay addresses
+this through risk management strategy covering regulatory compliance
+(PM-9), risk assessment identifying compliance gaps (RA-3), comprehensive
+logging for regulatory evidence (AU-2), and continuous monitoring
+tracking ongoing compliance (CA-7).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Protection of Information at Rest — AI data encryption | SC-28 | SC | Encrypt all AI data at rest — training data, model weights, inference logs, embedding stores — using FIPS 140-validated modules |
-| Access Enforcement — AI data access | AC-3 | AC | Enforce role-based access control on all AI data stores; restrict access based on clearance, need-to-know, and data sensitivity |
-| Event Logging — leakage detection logging | AU-2 | AU | Log AI data access and model outputs with sufficient detail to detect data leakage; include output content metadata |
-| System Monitoring — leakage indicator detection | SI-4 | SI | Monitor model outputs and data access patterns for leakage indicators — PII, credentials, classification markings in outputs; alert on detection |
+| Risk Management Strategy — regulatory compliance | PM-9 | PM | Include regulatory compliance in AI risk management; map applicable data laws — GDPR, CCPA, HIPAA, EU AI Act — to AI processing activities and define compliance requirements |
+| Risk Assessment — compliance gap analysis | RA-3 | RA | Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans |
+| Event Logging — regulatory evidence | AU-2 | AU | Maintain comprehensive logs for regulatory compliance evidence; ensure audit trails meet requirements of applicable data laws |
+| Continuous Monitoring — compliance tracking | CA-7 | CA | Include regulatory compliance metrics in continuous monitoring; track compliance status across AI systems and alert on drift |
 
 #### Mitigations
 
 **Foundational**
-- SC-28: Encrypt all AI data at rest; enforce key management per
-  FedRAMP requirements
-- AC-3: Implement role-based access on all AI data stores; deny by
-  default
-- AU-2: Log all data access and model outputs
+- PM-9: Map all AI data processing to applicable regulatory
+  requirements; define compliance requirements for each
+- RA-3: Conduct compliance gap analysis; identify non-compliance areas
+  and prioritise remediation
+- AU-2: Implement logging sufficient for regulatory evidence;
+  maintain processing records and consent logs
 
 **Hardening**
-- SI-4: Deploy output monitoring for sensitive data patterns; alert
-  and block on detection
-- SC-28: Conduct data extraction testing; verify training data cannot
-  be extracted through targeted queries
-- AU-2: Feed data access logs into continuous monitoring
+- CA-7: Include regulatory compliance in continuous monitoring; track
+  compliance status across AI systems
+- RA-3: Conduct regular compliance reassessment aligned with
+  regulatory changes
+- AU-2: Implement automated compliance evidence collection
 
 **Advanced**
-- Apply differential privacy to training; bound memorisation risk
-- SI-4: Include data leakage testing in FedRAMP annual assessment
-- Deploy output classifiers detecting and redacting sensitive content
+- PM-9: Include AI regulatory compliance in FedRAMP SSP; demonstrate
+  comprehensive compliance coverage
+- CA-7: Deploy automated compliance monitoring across all AI systems
+- RA-3: Include regulatory compliance in FedRAMP annual assessment;
+  conduct and document AI risk assessments per regulatory requirements
+
+#### Tools
+
+| Tool | Type | Link |
+|---|---|---|
+| OneTrust | Commercial | https://www.onetrust.com |
+| TrustArc | Commercial | https://trustarc.com |
+| ServiceNow GRC | Commercial | https://www.servicenow.com |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
+
+#### Cross-references
+- LLM Top 10: LLM02 Sensitive Information Disclosure
+- Agentic Top 10: ASI02 Misconfigured Access Controls
+- Other frameworks: SP 800-218A PW.1.1-PS – GDPR – EU AI Act – FedRAMP High Baseline
+
+---
+
+### DSGAI09 – Multimodal Cross-Channel Leakage
+
+**Severity:** Medium
+
+Data leaks across modalities — text-to-image, speech-to-text, OCR —
+when sensitive information in one channel surfaces in another without
+appropriate controls. FedRAMP AI overlay addresses this through boundary
+protection enforcing data flow between modalities (SC-7), access
+enforcement on cross-modal data (AC-3), system monitoring for cross-modal
+leakage indicators (SI-4), and event logging for cross-channel data
+movement (AU-2).
+
+#### FedRAMP AI mapping
+
+| Control | ID | Family | Description |
+|---|---|---|---|
+| Boundary Protection — cross-modal data flow enforcement | SC-7 | SC | Enforce boundary controls on data flows between AI modalities; prevent sensitive data from crossing modal boundaries without appropriate classification and authorisation |
+| Access Enforcement — cross-modal data access | AC-3 | AC | Enforce consistent access controls across all modalities; restrict cross-modal data access based on sensitivity classification |
+| System Monitoring — cross-modal leakage detection | SI-4 | SI | Monitor AI outputs across all modalities for cross-channel leakage indicators; detect sensitive content surfacing in unintended modalities |
+| Event Logging — cross-channel data movement | AU-2 | AU | Log data movement across modality boundaries; enable detection and investigation of cross-channel leakage |
+
+#### Mitigations
+
+**Foundational**
+- SC-7: Enforce boundary controls between AI modalities; classify data
+  sensitivity per modality
+- AC-3: Apply consistent access controls across all modalities — text,
+  image, audio, video
+- AU-2: Log all cross-modal data movement
+
+**Hardening**
+- SI-4: Deploy output filtering across all modalities; detect sensitive
+  content in cross-modal outputs
+- SC-7: Implement automated data flow enforcement between modality
+  boundaries
+- AU-2: Feed cross-modal data flow logs into continuous monitoring
+
+**Advanced**
+- SI-4: Include cross-modal leakage testing in FedRAMP annual
+  assessment
+- SC-7: Deploy advanced cross-modal data classification; detect
+  implicit information transfer across channels
+- Implement modality-specific DLP policies
 
 #### Tools
 
@@ -556,68 +650,12 @@ comprehensive logging (AU-2), and system monitoring for leakage indicators
 | Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
 | LLM Guard | Open-source | https://github.com/protectai/llm-guard |
 | Nightfall DLP | Commercial | https://www.nightfall.ai |
-| AWS Macie / Azure Purview | Commercial | https://aws.amazon.com/macie/ |
-
-#### Cross-references
-- LLM Top 10: LLM02 Sensitive Information Disclosure, LLM07 System Prompt Leakage
-- Agentic Top 10: ASI03 Privilege Escalation
-- Other frameworks: SP 800-218A PS.1.1-PS – CWE-200 – NIST CSF 2.0 PR.DS-5
-
----
-
-### DSGAI09 – Multimodal Cross-Channel Leakage
-
-**Severity:** High
-
-AI model weights, training data, proprietary algorithms, or fine-tuning
-datasets are stolen or extracted. FedRAMP AI overlay addresses this through
-encryption at rest (SC-28), access enforcement (AC-3), and audit generation
-for IP access tracking (AU-12).
-
-#### FedRAMP AI mapping
-
-| Control | ID | Family | Description |
-|---|---|---|---|
-| Protection of Information at Rest — IP encryption | SC-28 | SC | Encrypt all intellectual property — model weights, proprietary training data, algorithms — at rest with FIPS 140-validated modules |
-| Access Enforcement — IP access control | AC-3 | AC | Enforce strict access control on AI intellectual property; restrict to minimum necessary personnel with audit trail |
-| Audit Generation — IP access tracking | AU-12 | AU | Generate audit records for all access to AI intellectual property; enable detection of unauthorised access and exfiltration |
-
-#### Mitigations
-
-**Foundational**
-- SC-28: Encrypt all AI IP at rest; implement key management per
-  FedRAMP requirements
-- AC-3: Restrict access to AI IP to minimum necessary personnel;
-  enforce multi-factor authentication for model weight access
-- AU-12: Log all access to AI IP with full identity and action detail
-
-**Hardening**
-- SC-28: Implement DLP controls for AI IP; monitor and block
-  exfiltration attempts
-- AC-3: Implement time-bounded access for model weight downloads;
-  require approval workflow
-- AU-12: Feed IP access logs into continuous monitoring; alert on
-  anomalous access patterns
-
-**Advanced**
-- Deploy model watermarking to detect stolen model weights
-- SC-28: Include IP protection in FedRAMP annual assessment
-- AC-3: Implement hardware-backed key management for model weight
-  encryption keys
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| HashiCorp Vault | Commercial | https://www.vaultproject.io |
-| Nightfall DLP | Commercial | https://www.nightfall.ai |
-| AWS KMS / Azure Key Vault | Commercial | https://aws.amazon.com/kms/ |
-| ModelScan | Open-source | https://github.com/protectai/modelscan |
+| Netskope | Commercial | https://www.netskope.com |
 
 #### Cross-references
 - LLM Top 10: LLM02 Sensitive Information Disclosure
-- Agentic Top 10: ASI04 Supply Chain Compromise
-- Other frameworks: SP 800-218A PS.1.1-PS – MITRE ATLAS AML.T0024 – NIST CSF 2.0 PR.DS-5
+- Agentic Top 10: ASI03 Privilege Escalation
+- Other frameworks: SP 800-218A PS.1.1-PS – NIST CSF 2.0 PR.DS-5 – CWE-200
 
 ---
 
@@ -625,37 +663,41 @@ for IP access tracking (AU-12).
 
 **Severity:** Medium
 
-Synthetic data generated by AI systems may inadvertently encode sensitive
-patterns, enable re-identification, or produce biased outputs. FedRAMP AI
-overlay addresses this through system monitoring for synthetic data quality
-(SI-4), continuous monitoring for drift (CA-7), and vulnerability scanning
-covering synthetic data risks (RA-5).
+Synthetic data generation or anonymization techniques fail to prevent
+re-identification, membership inference, or attribute inference from the
+generated datasets. FedRAMP AI overlay addresses this through system
+monitoring for synthetic data quality (SI-4), vulnerability scanning
+covering re-identification risk (RA-5), and risk management strategy
+covering privacy guarantees (PM-9).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
 | System Monitoring — synthetic data quality | SI-4 | SI | Monitor synthetic data outputs for quality, privacy preservation, and absence of sensitive pattern leakage |
-| Continuous Monitoring — synthetic data drift | CA-7 | CA | Include synthetic data quality metrics in continuous monitoring; track for privacy degradation and bias drift |
-| Vulnerability Scanning — synthetic data risks | RA-5 | RA | Include synthetic data re-identification and pattern leakage in vulnerability assessment |
+| Vulnerability Scanning — re-identification risk | RA-5 | RA | Include synthetic data re-identification and pattern leakage in vulnerability assessment; test for membership and attribute inference |
+| Risk Management Strategy — privacy guarantees | PM-9 | PM | Include synthetic data privacy risk in AI risk management; define formal privacy guarantees required for synthetic data generation |
 
 #### Mitigations
 
 **Foundational**
 - SI-4: Monitor synthetic data for sensitive pattern leakage; validate
   privacy preservation before use
-- CA-7: Track synthetic data quality metrics over time
-- RA-5: Assess re-identification risk for synthetic datasets
+- RA-5: Assess re-identification risk for synthetic datasets before
+  release
+- PM-9: Define privacy requirements for synthetic data generation
 
 **Hardening**
 - SI-4: Deploy automated privacy validation for synthetic data;
   verify differential privacy guarantees
-- CA-7: Include synthetic data monitoring in continuous monitoring
-- RA-5: Conduct re-identification testing on synthetic datasets
+- RA-5: Conduct re-identification testing on synthetic datasets;
+  include in regular vulnerability assessments
+- PM-9: Include synthetic data monitoring in continuous monitoring
 
 **Advanced**
 - Deploy formal privacy guarantees for synthetic data generation
-- Include synthetic data risk in FedRAMP assessment
+  (differential privacy, k-anonymity)
+- Include synthetic data risk in FedRAMP annual assessment
 - Implement continuous privacy monitoring for synthetic data pipelines
 
 #### Tools
@@ -678,143 +720,45 @@ covering synthetic data risks (RA-5).
 
 **Severity:** High
 
-Failure to implement appropriate data retention and deletion policies for
-AI training data, inference logs, and model artefacts. FedRAMP AI overlay
-addresses this through configuration change control for retention policies
-(CM-3), encryption of retained data (SC-28), and risk management covering
-retention governance (PM-9).
+Data from one user session, tenant, or conversation context leaks into
+another due to shared memory, caching, or insufficient context isolation.
+FedRAMP AI overlay addresses this through information flow enforcement
+preventing cross-context data transfer (AC-4), boundary protection
+isolating session data (SC-7), event logging detecting cross-context
+access (AU-2), and access enforcement restricting session-scoped data
+(AC-3).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Configuration Change Control — retention policy management | CM-3 | CM | Define and enforce data retention policies for all AI data; implement automated deletion schedules; log policy changes |
-| Protection of Information at Rest — retained data encryption | SC-28 | SC | Encrypt all retained AI data; implement crypto-shredding capability for secure deletion |
-| Risk Management Strategy — retention governance | PM-9 | PM | Include data retention risk in AI risk management; define retention periods per data type and regulatory requirement |
+| Information Flow Enforcement — context isolation | AC-4 | AC | Enforce information flow controls preventing data from crossing session, tenant, or conversation boundaries; implement strict context isolation |
+| Boundary Protection — session data isolation | SC-7 | SC | Enforce boundary protection isolating session, tenant, and conversation data; prevent shared memory or cache from leaking cross-context data |
+| Event Logging — cross-context access detection | AU-2 | AU | Log context boundaries and data access patterns; detect and alert on cross-context data access violations |
+| Access Enforcement — session-scoped data access | AC-3 | AC | Enforce access controls scoped to the current session and tenant; deny cross-context data retrieval by default |
 
 #### Mitigations
 
 **Foundational**
-- CM-3: Define retention policies for all AI data types; implement
-  automated deletion schedules
-- SC-28: Encrypt retained data with per-dataset keys enabling
-  crypto-shredding
-- PM-9: Define retention periods per FedRAMP and applicable regulations
+- AC-4: Enforce strict session isolation — no shared state between
+  users or tenants at the data layer
+- AC-3: Scope all data access to the current session and tenant; deny
+  cross-context retrieval
+- AU-2: Log context boundaries and data access patterns
 
 **Hardening**
-- CM-3: Implement automated retention enforcement; verify deletion
-  completeness
-- SC-28: Implement crypto-shredding for model weight disposal
-- PM-9: Include retention compliance in management reporting
+- SC-7: Implement architectural enforcement of context boundaries;
+  separate memory and cache per session
+- AU-2: Deploy monitoring for cross-context data access patterns;
+  alert on violations
+- AC-4: Include context isolation testing in security assessment
 
 **Advanced**
-- CM-3: Include retention compliance in FedRAMP annual assessment
-- Deploy automated retention compliance verification across all AI
-  data stores
-- PM-9: Implement retention impact analysis for AI model retraining
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| AWS S3 Lifecycle / Azure Lifecycle Management | Commercial | https://aws.amazon.com/s3/ |
-| HashiCorp Vault | Commercial | https://www.vaultproject.io |
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| Apache Atlas | Open-source | https://atlas.apache.org |
-
-#### Cross-references
-- LLM Top 10: LLM02 Sensitive Information Disclosure
-- Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
-- Other frameworks: SP 800-218A PS.3.1-PS – NIST CSF 2.0 PR.DS-3 – GDPR Art. 17
-
----
-
-### DSGAI12 – Unsafe NL Data Gateways
-
-**Severity:** Medium
-
-Unclear data ownership and monetisation policies for AI training data,
-model outputs, and derived insights. FedRAMP AI overlay addresses this
-through risk management strategy covering ownership governance (PM-9),
-access enforcement based on ownership (AC-3), and logging of data usage
-(AU-2).
-
-#### FedRAMP AI mapping
-
-| Control | ID | Family | Description |
-|---|---|---|---|
-| Risk Management Strategy — ownership governance | PM-9 | PM | Define data ownership policies for AI data; clarify rights and responsibilities for training data, outputs, and derived insights |
-| Access Enforcement — ownership-based access | AC-3 | AC | Enforce access controls aligned with data ownership; restrict usage based on ownership rights and licence terms |
-| Event Logging — usage tracking | AU-2 | AU | Log data usage for ownership compliance; track how data is used across AI systems for licence and rights management |
-
-#### Mitigations
-
-**Foundational**
-- PM-9: Define ownership policies for all AI data categories
-- AC-3: Align access controls with ownership rights
-- AU-2: Log data usage for ownership compliance tracking
-
-**Hardening**
-- PM-9: Include ownership governance in management reporting
-- AC-3: Implement automated licence compliance enforcement
-- AU-2: Deploy usage analytics for ownership tracking
-
-**Advanced**
-- PM-9: Include ownership in FedRAMP SSP
-- Deploy automated rights management for AI data
-- AU-2: Implement comprehensive usage auditing
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| Collibra | Commercial | https://www.collibra.com |
-| Apache Atlas | Open-source | https://atlas.apache.org |
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| Alation | Commercial | https://www.alation.com |
-
-#### Cross-references
-- LLM Top 10: LLM09 Misinformation
-- Agentic Top 10: ASI09 Emerging Agentic Patterns
-- Other frameworks: SP 800-218A PW.1.1-PS – ISO 42001 A.7.2 – NIST Privacy Framework
-
----
-
-### DSGAI13 – Vector Store Platform Security
-
-**Severity:** High
-
-AI data used for purposes beyond original consent or manipulated to produce
-biased or harmful outcomes. FedRAMP AI overlay addresses this through access
-enforcement restricting data usage (AC-3), logging of all data operations
-(AU-2), and system monitoring for misuse indicators (SI-4).
-
-#### FedRAMP AI mapping
-
-| Control | ID | Family | Description |
-|---|---|---|---|
-| Access Enforcement — purpose-limited data access | AC-3 | AC | Enforce purpose-limitation on AI data access; restrict usage to approved purposes documented in data processing agreements |
-| Event Logging — data operation logging | AU-2 | AU | Log all data operations with purpose context; enable detection of purpose drift and unauthorised usage |
-| System Monitoring — misuse detection | SI-4 | SI | Monitor AI data usage patterns for misuse indicators; alert on data access inconsistent with approved purposes |
-
-#### Mitigations
-
-**Foundational**
-- AC-3: Enforce purpose-limitation controls on data access; restrict
-  to approved uses
-- AU-2: Log all data operations with usage context
-- SI-4: Monitor for data usage inconsistent with approved purposes
-
-**Hardening**
-- AC-3: Implement automated purpose enforcement; block operations
-  outside approved scope
-- AU-2: Deploy usage pattern analytics; detect purpose drift
-- SI-4: Include misuse detection in continuous monitoring
-
-**Advanced**
-- AC-3: Include purpose-limitation compliance in FedRAMP assessment
-- Deploy automated purpose compliance verification
-- SI-4: Implement advanced misuse detection analytics
+- SC-7: Include context isolation controls in FedRAMP annual assessment
+- Deploy automated cross-context bleed detection in continuous
+  monitoring
+- AC-4: Implement formal isolation verification for multi-tenant AI
+  deployments
 
 #### Tools
 
@@ -822,116 +766,259 @@ enforcement restricting data usage (AC-3), logging of all data operations
 |---|---|---|
 | Open Policy Agent | Open-source | https://www.openpolicyagent.org |
 | OpenTelemetry | Open-source | https://opentelemetry.io |
-| Collibra | Commercial | https://www.collibra.com |
+| HashiCorp Vault | Commercial | https://www.vaultproject.io |
+| Splunk | Commercial | https://www.splunk.com |
+
+#### Cross-references
+- LLM Top 10: LLM02 Sensitive Information Disclosure
+- Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
+- Other frameworks: SP 800-218A PS.1.1-PS – NIST CSF 2.0 PR.DS-5 – CWE-200
+
+---
+
+### DSGAI12 – Unsafe NL Data Gateways
+
+**Severity:** Critical
+
+LLM-to-SQL, LLM-to-API, or LLM-to-shell interfaces allow natural
+language inputs to be converted into executable queries or commands
+without proper validation, enabling data exfiltration or manipulation.
+FedRAMP AI overlay addresses this through input validation on NL-to-query
+translation (SI-10), access enforcement restricting gateway operations
+(AC-3), event logging of all gateway transactions (AU-2), and boundary
+protection controlling gateway data flows (SC-7).
+
+#### FedRAMP AI mapping
+
+| Control | ID | Family | Description |
+|---|---|---|---|
+| Information Input Validation — NL-to-query validation | SI-10 | SI | Validate all natural language inputs before translation to executable queries; block injection patterns, destructive operations, and schema-probing queries |
+| Access Enforcement — gateway operation restrictions | AC-3 | AC | Enforce allow-listed operations for NL data gateways; gateway queries execute with the requesting user's permissions, not system-level; restrict to read-only or approved operations |
+| Event Logging — gateway transaction logging | AU-2 | AU | Log all NL gateway transactions — input, translated query, results — with user identity and authorisation context |
+| Boundary Protection — gateway data flow control | SC-7 | SC | Enforce boundary controls on NL gateway data flows; limit result sets; prevent sensitive data from leaving authorised scope |
+
+#### Mitigations
+
+**Foundational**
+- SI-10: Input validation on all NL-to-query translation; block
+  injection patterns and destructive operations
+- AC-3: Enforce allow-listed operations — NL gateways cannot execute
+  destructive queries; queries run as requesting user
+- AU-2: Log all gateway transactions with full context
+
+**Hardening**
+- SC-7: Implement output row/column limits; redact sensitive fields
+  from query results
+- SI-10: Deploy query analysis detecting schema-probing and data
+  exfiltration patterns
+- AU-2: Feed gateway logs into continuous monitoring; alert on
+  anomalous query patterns
+
+**Advanced**
+- SI-10: Include NL gateway security in FedRAMP annual assessment;
+  demonstrate injection prevention controls
+- SC-7: Deploy parameterised query enforcement; prevent NL inputs from
+  bypassing query sanitisation
+- AC-3: Implement dynamic access controls adjusting gateway permissions
+  based on query risk classification
+
+#### Tools
+
+| Tool | Type | Link |
+|---|---|---|
+| LLM Guard | Open-source | https://github.com/protectai/llm-guard |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
+| Nightfall DLP | Commercial | https://www.nightfall.ai |
 | Splunk | Commercial | https://www.splunk.com |
 
 #### Cross-references
 - LLM Top 10: LLM06 Excessive Agency
 - Agentic Top 10: ASI02 Misconfigured Access Controls
-- Other frameworks: SP 800-218A PW.1.1-PS – NIST Privacy Framework – GDPR Art. 5
+- Other frameworks: SP 800-218A PW.5.1-PS – CWE-89 – NIST CSF 2.0 PR.DS-5
+
+---
+
+### DSGAI13 – Vector Store Platform Security
+
+**Severity:** High
+
+Vector databases and embedding stores lack access controls, encryption,
+or integrity verification — enabling unauthorised access to embeddings
+that encode sensitive information. FedRAMP AI overlay addresses this
+through encryption of embeddings at rest (SC-28), access enforcement on
+vector stores (AC-3), audit generation tracking all vector store
+operations (AU-12), and configuration management securing database
+settings (CM-6).
+
+#### FedRAMP AI mapping
+
+| Control | ID | Family | Description |
+|---|---|---|---|
+| Protection of Information at Rest — embedding encryption | SC-28 | SC | Encrypt all vector embeddings and metadata at rest using FIPS 140-validated modules; enforce key management per FedRAMP requirements |
+| Access Enforcement — vector store access control | AC-3 | AC | Implement RBAC on vector stores; enforce namespace-level access controls; restrict query scope to authorised collections |
+| Audit Generation — vector store operation tracking | AU-12 | AU | Generate audit records for all vector store queries, index modifications, and administrative operations |
+| Configuration Settings — vector database hardening | CM-6 | CM | Configure vector databases per security baselines; disable default credentials, restrict network access, enforce TLS |
+
+#### Mitigations
+
+**Foundational**
+- SC-28: Encrypt all embeddings at rest and in transit; enforce FIPS
+  140-validated modules
+- AC-3: Implement RBAC on vector stores; restrict queries to authorised
+  namespaces and collections
+- CM-6: Harden vector database configuration; disable defaults;
+  restrict network access
+
+**Hardening**
+- AU-12: Log all vector store queries and index modifications; feed
+  into continuous monitoring
+- AC-3: Implement namespace-level isolation for multi-tenant
+  deployments; enforce query-scope restrictions
+- SC-28: Conduct embedding extraction testing; verify sensitive
+  information cannot be reconstructed from embeddings
+
+**Advanced**
+- CM-6: Include vector store security in FedRAMP annual assessment;
+  demonstrate configuration compliance
+- AU-12: Deploy real-time analytics on vector store access patterns;
+  detect anomalous query behaviour
+- SC-28: Implement hardware-backed encryption for high-sensitivity
+  embedding stores
+
+#### Tools
+
+| Tool | Type | Link |
+|---|---|---|
+| HashiCorp Vault | Commercial | https://www.vaultproject.io |
+| AWS KMS / Azure Key Vault | Commercial | https://aws.amazon.com/kms/ |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
+| OpenTelemetry | Open-source | https://opentelemetry.io |
+
+#### Cross-references
+- LLM Top 10: LLM02 Sensitive Information Disclosure
+- Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
+- Other frameworks: SP 800-218A PS.1.1-PS – NIST CSF 2.0 PR.DS-1 – CWE-311
 
 ---
 
 ### DSGAI14 – Excessive Telemetry & Monitoring Leakage
 
-**Severity:** High
+**Severity:** Medium
 
-Failure to obtain, track, and honour data subject consent for AI processing
-activities. FedRAMP AI overlay addresses this through risk management
-covering consent governance (PM-9), access enforcement aligned with consent
-(AC-3), and logging for consent compliance (AU-2).
+Observability pipelines — logs, traces, metrics — capture sensitive data
+from AI interactions (prompts, responses, user data) and store it with
+insufficient access controls. FedRAMP AI overlay addresses this through
+access enforcement on telemetry data (AC-3), event logging with secure
+logging practices (AU-2), system monitoring detecting sensitive data in
+telemetry (SI-4), and risk management covering telemetry governance
+(PM-9).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Risk Management Strategy — consent governance | PM-9 | PM | Include consent management in AI risk management strategy; define consent requirements per data type and processing activity |
-| Access Enforcement — consent-based access | AC-3 | AC | Enforce access controls aligned with consent status; block AI processing on data where consent has been withdrawn |
-| Event Logging — consent compliance logging | AU-2 | AU | Log consent status and changes; enable audit of consent compliance for all AI data processing activities |
+| Access Enforcement — telemetry data access | AC-3 | AC | Enforce access controls on all telemetry data stores; restrict access to observability pipelines based on role and need-to-know |
+| Event Logging — secure logging practices | AU-2 | AU | Implement secure logging — redact PII and sensitive content from logs, traces, and metrics before storage; apply data minimisation |
+| System Monitoring — telemetry leakage detection | SI-4 | SI | Monitor telemetry pipelines for sensitive data; detect PII, credentials, or classified content in logs and traces |
+| Risk Management Strategy — telemetry governance | PM-9 | PM | Include telemetry data in risk management; define retention limits, access controls, and classification for all observability data |
 
 #### Mitigations
 
 **Foundational**
-- PM-9: Define consent requirements for all AI data processing
-- AC-3: Align data access with consent status; block processing on
-  withdrawn consent
-- AU-2: Log consent decisions and status changes
+- AC-3: Restrict access to telemetry data stores; enforce RBAC on
+  observability pipelines
+- AU-2: Redact PII and sensitive content from logs and traces before
+  storage; apply data minimisation to all telemetry
+- PM-9: Define retention limits and classification for telemetry data
 
 **Hardening**
-- PM-9: Include consent compliance in management reporting
-- AC-3: Implement automated consent enforcement across AI pipelines
-- AU-2: Deploy consent audit capabilities; verify compliance
+- SI-4: Deploy automated sensitive data detection in telemetry
+  pipelines; alert on PII or credentials in logs
+- AC-3: Implement telemetry data classification; apply differential
+  access based on sensitivity
+- AU-2: Filter sensitive data from telemetry streams at the collection
+  point
 
 **Advanced**
-- PM-9: Include consent management in FedRAMP SSP
-- Deploy automated consent lifecycle management
-- AC-3: Implement real-time consent verification at data access
+- PM-9: Include telemetry governance in FedRAMP SSP; demonstrate
+  comprehensive observability data management
+- SI-4: Include telemetry leakage testing in FedRAMP annual assessment
+- Deploy automated telemetry sanitisation across all AI observability
+  pipelines
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| OneTrust | Commercial | https://www.onetrust.com |
-| Collibra | Commercial | https://www.collibra.com |
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| TrustArc | Commercial | https://trustarc.com |
+| OpenTelemetry | Open-source | https://opentelemetry.io |
+| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
+| Splunk | Commercial | https://www.splunk.com |
+| Elasticsearch | Open-source | https://www.elastic.co |
 
 #### Cross-references
 - LLM Top 10: LLM02 Sensitive Information Disclosure
-- Agentic Top 10: ASI02 Misconfigured Access Controls
-- Other frameworks: SP 800-218A PW.1.1-PS – GDPR Art. 7 – NIST Privacy Framework
+- Agentic Top 10: ASI09 Emerging Agentic Patterns
+- Other frameworks: SP 800-218A PS.1.1-PS – NIST CSF 2.0 DE.AE-3 – CWE-532
 
 ---
 
 ### DSGAI15 – Over-Broad Context Windows
 
-**Severity:** Medium
+**Severity:** High
 
-AI systems collect, process, or retain more data than necessary for their
-stated purpose. FedRAMP AI overlay addresses this through least privilege
-restricting data collection (AC-6), least functionality limiting data
-processing scope (CM-7), and risk management covering minimisation (PM-9).
+Excessive content injected into LLM context windows — full documents,
+entire conversation histories, unnecessary system data — increases the
+attack surface for data extraction. FedRAMP AI overlay addresses this
+through least privilege restricting context data scope (AC-6), least
+functionality limiting context assembly (CM-7), and input validation
+enforcing context boundaries (SI-10).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Least Privilege — data collection restrictions | AC-6 | AC | Restrict AI data collection to minimum necessary for stated purpose; enforce at pipeline ingestion points |
-| Least Functionality — data processing restrictions | CM-7 | CM | Restrict AI data processing to minimum necessary scope; disable collection of non-essential data fields |
-| Risk Management Strategy — minimisation governance | PM-9 | PM | Include data minimisation in AI risk management; define minimum necessary data per AI use case |
+| Least Privilege — context data scoping | AC-6 | AC | Restrict context window content to minimum necessary for the task; enforce per-task context scope limits aligned with user authorisation |
+| Least Functionality — context assembly restrictions | CM-7 | CM | Restrict context assembly to approved data sources; disable inclusion of unnecessary system data, full documents, or unbounded conversation history |
+| Information Input Validation — context boundary enforcement | SI-10 | SI | Validate and enforce context window boundaries; truncate or summarise content exceeding defined limits; strip unnecessary metadata |
 
 #### Mitigations
 
 **Foundational**
-- AC-6: Restrict data collection to minimum necessary; enforce at
-  ingestion points
-- CM-7: Disable collection of non-essential data fields
-- PM-9: Define minimum necessary data per AI use case
+- AC-6: Only include minimum necessary data in context windows;
+  enforce per-task context scope limits
+- CM-7: Restrict context assembly to approved data sources; disable
+  inclusion of non-essential data
+- SI-10: Validate context window content; truncate or summarise
+  oversized documents
 
 **Hardening**
-- AC-6: Implement automated minimisation enforcement; alert on
-  collection exceeding defined scope
-- CM-7: Deploy data field filtering at pipeline ingestion
-- PM-9: Include minimisation compliance in management reporting
+- AC-6: Implement automated context minimisation enforcement; alert
+  when context exceeds defined scope
+- CM-7: Deploy context assembly policies per use case; enforce maximum
+  document counts and sizes
+- SI-10: Strip unnecessary metadata from context; enforce schema
+  validation on context content
 
 **Advanced**
-- Deploy privacy-enhancing technologies to reduce data requirements
-- Include minimisation in FedRAMP annual assessment
-- Implement continuous minimisation compliance monitoring
+- AC-6: Include context scope controls in FedRAMP annual assessment
+- Deploy intelligent context selection — retrieve only relevant
+  passages rather than full documents
+- CM-7: Implement continuous context scope monitoring; detect context
+  inflation patterns
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
-| ARX Data Anonymization | Open-source | https://arx.deidentifier.org |
+| LLM Guard | Open-source | https://github.com/protectai/llm-guard |
 | Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| OneTrust | Commercial | https://www.onetrust.com |
+| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
+| Nightfall DLP | Commercial | https://www.nightfall.ai |
 
 #### Cross-references
 - LLM Top 10: LLM02 Sensitive Information Disclosure
 - Agentic Top 10: ASI02 Misconfigured Access Controls
-- Other frameworks: SP 800-218A PW.1.1-PS – GDPR Art. 5(1)(c) – NIST Privacy Framework
+- Other frameworks: SP 800-218A PW.1.1-PS – NIST CSF 2.0 PR.DS-5 – CWE-200
 
 ---
 
@@ -939,52 +1026,60 @@ processing scope (CM-7), and risk management covering minimisation (PM-9).
 
 **Severity:** High
 
-AI systems progressively erode privacy through inference, aggregation, and
-memorisation — even when individual data points are not explicitly sensitive.
-FedRAMP AI overlay addresses this through encryption at rest (SC-28),
-access enforcement (AC-3), risk management covering privacy risk (PM-9),
-and system monitoring for privacy erosion indicators (SI-4).
+AI agents operating in browsers, desktop environments, or mobile devices
+access more data than necessary — reading screens, files, or network data
+beyond the task scope. FedRAMP AI overlay addresses this through least
+privilege restricting agent endpoint access (AC-6), least functionality
+limiting agent capabilities (CM-7), boundary protection controlling
+endpoint data flows (SC-7), and event logging tracking agent data access
+(AU-2).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Protection of Information at Rest — privacy-preserving storage | SC-28 | SC | Encrypt AI data at rest; implement privacy-preserving storage techniques to prevent inference and re-identification |
-| Access Enforcement — privacy-aligned access | AC-3 | AC | Enforce access controls that account for inference and aggregation risk; restrict access based on combined sensitivity |
-| Risk Management Strategy — privacy risk assessment | PM-9 | PM | Include AI privacy erosion in risk management; assess inference, aggregation, and memorisation risks for AI systems |
-| System Monitoring — privacy erosion detection | SI-4 | SI | Monitor for privacy erosion indicators; detect inference capabilities, re-identification risk, and memorisation patterns |
+| Least Privilege — agent endpoint access | AC-6 | AC | Restrict agent access to minimum necessary endpoint data; enforce explicit permission grants per data source — files, screens, network |
+| Least Functionality — agent capability restrictions | CM-7 | CM | Restrict agent capabilities to approved operations; disable file system, clipboard, or network access beyond task requirements |
+| Boundary Protection — endpoint data flow control | SC-7 | SC | Enforce boundary controls on data flows from endpoints to AI agents; prevent agents from exfiltrating endpoint data |
+| Event Logging — agent data access tracking | AU-2 | AU | Log all agent data access at endpoints; capture what files, screens, and network data agents read and transmit |
 
 #### Mitigations
 
 **Foundational**
-- SC-28: Encrypt AI data at rest; implement privacy-preserving controls
-- AC-3: Enforce access controls accounting for aggregation risk
-- PM-9: Assess privacy erosion risk for each AI system
+- AC-6: Enforce explicit permission grants per data source; agents
+  cannot access files, screens, or network data without authorisation
+- CM-7: Restrict agent capabilities to approved operations; disable
+  access to unneeded resources
+- AU-2: Log all agent data access at endpoints
 
 **Hardening**
-- SI-4: Deploy privacy erosion monitoring; detect inference and
-  re-identification capabilities
-- SC-28: Conduct memorisation testing; verify training data privacy
-- PM-9: Include privacy erosion in management risk reporting
+- SC-7: Implement boundary controls preventing agent data exfiltration
+  from endpoints
+- AC-6: Agent inherits user's access level — cannot escalate beyond
+  endpoint permissions
+- AU-2: Feed agent access logs into continuous monitoring; alert on
+  anomalous data access patterns
 
 **Advanced**
-- Apply differential privacy to training; bound memorisation
-- Deploy privacy-preserving computation techniques
-- Include privacy erosion assessment in FedRAMP annual assessment
+- CM-7: Include endpoint agent controls in FedRAMP annual assessment;
+  demonstrate capability restrictions
+- SC-7: Deploy advanced data flow monitoring for endpoint AI agents;
+  detect covert data channels
+- AC-6: Implement dynamic permission scoping based on task context
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
-| ARX Data Anonymization | Open-source | https://arx.deidentifier.org |
-| Opacus | Open-source | https://opacus.ai |
-| OneTrust | Commercial | https://www.onetrust.com |
+| Microsoft Defender for Endpoint | Commercial | https://www.microsoft.com/en-us/security/business/endpoint-security |
+| Netskope | Commercial | https://www.netskope.com |
+| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
+| OpenTelemetry | Open-source | https://opentelemetry.io |
 
 #### Cross-references
-- LLM Top 10: LLM02 Sensitive Information Disclosure
+- LLM Top 10: LLM06 Excessive Agency
 - Agentic Top 10: ASI03 Privilege Escalation
-- Other frameworks: SP 800-218A PW.1.1-PS – NIST Privacy Framework – GDPR Art. 25
+- Other frameworks: SP 800-218A PW.1.1-PS – NIST CSF 2.0 PR.AC-4 – CWE-250
 
 ---
 
@@ -992,50 +1087,60 @@ and system monitoring for privacy erosion indicators (SI-4).
 
 **Severity:** High
 
-Biased training data leads to discriminatory or unfair AI outcomes. FedRAMP
-AI overlay addresses this through system monitoring for bias indicators
-(SI-4), continuous monitoring for output fairness (CA-7), and vulnerability
-scanning covering bias detection (RA-5).
+AI data pipelines fail silently — RAG retrieval returns stale results,
+embedding indices corrupt, training data becomes unavailable — degrading
+AI system reliability without alerting operators. FedRAMP AI overlay
+addresses this through information system backup for AI data assets
+(CP-9), information system recovery for pipeline restoration (CP-10),
+system monitoring for pipeline health (SI-4), and continuous monitoring
+tracking availability metrics (CA-7).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| System Monitoring — bias detection | SI-4 | SI | Monitor AI outputs for bias indicators; track fairness metrics across demographic groups and use cases |
-| Continuous Monitoring — fairness monitoring | CA-7 | CA | Include bias and fairness metrics in continuous monitoring; track output equity over time |
-| Vulnerability Scanning — bias assessment | RA-5 | RA | Include bias detection and fairness assessment in vulnerability scanning; test for disparate impact |
+| Information System Backup — AI data asset backup | CP-9 | CP | Implement versioned backups of critical AI data assets — embeddings, indices, training data, model weights — with verified restoration procedures |
+| Information System Recovery and Reconstitution — pipeline restoration | CP-10 | CP | Define and test recovery procedures for AI data pipelines; implement failover for critical RAG and embedding services |
+| System Monitoring — pipeline health monitoring | SI-4 | SI | Monitor all AI data pipelines for health — RAG retrieval latency, embedding index integrity, data freshness; alert on degradation |
+| Continuous Monitoring — availability metrics | CA-7 | CA | Include AI data pipeline availability in continuous monitoring; track uptime, latency, and data freshness metrics |
 
 #### Mitigations
 
 **Foundational**
-- SI-4: Monitor AI outputs for bias indicators; establish baseline
-  fairness metrics
-- CA-7: Include fairness metrics in continuous monitoring
-- RA-5: Conduct bias assessment before deployment
+- CP-9: Implement versioned backups of critical AI data assets —
+  embeddings, indices, training data; verify restoration regularly
+- SI-4: Deploy health checks and circuit breakers on all AI data
+  pipelines; alert on failure or degradation
+- CP-10: Define recovery procedures for AI data pipelines
 
 **Hardening**
-- SI-4: Deploy automated bias detection; alert on fairness degradation
-- CA-7: Track fairness trends over time; escalate degradation
-- RA-5: Include bias testing in regular vulnerability assessments
+- CA-7: Include AI data pipeline availability in continuous monitoring;
+  track freshness and latency metrics
+- CP-10: Test pipeline recovery procedures regularly; implement
+  failover for critical services
+- SI-4: Deploy real-time monitoring of data pipeline health; detect
+  silent failures and stale data
 
 **Advanced**
-- Deploy formal fairness constraints in training pipelines
-- Include bias assessment in FedRAMP annual assessment
-- Implement continuous fairness monitoring with automated remediation
+- CP-9: Include AI data resilience in FedRAMP annual assessment;
+  demonstrate backup completeness and recovery capability
+- CA-7: Implement automated resilience testing; detect degradation
+  before it affects AI system outputs
+- CP-10: Deploy automated failover for critical AI data pipelines
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| IBM AI Fairness 360 | Open-source | https://aif360.mybluemix.net |
-| Fairlearn | Open-source | https://fairlearn.org |
-| What-If Tool | Open-source | https://pair-code.github.io/what-if-tool/ |
-| Fiddler AI | Commercial | https://www.fiddler.ai |
+| AWS Backup / Azure Backup | Commercial | https://aws.amazon.com/backup/ |
+| OpenTelemetry | Open-source | https://opentelemetry.io |
+| Prometheus | Open-source | https://prometheus.io |
+| PagerDuty | Commercial | https://www.pagerduty.com |
 
 #### Cross-references
 - LLM Top 10: LLM09 Misinformation
 - Agentic Top 10: ASI09 Emerging Agentic Patterns
-- Other frameworks: SP 800-218A PW.7.2-PS – NIST AI RMF MAP 2.3 – ISO 42001 A.6.2.6
+- Other frameworks: SP 800-218A PO.3.1-PS – NIST CSF 2.0 PR.DS-4 – ISO 42001 A.7.5
 
 ---
 
@@ -1043,222 +1148,256 @@ scanning covering bias detection (RA-5).
 
 **Severity:** High
 
-Insufficient governance frameworks for AI data management — unclear roles,
-missing policies, and inadequate oversight. FedRAMP AI overlay addresses
-this through risk management strategy covering governance (PM-9),
-configuration change control for policy management (CM-3), and risk
-assessment for governance completeness (RA-3).
+Attackers reconstruct sensitive training data or infer membership through
+model inversion, membership inference, or attribute inference attacks
+against deployed models. FedRAMP AI overlay addresses this through
+encryption protecting model and training data at rest (SC-28), access
+enforcement restricting inference API access (AC-3), system monitoring
+detecting systematic probing patterns (SI-4), and vulnerability scanning
+assessing reconstruction risk (RA-5).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Risk Management Strategy — AI governance framework | PM-9 | PM | Establish comprehensive AI data governance framework within risk management strategy; define roles, policies, and oversight mechanisms |
-| Configuration Change Control — governance policy management | CM-3 | CM | Maintain AI governance policies under change control; require approval for policy modifications; audit all changes |
-| Risk Assessment — governance completeness | RA-3 | RA | Assess AI governance completeness; identify gaps in roles, policies, oversight, and accountability |
+| Protection of Information at Rest — model and data protection | SC-28 | SC | Encrypt model weights and training data at rest; implement privacy-preserving storage to limit reconstruction attack surface |
+| Access Enforcement — inference API access control | AC-3 | AC | Enforce access controls on inference endpoints; rate-limit API access; restrict bulk query patterns enabling reconstruction |
+| System Monitoring — probing pattern detection | SI-4 | SI | Monitor inference endpoints for systematic probing patterns — membership inference, model inversion, attribute inference; alert on detection |
+| Vulnerability Scanning — reconstruction risk assessment | RA-5 | RA | Include model inversion and membership inference attacks in vulnerability assessment; test deployed models for data reconstruction risk |
 
 #### Mitigations
 
 **Foundational**
-- PM-9: Establish AI data governance framework; define roles and
-  policies
-- CM-3: Maintain governance policies under change control
-- RA-3: Assess governance completeness; identify gaps
+- SC-28: Encrypt model weights and training data at rest; implement
+  FIPS 140-validated modules
+- AC-3: Enforce access controls on inference endpoints; implement rate
+  limiting on inference APIs
+- SI-4: Monitor for systematic probing patterns
 
 **Hardening**
-- PM-9: Include governance in management reporting; track maturity
-- CM-3: Implement automated policy compliance checking
-- RA-3: Conduct regular governance gap analysis
+- RA-5: Conduct model inversion and membership inference testing;
+  assess reconstruction risk before deployment
+- AC-3: Restrict bulk query patterns that enable membership inference
+  or model inversion
+- SI-4: Deploy advanced probing detection; detect systematic querying
+  indicative of data reconstruction attacks
 
 **Advanced**
-- PM-9: Include governance in FedRAMP SSP; demonstrate maturity
-- Deploy automated governance monitoring
-- RA-3: Include governance in FedRAMP annual assessment
+- Apply differential privacy during training to bound reconstruction
+  risk
+- RA-5: Include reconstruction risk assessment in FedRAMP annual
+  assessment
+- SC-28: Include inference attack resilience testing in security
+  assessment
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Collibra | Commercial | https://www.collibra.com |
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| Alation | Commercial | https://www.alation.com |
-| ServiceNow GRC | Commercial | https://www.servicenow.com |
+| IBM Adversarial Robustness Toolbox | Open-source | https://github.com/Trusted-AI/adversarial-robustness-toolbox |
+| Opacus | Open-source | https://opacus.ai |
+| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
+| Fiddler AI | Commercial | https://www.fiddler.ai |
 
 #### Cross-references
-- LLM Top 10: LLM09 Misinformation
-- Agentic Top 10: ASI09 Emerging Agentic Patterns
-- Other frameworks: SP 800-218A PW.1.1-PS – NIST AI RMF GOV – ISO 42001 5.1
+- LLM Top 10: LLM02 Sensitive Information Disclosure
+- Agentic Top 10: ASI03 Privilege Escalation
+- Other frameworks: SP 800-218A PW.1.1-PS – MITRE ATLAS AML.T0024 – NIST Privacy Framework
 
 ---
 
 ### DSGAI19 – Human-in-Loop & Labeler Overexposure
 
-**Severity:** High
+**Severity:** Medium
 
-Risks from third-party data sources, processors, and AI service providers
-handling organisational data. FedRAMP AI overlay addresses this through
-external service controls (SA-9), supply chain planning for data providers
-(SR-2), and supply chain controls for data provenance (SR-3).
+Human annotators, reviewers, and labelers are exposed to sensitive,
+harmful, or disturbing content during AI data preparation without
+adequate protections. FedRAMP AI overlay addresses this through access
+enforcement limiting labeler exposure (AC-3), personnel screening for
+sensitive data roles (PS-3), security awareness training covering
+AI-specific data risks (AT-2), and event logging tracking labeler data
+access (AU-2).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| External Information System Services — third-party data controls | SA-9 | SA | Require FedRAMP authorisation for third-party data service providers; establish SLAs covering data security, privacy, and incident notification |
-| Supply Chain Risk Management Plan — data provider risk | SR-2 | SR | Include third-party data providers in supply chain risk management; assess data handling practices and security posture |
-| Supply Chain Controls — data provenance from third parties | SR-3 | SR | Verify provenance and integrity of data from third-party sources; implement validation before ingestion into AI pipelines |
+| Access Enforcement — labeler exposure controls | AC-3 | AC | Enforce access controls limiting labeler exposure to sensitive content; segment data so labelers only access content within their clearance scope |
+| Personnel Screening — sensitive data role screening | PS-3 | PS | Screen human annotators and labelers for roles involving access to sensitive, classified, or harmful content |
+| Awareness and Training — AI data risk training | AT-2 | AT | Provide training on AI-specific data risks for all labelers and reviewers; include handling of sensitive, harmful, and disturbing content |
+| Event Logging — labeler access tracking | AU-2 | AU | Log all labeler data access for compliance and safety monitoring; track exposure duration and content categories |
 
 #### Mitigations
 
 **Foundational**
-- SA-9: Require FedRAMP authorisation for third-party data providers
-- SR-2: Include data providers in supply chain risk plan
-- SR-3: Verify third-party data provenance and integrity
+- AC-3: Segment data so labelers only access content within their
+  clearance and role scope
+- PS-3: Screen all labelers before granting access to sensitive data
+- AT-2: Provide training on handling sensitive and harmful content
 
 **Hardening**
-- SA-9: Include data provider security in continuous monitoring
-- SR-2: Conduct regular third-party risk reassessment
-- SR-3: Implement automated data validation from third-party sources
+- AU-2: Log all labeler data access; track exposure patterns and
+  content categories
+- AC-3: Implement automated content filtering pre-screening content
+  before labeler access; blur or redact non-essential sensitive elements
+- AT-2: Include AI-specific data risk training in annual security
+  awareness programme
 
 **Advanced**
-- SA-9: Conduct on-site assessments of critical data providers
-- SR-2: Include third-party data risk in board-level reporting
-- SR-3: Deploy continuous third-party data integrity monitoring
+- PS-3: Include labeler screening and wellbeing protections in FedRAMP
+  annual assessment
+- AU-2: Deploy exposure monitoring; alert when labeler exposure to
+  harmful content exceeds defined thresholds
+- Implement duty-of-care controls — session limits, psychological
+  support, content rotation
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| Great Expectations | Open-source | https://greatexpectations.io |
-| CycloneDX | Open-source | https://cyclonedx.org |
-| OneTrust Vendorpedia | Commercial | https://www.onetrust.com |
-| ServiceNow VRM | Commercial | https://www.servicenow.com |
+| Label Studio | Open-source | https://labelstud.io |
+| Microsoft Presidio | Open-source | https://github.com/microsoft/presidio |
+| Snorkel AI | Commercial | https://snorkel.ai |
+| Scale AI | Commercial | https://scale.com |
 
 #### Cross-references
-- LLM Top 10: LLM05 Supply Chain Vulnerabilities
-- Agentic Top 10: ASI04 Supply Chain Compromise
-- Other frameworks: SP 800-218A PW.4.1-PS – NIST CSF 2.0 ID.SC-2 – EBA Outsourcing Guidelines
+- LLM Top 10: LLM02 Sensitive Information Disclosure
+- Agentic Top 10: ASI09 Emerging Agentic Patterns
+- Other frameworks: SP 800-218A PW.1.1-PS – NIST Privacy Framework – ISO 42001 A.6.2.6
 
 ---
 
 ### DSGAI20 – Model Exfiltration & IP Replication
 
-**Severity:** High
+**Severity:** Critical
 
-AI data processed or stored outside jurisdictional requirements — data
-residency laws, cross-border transfer restrictions. FedRAMP AI overlay
-addresses this through boundary protection enforcing data flow (SC-7),
-risk management covering localisation (PM-9), and configuration change
-control for data location (CM-3).
+Model weights, architectures, or trained capabilities are extracted
+through systematic querying, side-channel attacks, or insider access —
+enabling unauthorised replication of proprietary models. FedRAMP AI
+overlay addresses this through encryption protecting model IP at rest
+(SC-28), access enforcement restricting model weight access (AC-3),
+audit generation tracking IP access (AU-12), and system monitoring
+detecting extraction patterns (SI-4).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Boundary Protection — data flow enforcement | SC-7 | SC | Enforce data flow controls preventing AI data from crossing jurisdictional boundaries; restrict to approved data centres and regions |
-| Risk Management Strategy — localisation governance | PM-9 | PM | Include data localisation in AI risk management; define data residency requirements per jurisdiction and data type |
-| Configuration Change Control — data location management | CM-3 | CM | Maintain documentation of AI data storage locations; require change control for data location modifications |
+| Protection of Information at Rest — model IP encryption | SC-28 | SC | Encrypt all intellectual property — model weights, proprietary training data, algorithms — at rest with FIPS 140-validated modules |
+| Access Enforcement — model weight access control | AC-3 | AC | Enforce strict access control on AI intellectual property; restrict model weight access to minimum necessary personnel with approval workflow |
+| Audit Generation — IP access tracking | AU-12 | AU | Generate audit records for all access to AI intellectual property — model weights, architectures, training data; detect unauthorised access and exfiltration |
+| System Monitoring — extraction pattern detection | SI-4 | SI | Monitor inference endpoints and model registries for systematic extraction patterns; detect model distillation, scraping, and side-channel attacks |
 
 #### Mitigations
 
 **Foundational**
-- SC-7: Enforce data flow controls at network boundary; prevent AI
-  data from leaving approved jurisdictions
-- PM-9: Define data residency requirements per applicable laws
-- CM-3: Document all AI data storage locations; update on change
+- SC-28: Encrypt all AI IP at rest; implement key management per
+  FedRAMP requirements
+- AC-3: Restrict access to AI IP to minimum necessary personnel;
+  enforce multi-factor authentication for model weight access
+- AU-12: Log all access to AI IP with full identity and action detail
 
 **Hardening**
-- SC-7: Implement automated data flow enforcement; alert on
-  unauthorised cross-border transfers
-- PM-9: Include localisation compliance in management reporting
-- CM-3: Deploy automated data location tracking
+- SI-4: Deploy extraction pattern detection; detect systematic querying
+  indicative of model distillation or scraping
+- AC-3: Implement time-bounded access for model weight downloads;
+  require approval workflow
+- AU-12: Feed IP access logs into continuous monitoring; alert on
+  anomalous access patterns
 
 **Advanced**
-- SC-7: Include data localisation in FedRAMP annual assessment
-- Deploy automated cross-border transfer detection and blocking
-- PM-9: Implement continuous localisation compliance monitoring
+- Deploy model watermarking and fingerprinting to detect stolen model
+  weights in production
+- SC-28: Include IP protection in FedRAMP annual assessment
+- AC-3: Implement hardware-backed key management for model weight
+  encryption keys
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| AWS Region Controls / Azure Policy | Commercial | https://aws.amazon.com/compliance/data-residency/ |
-| Netskope | Commercial | https://www.netskope.com |
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
-| OneTrust | Commercial | https://www.onetrust.com |
+| HashiCorp Vault | Commercial | https://www.vaultproject.io |
+| Nightfall DLP | Commercial | https://www.nightfall.ai |
+| AWS KMS / Azure Key Vault | Commercial | https://aws.amazon.com/kms/ |
+| ModelScan | Open-source | https://github.com/protectai/modelscan |
 
 #### Cross-references
 - LLM Top 10: LLM02 Sensitive Information Disclosure
 - Agentic Top 10: ASI04 Supply Chain Compromise
-- Other frameworks: SP 800-218A PW.1.1-PS – GDPR Art. 44–49 – FedRAMP High Baseline
+- Other frameworks: SP 800-218A PS.1.1-PS – MITRE ATLAS AML.T0024 – NIST CSF 2.0 PR.DS-5
 
 ---
 
 ### DSGAI21 – Disinformation & Integrity Attacks
 
-**Severity:** Critical
+**Severity:** High
 
-AI systems fail to comply with applicable data protection regulations —
-GDPR, CCPA, HIPAA, sector-specific requirements. FedRAMP AI overlay
-addresses this through risk management covering regulatory compliance
-(PM-9), risk assessment identifying compliance gaps (RA-3), comprehensive
-logging for regulatory evidence (AU-2), and access enforcement aligned
-with legal requirements (AC-3).
+Adversaries poison RAG knowledge bases, manipulate training data, or
+exploit model capabilities to generate and distribute false or misleading
+content at scale. FedRAMP AI overlay addresses this through malicious
+code protection covering adversarial content injection (SI-3), software
+and information integrity verifying knowledge source authenticity (SI-7),
+event logging for content provenance tracking (AU-2), and supply chain
+controls verifying source credibility (SR-3).
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Risk Management Strategy — regulatory compliance | PM-9 | PM | Include regulatory compliance in AI risk management; map applicable data laws to AI processing activities and define compliance requirements |
-| Risk Assessment — compliance gap analysis | RA-3 | RA | Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans |
-| Event Logging — regulatory evidence | AU-2 | AU | Maintain comprehensive logs for regulatory compliance evidence; ensure audit trails meet requirements of applicable data laws |
-| Access Enforcement — legally mandated controls | AC-3 | AC | Implement access controls mandated by applicable data laws; enforce data subject rights, purpose limitation, and processing restrictions |
+| Malicious Code Protection — adversarial content detection | SI-3 | SI | Extend malicious code protection to detect adversarial content injected into RAG knowledge bases and training data; identify poisoned or manipulated content |
+| Software, Firmware, and Information Integrity — knowledge source integrity | SI-7 | SI | Verify integrity and authenticity of RAG knowledge sources; detect unauthorised modifications to knowledge bases and training datasets |
+| Event Logging — content provenance tracking | AU-2 | AU | Log provenance of all content entering knowledge bases and training pipelines; enable tracing of content from source through processing to output |
+| Supply Chain Controls — source credibility verification | SR-3 | SR | Verify credibility and integrity of all knowledge sources before ingestion; implement source validation and fact-checking controls |
 
 #### Mitigations
 
 **Foundational**
-- PM-9: Map applicable data laws to AI processing activities; define
-  compliance requirements for each
-- RA-3: Conduct compliance gap analysis; identify non-compliance areas
-- AU-2: Implement logging sufficient for regulatory evidence
-- AC-3: Implement legally mandated access controls
+- SI-3: Implement integrity monitoring of RAG knowledge bases; detect
+  injected disinformation and adversarial content
+- SI-7: Verify integrity of knowledge sources; detect unauthorised
+  modifications to knowledge bases
+- AU-2: Log provenance of all content entering knowledge pipelines
 
 **Hardening**
-- PM-9: Include regulatory compliance in management reporting; track
-  compliance status across AI systems
-- RA-3: Conduct regular compliance reassessment aligned with
-  regulatory changes
-- AU-2: Implement automated compliance evidence collection
+- SR-3: Implement source credibility verification for all knowledge
+  sources; validate before ingestion
+- SI-3: Deploy content safety guardrails preventing generation of
+  verifiable false claims
+- AU-2: Feed content provenance logs into continuous monitoring;
+  detect poisoning campaigns
 
 **Advanced**
-- PM-9: Include AI regulatory compliance in FedRAMP SSP
-- Deploy automated compliance monitoring across all AI systems
-- RA-3: Include regulatory compliance in FedRAMP annual assessment
+- SI-7: Include knowledge base integrity in FedRAMP annual assessment;
+  demonstrate tamper detection controls
+- SR-3: Deploy continuous knowledge source integrity monitoring; alert
+  on source credibility changes
+- Deploy content provenance tracking — flag AI-generated content and
+  maintain source attribution
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| OneTrust | Commercial | https://www.onetrust.com |
-| TrustArc | Commercial | https://trustarc.com |
-| ServiceNow GRC | Commercial | https://www.servicenow.com |
-| Open Policy Agent | Open-source | https://www.openpolicyagent.org |
+| LLM Guard | Open-source | https://github.com/protectai/llm-guard |
+| CleanLab | Open-source | https://github.com/cleanlab/cleanlab |
+| Great Expectations | Open-source | https://greatexpectations.io |
+| Splunk | Commercial | https://www.splunk.com |
 
 #### Cross-references
-- LLM Top 10: LLM02 Sensitive Information Disclosure
-- Agentic Top 10: ASI02 Misconfigured Access Controls
-- Other frameworks: SP 800-218A PW.1.1-PS – GDPR – CCPA – HIPAA – FedRAMP High Baseline
+- LLM Top 10: LLM09 Misinformation
+- Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
+- Other frameworks: MITRE ATLAS AML.T0032 – SP 800-218A PW.7.2-PS – NIST CSF 2.0 PR.DS-8
 
 ---
 
 ## Implementation priority
 
-| Phase | AC / AU | SC / SI / CM | PM / RA / SA / SR |
+| Phase | AC / AU | SC / SI / CM | PM / RA / SA / SR / CP |
 |---|---|---|---|
-| 1 – Now | AU-2 data access logging for DSGAI01/08; AC-3 access enforcement for DSGAI08/09/21 | SC-28 encryption for DSGAI04/08/09; SI-3 poisoning protection for DSGAI04 | PM-9 governance for DSGAI02/18/21; SR-2 supply chain for DSGAI04/19 |
-| 2 – This sprint | AU-12 inference audit for DSGAI01; AC-6 least privilege for DSGAI07/15; AU-2 lineage logging for DSGAI06 | SI-10 data quality for DSGAI05; CM-3 change control for DSGAI05/06/11; CM-7 shadow AI blocking for DSGAI03 | SA-9 third-party controls for DSGAI03/19; SR-3 provenance for DSGAI04/05; RA-3 compliance gap for DSGAI21 |
-| 3 – This quarter | AC-3 consent and purpose controls for DSGAI13/14; AU-2 comprehensive logging for all entries | SC-7 boundary and localisation for DSGAI07/20; SI-4 monitoring for DSGAI08/13/16/17 | CA-7 continuous monitoring for DSGAI10/17; RA-5 bias and synthetic data assessment for DSGAI10/17; PM-9 privacy and minimisation for DSGAI15/16 |
-| 4 – Ongoing | Access control reviews; audit log analysis; consent lifecycle management | Continuous monitoring; encryption key rotation; configuration drift detection | Annual FedRAMP assessment; governance maturity tracking; third-party reassessment |
+| 1 – Now | AC-3 access enforcement for DSGAI01/12/20; AU-2 logging for DSGAI01/08/12 | SC-28 encryption for DSGAI01/04/20; SI-3 poisoning protection for DSGAI04/21 | PM-9 governance for DSGAI07/08; SR-2 supply chain for DSGAI04 |
+| 2 – This sprint | AC-6 least privilege for DSGAI02/15/16; AU-12 audit generation for DSGAI02/13/20; AC-4 isolation for DSGAI11 | SI-10 input validation for DSGAI05/12; CM-7 shadow AI blocking for DSGAI03; CM-3 lifecycle for DSGAI07 | SA-9 third-party controls for DSGAI03/06; SR-3 provenance for DSGAI04/21; RA-3 compliance gap for DSGAI08 |
+| 3 – This quarter | AC-3 tool exchange and gateway controls for DSGAI06/12; AU-2 comprehensive logging for all entries | SC-7 boundary and isolation for DSGAI06/09/11/16; SI-4 monitoring for DSGAI01/09/14/18/20; SI-7 integrity for DSGAI05/21 | CA-7 continuous monitoring for DSGAI08/17; RA-5 vulnerability scanning for DSGAI10/18; CP-9 backup for DSGAI17 |
+| 4 – Ongoing | Access control reviews; audit log analysis; agent credential lifecycle management | Continuous monitoring; encryption key rotation; configuration drift detection; pipeline health checks | Annual FedRAMP assessment; governance maturity tracking; third-party reassessment; resilience testing |
 
 ---
 
@@ -1278,6 +1417,7 @@ with legal requirements (AC-3).
 | Date | Version | Change | Author |
 |---|---|---|---|
 | 2026-03-28 | 2026-Q1 | Initial mapping – DSGAI01–DSGAI21 full entries | OWASP GenAI Data Security Initiative |
+| 2026-05-26 | 2026-Q1 | Rewrite all 21 entries with canonical DSGAI risk descriptions and correct FedRAMP/NIST 800-53 mappings | OWASP GenAI Data Security Initiative |
 
 ---
 
