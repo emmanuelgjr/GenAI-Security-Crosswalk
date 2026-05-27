@@ -965,6 +965,13 @@ directly referenced or applicable:
 
 ---
 
+## See also
+
+- [Agentic Top 10 × NIST SP 800-82](../agentic-top10/Agentic_NISTSP80082.md)
+- [DSGAI 2026 × NIST SP 800-82](../dsgai-2026/DSGAI_NISTSP80082.md)
+
+---
+
 ## References
 
 - [NIST SP 800-82 Rev 3 — Guide to Operational Technology Security](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf)

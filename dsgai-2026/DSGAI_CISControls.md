@@ -23,6 +23,7 @@ and service provider management (CIS 15) — covering the full GenAI data lifecy
 from training through inference.
 
 ---
+## Why # DSGAI 2026 × CIS Controls v8.1 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × CIS Controls v8.1 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × CIS Controls v8.1 compliance and governance programmes.---
 
 ## CIS Controls structure
 
@@ -994,6 +995,12 @@ systematically generate false outputs targeting specific topics or entities.
 | 2 — This sprint | DSGAI03, DSGAI04, DSGAI11 | CIS 2, CIS 7, CIS 16 | Shadow AI, poisoning, and context isolation |
 | 3 — This quarter | DSGAI05–07, DSGAI13–15 | CIS 3, CIS 8 | Data governance, vector store security, telemetry controls |
 | 4 — Ongoing | DSGAI08–10, DSGAI16–21 | CIS 15, CIS 17, CIS 18 | Compliance, resilience, and advanced threat mitigation |
+
+---
+
+## See also
+
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

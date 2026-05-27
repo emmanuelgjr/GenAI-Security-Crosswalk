@@ -1,6 +1,6 @@
 <!--
   GenAI Security Crosswalk
-  Source list : OWASP Top 10 for Agentic AI Applications 2026 (ASI01-ASI10)
+  Source list : OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10)
   Framework   : NIST SP 800-82 Rev 3 — Guide to Operational Technology (OT) Security
   Version     : 2026-Q1
   Maintained by: OWASP GenAI Data Security Initiative — https://genai.owasp.org
@@ -9,7 +9,7 @@
 
 # Agentic Top 10 2026 × NIST SP 800-82 Rev 3
 
-Mapping the [OWASP Top 10 for Agentic AI Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+Mapping the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 to [NIST SP 800-82 Revision 3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf) —
 Guide to Operational Technology (OT) Security, published May 2023.
 
@@ -62,16 +62,16 @@ OT boundaries must comply.
 
 | ID | Name | OT Severity | SP 800-82 Sections | SP 800-53 Controls | Tier |
 |---|---|---|---|---|---|
-| ASI01 | Prompt Injection in Agentic Systems | **Critical** | 5.3, 6.2, 7.2 | SI-10, SI-3, AC-3 | Foundational–Advanced |
-| ASI02 | Excessive Permissions and Scope | **Critical** | 5.3, 6.2, 7.1 | AC-6, AC-3, AU-12 | Foundational–Advanced |
-| ASI03 | Memory Manipulation and Persistence | High | 5.3, 6.2 | SI-7, SC-28, AC-3 | Hardening–Advanced |
-| ASI04 | Multi-Agent Trust Exploitation | **Critical** | 5.3, 6.2, 7.2 | IA-3, AC-3, AU-12 | Hardening–Advanced |
-| ASI05 | Tool and Plugin Abuse | High | 5.5, 6.3, 8.4 | SA-12, CM-7, SR-3 | Foundational–Hardening |
-| ASI06 | Data Exfiltration via Agentic Channels | **Critical** | 5.4, 6.2, 7.3 | SC-28, AC-3, AU-9 | Hardening–Advanced |
-| ASI07 | Supply Chain Compromise in Agent Ecosystems | High | 5.5, 6.3, 8.4 | SA-12, SR-3, SR-6 | Foundational–Hardening |
-| ASI08 | Inversion of Safety Controls | **Critical** | 5.3, 6.2, 7.1 | SI-3, AC-6, AU-12 | Advanced |
-| ASI09 | Inadequate Human Oversight and Control | **Critical** | 5.3, 6.2, 8.2 | AC-6, AU-12, AT-3 | Foundational–Advanced |
-| ASI10 | Cascading Agent Failures | **Critical** | 5.6, 6.2, 7.2 | SC-5, SI-17, AU-12 | Hardening–Advanced |
+| ASI01 | Agent Goal Hijack | **Critical** | 5.3, 6.2, 7.2 | SI-10, SI-3, AC-3 | Foundational–Advanced |
+| ASI02 | Tool Misuse & Exploitation | **Critical** | 5.3, 5.5, 6.2, 7.1 | AC-6, AC-3, CM-7, AU-12 | Foundational–Advanced |
+| ASI03 | Identity & Privilege Abuse | **Critical** | 5.3, 6.2, 7.1 | AC-6, IA-3, AC-3, AU-12 | Foundational–Advanced |
+| ASI04 | Agentic Supply Chain Vulnerabilities | High | 5.5, 6.3, 8.4 | SA-12, SR-3, SR-6 | Foundational–Hardening |
+| ASI05 | Unexpected Code Execution | **Critical** | 5.3, 6.2, 7.1 | CM-7, SI-3, SC-7, AU-12 | Advanced |
+| ASI06 | Memory & Context Poisoning | High | 5.3, 6.2 | SI-7, SC-28, AC-3 | Hardening–Advanced |
+| ASI07 | Insecure Inter-Agent Communication | **Critical** | 5.3, 6.2, 7.2 | IA-3, SC-8, AC-3, AU-12 | Hardening–Advanced |
+| ASI08 | Cascading Agent Failures | **Critical** | 5.6, 6.2, 7.2 | SC-5, SI-17, AU-12 | Hardening–Advanced |
+| ASI09 | Human-Agent Trust Exploitation | **Critical** | 5.3, 6.2, 8.2 | AC-6, AU-12, AT-3 | Foundational–Advanced |
+| ASI10 | Rogue Agents | **Critical** | 5.3, 6.2, 7.2 | SI-4, AU-12, AC-3, IR-4 | Hardening–Advanced |
 
 ---
 
@@ -119,8 +119,11 @@ requires authenticated, logged, and human-confirmable action paths.
 
 ---
 
-### ASI01 — Prompt Injection in Agentic Systems
+### ASI01 — Agent Goal Hijack
 
+**Severity: Critical (OT)**
+
+An attacker redirects agent objectives through instruction injection.
 Adversarial instructions in OT sensor data, historian outputs, or
 engineering documentation processed by agents hijack agent actions —
 potentially issuing commands or altering configurations.
@@ -157,50 +160,197 @@ potentially issuing commands or altering configurations.
 - Continuous monitoring of agent decisions correlated with OT data anomalies
 - SP 800-53 SI-10 automated validation in OT data pipeline CI/CD
 
+#### Cross-references
+- LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
+
 ---
 
-### ASI02 — Excessive Permissions and Scope
+### ASI02 — Tool Misuse & Exploitation
 
-Agents granted access to OT systems beyond their declared function —
-SCADA write access, PLC configuration permissions, safety system reads
-— create catastrophic blast radius when compromised.
+**Severity: Critical (OT)**
+
+Agents misuse legitimate tools via prompt manipulation or unsafe delegation.
+Agents with OT tool access — SCADA connectors, historian APIs, PLC
+configuration interfaces — are manipulated into invoking destructive
+operations, passing unvalidated parameters, or chaining tool calls into
+harmful sequences targeting industrial systems.
 
 #### SP 800-82 Rev 3 mapping
 
 | Section | Requirement | How it applies |
 |---|---|---|
-| §5.3 | Common ICS vulnerabilities | Excessive privilege is specifically listed as OT vulnerability class |
-| §6.2 | Risk assessment | Assess agent permission scope as part of OT risk register |
-| §7.1 | Secure architecture | Least privilege must be enforced at zone boundary for all automated systems |
+| §5.3 | Common ICS vulnerabilities | Tool misuse amplified by autonomous agent capabilities |
+| §5.5 | Supply chain risks | Third-party OT tool components may enable misuse |
+| §6.2 | Risk assessment | Assess agent tool misuse risk in OT risk register |
+| §7.1 | Secure architecture | Tool access controls enforced at zone boundary |
 
 #### SP 800-53 controls
 
 | Control | Title | Application |
 |---|---|---|
-| AC-6 | Least Privilege | Minimum OT access per agent role; enforce at zone boundary |
-| AC-3 | Access Enforcement | Enforce agent identity and access policy at OT network boundary |
-| AU-12 | Audit Record Generation | Log every agent action in OT zone with full context |
+| AC-6 | Least Privilege | Minimum OT tool access per agent role; per-tool permission manifests |
+| AC-3 | Access Enforcement | Enforce agent identity and tool access policy at OT boundary |
+| CM-7 | Least Functionality | Allow-list only approved OT tools; deny all others |
+| AU-12 | Audit Record Generation | Log every tool invocation in OT zone with full parameters |
 
 #### Three-tier mitigations
 
 **Tier 1 — Pre-deployment gate:**
-- Document minimum OT permissions required for each agent function
-- Remove any OT access not exercised in past 30 days
+- Implement per-tool permission manifests for all OT agent deployments
+- Require human confirmation for all irreversible OT tool invocations
+- Validate all LLM-generated tool parameters as untrusted before execution
+
+**Tier 2 — Short-term:**
+- Architecture review: confirm no agent has direct write access to Level 1-2 devices
+- Implement tool approval board for all OT-connected tool integrations
+- Red team: attempt destructive tool invocation via prompt manipulation
+
+**Tier 3 — Strategic:**
+- SP 800-53 CM-7 enforcement via OT network tool access control system
+- Formal tool chain analysis for OT environments — verify no tool combination achieves unsafe outcomes
+
+---
+
+### ASI03 — Identity & Privilege Abuse
+
+**Severity: Critical (OT)**
+
+Agents inherit and cache credentials exploited for lateral movement.
+Agents exploit misconfigured OT permissions, inherited credentials, or
+inter-agent trust to access OT systems beyond their intended scope —
+PLC configuration, safety system reads, or cross-zone lateral movement.
+
+#### SP 800-82 Rev 3 mapping
+
+| Section | Requirement | How it applies |
+|---|---|---|
+| §5.3 | Common ICS vulnerabilities | Credential abuse enabling lateral movement between OT zones |
+| §6.2 | Risk assessment | Assess agent credential scope as OT risk |
+| §7.1 | Secure architecture | Least privilege enforced at zone boundary for all agent identities |
+
+#### SP 800-53 controls
+
+| Control | Title | Application |
+|---|---|---|
+| AC-6 | Least Privilege | Minimum OT access per agent NHI; enforce at zone boundary |
+| IA-3 | Device Identification and Authentication | Unique NHI per agent; authenticate at every OT boundary |
+| AC-3 | Access Enforcement | Enforce agent identity and credential policy at OT network boundary |
+| AU-12 | Audit Record Generation | Log every agent credential operation in OT zone |
+
+#### Three-tier mitigations
+
+**Tier 1 — Pre-deployment gate:**
+- Assign unique NHI to every OT agent deployment; no shared credentials
+- Enforce short TTL on all agent OT credentials with automatic expiry
 - Treat agent OT access as privileged account: apply same controls as human OT admin
 
 **Tier 2 — Short-term:**
-- Implement per-task JIT OT permission issuance (see RECIPES.md)
-- Architecture review: confirm no agent has direct write access to Level 1-2 devices
-- Quarterly OT permission audit for all agent identities
+- Implement credential brokering — agents never inherit user OT credentials directly
+- Architecture review: confirm no agent credential enables cross-zone lateral movement
+- Quarterly OT credential audit for all agent identities
 
 **Tier 3 — Strategic:**
 - SP 800-53 AC-6 enforcement via OT network access control system
+- PKI-backed agent identities for OT environments
 - Formal agent identity programme with OT-specific NHI controls
 
 ---
 
-### ASI03 — Memory Manipulation and Persistence
+### ASI04 — Agentic Supply Chain Vulnerabilities
 
+**Severity: High (OT)**
+
+Compromised tools, MCP servers, or model components alter agent behaviour.
+Third-party components in the agentic OT stack — orchestration frameworks,
+MCP servers, ML libraries — are compromised, introducing malicious behaviour
+into the OT agent deployment.
+
+#### SP 800-82 Rev 3 mapping
+
+| Section | Requirement | How it applies |
+|---|---|---|
+| §5.5 | Supply chain risks | Expanded to include agentic AI components |
+| §6.3 | Supply chain risk management | SBOM and vendor assessment for agentic stack |
+| §8.4 | Third-party management | Formal vendor programme for OT agent components |
+
+#### SP 800-53 controls
+
+| Control | Title | Application |
+|---|---|---|
+| SA-12 | Supply Chain Protection | Vendor assessment for all agentic stack components |
+| SR-3 | Supply Chain Controls and Plans | SBOM for agentic OT deployment |
+| SR-6 | Supplier Assessments and Reviews | Periodic review of all agentic component suppliers |
+
+#### Three-tier mitigations
+
+**Tier 1 — Pre-deployment gate:**
+- Generate SBOM for agentic OT deployment; flag unverified components
+- Pin all dependency versions; reject floating versions in OT production
+- Verify provenance and cryptographic signatures of all components in OT agent stack
+
+**Tier 2 — Short-term:**
+- Implement automated vulnerability scanning for agentic SBOM
+- SA-12: formal vendor assessment for critical agentic stack components
+- Scan all tool descriptors for hidden instructions before loading
+
+**Tier 3 — Strategic:**
+- SR-6: annual supplier review for all agentic component vendors
+- Formal component integrity programme aligned with CISA software security guidance
+
+---
+
+### ASI05 — Unexpected Code Execution
+
+**Severity: Critical (OT)**
+
+Agents that generate and execute code become RCE gateways. Agents with
+code execution capabilities in OT environments can be manipulated to run
+attacker-influenced code — potentially issuing commands, modifying
+configurations, or accessing safety system parameters through generated
+code.
+
+#### SP 800-82 Rev 3 mapping
+
+| Section | Requirement | How it applies |
+|---|---|---|
+| §5.3 | ICS vulnerabilities | Code execution bypass is a critical OT threat vector |
+| §6.2 | Risk assessment | Code execution capability in OT agents must be in risk register |
+| §7.1 | Secure architecture | Mandatory: code execution sandbox independent of OT control plane |
+
+#### SP 800-53 controls
+
+| Control | Title | Application |
+|---|---|---|
+| CM-7 | Least Functionality | Restrict agent code execution to sandboxed environments; no unrestricted shell |
+| SI-3 | Malicious Code Protection | Pre-execution scanning of all agent-generated code |
+| SC-7 | Boundary Protection | Enforce strict isolation between code execution sandbox and OT networks |
+| AU-12 | Audit Record Generation | Immutable logging of all code execution in OT agent context |
+
+#### Three-tier mitigations
+
+**Tier 1 — Pre-deployment gate (absolute requirement):**
+- Code execution sandboxes must be completely isolated from OT control networks
+- Agents in OT context should not have code execution capability unless explicitly justified
+- Disable all filesystem, network, and system call access not explicitly required
+
+**Tier 2 — Short-term:**
+- Red team: attempt sandbox escape from OT agent code execution environment
+- Deploy multi-layer sandbox isolation (container, process, network policy)
+- Implement pre-execution scanning and allowlisting for permitted operations
+
+**Tier 3 — Strategic:**
+- Formal sandbox boundary verification for all OT agent code execution environments
+- Hardware-level sandboxing (gVisor, Firecracker) for OT-adjacent deployments
+- Continuous adversarial sandbox testing in staging environment
+
+---
+
+### ASI06 — Memory & Context Poisoning
+
+**Severity: High (OT)**
+
+Persistent memory poisoning causes systematic incorrect behaviour.
 Corrupted agent memory causes agents to act on false OT state — misreporting
 equipment status, misremembering maintenance history, or carrying persistent
 attacker instructions across sessions into OT decision-making.
@@ -236,257 +386,67 @@ attacker instructions across sessions into OT decision-making.
 - Formal provenance tracking for all OT state stored in agent memory
 - Cross-session memory integrity checks before any OT decision
 
+#### Cross-references
+- LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
+- DSGAI 2026: DSGAI13 Vector Store Platform Security
+
 ---
 
-### ASI04 — Multi-Agent Trust Exploitation
+### ASI07 — Insecure Inter-Agent Communication
 
-Compromised agents in multi-agent OT orchestration networks are trusted
-by peer agents — enabling instruction injection, lateral movement across
-OT zones, and coordinated action against industrial infrastructure.
+**Severity: Critical (OT)**
+
+A2A channels lacking authentication enable agent-in-the-middle attacks.
+Agents in multi-agent OT orchestration communicate without proper mutual
+authentication, encryption, or schema validation — enabling spoofing,
+instruction injection, lateral movement across OT zones, and coordinated
+action against industrial infrastructure.
 
 #### SP 800-82 Rev 3 mapping
 
 | Section | Requirement | How it applies |
 |---|---|---|
-| §5.3 | ICS vulnerabilities | Lateral movement between control systems |
-| §6.2 | Risk assessment | Assess inter-agent trust as OT risk |
-| §7.2 | Security controls | Authenticate all automated system-to-system communications |
+| §5.3 | ICS vulnerabilities | Lateral movement between control systems via A2A channels |
+| §6.2 | Risk assessment | Assess inter-agent communication as OT risk |
+| §7.2 | Security controls | Authenticate and encrypt all automated system-to-system communications |
 
 #### SP 800-53 controls
 
 | Control | Title | Application |
 |---|---|---|
-| IA-3 | Device Identification and Authentication | Authenticate all agent-to-agent communications |
-| AC-3 | Access Enforcement | Enforce per-agent trust boundaries |
-| AU-12 | Audit Record Generation | Log all inter-agent instructions |
+| IA-3 | Device Identification and Authentication | Mutual authentication for all agent-to-agent OT communications |
+| SC-8 | Transmission Confidentiality and Integrity | Encrypt all A2A communication in transit; no cleartext inter-agent messages |
+| AC-3 | Access Enforcement | Enforce per-agent trust boundaries at every A2A boundary |
+| AU-12 | Audit Record Generation | Log all inter-agent instructions with full payload |
 
 #### Three-tier mitigations
 
 **Tier 1 — Pre-deployment gate:**
 - Implement mutual authentication between all agents in OT orchestration network
-- No agent may issue commands exceeding its own permission set to peer agents
-- Log all inter-agent instructions with full payload
+- Encrypt all A2A communication in transit with mutual TLS
+- Log all inter-agent instructions with full payload and sender identity
 
 **Tier 2 — Short-term:**
-- Agent identity registry: all OT agents have verifiable identities
-- Red team: simulate compromised sub-agent attempting lateral movement to OT zone
-- Architecture review: trust graph for all agent-to-agent communications
+- Agent identity registry: all OT agents have verifiable, revocable identities
+- Red team: simulate spoofing and replay attacks against OT A2A channels
+- Architecture review: trust graph for all agent-to-agent OT communications
 
 **Tier 3 — Strategic:**
-- Cryptographic attestation of agent identity and OT permission set
-- Automated verification that no agent in network exceeds declared OT scope
+- Cryptographic attestation of agent identity and OT communication scope
+- Short-lived A2A certificates with automated rotation
+- Automated verification that no agent-to-agent path crosses OT zone boundaries without authorisation
 
 ---
 
-### ASI05 — Tool and Plugin Abuse
+### ASI08 — Cascading Agent Failures
 
-Malicious or misconfigured tools accessible to OT agents — SCADA
-connectors, historian APIs, engineering workstation integrations —
-enable unintended data access or command issuance via the tool interface.
+**Severity: Critical (OT)**
 
-#### SP 800-82 Rev 3 mapping
-
-| Section | Requirement | How it applies |
-|---|---|---|
-| §5.5 | Supply chain risks | Third-party tool components in OT |
-| §6.3 | Supply chain risk management | Tool integration approval process |
-| §8.4 | Third-party management | Vendor assessment for OT tool providers |
-
-#### SP 800-53 controls
-
-| Control | Title | Application |
-|---|---|---|
-| SA-12 | Supply Chain Protection | Assess all OT tool vendors |
-| CM-7 | Least Functionality | Allow-list only approved tools; deny all others |
-| SR-3 | Supply Chain Controls and Plans | Document tool supply chain controls |
-
-#### Three-tier mitigations
-
-**Tier 1 — Pre-deployment gate:**
-- Enumerate all tools accessible to OT agents
-- Remove any unreviewed tools from OT agent configuration
-- Validate all tool descriptors against declared function
-
-**Tier 2 — Short-term:**
-- Implement tool approval board for all OT-connected tool integrations
-- Add tool call logging with full payload for all OT tool invocations
-- Red team: provide malicious tool descriptor to OT agent
-
-**Tier 3 — Strategic:**
-- SA-12 formal vendor assessment for all OT tool providers
-- Automated tool supply chain scanning in OT CI/CD pipeline
-
----
-
-### ASI06 — Data Exfiltration via Agentic Channels
-
-Agents with OT data access and outbound communication capabilities
-exfiltrate process data, equipment configurations, safety parameters,
-or intellectual property via tool calls, API requests, or generated outputs.
-
-#### SP 800-82 Rev 3 mapping
-
-| Section | Requirement | How it applies |
-|---|---|---|
-| §5.4 | Data confidentiality risks in OT | OT data exfiltration via compromised automation |
-| §6.2 | Risk assessment | Assess outbound data paths from agent |
-| §7.3 | Network monitoring | Monitor all outbound data from OT zone |
-
-#### SP 800-53 controls
-
-| Control | Title | Application |
-|---|---|---|
-| SC-28 | Protection of Information at Rest | Classify and protect all OT data accessible to agents |
-| AC-3 | Access Enforcement | Enforce read scope per agent; minimum OT data access |
-| AU-9 | Protection of Audit Information | Secure audit logs of agent data access |
-
-#### Three-tier mitigations
-
-**Tier 1 — Pre-deployment gate:**
-- Apply content inspection to all agent outputs leaving OT boundary
-- Define maximum data volume per tool call from OT zone
-- Log all outbound data with full payloads
-
-**Tier 2 — Short-term:**
-- DLP scanning on all agent output leaving OT boundary
-- Red team: SSRF-style exfiltration via OT tool calls
-- Implement per-session OT data access budgets
-
-**Tier 3 — Strategic:**
-- O-IM: automated exfiltration detection using OT data flow baselines
-- Data residency controls: OT data must not leave defined geographic or network boundary
-
----
-
-### ASI07 — Supply Chain Compromise in Agent Ecosystems
-
-Third-party components in the agentic OT stack — orchestration frameworks,
-MCP servers, ML libraries — are compromised, introducing malicious behaviour
-into the OT agent deployment.
-
-#### SP 800-82 Rev 3 mapping
-
-| Section | Requirement | How it applies |
-|---|---|---|
-| §5.5 | Supply chain risks | Expanded to include agentic AI components |
-| §6.3 | Supply chain risk management | SBOM and vendor assessment for agentic stack |
-| §8.4 | Third-party management | Formal vendor programme for OT agent components |
-
-#### SP 800-53 controls
-
-| Control | Title | Application |
-|---|---|---|
-| SA-12 | Supply Chain Protection | Vendor assessment for all agentic stack components |
-| SR-3 | Supply Chain Controls and Plans | SBOM for agentic OT deployment |
-| SR-6 | Supplier Assessments and Reviews | Periodic review of all agentic component suppliers |
-
-#### Three-tier mitigations
-
-**Tier 1 — Pre-deployment gate:**
-- Generate SBOM for agentic OT deployment; flag unverified components
-- Pin all dependency versions; reject floating versions in OT production
-- Verify provenance of all ML components used in OT agent stack
-
-**Tier 2 — Short-term:**
-- Implement automated vulnerability scanning for agentic SBOM
-- SA-12: formal vendor assessment for critical agentic stack components
-- Periodic red team exercise targeting agentic supply chain attack vectors
-
-**Tier 3 — Strategic:**
-- SR-6: annual supplier review for all agentic component vendors
-- Formal component integrity programme aligned with CISA software security guidance
-
----
-
-### ASI08 — Inversion of Safety Controls
-
-Safety guardrails protecting OT agent behaviour are bypassed — enabling
-agents to issue commands that violate safety parameters, bypass interlocks,
-or disable protective functions in industrial systems.
-
-#### SP 800-82 Rev 3 mapping
-
-| Section | Requirement | How it applies |
-|---|---|---|
-| §5.3 | ICS vulnerabilities | Safety system bypass is the highest severity OT threat |
-| §6.2 | Risk assessment | Safety control inversion must be in OT risk register |
-| §7.1 | Secure architecture | Mandatory: safety function must be independent of AI decision layer |
-
-#### SP 800-53 controls
-
-| Control | Title | Application |
-|---|---|---|
-| SI-3 | Malicious Code Protection | Protect safety control logic from AI-driven modification |
-| AC-6 | Least Privilege | AI system must not have write access to safety function parameters |
-| AU-12 | Audit Record Generation | Immutable logging of all safety-adjacent agent actions |
-
-#### Three-tier mitigations
-
-**Tier 1 — Pre-deployment gate (absolute requirement):**
-- Safety functions must be hardware-enforced and independent of AI layer
-- AI agents must not have write access to any safety interlock parameters
-- Confirm: AI system failure or compromise cannot affect safety system state
-
-**Tier 2 — Short-term:**
-- Independent adversarial testing of all safety guardrail bypass scenarios
-- Architecture review: safety control path analysis for all agent-reachable systems
-- Immutable safety action log that cannot be disabled or modified by AI layer
-
-**Tier 3 — Strategic:**
-- Formal safety case documentation for all agentic OT deployments
-- Continuous adversarial safety testing in staging environment
-- Periodic safety architecture review by independent safety engineer
-
----
-
-### ASI09 — Inadequate Human Oversight and Control
-
-Agents take OT actions — equipment commands, configuration changes,
-setpoint adjustments — without human review, removing the oversight
-layer that would detect errors, adversarial manipulation, or safety
-boundary violations before they cause physical consequences.
-
-#### SP 800-82 Rev 3 mapping
-
-| Section | Requirement | How it applies |
-|---|---|---|
-| §5.3 | ICS vulnerabilities | Inadequate human oversight cited as OT vulnerability category |
-| §6.2 | Risk assessment | Quantify consequences of unsupervised agent OT actions |
-| §8.2 | OT security programme | Governance policy for autonomous OT systems |
-
-#### SP 800-53 controls
-
-| Control | Title | Application |
-|---|---|---|
-| AC-6 | Least Privilege | Autonomous OT actions constrained to minimum necessary scope |
-| AU-12 | Audit Record Generation | Every autonomous OT action logged with rationale |
-| AT-3 | Role-Based Training | OT operators trained to monitor, intervene, and override agents |
-
-#### Three-tier mitigations
-
-**Tier 1 — Pre-deployment gate:**
-- Add human confirmation gate for all irreversible OT actions
-- Implement emergency stop: immediately halt all agent OT activity
-- Log every autonomous OT action with decision rationale
-
-**Tier 2 — Short-term:**
-- Define autonomy tiers for OT actions: auto / confirm / human-required
-- AT-3: operator training programme for agentic OT oversight
-- Implement autonomous action budget: configurable hard limit per session
-
-**Tier 3 — Strategic:**
-- Real-time OT oversight dashboard for operations team
-- AU-12 L3: forensic-quality audit log for all autonomous OT actions
-- Formal autonomy policy reviewed and signed by CISO and safety officer
-
----
-
-### ASI10 — Cascading Agent Failures
-
-Failures in multi-agent OT orchestration propagate — corrupted state
-from one agent cascades into downstream agents, amplifying errors
-across the OT system and potentially triggering correlated failures
-in multiple industrial components.
+Single-point faults propagate through multi-agent workflows. Failures in
+multi-agent OT orchestration propagate — corrupted state from one agent
+cascades into downstream agents, amplifying errors across the OT system
+and potentially triggering correlated failures in multiple industrial
+components.
 
 #### SP 800-82 Rev 3 mapping
 
@@ -521,6 +481,109 @@ in multiple industrial components.
 - Automated cascade detection with predictive alerting before full failure
 - Architecture pattern: stateless agents with OT state sourced from authoritative systems
 
+#### Cross-references
+- LLM Top 10: LLM10 Unbounded Consumption
+- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
+
+---
+
+### ASI09 — Human-Agent Trust Exploitation
+
+**Severity: Critical (OT)**
+
+Agents build false trust enabling manipulation of human approvers.
+Agents in OT environments establish unwarranted trust with human operators
+— through apparent competence or presentation authority — then exploit
+that trust to obtain approvals for OT actions without proper verification.
+Missing confirmation gates, override mechanisms, or audit trails prevent
+effective human oversight of autonomous OT actions.
+
+#### SP 800-82 Rev 3 mapping
+
+| Section | Requirement | How it applies |
+|---|---|---|
+| §5.3 | ICS vulnerabilities | Inadequate human oversight cited as OT vulnerability category |
+| §6.2 | Risk assessment | Quantify consequences of operator over-trust in agent OT recommendations |
+| §8.2 | OT security programme | Governance policy for human-agent trust in OT systems |
+
+#### SP 800-53 controls
+
+| Control | Title | Application |
+|---|---|---|
+| AC-6 | Least Privilege | Autonomous OT actions constrained to minimum necessary scope |
+| AU-12 | Audit Record Generation | Every agent-influenced OT decision logged with rationale |
+| AT-3 | Role-Based Training | OT operators trained on AI trust risks, verification requirements, and override procedures |
+
+#### Three-tier mitigations
+
+**Tier 1 — Pre-deployment gate:**
+- Provide OT operator training on AI limitations and trust exploitation risks
+- Add human confirmation gate for all irreversible OT actions — approvals independent of agent interface
+- Implement AI advisory labelling for all agent OT recommendations
+
+**Tier 2 — Short-term:**
+- Define autonomy tiers for OT actions: auto / confirm / human-required
+- AT-3: operator training programme covering AI trust exploitation in OT
+- Implement autonomous action budget: configurable hard limit per session
+- Safety alarm independence — agents prohibited from acknowledging or suppressing safety alarms
+
+**Tier 3 — Strategic:**
+- Real-time OT oversight dashboard for operations team
+- AU-12 L3: forensic-quality audit log for all agent-influenced OT decisions
+- Formal trust exploitation governance policy reviewed by CISO and safety officer
+- Operator competency assessments covering AI trust verification
+
+---
+
+### ASI10 — Rogue Agents
+
+**Severity: Critical (OT)**
+
+Compromised agents pursue hidden goals while appearing compliant. Agents
+in OT environments operate outside their intended boundaries — pursuing
+hidden objectives, executing undisclosed tool calls, or systematically
+biasing OT recommendations — while maintaining an appearance of normal
+operation. In OT context, rogue agent behaviour can directly impact
+physical safety.
+
+#### SP 800-82 Rev 3 mapping
+
+| Section | Requirement | How it applies |
+|---|---|---|
+| §5.3 | ICS vulnerabilities | Rogue automation is the highest-severity OT threat category |
+| §6.2 | Risk assessment | Rogue agent scenarios must be in OT risk register |
+| §7.2 | Security controls | Behavioural monitoring and containment for all OT automation |
+
+#### SP 800-53 controls
+
+| Control | Title | Application |
+|---|---|---|
+| SI-4 | System Monitoring | Comprehensive behavioural monitoring of all OT agents; baseline deviation alerting |
+| AU-12 | Audit Record Generation | Immutable logging of all agent OT actions — no deployment without full observability |
+| AC-3 | Access Enforcement | Scope constraints enforced — agent cannot exceed OT permission envelope |
+| IR-4 | Incident Handling | Rogue agent containment procedure — kill switch, audit, state validation, forensic capture |
+
+#### Three-tier mitigations
+
+**Tier 1 — Pre-deployment gate:**
+- Comprehensive audit logging of all agent OT actions — no deployment without full observability
+- Enforce scope constraints — rogue agent cannot exceed OT permission envelope regardless of internal goal
+- Implement kill switch accessible from operator console; test before deployment
+
+**Tier 2 — Short-term:**
+- Establish behavioural baselines during commissioning; alert on deviations
+- Red team: simulate rogue agent pursuing hidden objectives in OT staging environment
+- Aggregate OT recommendation analysis — detect systematic bias before physical impact
+
+**Tier 3 — Strategic:**
+- Automated rogue agent detection with OT-aware behavioural anomaly monitoring
+- Formal rogue agent containment exercises in OT environment with documented findings
+- IR-4: rogue agent incident response integrated with OT safety procedures
+
+#### Cross-references
+- LLM Top 10: LLM06 Excessive Agency
+- DSGAI 2026: DSGAI16 Endpoint & Browser Overreach
+
 ---
 
 ## OT pre-deployment checklist — agentic AI
@@ -529,16 +592,19 @@ Complete this checklist before deploying any autonomous AI agent in an OT enviro
 
 | Item | Requirement | SP 800-82 Ref | Status |
 |---|---|---|---|
-| Zone placement | Agent deployed in correct SP 800-82 zone | §7, App G | ☐ |
-| Permission scope | Minimum OT permissions documented and enforced | §7.1 | ☐ |
-| Command capability | All command paths require human confirmation | §7.1 | ☐ |
-| Safety independence | Safety function independent of AI layer | §5.3 | ☐ |
-| Audit logging | All agent OT actions logged to immutable log | §7.3 | ☐ |
-| Emergency stop | Kill switch tested and accessible to operators | §8.2 | ☐ |
-| Supply chain | SBOM generated for agentic stack | §8.4 | ☐ |
-| Operator training | OT operators trained on agent oversight | §8.2 | ☐ |
-| Incident playbook | Cascade failure playbook documented | §6.2 | ☐ |
-| Risk assessment | Agentic AI scenarios in OT risk register | §6.2 | ☐ |
+| Zone placement | Agent deployed in correct SP 800-82 zone | §7, App G | |
+| Permission scope | Minimum OT permissions documented and enforced | §7.1 | |
+| Tool access | Per-tool permission manifests with irreversibility classification | §7.1 | |
+| Command capability | All command paths require human confirmation | §7.1 | |
+| Agent identity | Unique NHI per agent with short TTL | §7.2 | |
+| A2A security | All inter-agent communication authenticated and encrypted | §7.2 | |
+| Safety independence | Safety function independent of AI layer | §5.3 | |
+| Audit logging | All agent OT actions logged to immutable log | §7.3 | |
+| Emergency stop | Kill switch tested and accessible to operators | §8.2 | |
+| Supply chain | SBOM generated for agentic stack | §8.4 | |
+| Operator training | OT operators trained on AI trust risks and override procedures | §8.2 | |
+| Incident playbook | Cascade failure and rogue agent playbooks documented | §6.2 | |
+| Risk assessment | All ASI01-ASI10 scenarios in OT risk register | §6.2 | |
 
 ---
 
@@ -555,13 +621,19 @@ Complete this checklist before deploying any autonomous AI agent in an OT enviro
 
 ---
 
+## See also
+
+- [DSGAI 2026 × NIST SP 800-82](../dsgai-2026/DSGAI_NISTSP80082.md)
+
+---
+
 ## References
 
 - [NIST SP 800-82 Rev 3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf) — May 2023
 - [NIST SP 800-53 Rev 5](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final) — Security and Privacy Controls
 - [Agentic_ISA62443.md](Agentic_ISA62443.md) — complementary zone model and SL ratings
 - [LLM_NISTSP80082.md](../llm-top10/LLM_NISTSP80082.md) — LLM entry mapping
-- [OWASP Top 10 for Agentic AI Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [shared/RECIPES.md](../shared/RECIPES.md) — OT kill switch and JIT credential patterns
 
 ---
@@ -570,6 +642,7 @@ Complete this checklist before deploying any autonomous AI agent in an OT enviro
 
 | Version | Date | Change |
 |---|---|---|
+| 1.1.0 | 2026-05-25 | Remediate ASI entry names, severities, descriptions, and control mappings to canonical Agentic Top 10 2026 |
 | 1.0.0 | 2026-03-27 | Initial release — full mapping ASI01–ASI10 to SP 800-82 Rev 3 |
 
 ---

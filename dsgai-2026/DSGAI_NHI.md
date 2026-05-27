@@ -551,11 +551,18 @@ in lineage records.
 
 ---
 
+## See also
+
+- [Agentic Top 10 × NHI](../agentic-top10/Agentic_NHI.md)
+- [LLM Top 10 × NHI](../llm-top10/LLM_NHI.md)
+
+---
+
 ## References
 
 - [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/)
 - [OWASP GenAI Data Security Risks 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
-- [Agentic_OWASP_NHI.md](../agentic-top10/Agentic_OWASP_NHI.md) — NHI-to-ASI cross-mapping
+- [Agentic_NHI.md](../agentic-top10/Agentic_NHI.md) — NHI-to-ASI cross-mapping
 - [LLM_NHI.md](../llm-top10/LLM_NHI.md) — NHI for LLM deployments
 - [shared/RECIPES.md](../shared/RECIPES.md) — Pattern 3: JIT Credential Issuance
 

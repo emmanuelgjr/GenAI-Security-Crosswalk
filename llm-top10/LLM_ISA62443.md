@@ -997,6 +997,12 @@ mapping directly relevant:
 
 ---
 
+## See also
+
+- [DSGAI 2026 × ISA/IEC 62443](../dsgai-2026/DSGAI_ISA62443.md)
+
+---
+
 ## References
 
 - [ISA/IEC 62443 series](https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards)

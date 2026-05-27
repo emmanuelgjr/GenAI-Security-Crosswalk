@@ -579,99 +579,99 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.4.1-PS",
-      "control_name": "Reuse existing well-secured software — third-party AI model and dataset vetting",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Secure coding — ML pipeline output handling",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Vet all third-party model weights, datasets, plugins, and libraries before use; verify provenance, licence, and security posture"
+      "scope": "Build",
+      "notes": "Implement secure coding practices for all code paths that consume LLM output; treat model responses as untrusted input to downstream systems"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review for security vulnerabilities — output validation",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Include output injection and unsafe rendering scenarios in pre-release security reviews; verify that output sanitisation controls are present and effective"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.2.1-PS",
-      "control_name": "Verify software integrity — model and library supply chain",
+      "control_name": "Verify software integrity — model artifact integrity",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Verify integrity of all model artefacts and third-party components using cryptographic signatures and checksums before deployment"
+      "scope": "Build",
+      "notes": "Verify that the model artifact serving output has not been tampered with; maintain signed model checksums and verify before deployment"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.3.1-PS",
-      "control_name": "Archive and protect software releases — model registry",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities — output security",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Maintain a secure, versioned model registry with provenance records for all components; enable auditability and rollback"
-    },
-    {
-      "framework": "NIST SP 800-218A",
-      "control_id": "RV.1.1-PS",
-      "control_name": "Identify and confirm vulnerabilities — supply chain monitoring",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Monitor for newly disclosed vulnerabilities in third-party AI components; establish a triage process for AI-specific CVEs"
+      "scope": "Build",
+      "notes": "Include output-based injection testing (XSS, SQLi, CMDi via LLM output) in adversarial test suites"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SR-2",
-      "control_name": "Supply Chain Risk Management Plan — AI components",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — output context validation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include all AI components — models, datasets, adapters, libraries, plugins — in the supply chain risk management plan with provenance and risk assessment"
+      "notes": "Validate all LLM outputs before consumption by downstream systems; enforce output encoding, schema validation, and context-appropriate sanitisation"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SR-3",
-      "control_name": "Supply Chain Controls — model provenance verification",
+      "control_id": "SI-3",
+      "control_name": "Malicious Code Protection — output channel scanning",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement integrity verification for all AI supply chain components using cryptographic signatures, checksums, and attestation before deployment"
+      "notes": "Extend malicious code protection to LLM output channels; detect and block injection payloads — XSS, SQL injection, command injection — in model responses before downstream delivery"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SA-9",
-      "control_name": "External Information System Services — third-party AI",
+      "control_id": "CA-8",
+      "control_name": "Penetration Testing — LLM output consumer testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Require third-party AI service providers to meet FedRAMP requirements; establish SLAs covering model security, data handling, and incident notification"
+      "notes": "Include LLM output handling in penetration testing scope; test all downstream consumers for injection via model-generated content"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SA-3",
-      "control_name": "System Development Life Cycle — AI SDLC",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — LLM-to-downstream isolation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Integrate AI-specific security activities into the SDLC — model security review, adversarial testing, supply chain verification at each lifecycle phase"
+      "notes": "Enforce boundary protection between LLM inference services and downstream consuming systems; apply output filtering and schema enforcement at the boundary"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — AI vendor oversight",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention — output validation controls",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include AI model providers, dataset vendors, and ML library maintainers in third-party ICT risk management; conduct due diligence, contractual oversight, and ongoing monitoring"
+      "scope": "Build",
+      "notes": "Implement output sanitisation, encoding, and validation controls before LLM outputs reach downstream financial systems, APIs, or databases"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — AI supply chain assets",
+      "control_id": "Art. 10",
+      "control_name": "Detection — output anomaly detection",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Identify and classify all AI supply chain components — models, datasets, adapters, libraries, plugins — in the ICT asset inventory with provenance records"
+      "scope": "Build",
+      "notes": "Monitor LLM outputs for anomalous patterns indicating injection payloads, unexpected code fragments, or data exfiltration attempts"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — AI supply chain governance",
+      "control_name": "ICT Risk Management — output trust governance",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include AI supply chain risk in the ICT risk management framework; define policies for AI component sourcing, vetting, and lifecycle management"
+      "scope": "Build",
+      "notes": "Define policies governing trust boundaries between LLM outputs and downstream systems; mandate validation at all integration points"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 24–27",
-      "control_name": "Resilience Testing — supply chain resilience",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management — output-triggered incidents",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include AI supply chain disruption scenarios in resilience testing; test fallback procedures for third-party AI service failures"
+      "scope": "Build",
+      "notes": "Classify and report incidents where LLM outputs triggered downstream system compromise; include in major ICT incident reporting where applicable"
     }
   ],
   "tools": [
@@ -691,24 +691,24 @@
       "url": "https://semgrep.dev"
     },
     {
-      "name": "CycloneDX",
+      "name": "Guardrails AI",
       "type": "open-source",
-      "url": "https://cyclonedx.org"
+      "url": "https://github.com/guardrails-ai/guardrails"
     },
     {
-      "name": "ModelScan",
+      "name": "LLM Guard",
       "type": "open-source",
-      "url": "https://github.com/protectai/modelscan"
+      "url": "https://github.com/protectai/llm-guard"
     },
     {
-      "name": "OWASP Dependency-Check",
-      "type": "open-source",
-      "url": "https://owasp.org/www-project-dependency-check/"
+      "name": "Burp Suite",
+      "type": "commercial",
+      "url": "https://portswigger.net/burp"
     },
     {
-      "name": "Sigstore",
+      "name": "OWASP ESAPI",
       "type": "open-source",
-      "url": "https://www.sigstore.dev"
+      "url": "https://owasp.org/www-project-enterprise-security-api/"
     },
     {
       "name": "Vigil",
@@ -751,15 +751,11 @@
   "crossrefs": {
     "agentic_top10": [
       "ASI02",
-      "ASI05",
-      "ASI04",
-      "ASI10"
+      "ASI05"
     ],
     "dsgai_2026": [
       "DSGAI05",
-      "DSGAI12",
-      "DSGAI04",
-      "DSGAI19"
+      "DSGAI12"
     ]
   },
   "changelog": [

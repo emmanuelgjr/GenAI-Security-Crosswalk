@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 – DORA
+# LLM Top 10 2025 × DORA
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to the [Digital Operational Resilience Act (DORA)](https://eur-lex.europa.eu/eli/reg/2022/2554/oj)
@@ -24,6 +24,12 @@ testing programmes, and third-party oversight arrangements. This mapping
 enables financial institutions to trace each OWASP LLM Top 10 risk to
 specific DORA articles and implement controls that satisfy regulatory
 obligations.
+
+---
+
+## Why DORA for LLM security
+
+The Digital Operational Resilience Act (DORA) is the EU's binding regulatory framework for ICT risk management in the financial sector, effective January 2025, mandating comprehensive resilience testing, incident reporting, and third-party oversight. For financial entities deploying LLM-based AI systems, this mapping traces each OWASP LLM risk to specific DORA articles -- enabling compliance teams to integrate AI-specific threats into their ICT risk management framework and satisfy regulatory obligations for operational resilience.
 
 ---
 
@@ -51,9 +57,9 @@ obligations.
 |---|---|---|---|---|
 | LLM01 | Prompt Injection | Critical | Art. 9, Art. 24–27, Art. 10 | Both |
 | LLM02 | Sensitive Information Disclosure | High | Art. 9, Art. 17–23, Art. 5–7 | Both |
-| LLM03 | Training Data Poisoning | Critical | Art. 28–44, Art. 9, Art. 8 | Both |
-| LLM04 | Model DoS | High | Art. 9, Art. 10, Art. 12 | Both |
-| LLM05 | Supply Chain Vulnerabilities | High | Art. 28–44, Art. 8, Art. 5–7 | Both |
+| LLM03 | Supply Chain Vulnerabilities | High | Art. 28–44, Art. 8, Art. 5–7 | Both |
+| LLM04 | Data and Model Poisoning | Critical | Art. 28–44, Art. 9, Art. 8 | Both |
+| LLM05 | Insecure Output Handling | High | Art. 9, Art. 10, Art. 5–7 | Build |
 | LLM06 | Excessive Agency | High | Art. 5–7, Art. 9, Art. 24–27 | Build |
 | LLM07 | System Prompt Leakage | High | Art. 9, Art. 17–23, Art. 13 | Build |
 | LLM08 | Vector and Embedding Weaknesses | Medium | Art. 9, Art. 24–27 | Build |
@@ -144,7 +150,7 @@ detection capabilities to identify injection attempts in real time (Art. 10).
 | DORA RTS/ITS | Reference | https://www.eba.europa.eu/regulation-and-policy/digital-operational-resilience-act-dora |
 
 #### Cross-references
-- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse
+- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse & Exploitation
 - DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI12 Unsafe NL Data Gateways
 - Other frameworks: MITRE ATLAS AML.T0051 – FedRAMP SI-10 – SP 800-218A PW.2.1-PS
 
@@ -209,17 +215,81 @@ and maintain governance frameworks covering AI data handling (Art. 5–7).
 | Nightfall DLP | Commercial | https://www.nightfall.ai |
 
 #### Cross-references
-- Agentic Top 10: ASI03 Privilege Escalation
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure, DSGAI16 Erosion of Privacy
+- Agentic Top 10: ASI03 Identity & Privilege Abuse
+- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI16 Erosion of Privacy
 - Other frameworks: GDPR Art. 33–34 – FedRAMP SC-28 – SP 800-218A PS.1.1-PS
 
 ---
 
-### LLM03 – Training Data Poisoning
+### LLM03 – Supply Chain Vulnerabilities
+
+**Severity:** High
+
+LLM applications depend on third-party model weights, datasets, libraries,
+and plugins — any of which can be compromised. DORA requires financial
+entities to manage third-party ICT service provider risk including AI
+vendors (Art. 28–44), identify and classify all AI supply chain components
+(Art. 8), and maintain governance covering AI supply chain risk (Art. 5–7).
+
+#### DORA mapping
+
+| Requirement | Article | Group | Description |
+|---|---|---|---|
+| Third-Party Risk — AI vendor oversight | Art. 28–44 | Third-Party | Include AI model providers, dataset vendors, and ML library maintainers in third-party ICT risk management; conduct due diligence, contractual oversight, and ongoing monitoring |
+| Identification — AI supply chain assets | Art. 8 | Identification | Identify and classify all AI supply chain components — models, datasets, adapters, libraries, plugins — in the ICT asset inventory with provenance records |
+| ICT Risk Management — AI supply chain governance | Art. 5–7 | Governance | Include AI supply chain risk in the ICT risk management framework; define policies for AI component sourcing, vetting, and lifecycle management |
+| Resilience Testing — supply chain resilience | Art. 24–27 | Testing | Include AI supply chain disruption scenarios in resilience testing; test fallback procedures for third-party AI service failures |
+
+#### Mitigations
+
+**Foundational**
+- Art. 28–44: Include all AI service providers in third-party risk
+  assessments per DORA requirements; establish contractual provisions
+  covering security, incident notification, and audit rights
+- Art. 8: Maintain a complete ML SBOM for every production AI system;
+  register all AI components in the ICT asset inventory
+- Art. 5–7: Define an approved sources policy for AI components;
+  model weights, datasets, and libraries must come from vetted sources
+
+**Hardening**
+- Art. 28–44: Require contractual commitments from AI providers covering
+  security practices, vulnerability notification, and right to audit;
+  identify critical AI providers per DORA criteria
+- Art. 8: Implement automated supply chain integrity verification in
+  CI/CD; verify cryptographic signatures on all model artefacts
+- Art. 24–27: Include AI vendor failure scenarios in resilience testing;
+  test failover to alternative providers
+
+**Advanced**
+- Art. 28–44: Conduct on-site assessments of critical AI providers;
+  assess their security posture, training data practices, and incident
+  management capabilities
+- Art. 5–7: Include AI supply chain risk in board-level risk reporting;
+  monitor concentration risk across AI providers
+- Extend ML SBOM to cover runtime dynamic components; track at
+  inference time
+
+#### Tools
+
+| Tool | Type | Link |
+|---|---|---|
+| CycloneDX | Open-source | https://cyclonedx.org |
+| ModelScan | Open-source | https://github.com/protectai/modelscan |
+| OWASP Dependency-Check | Open-source | https://owasp.org/www-project-dependency-check/ |
+| Sigstore | Open-source | https://www.sigstore.dev |
+
+#### Cross-references
+- Agentic Top 10: ASI04 Agentic Supply Chain Vulnerabilities, ASI10 AI Agent Dependency Failures
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI19 Third-Party Data Risk
+- Other frameworks: MITRE ATLAS AML.T0056 – FedRAMP SR-2 – EBA Outsourcing Guidelines
+
+---
+
+### LLM04 – Data and Model Poisoning
 
 **Severity:** Critical
 
-Attackers corrupt training data or fine-tuning pipelines to embed backdoors
+Attackers corrupt training data, fine-tuning pipelines, or model weights to embed backdoors
 or bias model behaviour. DORA requires financial entities to manage
 third-party ICT service provider risk covering AI model and data providers
 (Art. 28–44), implement protection controls for training pipeline integrity
@@ -280,134 +350,70 @@ third-party ICT service provider risk covering AI model and data providers
 
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI05 Data Integrity & Validation Failures
-- Other frameworks: MITRE ATLAS AML.T0032 – FedRAMP SR-2 – SP 800-218A PS.1.1-PS
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI05 Data Integrity & Validation Failures
+- Other frameworks: MITRE ATLAS AML.T0020 – FedRAMP SR-2 – SP 800-218A PS.1.1-PS
 
 ---
 
-### LLM04 – Model DoS
+### LLM05 – Insecure Output Handling
 
 **Severity:** High
 
-Adversarial inputs trigger disproportionate compute, memory, or token
-consumption causing denial of service or runaway inference cost. DORA
-requires financial entities to implement protection controls for service
-availability (Art. 9), deploy detection for consumption anomalies (Art. 10),
-and maintain backup and recovery policies for AI services (Art. 12).
+LLM outputs injected into downstream systems without validation can trigger
+cross-site scripting, SQL injection, command execution, or privilege
+escalation. DORA requires financial entities to implement protection controls
+for system integrity (Art. 9), deploy detection for anomalous outputs
+(Art. 10), and maintain governance covering output validation (Art. 5–7).
 
 #### DORA mapping
 
 | Requirement | Article | Group | Description |
 |---|---|---|---|
-| Protection and Prevention — availability controls | Art. 9 | Protection | Implement rate limiting, token quotas, and cost circuit breakers on AI inference services to prevent resource exhaustion and denial of service |
-| Detection — consumption anomaly detection | Art. 10 | Detection | Monitor AI inference services for resource consumption anomalies; alert on token spikes, latency degradation, and cost overruns |
-| Backup Policies — AI service continuity | Art. 12 | Backup | Maintain backup model deployments, checkpoint restoration capability, and fallback inference paths for AI services supporting critical financial functions |
-| Response and Recovery — DoS incident response | Art. 11 | Recovery | Define response and recovery procedures for AI denial of service events; include automated throttling, failover, and service restoration |
+| Protection and Prevention — output validation controls | Art. 9 | Protection | Implement output sanitisation, encoding, and validation controls before LLM outputs reach downstream financial systems, APIs, or databases |
+| Detection — output anomaly detection | Art. 10 | Detection | Monitor LLM outputs for anomalous patterns indicating injection payloads, unexpected code fragments, or data exfiltration attempts |
+| ICT Risk Management — output trust governance | Art. 5–7 | Governance | Define policies governing trust boundaries between LLM outputs and downstream systems; mandate validation at all integration points |
+| ICT Incident Management — output-triggered incidents | Art. 17–23 | Incidents | Classify and report incidents where LLM outputs triggered downstream system compromise; include in major ICT incident reporting where applicable |
 
 #### Mitigations
 
 **Foundational**
-- Art. 9: Implement rate limiting and token quotas at the API gateway;
-  define per-user, per-session, and per-service consumption limits
-- Art. 10: Monitor AI inference resource consumption in real time;
-  establish baseline usage patterns and alert on deviations
-- Art. 12: Maintain backup model deployments for critical financial
-  AI services; document restoration procedures
+- Art. 9: Treat all LLM output as untrusted; apply context-appropriate
+  encoding and sanitisation before injecting into downstream systems
+- Art. 5–7: Define trust boundaries between LLM inference and downstream
+  financial systems; document acceptable output formats per integration
+- Art. 10: Log all LLM outputs at integration points; enable forensic
+  reconstruction of output-triggered incidents
 
 **Hardening**
-- Art. 9: Deploy cost circuit breakers that automatically suspend
-  service on threshold breach; per-tenant budgets with automatic
-  suspension
-- Art. 11: Define and test automated response to consumption incidents;
-  include failover to backup deployments and throttle activation
-- Art. 10: Include sponge example attacks and token amplification in
-  detection scenarios; test detection capabilities regularly
+- Art. 9: Implement structured output schemas (JSON Schema, XML Schema)
+  for all LLM-to-system integrations; reject non-conforming outputs
+- Art. 10: Deploy content security policies at LLM output boundaries;
+  detect and block outputs containing executable code, SQL fragments,
+  or markup injection patterns
+- Art. 17–23: Include LLM output injection in incident classification
+  taxonomy; define escalation paths for output-triggered compromises
 
 **Advanced**
-- Conduct adversarial cost-maximisation testing to identify maximum-cost
-  input patterns; apply additional controls at those paths
-- Art. 12: Include AI services in business continuity testing; verify
-  backup deployment can handle production load
-- Art. 11: Document AI service RTO and RPO per DORA requirements;
-  test recovery procedures quarterly
+- Art. 9: Implement LLM output sandboxing for high-risk integrations;
+  evaluate outputs in isolated environments before downstream execution
+- Art. 24–27: Include LLM output injection scenarios in adversarial
+  resilience testing; test all downstream integration points
+- Art. 13: Conduct post-incident analysis for output-triggered events;
+  update validation controls based on observed attack patterns
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| LiteLLM | Open-source | https://github.com/BerriAI/litellm |
-| Kong Gateway | Open-source | https://github.com/Kong/kong |
-| OpenTelemetry | Open-source | https://opentelemetry.io |
-| Locust | Open-source | https://locust.io |
+| Semgrep | Open-source | https://semgrep.dev |
+| DOMPurify | Open-source | https://github.com/cure53/DOMPurify |
+| OWASP ESAPI | Open-source | https://owasp.org/www-project-enterprise-security-api/ |
+| Guardrails AI | Open-source | https://www.guardrailsai.com |
 
 #### Cross-references
-- Agentic Top 10: ASI08 Cascading Agent Failures
-- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
-- Other frameworks: CWE-400 – FedRAMP SC-7 – SP 800-218A PW.2.1-PS
-
----
-
-### LLM05 – Supply Chain Vulnerabilities
-
-**Severity:** High
-
-LLM applications depend on third-party model weights, datasets, libraries,
-and plugins — any of which can be compromised. DORA requires financial
-entities to manage third-party ICT service provider risk including AI
-vendors (Art. 28–44), identify and classify all AI supply chain components
-(Art. 8), and maintain governance covering AI supply chain risk (Art. 5–7).
-
-#### DORA mapping
-
-| Requirement | Article | Group | Description |
-|---|---|---|---|
-| Third-Party Risk — AI vendor oversight | Art. 28–44 | Third-Party | Include AI model providers, dataset vendors, and ML library maintainers in third-party ICT risk management; conduct due diligence, contractual oversight, and ongoing monitoring |
-| Identification — AI supply chain assets | Art. 8 | Identification | Identify and classify all AI supply chain components — models, datasets, adapters, libraries, plugins — in the ICT asset inventory with provenance records |
-| ICT Risk Management — AI supply chain governance | Art. 5–7 | Governance | Include AI supply chain risk in the ICT risk management framework; define policies for AI component sourcing, vetting, and lifecycle management |
-| Resilience Testing — supply chain resilience | Art. 24–27 | Testing | Include AI supply chain disruption scenarios in resilience testing; test fallback procedures for third-party AI service failures |
-
-#### Mitigations
-
-**Foundational**
-- Art. 28–44: Include all AI service providers in third-party risk
-  assessments per DORA requirements; establish contractual provisions
-  covering security, incident notification, and audit rights
-- Art. 8: Maintain a complete ML SBOM for every production AI system;
-  register all AI components in the ICT asset inventory
-- Art. 5–7: Define an approved sources policy for AI components;
-  model weights, datasets, and libraries must come from vetted sources
-
-**Hardening**
-- Art. 28–44: Require contractual commitments from AI providers covering
-  security practices, vulnerability notification, and right to audit;
-  identify critical AI providers per DORA criteria
-- Art. 8: Implement automated supply chain integrity verification in
-  CI/CD; verify cryptographic signatures on all model artefacts
-- Art. 24–27: Include AI vendor failure scenarios in resilience testing;
-  test failover to alternative providers
-
-**Advanced**
-- Art. 28–44: Conduct on-site assessments of critical AI providers;
-  assess their security posture, training data practices, and incident
-  management capabilities
-- Art. 5–7: Include AI supply chain risk in board-level risk reporting;
-  monitor concentration risk across AI providers
-- Extend ML SBOM to cover runtime dynamic components; track at
-  inference time
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| CycloneDX | Open-source | https://cyclonedx.org |
-| ModelScan | Open-source | https://github.com/protectai/modelscan |
-| OWASP Dependency-Check | Open-source | https://owasp.org/www-project-dependency-check/ |
-| Sigstore | Open-source | https://www.sigstore.dev |
-
-#### Cross-references
-- Agentic Top 10: ASI04 Supply Chain Compromise, ASI10 AI Agent Dependency Failures
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI19 Third-Party Data Risk
-- Other frameworks: MITRE ATLAS AML.T0056 – FedRAMP SR-2 – EBA Outsourcing Guidelines
+- Agentic Top 10: ASI02 Tool Misuse & Exploitation
+- DSGAI 2026: DSGAI05 Data Integrity & Validation Failures, DSGAI12 Unsafe NL Data Gateways
+- Other frameworks: CWE-79, CWE-89 – OWASP ASVS V5 – NIST CSF PR.DS
 
 ---
 
@@ -471,8 +477,8 @@ entities to maintain ICT risk governance covering AI autonomy risk
 | LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse, ASI07 Lateral Tool Chaining
-- DSGAI 2026: DSGAI06 Tool, Plugin & Agent Data Exchange
+- Agentic Top 10: ASI01 Agent Goal Hijack, ASI02 Tool Misuse & Exploitation, ASI07 Lateral Tool Chaining
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
 - Other frameworks: FedRAMP AC-6 – SP 800-218A PW.1.1-PS – MITRE ATLAS AML.T0015
 
 ---
@@ -534,7 +540,7 @@ and apply lessons learned from extraction events (Art. 13).
 
 #### Cross-references
 - Agentic Top 10: ASI01 Agent Goal Hijack
-- DSGAI 2026: DSGAI08 Data Leakage & Exposure
+- DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI15 Over-Broad Context Windows
 - Other frameworks: CWE-200 – FedRAMP SC-28 – SP 800-218A PS.1.1-PS
 
 ---
@@ -595,8 +601,8 @@ embedding security in resilience testing (Art. 24–27).
 | OWASP ZAP | Open-source | https://www.zaproxy.org |
 
 #### Cross-references
-- Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
+- Agentic Top 10: ASI06 Memory & Context Poisoning
+- DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI13 Vector Store Platform Security
 - Other frameworks: MITRE ATLAS AML.T0018 – FedRAMP SC-28 – SP 800-218A PS.1.1-PS
 
 ---
@@ -658,8 +664,8 @@ improvement from misinformation incidents (Art. 13).
 | LangSmith | Commercial | https://smith.langchain.com |
 
 #### Cross-references
-- Agentic Top 10: ASI09 Emerging Agentic Patterns
-- DSGAI 2026: DSGAI17 Bias in Data
+- Agentic Top 10: ASI09 Human-Agent Trust Exploitation
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
 - Other frameworks: NIST AI RMF MAP 2.3 – FedRAMP SI-4 – SP 800-218A PW.7.2-PS
 
 ---
@@ -729,8 +735,8 @@ recovery policies for AI service continuity (Art. 12).
 
 | Phase | Governance (Art. 5–7) | Protection & Detection (Art. 9–10) | Testing & Third-Party (Art. 24–44) |
 |---|---|---|---|
-| 1 – Now | Include AI risk in ICT risk management framework (LLM06/09); define AI data policies (LLM02) | Art. 9 input validation for LLM01; output monitoring for LLM02/07; rate limiting for LLM04/10 | Art. 28–44 third-party AI provider assessment for LLM03/05 |
-| 2 – This sprint | AI autonomy policies for LLM06; AI supply chain governance for LLM05 | Art. 10 detection for LLM01/04/09/10; Art. 9 embedding protection for LLM08 | Art. 24–27 prompt injection testing for LLM01; supply chain resilience for LLM05 |
+| 1 – Now | Include AI risk in ICT risk management framework (LLM06/09); define AI data policies (LLM02) | Art. 9 input validation for LLM01; output validation for LLM05; output monitoring for LLM02/07; rate limiting for LLM10 | Art. 28–44 third-party AI provider assessment for LLM03/04 |
+| 2 – This sprint | AI autonomy policies for LLM06; AI supply chain governance for LLM03 | Art. 10 detection for LLM01/05/09/10; Art. 9 embedding protection for LLM08 | Art. 24–27 prompt injection testing for LLM01; supply chain resilience for LLM03 |
 | 3 – This quarter | Board-level AI risk reporting; AI incident classification criteria (LLM02/07) | Art. 9 comprehensive protection for all entries; Art. 10 AI behaviour monitoring | Art. 24–27 full AI resilience testing programme; Art. 28–44 critical provider assessments |
 | 4 – Ongoing | Governance framework refresh; regulatory reporting updates | Continuous monitoring; detection tuning; protection control updates | Annual resilience testing; third-party reassessment; threat intelligence sharing (Art. 45) |
 
@@ -751,6 +757,7 @@ recovery policies for AI service continuity (Art. 12).
 
 | Date | Version | Change | Author |
 |---|---|---|---|
+| 2026-05-25 | 2026-Q1-fix | Fix LLM03-LLM05 entry names to match 2025 LLM Top 10; add LLM05 Insecure Output Handling section; update cross-references to canonical names | OWASP GenAI Data Security Initiative |
 | 2026-03-28 | 2026-Q1 | Initial mapping – LLM01–LLM10 full entries | OWASP GenAI Data Security Initiative |
 
 ---

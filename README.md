@@ -223,7 +223,7 @@ All free. All open-source. Built for practitioners.
 | [Agentic_NISTCSF2.md](agentic-top10/Agentic_NISTCSF2.md) | NIST CSF 2.0 | GOVERN-first autonomy policy mapping, agentic CSF 2.0 profile |
 | [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) | ISA/IEC 62443 — OT/ICS | Agentic OT zone model, kill switch design, SL uplift table |
 | [Agentic_MAESTRO.md](agentic-top10/Agentic_MAESTRO.md) | MAESTRO — CSA | Seven-layer architectural threat model, layer-to-ASI mapping, session guide |
-| [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) | OWASP NHI Top 10 | Full NHI-to-ASI cross-mapping, NHI programme maturity table |
+| [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) | OWASP NHI Top 10 | Full NHI-to-ASI cross-mapping, NHI programme maturity table |
 | [Agentic_CISControls.md](agentic-top10/Agentic_CISControls.md) | CIS Controls v8.1 | IG1/IG2/IG3 safeguards, agentic NHI treated as CIS 5 privileged access |
 | [Agentic_ASVS.md](agentic-top10/Agentic_ASVS.md) | OWASP ASVS 4.0.3 | L1/L2/L3 verification checklist for agentic deployments |
 | [Agentic_AITG.md](agentic-top10/Agentic_AITG.md) | OWASP AI Testing Guide | 50 structured test cases across ASI01–ASI10 with pre-deployment gates |
@@ -331,7 +331,7 @@ GenAI-Security-Crosswalk/
 │   ├── Agentic_NISTCSF2.md
 │   ├── Agentic_ISA62443.md          ← OT/ICS
 │   ├── Agentic_MAESTRO.md           ← Threat modeling — 7-layer architecture
-│   ├── Agentic_OWASP_NHI.md         ← Non-Human Identity
+│   ├── Agentic_NHI.md         ← Non-Human Identity
 │   ├── Agentic_CISControls.md
 │   ├── Agentic_ASVS.md
 │   ├── Agentic_AITG.md              ← AI Testing Guide — 50 test cases
@@ -580,7 +580,7 @@ Find your entry point in under 60 seconds.
 → Start: [CROSSREF.md](CROSSREF.md) — master cross-reference across all 41 vulnerability IDs
 → Then: [Agentic_MAESTRO.md](agentic-top10/Agentic_MAESTRO.md) — architectural threat model (where does each risk originate?)
 → Then: [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) — score each risk; autonomy adds +1.79 avg severity
-→ Then: [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) — identity and credential controls
+→ Then: [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) — identity and credential controls
 
 **I am a SOC 2 auditor or GRC professional preparing a GenAI controls assessment**
 → Start: [LLM_SOC2.md](llm-top10/LLM_SOC2.md) — TSC mapping for SaaS/cloud LLM deployments
@@ -621,7 +621,7 @@ Find your entry point in under 60 seconds.
 → [LLM_ISA62443.md](llm-top10/LLM_ISA62443.md) · [Agentic_ISA62443.md](agentic-top10/Agentic_ISA62443.md) · [DSGAI_ISA62443.md](dsgai-2026/DSGAI_ISA62443.md) · [LLM_NISTSP80082.md](llm-top10/LLM_NISTSP80082.md)
  
 **Deploying autonomous agents**
-→ [Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) — identity governance
+→ [Agentic_NHI.md](agentic-top10/Agentic_NHI.md) — identity governance
 → [Agentic_AIUC1.md](agentic-top10/Agentic_AIUC1.md) — agentic governance certification
 → [Agentic_AIVSS.md](agentic-top10/Agentic_AIVSS.md) — risk scoring with autonomy premium
  
@@ -688,7 +688,7 @@ Key finding from the DSGAI mapping: **L2 Data Operations is the originating laye
  
 ### Complete agentic identity coverage
  
-[Agentic_OWASP_NHI.md](agentic-top10/Agentic_OWASP_NHI.md) maps every NHI Top 10 entry to every ASI entry — the only public document translating agentic security risks into the NHI controls that IAM teams already operate.
+[Agentic_NHI.md](agentic-top10/Agentic_NHI.md) maps every NHI Top 10 entry to every ASI entry — the only public document translating agentic security risks into the NHI controls that IAM teams already operate.
  
 ### SAMM maturity scorecard
  

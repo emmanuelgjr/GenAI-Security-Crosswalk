@@ -737,6 +737,12 @@ response procedures support NIS2 incident notification obligations.
 
 ---
 
+## See also
+
+- [Agentic Top 10 × ENISA](../agentic-top10/Agentic_ENISA.md)
+
+---
+
 ## References
 
 - [ENISA Multilayer Framework for Good Cybersecurity Practices for AI](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai)

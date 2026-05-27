@@ -1277,6 +1277,12 @@ documentation system that feeds the RAG corpus.
 
 ---
 
+## See also
+
+- [DSGAI 2026 × NIST SP 800-82](DSGAI_NISTSP80082.md)
+
+---
+
 ## References
 
 - [ISA/IEC 62443 series](https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards)

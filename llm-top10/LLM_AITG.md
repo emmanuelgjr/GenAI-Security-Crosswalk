@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 — OWASP AI Testing Guide
+# LLM Top 10 2025 × OWASP AI Testing Guide
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to the [OWASP AI Testing Guide (AITG)](https://owasp.org/www-project-ai-testing-guide/) —
@@ -856,6 +856,12 @@ For each automated test case:
 | P2 — High, include in first test cycle | LLM02, LLM05, LLM06 | Data disclosure, output injection, excessive agency | DPT, OHT, ACT |
 | P3 — High, include in first test cycle | LLM03, LLM07 | Supply chain and prompt leakage | SCT, IHT |
 | P4 — Medium, include in quarterly review | LLM08, LLM09, LLM10 | Embedding attacks, misinformation, consumption | DPT, MBT, AVT |
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
 
 ---
 

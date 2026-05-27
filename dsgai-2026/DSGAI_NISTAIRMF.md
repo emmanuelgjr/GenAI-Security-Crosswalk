@@ -28,6 +28,7 @@ governance programmes who need to operationalise the DSGAI risks within
 their existing framework.
 
 ---
+## Why # DSGAI 2026 × NIST AI RMF for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × NIST AI RMF controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × NIST AI RMF compliance and governance programmes.---
 
 ## AI RMF core functions — GenAI data security lens
 
@@ -1509,6 +1510,12 @@ A machine-readable version of this profile is available at:
 
 ---
 
+## See also
+
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
+
+---
+
 ## References
 
 - [NIST AI RMF 1.0](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf)
@@ -1516,7 +1523,7 @@ A machine-readable version of this profile is available at:
 - [NIST Trustworthy and Responsible AI Resource Center](https://airc.nist.gov)
 - [OWASP GenAI Data Security Risks & Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
 - [NIST SP 800-218A — Secure Software Development for AI](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
-- [Executive Order 14110 on Safe, Secure, and Trustworthy AI](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/)
+- [Executive Order 14110 on Safe, Secure, and Trustworthy AI (revoked January 2025)](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/)
 
 ---
 

@@ -21,6 +21,12 @@ GV.RM-01 before any technical controls are designed.
 
 ---
 
+## Why NIST CSF 2.0 for agentic AI security
+
+The NIST Cybersecurity Framework 2.0 is the most widely adopted cybersecurity risk management framework globally, with the new GOVERN function especially relevant for agentic AI. Autonomous systems require explicit governance policies around acceptable autonomy scope, human oversight requirements, and supply chain management that CSF 1.1 had no category for. This mapping traces each OWASP Agentic Top 10 risk to specific CSF 2.0 categories -- enabling organisations to integrate agentic AI threats into their existing cybersecurity risk management programme.
+
+---
+
 ## Quick-reference summary
 
 | ID | Name | Severity | Primary CSF 2.0 Categories | Tier |
@@ -561,6 +567,12 @@ without behavioural monitoring, rogue agents operate indefinitely.
 | DETECT | ASI10, ASI06, ASI08 | DE.CM-01/09, DE.AE-02 | Behavioural baselines established, memory monitoring live, cascade detection operational |
 | RESPOND | ASI01, ASI08, ASI10 | RS.AN-03, RS.MI-01 | Kill switch tested, incident response exercised for all ASI scenarios |
 | RECOVER | ASI08 | RC.RP-01 | BCP covers agent cluster failures, RTO/RPO defined and tested |
+
+---
+
+## See also
+
+- [DSGAI 2026 × NIST CSF 2.0](../dsgai-2026/DSGAI_NISTCSF2.md)
 
 ---
 

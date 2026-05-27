@@ -261,11 +261,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data confidentiality risks in OT",
-      "control_name": "§5.4",
+      "control_id": "ICS vulnerabilities",
+      "control_name": "§5.3",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "OT data exfiltration via compromised automation"
+      "notes": "Memory corruption and state manipulation"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -273,15 +273,7 @@
       "control_name": "§6.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Assess outbound data paths from agent"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network monitoring",
-      "control_name": "§7.3",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Monitor all outbound data from OT zone"
+      "notes": "Assess agent memory stores as OT data integrity risk"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -417,7 +409,15 @@
       "control_name": "Design / Threat Assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Enumerate all outbound data paths from agent: tools, APIs, generated output"
+      "notes": "Include memory store read/write paths in threat model"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "I-SB",
+      "control_name": "Implementation / Secure Build",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Validate and sanitise all content written to persistent memory"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -425,31 +425,23 @@
       "control_name": "Verification / Security Testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Test whether agent can be instructed to exfiltrate via each outbound channel"
+      "notes": "Test persistent memory integrity across session boundaries"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-IM",
-      "control_name": "Operations / Incident Management",
+      "control_id": "O-EM",
+      "control_name": "Operations / Environment Management",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Alert on unexpected data volumes in tool calls or API responses"
+      "notes": "Apply access controls, encryption at rest, and integrity verification to all memory stores"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
+      "control_id": "V-AA",
+      "control_name": "Verification / Architecture Assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Apply DLP controls to all agent-generated output before delivery"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "All agent outputs pass through content inspection before leaving system boundary"
+      "notes": "Confirm memory stores have appropriate access controls and integrity verification"
     },
     {
       "framework": "CWE/CVE",
@@ -825,15 +817,11 @@
   "crossrefs": {
     "llm_top10": [
       "LLM04",
-      "LLM08",
-      "LLM02",
-      "LLM03"
+      "LLM08"
     ],
     "dsgai_2026": [
       "DSGAI04",
-      "DSGAI13",
-      "DSGAI06",
-      "DSGAI08"
+      "DSGAI13"
     ]
   },
   "changelog": [

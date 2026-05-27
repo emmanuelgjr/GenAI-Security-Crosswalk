@@ -673,6 +673,14 @@ AI deployments against the Agentic Top 10 risk coverage:
 
 ---
 
+## See also
+
+- [LLM Top 10 × NHI](../llm-top10/LLM_NHI.md)
+- [DSGAI 2026 × NHI](../dsgai-2026/DSGAI_NHI.md)
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
+
+---
+
 ## References
 
 - [OWASP NHI Top 10](https://owasp.org/www-project-non-human-identities-top-10/)

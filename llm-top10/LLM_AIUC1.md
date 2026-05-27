@@ -23,6 +23,12 @@ standard customer expectation.
 
 ---
 
+## Why AIUC-1 for LLM security
+
+AIUC-1 is the world's first AI agent security certification framework, developed with 100+ Fortune 500 CISOs and used as the SOC 2 analog for AI agents. For organisations deploying LLM applications that act on behalf of users, this mapping traces each OWASP LLM risk to specific AIUC-1 controls across its six domains (Security, Safety, Reliability, Data & Privacy, Accountability, Society) -- enabling teams to demonstrate auditable AI security posture against an emerging industry certification standard.
+
+---
+
 ## AIUC-1 domains at a glance
 
 | Domain | ID | Focus |
@@ -468,6 +474,12 @@ window exhaustion, or disproportionate compute consumption.
 | D — Reliability | Rate limiting and fault tolerance | | | | | | | | | | ✓ |
 | E — Accountability | Audit trails and logging | | ✓ | | ✓ | | ✓ | ✓ | | ✓ | ✓ |
 | F — Society | Transparency and bias controls | | | | | | | | | ✓ | |
+
+---
+
+## See also
+
+- [DSGAI 2026 × AIUC-1](../dsgai-2026/DSGAI_AIUC1.md)
 
 ---
 

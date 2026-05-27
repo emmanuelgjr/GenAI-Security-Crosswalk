@@ -261,27 +261,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risks",
-      "control_name": "§5.5",
-      "tier": "Foundational",
+      "control_id": "ICS vulnerabilities",
+      "control_name": "§5.3",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Third-party tool components in OT"
+      "notes": "Code execution bypass is a critical OT threat vector"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk management",
-      "control_name": "§6.3",
-      "tier": "Foundational",
+      "control_id": "Risk assessment",
+      "control_name": "§6.2",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Tool integration approval process"
+      "notes": "Code execution capability in OT agents must be in risk register"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Third-party management",
-      "control_name": "§8.4",
-      "tier": "Foundational",
+      "control_id": "Secure architecture",
+      "control_name": "§7.1",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Vendor assessment for OT tool providers"
+      "notes": "Mandatory: code execution sandbox independent of OT control plane"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -413,43 +413,43 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
-      "tier": "Foundational",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Security requirements for every tool: auth, scope, output validation"
+      "notes": "Sandbox controls must be layered — no single-point bypass path"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
-      "tier": "Foundational",
+      "control_id": "V-AA",
+      "control_name": "Verification / Architecture Assessment",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Only approved tools can be registered; unsigned tools are rejected"
+      "notes": "Independent review of every sandbox escape scenario"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "V-ST",
       "control_name": "Verification / Security Testing",
-      "tier": "Foundational",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Automated checks on tool descriptors, endpoints, and permissions"
+      "notes": "Dedicated red team exercise targeting sandbox escape"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Foundational",
+      "control_id": "O-IM",
+      "control_name": "Operations / Incident Management",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Process for approving, reviewing, and revoking tool integrations"
+      "notes": "Alert immediately when unexpected code execution detected"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
+      "control_id": "G-SM",
+      "control_name": "Governance / Strategy & Metrics",
+      "tier": "Advanced",
       "scope": "Both",
-      "notes": "Alert on tool calls outside normal operating parameters"
+      "notes": "No production agent with code execution without signed sandbox architecture review"
     },
     {
       "framework": "CWE/CVE",
@@ -674,7 +674,7 @@
       "control_name": "ICT Incident Management — code execution incident reporting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify uncontrolled code execution events as ICT-related incidents; assess impact on financial systems and report per DORA criteria"
+      "notes": "Classify unexpected code execution events as ICT-related incidents; assess impact on financial systems and report per DORA criteria"
     },
     {
       "framework": "DORA",
@@ -840,19 +840,10 @@
   ],
   "crossrefs": {
     "llm_top10": [
-      "LLM05",
-      "LLM07",
-      "LLM03",
-      "LLM02",
-      "LLM01",
-      "LLM06"
+      "LLM05"
     ],
     "dsgai_2026": [
-      "DSGAI12",
-      "DSGAI13",
-      "DSGAI06",
-      "DSGAI05",
-      "DSGAI08"
+      "DSGAI12"
     ]
   },
   "changelog": [

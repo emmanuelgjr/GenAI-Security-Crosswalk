@@ -18,6 +18,7 @@ the Cloud Security Alliance's threat modeling framework for agentic AI.
 Co-Chair of AI Safety Working Groups, Cloud Security Alliance.
 
 ---
+## Why # DSGAI 2026 × MAESTRO for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × MAESTRO controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × MAESTRO compliance and governance programmes.---
 
 ## MAESTRO and GenAI data security
 
@@ -83,6 +84,15 @@ to the right team and system component.
 | DSGAI19 | Human-in-Loop & Labeler Overexposure | L2 | L6, L7 |
 | DSGAI20 | Model Exfiltration & IP Replication | L1 | L5, L6 |
 | DSGAI21 | Disinformation via Data Poisoning | L2 | L1, L5 |
+
+---
+
+## Audience tags
+
+- **Security architect** — full file, MAESTRO layer mapping for GenAI data security
+- **ML engineer** — DSGAI04, DSGAI05, DSGAI12, DSGAI13 (data pipeline and model layers)
+- **CISO / governance** — DSGAI07, DSGAI08 (governance and compliance layers)
+- **Red teamer** — DSGAI01, DSGAI04, DSGAI18, DSGAI20 (attack-surface layers)
 
 ---
 
@@ -1265,6 +1275,12 @@ controls from the companion DSGAI files:
 determines priority. L2-origin threats that propagate to L1 and
 evade L5 are P1. Layer-contained threats with defined mitigations
 are P2.
+
+---
+
+## See also
+
+- [LLM Top 10 × MAESTRO](../llm-top10/LLM_MAESTRO.md)
 
 ---
 

@@ -1244,6 +1244,15 @@ deployment checklist in `LLM_ISA62443.md`.
 
 ---
 
+## See also
+
+- [Agentic Top 10 × NIST SP 800-82](Agentic_NISTSP80082.md)
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
+- [DSGAI 2026 × ISA/IEC 62443](../dsgai-2026/DSGAI_ISA62443.md)
+- [DSGAI 2026 × NIST SP 800-82](../dsgai-2026/DSGAI_NISTSP80082.md)
+
+---
+
 ## References
 
 - [ISA/IEC 62443 series](https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards)

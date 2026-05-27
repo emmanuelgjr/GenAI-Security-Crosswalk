@@ -613,6 +613,12 @@ audit that includes agentic AI system scope:
 
 ---
 
+## See also
+
+- [DSGAI 2026 × SOC 2](../dsgai-2026/DSGAI_SOC2.md)
+
+---
+
 ## References
 
 - [SOC 2 Trust Services Criteria](https://www.aicpa-cima.com/resources/landing/2017-trust-services-criteria)

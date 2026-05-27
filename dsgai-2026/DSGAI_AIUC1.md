@@ -20,6 +20,7 @@ map directly to the data security concerns across the DSGAI taxonomy —
 Domain A (Data & Privacy) alone covers a majority of the 21 DSGAI entries.
 
 ---
+## Why # DSGAI 2026 × AIUC-1 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × AIUC-1 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × AIUC-1 compliance and governance programmes.---
 
 ## AIUC-1 domains at a glance
 
@@ -77,7 +78,7 @@ Domain A (Data & Privacy) alone covers a majority of the 21 DSGAI entries.
 
 ---
 
-### DSGAI01 — Prompt Injection via Data Channels
+### DSGAI01 — Sensitive Data Leakage
 
 Malicious instructions embedded in training data, retrieved documents,
 or tool outputs manipulate model behaviour at inference time.
@@ -99,7 +100,7 @@ or tool outputs manipulate model behaviour at inference time.
 
 ---
 
-### DSGAI02 — Training Data Poisoning
+### DSGAI02 — Agent Identity & Credential Exposure
 
 OT process data or public datasets used in training are corrupted —
 causing models to learn backdoored, biased, or degraded behaviours.
@@ -121,7 +122,7 @@ causing models to learn backdoored, biased, or degraded behaviours.
 
 ---
 
-### DSGAI03 — Sensitive Data in Training Sets
+### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
 PII, credentials, trade secrets, or regulated data included in training
 sets lead to model memorisation and potential disclosure at inference.
@@ -142,7 +143,7 @@ sets lead to model memorisation and potential disclosure at inference.
 
 ---
 
-### DSGAI04 — Insecure Data Pipelines
+### DSGAI04 — Data Model & Artifact Poisoning
 
 Data ingestion, preprocessing, and serving pipelines lack authentication,
 integrity controls, or logging — enabling tampering or exfiltration.
@@ -164,7 +165,7 @@ integrity controls, or logging — enabling tampering or exfiltration.
 
 ---
 
-### DSGAI05 — Guardrail Circumvention
+### DSGAI05 — Data Integrity & Validation Failures
 
 Safety guardrails protecting GenAI system outputs are bypassed through
 adversarial prompting, model manipulation, or architectural weaknesses.
@@ -186,7 +187,7 @@ adversarial prompting, model manipulation, or architectural weaknesses.
 
 ---
 
-### DSGAI06 — Unintended Data Disclosure
+### DSGAI06 — Tool Plugin & Agent Data Exchange
 
 GenAI systems surface sensitive information in responses through
 memorisation, over-retrieval, or insufficient output filtering.
@@ -208,7 +209,7 @@ memorisation, over-retrieval, or insufficient output filtering.
 
 ---
 
-### DSGAI07 — Excessive Data Access
+### DSGAI07 — Data Governance & Lifecycle
 
 GenAI systems are granted data access beyond their declared function —
 creating unnecessary exposure and blast radius on compromise.
@@ -230,7 +231,7 @@ creating unnecessary exposure and blast radius on compromise.
 
 ---
 
-### DSGAI08 — Data Leakage in Retrieval
+### DSGAI08 — Non-Compliance & Regulatory Violations
 
 RAG pipelines return documents exceeding user entitlement — exposing
 data from other tenants, higher-sensitivity tiers, or access-controlled corpora.
@@ -251,7 +252,7 @@ data from other tenants, higher-sensitivity tiers, or access-controlled corpora.
 
 ---
 
-### DSGAI09 — RAG Corpus Manipulation
+### DSGAI09 — Multimodal Cross-Channel Leakage
 
 Attackers tamper with RAG corpora — through data pipeline compromise
 or malicious document injection — causing retrieval to return manipulated
@@ -274,7 +275,7 @@ content that steers model outputs.
 
 ---
 
-### DSGAI10 — Context Window Poisoning
+### DSGAI10 — Synthetic Data & Anonymization Pitfalls
 
 Malicious content injected into the active context window through tool
 output or retrieved documents manipulates in-context reasoning.
@@ -295,7 +296,7 @@ output or retrieved documents manipulates in-context reasoning.
 
 ---
 
-### DSGAI11 — Session Persistence Attacks
+### DSGAI11 — Cross-Context Conversation Bleed
 
 Attackers exploit session memory to persist malicious instructions or
 extracted information across session boundaries.
@@ -316,7 +317,7 @@ extracted information across session boundaries.
 
 ---
 
-### DSGAI12 — Model Inversion and Extraction
+### DSGAI12 — Unsafe NL Data Gateways
 
 Adversaries query models systematically to reconstruct training data
 or replicate model weights through systematic prompting.
@@ -338,7 +339,7 @@ or replicate model weights through systematic prompting.
 
 ---
 
-### DSGAI13 — Data Leakage through Tool Integration
+### DSGAI13 — Vector Store Platform Security
 
 GenAI system tool integrations leak data to unauthorised parties through
 misconfigured permissions or over-broad API responses.
@@ -360,7 +361,7 @@ misconfigured permissions or over-broad API responses.
 
 ---
 
-### DSGAI14 — Model Weight Theft
+### DSGAI14 — Excessive Telemetry & Monitoring Leakage
 
 Proprietary model weights are stolen through infrastructure compromise,
 insider threat, or API extraction.
@@ -381,7 +382,7 @@ insider threat, or API extraction.
 
 ---
 
-### DSGAI15 — Inference Data Exposure
+### DSGAI15 — Over-Broad Context Windows
 
 Input data submitted at inference time is logged or retained in ways
 that expose it to unauthorised parties.
@@ -402,7 +403,7 @@ that expose it to unauthorised parties.
 
 ---
 
-### DSGAI16 — Third-Party Data Dependencies
+### DSGAI16 — Endpoint & Browser Overreach
 
 GenAI systems depend on external data sources whose security cannot
 be guaranteed, introducing supply chain risks.
@@ -423,7 +424,7 @@ be guaranteed, introducing supply chain risks.
 
 ---
 
-### DSGAI17 — Model Supply Chain Risks
+### DSGAI17 — Data Availability & Resilience Failures
 
 Pre-trained models, adapters, or ML frameworks are compromised —
 introducing backdoored models or vulnerable code into production.
@@ -445,7 +446,7 @@ introducing backdoored models or vulnerable code into production.
 
 ---
 
-### DSGAI18 — Data Retention and Deletion Failures
+### DSGAI18 — Inference & Data Reconstruction
 
 GenAI systems retain personal data or training artefacts beyond required
 retention periods or fail to honour deletion requests.
@@ -465,7 +466,7 @@ retention periods or fail to honour deletion requests.
 
 ---
 
-### DSGAI19 — Cascading Data Failures
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 Failures in data pipelines propagate through multiple GenAI components,
 causing compounding degradation in downstream dependent systems.
@@ -486,7 +487,7 @@ causing compounding degradation in downstream dependent systems.
 
 ---
 
-### DSGAI20 — Regulatory Non-Compliance in Data Use
+### DSGAI20 — Model Exfiltration & IP Replication
 
 GenAI systems process personal data in ways that violate applicable law —
 GDPR, CCPA, HIPAA, EU AI Act — through inadequate consent, cross-border
@@ -509,7 +510,7 @@ transfers, or prohibited processing.
 
 ---
 
-### DSGAI21 — Data Provenance and Lineage Failures
+### DSGAI21 — Disinformation & Integrity Attacks
 
 GenAI systems cannot demonstrate where training data, retrieved
 documents, or inference inputs originated — preventing audit and

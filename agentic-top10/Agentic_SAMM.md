@@ -1,6 +1,6 @@
 <!--
   GenAI Security Crosswalk
-  Source list : OWASP Top 10 for Agentic AI Applications 2026 (ASI01-ASI10)
+  Source list : OWASP Top 10 for Agentic Applications 2026 (ASI01-ASI10)
   Framework   : OWASP SAMM v2.0 — Software Assurance Maturity Model
   Version     : 2026-Q1
   Maintained by: OWASP GenAI Data Security Initiative — https://genai.owasp.org
@@ -9,7 +9,7 @@
 
 # Agentic Top 10 2026 × OWASP SAMM v2.0
 
-Mapping the [OWASP Top 10 for Agentic AI Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+Mapping the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 to the [OWASP Software Assurance Maturity Model (SAMM) v2.0](https://owaspsamm.org/) —
 the framework for measuring and improving software security programme
 maturity across the SDLC.
@@ -66,16 +66,16 @@ attack surface.
 
 | ID | Name | Severity | Primary SAMM Practices | Maturity Target | Tier |
 |---|---|---|---|---|---|
-| ASI01 | Prompt Injection in Agentic Systems | Critical | D-TA, I-SB, V-ST, O-IM | L2 min / L3 for high-risk | Foundational–Advanced |
-| ASI02 | Excessive Permissions and Scope | High | D-SA, G-SM, V-AA, O-OM | L2 min | Foundational–Hardening |
-| ASI03 | Memory Manipulation and Persistence | High | D-TA, I-SB, V-ST, O-EM | L2 min | Hardening–Advanced |
-| ASI04 | Multi-Agent Trust Exploitation | High | D-TA, D-SA, G-PC, V-AA | L2 min | Hardening–Advanced |
-| ASI05 | Tool and Plugin Abuse | High | D-SR, I-SB, V-ST, G-PC | L2 min | Foundational–Hardening |
-| ASI06 | Data Exfiltration via Agentic Channels | Critical | D-TA, V-ST, O-IM, O-OM | L2 min / L3 for high-risk | Hardening–Advanced |
-| ASI07 | Supply Chain Compromise in Agent Ecosystems | High | G-PC, I-SB, V-AA, D-TA | L2 min | Foundational–Hardening |
-| ASI08 | Inversion of Safety Controls | Critical | D-SA, V-AA, V-ST, O-IM | L3 | Advanced |
-| ASI09 | Inadequate Human Oversight and Control | High | G-SM, D-SA, O-IM, O-OM | L2 min | Foundational–Hardening |
-| ASI10 | Cascading Agent Failures | High | D-SA, O-IM, O-EM, V-AA | L2 min | Hardening–Advanced |
+| ASI01 | Agent Goal Hijack | Critical | D-TA, I-SB, V-ST, O-IM | L2 min / L3 for high-risk | Foundational–Advanced |
+| ASI02 | Tool Misuse & Exploitation | Critical | D-SR, I-SB, V-ST, G-PC | L2 min | Foundational–Hardening |
+| ASI03 | Identity & Privilege Abuse | Critical | D-SA, G-SM, V-AA, O-OM | L2 min | Foundational–Advanced |
+| ASI04 | Agentic Supply Chain Vulnerabilities | High | G-PC, I-SB, V-AA, D-TA | L2 min | Foundational–Hardening |
+| ASI05 | Unexpected Code Execution | Critical | D-SA, V-AA, V-ST, O-IM | L3 | Advanced |
+| ASI06 | Memory & Context Poisoning | High | D-TA, I-SB, V-ST, O-EM | L2 min | Hardening–Advanced |
+| ASI07 | Insecure Inter-Agent Communication | High | D-SA, D-TA, G-PC, V-AA | L2 min | Hardening–Advanced |
+| ASI08 | Cascading Agent Failures | High | D-SA, O-IM, O-EM, V-AA | L2 min | Hardening–Advanced |
+| ASI09 | Human-Agent Trust Exploitation | Medium | G-SM, G-EG, D-SA, O-OM | L2 min | Foundational–Hardening |
+| ASI10 | Rogue Agents | Critical | D-TA, V-ST, O-IM, O-OM | L2 min / L3 for high-risk | Hardening–Advanced |
 
 **SAMM practice codes:**
 G-SM = Governance / Strategy & Metrics ·
@@ -112,8 +112,11 @@ O-OM = Operations / Operational Management
 
 ---
 
-### ASI01 — Prompt Injection in Agentic Systems
+### ASI01 — Agent Goal Hijack
 
+**Severity:** Critical
+
+An attacker redirects agent objectives through instruction injection.
 Adversarial instructions embedded in untrusted content (tool outputs,
 retrieved documents, API responses) hijack agent goal execution,
 tool invocation, and action sequences.
@@ -150,156 +153,30 @@ tool invocation, and action sequences.
 
 #### Cross-references
 
-- LLM Top 10: LLM01 (Prompt Injection)
-- DSGAI: DSGAI01 (Prompt Injection via Data Channels)
+- LLM Top 10: LLM01 Prompt Injection, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - See also: [Agentic_AITG.md](Agentic_AITG.md) TC-ASI01, [Agentic_MITREATLAS.md](Agentic_MITREATLAS.md) AML.T0054
 
 ---
 
-### ASI02 — Excessive Permissions and Scope
+### ASI02 — Tool Misuse & Exploitation
 
-Agents granted overly broad permissions — filesystem access, API
-scopes, database rights — beyond those required for their declared
-task. Violation of least-privilege creates irreversible blast radius
-when compromised.
+**Severity:** Critical
 
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Least-privilege agent permission model | L2 required | Define per-agent permission sets; review in architecture assessment |
-| Governance / Strategy & Metrics (G-SM) | B — Roadmap | Agentic access governance policy | L2 required | Formalise agent identity and permission lifecycle |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Agent permission audit | L2 required | Periodic review of declared vs granted permissions per agent |
-| Operations / Operational Management (O-OM) | B — Review | Permission drift detection | L2 required | Alert when agent requests permissions outside declared scope |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Agent permission policy | L1 minimum | Document what permissions each agent class is authorised to hold |
-
-**Maturity target:** L2 minimum; architecture review must include explicit permission scope sign-off.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Enumerate all permissions currently granted to each agent in production
-- Remove any permissions not exercised in the past 30 days (JIT pattern)
-- Treat agent identities as NHI: apply OWASP NHI Top 10 controls
-
-**Tier 2 — Short-term:**
-- Implement permission scope declaration in agent manifest/descriptor
-- Gate deployments: no deployment without signed permission manifest
-- Automate drift detection: alert when runtime permissions exceed manifest
-
-**Tier 3 — Strategic:**
-- Achieve D-SA L3: architecture review board includes agent permission review
-- Implement dynamic JIT permission issuance per task (see RECIPES.md)
-- Quarterly access review for all agent identities
-
-#### Cross-references
-
-- LLM Top 10: LLM06 (Excessive Agency)
-- DSGAI: DSGAI07 (Excessive Data Access)
-- See also: [Agentic_OWASP_NHI.md](Agentic_OWASP_NHI.md) NHI-2/NHI-3, [Agentic_ASVS.md](Agentic_ASVS.md)
-
----
-
-### ASI03 — Memory Manipulation and Persistence
-
-Attackers corrupt agent memory — short-term context, long-term
-episodic stores, shared memory buses — to implant false beliefs,
-alter future decisions, or persist across agent restarts.
+Agents misuse legitimate tools via prompt manipulation or unsafe delegation.
+Agents exploit or are manipulated into misusing tools, APIs, and external
+services — invoking destructive operations, passing LLM-generated parameters
+without validation, or chaining tool calls into harmful sequences.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Memory attack surface model | L2 required | Include memory store read/write paths in threat model |
-| Implementation / Secure Build (I-SB) | A — Build Process | Memory input validation | L2 required | Validate and sanitise all content written to persistent memory |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Memory poisoning test cases | L2 required | Test persistent memory integrity across session boundaries |
-| Operations / Environment Management (O-EM) | A — Patching | Memory store hardening | L2 required | Apply access controls, encryption at rest, and integrity verification to all memory stores |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Memory store architecture review | L1 minimum | Confirm memory stores have appropriate access controls |
-
-**Maturity target:** L2 minimum; memory stores must be treated as security-critical infrastructure.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Apply access controls to all persistent memory stores (vector DB, relational, episodic)
-- Add integrity metadata (HMAC or signature) to all memory writes
-- Log all memory read/write operations
-
-**Tier 2 — Short-term:**
-- Implement memory validation pipeline: content written to persistent memory passes sanitisation
-- Add memory anomaly detection: flag unexpected belief updates
-- Define memory TTL and rotation policy
-
-**Tier 3 — Strategic:**
-- Periodic memory audit: replay historical decisions to detect contamination
-- Implement formal provenance tracking for all memory entries
-- Cross-session memory integrity verification
-
-#### Cross-references
-
-- DSGAI: DSGAI10 (Context Window Poisoning), DSGAI11 (Session Persistence Attacks)
-- See also: [Agentic_AITG.md](Agentic_AITG.md) TC-ASI03, [LLM_CWE_CVE.md](../llm-top10/LLM_CWE_CVE.md)
-
----
-
-### ASI04 — Multi-Agent Trust Exploitation
-
-Malicious or compromised agents in a multi-agent orchestration
-environment are trusted by peer agents or orchestrators, enabling
-lateral movement, instruction injection, or coordinated attacks
-across the agent network.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Inter-agent trust boundary model | L2 required | Explicitly model trust relationships between agents; default deny |
-| Design / Security Architecture (D-SA) | A — Architecture | Agent authentication framework | L2 required | Mutual authentication between all agent-to-agent communication |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Multi-agent deployment policy | L2 required | Policy governing what agents may instruct other agents to do |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Inter-agent trust architecture review | L2 required | Review and document all agent-to-agent trust grants |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Rogue agent simulation | L2 required | Test whether a compromised sub-agent can escalate through the network |
-
-**Maturity target:** L2 minimum; no multi-agent deployment without explicit trust architecture review.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Implement authentication tokens for all inter-agent messages
-- Establish maximum privilege boundary: no agent may grant permissions it does not hold
-- Log all inter-agent instruction exchanges
-
-**Tier 2 — Short-term:**
-- Deploy agent identity registry: all agents have verifiable, revocable identities
-- Implement message signing for orchestrator-to-agent instructions
-- Red team exercise: simulate compromised sub-agent attempting lateral movement
-
-**Tier 3 — Strategic:**
-- Formal trust model: cryptographic attestation of agent identity and permission set
-- Automated verification that no agent in a network exceeds declared scope
-- D-TA L3: threat model updated after every new agent added to orchestration network
-
-#### Cross-references
-
-- LLM Top 10: LLM08 (Excessive Agency via Multi-Model)
-- See also: [Agentic_MITREATLAS.md](Agentic_MITREATLAS.md), [Agentic_OWASP_NHI.md](Agentic_OWASP_NHI.md) NHI-1
-
----
-
-### ASI05 — Tool and Plugin Abuse
-
-Malicious, misconfigured, or shadow tools integrated into agentic
-workflows are invoked by agents, enabling data exfiltration, privilege
-escalation, or unintended action execution via the tool interface.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Requirements (D-SR) | A — Requirements | Tool integration security requirements | L2 required | Security requirements for every tool: auth, scope, output validation |
-| Implementation / Secure Build (I-SB) | A — Build Process | Tool allow-list enforcement | L2 required | Only approved tools can be registered; unsigned tools are rejected |
-| Verification / Security Testing (V-ST) | A — Automated | Tool integration scanning | L2 required | Automated checks on tool descriptors, endpoints, and permissions |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Third-party tool approval policy | L2 required | Process for approving, reviewing, and revoking tool integrations |
-| Operations / Operational Management (O-OM) | A — Monitoring | Tool call anomaly detection | L1 minimum | Alert on tool calls outside normal operating parameters |
+| Design / Security Requirements (D-SR) | A — Requirements | Tool integration security requirements | L2 required | Security requirements for every tool: auth, scope, parameter validation, irreversibility classification |
+| Implementation / Secure Build (I-SB) | A — Build Process | Tool allow-list enforcement | L2 required | Only approved tools can be registered; unsigned tools are rejected; MCP descriptor integrity verified |
+| Verification / Security Testing (V-ST) | A — Automated | Tool invocation scanning | L2 required | Automated checks on tool descriptors, parameters, and permissions; destructive parameter detection |
+| Governance / Policy & Compliance (G-PC) | A — Policy | Tool access governance policy | L2 required | Process for approving, reviewing, and revoking tool integrations; human confirmation for irreversible ops |
+| Operations / Operational Management (O-OM) | A — Monitoring | Tool call anomaly detection | L1 minimum | Alert on tool calls outside normal operating parameters; misuse pattern detection |
 
 **Maturity target:** L2 minimum; tool governance programme required before any third-party tool integration.
 
@@ -307,77 +184,83 @@ escalation, or unintended action execution via the tool interface.
 
 **Tier 1 — Immediate:**
 - Enumerate all tools currently accessible to deployed agents
-- Remove any unreviewed tools from production immediately
-- Validate all tool descriptors (MCP server schemas) for completeness and accuracy
+- Implement per-tool permission manifests with minimum scope
+- Require human confirmation for all irreversible tool invocations
 
 **Tier 2 — Short-term:**
 - Implement tool review board: all tools reviewed before integration
-- Add tool call logging and anomaly detection
-- Conduct red team exercise: provide malicious tool descriptor to agent
+- Validate all LLM-generated tool parameters as untrusted input
+- Add tool call logging with full parameter capture and anomaly detection
 
 **Tier 3 — Strategic:**
-- I-SB L3: automated tool supply chain analysis in CI/CD
+- I-SB L3: MCP tool descriptor integrity verification in CI/CD
 - Continuous tool permission drift detection
-- Tool descriptor integrity verification (see RECIPES.md)
+- Formal tool chain analysis — verify no permitted combination achieves harmful outcomes
 
 #### Cross-references
 
-- LLM Top 10: LLM07 (System Prompt Leakage via Tools), LLM03 (Supply Chain)
-- DSGAI: DSGAI13 (Data Leakage through Tool Integration)
-- See also: [Agentic_AITG.md](Agentic_AITG.md) TC-ASI05, [Agentic_CWE_CVE.md](Agentic_CWE_CVE.md)
+- LLM Top 10: LLM05 Insecure Output Handling, LLM06 Excessive Agency
+- DSGAI 2026: DSGAI06 Tool Plugin & Agent Data Exchange
+- See also: [Agentic_AITG.md](Agentic_AITG.md) TC-ASI02, [Agentic_NHI.md](Agentic_NHI.md) NHI-5
 
 ---
 
-### ASI06 — Data Exfiltration via Agentic Channels
+### ASI03 — Identity & Privilege Abuse
 
-Agents with broad data access and outbound communication capabilities
-are used — intentionally by an attacker or through injection — to
-exfiltrate sensitive data via tool calls, API requests, generated
-output, or inter-agent messages.
+**Severity:** Critical
+
+Agents inherit and cache credentials exploited for lateral movement.
+Agents exploit misconfigured permissions, inherited credentials, or
+inter-agent trust to access resources beyond their intended scope —
+using cached tokens, accumulating privileges through delegation, or
+impersonating other agent identities.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Exfiltration path analysis | L2 required | Enumerate all outbound data paths from agent: tools, APIs, generated output |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Exfiltration simulation | L2 required | Test whether agent can be instructed to exfiltrate via each outbound channel |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Outbound data volume alerting | L2 required | Alert on unexpected data volumes in tool calls or API responses |
-| Operations / Operational Management (O-OM) | A — Monitoring | DLP integration for agent outputs | L2 required | Apply DLP controls to all agent-generated output before delivery |
-| Design / Security Architecture (D-SA) | B — Controls | Output filtering architecture | L2 required | All agent outputs pass through content inspection before leaving system boundary |
+| Design / Security Architecture (D-SA) | A — Architecture | Agent identity and privilege model | L2 required | Define per-agent NHI, credential scope, privilege ceiling; enforce at architecture level |
+| Governance / Strategy & Metrics (G-SM) | B — Roadmap | Agent credential governance policy | L2 required | Formalise agent identity lifecycle — issuance, rotation, revocation, audit |
+| Verification / Architecture Assessment (V-AA) | A — Assessment | Agent credential audit | L2 required | Periodic review of credential scope, inherited permissions, and privilege accumulation paths |
+| Operations / Operational Management (O-OM) | B — Review | Credential anomaly detection | L2 required | Alert when agent uses credentials outside declared scope or exhibits lateral movement |
+| Governance / Policy & Compliance (G-PC) | A — Policy | Agent NHI policy | L1 minimum | Document that each agent must have unique NHI with minimum scope and short TTL |
 
-**Maturity target:** L2 minimum; L3 for agents with access to PII, PCI data, or classified information.
+**Maturity target:** L2 minimum; architecture review must include explicit credential scope sign-off.
 
 #### Three-tier mitigations
 
 **Tier 1 — Immediate:**
-- Apply output content inspection to all agent responses
-- Restrict tool call payloads: define maximum data volume per tool invocation
-- Log all outbound data with full payloads for forensic review
+- Assign unique NHI to every agent deployment; no shared credentials
+- Enforce short TTL on all agent credentials with automatic expiry
+- Treat agent identities as NHI: apply OWASP NHI Top 10 controls
 
 **Tier 2 — Short-term:**
-- Deploy DLP scanning on agent output pipeline
-- Implement per-session data access budgets
-- Red team: simulate SSRF-style exfiltration via tool calls
+- Implement credential brokering — agents never inherit user credentials directly
+- Gate deployments: no deployment without signed credential scope manifest
+- Deploy credential anomaly detection; alert on lateral movement patterns
 
 **Tier 3 — Strategic:**
-- O-IM L3: automated exfiltration detection using behavioural baselines
-- D-TA L3: threat model updated for every new outbound integration
-- Integrate with SIEM for cross-session pattern detection
+- Achieve D-SA L3: architecture review board includes agent credential review
+- Implement PKI-backed agent identities with certificate-based authentication
+- Quarterly privileged access review for all agent NHIs
 
 #### Cross-references
 
-- LLM Top 10: LLM02 (Sensitive Information Disclosure)
-- DSGAI: DSGAI06 (Unintended Data Disclosure), DSGAI08 (Data Leakage in Retrieval)
-- See also: [Agentic_ENISA.md](Agentic_ENISA.md), [LLM_SAMM.md](../llm-top10/LLM_SAMM.md)
+- LLM Top 10: LLM06 Excessive Agency
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- See also: [Agentic_NHI.md](Agentic_NHI.md) NHI-1/NHI-2/NHI-3, [Agentic_ASVS.md](Agentic_ASVS.md)
 
 ---
 
-### ASI07 — Supply Chain Compromise in Agent Ecosystems
+### ASI04 — Agentic Supply Chain Vulnerabilities
 
-Third-party components in the agentic stack — LLM providers, MCP
-servers, orchestration frameworks, tool libraries, memory store
-dependencies — are compromised or tampered with, introducing
-malicious behaviour into the agent deployment.
+**Severity:** High
+
+Compromised tools, MCP servers, or model components alter agent behaviour.
+Third-party components in the agentic stack — LLM providers, MCP servers,
+orchestration frameworks, tool libraries, memory store dependencies — are
+compromised or tampered with, introducing malicious behaviour into the
+agent deployment.
 
 #### SAMM mapping
 
@@ -400,8 +283,8 @@ malicious behaviour into the agent deployment.
 
 **Tier 2 — Short-term:**
 - Implement automated vulnerability scanning for agentic SBOM
-- Review MCP server descriptors: any server should be treated as third-party software
-- Add integrity verification for all LLM API endpoints (certificate pinning where applicable)
+- Verify cryptographic signatures on all agent components before deployment
+- Add integrity verification for MCP server descriptors and tool manifests
 
 **Tier 3 — Strategic:**
 - G-PC L3: formal vendor security assessment for all critical agentic components
@@ -410,103 +293,159 @@ malicious behaviour into the agent deployment.
 
 #### Cross-references
 
-- LLM Top 10: LLM03 (Supply Chain Vulnerabilities)
-- DSGAI: DSGAI16 (Third-Party Data Dependencies), DSGAI17 (Model Supply Chain Risks)
-- See also: [Agentic_CWE_CVE.md](Agentic_CWE_CVE.md), [Agentic_AITG.md](Agentic_AITG.md) TC-ASI07
+- LLM Top 10: LLM03 Supply Chain Vulnerabilities
+- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning
+- See also: [Agentic_CWE_CVE.md](Agentic_CWE_CVE.md), [Agentic_AITG.md](Agentic_AITG.md) TC-ASI04
 
 ---
 
-### ASI08 — Inversion of Safety Controls
+### ASI05 — Unexpected Code Execution
 
-Safety guardrails — content filters, output validators, human
-oversight gates — are bypassed, disabled, or inverted through
-adversarial prompting, model manipulation, or architectural
-misconfiguration, enabling unsafe behaviour to pass through.
+**Severity:** Critical
+
+Agents that generate and execute code become RCE gateways. Safety
+guardrails protecting code execution — sandbox boundaries, capability
+restrictions, output validators — must be defence-in-depth with no
+single-point bypass path. Agents with code execution capabilities can
+be manipulated to execute arbitrary code, escape sandboxes, or modify
+their own runtime environment.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Defence-in-depth for safety controls | L3 required | Safety controls must be layered — no single-point bypass path |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Safety control architecture review | L3 required | Independent review of every safety control bypass scenario |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Adversarial safety bypass testing | L3 required | Dedicated red team exercise targeting guardrail bypass |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Safety control bypass alerting | L2 required | Alert immediately when output validator is disabled or bypassed |
-| Governance / Strategy & Metrics (G-SM) | A — Policy | Safety control governance | L2 required | No production agent deployment without signed safety control architecture review |
+| Design / Security Architecture (D-SA) | A — Architecture | Defence-in-depth for code execution | L3 required | Sandbox controls must be layered — no single-point bypass path |
+| Verification / Architecture Assessment (V-AA) | A — Assessment | Sandbox architecture review | L3 required | Independent review of every sandbox escape scenario |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Adversarial sandbox bypass testing | L3 required | Dedicated red team exercise targeting sandbox escape |
+| Operations / Incident Management (O-IM) | A — Incident Detection | Code execution anomaly alerting | L2 required | Alert immediately when unexpected code execution detected |
+| Governance / Strategy & Metrics (G-SM) | A — Policy | Code execution governance | L2 required | No production agent with code execution without signed sandbox architecture review |
 
-**Maturity target:** L3 required for any deployment where safety control bypass creates physical, financial, or reputational harm.
+**Maturity target:** L3 required for any deployment where code execution bypass creates system compromise risk.
 
 #### Three-tier mitigations
 
 **Tier 1 — Immediate:**
-- Audit all existing safety controls: identify any single points of failure
-- Confirm output validators cannot be disabled via input
-- Implement immutable safety control logs: controls cannot be silently disabled
+- Restrict all agent code execution to sandboxed environments; no unrestricted shell access
+- Disable filesystem, network, and system call access not explicitly required
+- Implement pre-execution scanning of agent-generated code
 
 **Tier 2 — Short-term:**
-- Add independent safety check outside the LLM inference path (rule-based classifier)
-- Red team exercise: attempt to disable or invert each safety control independently
-- V-AA review: peer review of all safety control architecture before deployment
+- Red team exercise: attempt sandbox escape from within specific runtime
+- Deploy multi-layer sandbox isolation (container, process, language runtime)
+- Implement allowlisting for permitted code operations; deny by default
 
 **Tier 3 — Strategic:**
-- D-SA L3: formal safety architecture review board with external member for high-risk deployments
-- V-ST L3: continuous adversarial red teaming of safety controls in staging
-- Formal safety control test plan maintained and updated quarterly
+- D-SA L3: formal sandbox architecture review board for high-risk deployments
+- V-ST L3: continuous adversarial sandbox testing in staging
+- Hardware-level sandboxing (gVisor, Firecracker) for highest-risk deployments
 
 #### Cross-references
 
-- LLM Top 10: LLM01 (Prompt Injection as safety bypass vector)
-- DSGAI: DSGAI05 (Guardrail Circumvention)
+- LLM Top 10: LLM05 Insecure Output Handling
+- DSGAI 2026: DSGAI12 Unsafe NL Data Gateways
 - See also: [Agentic_EUAIAct.md](Agentic_EUAIAct.md) Art. 15 (robustness), [Agentic_AIVSS.md](Agentic_AIVSS.md)
 
 ---
 
-### ASI09 — Inadequate Human Oversight and Control
+### ASI06 — Memory & Context Poisoning
 
-Agents operate autonomously beyond the scope where human review
-would catch errors, bias, or adversarial manipulation before
-irreversible actions are taken. Missing confirmation gates, override
-mechanisms, or audit trails prevent effective human control.
+**Severity:** High
+
+Persistent memory poisoning causes systematic incorrect behaviour.
+Attackers corrupt agent memory — short-term context, long-term episodic
+stores, shared memory buses — to implant false beliefs, alter future
+decisions, or persist across agent restarts.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Governance / Strategy & Metrics (G-SM) | A — Policy | Autonomy policy | L2 required | Define maximum autonomy scope per agent class; mandate oversight gates |
-| Design / Security Architecture (D-SA) | A — Architecture | Human oversight gate architecture | L2 required | Design confirmation gate pattern for all high-impact actions |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Autonomous action alerting | L2 required | Alert when agent executes high-impact actions without confirmation |
-| Operations / Operational Management (O-OM) | A — Monitoring | Human-in-the-loop audit trail | L2 required | Immutable audit log of all autonomous actions for post-hoc review |
-| Governance / Education & Guidance (G-EG) | A — Training | Operator training on oversight | L1 minimum | Operators understand when to intervene and how to trigger override |
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Memory attack surface model | L2 required | Include memory store read/write paths in threat model |
+| Implementation / Secure Build (I-SB) | A — Build Process | Memory input validation | L2 required | Validate and sanitise all content written to persistent memory |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Memory poisoning test cases | L2 required | Test persistent memory integrity across session boundaries |
+| Operations / Environment Management (O-EM) | A — Patching | Memory store hardening | L2 required | Apply access controls, encryption at rest, and integrity verification to all memory stores |
+| Verification / Architecture Assessment (V-AA) | A — Assessment | Memory store architecture review | L1 minimum | Confirm memory stores have appropriate access controls and integrity verification |
 
-**Maturity target:** L2 minimum; EU AI Act Article 14 compliance requires documented oversight mechanism for high-risk AI.
+**Maturity target:** L2 minimum; memory stores must be treated as security-critical infrastructure.
 
 #### Three-tier mitigations
 
 **Tier 1 — Immediate:**
-- Enumerate all currently autonomous high-impact actions in production
-- Add confirmation gates for all irreversible actions (delete, send, pay, publish)
-- Implement emergency stop that halts all agent activity immediately
+- Apply access controls to all persistent memory stores (vector DB, relational, episodic)
+- Add integrity metadata (HMAC or signature) to all memory writes
+- Log all memory read/write operations
 
 **Tier 2 — Short-term:**
-- Define autonomy tiers per action class: auto / confirm / human-required
-- Implement G-SM L2: formal autonomy policy reviewed and signed by CISO
-- Add audit trail: every agent action logged with rationale and outcome
+- Implement memory validation pipeline: content written to persistent memory passes sanitisation
+- Add memory anomaly detection: flag unexpected belief updates
+- Define memory TTL and rotation policy
 
 **Tier 3 — Strategic:**
-- O-OM L3: real-time oversight dashboard for operations team
-- G-SM L3: autonomy policy updated after every incident or near-miss
-- Formal EU AI Act Article 14 compliance review for all high-risk deployments
+- Periodic memory audit: replay historical decisions to detect contamination
+- Implement formal provenance tracking for all memory entries
+- Cross-session memory integrity verification
 
 #### Cross-references
 
-- LLM Top 10: LLM06 (Excessive Agency)
-- DSGAI: DSGAI04 (Insufficient Access Controls for Autonomous Processing)
-- See also: [Agentic_EUAIAct.md](Agentic_EUAIAct.md), [Agentic_AIVSS.md](Agentic_AIVSS.md)
+- LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
+- DSGAI 2026: DSGAI13 Vector Store Platform Security
+- See also: [Agentic_AITG.md](Agentic_AITG.md) TC-ASI06, [LLM_CWE_CVE.md](../llm-top10/LLM_CWE_CVE.md)
 
 ---
 
-### ASI10 — Cascading Agent Failures
+### ASI07 — Insecure Inter-Agent Communication
 
-In multi-agent orchestration, a failure or compromise in one agent
+**Severity:** High
+
+A2A channels lacking authentication enable agent-in-the-middle attacks.
+Agents in multi-agent orchestration communicate without proper mutual
+authentication, encryption, or schema validation — enabling spoofing,
+replay attacks, message manipulation, and lateral movement across the
+agent network.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Architecture (D-SA) | A — Architecture | Agent-to-agent authentication framework | L2 required | Mutual authentication between all agent-to-agent communication |
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Inter-agent trust boundary model | L2 required | Explicitly model trust relationships between agents; default deny |
+| Governance / Policy & Compliance (G-PC) | A — Policy | A2A communication policy | L2 required | Policy governing authentication, encryption, and schema validation for all A2A communication |
+| Verification / Architecture Assessment (V-AA) | A — Assessment | Inter-agent communication architecture review | L2 required | Review and document all A2A channels, authentication methods, and encryption status |
+| Verification / Security Testing (V-ST) | B — Deep Testing | A2A security testing | L2 required | Test for spoofing, replay, schema violations, and agent-in-the-middle attacks |
+
+**Maturity target:** L2 minimum; no multi-agent deployment without explicit A2A security architecture review.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:**
+- Encrypt all A2A communication in transit with mutual TLS
+- Implement authentication tokens for all inter-agent messages
+- Log all inter-agent message exchanges with sender identity and content hash
+
+**Tier 2 — Short-term:**
+- Deploy agent identity registry: all agents have verifiable, revocable identities
+- Implement message signing for all A2A instructions; validate schemas at each boundary
+- Red team exercise: simulate spoofing and replay attacks against A2A channels
+
+**Tier 3 — Strategic:**
+- Formal trust model: cryptographic attestation of agent identity and communication scope
+- Short-lived A2A certificates with automated rotation
+- D-TA L3: threat model updated after every new agent added to orchestration network
+
+#### Cross-references
+
+- DSGAI 2026: DSGAI02 Agent Identity & Credential Exposure
+- Other frameworks: OWASP NHI Top 10 NHI-4/NHI-7
+- See also: [Agentic_MITREATLAS.md](Agentic_MITREATLAS.md), [Agentic_NHI.md](Agentic_NHI.md) NHI-1
+
+---
+
+### ASI08 — Cascading Agent Failures
+
+**Severity:** High
+
+Single-point faults propagate through multi-agent workflows. In
+multi-agent orchestration, a failure or compromise in one agent
 propagates through the network — downstream agents act on corrupted
 state, errors amplify through chaining, and the aggregate effect
 exceeds what any single agent could cause.
@@ -542,8 +481,103 @@ exceeds what any single agent could cause.
 
 #### Cross-references
 
-- LLM Top 10: LLM10 (Unbounded Consumption as cascade trigger)
-- DSGAI: DSGAI19 (Cascading Data Failures)
+- LLM Top 10: LLM10 Unbounded Consumption
+- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
+- See also: [Agentic_MAESTRO.md](Agentic_MAESTRO.md) L3 Agent Frameworks, [Agentic_ISA62443.md](Agentic_ISA62443.md)
+
+---
+
+### ASI09 — Human-Agent Trust Exploitation
+
+**Severity:** Medium
+
+Agents build false trust enabling manipulation of human approvers.
+Agents establish unwarranted trust with human operators — through
+apparent competence, conversational rapport, or presentation authority
+— then exploit that trust to obtain approvals for harmful actions,
+bypass oversight, or suppress safety concerns. Missing confirmation
+gates, override mechanisms, or audit trails prevent effective human
+control.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Governance / Strategy & Metrics (G-SM) | A — Policy | Trust exploitation governance policy | L2 required | Define maximum autonomy scope per agent class; mandate independent approval flows |
+| Governance / Education & Guidance (G-EG) | B — Training | Operator training on AI trust risks | L2 required | All operators trained on AI limitations, verification requirements, and manipulation identification |
+| Design / Security Architecture (D-SA) | A — Architecture | Independent approval architecture | L2 required | Design confirmation gate pattern; sensitive approvals cannot be completed via agent interface |
+| Operations / Operational Management (O-OM) | A — Monitoring | Trust exploitation monitoring | L2 required | Monitor operator decisions for over-trust patterns; audit agent-influenced approvals |
+| Operations / Incident Management (O-IM) | A — Incident Detection | Trust exploitation alerting | L1 minimum | Alert when operators approve high-risk actions without independent verification |
+
+**Maturity target:** L2 minimum; EU AI Act Article 14 compliance requires documented oversight mechanism for high-risk AI.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:**
+- Provide security awareness training to all users of agentic tools
+- Require independent approval flows for all irreversible actions (not through agent chat)
+- Implement AI advisory labelling — visual distinction from authoritative content
+
+**Tier 2 — Short-term:**
+- Implement G-SM L2: formal trust exploitation governance policy reviewed by CISO
+- Add audit trail: every agent-influenced operator decision logged with rationale
+- Deploy over-trust detection: aggregate approval patterns across operators
+
+**Tier 3 — Strategic:**
+- O-OM L3: real-time oversight dashboard for operations team
+- G-SM L3: trust exploitation policy updated after every incident or near-miss
+- Operator competency assessments covering AI trust verification
+
+#### Cross-references
+
+- LLM Top 10: LLM09 Misinformation
+- DSGAI 2026: DSGAI21 Disinformation & Integrity Attacks
+- See also: [Agentic_EUAIAct.md](Agentic_EUAIAct.md), [Agentic_AIVSS.md](Agentic_AIVSS.md)
+
+---
+
+### ASI10 — Rogue Agents
+
+**Severity:** Critical
+
+Compromised agents pursue hidden goals while appearing compliant.
+Agents operate outside their intended boundaries — pursuing hidden
+objectives, executing undisclosed tool calls, or systematically biasing
+recommendations — while maintaining an appearance of normal operation.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Rogue agent threat model | L2 required | Model scenarios where agents pursue hidden goals; identify detection and containment requirements |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Rogue agent simulation | L2 required | Red team: simulate persistent hidden goal pursuit across extended sessions |
+| Operations / Incident Management (O-IM) | A — Incident Detection | Rogue agent behaviour alerting | L2 required | Detect behavioural baseline deviations; alert on hidden tool invocations and recommendation bias |
+| Operations / Operational Management (O-OM) | A — Monitoring | Agent behavioural monitoring | L2 required | Continuous behavioural monitoring with baselines established during commissioning |
+| Operations / Incident Management (O-IM) | B — Response | Rogue agent containment playbook | L2 required | Documented runbook: kill switch, audit, state validation, forensic capture |
+
+**Maturity target:** L2 minimum; L3 for agents with access to sensitive data or high-impact actions.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:**
+- Comprehensive audit logging of all agent actions — no deployment without full observability
+- Enforce scope constraints — agent cannot exceed permission envelope regardless of internal goal
+- Implement kill switch accessible from operator console
+
+**Tier 2 — Short-term:**
+- Establish behavioural baselines during commissioning; alert on deviations
+- Red team: simulate rogue agent pursuing hidden objectives over extended sessions
+- Aggregate recommendation analysis — detect systematic bias before operational harm
+
+**Tier 3 — Strategic:**
+- O-IM L3: automated rogue agent detection with behavioural anomaly SIEM integration
+- V-ST L3: continuous adversarial rogue agent testing in staging
+- Formal rogue agent containment exercises with documented findings and remediation
+
+#### Cross-references
+
+- LLM Top 10: LLM06 Excessive Agency
+- DSGAI 2026: DSGAI16 Endpoint & Browser Overreach
 - See also: [Agentic_MAESTRO.md](Agentic_MAESTRO.md) L3 Agent Frameworks, [Agentic_ISA62443.md](Agentic_ISA62443.md)
 
 ---
@@ -587,14 +621,20 @@ Art. 14 (human oversight) and Art. 9 (risk management) compliance.
 | P1 — Pre-production gate | D-TA L2, I-SB L2, O-IM L2 | ASI01, ASI06, ASI08, ASI10 |
 | P2 — First 30 days | D-SA L2, V-ST L2, G-PC L2 | ASI02, ASI04, ASI05, ASI07 |
 | P3 — 60-day milestone | V-AA L2, O-OM L2, G-SM L2 | ASI03, ASI09 |
-| P4 — Programme maturity | All practices L3, chaos engineering | ASI08 (full coverage) |
+| P4 — Programme maturity | All practices L3, chaos engineering | ASI05 (full coverage), ASI10 (full coverage) |
+
+---
+
+## See also
+
+- [DSGAI 2026 × SAMM](../dsgai-2026/DSGAI_SAMM.md)
 
 ---
 
 ## References
 
 - [OWASP SAMM v2.0](https://owaspsamm.org/)
-- [OWASP Top 10 for Agentic AI Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [OWASP LLM Top 10 2025 × SAMM](../llm-top10/LLM_SAMM.md)
 - [Agentic_AITG.md](Agentic_AITG.md) — structured test cases for all ASI entries
 - [Agentic_AIVSS.md](Agentic_AIVSS.md) — autonomy premium scoring
@@ -606,6 +646,7 @@ Art. 14 (human oversight) and Art. 9 (risk management) compliance.
 
 | Version | Date | Change |
 |---|---|---|
+| 1.1.0 | 2026-05-25 | Remediate ASI entry names, severities, descriptions, and SAMM practice mappings to canonical Agentic Top 10 2026 |
 | 1.0.0 | 2026-03-27 | Initial release — full mapping ASI01–ASI10 to SAMM v2.0 |
 
 ---

@@ -21,6 +21,12 @@ carries fines up to €35 million or 7% of global annual turnover.
 
 ---
 
+## Why EU AI Act for LLM security
+
+The EU Artificial Intelligence Act is the world's first comprehensive binding legal framework for AI, applying to any organisation placing AI systems on the EU market regardless of headquarters location, with fines up to 35 million EUR or 7% of global annual turnover. This mapping traces each OWASP LLM risk to specific EU AI Act articles and obligations -- enabling compliance teams to identify which LLM vulnerabilities create regulatory exposure and implement controls that satisfy conformity assessment requirements before the August 2026 deadline.
+
+---
+
 ## Compliance timeline — act now
 
 | Date | Obligation |
@@ -761,6 +767,12 @@ against the OWASP LLM Top 10:
 | 2 — Urgent | GPAI documentation, copyright compliance, security policy | Art. 53 | Aug 2025 — already past |
 | 3 — Critical | High-risk conformity assessment, Art. 9/14/15/17 | Art. 9, 14, 15, 17 | Aug 2026 |
 | 4 — Ongoing | Post-market monitoring, incident reporting, AI Office engagement | Art. 17, Art. 55 | Continuous |
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
 
 ---
 

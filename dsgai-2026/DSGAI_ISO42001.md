@@ -1330,6 +1330,13 @@ where ISO 42001 AIMS controls are needed.
 
 ---
 
+## See also
+
+- [DSGAI 2026 × AIUC-1](DSGAI_AIUC1.md)
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
+
+---
+
 ## References
 
 - [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html)

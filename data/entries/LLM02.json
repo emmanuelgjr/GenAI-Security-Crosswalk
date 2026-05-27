@@ -627,35 +627,35 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.5.1-PS",
-      "control_name": "Secure coding — ML pipeline output handling",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access — sensitive data protection",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Implement secure coding practices for all code paths that consume LLM output; treat model responses as untrusted input to downstream systems"
+      "notes": "Protect training data, system prompts, and retrieval corpora containing sensitive information from unauthorised access; classify and label data by sensitivity"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Secure coding — output filtering and redaction",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Implement output filtering and redaction controls to prevent disclosure of PII, credentials, and proprietary information in model responses"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.7.2-PS",
-      "control_name": "Review for security vulnerabilities — output validation",
+      "control_name": "Review for security vulnerabilities — disclosure review",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Include output injection and unsafe rendering scenarios in pre-release security reviews; verify that output sanitisation controls are present and effective"
-    },
-    {
-      "framework": "NIST SP 800-218A",
-      "control_id": "PS.2.1-PS",
-      "control_name": "Verify software integrity — model artifact integrity",
-      "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Verify that the model artifact serving output has not been tampered with; maintain signed model checksums and verify before deployment"
+      "notes": "Include sensitive information disclosure scenarios in pre-release security reviews; verify that output filtering controls prevent leakage of confidential data"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.8.2-PS",
-      "control_name": "Test for security vulnerabilities — output security",
+      "control_name": "Test for security vulnerabilities — data extraction testing",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Include output-based injection testing (XSS, SQLi, CMDi via LLM output) in adversarial test suites"
+      "notes": "Conduct adversarial testing targeting extraction of sensitive information from model responses including training data extraction and membership inference attacks"
     },
     {
       "framework": "FedRAMP",
@@ -764,24 +764,9 @@
       "url": "https://github.com/leondz/garak"
     },
     {
-      "name": "OWASP ZAP",
+      "name": "NeMo Guardrails",
       "type": "open-source",
-      "url": "https://www.zaproxy.org"
-    },
-    {
-      "name": "Semgrep",
-      "type": "open-source",
-      "url": "https://semgrep.dev"
-    },
-    {
-      "name": "DOMPurify",
-      "type": "open-source",
-      "url": "https://github.com/cure53/DOMPurify"
-    },
-    {
-      "name": "Guardrails AI",
-      "type": "open-source",
-      "url": "https://github.com/guardrails-ai/guardrails"
+      "url": "https://github.com/NVIDIA/NeMo-Guardrails"
     },
     {
       "name": "OpenTelemetry",
@@ -847,8 +832,8 @@
     "agentic_top10": [
       "ASI03",
       "ASI06",
-      "ASI02",
-      "ASI05"
+      "ASI01",
+      "ASI02"
     ],
     "dsgai_2026": [
       "DSGAI01",
@@ -858,8 +843,7 @@
       "DSGAI08",
       "DSGAI06",
       "DSGAI03",
-      "DSGAI05",
-      "DSGAI12",
+      "DSGAI15",
       "DSGAI16"
     ]
   },

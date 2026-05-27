@@ -261,27 +261,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
-      "control_name": "§5.3",
-      "tier": "Hardening",
+      "control_id": "Supply chain risks",
+      "control_name": "§5.5",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Lateral movement between control systems"
+      "notes": "Expanded to include agentic AI components"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
-      "tier": "Hardening",
+      "control_id": "Supply chain risk management",
+      "control_name": "§6.3",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Assess inter-agent trust as OT risk"
+      "notes": "SBOM and vendor assessment for agentic stack"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
-      "tier": "Hardening",
+      "control_id": "Third-party management",
+      "control_name": "§8.4",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Authenticate all automated system-to-system communications"
+      "notes": "Formal vendor programme for OT agent components"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -413,43 +413,43 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-TA",
-      "control_name": "Design / Threat Assessment",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Explicitly model trust relationships between agents; default deny"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Mutual authentication between all agent-to-agent communication"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
       "control_id": "G-PC",
       "control_name": "Governance / Policy & Compliance",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy governing what agents may instruct other agents to do"
+      "notes": "Approved vendor list for all agentic stack components"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "I-SB",
+      "control_name": "Implementation / Secure Build",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "SBOM for all agentic system components including LLM APIs and tool servers"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "V-AA",
       "control_name": "Verification / Architecture Assessment",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Review and document all agent-to-agent trust grants"
+      "notes": "Architecture review validates all third-party components against policy"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-ST",
-      "control_name": "Verification / Security Testing",
-      "tier": "Hardening",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Test whether a compromised sub-agent can escalate through the network"
+      "notes": "Model compromise scenarios for each third-party component"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-OM",
+      "control_name": "Operations / Operational Management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Track security advisories for all integrated components"
     },
     {
       "framework": "CWE/CVE",
@@ -840,14 +840,11 @@
   ],
   "crossrefs": {
     "llm_top10": [
-      "LLM03",
-      "LLM08",
-      "LLM05"
+      "LLM03"
     ],
     "dsgai_2026": [
       "DSGAI04",
-      "DSGAI06",
-      "DSGAI19"
+      "DSGAI06"
     ]
   },
   "changelog": [

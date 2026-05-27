@@ -26,6 +26,7 @@ integrity and pipeline risks. The GDPR runs in parallel for any DSGAI
 entry involving personal data — both apply simultaneously.
 
 ---
+## Why # DSGAI 2026 × EU AI Act for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × EU AI Act controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × EU AI Act compliance and governance programmes.---
 
 ## Compliance timeline reminder
 
@@ -1400,6 +1401,12 @@ Art. 50 transparency violations: up to **€7.5M or 1.5% global turnover**.
 | 4 — Critical | DSGAI01/09/10/11/14/18/19 — data governance | Art. 10 | Aug 2026 |
 | 5 — Critical | DSGAI12/16 — human oversight | Art. 14 | Aug 2026 |
 | 6 — Ongoing | DSGAI21 — disinformation systemic risk | Art. 55(1)(a) | Continuous |
+
+---
+
+## See also
+
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

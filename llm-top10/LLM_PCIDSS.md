@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 x PCI DSS v4.0
+# LLM Top 10 2025 × PCI DSS v4.0
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/)
@@ -819,6 +819,13 @@ against LLM applications in CDE are covered under Req 1
 | 3 — Secure development | LLM01, LLM05 | Req 6.2, Req 6.4 | Injection and output security as secure development requirements |
 | 4 — Vendor and testing | LLM03, LLM04 | Req 12.8, Req 11.3 | TPSP programme and penetration testing programme |
 | 5 — Ongoing | LLM08-LLM10 | Req 12.3, Req 6.5 | Risk analysis, embedding scope, availability |
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [Agentic Top 10 × PCI DSS](../agentic-top10/Agentic_PCIDSS.md)
 
 ---
 

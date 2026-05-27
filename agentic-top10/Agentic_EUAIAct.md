@@ -36,6 +36,12 @@ human oversight implemented and tested.
 
 ---
 
+## Why EU AI Act for agentic AI security
+
+The EU Artificial Intelligence Act is the world's first comprehensive binding legal framework for AI, establishing risk-based governance obligations with fines up to 35 million EUR or 7% of global annual turnover. Agentic AI systems introduce the highest-risk EU AI Act compliance surface because autonomy, tool use, and multi-agent orchestration directly engage the Act's most demanding obligations -- Articles 9 (risk management), 14 (human oversight), and 15 (robustness and cybersecurity). This mapping traces each OWASP Agentic Top 10 risk to specific articles and obligations to support conformity assessment before the August 2026 deadline.
+
+---
+
 ## Quick-reference summary
 
 | ID | Name | Severity | Primary EU AI Act Articles | Applies to | Tier |
@@ -656,6 +662,12 @@ Art. 55 systemic risk violations: up to **€35M or 7%**.
 | 3 — Critical | ASI01/02/08/10 — human oversight | Art. 14 | Aug 2026 |
 | 4 — Critical | ASI03/05/07 — cybersecurity | Art. 15 | Aug 2026 |
 | 5 — Ongoing | ASI10 — systemic risk adversarial testing | Art. 55(1)(b) | Continuous |
+
+---
+
+## See also
+
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
 
 ---
 

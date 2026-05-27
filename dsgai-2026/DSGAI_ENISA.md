@@ -1479,6 +1479,13 @@ extend to disinformation resilience.
 
 ---
 
+## See also
+
+- [Agentic Top 10 × ENISA](../agentic-top10/Agentic_ENISA.md)
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
+
+---
+
 ## References
 
 - [ENISA Multilayer Framework for Good Cybersecurity Practices for AI](https://www.enisa.europa.eu/publications/multilayer-framework-for-good-cybersecurity-practices-for-ai)

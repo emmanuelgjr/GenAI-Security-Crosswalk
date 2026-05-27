@@ -261,27 +261,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
-      "control_name": "§5.3",
-      "tier": "Advanced",
+      "control_id": "Availability risks",
+      "control_name": "§5.6",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Safety system bypass is the highest severity OT threat"
+      "notes": "Cascading failure across OT components"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Risk assessment",
       "control_name": "§6.2",
-      "tier": "Advanced",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Safety control inversion must be in OT risk register"
+      "notes": "Cascade failure scenarios in OT risk register"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Secure architecture",
-      "control_name": "§7.1",
-      "tier": "Advanced",
+      "control_id": "Security controls",
+      "control_name": "§7.2",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Mandatory: safety function must be independent of AI decision layer"
+      "notes": "Circuit breakers between OT automation layers"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -415,41 +415,41 @@
       "framework": "OWASP SAMM v2.0",
       "control_id": "D-SA",
       "control_name": "Design / Security Architecture",
-      "tier": "Advanced",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Safety controls must be layered — no single-point bypass path"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "V-AA",
-      "control_name": "Verification / Architecture Assessment",
-      "tier": "Advanced",
-      "scope": "Both",
-      "notes": "Independent review of every safety control bypass scenario"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "V-ST",
-      "control_name": "Verification / Security Testing",
-      "tier": "Advanced",
-      "scope": "Both",
-      "notes": "Dedicated red team exercise targeting guardrail bypass"
+      "notes": "Design circuit breakers and blast radius containment between agents"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "O-IM",
       "control_name": "Operations / Incident Management",
-      "tier": "Advanced",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Alert immediately when output validator is disabled or bypassed"
+      "notes": "Detect correlated failures across multiple agents; alert before full cascade"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-SM",
-      "control_name": "Governance / Strategy & Metrics",
-      "tier": "Advanced",
+      "control_id": "O-EM",
+      "control_name": "Operations / Environment Management",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "No production agent deployment without signed safety control architecture review"
+      "notes": "Continuous health checks; automatic isolation of degraded agents"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "V-AA",
+      "control_name": "Verification / Architecture Assessment",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Verify blast radius containment in architecture review"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-IM",
+      "control_name": "Operations / Incident Management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Documented runbook for cascade scenarios including rollback procedures"
     },
     {
       "framework": "CWE/CVE",
@@ -786,13 +786,10 @@
   ],
   "crossrefs": {
     "llm_top10": [
-      "LLM10",
-      "LLM01",
-      "LLM04"
+      "LLM10"
     ],
     "dsgai_2026": [
-      "DSGAI17",
-      "DSGAI05"
+      "DSGAI17"
     ]
   },
   "changelog": [

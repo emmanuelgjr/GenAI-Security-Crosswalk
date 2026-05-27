@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 x SOC 2
+# LLM Top 10 2025 × SOC 2
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to [SOC 2](https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services)
@@ -843,6 +843,13 @@ DoS risks identified) also apply.
 | 2 — This sprint | LLM06, LLM07, LLM10 | CC6, CC5, A1 | Access control, configuration security, and availability commitments |
 | 3 — This quarter | LLM04, LLM05 | CC8, CC7, PI1 | Change management and monitoring programme for integrity and output security |
 | 4 — Ongoing | LLM08, LLM09 | C2, P5, CC7 | Embedding security and accuracy monitoring hardening |
+
+---
+
+## See also
+
+- [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [Agentic Top 10 × SOC 2](../agentic-top10/Agentic_SOC2.md)
 
 ---
 

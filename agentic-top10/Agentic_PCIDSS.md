@@ -445,6 +445,12 @@ Requirement 10 (monitoring) are primary; Requirement 11.3
 
 ---
 
+## See also
+
+- [DSGAI 2026 × PCI DSS](../dsgai-2026/DSGAI_PCIDSS.md)
+
+---
+
 ## References
 
 - [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/)

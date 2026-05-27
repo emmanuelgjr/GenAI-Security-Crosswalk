@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# LLM Top 10 2025 – FedRAMP AI Overlay
+# LLM Top 10 2025 × FedRAMP AI Overlay
 
 Mapping the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 to the [FedRAMP AI Overlay](https://www.fedramp.gov/) extending
@@ -24,6 +24,12 @@ cloud-hosted AI services must meet FedRAMP AI overlay requirements in
 addition to the standard baseline. This mapping enables organisations to
 trace each OWASP LLM Top 10 risk to specific FedRAMP AI controls and
 implement them within their authorisation boundary.
+
+---
+
+## Why FedRAMP for LLM security
+
+FedRAMP is the US federal government's standardised cloud security authorisation programme, extended with an AI overlay that adds AI-specific control enhancements to the NIST SP 800-53 Rev 5 baseline. For organisations deploying cloud-hosted LLM services in federal environments, this mapping traces each OWASP LLM risk to specific FedRAMP AI controls -- enabling authorisation teams to address model access, inference logging, adversarial testing, and AI supply chain risk within their authorisation boundary.
 
 ---
 
@@ -51,10 +57,10 @@ implement them within their authorisation boundary.
 | ID | Name | Severity | FedRAMP AI Controls | Scope |
 |---|---|---|---|---|
 | LLM01 | Prompt Injection | Critical | SI-3, SI-10, RA-5, CA-8 | Both |
-| LLM02 | Sensitive Information Disclosure | High | SC-28, AU-2, AC-3 | Both |
-| LLM03 | Training Data Poisoning | Critical | SR-2, SR-3, SI-3, CM-3 | Both |
-| LLM04 | Model DoS | High | SC-7, SI-4, CM-7 | Both |
-| LLM05 | Supply Chain Vulnerabilities | High | SR-2, SR-3, SA-9, SA-3 | Both |
+| LLM02 | Sensitive Information Disclosure | High | SC-28, AU-2, AC-3, SI-4 | Both |
+| LLM03 | Supply Chain Vulnerabilities | High | SR-2, SR-3, SA-9, SA-3 | Both |
+| LLM04 | Data and Model Poisoning | Critical | SR-2, SR-3, SI-3, CM-3 | Both |
+| LLM05 | Insecure Output Handling | High | SI-10, SI-3, CA-8, SC-7 | Both |
 | LLM06 | Excessive Agency | High | AC-6, CM-7, AC-3, PM-9 | Build |
 | LLM07 | System Prompt Leakage | High | SC-28, AC-3, AU-2 | Build |
 | LLM08 | Vector and Embedding Weaknesses | Medium | SC-28, SI-3, RA-5 | Build |
@@ -219,7 +225,77 @@ training data stores (AC-3).
 
 ---
 
-### LLM03 – Training Data Poisoning
+### LLM03 – Supply Chain Vulnerabilities
+
+**Severity:** High
+
+LLM applications depend on third-party model weights, datasets, libraries,
+and plugins — any of which can be compromised to introduce backdoors or
+malicious functionality. FedRAMP AI overlay addresses this through supply
+chain planning (SR-2), supply chain controls and provenance verification
+(SR-3), external information system services controls for third-party AI
+providers (SA-9), and secure system development lifecycle for AI (SA-3).
+
+**Real-world references:**
+- Hugging Face malicious model uploads (2024) – trojanised model weights
+  distributed through public model repositories
+- PyPI/npm dependency confusion attacks affecting ML library ecosystems
+
+#### FedRAMP AI mapping
+
+| Control | ID | Family | Description |
+|---|---|---|---|
+| Supply Chain Risk Management Plan — AI components | SR-2 | SR | Include all AI components — models, datasets, adapters, libraries, plugins — in the supply chain risk management plan with provenance and risk assessment |
+| Supply Chain Controls — model provenance verification | SR-3 | SR | Implement integrity verification for all AI supply chain components using cryptographic signatures, checksums, and attestation before deployment |
+| External Information System Services — third-party AI | SA-9 | SA | Require third-party AI service providers to meet FedRAMP requirements; establish SLAs covering model security, data handling, and incident notification |
+| System Development Life Cycle — AI SDLC | SA-3 | SA | Integrate AI-specific security activities into the SDLC — model security review, adversarial testing, supply chain verification at each lifecycle phase |
+
+#### Mitigations
+
+**Foundational**
+- SR-2: Establish an approved sources policy for AI components; model
+  weights, datasets, adapters, and libraries must come from vetted
+  sources with documented provenance
+- SR-3: Verify cryptographic signatures or checksums for all model
+  artefacts before deployment; do not deploy unsigned or unverified
+  components
+- Maintain a complete ML SBOM for every production AI system within
+  the FedRAMP authorisation boundary
+
+**Hardening**
+- SA-9: Require FedRAMP authorisation or equivalent for all third-party
+  AI service providers; include AI-specific security requirements in
+  service agreements
+- SA-3: Integrate model security review and adversarial testing into
+  your SDLC; gate production deployment on security sign-off
+- SR-3: Implement automated supply chain integrity verification in
+  CI/CD; block deployment on verification failure
+
+**Advanced**
+- SR-2: Conduct backdoor detection on all new model versions from
+  third-party providers before production promotion
+- SA-9: Include third-party AI provider security posture in FedRAMP
+  continuous monitoring; reassess annually or on significant change
+- Extend ML SBOM to cover runtime dynamic components — MCP servers,
+  plugins, and tools fetched at inference time
+
+#### Tools
+
+| Tool | Type | Link |
+|---|---|---|
+| CycloneDX | Open-source | https://cyclonedx.org |
+| ModelScan | Open-source | https://github.com/protectai/modelscan |
+| OWASP Dependency-Check | Open-source | https://owasp.org/www-project-dependency-check/ |
+| Sigstore | Open-source | https://www.sigstore.dev |
+
+#### Cross-references
+- Agentic Top 10: ASI04 Supply Chain Compromise, ASI10 AI Agent Dependency Failures
+- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI19 Third-Party Data Risk
+- Other frameworks: MITRE ATLAS AML.T0056 – SP 800-218A PW.4.1-PS – CycloneDX ML SBOM
+
+---
+
+### LLM04 – Data and Model Poisoning
 
 **Severity:** Critical
 
@@ -293,132 +369,82 @@ updates (CM-3).
 
 ---
 
-### LLM04 – Model DoS
+### LLM05 – Insecure Output Handling
 
 **Severity:** High
 
-Adversarial inputs trigger disproportionate compute, memory, or token
-consumption causing denial of service or runaway inference cost. FedRAMP
-AI overlay addresses this through boundary protection for AI API endpoints
-(SC-7), system monitoring for consumption anomalies (SI-4), and least
-functionality restricting model resource access (CM-7).
+LLM output passed to downstream systems without validation enables
+injection attacks — XSS, SQL injection, command injection, and SSRF — when
+model responses are consumed by web frontends, databases, shells, or APIs.
+FedRAMP AI overlay addresses this through input validation extended to
+model output contexts (SI-10), malicious code protection covering output
+channels (SI-3), penetration testing of LLM output consumers (CA-8), and
+boundary protection between LLM services and downstream systems (SC-7).
+
+**Real-world references:**
+- ChatGPT plugin XSS (2023) – model output containing JavaScript executed
+  in browser rendering contexts
+- LLM-generated SQL queries injecting into backend databases when output
+  was used without parameterisation
 
 #### FedRAMP AI mapping
 
 | Control | ID | Family | Description |
 |---|---|---|---|
-| Boundary Protection — AI API endpoints | SC-7 | SC | Enforce boundary protection on all AI inference endpoints — rate limiting, token quotas, and cost circuit breakers at the network and application boundary |
-| System Monitoring — consumption anomaly detection | SI-4 | SI | Monitor AI inference services for resource consumption anomalies — token spikes, latency degradation, cost overruns; alert and auto-mitigate on threshold breach |
-| Least Functionality — AI resource restrictions | CM-7 | CM | Restrict AI inference services to minimum necessary compute, memory, and token budgets; disable unused model capabilities and endpoints |
-| Event Logging — resource consumption logging | AU-2 | AU | Log resource consumption per inference request — tokens, latency, cost; enable detection and forensic analysis of DoS patterns |
+| Information Input Validation — output context validation | SI-10 | SI | Validate all LLM outputs before consumption by downstream systems; enforce output encoding, schema validation, and context-appropriate sanitisation |
+| Malicious Code Protection — output channel scanning | SI-3 | SI | Extend malicious code protection to LLM output channels; detect and block injection payloads — XSS, SQL injection, command injection — in model responses before downstream delivery |
+| Penetration Testing — LLM output consumer testing | CA-8 | CA | Include LLM output handling in penetration testing scope; test all downstream consumers for injection via model-generated content |
+| Boundary Protection — LLM-to-downstream isolation | SC-7 | SC | Enforce boundary protection between LLM inference services and downstream consuming systems; apply output filtering and schema enforcement at the boundary |
 
 #### Mitigations
 
 **Foundational**
-- SC-7: Implement rate limiting and token quotas at the API gateway
-  before requests reach the model; define per-user, per-session, and
-  per-API-key limits as boundary controls
-- CM-7: Restrict AI inference services to minimum necessary resource
-  budgets; disable unused endpoints and model capabilities
-- SI-4: Monitor inference services for consumption anomalies; establish
-  baseline resource usage and alert on deviations
+- SI-10: Treat all LLM output as untrusted input to downstream systems;
+  enforce output encoding and context-appropriate sanitisation — HTML
+  encoding for web contexts, parameterised queries for databases,
+  allowlisted commands for shell execution
+- SI-3: Deploy output scanning to detect injection payloads in model
+  responses before delivery to downstream consumers; block responses
+  containing executable code patterns
+- Establish a policy that no LLM output is passed directly to system
+  interpreters without validation; enforce at architecture review
 
 **Hardening**
-- SC-7: Deploy cost circuit breakers that automatically suspend service
-  when consumption exceeds thresholds; alerting alone is insufficient
-- SI-4: Include resource exhaustion scenarios in continuous monitoring;
-  test detection capabilities against sponge example attacks and token
-  amplification patterns
-- AU-2: Feed consumption logs into FedRAMP continuous monitoring;
-  establish trending and alerting for consumption drift
+- CA-8: Include LLM output injection in penetration testing scope —
+  test all web frontends, database interfaces, API gateways, and shell
+  integrations that consume model output; gate production releases on
+  penetration test sign-off
+- SC-7: Deploy output schema enforcement at the boundary between LLM
+  services and downstream consumers; only outputs conforming to defined
+  safe structures pass through
+- SI-10: Implement structured output modes (JSON schema, function
+  calling) to constrain model output format; validate output conforms
+  to schema before downstream delivery
 
 **Advanced**
-- Conduct adversarial cost-maximisation testing — identify the specific
-  inputs that generate maximum token consumption for your model and
-  guard those paths with additional controls
-- Implement adaptive rate limiting with real-time system load awareness;
-  thresholds adjust dynamically under attack conditions
-- Document recovery time objectives (RTO) and recovery point objectives
-  (RPO) for AI services in your FedRAMP contingency plan
+- CA-8: Extend output handling testing to cover multi-step injection —
+  model output that is safe in isolation but dangerous when accumulated
+  across multiple turns or combined with other data sources
+- SI-3: Integrate output injection detection into your SIEM and
+  FedRAMP continuous monitoring programme; automate alerting on
+  high-confidence injection indicators in model responses
+- SC-7: Document all LLM output consumption paths in the system
+  security plan; verify output validation controls at each path during
+  FedRAMP annual assessments
 
 #### Tools
 
 | Tool | Type | Link |
 |---|---|---|
-| LiteLLM | Open-source | https://github.com/BerriAI/litellm |
-| Kong Gateway | Open-source | https://github.com/Kong/kong |
-| OpenTelemetry | Open-source | https://opentelemetry.io |
-| AWS WAF / Azure Front Door | Commercial | https://aws.amazon.com/waf/ |
+| OWASP ZAP | Open-source | https://www.zaproxy.org |
+| Semgrep | Open-source | https://semgrep.dev |
+| LLM Guard | Open-source | https://github.com/protectai/llm-guard |
+| Burp Suite | Commercial | https://portswigger.net/burp |
 
 #### Cross-references
-- Agentic Top 10: ASI08 Cascading Agent Failures
-- DSGAI 2026: DSGAI17 Data Availability & Resilience Failures
-- Other frameworks: CWE-400 – SP 800-218A PW.2.1-PS – NIST CSF 2.0 PR.PT-4
-
----
-
-### LLM05 – Supply Chain Vulnerabilities
-
-**Severity:** High
-
-LLM applications depend on third-party model weights, datasets, libraries,
-and plugins — any of which can be compromised to introduce backdoors or
-malicious functionality. FedRAMP AI overlay addresses this through supply
-chain planning (SR-2), supply chain controls and provenance verification
-(SR-3), external information system services controls for third-party AI
-providers (SA-9), and secure system development lifecycle for AI (SA-3).
-
-#### FedRAMP AI mapping
-
-| Control | ID | Family | Description |
-|---|---|---|---|
-| Supply Chain Risk Management Plan — AI components | SR-2 | SR | Include all AI components — models, datasets, adapters, libraries, plugins — in the supply chain risk management plan with provenance and risk assessment |
-| Supply Chain Controls — model provenance verification | SR-3 | SR | Implement integrity verification for all AI supply chain components using cryptographic signatures, checksums, and attestation before deployment |
-| External Information System Services — third-party AI | SA-9 | SA | Require third-party AI service providers to meet FedRAMP requirements; establish SLAs covering model security, data handling, and incident notification |
-| System Development Life Cycle — AI SDLC | SA-3 | SA | Integrate AI-specific security activities into the SDLC — model security review, adversarial testing, supply chain verification at each lifecycle phase |
-
-#### Mitigations
-
-**Foundational**
-- SR-2: Establish an approved sources policy for AI components; model
-  weights, datasets, adapters, and libraries must come from vetted
-  sources with documented provenance
-- SR-3: Verify cryptographic signatures or checksums for all model
-  artefacts before deployment; do not deploy unsigned or unverified
-  components
-- Maintain a complete ML SBOM for every production AI system within
-  the FedRAMP authorisation boundary
-
-**Hardening**
-- SA-9: Require FedRAMP authorisation or equivalent for all third-party
-  AI service providers; include AI-specific security requirements in
-  service agreements
-- SA-3: Integrate model security review and adversarial testing into
-  your SDLC; gate production deployment on security sign-off
-- SR-3: Implement automated supply chain integrity verification in
-  CI/CD; block deployment on verification failure
-
-**Advanced**
-- SR-2: Conduct backdoor detection on all new model versions from
-  third-party providers before production promotion
-- SA-9: Include third-party AI provider security posture in FedRAMP
-  continuous monitoring; reassess annually or on significant change
-- Extend ML SBOM to cover runtime dynamic components — MCP servers,
-  plugins, and tools fetched at inference time
-
-#### Tools
-
-| Tool | Type | Link |
-|---|---|---|
-| CycloneDX | Open-source | https://cyclonedx.org |
-| ModelScan | Open-source | https://github.com/protectai/modelscan |
-| OWASP Dependency-Check | Open-source | https://owasp.org/www-project-dependency-check/ |
-| Sigstore | Open-source | https://www.sigstore.dev |
-
-#### Cross-references
-- Agentic Top 10: ASI04 Supply Chain Compromise, ASI10 AI Agent Dependency Failures
-- DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI19 Third-Party Data Risk
-- Other frameworks: MITRE ATLAS AML.T0056 – SP 800-218A PW.4.1-PS – CycloneDX ML SBOM
+- Agentic Top 10: ASI02 Tool Misuse, ASI05 Unexpected Code Execution
+- DSGAI 2026: DSGAI05 Data Integrity & Validation Failures, DSGAI12 Unsafe NL Data Gateways
+- Other frameworks: CWE-79 – CWE-89 – SP 800-218A PW.2.1-PS – NIST CSF 2.0 PR.PS-04
 
 ---
 
@@ -747,9 +773,9 @@ restricting resource access (CM-7).
 
 | Phase | AC / AU / IA | SC / SI / CM | CA / RA / SA / SR / IR / PM |
 |---|---|---|---|
-| 1 – Now | AC-6 least privilege for LLM06; AC-3 access enforcement for LLM02/07; AU-2 inference logging for LLM02/07 | SI-10 input validation for LLM01; SC-28 encryption at rest for LLM02/03/07 | SR-2 supply chain plan for LLM03/05; CA-8 pen testing for LLM01 |
-| 2 – This sprint | AC-3 tool invocation controls for LLM06; AU-6 audit review for LLM09 | SI-3 adversarial input protection for LLM01/03/08; CM-3 change control for LLM03; CM-7 resource restrictions for LLM04/10 | SA-9 third-party AI controls for LLM05; RA-5 AI vulnerability scanning for LLM01/08 |
-| 3 – This quarter | AU-2 comprehensive logging for all entries; IA-2 NHI identity for AI agents | SC-7 boundary protection for LLM04/10; SI-4 behaviour monitoring for all entries | CA-7 continuous monitoring for LLM09; PM-9 risk strategy for LLM06; SA-3 AI SDLC for LLM05 |
+| 1 – Now | AC-6 least privilege for LLM06; AC-3 access enforcement for LLM02/07; AU-2 inference logging for LLM02/07 | SI-10 input validation for LLM01/05; SC-28 encryption at rest for LLM02/07/08 | SR-2 supply chain plan for LLM03/04; CA-8 pen testing for LLM01/05 |
+| 2 – This sprint | AC-3 tool invocation controls for LLM06; AU-6 audit review for LLM09 | SI-3 adversarial input protection for LLM01/04/05/08; CM-3 change control for LLM04; CM-7 resource restrictions for LLM10 | SA-9 third-party AI controls for LLM03; RA-5 AI vulnerability scanning for LLM01/08 |
+| 3 – This quarter | AU-2 comprehensive logging for all entries; IA-2 NHI identity for AI agents | SC-7 boundary protection for LLM05/10; SI-4 behaviour monitoring for all entries | CA-7 continuous monitoring for LLM09; PM-9 risk strategy for LLM06; SA-3 AI SDLC for LLM03 |
 | 4 – Ongoing | Access control reviews; audit log analysis; identity lifecycle management | Continuous monitoring of consumption and behaviour; configuration drift detection | Annual FedRAMP assessment updates; red-team programme; supply chain re-assessment |
 
 ---
@@ -769,6 +795,7 @@ restricting resource access (CM-7).
 
 | Date | Version | Change | Author |
 |---|---|---|---|
+| 2026-05-25 | 2026-Q2 | Fix LLM03–LLM05 entry names and content to match OWASP LLM Top 10 2025 canonical order; update implementation priority table | OWASP GenAI Data Security Initiative |
 | 2026-03-28 | 2026-Q1 | Initial mapping – LLM01–LLM10 full entries | OWASP GenAI Data Security Initiative |
 
 ---

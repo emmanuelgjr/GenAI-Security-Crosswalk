@@ -16,6 +16,12 @@ and Exposures) relevant to agentic AI systems.
 
 ---
 
+## Why CWE/CVE for agentic AI security
+
+CWE (Common Weakness Enumeration) and CVE (Common Vulnerabilities and Exposures) are the universal catalogues for tracking software weaknesses and confirmed vulnerabilities, forming the foundation for SAST/DAST tools, bug trackers, and vulnerability management programmes. This mapping traces each OWASP Agentic Top 10 risk to root-cause CWE classifications and real-world CVE evidence -- enabling security teams to connect agentic AI threats (tool misuse, privilege escalation, memory poisoning) to the same engineering-level taxonomy used for the rest of their application stack.
+
+---
+
 ## How to use this file
 
 **CWE mapping** provides the software weakness taxonomy that security
@@ -466,6 +472,12 @@ encouraged to submit new CVEs via pull request as they are published.
 - MITRE CVE: https://cve.mitre.org
 - OSV (open source vulnerabilities): https://osv.dev
 - MITRE ATLAS incidents: https://atlas.mitre.org/studies
+
+---
+
+## See also
+
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
 
 ---
 

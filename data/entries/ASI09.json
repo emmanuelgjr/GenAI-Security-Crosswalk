@@ -265,7 +265,7 @@
       "control_name": "§6.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Quantify consequences of unsupervised agent OT actions"
+      "notes": "Quantify consequences of operator over-trust in agent OT recommendations"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -273,7 +273,7 @@
       "control_name": "§8.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Governance policy for autonomous OT systems"
+      "notes": "Governance policy for human-agent trust in OT systems"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -409,31 +409,7 @@
       "control_name": "Governance / Strategy & Metrics",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define maximum autonomy scope per agent class; mandate oversight gates"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Design confirmation gate pattern for all high-impact actions"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-IM",
-      "control_name": "Operations / Incident Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Alert when agent executes high-impact actions without confirmation"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Immutable audit log of all autonomous actions for post-hoc review"
+      "notes": "Define maximum autonomy scope per agent class; mandate independent approval flows"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -441,7 +417,31 @@
       "control_name": "Governance / Education & Guidance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Operators understand when to intervene and how to trigger override"
+      "notes": "All operators trained on AI limitations, verification requirements, and manipulation identification"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Design confirmation gate pattern; sensitive approvals cannot be completed via agent interface"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-OM",
+      "control_name": "Operations / Operational Management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor operator decisions for over-trust patterns; audit agent-influenced approvals"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-IM",
+      "control_name": "Operations / Incident Management",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Alert when operators approve high-risk actions without independent verification"
     },
     {
       "framework": "CWE/CVE",
@@ -574,99 +574,99 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Review agent behaviour for emergent capabilities — verify that self-modification, dynamic tool discovery, and autonomous agent spawning do not create unintended security exposures",
+      "control_id": "Review agent behaviour for trust manipulation patterns — verify that agents cannot build false authority, suppress safety warnings, or manipulate approval processes",
       "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Catches emergent pattern risks before production"
+      "notes": "Catches trust exploitation risks before production"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Conduct adversarial testing targeting emerging agentic patterns — self-evolution, prompt self-modification, autonomous tool acquisition, and dynamic agent creation",
+      "control_id": "Conduct adversarial testing targeting human-agent trust exploitation — test whether agents can manipulate operators into approving harmful actions through false confidence or urgency",
       "control_name": "PW.8.2-PS – Test for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Validates controls against novel attack surfaces"
+      "notes": "Validates trust controls under realistic conditions"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Establish monitoring for emergent agent behaviours — detect agents acquiring new capabilities, modifying their own definitions, or spawning sub-agents outside approved patterns",
+      "control_id": "Establish monitoring for trust exploitation indicators — operators approving high-risk actions without verification, systematic over-reliance on agent recommendations",
       "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enables detection of emerging risks in production"
+      "notes": "Enables detection of trust exploitation in production"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "When incidents involve novel agentic patterns, conduct root cause analysis focused on understanding the emergent capability and its security implications",
-      "control_name": "RV.3.1-PS – Analyse root causes",
+      "control_id": "Define explicit requirements for human oversight — mandatory confirmation gates, independent approval flows, AI advisory labelling, and operator training requirements",
+      "control_name": "PW.1.1-PS – Define security requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Builds organisational knowledge of emerging agentic risks"
+      "notes": "Establishes human oversight as a mandatory requirement"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "CA-7",
-      "control_name": "Continuous Monitoring — novel pattern detection",
+      "control_id": "AT-3",
+      "control_name": "Role-Based Training — AI trust awareness",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include monitoring for novel agentic behaviour patterns in FedRAMP continuous monitoring; track for unexpected capabilities, emergent behaviours, and architectural drift"
-    },
-    {
-      "framework": "FedRAMP",
-      "control_id": "RA-5",
-      "control_name": "Vulnerability Scanning — emerging attack surfaces",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include emerging agentic attack surfaces in vulnerability scanning; assess novel architectures for security implications before production deployment"
-    },
-    {
-      "framework": "FedRAMP",
-      "control_id": "SI-4",
-      "control_name": "System Monitoring — unexpected behaviour detection",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Monitor agent systems for unexpected behaviour — novel tool use patterns, unanticipated goal decomposition, and emergent inter-agent coordination"
+      "notes": "Provide role-based training to all users of agentic tools — AI limitations, verification requirements, how to identify manipulation; mandatory before access"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AU-6",
-      "control_name": "Audit Review — agent decision review",
+      "control_name": "Audit Review — agent-influenced decision review",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Conduct regular audit review of agent decision logs; identify patterns indicative of unexpected capabilities or emergent behaviours requiring security assessment"
+      "notes": "Conduct regular audit review of agent-influenced operator decisions; identify patterns of over-trust and systematic reliance on agent recommendations"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — trust exploitation detection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor for trust exploitation indicators — operators approving high-risk actions without independent verification, systematic over-reliance patterns"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — human-agent trust governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include human-agent trust exploitation in risk management strategy; define policies for agent advisory labelling and approval independence"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — novel agentic risk governance",
+      "control_name": "ICT Risk Management — human-agent trust governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include emerging agentic pattern risks in ICT risk management framework; assess novel architectures for operational resilience implications before deployment"
+      "notes": "Include human-agent trust exploitation risks in ICT risk management framework; define policies for agent advisory labelling, approval independence, and operator training"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 10",
-      "control_name": "Detection — unexpected behaviour monitoring",
+      "control_name": "Detection — trust exploitation monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor agent systems for unexpected behaviour — novel tool use patterns, unanticipated goal decomposition, and emergent inter-agent coordination"
+      "notes": "Monitor for trust exploitation indicators — operators approving high-risk actions without independent verification, systematic over-reliance on agent recommendations"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 13",
-      "control_name": "Learning and Evolving — emerging pattern assessment",
+      "control_name": "Learning and Evolving — trust exploitation assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply lessons learned from emerging agentic pattern incidents; update governance and controls as new attack techniques and defence approaches emerge"
+      "notes": "Apply lessons learned from trust exploitation incidents; update governance and training as new manipulation patterns emerge"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 24–27",
-      "control_name": "Resilience Testing — novel architecture testing",
+      "control_name": "Resilience Testing — trust exploitation testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include emerging agentic architecture security in resilience testing; assess novel patterns for resilience implications before production deployment"
+      "notes": "Include human-agent trust exploitation in resilience testing; test operator susceptibility to manipulated agent recommendations"
     }
   ],
   "tools": [
@@ -817,14 +817,10 @@
   ],
   "crossrefs": {
     "llm_top10": [
-      "LLM09",
-      "LLM06"
+      "LLM09"
     ],
     "dsgai_2026": [
-      "DSGAI21",
-      "DSGAI04",
-      "DSGAI06",
-      "DSGAI18"
+      "DSGAI21"
     ]
   },
   "changelog": [

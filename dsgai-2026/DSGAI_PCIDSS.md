@@ -7,7 +7,7 @@
   License     : CC BY-SA 4.0
 -->
 
-# DSGAI 2026 x PCI DSS v4.0
+# DSGAI 2026 × PCI DSS v4.0
 
 Mapping the [OWASP GenAI Data Security Risks and Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
 (DSGAI01-DSGAI21) to [PCI DSS v4.0](https://www.pcisecuritystandards.org/document_library/).
@@ -28,6 +28,7 @@ CHD is unavoidable, apply PCI scope controls to every component
 that touches it.
 
 ---
+## Why # DSGAI 2026 × PCI DSS v4.0 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × PCI DSS v4.0 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × PCI DSS v4.0 compliance and governance programmes.---
 
 ## Quick-reference summary
 
@@ -1115,6 +1116,13 @@ decisions or provide incorrect compliance guidance to analysts.
 | 3 — Secure development | DSGAI05, DSGAI12 | Req 6.2, Req 6.4 | Ingestion validation and NL gateway injection |
 | 4 — Supply chain and testing | DSGAI04, DSGAI21 | Req 6.5, Req 11.3 | Change management and penetration testing scope |
 | 5 — Ongoing | DSGAI08-DSGAI20 | Req 12.3, Req 10.6 | Risk analysis, monitoring, and advanced attack coverage |
+
+---
+
+## See also
+
+- [Agentic Top 10 × PCI DSS](../agentic-top10/Agentic_PCIDSS.md)
+- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 ---
 

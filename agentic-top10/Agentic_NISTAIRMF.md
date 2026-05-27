@@ -29,6 +29,12 @@ technical controls.
 
 ---
 
+## Why NIST AI RMF for agentic AI security
+
+The NIST AI Risk Management Framework (AI RMF 1.0) is the primary US federal AI risk management framework, required for US federal agencies under Executive Order 14110 and widely adopted globally by enterprises and critical infrastructure operators. Its four-function lifecycle structure (GOVERN, MAP, MEASURE, MANAGE) maps naturally to agentic risk because agentic risks compound across the lifecycle -- a governance gap enables a mapping gap that manifests as an undetected cascade. This mapping traces each OWASP Agentic Top 10 risk to specific AI RMF subcategories for teams deploying autonomous AI agents.
+
+---
+
 ## AI RMF functions — agentic context
 
 | Function | Agentic AI role |

@@ -27,6 +27,12 @@ security surface, see `dsgai-2026/DSGAI_ISO27001.md`.
 
 ---
 
+## Why ISO 27001 for LLM security
+
+ISO/IEC 27001:2022 is the world's most widely adopted information security management system (ISMS) standard, with over 70,000 certified organisations globally. For organisations deploying LLM-based AI systems, this mapping traces each OWASP LLM risk to specific ISO 27001 Annex A controls -- enabling security teams to integrate AI-specific risks into their existing ISMS without building a parallel governance structure.
+
+---
+
 ## ISO 27001:2022 Annex A domains
 
 | Domain | Controls | Scope |

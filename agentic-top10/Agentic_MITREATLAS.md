@@ -22,6 +22,12 @@ the severity of a technique beyond its baseline LLM rating.
 
 ---
 
+## Why MITRE ATLAS for agentic AI security
+
+MITRE ATLAS is the authoritative adversarial threat landscape for AI systems -- the ATT&CK equivalent for machine learning, providing structured tactics, techniques, and procedures (TTPs) for AI-targeted attacks. Agentic systems dramatically expand the ATLAS threat surface because autonomy, memory persistence, tool access, and multi-agent orchestration turn individual ATLAS techniques into multi-stage attack chains with compounding blast radius. This mapping traces each OWASP Agentic Top 10 risk to specific ATLAS techniques and explicitly notes where agentic context amplifies severity beyond the baseline LLM rating.
+
+---
+
 ## Quick-reference summary
 
 | ID | Name | Severity | Primary ATLAS Techniques | Agentic amplifier | Tier |
@@ -699,6 +705,13 @@ mapping is available at:
 
 Import into [MITRE ATLAS Navigator](https://mitre-atlas.github.io/atlas-navigator/)
 to visualise agentic attack coverage across your threat model.
+
+---
+
+## See also
+
+- [Agentic Top 10 × SAMM](Agentic_SAMM.md)
+- [DSGAI 2026 × MITRE ATLAS](../dsgai-2026/DSGAI_MITREATLAS.md)
 
 ---
 
