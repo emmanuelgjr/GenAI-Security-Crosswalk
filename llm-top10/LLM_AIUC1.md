@@ -478,7 +478,6 @@ window exhaustion, or disproportionate compute consumption.
 ---
 
 ## See also
-- [DSGAI 2026 × AIUC-1](../dsgai-2026/DSGAI_AIUC1.md)
 
 - [DSGAI 2026 × AIUC-1](../dsgai-2026/DSGAI_AIUC1.md)
 

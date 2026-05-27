@@ -1044,7 +1044,6 @@ personal data in GenAI systems operating in jurisdictions covered by GDPR or CCP
 ---
 
 ## See also
-- [Agentic Top 10 × MAESTRO](../agentic-top10/Agentic_MAESTRO.md)
 
 - [LLM Top 10 × SAMM](../llm-top10/LLM_SAMM.md)
 - [Agentic Top 10 × SAMM](../agentic-top10/Agentic_SAMM.md)

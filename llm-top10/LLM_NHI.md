@@ -373,7 +373,6 @@ blast radius.
 ---
 
 ## See also
-- [DSGAI 2026 × NHI](../dsgai-2026/DSGAI_NHI.md)
 
 - [DSGAI 2026 × NHI](../dsgai-2026/DSGAI_NHI.md)
 

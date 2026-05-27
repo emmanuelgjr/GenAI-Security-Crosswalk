@@ -1011,7 +1011,6 @@ detection (DE.CM) govern RAG corpus integrity.
 ---
 
 ## See also
-- [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
 
 - [LLM Top 10 × NIST CSF 2.0](../llm-top10/LLM_NISTCSF2.md)
 - [Agentic Top 10 × NIST CSF 2.0](../agentic-top10/Agentic_NISTCSF2.md)
