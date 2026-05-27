@@ -36,7 +36,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Data from Information Repositories",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Observability databases and log stores accessed as information repositories — sensitive content available at scale"
@@ -470,15 +470,7 @@
       "framework": "AIUC-1",
       "control_id": "A",
       "control_name": "Data & Privacy domain",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Foundational"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B006",
-      "control_name": "Prevent unauthorized AI actions",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -486,7 +478,15 @@
       "framework": "AIUC-1",
       "control_id": "E",
       "control_name": "Audit trails and logging",
-      "tier": "Hardening",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Foundational"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B009",
+      "control_name": "Limit output over-exposure",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -524,51 +524,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — consent governance",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include consent management in AI risk management strategy; define consent requirements per data type and processing activity"
-    },
-    {
-      "framework": "FedRAMP",
       "control_id": "AC-3",
-      "control_name": "Access Enforcement — consent-based access",
+      "control_name": "Access Enforcement — telemetry data access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce access controls aligned with consent status; block AI processing on data where consent has been withdrawn"
+      "notes": "Enforce access controls on all telemetry data stores; restrict access to observability pipelines based on role and need-to-know"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AU-2",
-      "control_name": "Event Logging — consent compliance logging",
+      "control_name": "Event Logging — secure logging practices",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Log consent status and changes; enable audit of consent compliance for all AI data processing activities"
+      "notes": "Implement secure logging — redact PII and sensitive content from logs, traces, and metrics before storage; apply data minimisation"
     },
     {
-      "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — consent governance",
+      "framework": "FedRAMP",
+      "control_id": "SI-4",
+      "control_name": "System Monitoring — telemetry leakage detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include consent management in ICT risk management; define consent requirements per data type and AI processing activity for financial services"
+      "notes": "Monitor telemetry pipelines for sensitive data; detect PII, credentials, or classified content in logs and traces"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — telemetry governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include telemetry data in risk management; define retention limits, access controls, and classification for all observability data"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — consent-aligned controls",
+      "control_name": "Protection and Prevention – telemetry data controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement access controls aligned with consent status; block AI processing on data where consent has been withdrawn or is insufficient"
+      "notes": "Implement data minimisation in observability pipelines; redact PII and sensitive content from logs and traces before storage"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management – telemetry governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include observability data in ICT risk management; define classification, retention, and access controls for telemetry data"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 10",
-      "control_name": "Detection — consent violation monitoring",
+      "control_name": "Detection – telemetry leakage monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor for AI processing inconsistent with consent status; alert on violations"
+      "notes": "Monitor telemetry streams for sensitive data; detect PII, credentials, and financial data in logs and traces"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk – observability vendor oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include observability platform vendors in third-party risk management; assess data handling for logged AI interactions"
     }
   ],
   "tools": [
@@ -623,19 +639,19 @@
       "url": "https://www.osano.com"
     },
     {
-      "name": "Collibra",
-      "type": "commercial",
-      "url": "https://www.collibra.com"
-    },
-    {
-      "name": "Open Policy Agent",
+      "name": "Microsoft Presidio",
       "type": "open-source",
-      "url": "https://www.openpolicyagent.org"
+      "url": "https://github.com/microsoft/presidio"
     },
     {
-      "name": "TrustArc",
+      "name": "Splunk",
       "type": "commercial",
-      "url": "https://trustarc.com"
+      "url": "https://www.splunk.com"
+    },
+    {
+      "name": "Elasticsearch",
+      "type": "open-source",
+      "url": "https://www.elastic.co"
     }
   ],
   "incidents": [
@@ -719,7 +735,7 @@
     ],
     "agentic_top10": [
       "ASI09",
-      "ASI02"
+      "ASI03"
     ]
   },
   "changelog": [

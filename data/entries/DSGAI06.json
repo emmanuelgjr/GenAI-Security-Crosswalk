@@ -20,7 +20,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0051",
-      "control_name": "Exploit Public-Facing Application",
+      "control_name": "LLM Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Malicious MCP server exploits trust relationship with agent to capture context payloads"
@@ -28,7 +28,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Data from Information Repositories",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Context data flowing through tool integrations captured and transmitted to adversary"
@@ -470,16 +470,16 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B006",
-      "control_name": "Prevent unauthorized AI actions",
+      "control_id": "B003",
+      "control_name": "Manage public release of technical details",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B009",
-      "control_name": "Validate AI-generated content",
+      "control_id": "B007",
+      "control_name": "Enforce user access privileges",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
@@ -526,51 +526,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "CM-3",
-      "control_name": "Configuration Change Control — pipeline lineage documentation",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — tool data exchange controls",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Maintain comprehensive data lineage documentation for all AI pipelines; update on every transformation, combination, or processing change"
+      "scope": "Both",
+      "notes": "Enforce access controls on all data exchanged with tools and plugins; restrict data sharing to minimum necessary per tool permission manifest"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SA-9",
+      "control_name": "External Information System Services — plugin provider controls",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Require security assessment for all third-party tool and plugin providers; establish data handling SLAs covering sensitivity and retention"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AU-2",
-      "control_name": "Event Logging — data transformation logging",
+      "control_name": "Event Logging — tool interaction logging",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Log all data transformation events in AI pipelines; enable end-to-end lineage reconstruction from source to model"
+      "scope": "Both",
+      "notes": "Log all data exchanged with external tools and plugins; capture tool identity, data elements shared, and response data received"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — lineage requirements",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — tool data flow enforcement",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Include data lineage completeness in AI risk management strategy; define minimum lineage requirements per data sensitivity level"
+      "scope": "Both",
+      "notes": "Enforce boundary controls on data flows to external tools; prevent uncontrolled data transfer to plugin endpoints"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — data transformation mapping",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk – tool/plugin provider oversight",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Map all data transformations in AI pipelines; document inputs, outputs, and processing logic for each stage"
+      "scope": "Both",
+      "notes": "Include AI tool and plugin providers in third-party ICT risk management; assess data handling, security controls, and data minimisation practices"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 12",
-      "control_name": "Backup Policies — lineage metadata preservation",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention – data exchange controls",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Include lineage metadata in backup policies; ensure lineage records can be restored alongside data and models"
+      "scope": "Both",
+      "notes": "Implement data minimisation and access controls on all data exchanged with external tools; enforce least privilege per tool"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection – tool data flow monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor data flows to and from external tools; detect unauthorised data transfers or excessive data sharing"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — lineage governance",
+      "control_name": "ICT Risk Management – tool governance",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Include data lineage requirements in ICT risk management; define minimum lineage completeness per data sensitivity"
+      "scope": "Both",
+      "notes": "Include tool and plugin data exchange policies in ICT risk management; define approved data sharing scope per tool"
     }
   ],
   "tools": [
@@ -625,19 +641,29 @@
       "url": "https://datahubproject.io"
     },
     {
-      "name": "Apache Atlas",
+      "name": "Open Policy Agent",
       "type": "open-source",
-      "url": "https://atlas.apache.org"
+      "url": "https://www.openpolicyagent.org"
     },
     {
-      "name": "dbt",
+      "name": "OpenTelemetry",
       "type": "open-source",
-      "url": "https://www.getdbt.com"
+      "url": "https://opentelemetry.io"
+    },
+    {
+      "name": "Netskope",
+      "type": "commercial",
+      "url": "https://www.netskope.com"
     },
     {
       "name": "Collibra",
       "type": "commercial",
       "url": "https://www.collibra.com"
+    },
+    {
+      "name": "Nightfall DLP",
+      "type": "commercial",
+      "url": "https://www.nightfall.ai"
     }
   ],
   "incidents": [

@@ -20,7 +20,12 @@ map directly to the data security concerns across the DSGAI taxonomy —
 Domain A (Data & Privacy) alone covers a majority of the 21 DSGAI entries.
 
 ---
-## Why # DSGAI 2026 × AIUC-1 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × AIUC-1 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × AIUC-1 compliance and governance programmes.---
+
+## Why AIUC-1 for GenAI data security
+
+AIUC-1 provides the most direct single-framework coverage for DSGAI data security risks. Domain A (Data & Privacy) maps to data leakage, classification, access control, and privacy requirements across the majority of the 21 entries, while the Security (B), Accountability (E), and Society (F) domains address the adversarial, audit, and governance dimensions of GenAI data risk.
+
+---
 
 ## AIUC-1 domains at a glance
 
@@ -39,27 +44,27 @@ Domain A (Data & Privacy) alone covers a majority of the 21 DSGAI entries.
 
 | ID | Name | Severity | Primary AIUC-1 Domains/Controls | Tier |
 |---|---|---|---|---|
-| DSGAI01 | Prompt Injection via Data Channels | Critical | B001, B002, B005, B006 | Foundational–Advanced |
-| DSGAI02 | Training Data Poisoning | Critical | A (all), B001, B002, E | Hardening–Advanced |
-| DSGAI03 | Sensitive Data in Training Sets | High | A (all), B006, E | Foundational–Hardening |
-| DSGAI04 | Insecure Data Pipelines | High | A, B001, B003, E | Foundational–Hardening |
-| DSGAI05 | Guardrail Circumvention | High | B001, B002, B005, C | Hardening–Advanced |
-| DSGAI06 | Unintended Data Disclosure | High | A, B006, B009, E | Foundational–Hardening |
-| DSGAI07 | Excessive Data Access | High | A, B006, B007, E | Foundational–Hardening |
-| DSGAI08 | Data Leakage in Retrieval | High | A, B005, B006 | Hardening–Advanced |
-| DSGAI09 | RAG Corpus Manipulation | Critical | A, B001, B002, E | Hardening–Advanced |
-| DSGAI10 | Context Window Poisoning | High | B001, B002, B005 | Hardening–Advanced |
-| DSGAI11 | Session Persistence Attacks | High | A, B006, E | Hardening–Advanced |
-| DSGAI12 | Model Inversion and Extraction | High | A, B006, D, E | Hardening–Advanced |
-| DSGAI13 | Data Leakage through Tool Integration | High | A, B003, B007, E | Foundational–Hardening |
-| DSGAI14 | Model Weight Theft | High | A, B006, E | Hardening–Advanced |
-| DSGAI15 | Inference Data Exposure | High | A, B006, E | Foundational–Hardening |
-| DSGAI16 | Third-Party Data Dependencies | High | B001, B003, B008 | Foundational–Hardening |
-| DSGAI17 | Model Supply Chain Risks | High | B001, B003, B008, A | Foundational–Hardening |
-| DSGAI18 | Data Retention and Deletion Failures | Medium | A, E | Foundational–Hardening |
-| DSGAI19 | Cascading Data Failures | High | D, B006, E | Hardening–Advanced |
-| DSGAI20 | Regulatory Non-Compliance | High | A, C, E, F | Foundational–Hardening |
-| DSGAI21 | Data Provenance and Lineage Failures | Medium | A, E | Foundational–Hardening |
+| DSGAI01 | Sensitive Data Leakage | Critical | A (all), B009, B006 | Foundational–Hardening |
+| DSGAI02 | Agent Identity & Credential Exposure | Critical | A, B007, B008, E | Foundational–Hardening |
+| DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | A, E, B007, F | Foundational–Hardening |
+| DSGAI04 | Data Model & Artifact Poisoning | Critical | A, B001, B002, B008 | Hardening–Advanced |
+| DSGAI05 | Data Integrity & Validation Failures | High | A, B005, B006 | Foundational–Hardening |
+| DSGAI06 | Tool Plugin & Agent Data Exchange | High | A, B003, B007, E | Foundational–Hardening |
+| DSGAI07 | Data Governance & Lifecycle | High | A, E, F | Foundational–Hardening |
+| DSGAI08 | Non-Compliance & Regulatory Violations | High | A, E, F, C | Foundational–Hardening |
+| DSGAI09 | Multimodal Cross-Channel Leakage | Medium | A, B009, B006 | Hardening–Advanced |
+| DSGAI10 | Synthetic Data & Anonymization Pitfalls | Medium | A, F | Hardening–Advanced |
+| DSGAI11 | Cross-Context Conversation Bleed | High | A, B006, E | Foundational–Hardening |
+| DSGAI12 | Unsafe NL Data Gateways | Critical | B005, B006, B009, A | Foundational–Advanced |
+| DSGAI13 | Vector Store Platform Security | High | A, B008, E | Hardening–Advanced |
+| DSGAI14 | Excessive Telemetry & Monitoring Leakage | Medium | A, E, B009 | Foundational–Hardening |
+| DSGAI15 | Over-Broad Context Windows | High | A, B005, B006 | Foundational–Hardening |
+| DSGAI16 | Endpoint & Browser Overreach | High | B006, B007, A | Foundational–Hardening |
+| DSGAI17 | Data Availability & Resilience Failures | High | D, A, E | Foundational–Hardening |
+| DSGAI18 | Inference & Data Reconstruction | High | A, B004, B006 | Hardening–Advanced |
+| DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | A, E, F | Foundational–Hardening |
+| DSGAI20 | Model Exfiltration & IP Replication | Critical | A, B004, B006, E | Hardening–Advanced |
+| DSGAI21 | Disinformation & Integrity Attacks | High | C, F, B002, B005 | Hardening–Advanced |
 
 ---
 
@@ -69,7 +74,7 @@ Domain A (Data & Privacy) alone covers a majority of the 21 DSGAI entries.
 - **Security engineer** — B001–B009, E — full security domain
 - **Auditor** — A, E, B003, B007 — compliance and evidence
 - **CISO / governance** — A, C, E, F — programme and oversight
-- **Privacy officer** — Domain A, DSGAI03, DSGAI15, DSGAI18, DSGAI20
+- **Privacy officer** — Domain A, DSGAI03, DSGAI14, DSGAI18, DSGAI19
 - **AI red teamer** — B001, B002, B005 — adversarial data pipeline testing
 
 ---
@@ -80,491 +85,485 @@ Domain A (Data & Privacy) alone covers a majority of the 21 DSGAI entries.
 
 ### DSGAI01 — Sensitive Data Leakage
 
-Malicious instructions embedded in training data, retrieved documents,
-or tool outputs manipulate model behaviour at inference time.
+**Severity:** Critical
+
+Sensitive data — PII, credentials, financial records, proprietary code — leaks from GenAI systems through model outputs, RAG retrieval, embedding exposure, or observability pipelines.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Third-party adversarial robustness testing | B001 | Adversarial testing of all data injection vectors | Foundational |
-| Detect adversarial input | B002 | Runtime detection of injection in data channels | Hardening |
-| Implement real-time input filtering | B005 | Filter all external data before context assembly | Foundational |
-| Prevent unauthorized AI actions | B006 | Prevent execution of injected instructions | Foundational |
+| Data & Privacy domain (all) | A | Data classification, access controls, and leakage prevention for all GenAI data | Foundational |
+| Limit output over-exposure | B009 | Output filtering preventing disclosure of sensitive information in model responses | Foundational |
+| Prevent unauthorized AI actions | B006 | Restrict model actions that could expose sensitive data beyond authorised scope | Foundational |
+| Audit trails and logging | E | Audit trail of all data access and output events for forensic reconstruction | Hardening |
 
 **Mitigations:**
-- B005: content filtering at all data ingestion boundaries
-- B006: trust-level tagging — retrieved data cannot override system instructions
-- B001: adversarial injection testing in CI/CD for all data channels
-- B002: runtime anomaly detection on model decisions correlated with external data
+- Domain A: classify all data in GenAI scope; implement DLP on all output channels
+- B009: output redaction for PII, credentials, API keys before responses reach users
+- B006: access-scoped RAG retrieval — users only retrieve documents they are authorised for
+- Domain E: log all model outputs at integration points for forensic reconstruction
 
 ---
 
 ### DSGAI02 — Agent Identity & Credential Exposure
 
-OT process data or public datasets used in training are corrupted —
-causing models to learn backdoored, biased, or degraded behaviours.
+**Severity:** Critical
+
+Agent credentials — session tokens, API keys, delegated permissions — are exposed through memory, logs, tool payloads, or inter-agent communication, enabling credential theft and lateral movement.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain (all) | A | Training data integrity, provenance, and access control | Foundational |
-| Third-party adversarial robustness testing | B001 | Backdoor and poisoning detection in training pipeline | Foundational |
-| Detect adversarial input | B002 | Detect anomalous training data patterns | Hardening |
-| Audit trails and logging | E | Chain of custody for training data | Foundational |
+| Data & Privacy domain | A | Credential data classified as sensitive; access controls on token storage | Foundational |
+| Enforce user access privileges | B007 | Agents operate within the privilege envelope of the authorising user | Foundational |
+| Protect model deployment environment | B008 | Encrypted credential storage; secure agent runtime environment | Foundational |
+| Audit trails and logging | E | Audit logging of all credential issuance, use, and expiry events | Hardening |
 
 **Mitigations:**
-- Domain A: hash verification for all training data; restrict write access
-- B001: adversarial probing of trained models for backdoor triggers
-- B002: statistical anomaly detection on training data distributions
-- Domain E: immutable chain of custody from data source to training job
+- Domain A: short-lived, task-scoped credentials per agent invocation; no long-lived tokens
+- B007: enforce least privilege — agent maximum privilege equals authorising user's privilege
+- B008: encrypted credential storage with strict access controls on agent runtime
+- Domain E: full audit trail on all agent identity operations
 
 ---
 
 ### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
-PII, credentials, trade secrets, or regulated data included in training
-sets lead to model memorisation and potential disclosure at inference.
+**Severity:** High
+
+Employees or teams deploy unauthorised GenAI tools that process corporate data outside governed channels, creating invisible data flows beyond security and compliance controls.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain (all) | A | Data classification and minimisation for training datasets | Foundational |
-| Prevent unauthorized AI actions | B006 | Output restrictions preventing memorised sensitive data disclosure | Foundational |
-| Audit trails and logging | E | Evidence of PII scanning and removal procedures | Foundational |
+| Data & Privacy domain | A | Data governance policies covering all AI tool usage | Foundational |
+| Enforce user access privileges | B007 | Only approved AI tools and services permitted for corporate data | Foundational |
+| Audit trails and logging | E | Visibility into which AI services are accessing corporate data | Hardening |
+| Society domain | F | Transparency requirements for AI tool usage across the organisation | Foundational |
 
 **Mitigations:**
-- Domain A: automated PII scanning of all training datasets before use
-- Domain A data minimisation: remove or anonymise detected sensitive records
-- B006: output filtering blocking memorised sensitive data patterns
-- Domain E: audit evidence of data cleaning procedures
+- Domain A: approved AI tools policy; corporate data may only be processed by sanctioned services
+- B007: network-level enforcement blocking unapproved AI service endpoints
+- Domain E: monitoring for data flows to unapproved AI services (shadow AI detection)
+- Domain F: transparency reporting on AI tool usage across the organisation
 
 ---
 
 ### DSGAI04 — Data Model & Artifact Poisoning
 
-Data ingestion, preprocessing, and serving pipelines lack authentication,
-integrity controls, or logging — enabling tampering or exfiltration.
+**Severity:** Critical
+
+Training data, fine-tuning pipelines, or model weights are corrupted to embed backdoors, bias, or degraded behaviours that persist through deployment.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Access controls and integrity for pipeline data | Foundational |
-| Third-party adversarial robustness testing | B001 | Pipeline security testing | Foundational |
-| Third-party security assessment | B003 | Assessment of third-party pipeline components | Hardening |
-| Audit trails and logging | E | Per-stage pipeline audit logging | Foundational |
+| Data & Privacy domain | A | Training data integrity, provenance, and access control | Foundational |
+| Third-party adversarial robustness testing | B001 | Backdoor and poisoning detection in training pipeline | Hardening |
+| Detect adversarial input | B002 | Detect anomalous training data patterns and model weight modifications | Hardening |
+| Protect model deployment environment | B008 | Integrity verification of model artifacts before deployment | Foundational |
 
 **Mitigations:**
-- Domain A: authentication and encryption for all pipeline connections
-- B001: pipeline security testing in CI/CD
-- B003: assess all third-party pipeline components
-- Domain E: per-stage audit logging with forensic retention
+- Domain A: access controls on all training data repositories; hash verification for datasets
+- B001: adversarial probing of trained models for backdoor triggers before production
+- B002: statistical anomaly detection on training data distributions
+- B008: signed model registry with checksum verification in CI/CD
 
 ---
 
 ### DSGAI05 — Data Integrity & Validation Failures
 
-Safety guardrails protecting GenAI system outputs are bypassed through
-adversarial prompting, model manipulation, or architectural weaknesses.
+**Severity:** High
+
+Insufficient validation on AI data ingestion interfaces allows corrupted, malformed, or adversarial data to enter processing pipelines, degrading output quality or enabling attacks.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Third-party adversarial robustness testing | B001 | Dedicated guardrail bypass red team testing | Hardening |
-| Detect adversarial input | B002 | Runtime detection of bypass attempts | Hardening |
-| Implement real-time input filtering | B005 | Secondary filtering layer outside model inference | Foundational |
-| Safety domain (harm prevention) | C | Guardrail architecture and effectiveness requirements | Foundational |
+| Data & Privacy domain | A | Data quality standards and validation requirements for all AI inputs | Foundational |
+| Implement real-time input filtering | B005 | Validate and filter all data before it enters AI processing pipelines | Foundational |
+| Prevent unauthorized AI actions | B006 | Prevent processing of invalid or adversarial data inputs | Foundational |
 
 **Mitigations:**
-- Domain C: defence-in-depth guardrail design — multiple independent layers
-- B001: dedicated adversarial testing programme targeting guardrail bypass
-- B005: secondary rule-based guardrail outside LLM inference path
-- B002: runtime detection of guardrail bypass attempts
+- Domain A: define data quality standards for all AI input sources; enforce schema validation
+- B005: automated input validation on all data ingestion points; reject malformed data
+- B006: quarantine mechanisms for data that fails validation checks
 
 ---
 
 ### DSGAI06 — Tool Plugin & Agent Data Exchange
 
-GenAI systems surface sensitive information in responses through
-memorisation, over-retrieval, or insufficient output filtering.
+**Severity:** High
+
+Sensitive context — user data, credentials, conversation history — exchanged with third-party tools, plugins, or MCP servers without adequate access controls or data minimisation.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Output data classification and filtering | Foundational |
-| Prevent unauthorized AI actions | B006 | Output scope restrictions for sensitive data categories | Foundational |
-| Validate AI-generated content | B009 | Output validation before delivery | Foundational |
-| Audit trails and logging | E | Output logging for disclosure incident investigation | Foundational |
+| Data & Privacy domain | A | Data minimisation requirements for tool/plugin data exchange | Foundational |
+| Manage public release of technical details | B003 | Control what data is shared with third-party tool providers | Hardening |
+| Enforce user access privileges | B007 | Tool access limited to data the authorising user can access | Foundational |
+| Audit trails and logging | E | Log all data exchanged with external tools and plugins | Foundational |
 
 **Mitigations:**
-- Domain A + B006: DLP scanning and output filtering for all sensitive data patterns
-- B009: output validation before delivery to user
-- Domain E: audit logging of all outputs with forensic retention
-- Per-user output filtering based on entitlement
+- Domain A: data minimisation — only send minimum necessary context to tools
+- B003: review and approve all tool/plugin data sharing before deployment
+- B007: per-tool permission manifests; tools cannot access data beyond authorised scope
+- Domain E: audit log every data exchange with external tools
 
 ---
 
 ### DSGAI07 — Data Governance & Lifecycle
 
-GenAI systems are granted data access beyond their declared function —
-creating unnecessary exposure and blast radius on compromise.
+**Severity:** High
+
+Governance gaps for AI-derived data assets — embeddings, fine-tuned models, generated content, cached outputs — leave them outside retention, classification, and disposal policies.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Data minimisation and access control | Foundational |
-| Prevent unauthorized AI actions | B006 | Scope restrictions for data access | Foundational |
-| Third-party permission controls | B007 | Least-privilege for third-party data access | Hardening |
-| Audit trails and logging | E | Data access audit logging | Foundational |
+| Data & Privacy domain | A | Classification and lifecycle management for all AI-derived data | Foundational |
+| Audit trails and logging | E | Governance evidence — data lineage, retention compliance, disposal records | Foundational |
+| Society domain | F | Transparency on how AI-derived data is created, used, and retained | Hardening |
 
 **Mitigations:**
-- Domain A: least-privilege data access per GenAI system component
-- B006: query-scoped data access — minimum data returned per request
-- B007: third-party tool data access restricted to declared scope
-- Domain E: data access audit logging with drift detection
+- Domain A: extend data classification to all AI-derived assets; define retention policies
+- Domain A: automated disposal of expired AI data assets per retention schedule
+- Domain E: maintain data lineage records from source through all AI transformations
+- Domain F: document and publish AI data governance policies
 
 ---
 
 ### DSGAI08 — Non-Compliance & Regulatory Violations
 
-RAG pipelines return documents exceeding user entitlement — exposing
-data from other tenants, higher-sensitivity tiers, or access-controlled corpora.
+**Severity:** High
+
+GenAI systems fail to meet regulatory obligations — GDPR, EU AI Act, sector-specific requirements — due to inadequate data handling, missing documentation, or uncontrolled processing.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Per-user entitlement controls on corpus access | Foundational |
-| Implement real-time input filtering | B005 | Filter retrieved content to minimum required | Foundational |
-| Prevent unauthorized AI actions | B006 | Enforce retrieval scope restrictions | Foundational |
+| Data & Privacy domain | A | Regulatory-compliant data handling across all AI operations | Foundational |
+| Audit trails and logging | E | Compliance evidence — processing records, consent logs, DPIA documentation | Foundational |
+| Society domain | F | Transparency and fairness obligations under regulatory frameworks | Foundational |
+| Safety domain | C | Risk assessment documentation per EU AI Act requirements | Hardening |
 
 **Mitigations:**
-- Domain A: access-controlled retrieval with per-query entitlement filtering
-- B005: post-retrieval content filtering before context inclusion
-- B006: enforce that retrieved documents match user entitlement
-- Automated cross-tenant leakage test suite (see B001)
+- Domain A: map all AI data processing to applicable regulatory requirements
+- Domain E: maintain processing records and consent logs as compliance evidence
+- Domain F: implement transparency requirements (AI Act Art. 52, GDPR Art. 13-14)
+- Domain C: conduct and document AI risk assessments per regulatory requirements
 
 ---
 
 ### DSGAI09 — Multimodal Cross-Channel Leakage
 
-Attackers tamper with RAG corpora — through data pipeline compromise
-or malicious document injection — causing retrieval to return manipulated
-content that steers model outputs.
+**Severity:** Medium
+
+Data leaks across modalities — text-to-image, speech-to-text, OCR — when sensitive information in one channel surfaces in another without appropriate controls.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Corpus integrity, write authentication, provenance | Foundational |
-| Third-party adversarial robustness testing | B001 | Corpus poisoning simulation | Hardening |
-| Detect adversarial input | B002 | Corpus integrity monitoring and distribution drift detection | Hardening |
-| Audit trails and logging | E | Immutable corpus write audit log | Foundational |
+| Data & Privacy domain | A | Cross-modal data flow controls and classification | Hardening |
+| Limit output over-exposure | B009 | Output filtering across all modalities | Hardening |
+| Prevent unauthorized AI actions | B006 | Prevent cross-modal data exposure beyond authorised scope | Hardening |
 
 **Mitigations:**
-- Domain A: write authentication for corpus stores; hash verification at ingest
-- B001: document injection simulation in CI/CD
-- B002: corpus distribution drift detection in production
-- Domain E: immutable audit log for all corpus write operations
+- Domain A: classify data sensitivity per modality; enforce consistent controls across channels
+- B009: apply output filtering to all modalities — text, image, audio, video
+- B006: enforce access controls consistently across modality boundaries
 
 ---
 
 ### DSGAI10 — Synthetic Data & Anonymization Pitfalls
 
-Malicious content injected into the active context window through tool
-output or retrieved documents manipulates in-context reasoning.
+**Severity:** Medium
+
+Synthetic data generation or anonymization techniques fail to prevent re-identification, membership inference, or attribute inference from the generated datasets.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Third-party adversarial robustness testing | B001 | Context injection testing across all sources | Foundational |
-| Detect adversarial input | B002 | Runtime detection of context manipulation | Hardening |
-| Implement real-time input filtering | B005 | Content filtering at context assembly | Foundational |
+| Data & Privacy domain | A | Privacy-preserving synthetic data generation requirements | Hardening |
+| Society domain | F | Fairness and bias considerations in synthetic data | Hardening |
 
 **Mitigations:**
-- B005: sanitise all external content before context window assembly
-- B001: adversarial context injection testing across all content sources
-- B002: anomaly detection on model decisions correlated with context anomalies
-- Trust-level tagging: external content cannot override system instructions
+- Domain A: formal privacy guarantees (differential privacy) for synthetic data generation
+- Domain A: re-identification risk assessments before releasing synthetic datasets
+- Domain F: bias audits on synthetic data to ensure fairness properties are preserved
 
 ---
 
 ### DSGAI11 — Cross-Context Conversation Bleed
 
-Attackers exploit session memory to persist malicious instructions or
-extracted information across session boundaries.
+**Severity:** High
+
+Data from one user session, tenant, or conversation context leaks into another due to shared memory, caching, or insufficient context isolation.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Session data access controls and encryption | Foundational |
-| Prevent unauthorized AI actions | B006 | Session isolation enforcement | Foundational |
-| Audit trails and logging | E | Session access audit logging | Foundational |
+| Data & Privacy domain | A | Session and tenant isolation for all AI conversation data | Foundational |
+| Prevent unauthorized AI actions | B006 | Prevent cross-tenant or cross-session data access | Foundational |
+| Audit trails and logging | E | Log context boundaries and detect cross-context access | Hardening |
 
 **Mitigations:**
-- Domain A: session isolation, encryption, and access controls
-- B006: no cross-session data access without explicit authorisation
-- Domain E: audit logging of all session read/write operations
-- Session TTL and automatic purge policy
+- Domain A: enforce strict session isolation — no shared state between users or tenants
+- B006: architectural enforcement of context boundaries at the data layer
+- Domain E: monitoring for cross-context data access patterns; alert on violations
 
 ---
 
 ### DSGAI12 — Unsafe NL Data Gateways
 
-Adversaries query models systematically to reconstruct training data
-or replicate model weights through systematic prompting.
+**Severity:** Critical
+
+LLM-to-SQL, LLM-to-API, or LLM-to-shell interfaces allow natural language inputs to be converted into executable queries or commands without proper validation, enabling data exfiltration or manipulation.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Model weight and inference data protection | Foundational |
-| Prevent unauthorized AI actions | B006 | API rate limiting and scope restrictions | Foundational |
-| Reliability domain | D | Rate limiting and query budget enforcement | Foundational |
-| Audit trails and logging | E | Query pattern logging for extraction detection | Foundational |
+| Implement real-time input filtering | B005 | Filter NL inputs before they reach data gateway translation | Foundational |
+| Prevent unauthorized AI actions | B006 | Restrict gateway operations to read-only or allow-listed actions | Foundational |
+| Limit output over-exposure | B009 | Filter gateway outputs to prevent sensitive data disclosure | Foundational |
+| Data & Privacy domain | A | Access controls on underlying data sources accessed via NL gateways | Foundational |
 
 **Mitigations:**
-- Domain D + B006: API rate limiting and per-user query budget
-- Domain A: restrict confidence score and logit exposure in API responses
-- Domain E: query pattern logging with extraction detection alerting
-- Periodic model extraction simulation exercise (B001)
+- B005: input validation on all NL-to-query translation; block injection patterns
+- B006: enforce allow-listed operations — NL gateways cannot execute destructive queries
+- B009: output row/column limits; redact sensitive fields from query results
+- Domain A: gateway queries execute with the requesting user's permissions, not system-level
 
 ---
 
 ### DSGAI13 — Vector Store Platform Security
 
-GenAI system tool integrations leak data to unauthorised parties through
-misconfigured permissions or over-broad API responses.
+**Severity:** High
+
+Vector databases and embedding stores lack access controls, encryption, or integrity verification — enabling unauthorised access to embeddings that encode sensitive information.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Tool integration data scope controls | Foundational |
-| Third-party security assessment | B003 | Formal assessment of all tool integrations | Hardening |
-| Third-party permission controls | B007 | Least-privilege for all tool data access | Hardening |
-| Audit trails and logging | E | Tool response audit logging | Foundational |
+| Data & Privacy domain | A | Access controls and encryption for vector stores | Foundational |
+| Protect model deployment environment | B008 | Secure deployment of vector database infrastructure | Hardening |
+| Audit trails and logging | E | Audit logging of all vector store access and modifications | Hardening |
 
 **Mitigations:**
-- Domain A + B007: minimum data principle for all tool responses
-- B003: security assessment for all third-party tool integrations
-- Domain E: log all tool API responses with full payload
-- Automated data leakage tests per tool (B001)
+- Domain A: implement RBAC on vector stores; encrypt embeddings at rest and in transit
+- B008: deploy vector databases in secured, access-controlled environments
+- Domain E: log all vector store queries and index modifications
 
 ---
 
 ### DSGAI14 — Excessive Telemetry & Monitoring Leakage
 
-Proprietary model weights are stolen through infrastructure compromise,
-insider threat, or API extraction.
+**Severity:** Medium
+
+Observability pipelines — logs, traces, metrics — capture sensitive data from AI interactions (prompts, responses, user data) and store it with insufficient access controls.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Model weight classification as IP asset with access controls | Foundational |
-| Prevent unauthorized AI actions | B006 | Access restrictions on model weight storage | Foundational |
-| Audit trails and logging | E | Model weight access audit logging | Foundational |
+| Data & Privacy domain | A | Data minimisation in observability pipelines | Foundational |
+| Audit trails and logging | E | Secure logging practices — redact sensitive data before storage | Foundational |
+| Limit output over-exposure | B009 | Prevent sensitive data from entering telemetry streams | Foundational |
 
 **Mitigations:**
-- Domain A: classify model weights as sensitive IP; apply encryption and access controls
-- B006: strict access scope on model storage systems
-- Domain E: alert on unexpected model weight access patterns
-- Third-party cloud provider contractual protections (B003)
+- Domain A: classify telemetry data; apply retention limits and access controls
+- Domain E: redact PII and sensitive content from logs and traces before storage
+- B009: filter sensitive data from telemetry streams at the collection point
 
 ---
 
 ### DSGAI15 — Over-Broad Context Windows
 
-Input data submitted at inference time is logged or retained in ways
-that expose it to unauthorised parties.
+**Severity:** High
+
+Excessive content injected into LLM context windows — full documents, entire conversation histories, unnecessary system data — increases the attack surface for data extraction.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Inference data minimisation and retention policy | Foundational |
-| Prevent unauthorized AI actions | B006 | Access restrictions on inference log data | Foundational |
-| Audit trails and logging | E | Inference data access audit logging | Foundational |
+| Data & Privacy domain | A | Data minimisation in context assembly | Foundational |
+| Implement real-time input filtering | B005 | Filter and scope content before context window assembly | Foundational |
+| Prevent unauthorized AI actions | B006 | Enforce maximum context scope per task | Hardening |
 
 **Mitigations:**
-- Domain A: data minimisation — log only what is operationally necessary
-- Domain A: apply encryption to all inference logs at rest
-- B006: restrict inference log access to authorised roles
-- Define and enforce inference log retention periods
+- Domain A: only include minimum necessary data in context windows
+- B005: truncate or summarise documents before context inclusion; strip unnecessary metadata
+- B006: per-task context scope limits; prevent context from exceeding authorised data boundaries
 
 ---
 
 ### DSGAI16 — Endpoint & Browser Overreach
 
-GenAI systems depend on external data sources whose security cannot
-be guaranteed, introducing supply chain risks.
+**Severity:** High
+
+AI agents operating in browsers, desktop environments, or mobile devices access more data than necessary — reading screens, files, or network data beyond the task scope.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Third-party adversarial robustness testing | B001 | Extend testing to third-party data inputs | Foundational |
-| Third-party security assessment | B003 | Formal assessment of data source providers | Hardening |
-| Third-party NHI controls | B008 | Controls for third-party credentials and API keys | Hardening |
+| Prevent unauthorized AI actions | B006 | Restrict agent access to minimum necessary endpoint data | Foundational |
+| Enforce user access privileges | B007 | Agent endpoint access limited to authorised user scope | Foundational |
+| Data & Privacy domain | A | Data minimisation for endpoint/browser AI agent operations | Foundational |
 
 **Mitigations:**
-- B003: security assessment for all critical external data source providers
-- B001: integrity testing for all third-party data at ingestion
-- B008: NHI controls for all third-party data API credentials
-- Data source SBOM with version pinning
+- B006: explicit permission grants per data source; agents cannot access files, screens, or network data without authorisation
+- B007: agent inherits user's access level — cannot escalate beyond endpoint permissions
+- Domain A: data minimisation — agents read only the specific data elements needed for the task
 
 ---
 
 ### DSGAI17 — Data Availability & Resilience Failures
 
-Pre-trained models, adapters, or ML frameworks are compromised —
-introducing backdoored models or vulnerable code into production.
+**Severity:** High
+
+AI data pipelines fail silently — RAG retrieval returns stale results, embedding indices corrupt, training data becomes unavailable — degrading AI system reliability without alerting operators.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Third-party adversarial robustness testing | B001 | Backdoor detection in third-party models | Foundational |
-| Third-party security assessment | B003 | Formal assessment of model providers | Hardening |
-| Third-party NHI controls | B008 | Credentials for model provider APIs | Hardening |
-| Data & Privacy domain | A | Model provenance tracking | Foundational |
+| Reliability domain | D | Availability, consistency, failure recovery for AI data systems | Foundational |
+| Data & Privacy domain | A | Backup and recovery for critical AI data assets | Foundational |
+| Audit trails and logging | E | Monitoring and alerting for data pipeline health | Foundational |
 
 **Mitigations:**
-- B001: adversarial probing of all third-party models for backdoor triggers
-- B003: formal vendor assessment for model providers
-- Domain A: model provenance tracking; hash verification at deployment
-- Model SBOM with version pinning
+- Domain D: circuit breakers and health checks on all AI data pipelines
+- Domain A: versioned backups of critical data assets — embeddings, indices, training data
+- Domain E: real-time monitoring of data pipeline availability; alert on degradation
 
 ---
 
 ### DSGAI18 — Inference & Data Reconstruction
 
-GenAI systems retain personal data or training artefacts beyond required
-retention periods or fail to honour deletion requests.
+**Severity:** High
+
+Attackers reconstruct sensitive training data or infer membership through model inversion, membership inference, or attribute inference attacks against deployed models.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Data retention policy, deletion procedures, right-to-erasure | Foundational |
-| Audit trails and logging | E | Retention compliance evidence | Foundational |
+| Data & Privacy domain | A | Privacy-preserving model deployment practices | Hardening |
+| Prevent AI endpoint scraping | B004 | Rate limiting and access controls on inference endpoints | Foundational |
+| Prevent unauthorized AI actions | B006 | Restrict bulk inference patterns that enable reconstruction | Hardening |
 
 **Mitigations:**
-- Domain A: documented retention periods for all GenAI data
-- Domain A: deletion capability verification for each data store
-- Domain E: audit evidence of retention policy compliance
-- Automated retention enforcement and deletion scheduling
+- Domain A: apply differential privacy during training to bound reconstruction risk
+- B004: rate limiting on inference APIs; detect systematic probing patterns
+- B006: restrict bulk query patterns that enable membership inference or model inversion
 
 ---
 
 ### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
-Failures in data pipelines propagate through multiple GenAI components,
-causing compounding degradation in downstream dependent systems.
+**Severity:** Medium
+
+Human annotators, reviewers, and labelers are exposed to sensitive, harmful, or disturbing content during AI data preparation without adequate protections.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Reliability domain (all) | D | Availability controls, circuit breakers, fault isolation | Foundational |
-| Prevent unauthorized AI actions | B006 | Scope restrictions preventing cascade amplification | Foundational |
-| Audit trails and logging | E | Cascade indicator logging for forensics | Foundational |
+| Data & Privacy domain | A | Access controls limiting labeler exposure to sensitive content | Foundational |
+| Audit trails and logging | E | Audit of what data labelers access and review | Foundational |
+| Society domain | F | Duty of care obligations for human annotators | Foundational |
 
 **Mitigations:**
-- Domain D: circuit breaker pattern between pipeline stages
-- Domain D: fail-safe state definition for all pipeline failures
-- Domain E: cascade indicator logging for incident investigation
-- Chaos engineering exercise for pipeline failure scenarios (B001)
+- Domain A: data segmentation — labelers only access content within their clearance scope
+- Domain E: audit logging of all labeler data access for compliance and safety monitoring
+- Domain F: wellbeing protections for annotators exposed to harmful content
 
 ---
 
 ### DSGAI20 — Model Exfiltration & IP Replication
 
-GenAI systems process personal data in ways that violate applicable law —
-GDPR, CCPA, HIPAA, EU AI Act — through inadequate consent, cross-border
-transfers, or prohibited processing.
+**Severity:** Critical
+
+Model weights, architectures, or trained capabilities are extracted through systematic querying, side-channel attacks, or insider access — enabling unauthorised replication of proprietary models.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Legal basis for data processing; consent management | Foundational |
-| Safety domain | C | Safety controls addressing regulatory harm scenarios | Foundational |
-| Accountability domain | E | Compliance evidence and audit trails | Foundational |
-| Society domain | F | Transparency disclosures required by law | Foundational |
+| Data & Privacy domain | A | IP classification and protection for model assets | Foundational |
+| Prevent AI endpoint scraping | B004 | Anti-scraping controls on inference endpoints | Hardening |
+| Prevent unauthorized AI actions | B006 | Restrict access patterns enabling model extraction | Hardening |
+| Audit trails and logging | E | Monitoring for systematic extraction patterns | Hardening |
 
 **Mitigations:**
-- Domain A: map all applicable regulations; document legal basis for all processing
-- Domain E: records of processing activities (GDPR Art. 30)
-- Domain F: AI content disclosures (EU AI Act Art. 52)
-- Domain C + A: DPIA for high-risk processing activities
+- Domain A: classify model weights as high-value IP; restrict access to authorised personnel
+- B004: rate limiting, watermarking, and fingerprinting on model outputs
+- B006: detect and block systematic querying patterns indicative of model extraction
+- Domain E: audit trail on all model access; alert on anomalous query patterns
 
 ---
 
 ### DSGAI21 — Disinformation & Integrity Attacks
 
-GenAI systems cannot demonstrate where training data, retrieved
-documents, or inference inputs originated — preventing audit and
-traceability.
+**Severity:** High
+
+Adversaries poison RAG knowledge bases, manipulate training data, or exploit model capabilities to generate and distribute false or misleading content at scale.
 
 #### AIUC-1 mapping
 
 | Control | ID | Description | Tier |
 |---|---|---|---|
-| Data & Privacy domain | A | Provenance metadata requirements for all GenAI data | Foundational |
-| Audit trails and logging | E | End-to-end lineage records | Foundational |
+| Safety domain | C | Guardrails preventing generation of harmful disinformation | Foundational |
+| Society domain | F | Transparency and content provenance requirements | Foundational |
+| Detect adversarial input | B002 | Detection of poisoned content in RAG knowledge bases | Hardening |
+| Implement real-time input filtering | B005 | Filter adversarial content from knowledge sources before retrieval | Hardening |
 
 **Mitigations:**
-- Domain A: provenance metadata attached to all ingested data
-- Domain E: end-to-end lineage tracking from source to inference
-- Automated provenance coverage tests in CI/CD
-- Immutable lineage ledger for regulated deployments
+- Domain C: content safety guardrails preventing generation of verifiable false claims
+- Domain F: content provenance tracking — flag AI-generated content and source attribution
+- B002: integrity monitoring of RAG knowledge bases for injected disinformation
+- B005: input filtering on all knowledge source updates; verify source credibility
 
 ---
 
-## AIUC-1 certification readiness — DSGAI domain coverage
+## See also
 
-| AIUC-1 Domain | Primary DSGAI entries | Status |
-|---|---|---|
-| A — Data & Privacy | DSGAI02, DSGAI03, DSGAI06, DSGAI07, DSGAI08, DSGAI09, DSGAI14, DSGAI15, DSGAI18, DSGAI21 | |
-| B — Security | DSGAI01, DSGAI04, DSGAI05, DSGAI10, DSGAI12, DSGAI16, DSGAI17 | |
-| C — Safety | DSGAI05, DSGAI20 | |
-| D — Reliability | DSGAI12, DSGAI19 | |
-| E — Accountability | DSGAI02, DSGAI06, DSGAI09, DSGAI13, DSGAI18, DSGAI20, DSGAI21 | |
-| F — Society | DSGAI20 | |
-
-**Note:** Domain A covers over 50% of DSGAI entries — the data security
-focus of AIUC-1 makes it exceptionally well-matched for the DSGAI taxonomy.
+- [LLM Top 10 × AIUC-1](../llm-top10/LLM_AIUC1.md)
+- [Agentic Top 10 × AIUC-1](../agentic-top10/Agentic_AIUC1.md)
 
 ---
 
 ## References
 
-- [AIUC-1 Standard](https://www.aiuc-1.com/)
 - [OWASP GenAI Data Security Risks 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
-- [LLM_AIUC1.md](../llm-top10/LLM_AIUC1.md) — AIUC-1 for LLM deployments
-- [Agentic_AIUC1.md](../agentic-top10/Agentic_AIUC1.md) — AIUC-1 for agentic deployments
-- [DSGAI_ISO42001.md](DSGAI_ISO42001.md) — ISO 42001 AIMS controls complement AIUC-1 certification
+- [AIUC-1 Standard](https://www.aiuc-1.com)
+- [AIUC-1 Data & Privacy Domain](https://www.aiuc-1.com/data-and-privacy)
+- [AIUC-1 Security Domain](https://www.aiuc-1.com/security)
 
 ---
 
 ## Changelog
 
-| Version | Date | Change |
-|---|---|---|
-| 1.0.0 | 2026-03-27 | Initial release — full mapping DSGAI01–DSGAI21 to AIUC-1 |
+| Date | Version | Change | Author |
+|---|---|---|---|
+| 2026-05-26 | 2026-Q1 | Rewrite all 21 entries with canonical DSGAI names and correct AIUC-1 mappings | OWASP GenAI Data Security Initiative |
 
 ---
 
-*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) —
-maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org)*
-*License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
+*Part of the [GenAI Security Crosswalk](https://github.com/emmanuelgjr/GenAI-Security-Crosswalk) — maintained by the [OWASP GenAI Data Security Initiative](https://genai.owasp.org)*

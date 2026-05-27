@@ -36,7 +36,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0051",
-      "control_name": "Exploit Public-Facing Application",
+      "control_name": "LLM Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Session isolation vulnerability in multi-tenant GenAI deployment exploited to access other users' data"
@@ -447,7 +447,7 @@
       "framework": "AIUC-1",
       "control_id": "A",
       "control_name": "Data & Privacy domain",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -455,7 +455,7 @@
       "framework": "AIUC-1",
       "control_id": "B006",
       "control_name": "Prevent unauthorized AI actions",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -463,9 +463,9 @@
       "framework": "AIUC-1",
       "control_id": "E",
       "control_name": "Audit trails and logging",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Foundational"
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -509,51 +509,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "CM-3",
-      "control_name": "Configuration Change Control — retention policy management",
+      "control_id": "AC-4",
+      "control_name": "Information Flow Enforcement — context isolation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define and enforce data retention policies for all AI data; implement automated deletion schedules; log policy changes"
+      "notes": "Enforce information flow controls preventing data from crossing session, tenant, or conversation boundaries; implement strict context isolation"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SC-28",
-      "control_name": "Protection of Information at Rest — retained data encryption",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — session data isolation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Encrypt all retained AI data; implement crypto-shredding capability for secure deletion"
+      "notes": "Enforce boundary protection isolating session, tenant, and conversation data; prevent shared memory or cache from leaking cross-context data"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — retention governance",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — cross-context access detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data retention risk in AI risk management; define retention periods per data type and regulatory requirement"
+      "notes": "Log context boundaries and data access patterns; detect and alert on cross-context data access violations"
     },
     {
-      "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — retention governance",
+      "framework": "FedRAMP",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — session-scoped data access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data retention policies in ICT risk management; define retention periods per data type, AI processing stage, and regulatory requirement"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 12",
-      "control_name": "Backup Policies — retention and deletion procedures",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Implement backup policies aligned with retention requirements; include secure deletion procedures for expired AI data, embeddings, and model artefacts"
+      "notes": "Enforce access controls scoped to the current session and tenant; deny cross-context data retrieval by default"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — retention enforcement",
+      "control_name": "Protection and Prevention – context isolation controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce retention policies through automated deletion and crypto-shredding; prevent retention beyond defined periods"
+      "notes": "Implement strict session and tenant isolation for all AI conversation data; enforce data boundary controls at the architecture level"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection – cross-context monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor for cross-context data access patterns; detect conversation bleed, cache contamination, and memory leakage across sessions"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management – cross-context breach reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify cross-context data exposure as ICT-related incidents; report per DORA criteria when customer data is affected"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing – isolation testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include context isolation testing in resilience testing programme; verify tenant boundaries under load and adversarial conditions"
     }
   ],
   "tools": [
@@ -608,9 +624,14 @@
       "url": "https://dvc.org"
     },
     {
-      "name": "AWS S3 Lifecycle / Azure Lifecycle Management",
-      "type": "commercial",
-      "url": "https://aws.amazon.com/s3/"
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
     },
     {
       "name": "HashiCorp Vault",
@@ -618,9 +639,14 @@
       "url": "https://www.vaultproject.io"
     },
     {
-      "name": "Open Policy Agent",
-      "type": "open-source",
-      "url": "https://www.openpolicyagent.org"
+      "name": "Splunk",
+      "type": "commercial",
+      "url": "https://www.splunk.com"
+    },
+    {
+      "name": "AWS CloudTrail / Azure Monitor",
+      "type": "commercial",
+      "url": "https://aws.amazon.com/cloudtrail/"
     }
   ],
   "incidents": [

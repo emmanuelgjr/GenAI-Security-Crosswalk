@@ -20,7 +20,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Data from Information Repositories",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Regulatory violations often arise from ungoverned data repositories — adversary exploits what compliance missed"
@@ -28,7 +28,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0051",
-      "control_name": "Exploit Public-Facing Application",
+      "control_name": "LLM Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Non-compliant AI deployments may lack security controls that compliance would have required"
@@ -456,25 +456,33 @@
       "framework": "AIUC-1",
       "control_id": "A",
       "control_name": "Data & Privacy domain",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B005",
-      "control_name": "Implement real-time input filtering",
-      "tier": "Hardening",
+      "control_id": "E",
+      "control_name": "Audit trails and logging",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B006",
-      "control_name": "Prevent unauthorized AI actions",
-      "tier": "Hardening",
+      "control_id": "F",
+      "control_name": "Society domain",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "C",
+      "control_name": "Safety domain",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Hardening"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -526,67 +534,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SC-28",
-      "control_name": "Protection of Information at Rest — AI data encryption",
+      "control_id": "PM-9",
+      "control_name": "Risk Management Strategy — regulatory compliance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Encrypt all AI data at rest — training data, model weights, inference logs, embedding stores — using FIPS 140-validated modules"
+      "notes": "Include regulatory compliance in AI risk management; map applicable data laws — GDPR, CCPA, HIPAA, EU AI Act — to AI processing activities and define compliance requirements"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "AC-3",
-      "control_name": "Access Enforcement — AI data access",
+      "control_id": "RA-3",
+      "control_name": "Risk Assessment — compliance gap analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce role-based access control on all AI data stores; restrict access based on clearance, need-to-know, and data sensitivity"
+      "notes": "Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AU-2",
-      "control_name": "Event Logging — leakage detection logging",
+      "control_name": "Event Logging — regulatory evidence",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Log AI data access and model outputs with sufficient detail to detect data leakage; include output content metadata"
+      "notes": "Maintain comprehensive logs for regulatory compliance evidence; ensure audit trails meet requirements of applicable data laws"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SI-4",
-      "control_name": "System Monitoring — leakage indicator detection",
+      "control_id": "CA-7",
+      "control_name": "Continuous Monitoring — compliance tracking",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor model outputs and data access patterns for leakage indicators — PII, credentials, classification markings in outputs; alert on detection"
+      "notes": "Include regulatory compliance metrics in continuous monitoring; track compliance status across AI systems and alert on drift"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — data leakage controls",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management – regulatory compliance governance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement security controls preventing AI data leakage — output monitoring, DLP, access controls, and encryption for all financial AI data"
+      "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities; define compliance requirements and accountability"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 17–23",
-      "control_name": "ICT Incident Management — data breach reporting",
+      "control_name": "ICT Incident Management – compliance incident reporting",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Classify AI data leakage events as ICT-related incidents; report to competent authorities per DORA incident classification criteria"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 10",
-      "control_name": "Detection — leakage indicator monitoring",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Deploy detection for data leakage indicators in model outputs — PII, financial data, credentials; alert and block on detection"
+      "notes": "Classify material regulatory non-compliance events as ICT incidents; report to competent authorities per DORA criteria; coordinate with DPO for GDPR notifications"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 13",
-      "control_name": "Learning and Evolving — leakage post-mortem",
+      "control_name": "Learning and Evolving – compliance improvement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Conduct post-incident analysis for data leakage events; identify root cause and update controls"
+      "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes, enforcement actions, and incident analysis"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification – regulated data mapping",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Map all AI data subject to regulatory requirements; ensure complete coverage in compliance programme"
     }
   ],
   "tools": [
@@ -641,19 +649,19 @@
       "url": "https://www.nightfall.ai"
     },
     {
-      "name": "Microsoft Presidio",
+      "name": "TrustArc",
+      "type": "commercial",
+      "url": "https://trustarc.com"
+    },
+    {
+      "name": "ServiceNow GRC",
+      "type": "commercial",
+      "url": "https://www.servicenow.com"
+    },
+    {
+      "name": "Open Policy Agent",
       "type": "open-source",
-      "url": "https://github.com/microsoft/presidio"
-    },
-    {
-      "name": "Nightfall DLP",
-      "type": "commercial",
-      "url": "https://www.nightfall.ai"
-    },
-    {
-      "name": "AWS Macie / Azure Purview",
-      "type": "commercial",
-      "url": "https://aws.amazon.com/macie/"
+      "url": "https://www.openpolicyagent.org"
     }
   ],
   "incidents": [

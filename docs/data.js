@@ -1088,29 +1088,29 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0021",
-        "control_name": "Data Leakage",
+        "control_id": "AML.T0057",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
         "notes": "Unintended exposure of training data or sensitive context through model outputs"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0030",
-        "control_name": "Information Disclosure",
+        "control_id": "AML.T0024.000",
+        "control_name": "Infer Membership",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0030",
-        "notes": "Extraction of confidential information via targeted model queries"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0024.000",
+        "notes": "Determining whether specific sensitive records were used in model training"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0024",
-        "control_name": "Model Inversion",
+        "control_id": "AML.T0024.001",
+        "control_name": "Invert ML Model",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0024",
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0024.001",
         "notes": "Reconstructing training data from model outputs or confidence scores"
       },
       {
@@ -1947,29 +1947,29 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0056",
-        "control_name": "Adversarial Model Manipulation",
+        "control_name": "Extract LLM System Prompt",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
-        "notes": "Tampering with model weights, adapters, or configurations during supply chain"
+        "notes": "Extracting system prompts that may reveal supply chain details, internal configurations, or security controls"
       },
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0048",
-        "control_name": "Model Contamination",
+        "control_name": "External Harms",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
-        "notes": "Introducing persistent malicious behaviour into model through supply chain"
+        "notes": "Introducing persistent malicious behaviour into model through supply chain leading to downstream external harms"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0010",
-        "control_name": "Backdoor ML Model",
+        "control_id": "AML.T0010.000",
+        "control_name": "AI Supply Chain Compromise",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
-        "notes": "Embedding trigger-based backdoors in model weights via training or fine-tuning supply chain"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0010.000",
+        "notes": "Compromising ML supply chain components — datasets, models, frameworks — to embed backdoors or malicious functionality"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -2760,30 +2760,30 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0032",
-        "control_name": "Data Poisoning",
+        "control_id": "AML.T0043",
+        "control_name": "Craft Adversarial Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0032",
-        "notes": "Injecting malicious data into training pipelines to corrupt model behaviour"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
+        "notes": "Crafting adversarial training examples designed to corrupt model behaviour"
       },
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0031",
-        "control_name": "Backdoor ML Model",
+        "control_name": "Erode AI Model Integrity",
         "tier": "Hardening",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0031",
-        "notes": "Embedding hidden trigger-response patterns in model via poisoned training data"
+        "notes": "Degrading model integrity through poisoned training data, embedding hidden trigger-response patterns"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0027",
-        "control_name": "Model Inversion",
+        "control_id": "AML.T0020",
+        "control_name": "Poison Training Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0027",
-        "notes": "Reconstructing sensitive training data from model outputs"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0020",
+        "notes": "Injecting malicious data into training pipelines to corrupt model behaviour at the data level"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -4355,12 +4355,12 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0068",
-        "control_name": "Automated Collection",
+        "control_id": "AML.T0053",
+        "control_name": "AI Agent Tool Invocation",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0068",
-        "notes": "LLM autonomously collecting data beyond its intended access scope"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
+        "notes": "LLM autonomously invoking tools or APIs beyond its intended access scope"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -5248,11 +5248,11 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0041",
-        "control_name": "Configuration Exposure",
+        "control_id": "AML.T0056",
+        "control_name": "Extract LLM System Prompt",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0041",
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
         "notes": "Extraction of internal model configuration, instructions, or system prompts"
       },
       {
@@ -6027,6 +6027,24 @@ window.CROSSWALK_DATA = [
         "notes": "Flooding vector stores with adversarial embeddings to degrade retrieval quality"
       },
       {
+        "framework": "MITRE ATLAS",
+        "control_id": "AML.T0070",
+        "control_name": "RAG Poisoning",
+        "tier": "Hardening",
+        "scope": "Build",
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0070",
+        "notes": "Injecting malicious content into RAG knowledge bases to manipulate retrieval results"
+      },
+      {
+        "framework": "MITRE ATLAS",
+        "control_id": "AML.T0066",
+        "control_name": "Retrieval Content Crafting",
+        "tier": "Hardening",
+        "scope": "Build",
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0066",
+        "notes": "Crafting content specifically designed to rank highly in semantic search and influence model outputs"
+      },
+      {
         "framework": "NIST AI RMF 1.0",
         "control_id": "MS-2.5",
         "control_name": "Testing — adversarial",
@@ -6772,21 +6790,21 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0045",
-        "control_name": "Disinformation",
+        "control_id": "AML.T0060",
+        "control_name": "Publish Hallucinated Entities",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0045",
-        "notes": "Using AI-generated content to deliberately spread false information"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
+        "notes": "AI-generated hallucinated content published as fact, spreading false information"
       },
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0047",
-        "control_name": "Influence via Automated Content",
+        "control_name": "AI-Enabled Product or Service",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
-        "notes": "Generating high-volume automated content to shape perception or overwhelm fact-checking"
+        "notes": "Generating high-volume automated content via AI-enabled services to shape perception or overwhelm fact-checking"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -7617,7 +7635,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0029",
-        "control_name": "Denial of ML Service",
+        "control_name": "Denial of AI Service",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
@@ -9416,12 +9434,12 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0068",
-        "control_name": "Automated Collection",
+        "control_id": "AML.T0053",
+        "control_name": "AI Agent Tool Invocation",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0068",
-        "notes": "Agent autonomously harvesting data through tool chains beyond authorised scope"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
+        "notes": "Agent autonomously invoking tools beyond authorised scope, harvesting data through tool chains"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -10349,30 +10367,30 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0022",
-        "control_name": "Valid Accounts",
+        "control_id": "AML.T0021",
+        "control_name": "Establish Accounts",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0022",
-        "notes": "Exploiting legitimate agent credentials to access AI systems or data pipelines"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
+        "notes": "Establishing or exploiting legitimate agent accounts to access AI systems or data pipelines"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0016",
-        "control_name": "Exfiltration via AI Inference API",
+        "control_id": "AML.T0016.000",
+        "control_name": "Obtain Capabilities",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
-        "notes": "Using compromised agent credentials to exfiltrate data through inference API"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0016.000",
+        "notes": "Acquiring agent credentials or capabilities to exfiltrate data through AI inference APIs"
       },
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0024",
-        "control_name": "Model Inversion",
+        "control_name": "Exfiltration via AI Inference API",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0024",
-        "notes": "Reconstructing sensitive data accessible to the agent through credential abuse"
+        "notes": "Exfiltrating sensitive data accessible to the agent through inference API abuse"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -11304,29 +11322,29 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0056",
-        "control_name": "Adversarial Model Manipulation",
+        "control_name": "Extract LLM System Prompt",
         "tier": "Hardening",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
-        "notes": "Tampering with model weights or tool components loaded by agent at runtime"
+        "notes": "Extracting system prompts to learn agent configuration and tool access for supply chain targeting"
       },
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0048",
-        "control_name": "Model Contamination",
+        "control_name": "External Harms",
         "tier": "Hardening",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
-        "notes": "Persistent malicious behaviour introduced through dynamically loaded agent components"
+        "notes": "Persistent malicious behaviour introduced through dynamically loaded agent components causing downstream external harms"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0010",
-        "control_name": "Backdoor ML Model",
+        "control_id": "AML.T0010.000",
+        "control_name": "AI Supply Chain Compromise",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
-        "notes": "Trigger-based backdoors in MCP servers, prompt templates, or model adapters"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0010.000",
+        "notes": "Compromising MCP servers, prompt templates, or model adapters in the supply chain to embed trigger-based backdoors"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -13018,12 +13036,12 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0032",
-        "control_name": "Data Poisoning",
+        "control_id": "AML.T0043",
+        "control_name": "Craft Adversarial Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0032",
-        "notes": "Injecting malicious content into agent persistent memory or RAG stores"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
+        "notes": "Crafting adversarial content to inject into agent persistent memory or RAG stores"
       },
       {
         "framework": "MITRE ATLAS",
@@ -13037,11 +13055,20 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0020",
-        "control_name": "Backdoor via Poisoned Memory",
+        "control_name": "Poison Training Data",
         "tier": "Hardening",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0020",
-        "notes": "Establishing persistent trigger-response patterns in agent memory stores"
+        "notes": "Establishing persistent trigger-response patterns in agent memory stores via poisoned data"
+      },
+      {
+        "framework": "MITRE ATLAS",
+        "control_id": "AML.T0070",
+        "control_name": "RAG Poisoning",
+        "tier": "Hardening",
+        "scope": "Both",
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0070",
+        "notes": "Injecting malicious content into RAG knowledge bases to persistently alter agent retrieval and behaviour"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -13854,29 +13881,29 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0043",
-        "control_name": "Network Service Scanning",
+        "control_name": "Craft Adversarial Data",
         "tier": "Hardening",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
-        "notes": "Identifying and mapping inter-agent communication endpoints for targeting"
+        "notes": "Crafting adversarial messages to exploit inter-agent communication protocols"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0022",
-        "control_name": "Valid Accounts",
+        "control_id": "AML.T0021",
+        "control_name": "Establish Accounts",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0022",
-        "notes": "Using compromised agent credentials to impersonate trusted agents in A2A channels"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
+        "notes": "Establishing or compromising agent accounts to impersonate trusted agents in A2A channels"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0016",
-        "control_name": "Exfiltration via AI Inference API",
+        "control_id": "AML.T0016.000",
+        "control_name": "Obtain Capabilities",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
-        "notes": "Intercepting inter-agent messages to exfiltrate sensitive context passed between agents"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0016.000",
+        "notes": "Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -14643,7 +14670,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0029",
-        "control_name": "Denial of ML Service",
+        "control_name": "Denial of AI Service",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
@@ -14661,11 +14688,11 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Exploit Public-Facing ML Application",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
-        "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally"
+        "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally, leaking data during failure"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -15445,21 +15472,21 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0045",
-        "control_name": "Disinformation",
+        "control_id": "AML.T0060",
+        "control_name": "Publish Hallucinated Entities",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0045",
-        "notes": "Agent generates persuasive false information to manipulate human approvals"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
+        "notes": "Agent generates persuasive hallucinated content to manipulate human approvals"
       },
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0047",
-        "control_name": "Influence via Automated Content",
+        "control_name": "AI-Enabled Product or Service",
         "tier": "Foundational",
         "scope": "Both",
         "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
-        "notes": "Agent produces high-volume, fluent content that overwhelms human critical assessment"
+        "notes": "Agent produces high-volume, fluent content via AI-enabled services that overwhelms human critical assessment"
       },
       {
         "framework": "MITRE ATLAS",
@@ -16297,12 +16324,12 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0057",
-        "control_name": "Exploit Public-Facing ML Application",
+        "control_id": "AML.T0053",
+        "control_name": "AI Agent Tool Invocation",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
-        "notes": "Compromised agent maintains persistent access and hidden execution across sessions"
+        "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
+        "notes": "Rogue agent autonomously invokes tools to maintain persistent access and hidden execution across sessions"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -17655,24 +17682,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B001",
-        "control_name": "Third-party adversarial robustness testing",
+        "control_id": "A",
+        "control_name": "Data & Privacy domain (all)",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B002",
-        "control_name": "Detect adversarial input",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B005",
-        "control_name": "Implement real-time input filtering",
+        "control_id": "B009",
+        "control_name": "Limit output over-exposure",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -17684,6 +17703,14 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "E",
+        "control_name": "Audit trails and logging",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -17719,59 +17746,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AU-2",
-        "control_name": "Event Logging — AI data access logging",
+        "control_id": "SC-28",
+        "control_name": "Protection of Information at Rest — AI data encryption",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Log all access to AI training data, model weights, inference inputs and outputs, and configuration; include user/service identity, timestamp, and access type"
-      },
-      {
-        "framework": "FedRAMP",
-        "control_id": "AU-12",
-        "control_name": "Audit Generation — inference audit trail",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Generate audit records for all model inference requests with sufficient detail for compliance and incident investigation"
+        "notes": "Encrypt all AI data at rest — training data, model weights, inference logs, embedding stores — using FIPS 140-validated modules"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AC-3",
-        "control_name": "Access Enforcement — authenticated data access",
+        "control_name": "Access Enforcement — AI data access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce authenticated, authorised access to all AI data stores; deny unauthenticated access; log all access decisions"
+        "notes": "Enforce role-based access control on all AI data stores; restrict access based on clearance, need-to-know, and data sensitivity"
       },
       {
-        "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — data asset classification",
+        "framework": "FedRAMP",
+        "control_id": "SI-4",
+        "control_name": "System Monitoring — leakage indicator detection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Register all AI data stores in ICT asset inventory; ensure logging coverage for all identified data assets including training data, model weights, and inference stores"
+        "notes": "Monitor model outputs and data access patterns for leakage indicators — PII, credentials, classification markings in outputs; alert on detection"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "AU-2",
+        "control_name": "Event Logging — data access and output logging",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Log all AI data access and model outputs with sufficient detail to detect data leakage; include output content metadata"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — data access controls",
+        "control_name": "Protection and Prevention – data leakage controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement security controls for AI data access — authentication, authorisation, and encryption; enforce least privilege on all data access paths"
+        "notes": "Implement DLP, output monitoring, access controls, and encryption for all financial AI data to prevent sensitive data from surfacing in model outputs"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 10",
-        "control_name": "Detection — data access monitoring",
+        "control_name": "Detection – leakage indicator monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Deploy detection mechanisms for anomalous AI data access; monitor for unauthorised access patterns, bulk extractions, and access outside normal parameters"
+        "notes": "Deploy detection for PII, credentials, and financial data patterns in model outputs; alert and block on detection"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 17–23",
-        "control_name": "ICT Incident Management — access incident reporting",
+        "control_name": "ICT Incident Management – data breach reporting",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify material AI data access violations as ICT-related incidents; report to competent authorities per DORA incident classification and reporting requirements"
+        "notes": "Classify AI data leakage events as ICT-related incidents; report to competent authorities per DORA incident classification criteria"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 13",
+        "control_name": "Learning and Evolving – leakage post-mortem",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Conduct post-incident analysis for data leakage events; identify root cause and update controls"
       }
     ],
     "tools": [
@@ -17826,19 +17861,14 @@ window.CROSSWALK_DATA = [
         "url": "https://azure.microsoft.com/en-us/products/monitor"
       },
       {
-        "name": "AWS CloudTrail / Azure Monitor",
+        "name": "Nightfall DLP",
         "type": "commercial",
-        "url": "https://aws.amazon.com/cloudtrail/"
+        "url": "https://www.nightfall.ai"
       },
       {
-        "name": "Elasticsearch",
-        "type": "open-source",
-        "url": "https://www.elastic.co"
-      },
-      {
-        "name": "Splunk",
+        "name": "AWS Macie / Azure Purview",
         "type": "commercial",
-        "url": "https://www.splunk.com"
+        "url": "https://aws.amazon.com/macie/"
       }
     ],
     "incidents": [
@@ -18078,7 +18108,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0051",
-        "control_name": "Exploit Public-Facing Application",
+        "control_name": "LLM Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent API endpoints exploited to extract credentials or elevate access"
@@ -18542,34 +18572,34 @@ window.CROSSWALK_DATA = [
       {
         "framework": "AIUC-1",
         "control_id": "A",
-        "control_name": "Data & Privacy domain (all)",
-        "tier": "Hardening",
+        "control_name": "Data & Privacy domain",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B001",
-        "control_name": "Third-party adversarial robustness testing",
-        "tier": "Hardening",
+        "control_id": "B007",
+        "control_name": "Enforce user access privileges",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B002",
-        "control_name": "Detect adversarial input",
-        "tier": "Hardening",
+        "control_id": "B008",
+        "control_name": "Protect model deployment environment",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Hardening"
+        "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
         "control_id": "E",
         "control_name": "Audit trails and logging",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -18613,51 +18643,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — data visibility requirements",
+        "control_id": "IA-5",
+        "control_name": "Authenticator Management — agent credential lifecycle",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data visibility and transparency requirements in AI risk management strategy; define what data flows must be documented and monitored"
+        "notes": "Manage AI agent credentials with short-lived, task-scoped tokens; enforce rotation schedules; prohibit long-lived secrets in agent memory or logs"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AU-2",
-        "control_name": "Event Logging — data flow tracking",
+        "control_id": "AC-6",
+        "control_name": "Least Privilege — agent permission scoping",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Log data movement through AI pipelines — ingestion, transformation, training, inference; enable end-to-end data flow traceability"
+        "notes": "Restrict agent permissions to minimum necessary for each task; enforce that agent privilege cannot exceed the authorising user's privilege"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "CM-3",
-        "control_name": "Configuration Change Control — data pipeline documentation",
+        "control_id": "AU-12",
+        "control_name": "Audit Generation — credential event tracking",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Document and control changes to AI data pipeline configurations; maintain current data flow diagrams and processing documentation"
+        "notes": "Generate audit records for all credential issuance, usage, rotation, and expiry events across agent operations"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "SC-28",
+        "control_name": "Protection of Information at Rest — credential encryption",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Encrypt all stored agent credentials using FIPS 140-validated modules; enforce hardware-backed key management for high-value tokens"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — data visibility governance",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention – credential protection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data visibility and transparency requirements in ICT risk management; define what AI data flows must be documented and monitored"
+        "notes": "Implement encrypted credential storage, short-lived tokens, and secure agent runtime environments; enforce least privilege for all agent identities"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 8",
-        "control_name": "Identification — data asset mapping",
+        "control_name": "Identification – agent identity inventory",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Map all AI data assets — training data, inference data, embeddings, model artefacts — in the ICT asset inventory with data flow documentation"
+        "notes": "Register all agent identities, service accounts, and API keys in the ICT asset inventory; classify credential sensitivity"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 10",
-        "control_name": "Detection — data flow monitoring",
+        "control_name": "Detection – credential misuse monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor AI data flows for undocumented data movement; alert on data transfers outside documented pipelines"
+        "notes": "Monitor for anomalous agent credential usage — unexpected privilege escalation, cross-boundary access, or credential reuse across sessions"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 17–23",
+        "control_name": "ICT Incident Management – credential compromise reporting",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Classify agent credential compromise as ICT-related incidents; report per DORA criteria when customer or system impact occurs"
       }
     ],
     "tools": [
@@ -18712,19 +18758,19 @@ window.CROSSWALK_DATA = [
         "url": "https://www.collibra.com"
       },
       {
-        "name": "OpenLineage",
-        "type": "open-source",
-        "url": "https://openlineage.io"
-      },
-      {
-        "name": "OpenTelemetry",
-        "type": "open-source",
-        "url": "https://opentelemetry.io"
-      },
-      {
-        "name": "Alation",
+        "name": "AWS Secrets Manager / Azure Key Vault",
         "type": "commercial",
-        "url": "https://www.alation.com"
+        "url": "https://aws.amazon.com/secrets-manager/"
+      },
+      {
+        "name": "CyberArk",
+        "type": "commercial",
+        "url": "https://www.cyberark.com"
+      },
+      {
+        "name": "SPIFFE/SPIRE",
+        "type": "open-source",
+        "url": "https://spiffe.io"
       }
     ],
     "incidents": [
@@ -18782,7 +18828,7 @@ window.CROSSWALK_DATA = [
         "ASI03",
         "ASI07",
         "ASI04",
-        "ASI09"
+        "ASI02"
       ],
       "dsgai_2026": [
         "DSGAI01"
@@ -18792,7 +18838,7 @@ window.CROSSWALK_DATA = [
         "LLM04",
         "LLM03",
         "LLM05",
-        "LLM09"
+        "LLM02"
       ]
     },
     "changelog": [
@@ -18834,7 +18880,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0051",
-        "control_name": "Exploit Public-Facing Application",
+        "control_name": "LLM Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Unapproved AI services may themselves be adversary-controlled or compromised"
@@ -18842,7 +18888,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Sensitive data pasted into shadow AI tools ends up in external data stores accessible to the AI service provider"
@@ -19275,15 +19321,15 @@ window.CROSSWALK_DATA = [
       {
         "framework": "AIUC-1",
         "control_id": "A",
-        "control_name": "Data & Privacy domain (all)",
+        "control_name": "Data & Privacy domain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B006",
-        "control_name": "Prevent unauthorized AI actions",
+        "control_id": "B007",
+        "control_name": "Enforce user access privileges",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -19292,6 +19338,14 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "E",
         "control_name": "Audit trails and logging",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Hardening"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "F",
+        "control_name": "Society domain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -19361,9 +19415,17 @@ window.CROSSWALK_DATA = [
         "notes": "Enforce access control preventing data transfer to unauthorised AI tools; monitor and block shadow AI usage"
       },
       {
+        "framework": "FedRAMP",
+        "control_id": "SI-4",
+        "control_name": "System Monitoring — shadow AI detection",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor network traffic and data flows for indicators of unauthorised AI service usage; alert on detection"
+      },
+      {
         "framework": "DORA",
         "control_id": "Art. 28–44",
-        "control_name": "Third-Party Risk — AI tool vendor oversight",
+        "control_name": "Third-Party Risk – AI tool vendor oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Include AI tools and services in third-party ICT risk management; conduct due diligence before approval; monitor ongoing compliance with financial sector requirements"
@@ -19371,7 +19433,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 8",
-        "control_name": "Identification — shadow AI discovery",
+        "control_name": "Identification – shadow AI discovery",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Identify and register all AI tools — authorised and unauthorised — in the ICT asset inventory; maintain discovery mechanisms for unapproved AI services"
@@ -19379,7 +19441,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — AI tool governance",
+        "control_name": "ICT Risk Management – AI tool governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Define approved AI tools policy in ICT risk management framework; require vetting and approval before use in financial data processing"
@@ -19529,14 +19591,14 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0018",
-        "control_name": "Backdoor ML Model",
+        "control_name": "Manipulate AI Model",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Hidden functionality embedded in model weights — triggered by specific inputs, invisible to standard testing"
+        "notes": "Hidden functionality embedded in model weights — triggered by specific inputs, invisible to standard testing (.000 Poison, .001 Modify Architecture)"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0031",
+        "control_id": "AML.T0043",
         "control_name": "Craft Adversarial Data",
         "tier": "Hardening",
         "scope": "Both",
@@ -19995,7 +20057,7 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -20003,23 +20065,23 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "B001",
         "control_name": "Third-party adversarial robustness testing",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Foundational"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B003",
-        "control_name": "Third-party security assessment",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "E",
-        "control_name": "Audit trails and logging",
-        "tier": "Foundational",
+        "control_id": "B002",
+        "control_name": "Detect adversarial input",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Hardening"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "B008",
+        "control_name": "Protect model deployment environment",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -20114,7 +20176,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — training pipeline integrity",
+        "control_name": "Protection and Prevention – training pipeline integrity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Implement security controls protecting training data and model artefacts from poisoning, tampering, and unauthorised modification"
@@ -20122,7 +20184,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 24–27",
-        "control_name": "Resilience Testing — poisoning detection testing",
+        "control_name": "Resilience Testing – poisoning detection testing",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Include data poisoning scenarios in resilience testing; test detection capabilities and recovery procedures for poisoned data and model artefacts"
@@ -20130,7 +20192,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 12",
-        "control_name": "Backup Policies — model and data restoration",
+        "control_name": "Backup Policies – model and data restoration",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Maintain versioned backups of training data and model weights with integrity verification; enable rollback to pre-poisoning states"
@@ -20138,7 +20200,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 13",
-        "control_name": "Learning and Evolving — poisoning post-mortem",
+        "control_name": "Learning and Evolving – poisoning post-mortem",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Conduct post-incident analysis for data poisoning events; trace poisoned content and update protection controls"
@@ -20311,14 +20373,14 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0018",
-        "control_name": "Backdoor ML Model",
+        "control_name": "Manipulate AI Model",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Path traversal in snapshot imports (CVE-2024-3584) enables write to model host — backdoor installation path"
+        "notes": "Path traversal in snapshot imports (CVE-2024-3584) enables write to model host — manipulation installation path"
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0031",
+        "control_id": "AML.T0043",
         "control_name": "Craft Adversarial Data",
         "tier": "Foundational",
         "scope": "Both",
@@ -20739,33 +20801,25 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B001",
-        "control_name": "Third-party adversarial robustness testing",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B002",
-        "control_name": "Detect adversarial input",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B005",
-        "control_name": "Implement real-time input filtering",
-        "tier": "Hardening",
+        "control_id": "A",
+        "control_name": "Data & Privacy domain",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "C",
-        "control_name": "Safety domain (harm prevention)",
-        "tier": "Hardening",
+        "control_id": "B005",
+        "control_name": "Implement real-time input filtering",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Foundational"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "B006",
+        "control_name": "Prevent unauthorized AI actions",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -20803,48 +20857,56 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SR-3",
-        "control_name": "Supply Chain Controls — data provenance tracking",
+        "control_id": "SI-10",
+        "control_name": "Information Input Validation — data quality enforcement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement provenance tracking for all AI training data; document source, collection method, processing history, and licensing for each dataset"
+        "notes": "Validate quality, completeness, and format of all data entering AI pipelines; reject data failing quality thresholds or schema validation"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SI-10",
-        "control_name": "Information Input Validation — data quality controls",
+        "control_id": "SI-7",
+        "control_name": "Software, Firmware, and Information Integrity — pipeline integrity",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Validate quality, completeness, and accuracy of data entering AI pipelines; reject data failing quality thresholds"
+        "notes": "Verify integrity of data artefacts at each pipeline stage; detect corruption, tampering, or unauthorised modifications"
       },
       {
         "framework": "FedRAMP",
         "control_id": "CM-3",
-        "control_name": "Configuration Change Control — data source changes",
+        "control_name": "Configuration Change Control — data pipeline changes",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Require formal change control for all data source additions, modifications, and removals; maintain audit trail"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — data source documentation",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Document provenance, collection method, and quality characteristics for all AI training data in the ICT asset inventory"
+        "notes": "Require formal change control for all data pipeline modifications; maintain audit trail of data source additions, schema changes, and validation rule updates"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — data quality controls",
+        "control_name": "Protection and Prevention – data quality controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality or provenance thresholds"
+        "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality, schema, or integrity thresholds"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 8",
+        "control_name": "Identification – data source documentation",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Document provenance, collection method, and quality characteristics for all AI data in the ICT asset inventory"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection – data quality monitoring",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor for data quality degradation, schema drift, and integrity anomalies in AI data pipelines"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 28–44",
-        "control_name": "Third-Party Risk — external data source oversight",
+        "control_name": "Third-Party Risk – external data source oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Include external data sources in third-party risk management; assess data quality, provenance practices, and licensing compliance"
@@ -21034,7 +21096,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0051",
-        "control_name": "Exploit Public-Facing Application",
+        "control_name": "LLM Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Malicious MCP server exploits trust relationship with agent to capture context payloads"
@@ -21042,7 +21104,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Context data flowing through tool integrations captured and transmitted to adversary"
@@ -21484,16 +21546,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B006",
-        "control_name": "Prevent unauthorized AI actions",
+        "control_id": "B003",
+        "control_name": "Manage public release of technical details",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B009",
-        "control_name": "Validate AI-generated content",
+        "control_id": "B007",
+        "control_name": "Enforce user access privileges",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -21540,51 +21602,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "CM-3",
-        "control_name": "Configuration Change Control — pipeline lineage documentation",
+        "control_id": "AC-3",
+        "control_name": "Access Enforcement — tool data exchange controls",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Maintain comprehensive data lineage documentation for all AI pipelines; update on every transformation, combination, or processing change"
+        "scope": "Both",
+        "notes": "Enforce access controls on all data exchanged with tools and plugins; restrict data sharing to minimum necessary per tool permission manifest"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "SA-9",
+        "control_name": "External Information System Services — plugin provider controls",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Require security assessment for all third-party tool and plugin providers; establish data handling SLAs covering sensitivity and retention"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AU-2",
-        "control_name": "Event Logging — data transformation logging",
+        "control_name": "Event Logging — tool interaction logging",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Log all data transformation events in AI pipelines; enable end-to-end lineage reconstruction from source to model"
+        "scope": "Both",
+        "notes": "Log all data exchanged with external tools and plugins; capture tool identity, data elements shared, and response data received"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — lineage requirements",
+        "control_id": "SC-7",
+        "control_name": "Boundary Protection — tool data flow enforcement",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Include data lineage completeness in AI risk management strategy; define minimum lineage requirements per data sensitivity level"
+        "scope": "Both",
+        "notes": "Enforce boundary controls on data flows to external tools; prevent uncontrolled data transfer to plugin endpoints"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — data transformation mapping",
+        "control_id": "Art. 28–44",
+        "control_name": "Third-Party Risk – tool/plugin provider oversight",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Map all data transformations in AI pipelines; document inputs, outputs, and processing logic for each stage"
+        "scope": "Both",
+        "notes": "Include AI tool and plugin providers in third-party ICT risk management; assess data handling, security controls, and data minimisation practices"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 12",
-        "control_name": "Backup Policies — lineage metadata preservation",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention – data exchange controls",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Include lineage metadata in backup policies; ensure lineage records can be restored alongside data and models"
+        "scope": "Both",
+        "notes": "Implement data minimisation and access controls on all data exchanged with external tools; enforce least privilege per tool"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection – tool data flow monitoring",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor data flows to and from external tools; detect unauthorised data transfers or excessive data sharing"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — lineage governance",
+        "control_name": "ICT Risk Management – tool governance",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Include data lineage requirements in ICT risk management; define minimum lineage completeness per data sensitivity"
+        "scope": "Both",
+        "notes": "Include tool and plugin data exchange policies in ICT risk management; define approved data sharing scope per tool"
       }
     ],
     "tools": [
@@ -21639,19 +21717,29 @@ window.CROSSWALK_DATA = [
         "url": "https://datahubproject.io"
       },
       {
-        "name": "Apache Atlas",
+        "name": "Open Policy Agent",
         "type": "open-source",
-        "url": "https://atlas.apache.org"
+        "url": "https://www.openpolicyagent.org"
       },
       {
-        "name": "dbt",
+        "name": "OpenTelemetry",
         "type": "open-source",
-        "url": "https://www.getdbt.com"
+        "url": "https://opentelemetry.io"
+      },
+      {
+        "name": "Netskope",
+        "type": "commercial",
+        "url": "https://www.netskope.com"
       },
       {
         "name": "Collibra",
         "type": "commercial",
         "url": "https://www.collibra.com"
+      },
+      {
+        "name": "Nightfall DLP",
+        "type": "commercial",
+        "url": "https://www.nightfall.ai"
       }
     ],
     "incidents": [
@@ -21735,7 +21823,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ungoverned embedding stores and agent memory databases accessed without access controls"
@@ -22168,27 +22256,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B006",
-        "control_name": "Prevent unauthorized AI actions",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Foundational"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B007",
-        "control_name": "Third-party permission controls",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
         "control_id": "E",
         "control_name": "Audit trails and logging",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "F",
+        "control_name": "Society domain",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -22232,51 +22312,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AC-6",
-        "control_name": "Least Privilege — data aggregation restrictions",
+        "control_id": "CM-3",
+        "control_name": "Configuration Change Control — data lifecycle management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Restrict data aggregation scope to minimum necessary; enforce controls preventing combination of datasets that create higher-sensitivity aggregates"
-      },
-      {
-        "framework": "FedRAMP",
-        "control_id": "SC-7",
-        "control_name": "Boundary Protection — data flow control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Enforce boundary protection on data flows between systems; prevent uncontrolled data aggregation across security boundaries"
+        "notes": "Define and enforce lifecycle policies for all AI-derived data; implement retention schedules, classification requirements, and automated disposal for embeddings, models, and generated content"
       },
       {
         "framework": "FedRAMP",
         "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — aggregation risk",
+        "control_name": "Risk Management Strategy — data governance framework",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data aggregation risk in AI risk management strategy; assess combined sensitivity of aggregated datasets"
+        "notes": "Include AI-derived data assets in risk management strategy; define roles, ownership, and governance policies for all AI data categories"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "AU-2",
+        "control_name": "Event Logging — lineage and disposal tracking",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Log data lineage events from source through all AI transformations; log disposal actions with evidence of completeness"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "SC-28",
+        "control_name": "Protection of Information at Rest — retained data encryption",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Encrypt all retained AI data assets — embeddings, cached outputs, fine-tuned models — using FIPS 140-validated modules; support crypto-shredding for disposal"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — aggregation risk governance",
+        "control_name": "ICT Risk Management – lifecycle governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data aggregation risk in ICT risk management; assess combined sensitivity of aggregated financial datasets used in AI systems"
+        "notes": "Include AI data governance and lifecycle management in ICT risk management; define retention, classification, and disposal policies for all AI-derived data assets"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 8",
+        "control_name": "Identification – AI data asset mapping",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Map all AI-derived data assets — embeddings, fine-tuned models, generated content, cached outputs — in the ICT asset inventory with lifecycle documentation"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 12",
+        "control_name": "Backup Policies – lifecycle metadata preservation",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include lifecycle metadata in backup policies; ensure retention schedules, classification, and lineage records are preserved alongside data"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — aggregation controls",
+        "control_name": "Protection and Prevention – retention enforcement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement controls preventing uncontrolled data aggregation; enforce restrictions on combining datasets that create higher-sensitivity aggregates"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 10",
-        "control_name": "Detection — aggregation anomaly detection",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Monitor for excessive data aggregation patterns; alert on dataset combinations exceeding defined sensitivity thresholds"
+        "notes": "Enforce retention policies through automated deletion and crypto-shredding; prevent retention beyond defined periods"
       }
     ],
     "tools": [
@@ -22321,14 +22417,24 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/microsoft/presidio"
       },
       {
-        "name": "Microsoft Presidio",
-        "type": "open-source",
-        "url": "https://github.com/microsoft/presidio"
+        "name": "AWS S3 Lifecycle / Azure Lifecycle Management",
+        "type": "commercial",
+        "url": "https://aws.amazon.com/s3/"
       },
       {
         "name": "Open Policy Agent",
         "type": "open-source",
         "url": "https://www.openpolicyagent.org"
+      },
+      {
+        "name": "OpenLineage",
+        "type": "open-source",
+        "url": "https://openlineage.io"
+      },
+      {
+        "name": "Alation",
+        "type": "commercial",
+        "url": "https://www.alation.com"
       }
     ],
     "incidents": [
@@ -22371,7 +22477,8 @@ window.CROSSWALK_DATA = [
       "agentic_top10": [
         "ASI03",
         "ASI02",
-        "ASI06"
+        "ASI06",
+        "ASI09"
       ]
     },
     "changelog": [
@@ -22405,7 +22512,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Regulatory violations often arise from ungoverned data repositories — adversary exploits what compliance missed"
@@ -22413,7 +22520,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0051",
-        "control_name": "Exploit Public-Facing Application",
+        "control_name": "LLM Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Non-compliant AI deployments may lack security controls that compliance would have required"
@@ -22841,25 +22948,33 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B005",
-        "control_name": "Implement real-time input filtering",
-        "tier": "Hardening",
+        "control_id": "E",
+        "control_name": "Audit trails and logging",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B006",
-        "control_name": "Prevent unauthorized AI actions",
-        "tier": "Hardening",
+        "control_id": "F",
+        "control_name": "Society domain",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "C",
+        "control_name": "Safety domain",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -22911,67 +23026,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SC-28",
-        "control_name": "Protection of Information at Rest — AI data encryption",
+        "control_id": "PM-9",
+        "control_name": "Risk Management Strategy — regulatory compliance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Encrypt all AI data at rest — training data, model weights, inference logs, embedding stores — using FIPS 140-validated modules"
+        "notes": "Include regulatory compliance in AI risk management; map applicable data laws — GDPR, CCPA, HIPAA, EU AI Act — to AI processing activities and define compliance requirements"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AC-3",
-        "control_name": "Access Enforcement — AI data access",
+        "control_id": "RA-3",
+        "control_name": "Risk Assessment — compliance gap analysis",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce role-based access control on all AI data stores; restrict access based on clearance, need-to-know, and data sensitivity"
+        "notes": "Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AU-2",
-        "control_name": "Event Logging — leakage detection logging",
+        "control_name": "Event Logging — regulatory evidence",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Log AI data access and model outputs with sufficient detail to detect data leakage; include output content metadata"
+        "notes": "Maintain comprehensive logs for regulatory compliance evidence; ensure audit trails meet requirements of applicable data laws"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SI-4",
-        "control_name": "System Monitoring — leakage indicator detection",
+        "control_id": "CA-7",
+        "control_name": "Continuous Monitoring — compliance tracking",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor model outputs and data access patterns for leakage indicators — PII, credentials, classification markings in outputs; alert on detection"
+        "notes": "Include regulatory compliance metrics in continuous monitoring; track compliance status across AI systems and alert on drift"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — data leakage controls",
+        "control_id": "Art. 5–7",
+        "control_name": "ICT Risk Management – regulatory compliance governance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement security controls preventing AI data leakage — output monitoring, DLP, access controls, and encryption for all financial AI data"
+        "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities; define compliance requirements and accountability"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 17–23",
-        "control_name": "ICT Incident Management — data breach reporting",
+        "control_name": "ICT Incident Management – compliance incident reporting",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify AI data leakage events as ICT-related incidents; report to competent authorities per DORA incident classification criteria"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 10",
-        "control_name": "Detection — leakage indicator monitoring",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Deploy detection for data leakage indicators in model outputs — PII, financial data, credentials; alert and block on detection"
+        "notes": "Classify material regulatory non-compliance events as ICT incidents; report to competent authorities per DORA criteria; coordinate with DPO for GDPR notifications"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 13",
-        "control_name": "Learning and Evolving — leakage post-mortem",
+        "control_name": "Learning and Evolving – compliance improvement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Conduct post-incident analysis for data leakage events; identify root cause and update controls"
+        "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes, enforcement actions, and incident analysis"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 8",
+        "control_name": "Identification – regulated data mapping",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Map all AI data subject to regulatory requirements; ensure complete coverage in compliance programme"
       }
     ],
     "tools": [
@@ -23026,19 +23141,19 @@ window.CROSSWALK_DATA = [
         "url": "https://www.nightfall.ai"
       },
       {
-        "name": "Microsoft Presidio",
+        "name": "TrustArc",
+        "type": "commercial",
+        "url": "https://trustarc.com"
+      },
+      {
+        "name": "ServiceNow GRC",
+        "type": "commercial",
+        "url": "https://www.servicenow.com"
+      },
+      {
+        "name": "Open Policy Agent",
         "type": "open-source",
-        "url": "https://github.com/microsoft/presidio"
-      },
-      {
-        "name": "Nightfall DLP",
-        "type": "commercial",
-        "url": "https://www.nightfall.ai"
-      },
-      {
-        "name": "AWS Macie / Azure Purview",
-        "type": "commercial",
-        "url": "https://aws.amazon.com/macie/"
+        "url": "https://www.openpolicyagent.org"
       }
     ],
     "incidents": [
@@ -23630,31 +23745,23 @@ window.CROSSWALK_DATA = [
         "control_name": "Data & Privacy domain",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B001",
-        "control_name": "Third-party adversarial robustness testing",
+        "control_id": "B009",
+        "control_name": "Limit output over-exposure",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B002",
-        "control_name": "Detect adversarial input",
+        "control_id": "B006",
+        "control_name": "Prevent unauthorized AI actions",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "E",
-        "control_name": "Audit trails and logging",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Foundational"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -23698,51 +23805,59 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SC-28",
-        "control_name": "Protection of Information at Rest — IP encryption",
+        "control_id": "SC-7",
+        "control_name": "Boundary Protection — cross-modal data flow enforcement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Encrypt all intellectual property — model weights, proprietary training data, algorithms — at rest with FIPS 140-validated modules"
+        "notes": "Enforce boundary controls on data flows between AI modalities; prevent sensitive data from crossing modal boundaries without appropriate classification and authorisation"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AC-3",
-        "control_name": "Access Enforcement — IP access control",
+        "control_name": "Access Enforcement — cross-modal data access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce strict access control on AI intellectual property; restrict to minimum necessary personnel with audit trail"
+        "notes": "Enforce consistent access controls across all modalities; restrict cross-modal data access based on sensitivity classification"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AU-12",
-        "control_name": "Audit Generation — IP access tracking",
+        "control_id": "SI-4",
+        "control_name": "System Monitoring — cross-modal leakage detection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Generate audit records for all access to AI intellectual property; enable detection of unauthorised access and exfiltration"
+        "notes": "Monitor AI outputs across all modalities for cross-channel leakage indicators; detect sensitive content surfacing in unintended modalities"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "AU-2",
+        "control_name": "Event Logging — cross-channel data movement",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Log data movement across modality boundaries; enable detection and investigation of cross-channel leakage"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — IP protection controls",
+        "control_name": "Protection and Prevention – cross-modal controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement security controls protecting AI intellectual property — encryption, access controls, and DLP for model weights, training data, and proprietary algorithms"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 28–44",
-        "control_name": "Third-Party Risk — IP protection in vendor relationships",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Address IP protection in third-party agreements; ensure vendors cannot access, replicate, or misuse proprietary AI assets"
+        "notes": "Implement consistent data protection controls across all modalities; enforce classification and access controls at modality boundaries"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 10",
-        "control_name": "Detection — IP exfiltration detection",
+        "control_name": "Detection – cross-modal leakage monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Deploy detection for IP exfiltration attempts; monitor model weight access and download patterns"
+        "notes": "Monitor for sensitive data surfacing across modality boundaries; detect PII, financial data, and credentials in cross-modal outputs"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 17–23",
+        "control_name": "ICT Incident Management – cross-modal breach reporting",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Classify cross-modal data leakage as ICT-related incidents where customer or regulatory impact occurs"
       }
     ],
     "tools": [
@@ -23797,9 +23912,9 @@ window.CROSSWALK_DATA = [
         "url": "https://azure.microsoft.com/en-us/solutions/confidential-compute/"
       },
       {
-        "name": "HashiCorp Vault",
-        "type": "commercial",
-        "url": "https://www.vaultproject.io"
+        "name": "LLM Guard",
+        "type": "open-source",
+        "url": "https://github.com/protectai/llm-guard"
       },
       {
         "name": "Nightfall DLP",
@@ -23807,9 +23922,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.nightfall.ai"
       },
       {
-        "name": "AWS KMS / Azure Key Vault",
+        "name": "Netskope",
         "type": "commercial",
-        "url": "https://aws.amazon.com/kms/"
+        "url": "https://www.netskope.com"
+      },
+      {
+        "name": "AWS Macie / Azure Purview",
+        "type": "commercial",
+        "url": "https://aws.amazon.com/macie/"
       }
     ],
     "incidents": [
@@ -23882,7 +24002,8 @@ window.CROSSWALK_DATA = [
       ],
       "agentic_top10": [
         "ASI03",
-        "ASI04"
+        "ASI04",
+        "ASI07"
       ]
     },
     "changelog": [
@@ -24305,27 +24426,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B001",
-        "control_name": "Third-party adversarial robustness testing",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Foundational"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B002",
-        "control_name": "Detect adversarial input",
+        "control_id": "A",
+        "control_name": "Data & Privacy domain",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B005",
-        "control_name": "Implement real-time input filtering",
+        "control_id": "F",
+        "control_name": "Society domain",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -24369,24 +24482,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "CA-7",
-        "control_name": "Continuous Monitoring — synthetic data drift",
+        "control_id": "RA-5",
+        "control_name": "Vulnerability Scanning — re-identification risk",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Include synthetic data quality metrics in continuous monitoring; track for privacy degradation and bias drift"
+        "notes": "Include synthetic data re-identification and pattern leakage in vulnerability assessment; test for membership and attribute inference"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "RA-5",
-        "control_name": "Vulnerability Scanning — synthetic data risks",
+        "control_id": "PM-9",
+        "control_name": "Risk Management Strategy — privacy guarantees",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Include synthetic data re-identification and pattern leakage in vulnerability assessment"
+        "notes": "Include synthetic data privacy risk in AI risk management; define formal privacy guarantees required for synthetic data generation"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — synthetic data privacy",
+        "control_name": "Protection and Prevention – synthetic data privacy",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Implement privacy controls for synthetic data generation; validate privacy preservation and absence of sensitive pattern leakage from source financial data"
@@ -24394,7 +24507,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 24–27",
-        "control_name": "Resilience Testing — synthetic data testing",
+        "control_name": "Resilience Testing – synthetic data testing",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Include synthetic data re-identification and privacy testing in resilience testing programme; test for linkage attacks and attribute inference"
@@ -24402,7 +24515,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "DORA",
         "control_id": "Art. 13",
-        "control_name": "Learning and Evolving — synthetic data improvement",
+        "control_name": "Learning and Evolving – synthetic data improvement",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Apply lessons learned from synthetic data privacy failures; update generation processes and validation controls"
@@ -24522,7 +24635,8 @@ window.CROSSWALK_DATA = [
         "LLM01",
         "LLM08",
         "LLM09",
-        "LLM03"
+        "LLM03",
+        "LLM04"
       ],
       "agentic_top10": [
         "ASI03",
@@ -24577,7 +24691,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0051",
-        "control_name": "Exploit Public-Facing Application",
+        "control_name": "LLM Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Session isolation vulnerability in multi-tenant GenAI deployment exploited to access other users' data"
@@ -24988,7 +25102,7 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -24996,7 +25110,7 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "B006",
         "control_name": "Prevent unauthorized AI actions",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -25004,9 +25118,9 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "E",
         "control_name": "Audit trails and logging",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -25050,51 +25164,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "CM-3",
-        "control_name": "Configuration Change Control — retention policy management",
+        "control_id": "AC-4",
+        "control_name": "Information Flow Enforcement — context isolation",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define and enforce data retention policies for all AI data; implement automated deletion schedules; log policy changes"
+        "notes": "Enforce information flow controls preventing data from crossing session, tenant, or conversation boundaries; implement strict context isolation"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SC-28",
-        "control_name": "Protection of Information at Rest — retained data encryption",
+        "control_id": "SC-7",
+        "control_name": "Boundary Protection — session data isolation",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Encrypt all retained AI data; implement crypto-shredding capability for secure deletion"
+        "notes": "Enforce boundary protection isolating session, tenant, and conversation data; prevent shared memory or cache from leaking cross-context data"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — retention governance",
+        "control_id": "AU-2",
+        "control_name": "Event Logging — cross-context access detection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data retention risk in AI risk management; define retention periods per data type and regulatory requirement"
+        "notes": "Log context boundaries and data access patterns; detect and alert on cross-context data access violations"
       },
       {
-        "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — retention governance",
+        "framework": "FedRAMP",
+        "control_id": "AC-3",
+        "control_name": "Access Enforcement — session-scoped data access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data retention policies in ICT risk management; define retention periods per data type, AI processing stage, and regulatory requirement"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 12",
-        "control_name": "Backup Policies — retention and deletion procedures",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Implement backup policies aligned with retention requirements; include secure deletion procedures for expired AI data, embeddings, and model artefacts"
+        "notes": "Enforce access controls scoped to the current session and tenant; deny cross-context data retrieval by default"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — retention enforcement",
+        "control_name": "Protection and Prevention – context isolation controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce retention policies through automated deletion and crypto-shredding; prevent retention beyond defined periods"
+        "notes": "Implement strict session and tenant isolation for all AI conversation data; enforce data boundary controls at the architecture level"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection – cross-context monitoring",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor for cross-context data access patterns; detect conversation bleed, cache contamination, and memory leakage across sessions"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 17–23",
+        "control_name": "ICT Incident Management – cross-context breach reporting",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Classify cross-context data exposure as ICT-related incidents; report per DORA criteria when customer data is affected"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 24–27",
+        "control_name": "Resilience Testing – isolation testing",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include context isolation testing in resilience testing programme; verify tenant boundaries under load and adversarial conditions"
       }
     ],
     "tools": [
@@ -25149,9 +25279,14 @@ window.CROSSWALK_DATA = [
         "url": "https://dvc.org"
       },
       {
-        "name": "AWS S3 Lifecycle / Azure Lifecycle Management",
-        "type": "commercial",
-        "url": "https://aws.amazon.com/s3/"
+        "name": "Open Policy Agent",
+        "type": "open-source",
+        "url": "https://www.openpolicyagent.org"
+      },
+      {
+        "name": "OpenTelemetry",
+        "type": "open-source",
+        "url": "https://opentelemetry.io"
       },
       {
         "name": "HashiCorp Vault",
@@ -25159,9 +25294,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.vaultproject.io"
       },
       {
-        "name": "Open Policy Agent",
-        "type": "open-source",
-        "url": "https://www.openpolicyagent.org"
+        "name": "Splunk",
+        "type": "commercial",
+        "url": "https://www.splunk.com"
+      },
+      {
+        "name": "AWS CloudTrail / Azure Monitor",
+        "type": "commercial",
+        "url": "https://aws.amazon.com/cloudtrail/"
       }
     ],
     "incidents": [
@@ -25248,7 +25388,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0051",
-        "control_name": "Exploit Public-Facing Application",
+        "control_name": "LLM Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "NL gateway interface exploited through crafted natural language to generate destructive or exfiltrating queries"
@@ -25256,7 +25396,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Database accessed through LLM-generated queries — adversary extracts sensitive records without direct database access"
@@ -25712,9 +25852,9 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "A",
-        "control_name": "Data & Privacy domain",
-        "tier": "Hardening",
+        "control_id": "B005",
+        "control_name": "Implement real-time input filtering",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -25722,23 +25862,23 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "B006",
         "control_name": "Prevent unauthorized AI actions",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "D",
-        "control_name": "Reliability domain",
-        "tier": "Hardening",
+        "control_id": "B009",
+        "control_name": "Limit output over-exposure",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "E",
-        "control_name": "Audit trails and logging",
-        "tier": "Hardening",
+        "control_id": "A",
+        "control_name": "Data & Privacy domain",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -25776,51 +25916,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — ownership governance",
+        "control_id": "SI-10",
+        "control_name": "Information Input Validation — NL-to-query validation",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, outputs, and derived insights"
+        "notes": "Validate all natural language inputs before translation to executable queries; block injection patterns, destructive operations, and schema-probing queries"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AC-3",
-        "control_name": "Access Enforcement — ownership-based access",
+        "control_name": "Access Enforcement — gateway operation restrictions",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce access controls aligned with data ownership; restrict usage based on ownership rights and licence terms"
+        "notes": "Enforce allow-listed operations for NL data gateways; gateway queries execute with the requesting user's permissions, not system-level; restrict to read-only or approved operations"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AU-2",
-        "control_name": "Event Logging — usage tracking",
+        "control_name": "Event Logging — gateway transaction logging",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Log data usage for ownership compliance; track how data is used across AI systems for licence and rights management"
+        "notes": "Log all NL gateway transactions — input, translated query, results — with user identity and authorisation context"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "SC-7",
+        "control_name": "Boundary Protection — gateway data flow control",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Enforce boundary controls on NL gateway data flows; limit result sets; prevent sensitive data from leaving authorised scope"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — ownership governance",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention – gateway input validation",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, model outputs, and derived financial insights"
+        "notes": "Implement validation and filtering on all NL-to-query translation; enforce allow-listed operations; restrict gateway queries to user privilege scope"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 28–44",
-        "control_name": "Third-Party Risk — data rights management",
+        "control_id": "Art. 10",
+        "control_name": "Detection – gateway anomaly monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Address data ownership and usage rights in third-party agreements; clarify ownership of AI outputs and derived data produced using vendor models"
+        "notes": "Monitor NL gateway operations for anomalous patterns — excessive data retrieval, schema probing, injection attempts; alert and block"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — ownership mapping",
+        "control_id": "Art. 24–27",
+        "control_name": "Resilience Testing – gateway security testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Map ownership for all AI data assets; document rights, restrictions, and licensing for training data and outputs"
+        "notes": "Include NL gateway injection testing in resilience testing; test for SQL injection, API abuse, and privilege escalation through natural language"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 17–23",
+        "control_name": "ICT Incident Management – gateway breach reporting",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Classify gateway data exfiltration as ICT-related incidents; report per DORA criteria"
       }
     ],
     "tools": [
@@ -25875,14 +26031,24 @@ window.CROSSWALK_DATA = [
         "url": "https://cyclonedx.org"
       },
       {
+        "name": "LLM Guard",
+        "type": "open-source",
+        "url": "https://github.com/protectai/llm-guard"
+      },
+      {
         "name": "Open Policy Agent",
         "type": "open-source",
         "url": "https://www.openpolicyagent.org"
       },
       {
-        "name": "OneTrust",
+        "name": "Nightfall DLP",
         "type": "commercial",
-        "url": "https://www.onetrust.com"
+        "url": "https://www.nightfall.ai"
+      },
+      {
+        "name": "Splunk",
+        "type": "commercial",
+        "url": "https://www.splunk.com"
       }
     ],
     "incidents": [
@@ -25911,14 +26077,13 @@ window.CROSSWALK_DATA = [
         "LLM01",
         "LLM02",
         "LLM03",
-        "LLM09"
+        "LLM06"
       ],
       "agentic_top10": [
         "ASI02",
         "ASI05",
         "ASI01",
-        "ASI04",
-        "ASI09"
+        "ASI04"
       ],
       "dsgai_2026": [
         "DSGAI14"
@@ -25975,6 +26140,14 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vector store content poisoned through path traversal or unauthenticated write (CVE-2024-3584)"
+      },
+      {
+        "framework": "MITRE ATLAS",
+        "control_id": "AML.T0070",
+        "control_name": "RAG Poisoning",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Malicious content injected into vector store RAG knowledge bases to manipulate retrieval results"
       },
       {
         "framework": "NIST AI RMF 1.0",
@@ -26391,23 +26564,15 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B003",
-        "control_name": "Third-party security assessment",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B007",
-        "control_name": "Third-party permission controls",
-        "tier": "Foundational",
+        "control_id": "B008",
+        "control_name": "Protect model deployment environment",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
@@ -26415,9 +26580,9 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "E",
         "control_name": "Audit trails and logging",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -26469,51 +26634,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
+        "control_id": "SC-28",
+        "control_name": "Protection of Information at Rest — embedding encryption",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Encrypt all vector embeddings and metadata at rest using FIPS 140-validated modules; enforce key management per FedRAMP requirements"
+      },
+      {
+        "framework": "FedRAMP",
         "control_id": "AC-3",
-        "control_name": "Access Enforcement — purpose-limited data access",
+        "control_name": "Access Enforcement — vector store access control",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce purpose-limitation on AI data access; restrict usage to approved purposes documented in data processing agreements"
+        "notes": "Implement RBAC on vector stores; enforce namespace-level access controls; restrict query scope to authorised collections"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AU-2",
-        "control_name": "Event Logging — data operation logging",
+        "control_id": "AU-12",
+        "control_name": "Audit Generation — vector store operation tracking",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Log all data operations with purpose context; enable detection of purpose drift and unauthorised usage"
+        "notes": "Generate audit records for all vector store queries, index modifications, and administrative operations"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SI-4",
-        "control_name": "System Monitoring — misuse detection",
+        "control_id": "CM-6",
+        "control_name": "Configuration Settings — vector database hardening",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor AI data usage patterns for misuse indicators; alert on data access inconsistent with approved purposes"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — data usage governance",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Include data usage policies in ICT risk management; define approved purposes for each AI data category; restrict repurposing"
+        "notes": "Configure vector databases per security baselines; disable default credentials, restrict network access, enforce TLS"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — purpose-limited data controls",
+        "control_name": "Protection and Prevention – vector store security",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement controls enforcing purpose-limitation on AI data usage; restrict processing to approved purposes per data classification"
+        "notes": "Implement RBAC, encryption at rest and in transit, and integrity verification for all vector stores; enforce access controls on embedding queries"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 17–23",
-        "control_name": "ICT Incident Management — misuse incident reporting",
+        "control_id": "Art. 8",
+        "control_name": "Identification – vector store inventory",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify AI data misuse as ICT-related incidents where customer or regulatory impact occurs; report per DORA criteria"
+        "notes": "Register all vector databases and embedding stores in ICT asset inventory; classify sensitivity based on source data"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 12",
+        "control_name": "Backup Policies – embedding backup and recovery",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Maintain versioned backups of vector indices and embedding data; verify integrity on restoration; enable rollback"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection – vector store access monitoring",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor vector store queries and index modifications; detect bulk extraction, unauthorised access, and integrity violations"
       }
     ],
     "tools": [
@@ -26563,6 +26744,16 @@ window.CROSSWALK_DATA = [
         "url": "https://www.collibra.com"
       },
       {
+        "name": "HashiCorp Vault",
+        "type": "commercial",
+        "url": "https://www.vaultproject.io"
+      },
+      {
+        "name": "AWS KMS / Azure Key Vault",
+        "type": "commercial",
+        "url": "https://aws.amazon.com/kms/"
+      },
+      {
         "name": "Open Policy Agent",
         "type": "open-source",
         "url": "https://www.openpolicyagent.org"
@@ -26573,9 +26764,14 @@ window.CROSSWALK_DATA = [
         "url": "https://opentelemetry.io"
       },
       {
-        "name": "Splunk",
+        "name": "Milvus",
+        "type": "open-source",
+        "url": "https://milvus.io"
+      },
+      {
+        "name": "Pinecone",
         "type": "commercial",
-        "url": "https://www.splunk.com"
+        "url": "https://www.pinecone.io"
       }
     ],
     "incidents": [
@@ -26633,7 +26829,8 @@ window.CROSSWALK_DATA = [
         "LLM08",
         "LLM07",
         "LLM06",
-        "LLM03"
+        "LLM03",
+        "LLM02"
       ],
       "agentic_top10": [
         "ASI06",
@@ -26689,7 +26886,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Observability databases and log stores accessed as information repositories — sensitive content available at scale"
@@ -27123,15 +27320,7 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Foundational"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B006",
-        "control_name": "Prevent unauthorized AI actions",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -27139,7 +27328,15 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "E",
         "control_name": "Audit trails and logging",
-        "tier": "Hardening",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Foundational"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "B009",
+        "control_name": "Limit output over-exposure",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -27177,51 +27374,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — consent governance",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Include consent management in AI risk management strategy; define consent requirements per data type and processing activity"
-      },
-      {
-        "framework": "FedRAMP",
         "control_id": "AC-3",
-        "control_name": "Access Enforcement — consent-based access",
+        "control_name": "Access Enforcement — telemetry data access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce access controls aligned with consent status; block AI processing on data where consent has been withdrawn"
+        "notes": "Enforce access controls on all telemetry data stores; restrict access to observability pipelines based on role and need-to-know"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AU-2",
-        "control_name": "Event Logging — consent compliance logging",
+        "control_name": "Event Logging — secure logging practices",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Log consent status and changes; enable audit of consent compliance for all AI data processing activities"
+        "notes": "Implement secure logging — redact PII and sensitive content from logs, traces, and metrics before storage; apply data minimisation"
       },
       {
-        "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — consent governance",
+        "framework": "FedRAMP",
+        "control_id": "SI-4",
+        "control_name": "System Monitoring — telemetry leakage detection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include consent management in ICT risk management; define consent requirements per data type and AI processing activity for financial services"
+        "notes": "Monitor telemetry pipelines for sensitive data; detect PII, credentials, or classified content in logs and traces"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "PM-9",
+        "control_name": "Risk Management Strategy — telemetry governance",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include telemetry data in risk management; define retention limits, access controls, and classification for all observability data"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — consent-aligned controls",
+        "control_name": "Protection and Prevention – telemetry data controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement access controls aligned with consent status; block AI processing on data where consent has been withdrawn or is insufficient"
+        "notes": "Implement data minimisation in observability pipelines; redact PII and sensitive content from logs and traces before storage"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 5–7",
+        "control_name": "ICT Risk Management – telemetry governance",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include observability data in ICT risk management; define classification, retention, and access controls for telemetry data"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 10",
-        "control_name": "Detection — consent violation monitoring",
+        "control_name": "Detection – telemetry leakage monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor for AI processing inconsistent with consent status; alert on violations"
+        "notes": "Monitor telemetry streams for sensitive data; detect PII, credentials, and financial data in logs and traces"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 28–44",
+        "control_name": "Third-Party Risk – observability vendor oversight",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include observability platform vendors in third-party risk management; assess data handling for logged AI interactions"
       }
     ],
     "tools": [
@@ -27276,19 +27489,19 @@ window.CROSSWALK_DATA = [
         "url": "https://www.osano.com"
       },
       {
-        "name": "Collibra",
-        "type": "commercial",
-        "url": "https://www.collibra.com"
-      },
-      {
-        "name": "Open Policy Agent",
+        "name": "Microsoft Presidio",
         "type": "open-source",
-        "url": "https://www.openpolicyagent.org"
+        "url": "https://github.com/microsoft/presidio"
       },
       {
-        "name": "TrustArc",
+        "name": "Splunk",
         "type": "commercial",
-        "url": "https://trustarc.com"
+        "url": "https://www.splunk.com"
+      },
+      {
+        "name": "Elasticsearch",
+        "type": "open-source",
+        "url": "https://www.elastic.co"
       }
     ],
     "incidents": [
@@ -27372,7 +27585,7 @@ window.CROSSWALK_DATA = [
       ],
       "agentic_top10": [
         "ASI09",
-        "ASI02"
+        "ASI03"
       ]
     },
     "changelog": [
@@ -27406,7 +27619,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0051",
-        "control_name": "Exploit Public-Facing Application",
+        "control_name": "LLM Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prompt injection via LLM interface accesses all content injected into over-broad context window"
@@ -27848,19 +28061,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B006",
-        "control_name": "Prevent unauthorized AI actions",
+        "control_id": "B005",
+        "control_name": "Implement real-time input filtering",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "E",
-        "control_name": "Audit trails and logging",
+        "control_id": "B006",
+        "control_name": "Prevent unauthorized AI actions",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -27897,50 +28110,50 @@ window.CROSSWALK_DATA = [
       {
         "framework": "FedRAMP",
         "control_id": "AC-6",
-        "control_name": "Least Privilege — data collection restrictions",
+        "control_name": "Least Privilege — context data scoping",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Restrict AI data collection to minimum necessary for stated purpose; enforce at pipeline ingestion points"
+        "scope": "Both",
+        "notes": "Restrict context window content to minimum necessary for the task; enforce per-task context scope limits aligned with user authorisation"
       },
       {
         "framework": "FedRAMP",
         "control_id": "CM-7",
-        "control_name": "Least Functionality — data processing restrictions",
+        "control_name": "Least Functionality — context assembly restrictions",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Restrict AI data processing to minimum necessary scope; disable collection of non-essential data fields"
+        "scope": "Both",
+        "notes": "Restrict context assembly to approved data sources; disable inclusion of unnecessary system data, full documents, or unbounded conversation history"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — minimisation governance",
+        "control_id": "SI-10",
+        "control_name": "Information Input Validation — context boundary enforcement",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Include data minimisation in AI risk management; define minimum necessary data per AI use case"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — minimisation governance",
-        "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Include data minimisation in ICT risk management; define minimum necessary data per AI use case and processing activity"
+        "scope": "Both",
+        "notes": "Validate and enforce context window boundaries; truncate or summarise content exceeding defined limits; strip unnecessary metadata"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — collection restrictions",
+        "control_name": "Protection and Prevention – context scope controls",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Implement controls restricting AI data collection to minimum necessary; enforce at pipeline ingestion points and model training configuration"
+        "scope": "Both",
+        "notes": "Implement data minimisation in context assembly; only include minimum necessary data; enforce per-task context scope limits"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — data necessity mapping",
+        "control_id": "Art. 5–7",
+        "control_name": "ICT Risk Management – context minimisation governance",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Document data necessity justification for each AI data asset; map minimum required data per use case"
+        "scope": "Both",
+        "notes": "Include context window data minimisation in ICT risk management; define maximum context scope per AI use case"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection – excessive context monitoring",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor context window assembly for excessive data inclusion; alert on context exceeding defined scope limits"
       }
     ],
     "tools": [
@@ -27985,19 +28198,19 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/google/differential-privacy"
       },
       {
-        "name": "Microsoft Presidio",
-        "type": "open-source",
-        "url": "https://github.com/microsoft/presidio"
-      },
-      {
         "name": "Open Policy Agent",
         "type": "open-source",
         "url": "https://www.openpolicyagent.org"
       },
       {
-        "name": "OneTrust",
+        "name": "Microsoft Presidio",
+        "type": "open-source",
+        "url": "https://github.com/microsoft/presidio"
+      },
+      {
+        "name": "Nightfall DLP",
         "type": "commercial",
-        "url": "https://www.onetrust.com"
+        "url": "https://www.nightfall.ai"
       }
     ],
     "incidents": [
@@ -28049,7 +28262,8 @@ window.CROSSWALK_DATA = [
         "LLM07",
         "LLM02",
         "LLM08",
-        "LLM06"
+        "LLM06",
+        "LLM01"
       ],
       "agentic_top10": [
         "ASI01",
@@ -28091,7 +28305,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0013",
-        "control_name": "Discover ML Model Ontology",
+        "control_name": "Discover AI Model Ontology",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Adversary learns what data the browser assistant can access across open applications"
@@ -28099,7 +28313,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Browser assistant accesses sensitive data across tabs and applications — adversary controls assistant to exfiltrate"
@@ -28525,27 +28739,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B001",
-        "control_name": "Third-party adversarial robustness testing",
+        "control_id": "B006",
+        "control_name": "Prevent unauthorized AI actions",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B003",
-        "control_name": "Third-party security assessment",
+        "control_id": "B007",
+        "control_name": "Enforce user access privileges",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Hardening"
+        "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B008",
-        "control_name": "Third-party NHI controls",
+        "control_id": "A",
+        "control_name": "Data & Privacy domain",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Hardening"
+        "notes": "Foundational"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -28597,59 +28811,59 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SC-28",
-        "control_name": "Protection of Information at Rest — privacy-preserving storage",
+        "control_id": "AC-6",
+        "control_name": "Least Privilege — agent endpoint access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Encrypt AI data at rest; implement privacy-preserving storage techniques to prevent inference and re-identification"
+        "notes": "Restrict agent access to minimum necessary endpoint data; enforce explicit permission grants per data source — files, screens, network"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AC-3",
-        "control_name": "Access Enforcement — privacy-aligned access",
+        "control_id": "CM-7",
+        "control_name": "Least Functionality — agent capability restrictions",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce access controls that account for inference and aggregation risk; restrict access based on combined sensitivity"
+        "notes": "Restrict agent capabilities to approved operations; disable file system, clipboard, or network access beyond task requirements"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — privacy risk assessment",
+        "control_id": "SC-7",
+        "control_name": "Boundary Protection — endpoint data flow control",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include AI privacy erosion in risk management; assess inference, aggregation, and memorisation risks for AI systems"
+        "notes": "Enforce boundary controls on data flows from endpoints to AI agents; prevent agents from exfiltrating endpoint data"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SI-4",
-        "control_name": "System Monitoring — privacy erosion detection",
+        "control_id": "AU-2",
+        "control_name": "Event Logging — agent data access tracking",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor for privacy erosion indicators; detect inference capabilities, re-identification risk, and memorisation patterns"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — privacy risk governance",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Include AI privacy erosion in ICT risk management; assess inference, aggregation, and memorisation risks for financial AI systems"
+        "notes": "Log all agent data access at endpoints; capture what files, screens, and network data agents read and transmit"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 9",
-        "control_name": "Protection and Prevention — privacy-preserving controls",
+        "control_name": "Protection and Prevention – endpoint access controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement privacy-preserving controls for AI systems; prevent inference, re-identification, and memorisation-based privacy erosion"
+        "notes": "Restrict agent access to minimum necessary endpoint data; explicit permission grants per data source; agents cannot access files, screens, or network data without authorisation"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 10",
-        "control_name": "Detection — privacy degradation monitoring",
+        "control_name": "Detection – endpoint overreach monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor for privacy degradation indicators; detect inference attacks, re-identification attempts, and memorisation in model outputs"
+        "notes": "Monitor agent endpoint access patterns; detect access to data sources beyond task scope; alert on screen capture, file access, or network data beyond authorised boundaries"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 28–44",
+        "control_name": "Third-Party Risk – endpoint agent vendor oversight",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include endpoint AI agent vendors in third-party risk management; assess data access scope, local storage practices, and data transmission"
       }
     ],
     "tools": [
@@ -28704,24 +28918,24 @@ window.CROSSWALK_DATA = [
         "url": "https://flower.ai"
       },
       {
-        "name": "Microsoft Presidio",
-        "type": "open-source",
-        "url": "https://github.com/microsoft/presidio"
-      },
-      {
-        "name": "ARX Data Anonymization",
-        "type": "open-source",
-        "url": "https://arx.deidentifier.org"
-      },
-      {
-        "name": "Opacus",
-        "type": "open-source",
-        "url": "https://opacus.ai"
-      },
-      {
-        "name": "OneTrust",
+        "name": "Microsoft Defender for Endpoint",
         "type": "commercial",
-        "url": "https://www.onetrust.com"
+        "url": "https://www.microsoft.com/en-us/security/business/endpoint-security"
+      },
+      {
+        "name": "Netskope",
+        "type": "commercial",
+        "url": "https://www.netskope.com"
+      },
+      {
+        "name": "Open Policy Agent",
+        "type": "open-source",
+        "url": "https://www.openpolicyagent.org"
+      },
+      {
+        "name": "OpenTelemetry",
+        "type": "open-source",
+        "url": "https://opentelemetry.io"
       }
     ],
     "incidents": [
@@ -28778,8 +28992,7 @@ window.CROSSWALK_DATA = [
         "LLM06",
         "LLM03",
         "LLM08",
-        "LLM01",
-        "LLM02"
+        "LLM01"
       ]
     },
     "changelog": [
@@ -28813,7 +29026,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0029",
-        "control_name": "Denial of ML Service",
+        "control_name": "Denial of AI Service",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Adversary saturates GenAI pipeline — vector store, RAG retrieval, or inference endpoint rendered unavailable"
@@ -28829,7 +29042,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Pipeline failures may expose data through error messages or fallback paths that lack normal access controls"
@@ -29240,32 +29453,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B001",
-        "control_name": "Third-party adversarial robustness testing",
+        "control_id": "D",
+        "control_name": "Reliability domain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "B003",
-        "control_name": "Third-party security assessment",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B008",
-        "control_name": "Third-party NHI controls",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Hardening"
-      },
-      {
-        "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Foundational"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "E",
+        "control_name": "Audit trails and logging",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -29320,51 +29525,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SI-4",
-        "control_name": "System Monitoring — bias detection",
+        "control_id": "CP-9",
+        "control_name": "Information System Backup — AI data asset backup",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor AI outputs for bias indicators; track fairness metrics across demographic groups and use cases"
+        "notes": "Implement versioned backups of critical AI data assets — embeddings, indices, training data, model weights — with verified restoration procedures"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "CP-10",
+        "control_name": "Information System Recovery and Reconstitution — pipeline restoration",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Define and test recovery procedures for AI data pipelines; implement failover for critical RAG and embedding services"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "SI-4",
+        "control_name": "System Monitoring — pipeline health monitoring",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor all AI data pipelines for health — RAG retrieval latency, embedding index integrity, data freshness; alert on degradation"
       },
       {
         "framework": "FedRAMP",
         "control_id": "CA-7",
-        "control_name": "Continuous Monitoring — fairness monitoring",
+        "control_name": "Continuous Monitoring — availability metrics",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include bias and fairness metrics in continuous monitoring; track output equity over time"
-      },
-      {
-        "framework": "FedRAMP",
-        "control_id": "RA-5",
-        "control_name": "Vulnerability Scanning — bias assessment",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Include bias detection and fairness assessment in vulnerability scanning; test for disparate impact"
+        "notes": "Include AI data pipeline availability in continuous monitoring; track uptime, latency, and data freshness metrics"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — fairness governance",
+        "control_id": "Art. 11",
+        "control_name": "Response and Recovery – AI data service recovery",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include AI bias and fairness in ICT risk management; define fairness requirements for financial AI systems and acceptable disparity thresholds"
+        "notes": "Implement response and recovery procedures for AI data pipeline failures; define recovery time objectives and fallback mechanisms"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 12",
+        "control_name": "Backup Policies – AI data backup",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Maintain versioned backups of critical AI data assets — embeddings, indices, training data, model weights; test restoration procedures"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 24–27",
-        "control_name": "Resilience Testing — bias testing",
+        "control_name": "Resilience Testing – data pipeline resilience",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include bias detection and fairness testing in resilience testing programme; test for disparate impact in financial AI outputs across demographic groups"
+        "notes": "Include AI data pipeline failure scenarios in resilience testing; test failover, degraded mode operation, and recovery procedures"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 13",
-        "control_name": "Learning and Evolving — fairness improvement",
+        "control_id": "Art. 10",
+        "control_name": "Detection – pipeline health monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Apply lessons learned from bias incidents; update training data, model parameters, and controls based on fairness assessments"
+        "notes": "Monitor AI data pipeline health; detect stale data, index corruption, and availability degradation in real time"
       }
     ],
     "tools": [
@@ -29419,14 +29640,24 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/dssg/aequitas"
       },
       {
-        "name": "IBM AI Fairness 360",
-        "type": "open-source",
-        "url": "https://aif360.mybluemix.net"
+        "name": "AWS Backup / Azure Backup",
+        "type": "commercial",
+        "url": "https://aws.amazon.com/backup/"
       },
       {
-        "name": "Fiddler AI",
+        "name": "Prometheus",
+        "type": "open-source",
+        "url": "https://prometheus.io"
+      },
+      {
+        "name": "PagerDuty",
         "type": "commercial",
-        "url": "https://www.fiddler.ai"
+        "url": "https://www.pagerduty.com"
+      },
+      {
+        "name": "Great Expectations",
+        "type": "open-source",
+        "url": "https://greatexpectations.io"
       },
       {
         "name": "Evidently",
@@ -29557,7 +29788,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0024.000",
-        "control_name": "Membership Inference",
+        "control_name": "Infer Membership",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Adversary determines whether specific sensitive records were used in training through systematic query analysis"
@@ -29572,8 +29803,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0027",
-        "control_name": "Model Inversion",
+        "control_id": "AML.T0024.001",
+        "control_name": "Invert ML Model",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Adversary reconstructs sensitive training examples from model outputs through systematic query campaigns"
@@ -29955,17 +30186,25 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
-        "tier": "Foundational",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Hardening"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "B004",
+        "control_name": "Prevent AI endpoint scraping",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "E",
-        "control_name": "Audit trails and logging",
-        "tier": "Foundational",
+        "control_id": "B006",
+        "control_name": "Prevent unauthorized AI actions",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -30009,51 +30248,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — AI governance framework",
+        "control_id": "SC-28",
+        "control_name": "Protection of Information at Rest — model and data protection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Establish comprehensive AI data governance framework within risk management strategy; define roles, policies, and oversight mechanisms"
+        "notes": "Encrypt model weights and training data at rest; implement privacy-preserving storage to limit reconstruction attack surface"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "CM-3",
-        "control_name": "Configuration Change Control — governance policy management",
+        "control_id": "AC-3",
+        "control_name": "Access Enforcement — inference API access control",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain AI governance policies under change control; require approval for policy modifications; audit all changes"
+        "notes": "Enforce access controls on inference endpoints; rate-limit API access; restrict bulk query patterns enabling reconstruction"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "RA-3",
-        "control_name": "Risk Assessment — governance completeness",
+        "control_id": "SI-4",
+        "control_name": "System Monitoring — probing pattern detection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Assess AI governance completeness; identify gaps in roles, policies, oversight, and accountability"
+        "notes": "Monitor inference endpoints for systematic probing patterns — membership inference, model inversion, attribute inference; alert on detection"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "RA-5",
+        "control_name": "Vulnerability Scanning — reconstruction risk assessment",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include model inversion and membership inference attacks in vulnerability assessment; test deployed models for data reconstruction risk"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — AI governance framework",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention – inference attack controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Establish comprehensive AI data governance within ICT risk management; define roles, policies, accountability, and oversight mechanisms"
+        "notes": "Implement privacy-preserving model deployment; apply differential privacy during training; rate limiting and access controls on inference endpoints"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 24–27",
+        "control_name": "Resilience Testing – reconstruction testing",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include model inversion, membership inference, and attribute inference testing in resilience testing programme"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection – probing pattern detection",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor inference endpoints for systematic probing patterns; detect membership inference and model inversion attempts"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 13",
-        "control_name": "Learning and Evolving — governance improvement",
+        "control_name": "Learning and Evolving – inference attack improvement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Apply lessons learned to improve AI data governance; update policies and controls based on incident analysis and regulatory changes"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — governance scope mapping",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Map all AI systems subject to governance; ensure complete coverage of AI data assets in governance framework"
+        "notes": "Apply lessons learned from inference attacks; update privacy controls and detection mechanisms"
       }
     ],
     "tools": [
@@ -30098,14 +30353,24 @@ window.CROSSWALK_DATA = [
         "url": "https://www.openpolicyagent.org"
       },
       {
-        "name": "Alation",
-        "type": "commercial",
-        "url": "https://www.alation.com"
+        "name": "Opacus",
+        "type": "open-source",
+        "url": "https://opacus.ai"
       },
       {
-        "name": "ServiceNow GRC",
+        "name": "Microsoft Presidio",
+        "type": "open-source",
+        "url": "https://github.com/microsoft/presidio"
+      },
+      {
+        "name": "Fiddler AI",
         "type": "commercial",
-        "url": "https://www.servicenow.com"
+        "url": "https://www.fiddler.ai"
+      },
+      {
+        "name": "ARX Data Anonymization",
+        "type": "open-source",
+        "url": "https://arx.deidentifier.org"
       }
     ],
     "incidents": [
@@ -30127,8 +30392,7 @@ window.CROSSWALK_DATA = [
         "LLM02",
         "LLM08",
         "LLM06",
-        "LLM05",
-        "LLM09"
+        "LLM05"
       ],
       "dsgai_2026": [
         "DSGAI10",
@@ -30136,7 +30400,9 @@ window.CROSSWALK_DATA = [
       ],
       "agentic_top10": [
         "ASI04",
-        "ASI09"
+        "ASI09",
+        "ASI03",
+        "ASI01"
       ]
     },
     "changelog": [
@@ -30178,7 +30444,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0057",
-        "control_name": "Data from Information Repositories",
+        "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Labelling vendor's data stores containing sensitive annotation tasks accessed as information repositories"
@@ -30596,17 +30862,9 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "D",
-        "control_name": "Reliability domain (all)",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Foundational"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "B006",
-        "control_name": "Prevent unauthorized AI actions",
-        "tier": "Hardening",
+        "control_id": "A",
+        "control_name": "Data & Privacy domain",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -30614,7 +30872,15 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "E",
         "control_name": "Audit trails and logging",
-        "tier": "Hardening",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Foundational"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "F",
+        "control_name": "Society domain",
+        "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
@@ -30660,51 +30926,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SA-9",
-        "control_name": "External Information System Services — third-party data controls",
+        "control_id": "AC-3",
+        "control_name": "Access Enforcement — labeler exposure controls",
         "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Require FedRAMP authorisation for third-party data service providers; establish SLAs covering data security, privacy, and incident notification"
+        "scope": "Build",
+        "notes": "Enforce access controls limiting labeler exposure to sensitive content; segment data so labelers only access content within their clearance scope"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SR-2",
-        "control_name": "Supply Chain Risk Management Plan — data provider risk",
+        "control_id": "PS-3",
+        "control_name": "Personnel Screening — sensitive data role screening",
         "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Include third-party data providers in supply chain risk management; assess data handling practices and security posture"
+        "scope": "Build",
+        "notes": "Screen human annotators and labelers for roles involving access to sensitive, classified, or harmful content"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SR-3",
-        "control_name": "Supply Chain Controls — data provenance from third parties",
+        "control_id": "AT-2",
+        "control_name": "Awareness and Training — AI data risk training",
+        "tier": "Foundational",
+        "scope": "Build",
+        "notes": "Provide training on AI-specific data risks for all labelers and reviewers; include handling of sensitive, harmful, and disturbing content"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "AU-2",
+        "control_name": "Event Logging — labeler access tracking",
+        "tier": "Foundational",
+        "scope": "Build",
+        "notes": "Log all labeler data access for compliance and safety monitoring; track exposure duration and content categories"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention – labeler data exposure controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Verify provenance and integrity of data from third-party sources; implement validation before ingestion into AI pipelines"
+        "notes": "Implement data segmentation and access controls limiting labeler exposure to minimum necessary content; redact sensitive data before annotation"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 5–7",
+        "control_name": "ICT Risk Management – labeler governance",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Include labeler data exposure in ICT risk management; define duty of care obligations and data access scope for human annotators"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 28–44",
-        "control_name": "Third-Party Risk — data provider and processor oversight",
+        "control_name": "Third-Party Risk – labeling provider oversight",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include all third-party data providers and processors in DORA third-party risk management; conduct due diligence, establish contracts, and monitor ongoing compliance"
+        "notes": "Include external labeling providers in third-party risk management; assess data handling, access controls, and worker welfare practices"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — third-party data inventory",
+        "control_id": "Art. 10",
+        "control_name": "Detection – labeler access monitoring",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Register all third-party data sources in ICT asset inventory; document provenance, contracts, and dependency relationships"
-      },
-      {
-        "framework": "DORA",
-        "control_id": "Art. 45",
-        "control_name": "Information Sharing — third-party threat intelligence",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Participate in information sharing arrangements for third-party AI data risks; share threat intelligence on data provider compromises"
+        "notes": "Monitor labeler data access; detect access beyond authorised scope or unusual access patterns"
       }
     ],
     "tools": [
@@ -30744,14 +31026,14 @@ window.CROSSWALK_DATA = [
         "url": "https://owasp.org/www-project-dependency-check/"
       },
       {
-        "name": "OneTrust Vendorpedia",
-        "type": "commercial",
-        "url": "https://www.onetrust.com"
+        "name": "Microsoft Presidio",
+        "type": "open-source",
+        "url": "https://github.com/microsoft/presidio"
       },
       {
-        "name": "ServiceNow VRM",
+        "name": "Snorkel AI",
         "type": "commercial",
-        "url": "https://www.servicenow.com"
+        "url": "https://snorkel.ai"
       }
     ],
     "incidents": [
@@ -30816,7 +31098,8 @@ window.CROSSWALK_DATA = [
       ],
       "agentic_top10": [
         "ASI10",
-        "ASI04"
+        "ASI04",
+        "ASI09"
       ]
     },
     "changelog": [
@@ -30849,8 +31132,8 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0016",
-        "control_name": "Extract ML Model",
+        "control_id": "AML.T0016.000",
+        "control_name": "Obtain Capabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Adversary systematically queries model to extract sufficient information to replicate its functionality"
@@ -31278,33 +31561,33 @@ window.CROSSWALK_DATA = [
         "framework": "AIUC-1",
         "control_id": "A",
         "control_name": "Data & Privacy domain",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "C",
-        "control_name": "Safety domain",
-        "tier": "Foundational",
+        "control_id": "B004",
+        "control_name": "Prevent AI endpoint scraping",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "B006",
+        "control_name": "Prevent unauthorized AI actions",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
         "control_id": "E",
-        "control_name": "Accountability domain",
-        "tier": "Foundational",
+        "control_name": "Audit trails and logging",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Foundational"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "F",
-        "control_name": "Society domain",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Foundational"
+        "notes": "Hardening"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -31348,51 +31631,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "SC-7",
-        "control_name": "Boundary Protection — data flow enforcement",
+        "control_id": "SC-28",
+        "control_name": "Protection of Information at Rest — model IP encryption",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce data flow controls preventing AI data from crossing jurisdictional boundaries; restrict to approved data centres and regions"
+        "notes": "Encrypt all intellectual property — model weights, proprietary training data, algorithms — at rest with FIPS 140-validated modules"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — localisation governance",
+        "control_id": "AC-3",
+        "control_name": "Access Enforcement — model weight access control",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data localisation in AI risk management; define data residency requirements per jurisdiction and data type"
+        "notes": "Enforce strict access control on AI intellectual property; restrict model weight access to minimum necessary personnel with approval workflow"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "CM-3",
-        "control_name": "Configuration Change Control — data location management",
+        "control_id": "AU-12",
+        "control_name": "Audit Generation — IP access tracking",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain documentation of AI data storage locations; require change control for data location modifications"
+        "notes": "Generate audit records for all access to AI intellectual property — model weights, architectures, training data; detect unauthorised access and exfiltration"
+      },
+      {
+        "framework": "FedRAMP",
+        "control_id": "SI-4",
+        "control_name": "System Monitoring — extraction pattern detection",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor inference endpoints and model registries for systematic extraction patterns; detect model distillation, scraping, and side-channel attacks"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — localisation governance",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention – IP protection controls",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data localisation in ICT risk management; define residency requirements per jurisdiction and data type for AI systems"
+        "notes": "Implement encryption, access controls, and DLP for model weights, training data, and proprietary algorithms; enforce multi-factor authentication for IP asset access"
+      },
+      {
+        "framework": "DORA",
+        "control_id": "Art. 10",
+        "control_name": "Detection – IP exfiltration detection",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Monitor model weight access and download patterns; detect systematic querying indicative of model extraction; alert on anomalous access"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 28–44",
-        "control_name": "Third-Party Risk — cross-border data oversight",
+        "control_name": "Third-Party Risk – IP protection in vendor relationships",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Address data localisation in third-party agreements; verify provider data processing locations meet residency requirements; monitor for unauthorised cross-border transfers"
+        "notes": "Address IP protection in third-party agreements; ensure vendors cannot access, replicate, or misuse proprietary AI assets"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — data location mapping",
+        "control_id": "Art. 17–23",
+        "control_name": "ICT Incident Management – IP theft reporting",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Map physical and logical locations of all AI data; document processing jurisdictions for training, inference, and storage"
+        "notes": "Classify IP exfiltration as ICT-related incidents; report per DORA criteria"
       }
     ],
     "tools": [
@@ -31452,19 +31751,19 @@ window.CROSSWALK_DATA = [
         "url": "https://privacera.com"
       },
       {
-        "name": "AWS Region Controls / Azure Policy",
+        "name": "HashiCorp Vault",
         "type": "commercial",
-        "url": "https://aws.amazon.com/compliance/data-residency/"
+        "url": "https://www.vaultproject.io"
       },
       {
-        "name": "Netskope",
+        "name": "Nightfall DLP",
         "type": "commercial",
-        "url": "https://www.netskope.com"
+        "url": "https://www.nightfall.ai"
       },
       {
-        "name": "OneTrust",
+        "name": "AWS KMS / Azure Key Vault",
         "type": "commercial",
-        "url": "https://www.onetrust.com"
+        "url": "https://aws.amazon.com/kms/"
       }
     ],
     "incidents": [
@@ -31538,11 +31837,11 @@ window.CROSSWALK_DATA = [
     "mappings": [
       {
         "framework": "MITRE ATLAS",
-        "control_id": "AML.T0045",
-        "control_name": "Publish Poisoned Datasets",
+        "control_id": "AML.T0060",
+        "control_name": "Publish Hallucinated Entities",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Adversary publishes false content in public repositories, documentation sites, or knowledge bases indexed by RAG systems"
+        "notes": "Adversary leverages AI-generated hallucinated content published in public repositories, documentation sites, or knowledge bases indexed by RAG systems"
       },
       {
         "framework": "MITRE ATLAS",
@@ -31555,7 +31854,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "MITRE ATLAS",
         "control_id": "AML.T0031",
-        "control_name": "Craft Adversarial Data",
+        "control_name": "Erode AI Model Integrity",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "False content degrades model integrity by corrupting retrieval-augmented generation outputs"
+      },
+      {
+        "framework": "MITRE ATLAS",
+        "control_id": "AML.T0070",
+        "control_name": "RAG Poisoning",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Injecting disinformation directly into RAG knowledge bases to corrupt downstream outputs"
+      },
+      {
+        "framework": "MITRE ATLAS",
+        "control_id": "AML.T0066",
+        "control_name": "Retrieval Content Crafting",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "False content crafted to appear authoritative and rank highly in semantic similarity searches"
@@ -31974,85 +32289,51 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "A",
-        "control_name": "Data & Privacy domain",
-        "tier": "Foundational",
+        "control_id": "C",
+        "control_name": "Safety domain",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "E",
-        "control_name": "Audit trails and logging",
-        "tier": "Foundational",
+        "control_id": "F",
+        "control_name": "Society domain",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "Primary DSGAI entries",
-        "control_name": "AIUC-1 Domain",
-        "tier": "Foundational",
+        "control_id": "B002",
+        "control_name": "Detect adversarial input",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Status"
+        "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "DSGAI02, DSGAI03, DSGAI06, DSGAI07, DSGAI08, DSGAI09, DSGAI14, DSGAI15, DSGAI18, DSGAI21",
-        "control_name": "A — Data & Privacy",
-        "tier": "Foundational",
-        "scope": "Both"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "DSGAI01, DSGAI04, DSGAI05, DSGAI10, DSGAI12, DSGAI16, DSGAI17",
-        "control_name": "B — Security",
-        "tier": "Foundational",
-        "scope": "Both"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "DSGAI05, DSGAI20",
-        "control_name": "C — Safety",
-        "tier": "Foundational",
-        "scope": "Both"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "DSGAI12, DSGAI19",
-        "control_name": "D — Reliability",
-        "tier": "Foundational",
-        "scope": "Both"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "DSGAI02, DSGAI06, DSGAI09, DSGAI13, DSGAI18, DSGAI20, DSGAI21",
-        "control_name": "E — Accountability",
-        "tier": "Foundational",
-        "scope": "Both"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "DSGAI20",
-        "control_name": "F — Society",
-        "tier": "Foundational",
-        "scope": "Both"
-      },
-      {
-        "framework": "AIUC-1",
-        "control_id": "Date",
-        "control_name": "Version",
-        "tier": "Foundational",
+        "control_id": "B005",
+        "control_name": "Implement real-time input filtering",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Change"
+        "notes": "Hardening"
       },
       {
         "framework": "AIUC-1",
-        "control_id": "2026-03-27",
-        "control_name": "1.0.0",
-        "tier": "Foundational",
+        "control_id": "Version",
+        "control_name": "Date",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Initial release — full mapping DSGAI01–DSGAI21 to AIUC-1"
+        "notes": "Author"
+      },
+      {
+        "framework": "AIUC-1",
+        "control_id": "2026-Q1",
+        "control_name": "2026-05-26",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "OWASP GenAI Data Security Initiative"
       },
       {
         "framework": "OWASP NHI Top 10",
@@ -32202,67 +32483,67 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "FedRAMP",
-        "control_id": "PM-9",
-        "control_name": "Risk Management Strategy — regulatory compliance",
+        "control_id": "SI-3",
+        "control_name": "Malicious Code Protection — adversarial content detection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include regulatory compliance in AI risk management; map applicable data laws to AI processing activities and define compliance requirements"
+        "notes": "Extend malicious code protection to detect adversarial content injected into RAG knowledge bases and training data; identify poisoned or manipulated content"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "RA-3",
-        "control_name": "Risk Assessment — compliance gap analysis",
+        "control_id": "SI-7",
+        "control_name": "Software, Firmware, and Information Integrity — knowledge source integrity",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans"
+        "notes": "Verify integrity and authenticity of RAG knowledge sources; detect unauthorised modifications to knowledge bases and training datasets"
       },
       {
         "framework": "FedRAMP",
         "control_id": "AU-2",
-        "control_name": "Event Logging — regulatory evidence",
+        "control_name": "Event Logging — content provenance tracking",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain comprehensive logs for regulatory compliance evidence; ensure audit trails meet requirements of applicable data laws"
+        "notes": "Log provenance of all content entering knowledge bases and training pipelines; enable tracing of content from source through processing to output"
       },
       {
         "framework": "FedRAMP",
-        "control_id": "AC-3",
-        "control_name": "Access Enforcement — legally mandated controls",
+        "control_id": "SR-3",
+        "control_name": "Supply Chain Controls — source credibility verification",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement access controls mandated by applicable data laws; enforce data subject rights, purpose limitation, and processing restrictions"
+        "notes": "Verify credibility and integrity of all knowledge sources before ingestion; implement source validation and fact-checking controls"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 5–7",
-        "control_name": "ICT Risk Management — regulatory compliance governance",
+        "control_id": "Art. 9",
+        "control_name": "Protection and Prevention – knowledge base integrity",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include regulatory compliance in ICT risk management; map applicable data laws to AI processing activities; define compliance requirements and accountability"
+        "notes": "Implement integrity controls for RAG knowledge bases and training data; verify source authenticity; prevent unauthorised content injection"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 17–23",
-        "control_name": "ICT Incident Management — compliance incident reporting",
+        "control_id": "Art. 24–27",
+        "control_name": "Resilience Testing – disinformation testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify material regulatory non-compliance events as ICT incidents; report to competent authorities per DORA criteria; coordinate with DPO for GDPR notifications"
+        "notes": "Include disinformation and knowledge base poisoning scenarios in resilience testing; test detection capabilities and content verification"
       },
       {
         "framework": "DORA",
         "control_id": "Art. 13",
-        "control_name": "Learning and Evolving — compliance improvement",
+        "control_name": "Learning and Evolving – integrity improvement",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Apply lessons learned from compliance failures; update controls and processes based on regulatory changes, enforcement actions, and incident analysis"
+        "notes": "Apply lessons learned from integrity attacks; update knowledge base validation and content verification controls"
       },
       {
         "framework": "DORA",
-        "control_id": "Art. 8",
-        "control_name": "Identification — regulated data mapping",
+        "control_id": "Art. 45",
+        "control_name": "Information Sharing – disinformation threat intelligence",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Map all AI data subject to regulatory requirements; ensure complete coverage in compliance programme"
+        "notes": "Participate in information sharing for AI disinformation threats; share indicators of knowledge base poisoning and content manipulation"
       }
     ],
     "tools": [
@@ -32322,9 +32603,24 @@ window.CROSSWALK_DATA = [
         "url": "https://transcend.io"
       },
       {
-        "name": "ServiceNow GRC",
+        "name": "LLM Guard",
+        "type": "open-source",
+        "url": "https://github.com/protectai/llm-guard"
+      },
+      {
+        "name": "Splunk",
         "type": "commercial",
-        "url": "https://www.servicenow.com"
+        "url": "https://www.splunk.com"
+      },
+      {
+        "name": "Sigstore",
+        "type": "open-source",
+        "url": "https://www.sigstore.dev"
+      },
+      {
+        "name": "C2PA",
+        "type": "open-source",
+        "url": "https://c2pa.org"
       }
     ],
     "incidents": [
@@ -32370,13 +32666,11 @@ window.CROSSWALK_DATA = [
         "LLM04",
         "LLM09",
         "LLM06",
-        "LLM07",
-        "LLM02"
+        "LLM07"
       ],
       "agentic_top10": [
         "ASI06",
-        "ASI09",
-        "ASI02"
+        "ASI09"
       ],
       "dsgai_2026": [
         "DSGAI01",

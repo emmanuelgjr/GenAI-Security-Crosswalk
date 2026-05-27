@@ -20,7 +20,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0013",
-      "control_name": "Discover ML Model Ontology",
+      "control_name": "Discover AI Model Ontology",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Adversary learns what data the browser assistant can access across open applications"
@@ -28,7 +28,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Data from Information Repositories",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Browser assistant accesses sensitive data across tabs and applications — adversary controls assistant to exfiltrate"
@@ -454,27 +454,27 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B001",
-      "control_name": "Third-party adversarial robustness testing",
+      "control_id": "B006",
+      "control_name": "Prevent unauthorized AI actions",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B003",
-      "control_name": "Third-party security assessment",
+      "control_id": "B007",
+      "control_name": "Enforce user access privileges",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Hardening"
+      "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B008",
-      "control_name": "Third-party NHI controls",
+      "control_id": "A",
+      "control_name": "Data & Privacy domain",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Hardening"
+      "notes": "Foundational"
     },
     {
       "framework": "OWASP NHI Top 10",
@@ -526,59 +526,59 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SC-28",
-      "control_name": "Protection of Information at Rest — privacy-preserving storage",
+      "control_id": "AC-6",
+      "control_name": "Least Privilege — agent endpoint access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Encrypt AI data at rest; implement privacy-preserving storage techniques to prevent inference and re-identification"
+      "notes": "Restrict agent access to minimum necessary endpoint data; enforce explicit permission grants per data source — files, screens, network"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "AC-3",
-      "control_name": "Access Enforcement — privacy-aligned access",
+      "control_id": "CM-7",
+      "control_name": "Least Functionality — agent capability restrictions",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce access controls that account for inference and aggregation risk; restrict access based on combined sensitivity"
+      "notes": "Restrict agent capabilities to approved operations; disable file system, clipboard, or network access beyond task requirements"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — privacy risk assessment",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — endpoint data flow control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include AI privacy erosion in risk management; assess inference, aggregation, and memorisation risks for AI systems"
+      "notes": "Enforce boundary controls on data flows from endpoints to AI agents; prevent agents from exfiltrating endpoint data"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SI-4",
-      "control_name": "System Monitoring — privacy erosion detection",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — agent data access tracking",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor for privacy erosion indicators; detect inference capabilities, re-identification risk, and memorisation patterns"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — privacy risk governance",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include AI privacy erosion in ICT risk management; assess inference, aggregation, and memorisation risks for financial AI systems"
+      "notes": "Log all agent data access at endpoints; capture what files, screens, and network data agents read and transmit"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — privacy-preserving controls",
+      "control_name": "Protection and Prevention – endpoint access controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement privacy-preserving controls for AI systems; prevent inference, re-identification, and memorisation-based privacy erosion"
+      "notes": "Restrict agent access to minimum necessary endpoint data; explicit permission grants per data source; agents cannot access files, screens, or network data without authorisation"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 10",
-      "control_name": "Detection — privacy degradation monitoring",
+      "control_name": "Detection – endpoint overreach monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor for privacy degradation indicators; detect inference attacks, re-identification attempts, and memorisation in model outputs"
+      "notes": "Monitor agent endpoint access patterns; detect access to data sources beyond task scope; alert on screen capture, file access, or network data beyond authorised boundaries"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 28–44",
+      "control_name": "Third-Party Risk – endpoint agent vendor oversight",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include endpoint AI agent vendors in third-party risk management; assess data access scope, local storage practices, and data transmission"
     }
   ],
   "tools": [
@@ -633,24 +633,24 @@
       "url": "https://flower.ai"
     },
     {
-      "name": "Microsoft Presidio",
-      "type": "open-source",
-      "url": "https://github.com/microsoft/presidio"
-    },
-    {
-      "name": "ARX Data Anonymization",
-      "type": "open-source",
-      "url": "https://arx.deidentifier.org"
-    },
-    {
-      "name": "Opacus",
-      "type": "open-source",
-      "url": "https://opacus.ai"
-    },
-    {
-      "name": "OneTrust",
+      "name": "Microsoft Defender for Endpoint",
       "type": "commercial",
-      "url": "https://www.onetrust.com"
+      "url": "https://www.microsoft.com/en-us/security/business/endpoint-security"
+    },
+    {
+      "name": "Netskope",
+      "type": "commercial",
+      "url": "https://www.netskope.com"
+    },
+    {
+      "name": "Open Policy Agent",
+      "type": "open-source",
+      "url": "https://www.openpolicyagent.org"
+    },
+    {
+      "name": "OpenTelemetry",
+      "type": "open-source",
+      "url": "https://opentelemetry.io"
     }
   ],
   "incidents": [
@@ -707,8 +707,7 @@
       "LLM06",
       "LLM03",
       "LLM08",
-      "LLM01",
-      "LLM02"
+      "LLM01"
     ]
   },
   "changelog": [

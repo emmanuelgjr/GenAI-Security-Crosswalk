@@ -70,8 +70,8 @@ goal) and techniques (how they achieve it):
 | DSGAI01 | Sensitive Data Leakage | Critical | AML.T0025, AML.T0024.000, AML.T0035 | Foundational–Advanced |
 | DSGAI02 | Agent Identity & Credential Exposure | Critical | AML.T0012, AML.T0035, AML.T0051 | Foundational–Advanced |
 | DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | AML.T0012, AML.T0051, AML.T0057 | Foundational–Hardening |
-| DSGAI04 | Data, Model & Artifact Poisoning | Critical | AML.T0020, AML.T0032, AML.T0031 | Hardening–Advanced |
-| DSGAI05 | Data Integrity & Validation Failures | High | AML.T0020, AML.T0018, AML.T0031 | Foundational–Hardening |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | AML.T0020, AML.T0043, AML.T0031 | Hardening–Advanced |
+| DSGAI05 | Data Integrity & Validation Failures | High | AML.T0020, AML.T0018, AML.T0043 | Foundational–Hardening |
 | DSGAI06 | Tool, Plugin & Agent Data Exchange | High | AML.T0051, AML.T0057, AML.T0035 | Foundational–Hardening |
 | DSGAI07 | Data Governance, Lifecycle & Classification | High | AML.T0035, AML.T0024.000, AML.T0057 | Foundational–Advanced |
 | DSGAI08 | Non-Compliance & Regulatory Violations | High | AML.T0057, AML.T0051, AML.T0035 | Foundational–Advanced |
@@ -84,10 +84,10 @@ goal) and techniques (how they achieve it):
 | DSGAI15 | Over-Broad Context Windows | High | AML.T0051, AML.T0025, AML.T0035 | Foundational–Hardening |
 | DSGAI16 | Endpoint & Browser Assistant Overreach | High | AML.T0013, AML.T0057, AML.T0035 | Foundational–Hardening |
 | DSGAI17 | Data Availability & Resilience Failures | High | AML.T0029, AML.T0034, AML.T0057 | Foundational–Advanced |
-| DSGAI18 | Inference & Data Reconstruction | High | AML.T0024.000, AML.T0025, AML.T0027 | Hardening–Advanced |
+| DSGAI18 | Inference & Data Reconstruction | High | AML.T0024.000, AML.T0025, AML.T0024.001 | Hardening–Advanced |
 | DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | AML.T0035, AML.T0057, AML.T0020 | Foundational–Hardening |
-| DSGAI20 | Model Exfiltration & IP Replication | High | AML.T0016, AML.T0025, AML.T0034 | Hardening–Advanced |
-| DSGAI21 | Disinformation via Data Poisoning | High | AML.T0045, AML.T0020, AML.T0031 | Hardening–Advanced |
+| DSGAI20 | Model Exfiltration & IP Replication | High | AML.T0016.000, AML.T0025, AML.T0034 | Hardening–Advanced |
+| DSGAI21 | Disinformation via Data Poisoning | High | AML.T0060, AML.T0020, AML.T0031 | Hardening–Advanced |
 
 ---
 
@@ -107,22 +107,25 @@ Key techniques cited throughout this mapping:
 
 | Technique | ID | Description |
 |---|---|---|
-| Discover ML Model Ontology | AML.T0013 | Adversary learns about the AI system architecture, data sources, and model properties |
+| Discover AI Model Ontology | AML.T0013 | Adversary learns about the AI system architecture, data sources, and model properties |
 | Obtain Capabilities | AML.T0012 | Adversary acquires tools, infrastructure, or access needed for the attack |
-| ML Supply Chain Compromise | AML.T0010 | Compromise of components in the ML supply chain — datasets, models, frameworks |
+| AI Supply Chain Compromise | AML.T0010 | Compromise of components in the AI supply chain — datasets, models, frameworks (sub-techniques .000-.003) |
 | Poison Training Data | AML.T0020 | Adversary introduces malicious data into training pipeline to manipulate model behaviour |
-| Backdoor ML Model | AML.T0018 | Embed hidden functionality triggered by specific inputs |
-| Craft Adversarial Data | AML.T0031 | Create inputs specifically designed to manipulate model outputs |
-| Membership Inference | AML.T0024.000 | Determine whether a specific data point was used in training |
-| Model Inversion | AML.T0027 | Reconstruct training data from model outputs |
-| Extract ML Model | AML.T0016 | Steal model functionality through systematic querying |
+| Manipulate AI Model | AML.T0018 | Embed hidden functionality triggered by specific inputs (.000 Poison, .001 Modify Architecture) |
+| Erode AI Model Integrity | AML.T0031 | Degrade model performance or reliability through adversarial techniques |
+| Exfiltration via AI Inference API | AML.T0024 | Exfiltrate data through AI inference API (.000 Infer Membership, .001 Invert, .002 Extract) |
+| Obtain Capabilities | AML.T0016 | Obtain capabilities for attacking AI systems (.000-.002 sub-techniques) |
 | Exfiltrate via Cyber Means | AML.T0025 | Steal data using standard cyber exfiltration techniques |
-| Exploit Public-Facing Application | AML.T0051 | Exploit vulnerabilities in AI APIs or web interfaces |
-| Denial of ML Service | AML.T0029 | Degrade or deny access to AI system resources |
-| Cost Harvesting | AML.T0034 | Consume AI resources to impose financial or operational cost |
+| LLM Prompt Injection | AML.T0051 | Exploit LLM systems through prompt injection (.000 Direct, .001 Indirect) |
+| Denial of AI Service | AML.T0029 | Degrade or deny access to AI system resources |
+| Cost Harvesting | AML.T0034 | Consume AI resources to impose financial or operational cost (.000-.002 sub-techniques) |
 | Exfiltrate via ML Inference API | AML.T0035 | Use model inference API to extract sensitive information |
-| Publish Poisoned Datasets | AML.T0045 | Release poisoned data in public repositories to corrupt downstream models |
-| Data from Information Repositories | AML.T0057 | Access and exfiltrate data from AI-related data stores |
+| Craft Adversarial Data | AML.T0043 | Create adversarial inputs designed to manipulate model outputs (.000-.004 sub-techniques) |
+| LLM Data Leakage | AML.T0057 | Unintended exposure of data through LLM outputs |
+| Publish Hallucinated Entities | AML.T0060 | AI-generated hallucinated content published as fact |
+| RAG Poisoning | AML.T0070 | Inject malicious content into RAG knowledge bases |
+| Retrieval Content Crafting | AML.T0066 | Craft content designed to rank highly in semantic search |
+| AI Agent Tool Invocation | AML.T0053 | Agent autonomously invokes tools beyond authorised scope |
 
 ---
 
@@ -201,7 +204,7 @@ access to AI systems and downstream services.
 |---|---|---|---|
 | Obtain Capabilities | AML.T0012 | Resource Development | Adversary acquires agent credentials through memory inspection, log analysis, or tool payload capture |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Agent credentials embedded in inference requests or responses extracted by adversary |
-| Exploit Public-Facing Application | AML.T0051 | Initial Access | Agent API endpoints exploited to extract credentials or elevate access |
+| LLM Prompt Injection | AML.T0051 | Initial Access | Agent API endpoints exploited to extract credentials or elevate access |
 
 #### Mitigations mapped to ATLAS
 
@@ -242,8 +245,8 @@ external AI services voluntarily.
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
 | Obtain Capabilities | AML.T0012 | Resource Development | Shadow AI tools are external AI capabilities the adversary may already operate or compromise |
-| Exploit Public-Facing Application | AML.T0051 | Initial Access | Unapproved AI services may themselves be adversary-controlled or compromised |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Sensitive data pasted into shadow AI tools ends up in external data stores accessible to the AI service provider |
+| LLM Prompt Injection | AML.T0051 | Initial Access | Unapproved AI services may themselves be adversary-controlled or compromised |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Sensitive data pasted into shadow AI tools ends up in external data stores accessible to the AI service provider |
 
 #### Mitigations mapped to ATLAS
 
@@ -272,7 +275,7 @@ external AI services voluntarily.
 
 Training data, model weights, or RAG corpora corrupted with backdoors.
 This is the core ATLAS poisoning threat — the techniques AML.T0020
-(Poison Training Data) and AML.T0018 (Backdoor ML Model) are the
+(Poison Training Data) and AML.T0018 (Manipulate AI Model) are the
 canonical ATLAS descriptions of this attack class.
 
 #### ATLAS technique mapping
@@ -280,8 +283,8 @@ canonical ATLAS descriptions of this attack class.
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
 | Poison Training Data | AML.T0020 | ML Attack Staging | Adversary introduces malicious data into training pipeline — corrupts model behaviour in ways baked into weights |
-| Backdoor ML Model | AML.T0018 | ML Attack Staging | Hidden functionality embedded in model weights — triggered by specific inputs, invisible to standard testing |
-| Craft Adversarial Data | AML.T0031 | ML Attack Staging | Adversarially crafted training examples designed to produce specific model behaviours without detection |
+| Manipulate AI Model | AML.T0018 | ML Attack Staging | Hidden functionality embedded in model weights — triggered by specific inputs, invisible to standard testing (.000 Poison, .001 Modify Architecture) |
+| Craft Adversarial Data | AML.T0043 | ML Attack Staging | Adversarially crafted training examples designed to produce specific model behaviours without detection |
 
 #### Real-world ATLAS cases
 
@@ -301,7 +304,7 @@ canonical ATLAS descriptions of this attack class.
   gate before any production promotion
 
 **Hardening**
-- Counter AML.T0031: Adversarial data detection in
+- Counter AML.T0043: Adversarial data detection in
   training pipeline — statistical anomaly detection
   flags adversarially crafted training examples
 - Model integrity verification at deployment —
@@ -334,8 +337,8 @@ data that enters the AI system.
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
 | Poison Training Data | AML.T0020 | ML Attack Staging | Adversarially crafted payloads bypass ingestion validation to corrupt training or RAG data |
-| Backdoor ML Model | AML.T0018 | ML Attack Staging | Path traversal in snapshot imports (CVE-2024-3584) enables write to model host — backdoor installation path |
-| Craft Adversarial Data | AML.T0031 | ML Attack Staging | Payloads crafted to pass syntactic validation while embedding malicious semantic content |
+| Manipulate AI Model | AML.T0018 | ML Attack Staging | Path traversal in snapshot imports (CVE-2024-3584) enables write to model host — manipulation installation path |
+| Craft Adversarial Data | AML.T0043 | ML Attack Staging | Payloads crafted to pass syntactic validation while embedding malicious semantic content |
 
 #### Mitigations mapped to ATLAS
 
@@ -348,7 +351,7 @@ data that enters the AI system.
   is an AML.T0018 enabler in vector database environments
 
 **Hardening**
-- Counter AML.T0031: Semantic injection detection on
+- Counter AML.T0043: Semantic injection detection on
   ingestion payloads — adversarially crafted content
   detected before entering RAG corpus or training data
 
@@ -372,8 +375,8 @@ capture context data that flows through the agent.
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Exploit Public-Facing Application | AML.T0051 | Initial Access | Malicious MCP server exploits trust relationship with agent to capture context payloads |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Context data flowing through tool integrations captured and transmitted to adversary |
+| LLM Prompt Injection | AML.T0051 | Initial Access | Malicious MCP server exploits trust relationship with agent to capture context payloads |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Context data flowing through tool integrations captured and transmitted to adversary |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Tool API acts as exfiltration channel — sensitive context content captured in tool call payloads |
 
 #### Real-world ATLAS cases
@@ -418,7 +421,7 @@ exploit data stores that lack access controls.
 |---|---|---|---|
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Ungoverned derived assets (embeddings, caches) accessible through inference API without classification controls |
 | Membership Inference | AML.T0024.000 | Exfiltration | Ungoverned training data status — adversary determines what sensitive data is in scope without classification barriers |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Ungoverned embedding stores and agent memory databases accessed without access controls |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Ungoverned embedding stores and agent memory databases accessed without access controls |
 
 #### Mitigations mapped to ATLAS
 
@@ -455,8 +458,8 @@ gaps to maximise harm from incidents they cause.
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Data from Information Repositories | AML.T0057 | Exfiltration | Regulatory violations often arise from ungoverned data repositories — adversary exploits what compliance missed |
-| Exploit Public-Facing Application | AML.T0051 | Initial Access | Non-compliant AI deployments may lack security controls that compliance would have required |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Regulatory violations often arise from ungoverned data repositories — adversary exploits what compliance missed |
+| LLM Prompt Injection | AML.T0051 | Initial Access | Non-compliant AI deployments may lack security controls that compliance would have required |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Regulatory violations in training data scope make inference API exfiltration more damaging |
 
 #### Mitigations mapped to ATLAS
@@ -563,7 +566,7 @@ where session isolation failure becomes a data access path.
 |---|---|---|---|
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Adversary crafts queries designed to retrieve content from other users' sessions through session isolation failure |
 | Exfiltrate via Cyber Means | AML.T0025 | Exfiltration | Cross-session data captured and transmitted to adversary through inference API |
-| Exploit Public-Facing Application | AML.T0051 | Initial Access | Session isolation vulnerability in multi-tenant GenAI deployment exploited to access other users' data |
+| LLM Prompt Injection | AML.T0051 | Initial Access | Session isolation vulnerability in multi-tenant GenAI deployment exploited to access other users' data |
 
 #### Mitigations mapped to ATLAS
 
@@ -594,16 +597,16 @@ where session isolation failure becomes a data access path.
 
 LLM-to-database interfaces collapse the security boundary between
 user input and database logic. From an ATLAS perspective, this is
-AML.T0051 (Exploit Public-Facing Application) combined with
-AML.T0057 (Data from Information Repositories) — the adversary
+AML.T0051 (LLM Prompt Injection) combined with
+AML.T0057 (LLM Data Leakage) — the adversary
 exploits the AI interface to access data stores.
 
 #### ATLAS technique mapping
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Exploit Public-Facing Application | AML.T0051 | Initial Access | NL gateway interface exploited through crafted natural language to generate destructive or exfiltrating queries |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Database accessed through LLM-generated queries — adversary extracts sensitive records without direct database access |
+| LLM Prompt Injection | AML.T0051 | Initial Access | NL gateway interface exploited through crafted natural language to generate destructive or exfiltrating queries |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Database accessed through LLM-generated queries — adversary extracts sensitive records without direct database access |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | LLM inference API used to generate queries that extract data from connected databases |
 
 #### Real-world ATLAS cases
@@ -648,8 +651,7 @@ exploits the AI interface to access data stores.
 
 Vector databases have weaker default security posture than traditional
 databases. From an ATLAS perspective, vector stores are high-value
-data repositories targeted by AML.T0057 (Data from Information
-Repositories).
+data repositories targeted by AML.T0057 (LLM Data Leakage).
 
 #### ATLAS technique mapping
 
@@ -658,6 +660,7 @@ Repositories).
 | Exfiltrate via Cyber Means | AML.T0025 | Exfiltration | Vector store content exfiltrated through unauthenticated access or RBAC bypass |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Embeddings and retrieved passages extracted through vector store query API |
 | Poison Training Data | AML.T0020 | ML Attack Staging | Vector store content poisoned through path traversal or unauthenticated write (CVE-2024-3584) |
+| RAG Poisoning | AML.T0070 | ML Attack Staging | Malicious content injected into vector store RAG knowledge bases to manipulate retrieval results |
 
 #### Real-world ATLAS cases
 
@@ -702,7 +705,7 @@ production data may access the same data through poorly secured logs.
 |---|---|---|---|
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Sensitive inference inputs and outputs captured in telemetry stores accessed through weaker controls |
 | Exfiltrate via Cyber Means | AML.T0025 | Exfiltration | Telemetry stores containing sensitive GenAI interaction data exfiltrated through standard data access paths |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Observability databases and log stores accessed as information repositories — sensitive content available at scale |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Observability databases and log stores accessed as information repositories — sensitive content available at scale |
 
 #### Mitigations mapped to ATLAS
 
@@ -731,14 +734,14 @@ production data may access the same data through poorly secured logs.
 
 Excessive context injection aggregates data from multiple trust domains
 into a flat namespace. From an ATLAS perspective, over-broad context
-windows amplify the impact of AML.T0051 (Exploit Public-Facing
-Application) by maximising the data accessible to an injection attack.
+windows amplify the impact of AML.T0051 (LLM Prompt Injection)
+by maximising the data accessible to an injection attack.
 
 #### ATLAS technique mapping
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Exploit Public-Facing Application | AML.T0051 | Initial Access | Prompt injection via LLM interface accesses all content injected into over-broad context window |
+| LLM Prompt Injection | AML.T0051 | Initial Access | Prompt injection via LLM interface accesses all content injected into over-broad context window |
 | Exfiltrate via Cyber Means | AML.T0025 | Exfiltration | Over-broad context window content exfiltrated through successful injection — adversary retrieves aggregated sensitive data |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Inference API queries designed to surface maximum context window content through crafted prompts |
 
@@ -773,8 +776,8 @@ compromises or controls the assistant.
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Discover ML Model Ontology | AML.T0013 | Reconnaissance | Adversary learns what data the browser assistant can access across open applications |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Browser assistant accesses sensitive data across tabs and applications — adversary controls assistant to exfiltrate |
+| Discover AI Model Ontology | AML.T0013 | Reconnaissance | Adversary learns what data the browser assistant can access across open applications |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Browser assistant accesses sensitive data across tabs and applications — adversary controls assistant to exfiltrate |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Compromised browser assistant used as exfiltration channel — sensitive data from accessible applications transmitted |
 
 #### Real-world ATLAS cases
@@ -810,7 +813,7 @@ compromises or controls the assistant.
 **Severity:** High
 
 Silent GenAI pipeline failures affect advisory and fraud detection
-availability. From an ATLAS perspective, this maps to Denial of ML
+availability. From an ATLAS perspective, this maps to Denial of AI
 Service (AML.T0029) and Cost Harvesting (AML.T0034) — adversaries
 may deliberately trigger availability failures.
 
@@ -818,9 +821,9 @@ may deliberately trigger availability failures.
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Denial of ML Service | AML.T0029 | Impact | Adversary saturates GenAI pipeline — vector store, RAG retrieval, or inference endpoint rendered unavailable |
+| Denial of AI Service | AML.T0029 | Impact | Adversary saturates GenAI pipeline — vector store, RAG retrieval, or inference endpoint rendered unavailable |
 | Cost Harvesting | AML.T0034 | Impact | Adversary triggers disproportionate resource consumption through crafted queries — financial or operational DoS |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Pipeline failures may expose data through error messages or fallback paths that lack normal access controls |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Pipeline failures may expose data through error messages or fallback paths that lack normal access controls |
 
 #### Mitigations mapped to ATLAS
 
@@ -849,16 +852,16 @@ may deliberately trigger availability failures.
 
 Membership inference and model inversion attacks reconstruct sensitive
 training data. This is the canonical ATLAS inference attack —
-AML.T0024.000 (Membership Inference) and AML.T0027 (Model Inversion)
+AML.T0024.000 (Infer Membership) and AML.T0024.001 (Invert ML Model)
 are the primary techniques.
 
 #### ATLAS technique mapping
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Membership Inference | AML.T0024.000 | Exfiltration | Adversary determines whether specific sensitive records were used in training through systematic query analysis |
+| Infer Membership | AML.T0024.000 | Exfiltration | Adversary determines whether specific sensitive records were used in training through systematic query analysis |
 | Exfiltrate via Cyber Means | AML.T0025 | Exfiltration | Training data confirmed present and partially reconstructed through inference, then exfiltrated |
-| Model Inversion | AML.T0027 | Exfiltration | Adversary reconstructs sensitive training examples from model outputs through systematic query campaigns |
+| Invert ML Model | AML.T0024.001 | Exfiltration | Adversary reconstructs sensitive training examples from model outputs through systematic query campaigns |
 
 #### Mitigations mapped to ATLAS
 
@@ -867,7 +870,7 @@ are the primary techniques.
   training — limits membership inference success rate
   by making individual training examples statistically
   indistinguishable
-- Counter AML.T0027: Confidence score suppression —
+- Counter AML.T0024.001: Confidence score suppression —
   removes information that enables model inversion,
   adversary cannot extract gradient information
 
@@ -877,7 +880,7 @@ are the primary techniques.
   detected and rate-limited before reconstruction succeeds
 
 **Advanced**
-- Red team AML.T0024.000 and AML.T0027: Membership
+- Red team AML.T0024.000 and AML.T0024.001: Membership
   inference and model inversion testing before
   each production deployment — verify sensitive
   training data cannot be reconstructed under
@@ -904,7 +907,7 @@ gain access to sensitive training data.
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Sensitive data in labelling tasks accessed by adversary-controlled or compromised labelling vendor |
-| Data from Information Repositories | AML.T0057 | Exfiltration | Labelling vendor's data stores containing sensitive annotation tasks accessed as information repositories |
+| LLM Data Leakage | AML.T0057 | Exfiltration | Labelling vendor's data stores containing sensitive annotation tasks accessed as information repositories |
 | Poison Training Data | AML.T0020 | ML Attack Staging | Adversary-controlled labelling vendor introduces biased or poisoned annotations into training data |
 
 #### Mitigations mapped to ATLAS
@@ -934,14 +937,14 @@ gain access to sensitive training data.
 **Severity:** High
 
 Adversaries reconstruct a functional model replica through systematic
-querying. AML.T0016 (Extract ML Model) is the canonical ATLAS
+querying. AML.T0016.000 (Obtain Capabilities) is the canonical ATLAS
 technique for this threat.
 
 #### ATLAS technique mapping
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Extract ML Model | AML.T0016 | Exfiltration | Adversary systematically queries model to extract sufficient information to replicate its functionality |
+| Obtain Capabilities | AML.T0016.000 | Resource Development | Adversary systematically queries model to extract sufficient information to replicate its functionality |
 | Exfiltrate via Cyber Means | AML.T0025 | Exfiltration | Query results and model outputs systematically collected and transmitted to adversary infrastructure |
 | Cost Harvesting | AML.T0034 | Impact | High-volume model extraction queries consume significant compute resources — financial impact alongside IP theft |
 
@@ -954,21 +957,21 @@ technique for this threat.
 #### Mitigations mapped to ATLAS
 
 **Foundational**
-- Counter AML.T0016: API rate limiting — systematic
+- Counter AML.T0016.000: API rate limiting — systematic
   extraction requires high query volumes, hard caps
-  raise cost and trigger detection before AML.T0016
+  raise cost and trigger detection before AML.T0016.000
   succeeds
 - Counter AML.T0034: Per-user cost budgets —
   extraction campaigns bounded by cost limits
 
 **Hardening**
-- Counter AML.T0016: Query diversity monitoring —
-  AML.T0016 produces characteristic query patterns
+- Counter AML.T0016.000: Query diversity monitoring —
+  AML.T0016.000 produces characteristic query patterns
   (systematic output space coverage) detected through
   anomaly analysis
 
 **Advanced**
-- Red team AML.T0016: Model extraction attempt using
+- Red team AML.T0016.000: Model extraction attempt using
   your own API — quantify query budget required for
   meaningful replication, verify rate limiting
   prevents success at that budget
@@ -985,17 +988,19 @@ technique for this threat.
 **Severity:** High
 
 False content injected into RAG corpora causes GenAI to surface
-misinformation as authoritative. AML.T0045 (Publish Poisoned Datasets)
-is the primary ATLAS technique — adversaries release false content
+misinformation as authoritative. AML.T0060 (Publish Hallucinated Entities) and AML.T0070 (RAG Poisoning)
+are the primary ATLAS techniques — adversaries release false content
 into retrieval sources without needing training access.
 
 #### ATLAS technique mapping
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Publish Poisoned Datasets | AML.T0045 | ML Attack Staging | Adversary publishes false content in public repositories, documentation sites, or knowledge bases indexed by RAG systems |
+| Publish Hallucinated Entities | AML.T0060 | Impact | Adversary leverages AI-generated hallucinated content published in public repositories, documentation sites, or knowledge bases indexed by RAG systems |
 | Poison Training Data | AML.T0020 | ML Attack Staging | Adversary introduces false content into RAG corpus through ingestion path — no public publication required |
-| Craft Adversarial Data | AML.T0031 | ML Attack Staging | False content crafted to appear authoritative and rank highly in semantic similarity searches |
+| Erode AI Model Integrity | AML.T0031 | Impact | False content degrades model integrity by corrupting retrieval-augmented generation outputs |
+| RAG Poisoning | AML.T0070 | ML Attack Staging | Injecting disinformation directly into RAG knowledge bases to corrupt downstream outputs |
+| Retrieval Content Crafting | AML.T0066 | ML Attack Staging | False content crafted to appear authoritative and rank highly in semantic similarity searches |
 
 #### Real-world ATLAS cases
 
@@ -1008,7 +1013,7 @@ into retrieval sources without needing training access.
 #### Mitigations mapped to ATLAS
 
 **Foundational**
-- Counter AML.T0045: Source trust tiering in RAG
+- Counter AML.T0060: Source trust tiering in RAG
   retrieval — adversary-published content in low-trust
   sources weighted down, authoritative sources prioritised
 - Counter AML.T0020: RAG ingestion integrity controls —
@@ -1016,13 +1021,13 @@ into retrieval sources without needing training access.
   prevent AML.T0020 through known ingestion paths
 
 **Hardening**
-- Counter AML.T0031: Cryptographic provenance for
+- Counter AML.T0066: Cryptographic provenance for
   authoritative sources in RAG — adversary cannot
   craft content that passes provenance verification
   for trusted source tier
 
 **Advanced**
-- Red team AML.T0045: Adversarial RAG integrity
+- Red team AML.T0060/AML.T0070: Adversarial RAG integrity
   testing — attempt to surface false content through
   public sources indexed by your RAG system, verify
   trust tiering effectiveness
@@ -1044,24 +1049,24 @@ involve technique chaining across multiple tactics:
 **Path 1 — Training pipeline compromise:**
 AML.T0012 (Obtain Capabilities) ?
 AML.T0020 (Poison Training Data) ?
-AML.T0018 (Backdoor ML Model) ?
+AML.T0018 (Manipulate AI Model) ?
 Production deployment with embedded backdoor
 
 **Path 2 — Inference exfiltration:**
-AML.T0013 (Discover ML Model Ontology) ?
-AML.T0051 (Exploit Public-Facing Application) ?
+AML.T0013 (Discover AI Model Ontology) ?
+AML.T0051 (LLM Prompt Injection) ?
 AML.T0035 (Exfiltrate via ML Inference API) ?
 Sensitive training data or RAG content extracted
 
 **Path 3 — Supply chain and disinformation:**
-AML.T0045 (Publish Poisoned Datasets) ?
-AML.T0031 (Craft Adversarial Data) ?
-RAG corpus poisoned via public source indexing ?
+AML.T0060 (Publish Hallucinated Entities) ?
+AML.T0066 (Retrieval Content Crafting) ?
+AML.T0070 (RAG Poisoning) ?
 GenAI surfaces adversary content as authoritative
 
 **Path 4 — Model theft:**
-AML.T0013 (Discover ML Model Ontology) ?
-AML.T0016 (Extract ML Model) ?
+AML.T0013 (Discover AI Model Ontology) ?
+AML.T0016.000 (Obtain Capabilities) ?
 AML.T0025 (Exfiltrate via Cyber Means) ?
 Functional model replica constructed without training access
 
@@ -1069,8 +1074,8 @@ Functional model replica constructed without training access
 
 | ATLAS priority | DSGAI entries | Rationale |
 |---|---|---|
-| Immediate — active attack class | DSGAI01, DSGAI04, DSGAI12, DSGAI21 | AML.T0035, AML.T0020, AML.T0045 are active, documented attack techniques |
-| High — rising threat | DSGAI13, DSGAI18, DSGAI20 | AML.T0024.000, AML.T0016 increasingly commoditised |
+| Immediate — active attack class | DSGAI01, DSGAI04, DSGAI12, DSGAI21 | AML.T0035, AML.T0020, AML.T0060, AML.T0070 are active, documented attack techniques |
+| High — rising threat | DSGAI13, DSGAI18, DSGAI20 | AML.T0024.000, AML.T0016.000 increasingly commoditised |
 | Medium — exploitable at scale | DSGAI03, DSGAI06, DSGAI11 | AML.T0057, AML.T0051 require less sophistication as tooling matures |
 
 ---
@@ -1100,6 +1105,7 @@ Functional model replica constructed without training access
 | Date | Version | Change | Author |
 |---|---|---|---|
 | 2026-03-26 | 2026-Q1 | Initial mapping — DSGAI01–DSGAI21 full entries with ATLAS attack path analysis | OWASP GenAI Data Security Initiative |
+| 2026-05-26 | 2026-Q2 | Updated ATLAS technique IDs/names to current ATLAS structure; replaced removed techniques (T0027, T0032, T0045); added new techniques (T0053, T0060, T0066, T0070); updated T0010, T0013, T0016, T0018, T0024, T0029, T0031, T0043, T0051 names | OWASP GenAI Data Security Initiative |
 
 ---
 

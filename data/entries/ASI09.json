@@ -18,21 +18,21 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0045",
-      "control_name": "Disinformation",
+      "control_id": "AML.T0060",
+      "control_name": "Publish Hallucinated Entities",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0045",
-      "notes": "Agent generates persuasive false information to manipulate human approvals"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
+      "notes": "Agent generates persuasive hallucinated content to manipulate human approvals"
     },
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0047",
-      "control_name": "Influence via Automated Content",
+      "control_name": "AI-Enabled Product or Service",
       "tier": "Foundational",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
-      "notes": "Agent produces high-volume, fluent content that overwhelms human critical assessment"
+      "notes": "Agent produces high-volume, fluent content via AI-enabled services that overwhelms human critical assessment"
     },
     {
       "framework": "MITRE ATLAS",

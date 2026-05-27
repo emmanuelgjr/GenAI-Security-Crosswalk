@@ -18,29 +18,29 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0021",
-      "control_name": "Data Leakage",
+      "control_id": "AML.T0057",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
       "notes": "Unintended exposure of training data or sensitive context through model outputs"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0030",
-      "control_name": "Information Disclosure",
+      "control_id": "AML.T0024.000",
+      "control_name": "Infer Membership",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0030",
-      "notes": "Extraction of confidential information via targeted model queries"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0024.000",
+      "notes": "Determining whether specific sensitive records were used in model training"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0024",
-      "control_name": "Model Inversion",
+      "control_id": "AML.T0024.001",
+      "control_name": "Invert ML Model",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0024",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0024.001",
       "notes": "Reconstructing training data from model outputs or confidence scores"
     },
     {

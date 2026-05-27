@@ -36,12 +36,12 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0068",
-      "control_name": "Automated Collection",
+      "control_id": "AML.T0053",
+      "control_name": "AI Agent Tool Invocation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0068",
-      "notes": "Agent autonomously harvesting data through tool chains beyond authorised scope"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
+      "notes": "Agent autonomously invoking tools beyond authorised scope, harvesting data through tool chains"
     },
     {
       "framework": "NIST AI RMF 1.0",

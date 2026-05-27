@@ -19,29 +19,29 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0056",
-      "control_name": "Adversarial Model Manipulation",
+      "control_name": "Extract LLM System Prompt",
       "tier": "Foundational",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
-      "notes": "Tampering with model weights, adapters, or configurations during supply chain"
+      "notes": "Extracting system prompts that may reveal supply chain details, internal configurations, or security controls"
     },
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0048",
-      "control_name": "Model Contamination",
+      "control_name": "External Harms",
       "tier": "Foundational",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
-      "notes": "Introducing persistent malicious behaviour into model through supply chain"
+      "notes": "Introducing persistent malicious behaviour into model through supply chain leading to downstream external harms"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0010",
-      "control_name": "Backdoor ML Model",
+      "control_id": "AML.T0010.000",
+      "control_name": "AI Supply Chain Compromise",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
-      "notes": "Embedding trigger-based backdoors in model weights via training or fine-tuning supply chain"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0010.000",
+      "notes": "Compromising ML supply chain components — datasets, models, frameworks — to embed backdoors or malicious functionality"
     },
     {
       "framework": "NIST AI RMF 1.0",

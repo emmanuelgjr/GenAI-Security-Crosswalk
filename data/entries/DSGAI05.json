@@ -28,14 +28,14 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0018",
-      "control_name": "Backdoor ML Model",
+      "control_name": "Manipulate AI Model",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Path traversal in snapshot imports (CVE-2024-3584) enables write to model host — backdoor installation path"
+      "notes": "Path traversal in snapshot imports (CVE-2024-3584) enables write to model host — manipulation installation path"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0031",
+      "control_id": "AML.T0043",
       "control_name": "Craft Adversarial Data",
       "tier": "Foundational",
       "scope": "Both",
@@ -456,33 +456,25 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "B001",
-      "control_name": "Third-party adversarial robustness testing",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Hardening"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B002",
-      "control_name": "Detect adversarial input",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Hardening"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B005",
-      "control_name": "Implement real-time input filtering",
-      "tier": "Hardening",
+      "control_id": "A",
+      "control_name": "Data & Privacy domain",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "C",
-      "control_name": "Safety domain (harm prevention)",
-      "tier": "Hardening",
+      "control_id": "B005",
+      "control_name": "Implement real-time input filtering",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Foundational"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "B006",
+      "control_name": "Prevent unauthorized AI actions",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -520,48 +512,56 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SR-3",
-      "control_name": "Supply Chain Controls — data provenance tracking",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — data quality enforcement",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement provenance tracking for all AI training data; document source, collection method, processing history, and licensing for each dataset"
+      "notes": "Validate quality, completeness, and format of all data entering AI pipelines; reject data failing quality thresholds or schema validation"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SI-10",
-      "control_name": "Information Input Validation — data quality controls",
+      "control_id": "SI-7",
+      "control_name": "Software, Firmware, and Information Integrity — pipeline integrity",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Validate quality, completeness, and accuracy of data entering AI pipelines; reject data failing quality thresholds"
+      "notes": "Verify integrity of data artefacts at each pipeline stage; detect corruption, tampering, or unauthorised modifications"
     },
     {
       "framework": "FedRAMP",
       "control_id": "CM-3",
-      "control_name": "Configuration Change Control — data source changes",
+      "control_name": "Configuration Change Control — data pipeline changes",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Require formal change control for all data source additions, modifications, and removals; maintain audit trail"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — data source documentation",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Document provenance, collection method, and quality characteristics for all AI training data in the ICT asset inventory"
+      "notes": "Require formal change control for all data pipeline modifications; maintain audit trail of data source additions, schema changes, and validation rule updates"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 9",
-      "control_name": "Protection and Prevention — data quality controls",
+      "control_name": "Protection and Prevention – data quality controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality or provenance thresholds"
+      "notes": "Implement data quality validation before AI pipeline ingestion; reject data failing quality, schema, or integrity thresholds"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 8",
+      "control_name": "Identification – data source documentation",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Document provenance, collection method, and quality characteristics for all AI data in the ICT asset inventory"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 10",
+      "control_name": "Detection – data quality monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Monitor for data quality degradation, schema drift, and integrity anomalies in AI data pipelines"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — external data source oversight",
+      "control_name": "Third-Party Risk – external data source oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Include external data sources in third-party risk management; assess data quality, provenance practices, and licensing compliance"

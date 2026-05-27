@@ -19,29 +19,29 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0056",
-      "control_name": "Adversarial Model Manipulation",
+      "control_name": "Extract LLM System Prompt",
       "tier": "Hardening",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
-      "notes": "Tampering with model weights or tool components loaded by agent at runtime"
+      "notes": "Extracting system prompts to learn agent configuration and tool access for supply chain targeting"
     },
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0048",
-      "control_name": "Model Contamination",
+      "control_name": "External Harms",
       "tier": "Hardening",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
-      "notes": "Persistent malicious behaviour introduced through dynamically loaded agent components"
+      "notes": "Persistent malicious behaviour introduced through dynamically loaded agent components causing downstream external harms"
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0010",
-      "control_name": "Backdoor ML Model",
+      "control_id": "AML.T0010.000",
+      "control_name": "AI Supply Chain Compromise",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
-      "notes": "Trigger-based backdoors in MCP servers, prompt templates, or model adapters"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0010.000",
+      "notes": "Compromising MCP servers, prompt templates, or model adapters in the supply chain to embed trigger-based backdoors"
     },
     {
       "framework": "NIST AI RMF 1.0",

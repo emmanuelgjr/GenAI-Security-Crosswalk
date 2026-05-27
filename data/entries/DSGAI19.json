@@ -28,7 +28,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Data from Information Repositories",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Labelling vendor's data stores containing sensitive annotation tasks accessed as information repositories"
@@ -446,17 +446,9 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "D",
-      "control_name": "Reliability domain (all)",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Foundational"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "B006",
-      "control_name": "Prevent unauthorized AI actions",
-      "tier": "Hardening",
+      "control_id": "A",
+      "control_name": "Data & Privacy domain",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -464,7 +456,15 @@
       "framework": "AIUC-1",
       "control_id": "E",
       "control_name": "Audit trails and logging",
-      "tier": "Hardening",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Foundational"
+    },
+    {
+      "framework": "AIUC-1",
+      "control_id": "F",
+      "control_name": "Society domain",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -510,51 +510,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SA-9",
-      "control_name": "External Information System Services — third-party data controls",
+      "control_id": "AC-3",
+      "control_name": "Access Enforcement — labeler exposure controls",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Require FedRAMP authorisation for third-party data service providers; establish SLAs covering data security, privacy, and incident notification"
+      "scope": "Build",
+      "notes": "Enforce access controls limiting labeler exposure to sensitive content; segment data so labelers only access content within their clearance scope"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SR-2",
-      "control_name": "Supply Chain Risk Management Plan — data provider risk",
+      "control_id": "PS-3",
+      "control_name": "Personnel Screening — sensitive data role screening",
       "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Include third-party data providers in supply chain risk management; assess data handling practices and security posture"
+      "scope": "Build",
+      "notes": "Screen human annotators and labelers for roles involving access to sensitive, classified, or harmful content"
     },
     {
       "framework": "FedRAMP",
-      "control_id": "SR-3",
-      "control_name": "Supply Chain Controls — data provenance from third parties",
+      "control_id": "AT-2",
+      "control_name": "Awareness and Training — AI data risk training",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Provide training on AI-specific data risks for all labelers and reviewers; include handling of sensitive, harmful, and disturbing content"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "AU-2",
+      "control_name": "Event Logging — labeler access tracking",
+      "tier": "Foundational",
+      "scope": "Build",
+      "notes": "Log all labeler data access for compliance and safety monitoring; track exposure duration and content categories"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention – labeler data exposure controls",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Verify provenance and integrity of data from third-party sources; implement validation before ingestion into AI pipelines"
+      "notes": "Implement data segmentation and access controls limiting labeler exposure to minimum necessary content; redact sensitive data before annotation"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 5–7",
+      "control_name": "ICT Risk Management – labeler governance",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Include labeler data exposure in ICT risk management; define duty of care obligations and data access scope for human annotators"
     },
     {
       "framework": "DORA",
       "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — data provider and processor oversight",
+      "control_name": "Third-Party Risk – labeling provider oversight",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include all third-party data providers and processors in DORA third-party risk management; conduct due diligence, establish contracts, and monitor ongoing compliance"
+      "notes": "Include external labeling providers in third-party risk management; assess data handling, access controls, and worker welfare practices"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — third-party data inventory",
+      "control_id": "Art. 10",
+      "control_name": "Detection – labeler access monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Register all third-party data sources in ICT asset inventory; document provenance, contracts, and dependency relationships"
-    },
-    {
-      "framework": "DORA",
-      "control_id": "Art. 45",
-      "control_name": "Information Sharing — third-party threat intelligence",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Participate in information sharing arrangements for third-party AI data risks; share threat intelligence on data provider compromises"
+      "notes": "Monitor labeler data access; detect access beyond authorised scope or unusual access patterns"
     }
   ],
   "tools": [
@@ -594,14 +610,14 @@
       "url": "https://owasp.org/www-project-dependency-check/"
     },
     {
-      "name": "OneTrust Vendorpedia",
-      "type": "commercial",
-      "url": "https://www.onetrust.com"
+      "name": "Microsoft Presidio",
+      "type": "open-source",
+      "url": "https://github.com/microsoft/presidio"
     },
     {
-      "name": "ServiceNow VRM",
+      "name": "Snorkel AI",
       "type": "commercial",
-      "url": "https://www.servicenow.com"
+      "url": "https://snorkel.ai"
     }
   ],
   "incidents": [
@@ -666,7 +682,8 @@
     ],
     "agentic_top10": [
       "ASI10",
-      "ASI04"
+      "ASI04",
+      "ASI09"
     ]
   },
   "changelog": [

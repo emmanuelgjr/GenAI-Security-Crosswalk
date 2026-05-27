@@ -20,7 +20,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0051",
-      "control_name": "Exploit Public-Facing Application",
+      "control_name": "LLM Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "NL gateway interface exploited through crafted natural language to generate destructive or exfiltrating queries"
@@ -28,7 +28,7 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0057",
-      "control_name": "Data from Information Repositories",
+      "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Database accessed through LLM-generated queries — adversary extracts sensitive records without direct database access"
@@ -484,9 +484,9 @@
     },
     {
       "framework": "AIUC-1",
-      "control_id": "A",
-      "control_name": "Data & Privacy domain",
-      "tier": "Hardening",
+      "control_id": "B005",
+      "control_name": "Implement real-time input filtering",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -494,23 +494,23 @@
       "framework": "AIUC-1",
       "control_id": "B006",
       "control_name": "Prevent unauthorized AI actions",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "D",
-      "control_name": "Reliability domain",
-      "tier": "Hardening",
+      "control_id": "B009",
+      "control_name": "Limit output over-exposure",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "AIUC-1",
-      "control_id": "E",
-      "control_name": "Audit trails and logging",
-      "tier": "Hardening",
+      "control_id": "A",
+      "control_name": "Data & Privacy domain",
+      "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
@@ -548,51 +548,67 @@
     },
     {
       "framework": "FedRAMP",
-      "control_id": "PM-9",
-      "control_name": "Risk Management Strategy — ownership governance",
+      "control_id": "SI-10",
+      "control_name": "Information Input Validation — NL-to-query validation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, outputs, and derived insights"
+      "notes": "Validate all natural language inputs before translation to executable queries; block injection patterns, destructive operations, and schema-probing queries"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AC-3",
-      "control_name": "Access Enforcement — ownership-based access",
+      "control_name": "Access Enforcement — gateway operation restrictions",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce access controls aligned with data ownership; restrict usage based on ownership rights and licence terms"
+      "notes": "Enforce allow-listed operations for NL data gateways; gateway queries execute with the requesting user's permissions, not system-level; restrict to read-only or approved operations"
     },
     {
       "framework": "FedRAMP",
       "control_id": "AU-2",
-      "control_name": "Event Logging — usage tracking",
+      "control_name": "Event Logging — gateway transaction logging",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Log data usage for ownership compliance; track how data is used across AI systems for licence and rights management"
+      "notes": "Log all NL gateway transactions — input, translated query, results — with user identity and authorisation context"
+    },
+    {
+      "framework": "FedRAMP",
+      "control_id": "SC-7",
+      "control_name": "Boundary Protection — gateway data flow control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce boundary controls on NL gateway data flows; limit result sets; prevent sensitive data from leaving authorised scope"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 5–7",
-      "control_name": "ICT Risk Management — ownership governance",
+      "control_id": "Art. 9",
+      "control_name": "Protection and Prevention – gateway input validation",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define data ownership policies for AI data; clarify rights and responsibilities for training data, model outputs, and derived financial insights"
+      "notes": "Implement validation and filtering on all NL-to-query translation; enforce allow-listed operations; restrict gateway queries to user privilege scope"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 28–44",
-      "control_name": "Third-Party Risk — data rights management",
+      "control_id": "Art. 10",
+      "control_name": "Detection – gateway anomaly monitoring",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Address data ownership and usage rights in third-party agreements; clarify ownership of AI outputs and derived data produced using vendor models"
+      "notes": "Monitor NL gateway operations for anomalous patterns — excessive data retrieval, schema probing, injection attempts; alert and block"
     },
     {
       "framework": "DORA",
-      "control_id": "Art. 8",
-      "control_name": "Identification — ownership mapping",
+      "control_id": "Art. 24–27",
+      "control_name": "Resilience Testing – gateway security testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Map ownership for all AI data assets; document rights, restrictions, and licensing for training data and outputs"
+      "notes": "Include NL gateway injection testing in resilience testing; test for SQL injection, API abuse, and privilege escalation through natural language"
+    },
+    {
+      "framework": "DORA",
+      "control_id": "Art. 17–23",
+      "control_name": "ICT Incident Management – gateway breach reporting",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Classify gateway data exfiltration as ICT-related incidents; report per DORA criteria"
     }
   ],
   "tools": [
@@ -647,14 +663,24 @@
       "url": "https://cyclonedx.org"
     },
     {
+      "name": "LLM Guard",
+      "type": "open-source",
+      "url": "https://github.com/protectai/llm-guard"
+    },
+    {
       "name": "Open Policy Agent",
       "type": "open-source",
       "url": "https://www.openpolicyagent.org"
     },
     {
-      "name": "OneTrust",
+      "name": "Nightfall DLP",
       "type": "commercial",
-      "url": "https://www.onetrust.com"
+      "url": "https://www.nightfall.ai"
+    },
+    {
+      "name": "Splunk",
+      "type": "commercial",
+      "url": "https://www.splunk.com"
     }
   ],
   "incidents": [
@@ -683,14 +709,13 @@
       "LLM01",
       "LLM02",
       "LLM03",
-      "LLM09"
+      "LLM06"
     ],
     "agentic_top10": [
       "ASI02",
       "ASI05",
       "ASI01",
-      "ASI04",
-      "ASI09"
+      "ASI04"
     ],
     "dsgai_2026": [
       "DSGAI14"

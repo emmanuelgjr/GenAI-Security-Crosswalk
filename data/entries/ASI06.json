@@ -18,12 +18,12 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0032",
-      "control_name": "Data Poisoning",
+      "control_id": "AML.T0043",
+      "control_name": "Craft Adversarial Data",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0032",
-      "notes": "Injecting malicious content into agent persistent memory or RAG stores"
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
+      "notes": "Crafting adversarial content to inject into agent persistent memory or RAG stores"
     },
     {
       "framework": "MITRE ATLAS",
@@ -37,11 +37,20 @@
     {
       "framework": "MITRE ATLAS",
       "control_id": "AML.T0020",
-      "control_name": "Backdoor via Poisoned Memory",
+      "control_name": "Poison Training Data",
       "tier": "Hardening",
       "scope": "Both",
       "url": "https://atlas.mitre.org/#/techniques/AML.T0020",
-      "notes": "Establishing persistent trigger-response patterns in agent memory stores"
+      "notes": "Establishing persistent trigger-response patterns in agent memory stores via poisoned data"
+    },
+    {
+      "framework": "MITRE ATLAS",
+      "control_id": "AML.T0070",
+      "control_name": "RAG Poisoning",
+      "tier": "Hardening",
+      "scope": "Both",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0070",
+      "notes": "Injecting malicious content into RAG knowledge bases to persistently alter agent retrieval and behaviour"
     },
     {
       "framework": "NIST AI RMF 1.0",
