@@ -16,7 +16,7 @@
 
 <p align="center">
   <strong>The most comprehensive mapping of AI security risks to compliance frameworks.</strong><br>
-  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,210 mappings &middot; 114 incidents &middot; ML classifier pipeline
+  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,235 mappings &middot; 114 incidents &middot; ML classifier pipeline
 </p>
 
 <p align="center">
@@ -130,7 +130,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **70+** open-source tools | Catalogued and organised by function |
 | **25** eval profiles | Runnable Garak (13) + PyRIT (6) + LAAF (6) tests mapped to OWASP entries |
 | **23** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL, GRC) |
-| **50** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
+| **114** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
 | **25** framework registries | First-class control inventories (1,514 controls) with backlink index |
 | **Classifier pipeline** | BGE bi-encoder + cross-encoder reranker — auto-maps new frameworks to OWASP entries |

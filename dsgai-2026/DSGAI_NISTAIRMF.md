@@ -21,8 +21,9 @@ to AI risk that maps naturally to the DSGAI 2026 data security taxonomy,
 which follows data as it moves through a GenAI system from ingestion
 through inference to output and operational exhaust.
 
-This mapping is particularly valuable for US federal agencies (required
-to align with the AI RMF under Executive Order 14110), critical
+This mapping is particularly valuable for US federal agencies (directed
+to align with the AI RMF under Executive Order 14110, revoked January
+2025; the AI RMF itself remains voluntary), critical
 infrastructure operators, and enterprises running AI RMF-aligned AI
 governance programmes who need to operationalise the DSGAI risks within
 their existing framework.
@@ -76,7 +77,7 @@ their existing framework.
 - **Compliance officer** — GV subcategories, regulatory intersection notes
 - **ML / AI engineer** — MEASURE subcategories, testing and data quality entries
 - **Security engineer** — MANAGE subcategories, incident response entries
-- **Federal agency teams** — full file, EO 14110 alignment
+- **Federal agency teams** — full file, federal AI governance alignment (AI RMF; EO 14110 revoked January 2025)
 - **OT engineer** — DSGAI04, DSGAI12, DSGAI17 with ISA 62443 and NIST SP 800-82 crosswalks
 
 ---

@@ -12,7 +12,7 @@ dashboard integration, and downstream tooling without scraping Markdown.
 |---|---|
 | `schema.json` | JSON Schema (Draft 7) defining the structure of all entry files |
 | `incidents-schema.json` | JSON Schema for incident entries |
-| `incidents.json` | 50 real-world + research AI security incidents with MAESTRO layer attribution |
+| `incidents.json` | 114 real-world + research AI security incidents with MAESTRO layer attribution |
 | `tools-supplement.json` | Supplemental tool entries merged into entries at generation time |
 | `entries/` | 41 machine-readable JSON files — one per OWASP entry (LLM01–LLM10, ASI01–ASI10, DSGAI01–DSGAI21) |
 | `framework-schema.json` | JSON Schema for framework registry entries |
