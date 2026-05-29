@@ -446,6 +446,22 @@
       "url": "https://cwe.mitre.org/data/definitions/200.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Telemetry redaction",
+      "control_name": "LMT — Logging & Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify prompts/outputs are redacted before logging and tracing"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Log access and retention",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm log stores enforce access control and retention limits"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L5",
       "control_name": "Evaluation & Observability",

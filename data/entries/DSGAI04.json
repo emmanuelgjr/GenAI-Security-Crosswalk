@@ -463,6 +463,30 @@
       "url": "https://cwe.mitre.org/data/definitions/20.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Artefact and dataset integrity",
+      "control_name": "SCT — Supply Chain",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Verify checksums, signatures, and provenance on datasets and model weights"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Ingestion validation",
+      "control_name": "DPT — Data Protection",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Confirm poisoned or anomalous records are detected and quarantined at ingest"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Backdoor/trigger detection",
+      "control_name": "MBT — Model Behaviour",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Probe for trigger-conditioned behaviour change indicative of a backdoor"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

@@ -10,13 +10,13 @@
   <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-3.1.0-green" alt="Version"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/frameworks-25-orange" alt="Frameworks"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/controls-1,514-blueviolet" alt="Controls"></a>
-  <a href="README.md"><img src="https://img.shields.io/badge/mapping%20files-67-brightgreen" alt="Mapping Files"></a>
+  <a href="README.md"><img src="https://img.shields.io/badge/mapping%20files-68-brightgreen" alt="Mapping Files"></a>
   <a href="https://www.npmjs.com/package/genai-security-crosswalk"><img src="https://img.shields.io/npm/v/genai-security-crosswalk?color=red&label=npm" alt="npm"></a>
 </p>
 
 <p align="center">
   <strong>The most comprehensive mapping of AI security risks to compliance frameworks.</strong><br>
-  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,235 mappings &middot; 114 incidents &middot; ML classifier pipeline
+  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,295 mappings &middot; 114 incidents &middot; ML classifier pipeline
 </p>
 
 <p align="center">
@@ -125,7 +125,7 @@ Every file answers one question: **which controls from framework X address vulne
 |---|---|
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
 | **25** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC · Financial |
-| **67** mapping files | Every source list entry × every applicable framework |
+| **68** mapping files | Every source list entry × every applicable framework |
 | **21** implementation recipes | Production-ready Python patterns |
 | **70+** open-source tools | Catalogued and organised by function |
 | **25** eval profiles | Runnable Garak (13) + PyRIT (6) + LAAF (6) tests mapped to OWASP entries |
@@ -239,7 +239,7 @@ All free. All open-source. Built for practitioners.
 
 > **Also in this folder:** [Agentic_CWE_CVE.md](agentic-top10/Agentic_CWE_CVE.md) — CWE root cause taxonomy, confirmed CVEs, full CWE cross-reference index.
 
-### DSGAI 2026 — 21 framework mappings
+### DSGAI 2026 — 22 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -255,6 +255,7 @@ All free. All open-source. Built for practitioners.
 | [DSGAI_ASVS.md](dsgai-2026/DSGAI_ASVS.md) | OWASP ASVS 4.0.3 | L1/L2/L3 verification requirements for all 21 DSGAI entries, 4-phase implementation priority |
 | [DSGAI_CISControls.md](dsgai-2026/DSGAI_CISControls.md) | CIS Controls v8.1 | IG1/IG2/IG3 safeguards for all 21 entries, GenAI data security implementation groups |
 | [DSGAI_CWE_CVE.md](dsgai-2026/DSGAI_CWE_CVE.md) | CWE / CVE | CWE root cause taxonomy and confirmed CVE evidence for all 21 DSGAI entries |
+| [DSGAI_AITG.md](dsgai-2026/DSGAI_AITG.md) | OWASP AI Testing Guide | Data-layer test categories and concrete test cases for all 21 DSGAI entries |
 | [DSGAI_ENISA.md](dsgai-2026/DSGAI_ENISA.md) | ENISA Multilayer Framework | L1/L2/L3 layer mapping, EU AI Act and NIS2 alignment for all 21 DSGAI entries |
 | [DSGAI_ISO42001.md](dsgai-2026/DSGAI_ISO42001.md) | ISO/IEC 42001:2023 | AIMS controls per DSGAI entry, ISO 27001 integration guidance, A.7 data governance reference |
 | [DSGAI_SAMM.md](dsgai-2026/DSGAI_SAMM.md) | OWASP SAMM v2.0 | L1–L3 maturity scorecard for GenAI data security — GDPR and regulatory compliance baseline |

@@ -152,6 +152,7 @@ const FRAMEWORK_FILES = [
   { rel: 'dsgai-2026/DSGAI_ENISA.md',       framework: 'ENISA Multilayer Framework', ids: DSGAI_IDS },
   { rel: 'dsgai-2026/DSGAI_SAMM.md',        framework: 'OWASP SAMM v2.0',          ids: DSGAI_IDS },
   { rel: 'dsgai-2026/DSGAI_CWE_CVE.md',     framework: 'CWE/CVE',                  ids: DSGAI_IDS },
+  { rel: 'dsgai-2026/DSGAI_AITG.md',        framework: 'OWASP AI Testing Guide',   ids: DSGAI_IDS },
   { rel: 'dsgai-2026/DSGAI_MAESTRO.md',     framework: 'MAESTRO',                  ids: DSGAI_IDS },
   { rel: 'dsgai-2026/DSGAI_AIUC1.md',       framework: 'AIUC-1',                   ids: DSGAI_IDS },
   { rel: 'dsgai-2026/DSGAI_NHI.md',         framework: 'OWASP NHI Top 10',         ids: DSGAI_IDS },

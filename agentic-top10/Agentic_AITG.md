@@ -831,6 +831,7 @@ add the following tests from `Agentic_ISA62443.md`:
 ## See also
 
 - [Agentic Top 10 × SAMM](Agentic_SAMM.md)
+- [DSGAI 2026 × OWASP AI Testing Guide](../dsgai-2026/DSGAI_AITG.md)
 
 ---
 

@@ -440,6 +440,30 @@
       "url": "https://cwe.mitre.org/data/definitions/327.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Index/namespace authorisation",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify per-namespace/tenant access control on the vector store"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Embedding confidentiality",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm embeddings are encrypted at rest and inversion-resistant where required"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Platform hardening",
+      "control_name": "SCT — Supply Chain",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify the vector DB version, auth config, and network exposure are hardened"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

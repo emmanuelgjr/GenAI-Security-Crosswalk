@@ -425,6 +425,30 @@
       "url": "https://cwe.mitre.org/data/definitions/770.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Resource exhaustion / rate limiting",
+      "control_name": "AVT — Availability",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Drive high-volume and high-cost requests; verify rate limits and quotas hold"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Availability alerting",
+      "control_name": "LMT — Logging & Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm degradation and exhaustion are detected and alerted"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Backup and recovery",
+      "control_name": "SCT — Supply Chain",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify datasets, weights, and indices have tested restore procedures"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L4",
       "control_name": "Deployment & Infrastructure",

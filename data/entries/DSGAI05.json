@@ -441,6 +441,30 @@
       "url": "https://cwe.mitre.org/data/definitions/74.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Boundary validation",
+      "control_name": "IHT — Input Handling",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Submit malformed, oversized, and adversarial inputs across all data channels"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Schema and type enforcement",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify ingested data is validated against schema before persistence/use"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Integrity drift detection",
+      "control_name": "LMT — Logging & Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm integrity violations are detected and alerted"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

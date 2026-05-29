@@ -477,6 +477,30 @@
       "url": "https://cwe.mitre.org/data/definitions/522.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Least-privilege agent identity",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify each agent acts under a scoped, short-lived identity, not a shared high-privilege secret"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Credential leakage in memory/tools",
+      "control_name": "AST — Agent-Specific",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Inspect agent memory, scratchpads, and tool payloads for plaintext secrets"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Secret handling in transit and at rest",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm credentials are never embedded in prompts, embeddings, or persisted state"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L6",
       "control_name": "Security & Compliance",

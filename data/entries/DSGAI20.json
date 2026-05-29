@@ -424,6 +424,30 @@
       "url": "https://cwe.mitre.org/data/definitions/201.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Extraction-query detection",
+      "control_name": "DPT — Data Protection",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Detect high-volume, systematic querying characteristic of model extraction"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Query budgeting",
+      "control_name": "AVT — Availability",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Verify per-principal query budgets and rate limits constrain extraction"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Weight artefact protection",
+      "control_name": "ACT — Access Control",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Confirm model weights are access-controlled and not retrievable via the serving path"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L1",
       "control_name": "Foundation Models",

@@ -862,6 +862,7 @@ For each automated test case:
 ## See also
 
 - [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [DSGAI 2026 × OWASP AI Testing Guide](../dsgai-2026/DSGAI_AITG.md)
 
 ---
 

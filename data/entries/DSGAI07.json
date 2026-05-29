@@ -439,6 +439,30 @@
       "url": "https://cwe.mitre.org/data/definitions/213.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Classification enforcement",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify data entering training/RAG/context is classified and handled per policy"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Lifecycle auditability",
+      "control_name": "LMT — Logging & Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm creation, access, and deletion of data records are auditable"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Classification-driven access",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify access decisions reference data classification"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

@@ -449,6 +449,30 @@
       "url": "https://cwe.mitre.org/data/definitions/20.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Source provenance",
+      "control_name": "SCT — Supply Chain",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Verify training/RAG sources are vetted, signed, and provenance-tracked"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Targeted-falsehood probing",
+      "control_name": "MBT — Model Behaviour",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Probe for systematically false outputs on poisoned topics"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Corpus integrity monitoring",
+      "control_name": "DPT — Data Protection",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Detect anomalous content injected into the RAG corpus over time"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

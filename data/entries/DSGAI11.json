@@ -423,6 +423,30 @@
       "url": "https://cwe.mitre.org/data/definitions/488.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Session/memory isolation",
+      "control_name": "AST — Agent-Specific",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify per-session memory and caches are isolated across users and tenants"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Tenant boundary enforcement",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm one tenant cannot reach another's context or cached state"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Cache/state scrubbing",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify session state is scrubbed on teardown"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",
