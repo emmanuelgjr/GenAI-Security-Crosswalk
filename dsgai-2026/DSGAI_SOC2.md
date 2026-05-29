@@ -29,7 +29,11 @@ are implicated throughout the DSGAI taxonomy, not only in the
 obviously data-focused entries.
 
 ---
-## Why # DSGAI 2026 × SOC 2 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × SOC 2 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × SOC 2 compliance and governance programmes.---
+## Why SOC 2 for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific SOC 2 controls, enabling data security teams to address GenAI-specific data risks within their existing SOC 2 compliance and governance programmes.
+
+---
 
 ## Quick-reference summary
 

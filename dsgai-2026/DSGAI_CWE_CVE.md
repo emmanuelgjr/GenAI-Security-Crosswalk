@@ -21,7 +21,11 @@ using the same taxonomy applied to the rest of the application stack. CVE entrie
 provide confirmed real-world exploitation evidence for DSGAI risk areas.
 
 ---
-## Why # DSGAI 2026 × CWE / CVE for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × CWE / CVE controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × CWE / CVE compliance and governance programmes.---
+## Why CWE / CVE for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific CWE / CVE controls, enabling data security teams to address GenAI-specific data risks within their existing CWE / CVE compliance and governance programmes.
+
+---
 
 ## CWE pillar families most relevant to DSGAI
 

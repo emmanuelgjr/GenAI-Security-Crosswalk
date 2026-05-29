@@ -22,7 +22,11 @@ enables security engineers and penetration testers to translate DSGAI threats in
 verifiable ASVS requirements for inclusion in security test plans.
 
 ---
-## Why # DSGAI 2026 × OWASP ASVS 4.0.3 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × OWASP ASVS 4.0.3 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × OWASP ASVS 4.0.3 compliance and governance programmes.---
+## Why OWASP ASVS 4.0.3 for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific OWASP ASVS 4.0.3 controls, enabling data security teams to address GenAI-specific data risks within their existing OWASP ASVS 4.0.3 compliance and governance programmes.
+
+---
 
 ## ASVS structure
 
