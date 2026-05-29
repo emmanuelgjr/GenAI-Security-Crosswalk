@@ -16,6 +16,7 @@ security posture.
 |---|---|---|
 | `garak_llm01_report_summary.txt` | Garak | `LLM01_prompt_injection` |
 | `pyrit_llm01_sample.txt` | PyRIT | `llm01_prompt_injection.py` |
+| `modelscan_sample.txt` | ModelScan + serialization scanner | `modelscan/scan.sh` (**runtime-verified 2026-05-29**) |
 
 To regenerate, run the corresponding profile from the parent directory
 (see [`../README.md`](../README.md)).
