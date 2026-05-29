@@ -128,7 +128,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **68** mapping files | Every source list entry × every applicable framework |
 | **21** implementation recipes | Production-ready Python patterns |
 | **70+** open-source tools | Catalogued and organised by function |
-| **25** eval profiles | Runnable Garak (13) + PyRIT (6) + LAAF (6) tests mapped to OWASP entries |
+| **29** eval profiles | Runnable Garak (17) + PyRIT (6) + LAAF (6) tests mapped to OWASP entries |
 | **23** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL, GRC) |
 | **114** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |

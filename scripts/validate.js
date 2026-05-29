@@ -377,6 +377,78 @@ function checkSharedResources() {
   }
 }
 
+// ─── Evals check ───────────────────────────────────────────────────────────────
+
+/**
+ * 11. Eval profiles/scripts must reference a valid OWASP ID and an existing
+ *     crosswalk file. Catches stale taxonomy IDs and broken/legacy paths
+ *     (e.g. the retired `data-security/` directory) before they ship.
+ */
+function checkEvals() {
+  const evalsDir = path.join(ROOT, 'evals');
+  if (!fs.existsSync(evalsDir)) return; // evals are optional
+
+  const allValid = new Set([
+    ...VALID_IDS.llm, ...VALID_IDS.agentic, ...VALID_IDS.dsgai,
+  ]);
+
+  // Collect eval source files. garak/pyrit are per-entry profiles (require a
+  // declared OWASP ID); laaf holds multi-stage reporters/configs (path-checked only).
+  const evalFiles = [];
+  for (const sub of ['garak', 'pyrit', 'laaf']) {
+    const dir = path.join(evalsDir, sub);
+    if (!fs.existsSync(dir)) continue;
+    const perEntry = sub === 'garak' || sub === 'pyrit';
+    for (const f of fs.readdirSync(dir)) {
+      if (/\.(ya?ml|py)$/.test(f) && !f.startsWith('_') && f !== 'run_all.sh') {
+        evalFiles.push({ fp: path.join(dir, f), perEntry });
+      }
+    }
+  }
+
+  let issues = 0;
+  for (const { fp, perEntry } of evalFiles) {
+    const rel = relPath(fp);
+    const content = fs.readFileSync(fp, 'utf8');
+
+    // Stale/retired directory path
+    if (content.includes('data-security/')) {
+      fail(rel, 'References retired `data-security/` path (use `dsgai-2026/`)');
+      issues++;
+    }
+
+    // Declared OWASP entry ID — from "OWASP Entry : <ID>" or entry_id="<ID>"
+    const idMatch =
+      content.match(/OWASP Entry\s*:\s*(LLM\d{2}|ASI\d{2}|DSGAI\d{2})/i) ||
+      content.match(/entry_id\s*=\s*["'](LLM\d{2}|ASI\d{2}|DSGAI\d{2})["']/i);
+    if (idMatch) {
+      const id = idMatch[1].toUpperCase();
+      if (!allValid.has(id)) {
+        fail(rel, `Eval references invalid/out-of-range OWASP ID: ${id}`);
+        issues++;
+      }
+    } else if (perEntry) {
+      warn(rel, 'Eval has no declared OWASP entry ID (expected "OWASP Entry: <ID>")');
+    }
+
+    // Declared crosswalk reference path must resolve
+    const refMatch =
+      content.match(/Crosswalk ref\s*:\s*(\S+\.md)/i) ||
+      content.match(/crosswalk_ref\s*=\s*["']([^"']+\.md)["']/i);
+    if (refMatch) {
+      const refPath = path.join(ROOT, refMatch[1]);
+      if (!fs.existsSync(refPath)) {
+        fail(rel, `Eval crosswalk ref does not resolve: ${refMatch[1]}`);
+        issues++;
+      }
+    }
+  }
+
+  if (evalFiles.length > 0 && issues === 0) {
+    pass('evals/', `All ${evalFiles.length} eval profiles reference valid IDs and crosswalk paths`);
+  }
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 function collectMappingFiles(targetFile) {
@@ -414,6 +486,7 @@ function run() {
   checkSharedResources();
   checkCrossRefFile();
   checkReadmeCounts();
+  checkEvals();
 
   // Per-file checks
   const allFiles = collectMappingFiles(targetFile);

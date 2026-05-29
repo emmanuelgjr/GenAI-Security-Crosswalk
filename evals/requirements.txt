@@ -1,0 +1,8 @@
+# GenAI Security Crosswalk — eval tooling, version-pinned for reproducibility.
+# Tool APIs churn fast; these pins are the versions the profiles/scripts were
+# written and validated against. Bump deliberately and re-verify.
+#
+#   pip install -r evals/requirements.txt
+
+garak==0.15.0
+pyrit==0.13.0

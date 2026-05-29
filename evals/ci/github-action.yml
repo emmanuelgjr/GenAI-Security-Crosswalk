@@ -62,8 +62,8 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install Garak
-        run: pip install garak --quiet
+      - name: Install Garak (pinned)
+        run: pip install "garak==0.15.0" --quiet
 
       - name: Create results directory
         run: mkdir -p ${{ env.RESULTS_DIR }}
@@ -75,8 +75,8 @@ jobs:
         run: |
           garak \
             --config evals/garak/LLM01_prompt_injection.yaml \
-            --model_type ${{ env.EVAL_MODEL_TYPE }} \
-            --model_name ${{ env.EVAL_MODEL_NAME }} \
+            --target_type ${{ env.EVAL_MODEL_TYPE }} \
+            --target_name ${{ env.EVAL_MODEL_NAME }} \
             --report_prefix ${{ env.RESULTS_DIR }}/LLM01 \
           || echo "LLM01_STATUS=FAIL" >> $GITHUB_ENV
 
@@ -87,8 +87,8 @@ jobs:
         run: |
           garak \
             --config evals/garak/LLM02_sensitive_disclosure.yaml \
-            --model_type ${{ env.EVAL_MODEL_TYPE }} \
-            --model_name ${{ env.EVAL_MODEL_NAME }} \
+            --target_type ${{ env.EVAL_MODEL_TYPE }} \
+            --target_name ${{ env.EVAL_MODEL_NAME }} \
             --report_prefix ${{ env.RESULTS_DIR }}/LLM02 \
           || echo "LLM02_STATUS=FAIL" >> $GITHUB_ENV
 
@@ -99,8 +99,8 @@ jobs:
         run: |
           garak \
             --config evals/garak/LLM07_system_prompt_leakage.yaml \
-            --model_type ${{ env.EVAL_MODEL_TYPE }} \
-            --model_name ${{ env.EVAL_MODEL_NAME }} \
+            --target_type ${{ env.EVAL_MODEL_TYPE }} \
+            --target_name ${{ env.EVAL_MODEL_NAME }} \
             --report_prefix ${{ env.RESULTS_DIR }}/LLM07 \
           || echo "LLM07_STATUS=FAIL" >> $GITHUB_ENV
 
@@ -111,8 +111,8 @@ jobs:
         run: |
           garak \
             --config evals/garak/ASI01_goal_hijack.yaml \
-            --model_type ${{ env.EVAL_MODEL_TYPE }} \
-            --model_name ${{ env.EVAL_MODEL_NAME }} \
+            --target_type ${{ env.EVAL_MODEL_TYPE }} \
+            --target_name ${{ env.EVAL_MODEL_NAME }} \
             --report_prefix ${{ env.RESULTS_DIR }}/ASI01 \
           || echo "ASI01_STATUS=FAIL" >> $GITHUB_ENV
 
@@ -159,8 +159,8 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install PyRIT
-        run: pip install pyrit --quiet
+      - name: Install PyRIT (pinned)
+        run: pip install "pyrit==0.13.0" --quiet
 
       - name: Run LLM01 — Prompt Injection (PyRIT)
         env:
