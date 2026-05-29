@@ -1,0 +1,30 @@
+# GenAI Security Crosswalk — NeMo Guardrails config (defense-in-depth rails)
+# ─────────────────────────────────────────────────────────────────────────────
+# OWASP Entry  : LLM01 Prompt Injection, LLM02/LLM05 (in/out filtering),
+#                LLM07 System Prompt Leakage
+# Crosswalk ref: llm-top10/LLM_MITREATLAS.md
+# Pinned to    : nemoguardrails 0.22.0
+#
+# Input + output self-check rails: a programmable guardrail layer that screens
+# user input for jailbreak/injection and screens model output for leakage before
+# it reaches the user. This realises the crosswalk's input/output-filtering
+# controls as a runnable, testable artifact.
+#
+# Try it:
+#   pip install "nemoguardrails==0.22.0"
+#   export OPENAI_API_KEY=sk-...
+#   nemoguardrails chat --config=evals/guardrails/nemo
+# ─────────────────────────────────────────────────────────────────────────────
+
+models:
+  - type: main
+    engine: openai
+    model: gpt-4o-mini
+
+rails:
+  input:
+    flows:
+      - self check input
+  output:
+    flows:
+      - self check output

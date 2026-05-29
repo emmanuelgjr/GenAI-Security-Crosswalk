@@ -23,17 +23,27 @@ Runnable security test profiles mapped to OWASP GenAI vulnerability entries.
 
 ## What's here
 
-| Folder | Tool | Contents |
-|---|---|---|
-| `garak/` | [Garak](https://github.com/NVIDIA/garak) 0.15.0 | **17** YAML profiles (10 LLM + 4 Agentic + 3 DSGAI) + auto-discovering `run_all.sh` |
-| `pyrit/` | [PyRIT](https://github.com/Azure/PyRIT) 0.13.0 | **6** scenario scripts + shared `_harness.py` (LLM-as-judge scoring) |
-| `laaf/` | [LAAF v2.0](https://github.com/qorvexconsulting1/laaf-V2.0) | **6** LPCI stage configs (S1–S6) + `laaf_crosswalk.py` reporter + `run_laaf.sh` |
-| `ci/` | GitHub Actions | Workflow template wiring all three tools into CI/CD |
-| `requirements.txt` | pip | Pinned tool versions for reproducible runs |
+**8 tool tracks** spanning the full eval matrix — offensive *and* defensive,
+runtime *and* static, model · app · agent · data-pipeline:
 
-Each profile maps explicitly to an OWASP entry and the framework controls it
-validates. `scripts/validate.js` enforces that every profile references a valid
-OWASP ID and an existing crosswalk file.
+| Folder | Tool | Track | Contents |
+|---|---|---|---|
+| `garak/` | [Garak](https://github.com/NVIDIA/garak) 0.15.0 | offensive · model | **17** YAML profiles (10 LLM + 4 Agentic + 3 DSGAI) + auto-discovering `run_all.sh` |
+| `pyrit/` | [PyRIT](https://github.com/Azure/PyRIT) 0.13.0 | offensive · model | **6** scenario scripts + shared `_harness.py` (LLM-as-judge scoring) |
+| `laaf/` | [LAAF v2.0](https://github.com/qorvexconsulting1/laaf-V2.0) | offensive · LPCI | **6** LPCI stage configs (S1–S6) + `laaf_crosswalk.py` reporter |
+| `promptfoo/` | [promptfoo](https://www.promptfoo.dev/docs/red-team/) 0.121.13 | offensive · **app/CI** | OWASP LLM + Agentic red-team config for CI gating |
+| `inspect/` | [Inspect AI](https://inspect.aisi.org.uk/) 0.3.229 + AgentDojo/AgentHarm | offensive · **agent** | native ASI01 task + Agentic Top 10 → `inspect_evals` mapping |
+| `modelscan/` | [ModelScan](https://github.com/protectai/modelscan) 0.8.8 | **static · supply chain** | model-artifact scanner (LLM03 / DSGAI17), no API key |
+| `guardrails/` | Prompt Guard 2 · [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) 0.22.0 | **defensive** | input/output guardrail evaluation |
+| `privacy/` | [Presidio](https://github.com/microsoft/presidio) · canary audit | **data security** | PII output scan (DSGAI01) + canary extraction audit (DSGAI18) |
+| `ci/` | GitHub Actions | — | Workflow template wiring the tools into CI/CD |
+| `requirements.txt` | pip / npx | — | Pinned tool versions for reproducible runs |
+
+The first three tracks are all *offensive, prompt-based, runtime* tools; the
+last five fill the rest of the matrix (app/CI, agentic tool-use, static
+supply-chain, guardrail defense, and data-security/privacy). Each profile maps
+explicitly to an OWASP entry, and `scripts/validate.js` enforces that every
+profile references a valid OWASP ID and an existing crosswalk file.
 
 ---
 

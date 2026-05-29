@@ -3,6 +3,27 @@
 # written and validated against. Bump deliberately and re-verify.
 #
 #   pip install -r evals/requirements.txt
+#
+# promptfoo is a Node tool, not pip — run via:  npx promptfoo@0.121.13
+# Some models are gated (Meta Prompt Guard); run `huggingface-cli login`.
 
+# Offensive / model-behavior
 garak==0.15.0
 pyrit==0.13.0
+
+# Agentic (Inspect AI + upstream benchmarks: AgentDojo, AgentHarm)
+inspect-ai==0.3.229
+inspect_evals==0.13.1
+
+# Supply chain — model artifact scanning
+modelscan==0.8.8
+picklescan==1.0.4
+
+# Guardrail evaluation
+nemoguardrails==0.22.0
+transformers>=4.43
+torch>=2.2
+
+# Privacy / data-security (DSGAI)
+presidio-analyzer==2.2.362
+openai>=1.40
