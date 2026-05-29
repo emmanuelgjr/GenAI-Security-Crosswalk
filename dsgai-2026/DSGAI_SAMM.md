@@ -752,6 +752,20 @@ personal data in GenAI systems operating in jurisdictions covered by GDPR or CCP
 - [Agentic Top 10 × SAMM](../agentic-top10/Agentic_SAMM.md)
 - [Agentic Top 10 × MAESTRO](../agentic-top10/Agentic_MAESTRO.md)
 
+Related DSGAI 2026 mappings:
+[ASVS](DSGAI_ASVS.md) ·
+[CIS Controls](DSGAI_CISControls.md) ·
+[CWE/CVE](DSGAI_CWE_CVE.md) ·
+[ENISA](DSGAI_ENISA.md) ·
+[EU AI Act](DSGAI_EUAIAct.md) ·
+[ISO 27001](DSGAI_ISO27001.md) ·
+[ISO 42001](DSGAI_ISO42001.md) ·
+[MITRE ATLAS](DSGAI_MITREATLAS.md) ·
+[NIST AI RMF](DSGAI_NISTAIRMF.md) ·
+[NIST CSF 2.0](DSGAI_NISTCSF2.md) ·
+[PCI DSS](DSGAI_PCIDSS.md) ·
+[SOC 2](DSGAI_SOC2.md)
+
 ---
 
 ## References
