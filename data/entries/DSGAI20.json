@@ -229,19 +229,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
-      "tier": "Foundational",
+      "control_id": "Data security",
+      "control_name": "§5.4",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Regulatory compliance as OT risk scenario"
+      "notes": "Protect model artefacts as OT IP"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT security programme",
-      "control_name": "§8.2",
-      "tier": "Foundational",
+      "control_id": "Risk assessment",
+      "control_name": "§6.2",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Compliance programme for OT GenAI deployments"
+      "notes": "Assess extraction exposure"
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "Data flow controls",
+      "control_name": "§7.3",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Constrain inference access"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -369,43 +377,35 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Foundational",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Mapped regulatory obligations for all applicable jurisdictions"
+      "notes": "Model query-based extraction and weight-theft paths"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-SM",
-      "control_name": "Governance / Strategy & Metrics",
-      "tier": "Foundational",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Compliance KPIs tracked and reported to leadership"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Regulatory obligations surfaced as design requirements for all data flows"
+      "notes": "Simulate model-stealing query campaigns"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "O-OM",
       "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Continuous monitoring for regulatory control effectiveness"
+      "notes": "Per-principal budgets; detect systematic querying"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-EG",
-      "control_name": "Governance / Education & Guidance",
-      "tier": "Foundational",
+      "control_id": "G-PC",
+      "control_name": "Governance / Policy & Compliance",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "All staff handling regulated data understand applicable obligations"
+      "notes": "Access-control weights; classify the model as IP"
     },
     {
       "framework": "CWE/CVE",
@@ -502,43 +502,51 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Humans using machine credentials — no attribution for compliance evidence",
-      "control_name": "NHI-10 Human Use of NHI",
-      "tier": "Foundational",
+      "control_id": "Broad API/weight access enables extraction",
+      "control_name": "NHI-5 Over-Privileged NHI",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Enforce human identity for all regulated data operations"
+      "notes": "Scope inference and artifact-store identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Compliance audit credentials leaked — tampering with evidence possible",
-      "control_name": "NHI-2 Secret Leakage",
-      "tier": "Foundational",
+      "control_id": "Durable keys sustain stealing campaigns",
+      "control_name": "NHI-7 Long-Lived Credentials",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Protect audit credential integrity"
+      "notes": "Short-lived keys; per-principal query budgets"
     },
     {
-      "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — data localization requirements",
-      "tier": "Foundational",
+      "framework": "OWASP NHI Top 10",
+      "control_id": "Weight-store credentials in plaintext enable direct theft",
+      "control_name": "NHI-6 Insecure Credential Storage",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Define security requirements mandating compliance with data localization laws for all AI pipeline data; document jurisdictional restrictions for each dataset"
+      "notes": "Vault weight-store credentials; encrypt at rest"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — jurisdictional access controls",
+      "control_name": "Protect model artefacts",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement access controls that enforce data localization boundaries; prevent data transfer or processing outside authorised jurisdictions"
+      "notes": "Access-control weights; scope/budget inference"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.3.1-PS",
-      "control_name": "Archive and protect software releases — jurisdiction-aware artefact management",
+      "control_name": "Provenance & release protection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain jurisdiction metadata on all data and model artefacts; enable verification that training and serving comply with localization requirements"
+      "notes": "Protect and track model releases"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Extraction-resistance testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Simulate model-stealing query campaigns"
     },
     {
       "framework": "FedRAMP",
@@ -642,26 +650,6 @@
       "url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
     },
     {
-      "name": "Azure Policy",
-      "type": "commercial",
-      "url": "https://azure.microsoft.com/en-us/products/azure-policy"
-    },
-    {
-      "name": "AWS Config",
-      "type": "commercial",
-      "url": "https://aws.amazon.com/config/"
-    },
-    {
-      "name": "Open Policy Agent",
-      "type": "open-source",
-      "url": "https://www.openpolicyagent.org"
-    },
-    {
-      "name": "Privacera",
-      "type": "commercial",
-      "url": "https://privacera.com"
-    },
-    {
       "name": "HashiCorp Vault",
       "type": "commercial",
       "url": "https://www.vaultproject.io"
@@ -706,9 +694,8 @@
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM04",
-      "LLM07",
-      "LLM05"
+      "LLM10",
+      "LLM04"
     ],
     "dsgai_2026": [
       "DSGAI18",

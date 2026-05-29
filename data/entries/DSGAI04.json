@@ -252,27 +252,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
+      "control_id": "Common ICS vulnerabilities",
       "control_name": "§5.3",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Pipeline integrity is a core OT security requirement"
+      "notes": "Poisoned OT data feeds are a documented attack vector"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Risk assessment",
       "control_name": "§6.2",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data pipeline security in OT risk assessment"
+      "notes": "Assess integrity risk at every OT data ingestion point"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Security controls",
       "control_name": "§7.2",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Authenticated, integrity-verified data flows across zone boundaries"
+      "notes": "Integrity verification mandatory at the OT data boundary"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -400,43 +400,35 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
-      "tier": "Foundational",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Design authentication and integrity controls for every pipeline stage"
+      "notes": "Model every ingestion path as an integrity threat surface"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "I-SB",
       "control_name": "Implementation / Secure Build",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "mTLS, input validation, and access controls enforced across pipeline"
+      "notes": "Verify checksums, signatures, and provenance on data and weights"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SD",
-      "control_name": "Implementation / Secure Deployment",
-      "tier": "Foundational",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Infrastructure-as-code with security controls applied at provisioning"
+      "notes": "Probe for trigger-conditioned behaviour and label-flip anomalies"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-AA",
-      "control_name": "Verification / Architecture Assessment",
-      "tier": "Foundational",
+      "control_id": "O-IM",
+      "control_name": "Operations / Incident Management",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Review every pipeline component for authentication and integrity gaps"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-EM",
-      "control_name": "Operations / Environment Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Regular security updates for all pipeline components"
+      "notes": "Alert on anomalous ingestion and behaviour drift"
     },
     {
       "framework": "CWE/CVE",
@@ -548,59 +540,51 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Unauthenticated connections between pipeline stages",
-      "control_name": "NHI-4 Insecure Authentication",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Require mTLS or token auth for all pipeline connections"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Pipeline service account with access to all stages",
+      "control_id": "Write access to training/RAG stores enables poisoning",
       "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Per-stage credentials with minimum scope"
+      "notes": "Read-only by default; write scoped to vetted ingestion jobs"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Same credential used for multiple pipeline stages",
-      "control_name": "NHI-9 NHI Reuse",
-      "tier": "Foundational",
+      "control_id": "Persistent write tokens give attackers a durable poisoning path",
+      "control_name": "NHI-7 Long-Lived Credentials",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Separate credentials per stage"
+      "notes": "Short-lived, job-scoped write credentials"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — data and artefact integrity",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Verify integrity of data & artefacts",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Protect training data, model weights, adapters, and pipeline artefacts from unauthorised modification; enforce write access controls and integrity monitoring"
+      "notes": "Checksums/signatures on datasets and weights"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.3.1-PS",
-      "control_name": "Archive and protect software releases — versioned artefact management",
+      "control_name": "Provenance & protected releases",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain versioned, integrity-verified snapshots of all training data, model checkpoints, and pipeline artefacts; enable rollback to known-good state"
+      "notes": "Track provenance; protect/version model artefacts"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.4.1-PS",
-      "control_name": "Reuse existing well-secured software — dataset and artefact vetting",
+      "control_name": "Vet data sources & dependencies",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vet all third-party datasets, pre-trained models, and pipeline components for provenance, integrity, and potential poisoning before use"
+      "notes": "Assess and sign training/RAG sources"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "RV.3.1-PS",
-      "control_name": "Analyse root causes — poisoning forensics",
+      "control_name": "Root-cause analysis of integrity incidents",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "When poisoning is detected, conduct forensic analysis to identify corrupted records, trace to source, and determine blast radius across dependent models"
+      "notes": "Analyse poisoning events and remediate systemically"
     },
     {
       "framework": "FedRAMP",
@@ -786,9 +770,7 @@
   "crossrefs": {
     "llm_top10": [
       "LLM03",
-      "LLM04",
-      "LLM08",
-      "LLM05"
+      "LLM04"
     ],
     "agentic_top10": [
       "ASI06",

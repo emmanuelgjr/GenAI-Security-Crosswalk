@@ -229,27 +229,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT data confidentiality",
-      "control_name": "§5.4",
-      "tier": "Foundational",
+      "control_id": "Common ICS vulnerabilities",
+      "control_name": "§5.3",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Inference inputs are OT data and require protection"
+      "notes": "Aggregated OT data concentrates risk"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Risk assessment",
       "control_name": "§6.2",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Inference data exposure in OT risk assessment"
+      "notes": "Assess context-assembly data need"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network monitoring",
+      "control_id": "Data flow controls",
       "control_name": "§7.3",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Monitor inference data leaving OT boundary"
+      "notes": "Minimise and authorise context data"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -377,35 +377,27 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Assemble only need-to-know data into context per task"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
       "control_id": "D-SR",
       "control_name": "Design / Security Requirements",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Define what inference data may be logged, retained, and shared"
+      "notes": "Require each context item to be authorised for the caller"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
-      "tier": "Foundational",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Log only what is operationally necessary; scrub sensitive data from logs"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-EM",
-      "control_name": "Operations / Environment Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Access controls, encryption, and retention policies for all inference logs"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Documented policy on inference data retention periods and deletion"
+      "notes": "Attempt to extract the full assembled context"
     },
     {
       "framework": "CWE/CVE",
@@ -502,35 +494,35 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Inference log service account with broad read access",
+      "control_id": "The assembling identity can fetch beyond task need",
       "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Minimum scope: only authorised audit function can read inference logs"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Service account credentials embedded in inference log entries",
-      "control_name": "NHI-2 Secret Leakage",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Scan and scrub credentials from inference logs"
+      "notes": "Scope context-assembly identity to the caller's authorised data"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — data minimisation requirements",
+      "control_name": "Context-minimisation requirements",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Define security requirements enforcing data minimisation — AI systems must collect and process only the data necessary for their documented purpose"
+      "scope": "Both",
+      "notes": "Require need-to-know context assembly"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.2.1-PS",
-      "control_name": "Design software — minimisation-by-design",
+      "control_name": "Design review of context assembly",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Design AI data pipelines with data minimisation controls built in; implement field-level filtering, aggregation, and anonymisation at ingestion"
+      "scope": "Both",
+      "notes": "Authorise each context item for the caller"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Secure assembly in code",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Cap and scope context construction"
     },
     {
       "framework": "FedRAMP",
@@ -603,26 +595,6 @@
       "url": "https://github.com/leondz/garak"
     },
     {
-      "name": "Presidio",
-      "type": "open-source",
-      "url": "https://github.com/microsoft/presidio"
-    },
-    {
-      "name": "ARX Data Anonymization",
-      "type": "open-source",
-      "url": "https://arx.deidentifier.org"
-    },
-    {
-      "name": "Amnesia",
-      "type": "open-source",
-      "url": "https://amnesia.openaire.eu"
-    },
-    {
-      "name": "Google Differential Privacy",
-      "type": "open-source",
-      "url": "https://github.com/google/differential-privacy"
-    },
-    {
       "name": "Open Policy Agent",
       "type": "open-source",
       "url": "https://www.openpolicyagent.org"
@@ -687,16 +659,12 @@
       "LLM07",
       "LLM02",
       "LLM08",
-      "LLM06",
       "LLM01"
     ],
     "agentic_top10": [
       "ASI01",
       "ASI06",
       "ASI02"
-    ],
-    "dsgai_2026": [
-      "DSGAI03"
     ]
   },
   "changelog": [

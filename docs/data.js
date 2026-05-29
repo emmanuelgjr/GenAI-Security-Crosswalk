@@ -17442,11 +17442,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "Data security & remote access",
+        "control_name": "§5.4",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Injection via OT data feeds is a documented attack vector"
+        "notes": "OT data at rest/in transit to GenAI must be protected"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
@@ -17454,15 +17454,15 @@ window.CROSSWALK_DATA = [
         "control_name": "§6.2",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Assess injection risk at every OT data ingestion point"
+        "notes": "Assess disclosure risk for each OT data class fed to GenAI"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "Data flow controls",
+        "control_name": "§7.3",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Input validation mandatory at OT data boundary"
+        "notes": "Read-only, scoped OT data access for inference/RAG"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -17597,11 +17597,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-TA",
-        "control_name": "Design / Threat Assessment",
+        "control_id": "D-SR",
+        "control_name": "Design / Security Requirements",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Model all channels where untrusted content reaches the model"
+        "notes": "Define what data may enter prompts/RAG and how outputs must be filtered"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -17609,7 +17609,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Implementation / Secure Build",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce sanitisation at every point where external data enters inference pipeline"
+        "notes": "Scan and redact PII/secrets before responses leave the system"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -17617,23 +17617,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Verification / Security Testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Adversarial injection tests across all data input channels"
+        "notes": "Probe for memorisation and RAG over-retrieval under low-privilege identities"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "O-IM",
-        "control_name": "Operations / Incident Management",
+        "control_id": "O-OM",
+        "control_name": "Operations / Operational Management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Alert on unexpected model behaviour correlated with external data retrieval"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-EG",
-        "control_name": "Governance / Education & Guidance",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Data engineers understand injection risk surface"
+        "notes": "Encrypt corpora; enforce least-privilege on data stores feeding the model"
       },
       {
         "framework": "CWE/CVE",
@@ -17738,35 +17730,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Injection blast radius limited only by credential scope",
+        "control_id": "Retrieval/service account scope defines the disclosure blast radius",
         "control_name": "NHI-5 Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Apply least-privilege to all data pipeline credentials"
+        "notes": "Least-privilege, per-tenant retrieval identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Injected actions can use pipeline tokens for extended period",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "Credentials reachable by the pipeline can leak into outputs/logs",
+        "control_name": "NHI-2 Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Short-lived tokens for all data pipeline service accounts"
+        "notes": "Keep secrets out of context; scan outputs for credential patterns"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — data access audit controls",
+        "control_name": "Protect data and artefacts from unauthorised access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement comprehensive audit logging for all access to training data, model weights, embedding stores, and pipeline configuration; enforce tamper-evident log storage"
+        "notes": "Deny-by-default access to corpora/embeddings; encrypt at rest"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Secure handling of data in code paths",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Output DLP/redaction before responses leave the system"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "RV.1.1-PS",
-        "control_name": "Identify and confirm vulnerabilities — audit-driven detection",
+        "control_name": "Audit-driven anomaly detection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Establish procedures to detect data access anomalies using audit logs; define triage workflows for suspicious access patterns across AI data stores"
+        "notes": "Detect over-retrieval and bulk-access anomalies"
       },
       {
         "framework": "FedRAMP",
@@ -17863,26 +17863,6 @@ window.CROSSWALK_DATA = [
         "name": "Garak",
         "type": "open-source",
         "url": "https://github.com/leondz/garak"
-      },
-      {
-        "name": "OpenTelemetry",
-        "type": "open-source",
-        "url": "https://opentelemetry.io"
-      },
-      {
-        "name": "Elastic SIEM",
-        "type": "open-source",
-        "url": "https://www.elastic.co/security"
-      },
-      {
-        "name": "AWS CloudTrail",
-        "type": "commercial",
-        "url": "https://aws.amazon.com/cloudtrail/"
-      },
-      {
-        "name": "Azure Monitor",
-        "type": "commercial",
-        "url": "https://azure.microsoft.com/en-us/products/monitor"
       },
       {
         "name": "Nightfall DLP",
@@ -18074,15 +18054,11 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM02",
-        "LLM01",
-        "LLM03",
         "LLM07"
       ],
       "agentic_top10": [
         "ASI03",
-        "ASI06",
-        "ASI01",
-        "ASI02"
+        "ASI06"
       ]
     },
     "changelog": [
@@ -18355,11 +18331,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
+        "control_id": "Common ICS vulnerabilities",
         "control_name": "§5.3",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Data integrity in OT — training data is OT data"
+        "notes": "Credential exposure is a primary OT compromise vector"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
@@ -18367,7 +18343,7 @@ window.CROSSWALK_DATA = [
         "control_name": "§6.2",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Assess training data integrity as OT risk"
+        "notes": "Assess blast radius of each OT-reaching agent credential"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
@@ -18375,7 +18351,7 @@ window.CROSSWALK_DATA = [
         "control_name": "§7.2",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Integrity verification on all OT data used for training"
+        "notes": "Strong authentication and secret management at the OT boundary"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -18510,35 +18486,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-TA",
-        "control_name": "Design / Threat Assessment",
+        "control_id": "D-SA",
+        "control_name": "Design / Security Architecture",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Enumerate all sources, custodians, and transformation stages of training data"
+        "notes": "Each agent acts under a least-privilege, time-bound identity — never a shared secret"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
+        "control_id": "I-SD",
+        "control_name": "Implementation / Secure Deployment",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Hash verification, provenance tracking, and anomaly detection in training data"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "V-ST",
-        "control_name": "Verification / Security Testing",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Statistical analysis and adversarial probing for poisoned behaviours"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-IM",
-        "control_name": "Operations / Incident Management",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Alert on model output drift that may indicate active poisoning"
+        "notes": "Inject secrets from a vault at runtime; never bake them into prompts or images"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -18546,7 +18506,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Governance / Policy & Compliance",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Formal policy for data source approval, verification, and chain of custody"
+        "notes": "Mandate rotation, scoping, and prohibition of secrets in model context"
+      },
+      {
+        "framework": "OWASP SAMM v2.0",
+        "control_id": "O-EM",
+        "control_name": "Operations / Environment Management",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Scrub secrets from logs, memory, and tool payloads"
       },
       {
         "framework": "CWE/CVE",
@@ -18651,43 +18619,59 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Write access to training data stores enables poisoning",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "Agent secrets surface in prompts, memory, logs, tool payloads",
+        "control_name": "NHI-2 Secret Leakage",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Separate read and write credentials; write requires MFA"
+        "notes": "Secret-scan all agent I/O; never embed secrets in context"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Training pipeline credentials in plaintext config",
+        "control_id": "Cached agent credentials stored insecurely",
         "control_name": "NHI-6 Insecure Credential Storage",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Vault all training pipeline credentials"
+        "notes": "Store all credentials in a vault, encrypted at rest"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived write credentials create persistent poisoning window",
+        "control_id": "Stolen agent tokens remain valid indefinitely",
         "control_name": "NHI-7 Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Short-lived write tokens; rotate frequently"
+        "notes": "Issue short-lived, auto-rotated tokens"
+      },
+      {
+        "framework": "OWASP NHI Top 10",
+        "control_id": "A compromised agent identity has excessive reach",
+        "control_name": "NHI-5 Over-Privileged NHI",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Scope each agent identity to least privilege"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — data inventory and classification",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect secrets and artefacts from unauthorised access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements mandating a complete data inventory covering all datasets used in training, fine-tuning, RAG, and evaluation; classify by sensitivity"
+        "notes": "Vault all credentials; keep secrets out of prompts/memory"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.2.1-PS",
-        "control_name": "Design software — data flow transparency",
+        "control_id": "PS.3.1-PS",
+        "control_name": "Provenance & protected release management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Design AI pipelines with documented data flow diagrams showing data origins, transformations, storage locations, and access points; maintain as living artefacts"
+        "notes": "Track and protect signed artefacts and their access"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Secure credential handling in code",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "No hardcoded secrets; inject from a vault at runtime"
       },
       {
         "framework": "FedRAMP",
@@ -18786,26 +18770,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/spiffe/spire"
       },
       {
-        "name": "Apache Atlas",
-        "type": "open-source",
-        "url": "https://atlas.apache.org"
-      },
-      {
-        "name": "Amundsen",
-        "type": "open-source",
-        "url": "https://www.amundsen.io"
-      },
-      {
-        "name": "Google Data Catalog",
-        "type": "commercial",
-        "url": "https://cloud.google.com/data-catalog"
-      },
-      {
-        "name": "Collibra",
-        "type": "commercial",
-        "url": "https://www.collibra.com"
-      },
-      {
         "name": "AWS Secrets Manager / Azure Key Vault",
         "type": "commercial",
         "url": "https://aws.amazon.com/secrets-manager/"
@@ -18875,7 +18839,6 @@ window.CROSSWALK_DATA = [
       "agentic_top10": [
         "ASI03",
         "ASI07",
-        "ASI04",
         "ASI02"
       ],
       "dsgai_2026": [
@@ -18883,9 +18846,6 @@ window.CROSSWALK_DATA = [
       ],
       "llm_top10": [
         "LLM06",
-        "LLM04",
-        "LLM03",
-        "LLM05",
         "LLM02"
       ]
     },
@@ -19143,11 +19103,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data confidentiality",
-        "control_name": "§5.4",
+        "control_id": "Supply chain / external connectivity",
+        "control_name": "§5.5",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "OT data confidentiality requirements apply to training data"
+        "notes": "Unsanctioned external AI is an uncontrolled data egress path"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
@@ -19155,15 +19115,15 @@ window.CROSSWALK_DATA = [
         "control_name": "§6.2",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Assess sensitivity of OT data in training sets"
+        "notes": "Assess data-egress risk to external AI services"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network monitoring",
-        "control_name": "§7.3",
+        "control_id": "Security controls",
+        "control_name": "§7.1",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor for unexpected exfiltration of OT training data"
+        "notes": "Boundary controls block data flow to non-approved services"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -19291,43 +19251,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SR",
-        "control_name": "Design / Security Requirements",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Require data classification check before any dataset enters training pipeline"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
         "control_id": "G-PC",
         "control_name": "Governance / Policy & Compliance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Policy mandating PII/sensitive data removal before training"
+        "notes": "Define approved AI services and prohibited data classes"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
+        "control_id": "G-SM",
+        "control_name": "Governance / Strategy & Metrics",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Automated PII scanning of all training datasets before use"
+        "notes": "Track unsanctioned-AI usage as a tracked programme metric"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-RT",
-        "control_name": "Verification / Requirements-Driven Testing",
+        "control_id": "V-AA",
+        "control_name": "Verification / Architecture Assessment",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Automated tests verifying PII detection coverage"
+        "notes": "Identify all paths by which data can reach external AI endpoints"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
+        "control_id": "O-EM",
+        "control_name": "Operations / Environment Management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Periodic probing of deployed models for sensitive data memorisation"
+        "notes": "Detect and block data flow to non-allowlisted AI services"
       },
       {
         "framework": "CWE/CVE",
@@ -19424,43 +19376,51 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Pipeline service account with access to sensitive data stores",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "Unsanctioned tools hold unreviewed, over-scoped tokens",
+        "control_name": "NHI-3 Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Scope pipeline credentials to approved data sources only"
+        "notes": "Inventory and gate third-party AI integrations"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Credentials embedded in config files include sensitive data source access",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "Staff use shared machine credentials for shadow tools, no attribution",
+        "control_name": "NHI-10 Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Audit config files for embedded credentials"
+        "notes": "Enforce human identity; block shared-credential use"
+      },
+      {
+        "framework": "OWASP NHI Top 10",
+        "control_id": "Shadow flows reuse prod credentials in unmanaged contexts",
+        "control_name": "NHI-8 Environment Isolation Failure",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Separate and scope credentials per environment"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.4.1-PS",
-        "control_name": "Reuse existing well-secured software — AI tool vetting",
+        "control_name": "Vet third-party / reused components & services",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vet all AI tools, services, and plugins before organisational adoption; verify data handling, security posture, and compliance capabilities"
+        "notes": "Allowlist and assess external AI tools before use"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — shadow AI detection",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Define security & governance requirements",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement controls to detect and prevent unauthorised AI tool usage that processes organisational data outside governed pipelines"
+        "notes": "Policy on approved AI services and data classes"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "RV.1.1-PS",
-        "control_name": "Identify and confirm vulnerabilities — shadow AI exposure monitoring",
+        "control_name": "Monitor for unauthorised use",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Establish procedures to identify data exposure from shadow AI tool usage; define triage and remediation workflows for unsanctioned data processing"
+        "notes": "Detect egress to non-approved AI endpoints"
       },
       {
         "framework": "FedRAMP",
@@ -19556,19 +19516,14 @@ window.CROSSWALK_DATA = [
         "url": "https://www.zscaler.com"
       },
       {
-        "name": "Netskope",
-        "type": "commercial",
-        "url": "https://www.netskope.com"
-      },
-      {
-        "name": "Zscaler",
-        "type": "commercial",
-        "url": "https://www.zscaler.com"
-      },
-      {
         "name": "Nightfall DLP",
         "type": "commercial",
         "url": "https://www.nightfall.ai"
+      },
+      {
+        "name": "Netskope",
+        "type": "commercial",
+        "url": "https://www.netskope.com"
       },
       {
         "name": "Open Policy Agent",
@@ -19616,12 +19571,10 @@ window.CROSSWALK_DATA = [
       "llm_top10": [
         "LLM03",
         "LLM02",
-        "LLM05",
-        "LLM06"
+        "LLM05"
       ],
       "agentic_top10": [
-        "ASI04",
-        "ASI10"
+        "ASI04"
       ]
     },
     "changelog": [
@@ -19887,27 +19840,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
+        "control_id": "Common ICS vulnerabilities",
         "control_name": "§5.3",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Pipeline integrity is a core OT security requirement"
+        "notes": "Poisoned OT data feeds are a documented attack vector"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Risk assessment",
         "control_name": "§6.2",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Data pipeline security in OT risk assessment"
+        "notes": "Assess integrity risk at every OT data ingestion point"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Security controls",
         "control_name": "§7.2",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Authenticated, integrity-verified data flows across zone boundaries"
+        "notes": "Integrity verification mandatory at the OT data boundary"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -20035,43 +19988,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SA",
-        "control_name": "Design / Security Architecture",
-        "tier": "Foundational",
+        "control_id": "D-TA",
+        "control_name": "Design / Threat Assessment",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Design authentication and integrity controls for every pipeline stage"
+        "notes": "Model every ingestion path as an integrity threat surface"
       },
       {
         "framework": "OWASP SAMM v2.0",
         "control_id": "I-SB",
         "control_name": "Implementation / Secure Build",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "mTLS, input validation, and access controls enforced across pipeline"
+        "notes": "Verify checksums, signatures, and provenance on data and weights"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SD",
-        "control_name": "Implementation / Secure Deployment",
-        "tier": "Foundational",
+        "control_id": "V-ST",
+        "control_name": "Verification / Security Testing",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Infrastructure-as-code with security controls applied at provisioning"
+        "notes": "Probe for trigger-conditioned behaviour and label-flip anomalies"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-AA",
-        "control_name": "Verification / Architecture Assessment",
-        "tier": "Foundational",
+        "control_id": "O-IM",
+        "control_name": "Operations / Incident Management",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Review every pipeline component for authentication and integrity gaps"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-EM",
-        "control_name": "Operations / Environment Management",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Regular security updates for all pipeline components"
+        "notes": "Alert on anomalous ingestion and behaviour drift"
       },
       {
         "framework": "CWE/CVE",
@@ -20183,59 +20128,51 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Unauthenticated connections between pipeline stages",
-        "control_name": "NHI-4 Insecure Authentication",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Require mTLS or token auth for all pipeline connections"
-      },
-      {
-        "framework": "OWASP NHI Top 10",
-        "control_id": "Pipeline service account with access to all stages",
+        "control_id": "Write access to training/RAG stores enables poisoning",
         "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Per-stage credentials with minimum scope"
+        "notes": "Read-only by default; write scoped to vetted ingestion jobs"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Same credential used for multiple pipeline stages",
-        "control_name": "NHI-9 NHI Reuse",
-        "tier": "Foundational",
+        "control_id": "Persistent write tokens give attackers a durable poisoning path",
+        "control_name": "NHI-7 Long-Lived Credentials",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Separate credentials per stage"
+        "notes": "Short-lived, job-scoped write credentials"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — data and artefact integrity",
+        "control_id": "PS.2.1-PS",
+        "control_name": "Verify integrity of data & artefacts",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Protect training data, model weights, adapters, and pipeline artefacts from unauthorised modification; enforce write access controls and integrity monitoring"
+        "notes": "Checksums/signatures on datasets and weights"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.3.1-PS",
-        "control_name": "Archive and protect software releases — versioned artefact management",
+        "control_name": "Provenance & protected releases",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain versioned, integrity-verified snapshots of all training data, model checkpoints, and pipeline artefacts; enable rollback to known-good state"
+        "notes": "Track provenance; protect/version model artefacts"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.4.1-PS",
-        "control_name": "Reuse existing well-secured software — dataset and artefact vetting",
+        "control_name": "Vet data sources & dependencies",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vet all third-party datasets, pre-trained models, and pipeline components for provenance, integrity, and potential poisoning before use"
+        "notes": "Assess and sign training/RAG sources"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "RV.3.1-PS",
-        "control_name": "Analyse root causes — poisoning forensics",
+        "control_name": "Root-cause analysis of integrity incidents",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "When poisoning is detected, conduct forensic analysis to identify corrupted records, trace to source, and determine blast radius across dependent models"
+        "notes": "Analyse poisoning events and remediate systemically"
       },
       {
         "framework": "FedRAMP",
@@ -20421,9 +20358,7 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM03",
-        "LLM04",
-        "LLM08",
-        "LLM05"
+        "LLM04"
       ],
       "agentic_top10": [
         "ASI06",
@@ -20671,27 +20606,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
+        "control_id": "Common ICS vulnerabilities",
         "control_name": "§5.3",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Safety system bypass in OT"
+        "notes": "Missing validation at OT/GenAI boundary"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Risk assessment",
         "control_name": "§6.2",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Guardrail bypass must be in OT risk register"
+        "notes": "Assess validation gaps per ingestion path"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Secure architecture",
-        "control_name": "§7.1",
-        "tier": "Hardening",
+        "control_id": "Security controls",
+        "control_name": "§7.2",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "GenAI guardrails must be independent of model inference layer"
+        "notes": "Enforce validation before persistence/use"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -20819,43 +20754,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SA",
-        "control_name": "Design / Security Architecture",
-        "tier": "Hardening",
+        "control_id": "D-SR",
+        "control_name": "Design / Security Requirements",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Guardrails at multiple layers: input, generation, output"
+        "notes": "Specify schema/type/size validation at every ingestion point"
+      },
+      {
+        "framework": "OWASP SAMM v2.0",
+        "control_id": "I-SB",
+        "control_name": "Implementation / Secure Build",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Enforce validation before data is persisted or used"
       },
       {
         "framework": "OWASP SAMM v2.0",
         "control_id": "V-ST",
         "control_name": "Verification / Security Testing",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Dedicated adversarial testing programme targeting all guardrail bypass vectors"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-IM",
-        "control_name": "Operations / Incident Management",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Alert on disabled or bypassed guardrails in production"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-SM",
-        "control_name": "Governance / Strategy & Metrics",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Guardrail effectiveness metrics reviewed by security leadership"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "V-AA",
-        "control_name": "Verification / Architecture Assessment",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Pre-deployment review of all guardrail bypass scenarios"
+        "notes": "Fuzz ingestion channels with malformed and adversarial records"
       },
       {
         "framework": "CWE/CVE",
@@ -20945,35 +20864,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Service account with guardrail configuration write access",
-        "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Hardening",
+        "control_id": "Unauthenticated pipeline stages accept spoofed/malformed data",
+        "control_name": "NHI-4 Insecure Authentication",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Minimum scope; no service account has guardrail disable capability"
+        "notes": "Enforce mTLS / signed requests between stages"
+      },
+      {
+        "framework": "OWASP NHI Top 10",
+        "control_id": "Over-scoped jobs persist bad data widely",
+        "control_name": "NHI-5 Over-Privileged NHI",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Scope each pipeline stage's identity to its inputs/outputs"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.2.1-PS",
-        "control_name": "Verify software integrity — data provenance verification",
+        "control_name": "Integrity verification mechanisms",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Verify provenance and integrity of all datasets used in training, fine-tuning, and evaluation; maintain cryptographic attestation of data origin and chain of custody"
+        "notes": "Detect tampering of data in transit/at rest"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PS.3.1-PS",
-        "control_name": "Archive and protect software releases — data versioning with provenance",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Validation in secure coding",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain versioned dataset snapshots with provenance metadata recording origin, collection method, processing steps, and quality metrics"
+        "notes": "Schema/type/size validation at every boundary"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.4.1-PS",
-        "control_name": "Reuse existing well-secured software — dataset quality vetting",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review & test for validation gaps",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vet all datasets for quality, completeness, representativeness, and fitness for purpose before use in any training or evaluation pipeline"
+        "notes": "Test ingestion paths with malformed/adversarial data"
       },
       {
         "framework": "FedRAMP",
@@ -21064,24 +20991,14 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/pyeve/cerberus"
       },
       {
-        "name": "DVC (Data Version Control)",
+        "name": "OpenLineage",
         "type": "open-source",
-        "url": "https://dvc.org"
+        "url": "https://openlineage.io"
       },
       {
         "name": "Apache Atlas",
         "type": "open-source",
         "url": "https://atlas.apache.org"
-      },
-      {
-        "name": "Pachyderm",
-        "type": "open-source",
-        "url": "https://www.pachyderm.com"
-      },
-      {
-        "name": "OpenLineage",
-        "type": "open-source",
-        "url": "https://openlineage.io"
       },
       {
         "name": "Collibra",
@@ -21171,7 +21088,6 @@ window.CROSSWALK_DATA = [
       "llm_top10": [
         "LLM05",
         "LLM04",
-        "LLM01",
         "LLM03"
       ],
       "dsgai_2026": [
@@ -21180,8 +21096,7 @@ window.CROSSWALK_DATA = [
       ],
       "agentic_top10": [
         "ASI02",
-        "ASI08",
-        "ASI04",
+        "ASI05",
         "ASI06"
       ]
     },
@@ -21425,27 +21340,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT data confidentiality",
-        "control_name": "§5.4",
+        "control_id": "Supply chain / connectivity",
+        "control_name": "§5.5",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "OT data must not be disclosed without authorisation"
+        "notes": "Tool/vendor integrations cross the OT trust boundary"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "Supply chain risk",
+        "control_name": "§6.3",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Assess disclosure risk for each OT data type in GenAI outputs"
+        "notes": "Assess each integration's data exchange"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network monitoring",
+        "control_id": "Data flow controls",
         "control_name": "§7.3",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor outputs for OT data disclosure patterns"
+        "notes": "Validate and minimise cross-boundary data"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -21573,11 +21488,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SR",
-        "control_name": "Design / Security Requirements",
+        "control_id": "D-SA",
+        "control_name": "Design / Security Architecture",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define what categories of data may appear in model outputs"
+        "notes": "Treat all tool I/O as crossing a trust boundary"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -21585,7 +21500,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Implementation / Secure Build",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Apply DLP scanning to all model outputs before delivery"
+        "notes": "Validate tool responses before use; send only required fields"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -21593,15 +21508,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Verification / Security Testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Automated testing for memorisation and over-retrieval of sensitive content"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Continuous monitoring of production outputs for sensitive content patterns"
+        "notes": "Inject malicious tool responses and verify handling"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -21609,7 +21516,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Governance / Policy & Compliance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Documented policy on what data may be surfaced in model responses"
+        "notes": "Require review before a tool/plugin is connected"
       },
       {
         "framework": "CWE/CVE",
@@ -21714,35 +21621,51 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Credentials embedded in model outputs or training data surface in responses",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "Tool tokens carry excessive permissions",
+        "control_name": "NHI-3 Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Output scanning for credential patterns"
+        "notes": "Vet and minimum-scope every tool credential"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Over-broad retrieval credentials return data beyond user entitlement",
+        "control_id": "A tool identity can reach more data than the task needs",
         "control_name": "NHI-5 Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Minimum scope for retrieval service accounts"
+        "notes": "Scope tool identities per function"
+      },
+      {
+        "framework": "OWASP NHI Top 10",
+        "control_id": "One credential shared across tools amplifies compromise",
+        "control_name": "NHI-9 NHI Reuse",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Distinct credential per tool/integration"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PS.3.1-PS",
-        "control_name": "Archive and protect software releases — lineage-aware artefact management",
+        "control_id": "PW.4.1-PS",
+        "control_name": "Vet third-party tools & plugins",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Maintain end-to-end data lineage records linking every model version to its training data, transformations, and intermediate artefacts"
+        "scope": "Both",
+        "notes": "Review and minimum-scope each integration"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect data exchanged with tools",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Validate tool returns; minimise tool inputs"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.2.1-PS",
-        "control_name": "Design software — traceable data pipeline architecture",
+        "control_name": "Design review of trust boundaries",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Design AI data pipelines with built-in lineage tracking; require lineage metadata capture at every transformation step as an explicit design requirement"
+        "scope": "Both",
+        "notes": "Model tool I/O as a trust boundary"
       },
       {
         "framework": "FedRAMP",
@@ -21841,26 +21764,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/NVIDIA/NeMo-Guardrails"
       },
       {
-        "name": "OpenLineage",
-        "type": "open-source",
-        "url": "https://openlineage.io"
-      },
-      {
-        "name": "Marquez",
-        "type": "open-source",
-        "url": "https://marquezproject.ai"
-      },
-      {
-        "name": "MLflow",
-        "type": "open-source",
-        "url": "https://mlflow.org"
-      },
-      {
-        "name": "DataHub",
-        "type": "open-source",
-        "url": "https://datahubproject.io"
-      },
-      {
         "name": "Open Policy Agent",
         "type": "open-source",
         "url": "https://www.openpolicyagent.org"
@@ -21884,6 +21787,11 @@ window.CROSSWALK_DATA = [
         "name": "Nightfall DLP",
         "type": "commercial",
         "url": "https://www.nightfall.ai"
+      },
+      {
+        "name": "MLflow",
+        "url": "https://github.com/mlflow/mlflow",
+        "type": "open-source"
       }
     ],
     "incidents": [
@@ -21910,14 +21818,12 @@ window.CROSSWALK_DATA = [
       "agentic_top10": [
         "ASI02",
         "ASI04",
-        "ASI07",
-        "ASI06"
+        "ASI07"
       ],
       "llm_top10": [
         "LLM06",
         "LLM03",
-        "LLM05",
-        "LLM02"
+        "LLM05"
       ]
     },
     "changelog": [
@@ -22167,27 +22073,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
-        "control_name": "§5.3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Excessive OT data access is a documented vulnerability"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
+        "control_id": "Risk management",
         "control_name": "§6.2",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Data access scope in OT risk assessment"
+        "notes": "Classify OT data by safety/operational impact"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Secure architecture",
-        "control_name": "§7.1",
+        "control_id": "OT security program",
+        "control_name": "§8.2",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Least privilege enforced at OT data boundary"
+        "notes": "Lifecycle governance for OT data in GenAI"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -22315,11 +22213,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SA",
-        "control_name": "Design / Security Architecture",
+        "control_id": "G-PC",
+        "control_name": "Governance / Policy & Compliance",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define minimum data scope for each system component"
+        "notes": "Mandate classification and lifecycle rules for GenAI data"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -22327,15 +22225,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Governance / Strategy & Metrics",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Formalise data access review as part of security programme"
+        "notes": "Assign owners; track classification coverage"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-AA",
-        "control_name": "Verification / Architecture Assessment",
+        "control_id": "D-SR",
+        "control_name": "Design / Security Requirements",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Periodic review of declared vs actual data access per component"
+        "notes": "Specify retention, deletion, and access per data class"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -22343,15 +22241,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Operations / Operational Management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Alert when component requests data outside declared scope"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Documented policy requiring data access justification"
+        "notes": "Enforce retention/deletion; make access auditable"
       },
       {
         "framework": "CWE/CVE",
@@ -22440,43 +22330,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "GenAI system service account has access to more data than declared function requires",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "Identities for retired data flows linger with live access",
+        "control_name": "NHI-1 Improper Offboarding",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Audit and reduce credential scope per system component"
+        "notes": "Auto-revoke NHI on component decommission"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived credentials maintain excessive access indefinitely",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "Shared machine identities break data-access attribution",
+        "control_name": "NHI-10 Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Rotate or replace with short-lived tokens"
-      },
-      {
-        "framework": "OWASP NHI Top 10",
-        "control_id": "Same data access credential used across multiple GenAI system functions",
-        "control_name": "NHI-9 NHI Reuse",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Separate credentials per function"
+        "notes": "Enforce attributable identity per access"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — data aggregation controls",
+        "control_name": "Governance & classification requirements",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements governing how datasets may be combined for AI training and inference; require aggregation impact assessments before merging datasets"
+        "notes": "Mandate classification, retention, ownership"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.2.1-PS",
-        "control_name": "Design software — aggregation-aware data architecture",
+        "control_name": "Lifecycle design review",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Design AI data pipelines with aggregation controls that prevent combination of datasets whose joint sensitivity exceeds authorised classification levels"
+        "notes": "Design retention/deletion into the pipeline"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PS.3.1-PS",
+        "control_name": "Provenance & versioned artefacts",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Track data/artefact lineage across the lifecycle"
       },
       {
         "framework": "FedRAMP",
@@ -22565,26 +22455,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/amundsen-io/amundsen"
       },
       {
-        "name": "ARX Data Anonymization",
-        "type": "open-source",
-        "url": "https://arx.deidentifier.org"
-      },
-      {
-        "name": "OpenDP",
-        "type": "open-source",
-        "url": "https://opendp.org"
-      },
-      {
-        "name": "Google Differential Privacy",
-        "type": "open-source",
-        "url": "https://github.com/google/differential-privacy"
-      },
-      {
-        "name": "Presidio",
-        "type": "open-source",
-        "url": "https://github.com/microsoft/presidio"
-      },
-      {
         "name": "AWS S3 Lifecycle / Azure Lifecycle Management",
         "type": "commercial",
         "url": "https://aws.amazon.com/s3/"
@@ -22637,15 +22507,11 @@ window.CROSSWALK_DATA = [
         "DSGAI01"
       ],
       "llm_top10": [
-        "LLM02",
-        "LLM06",
-        "LLM03",
-        "LLM08"
+        "LLM02"
       ],
       "agentic_top10": [
-        "ASI03",
-        "ASI02",
         "ASI06",
+        "ASI03",
         "ASI09"
       ]
     },
@@ -22889,27 +22755,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data confidentiality",
-        "control_name": "§5.4",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "OT data in retrieval corpora requires access control"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
+        "control_id": "Risk management",
         "control_name": "§6.2",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Entitlement leakage in OT data retrieval"
+        "notes": "Map OT data processing to applicable regulation"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network monitoring",
-        "control_name": "§7.3",
-        "tier": "Hardening",
+        "control_id": "OT security program",
+        "control_name": "§8.2",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor retrieval patterns for unauthorised OT data access"
+        "notes": "Evidence accountable, compliant processing"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -23037,43 +22895,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-TA",
-        "control_name": "Design / Threat Assessment",
-        "tier": "Hardening",
+        "control_id": "G-PC",
+        "control_name": "Governance / Policy & Compliance",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Model all paths where over-retrieval can expose unauthorised content"
+        "notes": "Map processing to applicable regulation and recorded lawful basis"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
-        "tier": "Hardening",
+        "control_id": "G-SM",
+        "control_name": "Governance / Strategy & Metrics",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce per-query entitlement filtering in retrieval pipeline"
+        "notes": "Track regulatory exposure as a programme metric"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-ST",
-        "control_name": "Verification / Security Testing",
-        "tier": "Hardening",
+        "control_id": "D-SR",
+        "control_name": "Design / Security Requirements",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Test whether queries can retrieve documents from other tenants or restricted tiers"
+        "notes": "Build erasure/access/rectification into the design"
       },
       {
         "framework": "OWASP SAMM v2.0",
         "control_id": "O-OM",
         "control_name": "Operations / Operational Management",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Log all retrieved documents with user identity for forensic review"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Policy mapping corpus access to user roles and data classification"
+        "notes": "Log processing activities for accountability/audit"
       },
       {
         "framework": "CWE/CVE",
@@ -23170,51 +23020,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Embedding store service account with cross-tenant read access",
-        "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Hardening",
+        "control_id": "No attribution → cannot demonstrate lawful, accountable processing",
+        "control_name": "NHI-10 Human Use of NHI",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Per-tenant credentials or row-level security with minimum scope"
+        "notes": "Enforce human/governed identity for regulated data"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Unauthenticated embedding store access",
-        "control_name": "NHI-4 Insecure Authentication",
-        "tier": "Hardening",
+        "control_id": "Stale access breaches retention and access obligations",
+        "control_name": "NHI-1 Improper Offboarding",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Require authentication for all vector database connections"
-      },
-      {
-        "framework": "OWASP NHI Top 10",
-        "control_id": "Same embedding store credential used for multiple tenants",
-        "control_name": "NHI-9 NHI Reuse",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Separate credentials per tenant or use row-level security"
+        "notes": "Revoke access on offboarding; evidence it"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — data exfiltration prevention",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Regulatory & compliance requirements",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement controls preventing sensitive data exfiltration through model interfaces, API endpoints, and pipeline outputs; enforce data classification boundaries"
+        "notes": "Map processing to regulation and lawful basis"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.5.1-PS",
-        "control_name": "Secure coding — data handling in AI pipelines",
+        "control_id": "PW.2.1-PS",
+        "control_name": "Design for data-subject rights",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce secure coding practices for all data handling in AI pipelines; implement output filtering, PII detection, and data masking before model responses reach consumers"
+        "notes": "Build erasure/access/rectification into design"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.7.2-PS",
-        "control_name": "Review for security vulnerabilities — data leakage review",
+        "control_id": "RV.3.1-PS",
+        "control_name": "Compliance failure analysis",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data leakage and memorisation scenarios in pre-release security reviews; verify that outputs cannot reveal training data or sensitive context"
+        "notes": "Root-cause and remediate compliance gaps"
       },
       {
         "framework": "FedRAMP",
@@ -23316,21 +23158,6 @@ window.CROSSWALK_DATA = [
         "name": "Privado",
         "type": "open-source",
         "url": "https://github.com/Privado-Inc/privado"
-      },
-      {
-        "name": "Presidio",
-        "type": "open-source",
-        "url": "https://github.com/microsoft/presidio"
-      },
-      {
-        "name": "LLM Guard",
-        "type": "open-source",
-        "url": "https://github.com/protectai/llm-guard"
-      },
-      {
-        "name": "Nightfall",
-        "type": "commercial",
-        "url": "https://www.nightfall.ai"
       },
       {
         "name": "TrustArc",
@@ -23463,16 +23290,11 @@ window.CROSSWALK_DATA = [
         "DSGAI07"
       ],
       "llm_top10": [
-        "LLM02",
-        "LLM08",
-        "LLM07",
-        "LLM01"
+        "LLM02"
       ],
       "agentic_top10": [
-        "ASI06",
-        "ASI01",
-        "ASI02",
-        "ASI03"
+        "ASI03",
+        "ASI02"
       ]
     },
     "changelog": [
@@ -23715,11 +23537,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities — data integrity",
-        "control_name": "§5.3",
+        "control_id": "Data security",
+        "control_name": "§5.4",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Corpus manipulation directly threatens OT operational integrity"
+        "notes": "Protect OT data across all media types"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
@@ -23727,15 +23549,15 @@ window.CROSSWALK_DATA = [
         "control_name": "§6.2",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "OT corpus manipulation must be in risk register as critical scenario"
+        "notes": "Assess per-modality leakage paths"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "Data flow controls",
+        "control_name": "§7.3",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Write authentication on all OT corpus stores"
+        "notes": "Extract/redact sensitive content per modality"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -23867,7 +23689,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Design / Threat Assessment",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Enumerate all write paths to the corpus and attack scenarios for each"
+        "notes": "Model hidden-data and injection paths across every modality"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -23875,7 +23697,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Implementation / Secure Build",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Authenticate and verify all corpus writes; hash embeddings at ingest"
+        "notes": "Extract and redact sensitive content from all modalities"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -23883,23 +23705,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Verification / Security Testing",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Attempt to inject manipulated documents; verify detection"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-IM",
-        "control_name": "Operations / Incident Management",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Alert on unexpected corpus changes or embedding distribution shifts"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "All corpus changes go through a review and approval process"
+        "notes": "Probe EXIF/steganography/embedded-text and generated-media leakage"
       },
       {
         "framework": "CWE/CVE",
@@ -23981,43 +23787,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Corpus write access held by service accounts that do not need it",
+        "control_id": "Modality processors reach more data than needed",
         "control_name": "NHI-5 Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Separate read and write credentials; write accounts require MFA"
+        "notes": "Scope each modality pipeline identity"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Corpus write credentials in plaintext config",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "Secrets embedded in media/metadata surface via processors",
+        "control_name": "NHI-2 Secret Leakage",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Vault all corpus write credentials"
-      },
-      {
-        "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived corpus write credentials persist beyond need",
-        "control_name": "NHI-7 Long-Lived Credentials",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Rotate corpus write credentials; implement short-lived write pattern"
+        "notes": "Strip metadata; scan extracted content for secrets"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — IP protection",
+        "control_name": "Protect multimodal data stores",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Protect model weights, architecture specifications, training data, and proprietary algorithms from unauthorised access; implement defence against model extraction attacks"
+        "notes": "Scope access to multimodal assets"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PS.3.1-PS",
-        "control_name": "Archive and protect software releases — IP asset management",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Cross-modal extraction & redaction",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain access-controlled, versioned registries for all IP-sensitive AI artefacts; enforce need-to-know access and log all access events"
+        "notes": "Redact extracted content across modalities"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Multimodal leakage testing",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Test EXIF/steganography/embedded-text paths"
       },
       {
         "framework": "FedRAMP",
@@ -24108,26 +23914,6 @@ window.CROSSWALK_DATA = [
         "url": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
       },
       {
-        "name": "ModelScan",
-        "type": "open-source",
-        "url": "https://github.com/protectai/modelscan"
-      },
-      {
-        "name": "Sigstore",
-        "type": "open-source",
-        "url": "https://www.sigstore.dev"
-      },
-      {
-        "name": "AWS Nitro Enclaves",
-        "type": "commercial",
-        "url": "https://aws.amazon.com/ec2/nitro/nitro-enclaves/"
-      },
-      {
-        "name": "Azure Confidential Computing",
-        "type": "commercial",
-        "url": "https://azure.microsoft.com/en-us/solutions/confidential-compute/"
-      },
-      {
         "name": "LLM Guard",
         "type": "open-source",
         "url": "https://github.com/protectai/llm-guard"
@@ -24210,15 +23996,11 @@ window.CROSSWALK_DATA = [
         "DSGAI14"
       ],
       "llm_top10": [
-        "LLM02",
-        "LLM04",
-        "LLM08",
-        "LLM03",
-        "LLM05"
+        "LLM02"
       ],
       "agentic_top10": [
+        "ASI01",
         "ASI03",
-        "ASI04",
         "ASI07"
       ]
     },
@@ -24440,11 +24222,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "Data security",
+        "control_name": "§5.4",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "In-context manipulation of OT decision support"
+        "notes": "Protect source OT data used for synthesis"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
@@ -24452,7 +24234,7 @@ window.CROSSWALK_DATA = [
         "control_name": "§6.2",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Context poisoning risk for OT data feeds"
+        "notes": "Assess re-identification risk of synthetic OT data"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -24580,19 +24362,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-TA",
-        "control_name": "Design / Threat Assessment",
+        "control_id": "D-SR",
+        "control_name": "Design / Security Requirements",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Map all sources that contribute to context window; assess trust level per source"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Validate and sanitise all content before context window assembly"
+        "notes": "Specify privacy thresholds and re-identification limits"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -24600,15 +24374,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Verification / Security Testing",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Adversarial tests injecting malicious content via each context source"
+        "notes": "Attack synthetic/anonymised sets with linkage and membership attacks"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "O-IM",
-        "control_name": "Operations / Incident Management",
+        "control_id": "G-PC",
+        "control_name": "Governance / Policy & Compliance",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Alert on reasoning deviations correlated with external content in context"
+        "notes": "Mandate a documented anonymisation method and review"
       },
       {
         "framework": "CWE/CVE",
@@ -24674,35 +24448,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Data feed service accounts with access to sensitive data that should not enter context",
+        "control_id": "Generation jobs read broad source data, raising linkage risk",
         "control_name": "NHI-5 Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Scope data feed credentials to approved data only"
+        "notes": "Scope generation identities to the minimum source set"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.7.2-PS",
-        "control_name": "Review for security vulnerabilities — synthetic data quality review",
+        "control_name": "Privacy review of synthetic data",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Review synthetic data for bias inheritance, privacy leakage, and statistical fidelity before use in training pipelines; verify privacy guarantees are meaningful"
+        "notes": "Review anonymisation method and assumptions"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.8.2-PS",
-        "control_name": "Test for security vulnerabilities — synthetic data adversarial testing",
+        "control_name": "Adversarial re-identification testing",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "Conduct adversarial testing of synthetic data for membership inference, attribute inference, and reconstruction attacks to validate privacy claims"
+        "notes": "Run linkage/membership attacks on released data"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "RV.3.1-PS",
-        "control_name": "Analyse root causes — synthetic data failure analysis",
+        "control_name": "Root-cause of privacy failures",
         "tier": "Foundational",
         "scope": "Build",
-        "notes": "When model failures trace to synthetic training data, conduct root cause analysis of the generation process, source data, and privacy mechanism"
+        "notes": "Remediate anonymisation gaps"
       },
       {
         "framework": "FedRAMP",
@@ -24810,11 +24584,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/sdv-dev/SDV"
       },
       {
-        "name": "Anonymeter",
-        "type": "open-source",
-        "url": "https://github.com/statice/anonymeter"
-      },
-      {
         "name": "ARX Data Anonymization",
         "type": "open-source",
         "url": "https://arx.deidentifier.org"
@@ -24864,16 +24633,13 @@ window.CROSSWALK_DATA = [
       ],
       "llm_top10": [
         "LLM02",
-        "LLM01",
-        "LLM08",
         "LLM09",
-        "LLM03",
         "LLM04"
       ],
       "agentic_top10": [
         "ASI03",
-        "ASI06",
-        "ASI09"
+        "ASI09",
+        "ASI06"
       ]
     },
     "changelog": [
@@ -25123,11 +24889,11 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
+        "control_id": "Common ICS vulnerabilities",
         "control_name": "§5.3",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Persistent compromise of OT decision support"
+        "notes": "Shared-resource bleed across OT tenants"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
@@ -25135,7 +24901,15 @@ window.CROSSWALK_DATA = [
         "control_name": "§6.2",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Session persistence as OT risk scenario"
+        "notes": "Assess multi-site/tenant isolation"
+      },
+      {
+        "framework": "NIST SP 800-82 Rev 3",
+        "control_id": "Data flow controls",
+        "control_name": "§7.3",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Enforce session/site isolation"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -25267,7 +25041,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Design / Security Architecture",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Design session boundary enforcement; no cross-session data leakage"
+        "notes": "Design per-session/tenant isolation for memory and caches"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -25275,15 +25049,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Implementation / Secure Build",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Encrypt, sign, and access-control all persistent session data"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-EM",
-        "control_name": "Operations / Environment Management",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Apply access controls and encryption to all session persistence stores"
+        "notes": "Scrub session state on teardown; key caches per principal"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -25291,7 +25057,15 @@ window.CROSSWALK_DATA = [
         "control_name": "Verification / Security Testing",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Test whether session data is accessible or injectable across user boundaries"
+        "notes": "Probe for context bleed under concurrency and reuse"
+      },
+      {
+        "framework": "OWASP SAMM v2.0",
+        "control_id": "O-EM",
+        "control_name": "Operations / Environment Management",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Configure isolation in shared memory/cache layers"
       },
       {
         "framework": "CWE/CVE",
@@ -25380,43 +25154,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Session store service account with cross-user read/write access",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "A shared session-store identity links tenants/sessions",
+        "control_name": "NHI-9 NHI Reuse",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Per-user session store access controls"
+        "notes": "Distinct identity per tenant/session boundary"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Session store access credentials in plaintext",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "Shared-environment credentials cross context boundaries",
+        "control_name": "NHI-8 Environment Isolation Failure",
         "tier": "Hardening",
         "scope": "Both",
-        "notes": "Vault session store credentials"
+        "notes": "Enforce per-environment credential isolation"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — data retention and deletion policies",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Isolation in secure coding",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements governing data retention periods, deletion procedures, and right-to-erasure compliance for all data in AI pipelines"
+        "notes": "Per-session/tenant state isolation; scrub on teardown"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PS.3.1-PS",
-        "control_name": "Archive and protect software releases — retention-aware artefact management",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect session state",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain versioned data and model artefacts with retention metadata; enable selective data removal and model retraining on deletion requests"
+        "notes": "Key caches/memory per principal"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "RV.2.1-PS",
-        "control_name": "Assess, prioritise, and remediate — deletion request remediation",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Bleed testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define procedures to assess and remediate data deletion requests including impact analysis on trained models and retraining requirements"
+        "notes": "Test cross-session/tenant isolation under load"
       },
       {
         "framework": "FedRAMP",
@@ -25515,26 +25289,6 @@ window.CROSSWALK_DATA = [
         "url": "https://portswigger.net/burp/communitydownload"
       },
       {
-        "name": "Apache Atlas",
-        "type": "open-source",
-        "url": "https://atlas.apache.org"
-      },
-      {
-        "name": "Immuta",
-        "type": "commercial",
-        "url": "https://www.immuta.com"
-      },
-      {
-        "name": "OneTrust",
-        "type": "commercial",
-        "url": "https://www.onetrust.com"
-      },
-      {
-        "name": "DVC (Data Version Control)",
-        "type": "open-source",
-        "url": "https://dvc.org"
-      },
-      {
         "name": "Open Policy Agent",
         "type": "open-source",
         "url": "https://www.openpolicyagent.org"
@@ -25601,16 +25355,13 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM02",
-        "LLM07",
-        "LLM03",
-        "LLM08"
+        "LLM07"
       ],
       "dsgai_2026": [
         "DSGAI13"
       ],
       "agentic_top10": [
-        "ASI06",
-        "ASI03"
+        "ASI06"
       ]
     },
     "changelog": [
@@ -25876,27 +25627,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data confidentiality",
-        "control_name": "§5.4",
-        "tier": "Hardening",
+        "control_id": "Common ICS vulnerabilities",
+        "control_name": "§5.3",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "OT knowledge encoded in models requires protection"
+        "notes": "Injectable query interfaces to OT data"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Risk assessment",
         "control_name": "§6.2",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Model extraction as OT intelligence gathering vector"
+        "notes": "Assess generated-query reach"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network monitoring",
-        "control_name": "§7.3",
-        "tier": "Hardening",
+        "control_id": "Security controls",
+        "control_name": "§7.2",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor for systematic extraction query patterns"
+        "notes": "Parameterise and scope generated queries"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -26031,35 +25782,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-TA",
-        "control_name": "Design / Threat Assessment",
-        "tier": "Hardening",
+        "control_id": "D-SR",
+        "control_name": "Design / Security Requirements",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Model extraction attack surface: API rate limits, confidence scores, output verbosity"
+        "notes": "Require parameterisation, allowlisting, and scope limits"
+      },
+      {
+        "framework": "OWASP SAMM v2.0",
+        "control_id": "I-SB",
+        "control_name": "Implementation / Secure Build",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Execute under the user's permissions; never a privileged service account"
       },
       {
         "framework": "OWASP SAMM v2.0",
         "control_id": "V-ST",
         "control_name": "Verification / Security Testing",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Attempt model extraction via systematic querying; verify detection and rate limiting"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Alert on systematic query patterns consistent with extraction attempts"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SR",
-        "control_name": "Design / Security Requirements",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Minimise logit exposure, confidence scores, and internal state leakage"
+        "notes": "Probe for destructive/over-broad generated queries"
       },
       {
         "framework": "CWE/CVE",
@@ -26164,35 +25907,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "API credentials with high quota enabling systematic extraction",
+        "control_id": "Gateway service account can run destructive/over-broad queries",
         "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Per-user quotas; minimum default quota"
+        "notes": "Execute under the user's scoped permissions, not a privileged account"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived inference API credentials enable sustained extraction campaigns",
-        "control_name": "NHI-7 Long-Lived Credentials",
-        "tier": "Hardening",
+        "control_id": "Weak gateway-to-DB auth enables spoofing",
+        "control_name": "NHI-4 Insecure Authentication",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Rotate API credentials; implement per-session tokens"
+        "notes": "Strong mutual auth to the data source"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — data ownership and rights management",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Parameterised query handling",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements that establish clear data ownership, licensing terms, and permitted use for all datasets in AI pipelines"
+        "notes": "Parameterise and scope generated queries"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review/test of gateway code",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Injection tests against the gateway"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — ownership-based access controls",
+        "control_name": "Execution-time access control",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement access controls that enforce data ownership boundaries; prevent use of datasets outside their licensed scope or ownership agreement"
+        "notes": "Run under the user's permissions, not a service account"
       },
       {
         "framework": "FedRAMP",
@@ -26291,26 +26042,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/sqlfluff/sqlfluff"
       },
       {
-        "name": "Collibra",
-        "type": "commercial",
-        "url": "https://www.collibra.com"
-      },
-      {
-        "name": "Alation",
-        "type": "commercial",
-        "url": "https://www.alation.com"
-      },
-      {
-        "name": "Apache Atlas",
-        "type": "open-source",
-        "url": "https://atlas.apache.org"
-      },
-      {
-        "name": "CycloneDX",
-        "type": "open-source",
-        "url": "https://cyclonedx.org"
-      },
-      {
         "name": "LLM Guard",
         "type": "open-source",
         "url": "https://github.com/protectai/llm-guard"
@@ -26355,18 +26086,12 @@ window.CROSSWALK_DATA = [
       "llm_top10": [
         "LLM05",
         "LLM01",
-        "LLM02",
-        "LLM03",
         "LLM06"
       ],
       "agentic_top10": [
         "ASI02",
         "ASI05",
-        "ASI01",
-        "ASI04"
-      ],
-      "dsgai_2026": [
-        "DSGAI14"
+        "ASI01"
       ]
     },
     "changelog": [
@@ -26617,27 +26342,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risks",
-        "control_name": "§5.5",
+        "control_id": "Data security",
+        "control_name": "§5.4",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Third-party OT tool data leakage"
+        "notes": "Protect the OT RAG/embedding tier"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risk management",
-        "control_name": "§6.3",
+        "control_id": "Security controls",
+        "control_name": "§7.1",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Tool data scope in OT security assessment"
+        "notes": "Harden the vector store deployment"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network monitoring",
+        "control_id": "Data flow controls",
         "control_name": "§7.3",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor OT tool data flows"
+        "notes": "Scope retrieval to authorised OT data"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -26765,43 +26490,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SR",
-        "control_name": "Design / Security Requirements",
+        "control_id": "D-SA",
+        "control_name": "Design / Security Architecture",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Minimum data returned per tool; response scope limitations"
+        "notes": "Per-namespace/tenant access control on the vector store"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
+        "control_id": "I-SD",
+        "control_name": "Implementation / Secure Deployment",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Filter tool responses to minimum data required before passing to model"
+        "notes": "Authenticated, network-restricted, encrypted-at-rest deployment"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-ST",
-        "control_name": "Verification / Security Testing",
+        "control_id": "V-AA",
+        "control_name": "Verification / Architecture Assessment",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Automated tests verifying tool responses are scoped to minimum"
+        "notes": "Validate auth, isolation, and exposure"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
+        "control_id": "O-EM",
+        "control_name": "Operations / Environment Management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "All tools reviewed for data scope before integration"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Log all tool responses; alert on anomalous data volumes"
+        "notes": "Keep the vector DB patched and hardened"
       },
       {
         "framework": "CWE/CVE",
@@ -26890,51 +26607,51 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party tool credentials with excessive data access",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "Vector DB exposed via weak/no auth",
+        "control_name": "NHI-4 Insecure Authentication",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Review all third-party tool credentials; reduce to minimum scope"
+        "notes": "Enforce strong auth and network restriction"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Tool integration credentials with broad data access",
+        "control_id": "Service accounts read across namespaces/tenants",
         "control_name": "NHI-5 Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Minimum scope per tool integration"
+        "notes": "Per-namespace scoped identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Same credential used across multiple tool integrations",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "Vector-store credentials stored in plaintext",
+        "control_name": "NHI-6 Insecure Credential Storage",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Separate credentials per tool"
+        "notes": "Vault all vector-store credentials"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — purpose limitation controls",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect the vector store",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements enforcing data purpose limitation — each dataset must have documented permitted uses and technical controls preventing unauthorised repurposing"
+        "notes": "Authenticated, per-namespace access; encrypt embeddings"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.7.2-PS",
-        "control_name": "Review for security vulnerabilities — misuse and manipulation detection",
+        "control_id": "PS.2.1-PS",
+        "control_name": "Integrity of the embedding tier",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include data misuse and manipulation scenarios in pre-release reviews; verify that purpose limitation controls are enforced and cannot be bypassed"
+        "notes": "Detect tampering of stored vectors"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "RV.1.1-PS",
-        "control_name": "Identify and confirm vulnerabilities — production misuse monitoring",
+        "control_id": "PW.6.1-PS",
+        "control_name": "Secure configuration",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Establish procedures to detect data misuse and manipulation in production including monitoring for purpose-scope violations and data manipulation patterns"
+        "notes": "Harden vector-DB configuration and exposure"
       },
       {
         "framework": "FedRAMP",
@@ -27028,26 +26745,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/qdrant/qdrant"
       },
       {
-        "name": "Immuta",
-        "type": "commercial",
-        "url": "https://www.immuta.com"
-      },
-      {
-        "name": "Privacera",
-        "type": "commercial",
-        "url": "https://privacera.com"
-      },
-      {
-        "name": "Apache Ranger",
-        "type": "open-source",
-        "url": "https://ranger.apache.org"
-      },
-      {
-        "name": "Collibra",
-        "type": "commercial",
-        "url": "https://www.collibra.com"
-      },
-      {
         "name": "HashiCorp Vault",
         "type": "commercial",
         "url": "https://www.vaultproject.io"
@@ -27131,16 +26828,10 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM08",
-        "LLM07",
-        "LLM06",
-        "LLM03",
         "LLM02"
       ],
       "agentic_top10": [
-        "ASI06",
-        "ASI05",
-        "ASI01",
-        "ASI02"
+        "ASI06"
       ]
     },
     "changelog": [
@@ -27389,27 +27080,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data confidentiality",
+        "control_id": "Data security",
         "control_name": "§5.4",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "OT-trained model weights are sensitive OT intellectual property"
+        "notes": "Protect telemetry containing OT data"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Risk assessment",
         "control_name": "§6.2",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Model theft as OT IP theft scenario"
+        "notes": "Assess what telemetry captures"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network monitoring",
+        "control_id": "Data flow controls",
         "control_name": "§7.3",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Monitor model storage access patterns"
+        "notes": "Redact OT data before logging"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -27537,43 +27228,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SA",
-        "control_name": "Design / Security Architecture",
-        "tier": "Hardening",
+        "control_id": "O-OM",
+        "control_name": "Operations / Operational Management",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Treat model weights as crown-jewel assets with appropriate access controls"
+        "notes": "Redact/hash sensitive fields before logging; bound retention"
       },
       {
         "framework": "OWASP SAMM v2.0",
         "control_id": "G-PC",
         "control_name": "Governance / Policy & Compliance",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Classify model weights; require formal access control and custodian assignment"
+        "notes": "Define what telemetry may capture and for how long"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-AA",
-        "control_name": "Verification / Architecture Assessment",
-        "tier": "Hardening",
+        "control_id": "I-SB",
+        "control_name": "Implementation / Secure Build",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Periodic review of model storage access controls"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Alert on unexpected access to model weight storage"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-SM",
-        "control_name": "Governance / Strategy & Metrics",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Document model IP protection controls in security programme roadmap"
+        "notes": "Build redaction into logging/tracing libraries"
       },
       {
         "framework": "CWE/CVE",
@@ -27662,35 +27337,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Model storage service account with read access from unexpected paths",
-        "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Hardening",
+        "control_id": "Credentials captured in logs/traces",
+        "control_name": "NHI-2 Secret Leakage",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Minimum scope: only authorised inference service can read model weights"
+        "notes": "Redact secrets before logging; scan sinks"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Model storage credentials in plaintext config",
-        "control_name": "NHI-6 Insecure Credential Storage",
-        "tier": "Hardening",
+        "control_id": "Broad log-store access widens exposure",
+        "control_name": "NHI-5 Over-Privileged NHI",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vault all model storage credentials"
+        "notes": "Scope log-store access; restrict who/what reads telemetry"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect telemetry stores",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Restrict access to logs/traces"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — consent management requirements",
+        "control_name": "Retention requirements",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements mandating consent verification before personal data enters AI training, fine-tuning, or inference pipelines"
+        "notes": "Bound telemetry retention by policy"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.2.1-PS",
-        "control_name": "Design software — consent enforcement architecture",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Redaction in the telemetry path",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Design AI systems with consent enforcement mechanisms that validate consent status before data processing and honour consent withdrawal across all pipeline stages"
+        "notes": "Redact/hash sensitive fields before logging"
       },
       {
         "framework": "FedRAMP",
@@ -27789,26 +27472,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/fluent/fluent-bit"
       },
       {
-        "name": "OneTrust",
-        "type": "commercial",
-        "url": "https://www.onetrust.com"
-      },
-      {
-        "name": "Transcend",
-        "type": "commercial",
-        "url": "https://transcend.io"
-      },
-      {
-        "name": "CookieYes",
-        "type": "open-source",
-        "url": "https://www.cookieyes.com"
-      },
-      {
-        "name": "Osano",
-        "type": "commercial",
-        "url": "https://www.osano.com"
-      },
-      {
         "name": "Microsoft Presidio",
         "type": "open-source",
         "url": "https://github.com/microsoft/presidio"
@@ -27895,17 +27558,14 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "dsgai_2026": [
         "DSGAI01",
-        "DSGAI07",
-        "DSGAI12"
+        "DSGAI07"
       ],
       "llm_top10": [
-        "LLM02",
-        "LLM03",
-        "LLM06"
+        "LLM02"
       ],
       "agentic_top10": [
-        "ASI09",
-        "ASI03"
+        "ASI03",
+        "ASI09"
       ]
     },
     "changelog": [
@@ -28148,27 +27808,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT data confidentiality",
-        "control_name": "§5.4",
-        "tier": "Foundational",
+        "control_id": "Common ICS vulnerabilities",
+        "control_name": "§5.3",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Inference inputs are OT data and require protection"
+        "notes": "Aggregated OT data concentrates risk"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Risk assessment",
         "control_name": "§6.2",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Inference data exposure in OT risk assessment"
+        "notes": "Assess context-assembly data need"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network monitoring",
+        "control_id": "Data flow controls",
         "control_name": "§7.3",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Monitor inference data leaving OT boundary"
+        "notes": "Minimise and authorise context data"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -28296,35 +27956,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
+        "control_id": "D-SA",
+        "control_name": "Design / Security Architecture",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Assemble only need-to-know data into context per task"
+      },
+      {
+        "framework": "OWASP SAMM v2.0",
         "control_id": "D-SR",
         "control_name": "Design / Security Requirements",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Define what inference data may be logged, retained, and shared"
+        "notes": "Require each context item to be authorised for the caller"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
-        "tier": "Foundational",
+        "control_id": "V-ST",
+        "control_name": "Verification / Security Testing",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Log only what is operationally necessary; scrub sensitive data from logs"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-EM",
-        "control_name": "Operations / Environment Management",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Access controls, encryption, and retention policies for all inference logs"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Documented policy on inference data retention periods and deletion"
+        "notes": "Attempt to extract the full assembled context"
       },
       {
         "framework": "CWE/CVE",
@@ -28421,35 +28073,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Inference log service account with broad read access",
+        "control_id": "The assembling identity can fetch beyond task need",
         "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Minimum scope: only authorised audit function can read inference logs"
-      },
-      {
-        "framework": "OWASP NHI Top 10",
-        "control_id": "Service account credentials embedded in inference log entries",
-        "control_name": "NHI-2 Secret Leakage",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Scan and scrub credentials from inference logs"
+        "notes": "Scope context-assembly identity to the caller's authorised data"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — data minimisation requirements",
+        "control_name": "Context-minimisation requirements",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Define security requirements enforcing data minimisation — AI systems must collect and process only the data necessary for their documented purpose"
+        "scope": "Both",
+        "notes": "Require need-to-know context assembly"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.2.1-PS",
-        "control_name": "Design software — minimisation-by-design",
+        "control_name": "Design review of context assembly",
         "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Design AI data pipelines with data minimisation controls built in; implement field-level filtering, aggregation, and anonymisation at ingestion"
+        "scope": "Both",
+        "notes": "Authorise each context item for the caller"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Secure assembly in code",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Cap and scope context construction"
       },
       {
         "framework": "FedRAMP",
@@ -28522,26 +28174,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/leondz/garak"
       },
       {
-        "name": "Presidio",
-        "type": "open-source",
-        "url": "https://github.com/microsoft/presidio"
-      },
-      {
-        "name": "ARX Data Anonymization",
-        "type": "open-source",
-        "url": "https://arx.deidentifier.org"
-      },
-      {
-        "name": "Amnesia",
-        "type": "open-source",
-        "url": "https://amnesia.openaire.eu"
-      },
-      {
-        "name": "Google Differential Privacy",
-        "type": "open-source",
-        "url": "https://github.com/google/differential-privacy"
-      },
-      {
         "name": "Open Policy Agent",
         "type": "open-source",
         "url": "https://www.openpolicyagent.org"
@@ -28606,16 +28238,12 @@ window.CROSSWALK_DATA = [
         "LLM07",
         "LLM02",
         "LLM08",
-        "LLM06",
         "LLM01"
       ],
       "agentic_top10": [
         "ASI01",
         "ASI06",
         "ASI02"
-      ],
-      "dsgai_2026": [
-        "DSGAI03"
       ]
     },
     "changelog": [
@@ -28858,27 +28486,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risks",
-        "control_name": "§5.5",
+        "control_id": "Common ICS vulnerabilities",
+        "control_name": "§5.3",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Third-party data in OT context"
+        "notes": "Workstation assistant overreach into OT data"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risk management",
-        "control_name": "§6.3",
+        "control_id": "Risk assessment",
+        "control_name": "§6.2",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Data source assessment for OT GenAI"
+        "notes": "Assess endpoint assistant scope"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Third-party management",
-        "control_name": "§8.4",
+        "control_id": "Security controls",
+        "control_name": "§7.1",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vendor programme for OT data suppliers"
+        "notes": "Constrain endpoint access"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -29006,19 +28634,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
+        "control_id": "D-SA",
+        "control_name": "Design / Security Architecture",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Approved vendor list for all external data sources"
+        "notes": "Constrain assistant access to declared resources only"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
+        "control_id": "I-SD",
+        "control_name": "Implementation / Secure Deployment",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Inventory of all external data sources with security contact and last-verified date"
+        "notes": "Grant minimal local permissions; require explicit consent"
       },
       {
         "framework": "OWASP SAMM v2.0",
@@ -29026,15 +28654,7 @@ window.CROSSWALK_DATA = [
         "control_name": "Verification / Architecture Assessment",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Architecture review validates all external data dependencies against policy"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Track security advisories and availability for all integrated data sources"
+        "notes": "Validate the assistant cannot read out-of-scope data"
       },
       {
         "framework": "CWE/CVE",
@@ -29131,51 +28751,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party data source API keys with excessive scope",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "The assistant identity can access files/resources beyond scope",
+        "control_name": "NHI-5 Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Review all third-party credentials; reduce to minimum"
+        "notes": "Grant minimal, declared local permissions"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party development credentials used in production",
-        "control_name": "NHI-8 Environment Isolation Failure",
+        "control_id": "Assistant acts as the user without attribution",
+        "control_name": "NHI-10 Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Enforce environment isolation for third-party credentials"
-      },
-      {
-        "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party credentials embedded in shared config",
-        "control_name": "NHI-2 Secret Leakage",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Vault all third-party data source credentials"
+        "notes": "Bind actions to an attributable identity with consent"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — privacy preservation requirements",
+        "control_id": "PW.4.1-PS",
+        "control_name": "Vet endpoint extensions",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements that mandate privacy impact assessments, privacy-preserving techniques, and limits on inference of sensitive attributes for all AI systems"
-      },
-      {
-        "framework": "NIST SP 800-218A",
-        "control_id": "PW.2.1-PS",
-        "control_name": "Design software — privacy-preserving AI architecture",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Design AI systems with privacy preservation as a core architectural principle; embed differential privacy, federated learning, or secure computation where appropriate"
+        "notes": "Review assistant/extension permissions before use"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — privacy boundary enforcement",
+        "control_name": "Protect local data access",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement access controls that prevent cross-context data combination enabling re-identification or sensitive attribute inference"
+        "notes": "Constrain to declared resources; require consent"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.2.1-PS",
+        "control_name": "Design review of scope",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Model endpoint data-access boundaries"
       },
       {
         "framework": "FedRAMP",
@@ -29266,26 +28878,6 @@ window.CROSSWALK_DATA = [
         "url": "https://www.crowdstrike.com"
       },
       {
-        "name": "OpenDP",
-        "type": "open-source",
-        "url": "https://opendp.org"
-      },
-      {
-        "name": "PySyft",
-        "type": "open-source",
-        "url": "https://github.com/OpenMined/PySyft"
-      },
-      {
-        "name": "TensorFlow Privacy",
-        "type": "open-source",
-        "url": "https://github.com/tensorflow/privacy"
-      },
-      {
-        "name": "Flower (Federated Learning)",
-        "type": "open-source",
-        "url": "https://flower.ai"
-      },
-      {
         "name": "Microsoft Defender for Endpoint",
         "type": "commercial",
         "url": "https://www.microsoft.com/en-us/security/business/endpoint-security"
@@ -29348,19 +28940,13 @@ window.CROSSWALK_DATA = [
       "agentic_top10": [
         "ASI10",
         "ASI02",
-        "ASI03",
-        "ASI07",
-        "ASI09"
+        "ASI03"
       ],
       "dsgai_2026": [
-        "DSGAI03",
-        "DSGAI17"
+        "DSGAI03"
       ],
       "llm_top10": [
-        "LLM06",
-        "LLM03",
-        "LLM08",
-        "LLM01"
+        "LLM06"
       ]
     },
     "changelog": [
@@ -29596,27 +29182,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risks",
-        "control_name": "§5.5",
+        "control_id": "Resilience & recovery",
+        "control_name": "§5.6",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Model components are supply chain assets in OT"
+        "notes": "OT availability depends on recoverable data/model assets"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risk management",
-        "control_name": "§6.3",
+        "control_id": "Risk assessment",
+        "control_name": "§6.2",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Model provenance for OT deployments"
+        "notes": "Assess availability impact of GenAI data loss"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Third-party management",
-        "control_name": "§8.4",
+        "control_id": "Security controls",
+        "control_name": "§7.2",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vendor assessment for model providers"
+        "notes": "Backup, recovery, and fail-safe design"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -29744,43 +29330,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
+        "control_id": "O-EM",
+        "control_name": "Operations / Environment Management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Only approved model sources; provenance verification required"
+        "notes": "Back up corpora, weights, and indices with tested restore"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "I-SB",
-        "control_name": "Implementation / Secure Build",
+        "control_id": "O-IM",
+        "control_name": "Operations / Incident Management",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "SBOM covering base models, adapters, and ML framework dependencies"
+        "notes": "Detect and respond to exhaustion/degradation"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-AA",
-        "control_name": "Verification / Architecture Assessment",
+        "control_id": "D-SA",
+        "control_name": "Design / Security Architecture",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Architecture review validates model sourcing against policy"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "D-TA",
-        "control_name": "Design / Threat Assessment",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Model compromise scenarios for base models, adapters, and frameworks"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Track CVEs and security advisories for all model components"
+        "notes": "Design quotas, rate limits, and graceful degradation"
       },
       {
         "framework": "CWE/CVE",
@@ -29869,51 +29439,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Model provider API keys with excessive access to model versions",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "Orphaned identities complicate clean recovery/failover",
+        "control_name": "NHI-1 Improper Offboarding",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Review and scope all model provider credentials"
+        "notes": "Lifecycle-managed identities for data/model assets"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Same model registry token used across dev/staging/production",
+        "control_id": "Shared credentials let one environment's failure cascade",
         "control_name": "NHI-8 Environment Isolation Failure",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate credentials per environment"
       },
       {
-        "framework": "OWASP NHI Top 10",
-        "control_id": "Model provider credentials in pipeline config",
-        "control_name": "NHI-2 Secret Leakage",
+        "framework": "NIST SP 800-218A",
+        "control_id": "PS.3.1-PS",
+        "control_name": "Archive & protect releases",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vault all model provider credentials"
+        "notes": "Back up corpora, weights, indices with tested restore"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.7.2-PS",
-        "control_name": "Review for security vulnerabilities — bias and fairness review",
+        "control_id": "RV.2.1-PS",
+        "control_name": "Assess & remediate availability incidents",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Include bias, fairness, and discrimination testing in pre-release model behaviour reviews; assess model outputs across protected attributes and demographic groups"
+        "notes": "Respond to exhaustion/loss events"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.8.2-PS",
-        "control_name": "Test for security vulnerabilities — adversarial fairness testing",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Resilience requirements",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Conduct adversarial testing for discriminatory outputs; test model behaviour across demographic groups, intersectional categories, and edge cases"
-      },
-      {
-        "framework": "NIST SP 800-218A",
-        "control_id": "RV.3.1-PS",
-        "control_name": "Analyse root causes — bias source tracing",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "When discriminatory behaviour is identified, conduct root cause analysis tracing bias to specific training data sources, labelling processes, or preprocessing steps"
+        "notes": "Require quotas, rate limits, graceful degradation"
       },
       {
         "framework": "FedRAMP",
@@ -30010,26 +29572,6 @@ window.CROSSWALK_DATA = [
         "name": "Chaos Monkey",
         "type": "open-source",
         "url": "https://github.com/Netflix/chaosmonkey"
-      },
-      {
-        "name": "Fairlearn",
-        "type": "open-source",
-        "url": "https://fairlearn.org"
-      },
-      {
-        "name": "AI Fairness 360",
-        "type": "open-source",
-        "url": "https://aif360.mybluemix.net"
-      },
-      {
-        "name": "What-If Tool",
-        "type": "open-source",
-        "url": "https://pair-code.github.io/what-if-tool"
-      },
-      {
-        "name": "Aequitas",
-        "type": "open-source",
-        "url": "https://github.com/dssg/aequitas"
       },
       {
         "name": "AWS Backup / Azure Backup",
@@ -30139,13 +29681,10 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM10",
-        "LLM03",
-        "LLM04",
         "LLM09"
       ],
       "agentic_top10": [
         "ASI08",
-        "ASI07",
         "ASI09"
       ]
     },
@@ -30367,19 +29906,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data confidentiality",
+        "control_id": "Data security",
         "control_name": "§5.4",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Retention of OT data beyond required period is a confidentiality risk"
+        "notes": "Protect against inference-based OT data recovery"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Risk assessment",
         "control_name": "§6.2",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Data retention as OT risk scenario"
+        "notes": "Assess inference exposure"
+      },
+      {
+        "framework": "NIST SP 800-82 Rev 3",
+        "control_id": "Data flow controls",
+        "control_name": "§7.3",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Limit signals enabling inference"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -30507,35 +30054,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
-        "tier": "Foundational",
+        "control_id": "D-TA",
+        "control_name": "Design / Threat Assessment",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Documented retention periods and deletion procedures for all GenAI data"
+        "notes": "Model membership/inversion/attribute-inference exposure"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SR",
-        "control_name": "Design / Security Requirements",
-        "tier": "Foundational",
+        "control_id": "V-ST",
+        "control_name": "Verification / Security Testing",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Right-to-erasure and retention limits built into system requirements"
+        "notes": "Measure attack advantage against a documented threshold"
       },
       {
         "framework": "OWASP SAMM v2.0",
         "control_id": "O-OM",
         "control_name": "Operations / Operational Management",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Automated verification that data is deleted per retention schedule"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-SM",
-        "control_name": "Governance / Strategy & Metrics",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "GenAI data lifecycle integrated into existing privacy programme"
+        "notes": "Limit signals (logits/confidence) that aid inference"
       },
       {
         "framework": "CWE/CVE",
@@ -30616,43 +30155,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Service account with access to retained data beyond declared function",
+        "control_id": "Broad inference API scope enables high-volume probing",
         "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Minimum scope for data access credentials"
+        "notes": "Scope and rate-limit inference identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Humans using machine credentials for data deletion — no audit trail",
-        "control_name": "NHI-10 Human Use of NHI",
-        "tier": "Foundational",
+        "control_id": "Durable API keys sustain extraction campaigns",
+        "control_name": "NHI-7 Long-Lived Credentials",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Enforce human identity for all compliance operations"
+        "notes": "Short-lived inference tokens with per-principal budgets"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — AI data governance requirements",
+        "control_id": "PW.8.2-PS",
+        "control_name": "Adversarial inference testing",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Define security requirements mandating AI-specific data governance including data stewardship, accountability structures, and policy enforcement mechanisms"
+        "notes": "Run membership-inference/inversion attacks"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.2.1-PS",
-        "control_name": "Design software — governance-integrated AI architecture",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review of inference exposure",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Design AI systems with governance controls integrated into pipeline architecture; embed policy enforcement, approval workflows, and audit capabilities"
+        "notes": "Limit signals (logits/confidence) aiding inference"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "RV.3.1-PS",
-        "control_name": "Analyse root causes — governance failure analysis",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect training data",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "When data governance failures contribute to AI incidents, conduct root cause analysis to identify governance gaps and strengthen frameworks"
+        "notes": "Access-control and minimise training data"
       },
       {
         "framework": "FedRAMP",
@@ -30741,26 +30280,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/opendp/opendp"
       },
       {
-        "name": "Collibra",
-        "type": "commercial",
-        "url": "https://www.collibra.com"
-      },
-      {
-        "name": "Atlan",
-        "type": "commercial",
-        "url": "https://atlan.com"
-      },
-      {
-        "name": "Apache Atlas",
-        "type": "open-source",
-        "url": "https://atlas.apache.org"
-      },
-      {
-        "name": "Open Policy Agent",
-        "type": "open-source",
-        "url": "https://www.openpolicyagent.org"
-      },
-      {
         "name": "Opacus",
         "type": "open-source",
         "url": "https://opacus.ai"
@@ -30798,17 +30317,12 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM02",
-        "LLM08",
-        "LLM06",
-        "LLM05"
+        "LLM08"
       ],
       "dsgai_2026": [
-        "DSGAI10",
-        "DSGAI15"
+        "DSGAI10"
       ],
       "agentic_top10": [
-        "ASI04",
-        "ASI09",
         "ASI03",
         "ASI01"
       ]
@@ -31045,27 +30559,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Availability risks",
-        "control_name": "§5.6",
-        "tier": "Hardening",
+        "control_id": "Data security",
+        "control_name": "§5.4",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "OT GenAI pipeline failure as availability risk"
+        "notes": "Protect OT data shown to reviewers"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
         "control_id": "Risk assessment",
         "control_name": "§6.2",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Cascade failure scenarios in OT risk register"
+        "notes": "Assess reviewer exposure"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
-        "tier": "Hardening",
+        "control_id": "Data flow controls",
+        "control_name": "§7.3",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Circuit breakers between OT data pipeline layers"
+        "notes": "Minimise reviewer-facing OT data"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -31193,43 +30707,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SA",
-        "control_name": "Design / Security Architecture",
-        "tier": "Hardening",
+        "control_id": "G-PC",
+        "control_name": "Governance / Policy & Compliance",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Design circuit breakers and isolation boundaries between data pipeline stages"
+        "notes": "Define what labellers may see and how it is controlled"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "O-IM",
-        "control_name": "Operations / Incident Management",
-        "tier": "Hardening",
+        "control_id": "D-SR",
+        "control_name": "Design / Security Requirements",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Detect correlated failures across pipeline stages; alert before full cascade"
+        "notes": "Mask non-essential sensitive fields in review/labeling UIs"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "O-EM",
-        "control_name": "Operations / Environment Management",
-        "tier": "Hardening",
+        "control_id": "O-OM",
+        "control_name": "Operations / Operational Management",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Continuous health checks across all pipeline components"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "V-AA",
-        "control_name": "Verification / Architecture Assessment",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Verify blast radius containment design before deployment"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "O-IM",
-        "control_name": "Operations / Incident Management",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Documented runbook for data pipeline cascade scenarios"
+        "notes": "Authorise and log reviewer access to records"
       },
       {
         "framework": "CWE/CVE",
@@ -31318,43 +30816,43 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared credential across pipeline stages — one failure affects all",
-        "control_name": "NHI-9 NHI Reuse",
-        "tier": "Hardening",
+        "control_id": "Labellers share a machine identity, no per-reviewer attribution",
+        "control_name": "NHI-10 Human Use of NHI",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Separate credentials per pipeline stage"
+        "notes": "Attributable per-reviewer identity"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Single credential covering multiple pipeline stages amplifies cascade",
+        "control_id": "Reviewer tooling reaches more records than the queue needs",
         "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Hardening",
+        "tier": "Foundational",
         "scope": "Both",
-        "notes": "Per-stage minimum scope credentials"
+        "notes": "Scope reviewer access to assigned items"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect reviewer-facing data",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Scope reviewer access; mask non-essential fields"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Reviewer data-handling requirements",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Define what labellers may see"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PW.4.1-PS",
-        "control_name": "Reuse existing well-secured software — third-party data vetting",
+        "control_name": "Vet external labelling providers",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Vet all third-party data sources, APIs, and pre-trained components for security, quality, compliance, and provenance before use in AI pipelines"
-      },
-      {
-        "framework": "NIST SP 800-218A",
-        "control_id": "PS.2.1-PS",
-        "control_name": "Verify software integrity — third-party data integrity",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Verify integrity of all third-party data deliveries using checksums, signatures, or schema validation; detect tampering or corruption before pipeline ingestion"
-      },
-      {
-        "framework": "NIST SP 800-218A",
-        "control_id": "RV.1.1-PS",
-        "control_name": "Identify and confirm vulnerabilities — third-party monitoring",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Monitor for security advisories and quality issues from third-party data providers; establish triage procedures for third-party data incidents"
+        "notes": "Assess third-party labelling data exposure"
       },
       {
         "framework": "FedRAMP",
@@ -31438,26 +30936,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/microsoft/presidio"
       },
       {
-        "name": "Great Expectations",
-        "type": "open-source",
-        "url": "https://greatexpectations.io"
-      },
-      {
-        "name": "CycloneDX",
-        "type": "open-source",
-        "url": "https://cyclonedx.org"
-      },
-      {
-        "name": "Sigstore",
-        "type": "open-source",
-        "url": "https://www.sigstore.dev"
-      },
-      {
-        "name": "OWASP Dependency-Check",
-        "type": "open-source",
-        "url": "https://owasp.org/www-project-dependency-check/"
-      },
-      {
         "name": "Microsoft Presidio",
         "type": "open-source",
         "url": "https://github.com/microsoft/presidio"
@@ -31524,13 +31002,10 @@ window.CROSSWALK_DATA = [
         "DSGAI08"
       ],
       "llm_top10": [
-        "LLM02",
-        "LLM05",
-        "LLM03"
+        "LLM02"
       ],
       "agentic_top10": [
-        "ASI10",
-        "ASI04",
+        "ASI03",
         "ASI09"
       ]
     },
@@ -31774,19 +31249,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
-        "tier": "Foundational",
+        "control_id": "Data security",
+        "control_name": "§5.4",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Regulatory compliance as OT risk scenario"
+        "notes": "Protect model artefacts as OT IP"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT security programme",
-        "control_name": "§8.2",
-        "tier": "Foundational",
+        "control_id": "Risk assessment",
+        "control_name": "§6.2",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Compliance programme for OT GenAI deployments"
+        "notes": "Assess extraction exposure"
+      },
+      {
+        "framework": "NIST SP 800-82 Rev 3",
+        "control_id": "Data flow controls",
+        "control_name": "§7.3",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Constrain inference access"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -31914,43 +31397,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
-        "tier": "Foundational",
+        "control_id": "D-TA",
+        "control_name": "Design / Threat Assessment",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Mapped regulatory obligations for all applicable jurisdictions"
+        "notes": "Model query-based extraction and weight-theft paths"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-SM",
-        "control_name": "Governance / Strategy & Metrics",
-        "tier": "Foundational",
+        "control_id": "V-ST",
+        "control_name": "Verification / Security Testing",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Compliance KPIs tracked and reported to leadership"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SR",
-        "control_name": "Design / Security Requirements",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Regulatory obligations surfaced as design requirements for all data flows"
+        "notes": "Simulate model-stealing query campaigns"
       },
       {
         "framework": "OWASP SAMM v2.0",
         "control_id": "O-OM",
         "control_name": "Operations / Operational Management",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Continuous monitoring for regulatory control effectiveness"
+        "notes": "Per-principal budgets; detect systematic querying"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-EG",
-        "control_name": "Governance / Education & Guidance",
-        "tier": "Foundational",
+        "control_id": "G-PC",
+        "control_name": "Governance / Policy & Compliance",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "All staff handling regulated data understand applicable obligations"
+        "notes": "Access-control weights; classify the model as IP"
       },
       {
         "framework": "CWE/CVE",
@@ -32047,43 +31522,51 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Humans using machine credentials — no attribution for compliance evidence",
-        "control_name": "NHI-10 Human Use of NHI",
-        "tier": "Foundational",
+        "control_id": "Broad API/weight access enables extraction",
+        "control_name": "NHI-5 Over-Privileged NHI",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Enforce human identity for all regulated data operations"
+        "notes": "Scope inference and artifact-store identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Compliance audit credentials leaked — tampering with evidence possible",
-        "control_name": "NHI-2 Secret Leakage",
-        "tier": "Foundational",
+        "control_id": "Durable keys sustain stealing campaigns",
+        "control_name": "NHI-7 Long-Lived Credentials",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Protect audit credential integrity"
+        "notes": "Short-lived keys; per-principal query budgets"
       },
       {
-        "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — data localization requirements",
-        "tier": "Foundational",
+        "framework": "OWASP NHI Top 10",
+        "control_id": "Weight-store credentials in plaintext enable direct theft",
+        "control_name": "NHI-6 Insecure Credential Storage",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Define security requirements mandating compliance with data localization laws for all AI pipeline data; document jurisdictional restrictions for each dataset"
+        "notes": "Vault weight-store credentials; encrypt at rest"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.1.1-PS",
-        "control_name": "Protect all code from unauthorised access — jurisdictional access controls",
+        "control_name": "Protect model artefacts",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Implement access controls that enforce data localization boundaries; prevent data transfer or processing outside authorised jurisdictions"
+        "notes": "Access-control weights; scope/budget inference"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "PS.3.1-PS",
-        "control_name": "Archive and protect software releases — jurisdiction-aware artefact management",
+        "control_name": "Provenance & release protection",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Maintain jurisdiction metadata on all data and model artefacts; enable verification that training and serving comply with localization requirements"
+        "notes": "Protect and track model releases"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PW.8.2-PS",
+        "control_name": "Extraction-resistance testing",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Simulate model-stealing query campaigns"
       },
       {
         "framework": "FedRAMP",
@@ -32187,26 +31670,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
       },
       {
-        "name": "Azure Policy",
-        "type": "commercial",
-        "url": "https://azure.microsoft.com/en-us/products/azure-policy"
-      },
-      {
-        "name": "AWS Config",
-        "type": "commercial",
-        "url": "https://aws.amazon.com/config/"
-      },
-      {
-        "name": "Open Policy Agent",
-        "type": "open-source",
-        "url": "https://www.openpolicyagent.org"
-      },
-      {
-        "name": "Privacera",
-        "type": "commercial",
-        "url": "https://privacera.com"
-      },
-      {
         "name": "HashiCorp Vault",
         "type": "commercial",
         "url": "https://www.vaultproject.io"
@@ -32251,9 +31714,8 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM02",
-        "LLM04",
-        "LLM07",
-        "LLM05"
+        "LLM10",
+        "LLM04"
       ],
       "dsgai_2026": [
         "DSGAI18",
@@ -32528,19 +31990,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
-        "tier": "Foundational",
+        "control_id": "Supply chain / connectivity",
+        "control_name": "§5.5",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Provenance as OT data quality and audit risk"
+        "notes": "Tainted external OT data sources"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT security programme",
-        "control_name": "§8.2",
-        "tier": "Foundational",
+        "control_id": "Supply chain risk",
+        "control_name": "§6.3",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Data lineage as OT governance requirement"
+        "notes": "Vet OT data-source provenance"
+      },
+      {
+        "framework": "NIST SP 800-82 Rev 3",
+        "control_id": "Supply chain program",
+        "control_name": "§8.4",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Provenance across the OT data supply chain"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -32668,43 +32138,35 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "G-PC",
-        "control_name": "Governance / Policy & Compliance",
-        "tier": "Foundational",
+        "control_id": "D-TA",
+        "control_name": "Design / Threat Assessment",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Policy requiring provenance metadata for all GenAI data"
+        "notes": "Model disinformation injection into training/RAG sources"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "D-SR",
-        "control_name": "Design / Security Requirements",
-        "tier": "Foundational",
+        "control_id": "I-SB",
+        "control_name": "Implementation / Secure Build",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Provenance metadata built into data pipeline requirements"
+        "notes": "Vet, sign, and provenance-track training/RAG sources"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "O-OM",
-        "control_name": "Operations / Operational Management",
-        "tier": "Foundational",
+        "control_id": "V-ST",
+        "control_name": "Verification / Security Testing",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Alert on loss of provenance metadata in data flows"
+        "notes": "Probe for systematically false outputs on poisoned topics"
       },
       {
         "framework": "OWASP SAMM v2.0",
-        "control_id": "V-RT",
-        "control_name": "Verification / Requirements-Driven Testing",
-        "tier": "Foundational",
+        "control_id": "O-IM",
+        "control_name": "Operations / Incident Management",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Tests verifying provenance metadata is preserved through pipeline"
-      },
-      {
-        "framework": "OWASP SAMM v2.0",
-        "control_id": "G-SM",
-        "control_name": "Governance / Strategy & Metrics",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Provenance programme included in data governance roadmap"
+        "notes": "Detect anomalous content injected over time"
       },
       {
         "framework": "CWE/CVE",
@@ -32817,115 +32279,115 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Machine credentials used for ingestion operations — no individual attribution",
-        "control_name": "NHI-10 Human Use of NHI",
-        "tier": "Foundational",
+        "control_id": "Third-party source credentials inject tainted content",
+        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Enforce machine identity per pipeline component; log with component identity"
+        "notes": "Vet and scope third-party data-source identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Decommissioned pipeline identities remain in lineage records",
-        "control_name": "NHI-1 Improper Offboarding",
-        "tier": "Foundational",
+        "control_id": "Write access to corpora enables systematic injection",
+        "control_name": "NHI-5 Over-Privileged NHI",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Timely offboarding of pipeline NHIs"
+        "notes": "Read-only by default; scoped, signed ingestion"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Lineage system credentials leaked — provenance records can be tampered",
-        "control_name": "NHI-2 Secret Leakage",
-        "tier": "Foundational",
+        "control_id": "Durable write tokens sustain a poisoning campaign",
+        "control_name": "NHI-7 Long-Lived Credentials",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Protect lineage system credentials"
+        "notes": "Ephemeral, job-scoped write credentials"
       },
       {
         "framework": "OWASP NHI Top 10",
         "control_id": "DSGAI entries most affected",
         "control_name": "NHI Risk",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI21",
+        "control_id": "DSGAI07, DSGAI08, DSGAI17",
         "control_name": "NHI-1 Improper Offboarding",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI03, DSGAI06, DSGAI16",
+        "control_id": "DSGAI01, DSGAI02, DSGAI14",
         "control_name": "NHI-2 Secret Leakage",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "DevSecOps"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI13, DSGAI16, DSGAI17",
+        "control_id": "DSGAI03, DSGAI06, DSGAI21",
         "control_name": "NHI-3 Third-Party NHI",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Security"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI04, DSGAI08",
+        "control_id": "DSGAI05, DSGAI12, DSGAI13",
         "control_name": "NHI-4 Insecure Authentication",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Platform"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI02, DSGAI07, DSGAI08, DSGAI09",
+        "control_id": "DSGAI01, DSGAI04, DSGAI18, DSGAI20",
         "control_name": "NHI-5 Over-Privileged NHI",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI02, DSGAI09, DSGAI14",
+        "control_id": "DSGAI02, DSGAI13, DSGAI20",
         "control_name": "NHI-6 Insecure Storage",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Platform"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI02, DSGAI07, DSGAI09, DSGAI12",
+        "control_id": "DSGAI02, DSGAI04, DSGAI18, DSGAI20",
         "control_name": "NHI-7 Long-Lived",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI16, DSGAI17",
+        "control_id": "DSGAI11, DSGAI17",
         "control_name": "NHI-8 Env Isolation",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "DevSecOps"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI04, DSGAI07, DSGAI08, DSGAI19",
+        "control_id": "DSGAI06, DSGAI11",
         "control_name": "NHI-9 NHI Reuse",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI18, DSGAI20, DSGAI21",
+        "control_id": "DSGAI03, DSGAI08, DSGAI19",
         "control_name": "NHI-10 Human Use",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
         "control_id": "Date",
         "control_name": "Version",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Change"
       },
@@ -32933,33 +32395,41 @@ window.CROSSWALK_DATA = [
         "framework": "OWASP NHI Top 10",
         "control_id": "2026-03-27",
         "control_name": "1.0.0",
-        "tier": "Foundational",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": "Initial release — full mapping DSGAI01–DSGAI21 to NHI Top 10"
       },
       {
-        "framework": "NIST SP 800-218A",
-        "control_id": "PW.1.1-PS",
-        "control_name": "Define security requirements — regulatory compliance requirements",
-        "tier": "Foundational",
+        "framework": "OWASP NHI Top 10",
+        "control_id": "2026-05-29",
+        "control_name": "1.1.0",
+        "tier": "Hardening",
         "scope": "Both",
-        "notes": "Define security requirements that mandate compliance with all applicable data protection, privacy, and AI-specific regulations for each AI system deployment"
+        "notes": "Corrected to canonical DSGAI 2026 taxonomy (entries had used a pre-release taxonomy); NHI mappings, mitigations, and cross-references rewritten to match"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "PW.2.1-PS",
-        "control_name": "Design software — compliance-by-design",
+        "control_id": "PW.4.1-PS",
+        "control_name": "Vet & sign data sources",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "Design AI systems with regulatory compliance built into architecture; embed compliance controls, audit capabilities, and regulatory reporting into pipeline design"
+        "notes": "Provenance-track training/RAG sources"
+      },
+      {
+        "framework": "NIST SP 800-218A",
+        "control_id": "PS.2.1-PS",
+        "control_name": "Integrity verification",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Detect injected/tampered content"
       },
       {
         "framework": "NIST SP 800-218A",
         "control_id": "RV.3.1-PS",
-        "control_name": "Analyse root causes — compliance failure analysis",
+        "control_name": "Root-cause of disinformation incidents",
         "tier": "Foundational",
         "scope": "Both",
-        "notes": "When regulatory non-compliance is identified, conduct root cause analysis to determine the gap, affected data subjects, and required remediation"
+        "notes": "Analyse and remediate poisoning systemically"
       },
       {
         "framework": "FedRAMP",
@@ -33063,26 +32533,6 @@ window.CROSSWALK_DATA = [
         "url": "https://github.com/explodinggradients/ragas"
       },
       {
-        "name": "OneTrust",
-        "type": "commercial",
-        "url": "https://www.onetrust.com"
-      },
-      {
-        "name": "TrustArc",
-        "type": "commercial",
-        "url": "https://trustarc.com"
-      },
-      {
-        "name": "Open Policy Agent",
-        "type": "open-source",
-        "url": "https://www.openpolicyagent.org"
-      },
-      {
-        "name": "Transcend",
-        "type": "commercial",
-        "url": "https://transcend.io"
-      },
-      {
         "name": "LLM Guard",
         "type": "open-source",
         "url": "https://github.com/protectai/llm-guard"
@@ -33144,12 +32594,11 @@ window.CROSSWALK_DATA = [
     "crossrefs": {
       "llm_top10": [
         "LLM04",
-        "LLM09",
-        "LLM06",
-        "LLM07"
+        "LLM09"
       ],
       "agentic_top10": [
         "ASI06",
+        "ASI04",
         "ASI09"
       ],
       "dsgai_2026": [

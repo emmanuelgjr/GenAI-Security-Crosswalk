@@ -230,27 +230,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
+      "control_id": "Common ICS vulnerabilities",
       "control_name": "§5.3",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Safety system bypass in OT"
+      "notes": "Missing validation at OT/GenAI boundary"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Risk assessment",
       "control_name": "§6.2",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Guardrail bypass must be in OT risk register"
+      "notes": "Assess validation gaps per ingestion path"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Secure architecture",
-      "control_name": "§7.1",
-      "tier": "Hardening",
+      "control_id": "Security controls",
+      "control_name": "§7.2",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "GenAI guardrails must be independent of model inference layer"
+      "notes": "Enforce validation before persistence/use"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -378,43 +378,27 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
-      "tier": "Hardening",
+      "control_id": "D-SR",
+      "control_name": "Design / Security Requirements",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Guardrails at multiple layers: input, generation, output"
+      "notes": "Specify schema/type/size validation at every ingestion point"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "I-SB",
+      "control_name": "Implementation / Secure Build",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Enforce validation before data is persisted or used"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "V-ST",
       "control_name": "Verification / Security Testing",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Dedicated adversarial testing programme targeting all guardrail bypass vectors"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-IM",
-      "control_name": "Operations / Incident Management",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Alert on disabled or bypassed guardrails in production"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-SM",
-      "control_name": "Governance / Strategy & Metrics",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Guardrail effectiveness metrics reviewed by security leadership"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "V-AA",
-      "control_name": "Verification / Architecture Assessment",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Pre-deployment review of all guardrail bypass scenarios"
+      "notes": "Fuzz ingestion channels with malformed and adversarial records"
     },
     {
       "framework": "CWE/CVE",
@@ -504,35 +488,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Service account with guardrail configuration write access",
-      "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Hardening",
+      "control_id": "Unauthenticated pipeline stages accept spoofed/malformed data",
+      "control_name": "NHI-4 Insecure Authentication",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Minimum scope; no service account has guardrail disable capability"
+      "notes": "Enforce mTLS / signed requests between stages"
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "Over-scoped jobs persist bad data widely",
+      "control_name": "NHI-5 Over-Privileged NHI",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Scope each pipeline stage's identity to its inputs/outputs"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.2.1-PS",
-      "control_name": "Verify software integrity — data provenance verification",
+      "control_name": "Integrity verification mechanisms",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Verify provenance and integrity of all datasets used in training, fine-tuning, and evaluation; maintain cryptographic attestation of data origin and chain of custody"
+      "notes": "Detect tampering of data in transit/at rest"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.3.1-PS",
-      "control_name": "Archive and protect software releases — data versioning with provenance",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Validation in secure coding",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain versioned dataset snapshots with provenance metadata recording origin, collection method, processing steps, and quality metrics"
+      "notes": "Schema/type/size validation at every boundary"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.4.1-PS",
-      "control_name": "Reuse existing well-secured software — dataset quality vetting",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review & test for validation gaps",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vet all datasets for quality, completeness, representativeness, and fitness for purpose before use in any training or evaluation pipeline"
+      "notes": "Test ingestion paths with malformed/adversarial data"
     },
     {
       "framework": "FedRAMP",
@@ -623,24 +615,14 @@
       "url": "https://github.com/pyeve/cerberus"
     },
     {
-      "name": "DVC (Data Version Control)",
+      "name": "OpenLineage",
       "type": "open-source",
-      "url": "https://dvc.org"
+      "url": "https://openlineage.io"
     },
     {
       "name": "Apache Atlas",
       "type": "open-source",
       "url": "https://atlas.apache.org"
-    },
-    {
-      "name": "Pachyderm",
-      "type": "open-source",
-      "url": "https://www.pachyderm.com"
-    },
-    {
-      "name": "OpenLineage",
-      "type": "open-source",
-      "url": "https://openlineage.io"
     },
     {
       "name": "Collibra",
@@ -730,7 +712,6 @@
     "llm_top10": [
       "LLM05",
       "LLM04",
-      "LLM01",
       "LLM03"
     ],
     "dsgai_2026": [
@@ -739,8 +720,7 @@
     ],
     "agentic_top10": [
       "ASI02",
-      "ASI08",
-      "ASI04",
+      "ASI05",
       "ASI06"
     ]
   },

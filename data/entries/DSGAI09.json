@@ -229,11 +229,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities — data integrity",
-      "control_name": "§5.3",
+      "control_id": "Data security",
+      "control_name": "§5.4",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Corpus manipulation directly threatens OT operational integrity"
+      "notes": "Protect OT data across all media types"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -241,15 +241,15 @@
       "control_name": "§6.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "OT corpus manipulation must be in risk register as critical scenario"
+      "notes": "Assess per-modality leakage paths"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
+      "control_id": "Data flow controls",
+      "control_name": "§7.3",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Write authentication on all OT corpus stores"
+      "notes": "Extract/redact sensitive content per modality"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -381,7 +381,7 @@
       "control_name": "Design / Threat Assessment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Enumerate all write paths to the corpus and attack scenarios for each"
+      "notes": "Model hidden-data and injection paths across every modality"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -389,7 +389,7 @@
       "control_name": "Implementation / Secure Build",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Authenticate and verify all corpus writes; hash embeddings at ingest"
+      "notes": "Extract and redact sensitive content from all modalities"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -397,23 +397,7 @@
       "control_name": "Verification / Security Testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Attempt to inject manipulated documents; verify detection"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-IM",
-      "control_name": "Operations / Incident Management",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Alert on unexpected corpus changes or embedding distribution shifts"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "All corpus changes go through a review and approval process"
+      "notes": "Probe EXIF/steganography/embedded-text and generated-media leakage"
     },
     {
       "framework": "CWE/CVE",
@@ -495,43 +479,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Corpus write access held by service accounts that do not need it",
+      "control_id": "Modality processors reach more data than needed",
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Separate read and write credentials; write accounts require MFA"
+      "notes": "Scope each modality pipeline identity"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Corpus write credentials in plaintext config",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "Secrets embedded in media/metadata surface via processors",
+      "control_name": "NHI-2 Secret Leakage",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Vault all corpus write credentials"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived corpus write credentials persist beyond need",
-      "control_name": "NHI-7 Long-Lived Credentials",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Rotate corpus write credentials; implement short-lived write pattern"
+      "notes": "Strip metadata; scan extracted content for secrets"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — IP protection",
+      "control_name": "Protect multimodal data stores",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Protect model weights, architecture specifications, training data, and proprietary algorithms from unauthorised access; implement defence against model extraction attacks"
+      "notes": "Scope access to multimodal assets"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.3.1-PS",
-      "control_name": "Archive and protect software releases — IP asset management",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Cross-modal extraction & redaction",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain access-controlled, versioned registries for all IP-sensitive AI artefacts; enforce need-to-know access and log all access events"
+      "notes": "Redact extracted content across modalities"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Multimodal leakage testing",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Test EXIF/steganography/embedded-text paths"
     },
     {
       "framework": "FedRAMP",
@@ -622,26 +606,6 @@
       "url": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety"
     },
     {
-      "name": "ModelScan",
-      "type": "open-source",
-      "url": "https://github.com/protectai/modelscan"
-    },
-    {
-      "name": "Sigstore",
-      "type": "open-source",
-      "url": "https://www.sigstore.dev"
-    },
-    {
-      "name": "AWS Nitro Enclaves",
-      "type": "commercial",
-      "url": "https://aws.amazon.com/ec2/nitro/nitro-enclaves/"
-    },
-    {
-      "name": "Azure Confidential Computing",
-      "type": "commercial",
-      "url": "https://azure.microsoft.com/en-us/solutions/confidential-compute/"
-    },
-    {
       "name": "LLM Guard",
       "type": "open-source",
       "url": "https://github.com/protectai/llm-guard"
@@ -724,15 +688,11 @@
       "DSGAI14"
     ],
     "llm_top10": [
-      "LLM02",
-      "LLM04",
-      "LLM08",
-      "LLM03",
-      "LLM05"
+      "LLM02"
     ],
     "agentic_top10": [
+      "ASI01",
       "ASI03",
-      "ASI04",
       "ASI07"
     ]
   },

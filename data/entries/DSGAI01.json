@@ -266,11 +266,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Common ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "Data security & remote access",
+      "control_name": "§5.4",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Injection via OT data feeds is a documented attack vector"
+      "notes": "OT data at rest/in transit to GenAI must be protected"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -278,15 +278,15 @@
       "control_name": "§6.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Assess injection risk at every OT data ingestion point"
+      "notes": "Assess disclosure risk for each OT data class fed to GenAI"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
+      "control_id": "Data flow controls",
+      "control_name": "§7.3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Input validation mandatory at OT data boundary"
+      "notes": "Read-only, scoped OT data access for inference/RAG"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -421,11 +421,11 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-TA",
-      "control_name": "Design / Threat Assessment",
+      "control_id": "D-SR",
+      "control_name": "Design / Security Requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Model all channels where untrusted content reaches the model"
+      "notes": "Define what data may enter prompts/RAG and how outputs must be filtered"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -433,7 +433,7 @@
       "control_name": "Implementation / Secure Build",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce sanitisation at every point where external data enters inference pipeline"
+      "notes": "Scan and redact PII/secrets before responses leave the system"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -441,23 +441,15 @@
       "control_name": "Verification / Security Testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Adversarial injection tests across all data input channels"
+      "notes": "Probe for memorisation and RAG over-retrieval under low-privilege identities"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-IM",
-      "control_name": "Operations / Incident Management",
+      "control_id": "O-OM",
+      "control_name": "Operations / Operational Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Alert on unexpected model behaviour correlated with external data retrieval"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-EG",
-      "control_name": "Governance / Education & Guidance",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Data engineers understand injection risk surface"
+      "notes": "Encrypt corpora; enforce least-privilege on data stores feeding the model"
     },
     {
       "framework": "CWE/CVE",
@@ -562,35 +554,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Injection blast radius limited only by credential scope",
+      "control_id": "Retrieval/service account scope defines the disclosure blast radius",
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply least-privilege to all data pipeline credentials"
+      "notes": "Least-privilege, per-tenant retrieval identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Injected actions can use pipeline tokens for extended period",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "Credentials reachable by the pipeline can leak into outputs/logs",
+      "control_name": "NHI-2 Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Short-lived tokens for all data pipeline service accounts"
+      "notes": "Keep secrets out of context; scan outputs for credential patterns"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — data access audit controls",
+      "control_name": "Protect data and artefacts from unauthorised access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement comprehensive audit logging for all access to training data, model weights, embedding stores, and pipeline configuration; enforce tamper-evident log storage"
+      "notes": "Deny-by-default access to corpora/embeddings; encrypt at rest"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Secure handling of data in code paths",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Output DLP/redaction before responses leave the system"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "RV.1.1-PS",
-      "control_name": "Identify and confirm vulnerabilities — audit-driven detection",
+      "control_name": "Audit-driven anomaly detection",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Establish procedures to detect data access anomalies using audit logs; define triage workflows for suspicious access patterns across AI data stores"
+      "notes": "Detect over-retrieval and bulk-access anomalies"
     },
     {
       "framework": "FedRAMP",
@@ -687,26 +687,6 @@
       "name": "Garak",
       "type": "open-source",
       "url": "https://github.com/leondz/garak"
-    },
-    {
-      "name": "OpenTelemetry",
-      "type": "open-source",
-      "url": "https://opentelemetry.io"
-    },
-    {
-      "name": "Elastic SIEM",
-      "type": "open-source",
-      "url": "https://www.elastic.co/security"
-    },
-    {
-      "name": "AWS CloudTrail",
-      "type": "commercial",
-      "url": "https://aws.amazon.com/cloudtrail/"
-    },
-    {
-      "name": "Azure Monitor",
-      "type": "commercial",
-      "url": "https://azure.microsoft.com/en-us/products/monitor"
     },
     {
       "name": "Nightfall DLP",
@@ -898,15 +878,11 @@
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM01",
-      "LLM03",
       "LLM07"
     ],
     "agentic_top10": [
       "ASI03",
-      "ASI06",
-      "ASI01",
-      "ASI02"
+      "ASI06"
     ]
   },
   "changelog": [

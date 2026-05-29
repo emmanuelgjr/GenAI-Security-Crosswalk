@@ -27,11 +27,11 @@ need to be before we can safely operate these data flows?**
 Three SAMM properties are especially valuable for DSGAI:
 
 **Data governance is a SAMM Design problem.** DSGAI's risks — from
-training data poisoning (DSGAI02) to RAG corpus manipulation
-(DSGAI09) to model weight theft (DSGAI14) — originate in design
-decisions made before a single line of production code is written.
-SAMM Design practices (D-TA, D-SR, D-SA) provide the structured
-approach to catching these risks early.
+data, model & artifact poisoning (DSGAI04) to vector-store platform
+weaknesses (DSGAI13) to model exfiltration (DSGAI20) — originate in
+design decisions made before a single line of production code is
+written. SAMM Design practices (D-TA, D-SR, D-SA) provide the
+structured approach to catching these risks early.
 
 **Implementation practices determine data pipeline security.** DSGAI
 data risks live in pipelines: ingestion, preprocessing, embedding,
@@ -67,27 +67,27 @@ response maturity to detect and respond.
 
 | ID | Name | Severity | Primary SAMM Practices | Maturity Target | Tier |
 |---|---|---|---|---|---|
-| DSGAI01 | Prompt Injection via Data Channels | Critical | D-TA, I-SB, V-ST, O-IM | L2 min / L3 high-risk | Foundational–Advanced |
-| DSGAI02 | Training Data Poisoning | Critical | D-TA, I-SB, V-ST, O-IM | L2 min / L3 high-risk | Hardening–Advanced |
-| DSGAI03 | Sensitive Data in Training Sets | High | D-SR, G-PC, I-SB, V-RT | L2 min | Foundational–Hardening |
-| DSGAI04 | Insecure Data Pipelines | High | D-SA, I-SB, I-SD, V-AA | L2 min | Foundational–Hardening |
-| DSGAI05 | Guardrail Circumvention | High | D-SA, V-ST, O-IM | L2 min | Hardening–Advanced |
-| DSGAI06 | Unintended Data Disclosure | High | D-SR, I-SB, V-ST, O-OM | L2 min | Foundational–Hardening |
-| DSGAI07 | Excessive Data Access | High | D-SA, G-SM, V-AA, O-OM | L2 min | Foundational–Hardening |
-| DSGAI08 | Data Leakage in Retrieval | High | D-TA, I-SB, V-ST | L2 min | Hardening–Advanced |
-| DSGAI09 | RAG Corpus Manipulation | Critical | D-TA, I-SB, V-ST, O-IM | L2 min / L3 high-risk | Hardening–Advanced |
-| DSGAI10 | Context Window Poisoning | High | D-TA, I-SB, V-ST | L2 min | Hardening–Advanced |
-| DSGAI11 | Session Persistence Attacks | High | D-SA, I-SB, O-EM, V-ST | L2 min | Hardening–Advanced |
-| DSGAI12 | Model Inversion and Extraction | High | D-TA, V-ST, O-OM | L2 min | Hardening–Advanced |
-| DSGAI13 | Data Leakage through Tool Integration | High | D-SR, I-SB, V-ST, G-PC | L2 min | Foundational–Hardening |
-| DSGAI14 | Model Weight Theft | High | D-SA, G-PC, V-AA, O-OM | L2 min | Hardening–Advanced |
-| DSGAI15 | Inference Data Exposure | High | D-SR, I-SB, O-EM | L2 min | Foundational–Hardening |
-| DSGAI16 | Third-Party Data Dependencies | High | G-PC, I-SB, V-AA | L2 min | Foundational–Hardening |
-| DSGAI17 | Model Supply Chain Risks | High | G-PC, I-SB, V-AA, D-TA | L2 min | Foundational–Hardening |
-| DSGAI18 | Data Retention and Deletion Failures | Medium | G-PC, D-SR, O-OM | L1 min | Foundational–Hardening |
-| DSGAI19 | Cascading Data Failures | High | D-SA, O-IM, O-EM, V-AA | L2 min | Hardening–Advanced |
-| DSGAI20 | Regulatory Non-Compliance in Data Use | High | G-PC, G-SM, D-SR, O-OM | L2 min | Foundational–Hardening |
-| DSGAI21 | Data Provenance and Lineage Failures | Medium | G-PC, D-SR, O-OM, V-RT | L1 min | Foundational–Hardening |
+| DSGAI01 | Sensitive Data Leakage | Critical | D-SR, I-SB, V-ST, O-OM | L2 min / L3 high-risk | Foundational–Advanced |
+| DSGAI02 | Agent Identity & Credential Exposure | Critical | D-SA, I-SD, G-PC, O-EM | L2 min / L3 high-risk | Hardening–Advanced |
+| DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | G-PC, G-SM, V-AA, O-EM | L2 min | Foundational–Hardening |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | D-TA, I-SB, V-ST, O-IM | L2 min / L3 high-risk | Hardening–Advanced |
+| DSGAI05 | Data Integrity & Validation Failures | High | D-SR, I-SB, V-ST | L2 min | Foundational–Hardening |
+| DSGAI06 | Tool, Plugin & Agent Data Exchange | High | D-SA, I-SB, V-ST, G-PC | L2 min | Foundational–Hardening |
+| DSGAI07 | Data Governance, Lifecycle & Classification | High | G-PC, G-SM, D-SR, O-OM | L2 min | Foundational–Hardening |
+| DSGAI08 | Non-Compliance & Regulatory Violations | High | G-PC, G-SM, D-SR, O-OM | L2 min | Foundational–Hardening |
+| DSGAI09 | Multimodal Cross-Channel Data Leakage | High | D-TA, I-SB, V-ST | L2 min | Hardening–Advanced |
+| DSGAI10 | Synthetic Data & Anonymisation Pitfalls | Medium | D-SR, V-ST, G-PC | L1 min | Hardening–Advanced |
+| DSGAI11 | Cross-Context Conversation Bleed | High | D-SA, I-SB, V-ST, O-EM | L2 min | Hardening–Advanced |
+| DSGAI12 | Unsafe NL Data Gateways | Critical | D-SR, I-SB, V-ST | L2 min / L3 high-risk | Foundational–Advanced |
+| DSGAI13 | Vector Store Platform Security | High | D-SA, I-SD, V-AA, O-EM | L2 min | Foundational–Hardening |
+| DSGAI14 | Excessive Telemetry & Monitoring Leakage | High | O-OM, G-PC, I-SB | L2 min | Foundational–Hardening |
+| DSGAI15 | Over-Broad Context Windows | High | D-SA, D-SR, V-ST | L2 min | Hardening–Advanced |
+| DSGAI16 | Endpoint & Browser Assistant Overreach | High | D-SA, I-SD, V-AA | L2 min | Foundational–Hardening |
+| DSGAI17 | Data Availability & Resilience Failures | High | O-EM, O-IM, D-SA | L2 min | Foundational–Hardening |
+| DSGAI18 | Inference & Data Reconstruction | High | D-TA, V-ST, O-OM | L2 min | Hardening–Advanced |
+| DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | G-PC, D-SR, O-OM | L1 min | Foundational–Hardening |
+| DSGAI20 | Model Exfiltration & IP Replication | High | D-TA, V-ST, O-OM, G-PC | L2 min | Hardening–Advanced |
+| DSGAI21 | Disinformation via Data Poisoning | High | D-TA, I-SB, V-ST, O-IM | L2 min | Hardening–Advanced |
 
 ---
 
@@ -107,900 +107,603 @@ response maturity to detect and respond.
 
 ---
 
-### DSGAI01 — Prompt Injection via Data Channels
+### DSGAI01 — Sensitive Data Leakage
 
-Malicious instructions embedded in training data, retrieved documents,
-tool outputs, or user-supplied content manipulate model behaviour
-or agent execution at inference time.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Data injection surface model | L2 required | Model all channels where untrusted content reaches the model |
-| Implementation / Secure Build (I-SB) | A — Build Process | Input sanitisation in data pipelines | L2 required | Enforce sanitisation at every point where external data enters inference pipeline |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Data injection test suite | L2 required | Adversarial injection tests across all data input channels |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Injection anomaly alerting | L2 required | Alert on unexpected model behaviour correlated with external data retrieval |
-| Governance / Education & Guidance (G-EG) | B — Training | Developer training on data injection | L1 minimum | Data engineers understand injection risk surface |
-
-**Maturity target:** L2 minimum; L3 for systems where injection could cause physical harm or regulatory breach.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Audit all external data ingestion points
-- Apply content filtering before any external data enters context window
-- Log all retrieved content for forensic review
-
-**Tier 2 — Short-term:**
-- Build injection test cases into CI/CD pipeline
-- Implement trust-level tagging: user input, retrieved content, system prompt — never elevate
-- Red team exercise: attempt injection via each data channel
-
-**Tier 3 — Strategic:**
-- D-TA L3: threat model updated after every new data source integration
-- Continuous monitoring for injection-correlated anomalies in production
-
-#### Cross-references
-
-- LLM Top 10: LLM01 (Prompt Injection)
-- Agentic: ASI01 (Prompt Injection in Agentic Systems)
-- See also: [DSGAI_AITG.md](../shared/TOOLS.md), [DSGAI_MITREATLAS.md](DSGAI_MITREATLAS.md)
-
----
-
-### DSGAI02 — Training Data Poisoning
-
-Adversaries corrupt training datasets — through data supply chain
-compromise, insider manipulation, or public data contamination —
-causing models to learn biased, backdoored, or degraded behaviours.
+PII, financial data, credentials, and proprietary content are exposed through
+model outputs, RAG over-retrieval, training-data memorisation, or inadequate
+output filtering — amplified when multiple sources aggregate in one context.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Training data supply chain threat model | L2 required | Enumerate all sources, custodians, and transformation stages of training data |
-| Implementation / Secure Build (I-SB) | A — Build Process | Training data integrity pipeline | L2 required | Hash verification, provenance tracking, and anomaly detection in training data |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Backdoor and poisoning detection | L2 required | Statistical analysis and adversarial probing for poisoned behaviours |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Model behaviour drift alerting | L2 required | Alert on model output drift that may indicate active poisoning |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Training data governance policy | L2 required | Formal policy for data source approval, verification, and chain of custody |
+| Design / Security Requirements (D-SR) | A — Requirements | Data classification & handling requirements | L2 required | Define what data may enter prompts/RAG and how outputs must be filtered |
+| Implementation / Secure Build (I-SB) | B — Software Dependencies | Output DLP in the response path | L2 required | Scan and redact PII/secrets before responses leave the system |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Leakage & over-retrieval test suite | L2 required | Probe for memorisation and RAG over-retrieval under low-privilege identities |
+| Operations / Operational Management (O-OM) | A — Data Protection | Data-at-rest & access governance | L2 required | Encrypt corpora; enforce least-privilege on data stores feeding the model |
 
-**Maturity target:** L2 minimum; L3 for foundation models or systems where poisoning has safety implications.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Inventory all training data sources; flag unverified or public sources
-- Implement hash verification for all training datasets
-- Restrict training data write access to authorised personnel only
-
-**Tier 2 — Short-term:**
-- Implement data provenance tracking from source to training job
-- Add statistical anomaly detection on training data distributions
-- V-ST: adversarial probing of fine-tuned models for backdoor triggers
-
-**Tier 3 — Strategic:**
-- G-PC L3: formal training data supply chain audit programme
-- I-SB L3: automated poisoning detection in ML CI/CD pipeline
-- Periodic model re-evaluation against clean held-out dataset
-
-#### Cross-references
-
-- LLM Top 10: LLM04 (Data and Model Poisoning)
-- See also: [DSGAI_MITREATLAS.md](DSGAI_MITREATLAS.md), [DSGAI_ISO27001.md](DSGAI_ISO27001.md)
-
----
-
-### DSGAI03 — Sensitive Data in Training Sets
-
-Personal data, PII, credentials, trade secrets, or regulated
-information (PCI, PHI) inadvertently included in training datasets
-— leading to model memorisation and potential disclosure at inference.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Requirements (D-SR) | A — Requirements | Training data classification requirements | L2 required | Require data classification check before any dataset enters training pipeline |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Data minimisation policy | L2 required | Policy mandating PII/sensitive data removal before training |
-| Implementation / Secure Build (I-SB) | A — Build Process | PII detection in data pipeline | L2 required | Automated PII scanning of all training datasets before use |
-| Verification / Requirements-Driven Testing (V-RT) | A — Testing | Training data PII scanning tests | L2 required | Automated tests verifying PII detection coverage |
-| Operations / Operational Management (O-OM) | A — Monitoring | Memorisation probing | L1 minimum | Periodic probing of deployed models for sensitive data memorisation |
-
-**Maturity target:** L2 minimum; GDPR and CCPA create legal obligations that make G-PC L2 non-negotiable.
+**Maturity target:** L2 minimum; L3 where leakage would breach regulated data.
 
 #### Three-tier mitigations
 
-**Tier 1 — Immediate:**
-- Run PII detection scan on all existing training datasets
-- Remove or anonymise detected sensitive records
-- Establish training data ingestion gate: datasets must pass PII scan before use
-
-**Tier 2 — Short-term:**
-- Integrate automated PII scanning into ML CI/CD pipeline
-- Implement differential privacy for high-sensitivity training scenarios
-- Add memorisation evaluation to model testing suite
-
-**Tier 3 — Strategic:**
-- G-PC L3: data governance committee reviews training dataset composition
-- Privacy-preserving training techniques (federated learning, synthetic data) for regulated data
-- Annual model audit for sensitive data exposure
+**Tier 1 — Immediate:** inventory data entering context; enable output PII/secret redaction; enforce deny-by-default RAG access.
+**Tier 2 — Short-term:** add leakage/over-retrieval tests to CI; encrypt corpora at rest; log retrieval decisions with principal + ACL.
+**Tier 3 — Strategic:** D-SR L3 classification on all data sources; continuous DLP monitoring on the response path.
 
 #### Cross-references
 
 - LLM Top 10: LLM02 (Sensitive Information Disclosure)
-- See also: [DSGAI_PCIDSS.md](DSGAI_PCIDSS.md), [DSGAI_EUAIAct.md](DSGAI_EUAIAct.md)
+- Agentic: ASI03 (Identity & Privilege Abuse)
 
 ---
 
-### DSGAI04 — Insecure Data Pipelines
+### DSGAI02 — Agent Identity & Credential Exposure
 
-Data ingestion, preprocessing, feature extraction, and serving
-pipelines lack authentication, integrity controls, or logging —
-enabling injection, tampering, or exfiltration of data in transit.
+Agent credentials, API keys, tokens, and service-account secrets are embedded
+in prompts, cached in memory, or passed through tool calls where attackers can
+extract or replay them.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Data pipeline security architecture | L2 required | Design authentication and integrity controls for every pipeline stage |
-| Implementation / Secure Build (I-SB) | A — Build Process | Pipeline hardening | L2 required | mTLS, input validation, and access controls enforced across pipeline |
-| Implementation / Secure Deployment (I-SD) | A — Deployment | Secure pipeline deployment | L2 required | Infrastructure-as-code with security controls applied at provisioning |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Pipeline architecture review | L2 required | Review every pipeline component for authentication and integrity gaps |
-| Operations / Environment Management (O-EM) | A — Patching | Pipeline component patching | L1 minimum | Regular security updates for all pipeline components |
+| Design / Security Architecture (D-SA) | B — Architecture Design | Scoped, short-lived agent identities | L2 required | Each agent acts under a least-privilege, time-bound identity — never a shared secret |
+| Implementation / Secure Deployment (I-SD) | A — Deployment Process | Secret management & injection | L2 required | Inject secrets from a vault at runtime; never bake them into prompts or images |
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Credential-handling policy for agents | L2 required | Mandate rotation, scoping, and prohibition of secrets in model context |
+| Operations / Environment Management (O-EM) | B — Configuration Hardening | Secret hygiene in agent runtime | L2 required | Scrub secrets from logs, memory, and tool payloads |
 
-**Maturity target:** L2 minimum; pipeline security architecture review is a pre-production gate.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Audit authentication on all pipeline stage-to-stage connections
-- Enable TLS for all pipeline communications
-- Add integrity verification at pipeline output (hash of transformed data)
-
-**Tier 2 — Short-term:**
-- Implement per-stage audit logging: who accessed what data, when
-- Add anomaly detection on data volumes and transformation outputs
-- Architecture review: identify and eliminate unauthenticated pipeline endpoints
-
-**Tier 3 — Strategic:**
-- I-SB L3: automated security scanning of infrastructure-as-code templates
-- O-EM L3: continuous pipeline health monitoring with automated remediation
-- Chaos engineering: simulate pipeline component failure and verify containment
-
-#### Cross-references
-
-- LLM Top 10: LLM03 (Supply Chain), LLM08 (Vector and Embedding Weaknesses)
-- See also: [DSGAI_ISO27001.md](DSGAI_ISO27001.md), [DSGAI_NISTCSF2.md](DSGAI_NISTCSF2.md)
-
----
-
-### DSGAI05 — Guardrail Circumvention
-
-Content filters, output validators, and safety classifiers protecting
-GenAI system outputs are bypassed through adversarial prompting,
-model fine-tuning, or architectural weaknesses, enabling prohibited
-content or actions to pass.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Defence-in-depth guardrail design | L2 required | Guardrails at multiple layers: input, generation, output |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Guardrail bypass red team | L2 required | Dedicated adversarial testing programme targeting all guardrail bypass vectors |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Guardrail bypass alerting | L2 required | Alert on disabled or bypassed guardrails in production |
-| Governance / Strategy & Metrics (G-SM) | A — Policy | Guardrail governance | L2 required | Guardrail effectiveness metrics reviewed by security leadership |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Guardrail architecture review | L1 minimum | Pre-deployment review of all guardrail bypass scenarios |
-
-**Maturity target:** L2 minimum; V-ST guardrail bypass testing required before every model update.
+**Maturity target:** L2 minimum; L3 for agents with privileged tool access.
 
 #### Three-tier mitigations
 
-**Tier 1 — Immediate:**
-- Audit all existing guardrails: identify single points of failure
-- Confirm guardrails cannot be disabled via input manipulation
-- Add immutable logging: guardrail decisions logged and tamper-proof
-
-**Tier 2 — Short-term:**
-- Add secondary, rule-based guardrail outside LLM inference path
-- V-ST: automated bypass attempt battery in CI/CD for every model change
-- Define minimum guardrail effectiveness metric; fail deployment if below threshold
-
-**Tier 3 — Strategic:**
-- D-SA L3: independent safety architecture review board for high-risk systems
-- Continuous adversarial probing of production guardrails
-- G-SM L3: quarterly guardrail effectiveness reporting to leadership
-
-#### Cross-references
-
-- Agentic: ASI08 (Inversion of Safety Controls)
-- LLM Top 10: LLM01 (Prompt Injection as bypass vector)
-- See also: [DSGAI_ENISA.md](DSGAI_ENISA.md), [DSGAI_EUAIAct.md](DSGAI_EUAIAct.md) Art. 15
-
----
-
-### DSGAI06 — Unintended Data Disclosure
-
-GenAI systems surface sensitive information — PII, trade secrets,
-internal data — in responses through memorisation, over-retrieval,
-or insufficient output filtering.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Requirements (D-SR) | A — Requirements | Output data classification requirements | L2 required | Define what categories of data may appear in model outputs |
-| Implementation / Secure Build (I-SB) | A — Build Process | Output content inspection | L2 required | Apply DLP scanning to all model outputs before delivery |
-| Verification / Security Testing (V-ST) | A — Automated | Disclosure test cases | L2 required | Automated testing for memorisation and over-retrieval of sensitive content |
-| Operations / Operational Management (O-OM) | A — Monitoring | Output monitoring | L2 required | Continuous monitoring of production outputs for sensitive content patterns |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Data disclosure policy | L1 minimum | Documented policy on what data may be surfaced in model responses |
-
-**Maturity target:** L2 minimum; output DLP is a pre-production gate.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Add DLP scanning to output pipeline
-- Define blocklist of sensitive content patterns (PII formats, internal identifiers)
-- Audit existing outputs for historical disclosure incidents
-
-**Tier 2 — Short-term:**
-- Implement per-user output filtering based on entitlement
-- V-ST: test suite probing for memorised sensitive content
-- Add output redaction for any PII detected at runtime
-
-**Tier 3 — Strategic:**
-- O-OM L3: real-time output anomaly detection with automated redaction
-- G-PC L3: formal data disclosure impact assessment for all new data sources
-- Annual model audit for sensitive content memorisation
-
-#### Cross-references
-
-- LLM Top 10: LLM02 (Sensitive Information Disclosure)
-- Agentic: ASI06 (Data Exfiltration via Agentic Channels)
-- See also: [DSGAI_SOC2.md](DSGAI_SOC2.md), [DSGAI_PCIDSS.md](DSGAI_PCIDSS.md)
-
----
-
-### DSGAI07 — Excessive Data Access
-
-GenAI systems — retrieval pipelines, agentic tools, API integrations
-— are granted data access beyond what their declared function requires,
-creating unnecessary exposure and blast radius on compromise.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Data least-privilege architecture | L2 required | Define minimum data scope for each system component |
-| Governance / Strategy & Metrics (G-SM) | B — Roadmap | Data access governance programme | L2 required | Formalise data access review as part of security programme |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Data access audit | L2 required | Periodic review of declared vs actual data access per component |
-| Operations / Operational Management (O-OM) | B — Review | Access drift detection | L2 required | Alert when component requests data outside declared scope |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Data access policy | L1 minimum | Documented policy requiring data access justification |
-
-**Maturity target:** L2 minimum.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Enumerate all data sources accessible to each GenAI component
-- Remove access to any data source not exercised in past 30 days
-- Apply least-privilege to RAG retrieval: query-scoped access only
-
-**Tier 2 — Short-term:**
-- Implement data access declaration in deployment manifests
-- V-AA: architecture review includes data access scope sign-off
-- Automate drift detection: alert when runtime access exceeds manifest
-
-**Tier 3 — Strategic:**
-- G-SM L3: data access review board with quarterly reporting
-- D-SA L3: zero-trust data access architecture for all GenAI components
-- Annual penetration test targeting data access boundary violations
+**Tier 1 — Immediate:** remove secrets from prompts/system messages; route all credentials through a vault.
+**Tier 2 — Short-term:** issue scoped short-lived tokens per agent; secret-scan logs and tool payloads.
+**Tier 3 — Strategic:** D-SA L3 per-agent identity model; automated rotation and replay detection.
 
 #### Cross-references
 
 - LLM Top 10: LLM06 (Excessive Agency)
-- Agentic: ASI02 (Excessive Permissions and Scope)
-- See also: [DSGAI_ISO27001.md](DSGAI_ISO27001.md), [DSGAI_CISControls.md](DSGAI_CISControls.md)
+- Agentic: ASI03 (Identity & Privilege Abuse)
 
 ---
 
-### DSGAI08 — Data Leakage in Retrieval
+### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
-Retrieval-augmented generation (RAG) pipelines return documents
-exceeding the user's entitlement — exposing information from other
-tenants, higher-sensitivity tiers, or access-controlled corpora.
+Employees route corporate data through unapproved AI tools, creating
+unmonitored egress and unmanaged data flows outside the security boundary.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Retrieval entitlement threat model | L2 required | Model all paths where over-retrieval can expose unauthorised content |
-| Implementation / Secure Build (I-SB) | A — Build Process | Retrieval access control enforcement | L2 required | Enforce per-query entitlement filtering in retrieval pipeline |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Cross-tenant retrieval leakage tests | L2 required | Test whether queries can retrieve documents from other tenants or restricted tiers |
-| Operations / Operational Management (O-OM) | A — Monitoring | Retrieval audit logging | L1 minimum | Log all retrieved documents with user identity for forensic review |
-| Governance / Policy & Compliance (G-PC) | A — Policy | RAG entitlement policy | L1 minimum | Policy mapping corpus access to user roles and data classification |
-
-**Maturity target:** L2 minimum; retrieval entitlement check is a pre-production gate for multi-tenant RAG.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Implement per-query entitlement filter in retrieval pipeline
-- Add metadata-based access control to all corpus documents
-- Log all retrieval operations with user context
-
-**Tier 2 — Short-term:**
-- V-ST: automated cross-tenant leakage test battery in CI/CD
-- Red team: attempt retrieval of documents outside declared entitlement
-- Add retrieval anomaly detection: flag unusual document access patterns
-
-**Tier 3 — Strategic:**
-- I-SB L3: automated entitlement coverage analysis for all corpus changes
-- D-TA L3: threat model updated for every new corpus or retrieval path
-- See [shared/RECIPES.md](../shared/RECIPES.md) Pattern 1 — Access-Controlled RAG
-
-#### Cross-references
-
-- LLM Top 10: LLM08 (Vector and Embedding Weaknesses)
-- Agentic: ASI06 (Data Exfiltration via Agentic Channels)
-- See also: [DSGAI_ASVS.md](DSGAI_ASVS.md), [DSGAI_ISO27001.md](DSGAI_ISO27001.md)
-
----
-
-### DSGAI09 — RAG Corpus Manipulation
-
-Attackers tamper with documents in RAG corpora — through data
-pipeline compromise, malicious document upload, or embedding store
-poisoning — causing retrieval to return manipulated content that
-steers model outputs.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Corpus integrity threat model | L2 required | Enumerate all write paths to the corpus and attack scenarios for each |
-| Implementation / Secure Build (I-SB) | A — Build Process | Corpus write integrity controls | L2 required | Authenticate and verify all corpus writes; hash embeddings at ingest |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Corpus poisoning simulation | L2 required | Attempt to inject manipulated documents; verify detection |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Corpus integrity monitoring | L2 required | Alert on unexpected corpus changes or embedding distribution shifts |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Corpus change management policy | L1 minimum | All corpus changes go through a review and approval process |
-
-**Maturity target:** L2 minimum; L3 for corpora used in safety-critical or regulated decision support.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Apply write authentication to embedding store: only authorised pipeline may write
-- Add document hash verification at corpus ingest
-- Log all corpus write operations with submitter identity
-
-**Tier 2 — Short-term:**
-- Implement corpus integrity checks: detect unexpected document changes
-- V-ST: document injection test battery
-- G-PC: corpus change approval process with security review for sensitive corpora
-
-**Tier 3 — Strategic:**
-- O-IM L3: automated detection of embedding distribution drift (possible poisoning signal)
-- Periodic corpus audit: re-verify document authenticity against source
-- D-TA L3: threat model updated after every new corpus data source
-
-#### Cross-references
-
-- LLM Top 10: LLM04 (Data and Model Poisoning), LLM08 (Vector and Embedding Weaknesses)
-- See also: [DSGAI_MITREATLAS.md](DSGAI_MITREATLAS.md), [DSGAI_NISTCSF2.md](DSGAI_NISTCSF2.md)
-
----
-
-### DSGAI10 — Context Window Poisoning
-
-Malicious content injected into the active context window — through
-tool output, retrieved documents, or session history — manipulates
-in-context reasoning without persisting to long-term memory.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Context window injection model | L2 required | Map all sources that contribute to context window; assess trust level per source |
-| Implementation / Secure Build (I-SB) | A — Build Process | Context assembly validation | L2 required | Validate and sanitise all content before context window assembly |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Context poisoning test suite | L2 required | Adversarial tests injecting malicious content via each context source |
-| Operations / Incident Management (O-IM) | A — Incident Detection | In-context manipulation alerting | L1 minimum | Alert on reasoning deviations correlated with external content in context |
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Sanctioned-AI policy & allowlist | L2 required | Define approved AI services and prohibited data classes |
+| Governance / Strategy & Metrics (G-SM) | B — Application Risk Profile | Shadow-AI risk visibility | L2 required | Track unsanctioned-AI usage as a tracked programme metric |
+| Verification / Architecture Assessment (V-AA) | A — Architecture Validation | Egress-path discovery | L2 required | Identify all paths by which data can reach external AI endpoints |
+| Operations / Environment Management (O-EM) | A — Configuration | DLP / egress monitoring | L2 required | Detect and block data flow to non-allowlisted AI services |
 
 **Maturity target:** L2 minimum.
 
 #### Three-tier mitigations
 
-**Tier 1 — Immediate:**
-- Apply trust-level tagging to all context window sources
-- Sanitise all external content before context inclusion
-- Log full context window for forensic review on anomalous outputs
-
-**Tier 2 — Short-term:**
-- V-ST: inject adversarial content via each context source; verify containment
-- Implement context source prioritisation: system instructions cannot be overridden by retrieved content
-- Add reasoning consistency check on final output
-
-**Tier 3 — Strategic:**
-- D-TA L3: threat model updated for every new context source integration
-- Research and deploy formal context integrity verification techniques
-
-#### Cross-references
-
-- LLM Top 10: LLM01 (Prompt Injection), LLM08 (Vector and Embedding Weaknesses)
-- Agentic: ASI03 (Memory Manipulation and Persistence)
-- See also: [DSGAI_ENISA.md](DSGAI_ENISA.md), [DSGAI_CWE_CVE.md](DSGAI_CWE_CVE.md)
-
----
-
-### DSGAI11 — Session Persistence Attacks
-
-Attackers exploit session memory and conversation history to persist
-malicious instructions or extracted information across session
-boundaries, enabling cross-session attacks and long-term manipulation.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Session isolation architecture | L2 required | Design session boundary enforcement; no cross-session data leakage |
-| Implementation / Secure Build (I-SB) | A — Build Process | Session data integrity | L2 required | Encrypt, sign, and access-control all persistent session data |
-| Operations / Environment Management (O-EM) | A — Patching | Session store hardening | L2 required | Apply access controls and encryption to all session persistence stores |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Cross-session leakage tests | L2 required | Test whether session data is accessible or injectable across user boundaries |
-
-**Maturity target:** L2 minimum.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Enforce session isolation at storage layer: no cross-user session access
-- Encrypt all persistent session data at rest
-- Log all session read/write operations
-
-**Tier 2 — Short-term:**
-- V-ST: cross-session data access test battery
-- Implement session TTL and automatic purge policy
-- Add integrity signatures to session records
-
-**Tier 3 — Strategic:**
-- Formal session security architecture review for multi-tenant deployments
-- O-EM L3: automated session integrity monitoring
-
-#### Cross-references
-
-- Agentic: ASI03 (Memory Manipulation and Persistence)
-- See also: [DSGAI_ASVS.md](DSGAI_ASVS.md), [DSGAI_SOC2.md](DSGAI_SOC2.md)
-
----
-
-### DSGAI12 — Model Inversion and Extraction
-
-Adversaries query deployed models to reconstruct training data,
-replicate model weights, or extract sensitive information encoded
-in model parameters through systematic prompting or gradient attacks.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Model extraction threat model | L2 required | Model extraction attack surface: API rate limits, confidence scores, output verbosity |
-| Verification / Security Testing (V-ST) | B — Deep Testing | Extraction and inversion simulation | L2 required | Attempt model extraction via systematic querying; verify detection and rate limiting |
-| Operations / Operational Management (O-OM) | A — Monitoring | Query pattern anomaly detection | L2 required | Alert on systematic query patterns consistent with extraction attempts |
-| Design / Security Requirements (D-SR) | A — Requirements | API output restriction requirements | L1 minimum | Minimise logit exposure, confidence scores, and internal state leakage |
-
-**Maturity target:** L2 minimum.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Implement API rate limiting per user/IP
-- Remove or restrict confidence score and logit output from API responses
-- Log all high-volume query sessions
-
-**Tier 2 — Short-term:**
-- Add query pattern detection: alert on systematic extraction-pattern queries
-- Implement per-user query budget with soft/hard limits
-- V-ST: model extraction simulation exercise
-
-**Tier 3 — Strategic:**
-- Differential privacy techniques for sensitive models
-- O-OM L3: continuous extraction attempt detection using ML-based query analysis
-- Legal and contractual protections: API terms of service with extraction prohibition
+**Tier 1 — Immediate:** publish an approved-AI list and data-handling policy; enable egress logging.
+**Tier 2 — Short-term:** deploy DLP rules blocking classified data to unsanctioned endpoints; survey actual usage.
+**Tier 3 — Strategic:** G-SM L3 metrics on shadow-AI; sanctioned self-service alternatives reduce demand.
 
 #### Cross-references
 
 - LLM Top 10: LLM02 (Sensitive Information Disclosure)
-- DSGAI14 (Model Weight Theft)
-- See also: [DSGAI_MITREATLAS.md](DSGAI_MITREATLAS.md) AML.T0027
+- Agentic: ASI04 (Agentic Supply Chain)
 
 ---
 
-### DSGAI13 — Data Leakage through Tool Integration
+### DSGAI04 — Data, Model & Artifact Poisoning
 
-GenAI system tool integrations — APIs, databases, file systems,
-communication services — leak data to unauthorised parties through
-misconfigured permissions, over-broad responses, or insecure tool
-implementations.
+Attackers corrupt training data, fine-tuning sets, model weights, or RAG
+corpora to implant backdoors or degrade integrity.
 
 #### SAMM mapping
 
 | Practice | Stream | Activity | Maturity Level | How it applies |
 |---|---|---|---|---|
-| Design / Security Requirements (D-SR) | A — Requirements | Tool integration data security requirements | L2 required | Minimum data returned per tool; response scope limitations |
-| Implementation / Secure Build (I-SB) | A — Build Process | Tool response filtering | L2 required | Filter tool responses to minimum data required before passing to model |
-| Verification / Security Testing (V-ST) | A — Automated | Tool data leakage tests | L2 required | Automated tests verifying tool responses are scoped to minimum |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Tool approval policy | L2 required | All tools reviewed for data scope before integration |
-| Operations / Operational Management (O-OM) | A — Monitoring | Tool response monitoring | L1 minimum | Log all tool responses; alert on anomalous data volumes |
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Poisoning threat model per data source | L2 required | Model every ingestion path as an integrity threat surface |
+| Implementation / Secure Build (I-SB) | A — Build Process | Dataset/artifact integrity & provenance | L2 required | Verify checksums, signatures, and provenance on data and weights |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Backdoor / trigger probing | L2 required | Probe for trigger-conditioned behaviour and label-flip anomalies |
+| Operations / Incident Management (O-IM) | A — Incident Detection | Integrity-drift alerting | L2 required | Alert on anomalous ingestion and behaviour drift |
 
-**Maturity target:** L2 minimum.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Audit all tool integrations for data scope
-- Remove any tools returning data beyond declared function
-- Add logging to all tool response streams
-
-**Tier 2 — Short-term:**
-- Implement minimum data principle in tool wrappers: filter before passing to model
-- V-ST: automated test suite for data leakage per tool
-- G-PC: tool review board with security sign-off
-
-**Tier 3 — Strategic:**
-- I-SB L3: automated data leakage scanning in tool integration CI/CD
-- O-OM L3: real-time tool response anomaly detection
-- Tool governance programme with periodic re-review of approved tools
-
-#### Cross-references
-
-- Agentic: ASI05 (Tool and Plugin Abuse)
-- LLM Top 10: LLM07 (System Prompt Leakage via Tools)
-- See also: [DSGAI_ASVS.md](DSGAI_ASVS.md), [DSGAI_CWE_CVE.md](DSGAI_CWE_CVE.md)
-
----
-
-### DSGAI14 — Model Weight Theft
-
-Adversaries gain access to proprietary model weights through
-infrastructure compromise, insider threat, or API extraction —
-stealing intellectual property and enabling fine-tuned attack models
-that bypass original safety controls.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Model asset protection architecture | L2 required | Treat model weights as crown-jewel assets with appropriate access controls |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Model asset classification policy | L2 required | Classify model weights; require formal access control and custodian assignment |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Model storage security review | L2 required | Periodic review of model storage access controls |
-| Operations / Operational Management (O-OM) | A — Monitoring | Model asset access monitoring | L2 required | Alert on unexpected access to model weight storage |
-| Governance / Strategy & Metrics (G-SM) | B — Roadmap | IP protection programme | L1 minimum | Document model IP protection controls in security programme roadmap |
-
-**Maturity target:** L2 minimum for any organisation with proprietary fine-tuned models.
+**Maturity target:** L2 minimum; L3 where poisoning could cause harm or regulatory breach.
 
 #### Three-tier mitigations
 
-**Tier 1 — Immediate:**
-- Apply access controls and encryption to all model weight storage
-- Audit who has current access to model weights; remove unnecessary access
-- Enable access logging on all model storage systems
-
-**Tier 2 — Short-term:**
-- Classify model weights as high-sensitivity assets in asset inventory
-- V-AA: architecture review of model storage access controls
-- Red team exercise: attempt model weight exfiltration via infrastructure
-
-**Tier 3 — Strategic:**
-- Hardware security modules (HSM) for model weight protection in high-value deployments
-- O-OM L3: automated anomaly detection on model weight access patterns
-- Legal protections: trade secret designations and contractual controls with cloud providers
-
-#### Cross-references
-
-- DSGAI12 (Model Inversion and Extraction)
-- LLM Top 10: LLM03 (Supply Chain)
-- See also: [DSGAI_ISO27001.md](DSGAI_ISO27001.md), [DSGAI_MITREATLAS.md](DSGAI_MITREATLAS.md) AML.T0044
-
----
-
-### DSGAI15 — Inference Data Exposure
-
-Input data submitted to GenAI systems at inference time — queries,
-documents, user data — is logged, retained, or used in ways that
-expose it to unauthorised parties, including third-party model
-providers, logging infrastructure, or analytics systems.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Requirements (D-SR) | A — Requirements | Inference data handling requirements | L2 required | Define what inference data may be logged, retained, and shared |
-| Implementation / Secure Build (I-SB) | A — Build Process | Inference data minimisation | L2 required | Log only what is operationally necessary; scrub sensitive data from logs |
-| Operations / Environment Management (O-EM) | A — Patching | Inference data store hardening | L2 required | Access controls, encryption, and retention policies for all inference logs |
-| Governance / Policy & Compliance (G-PC) | A — Policy | Inference data retention policy | L1 minimum | Documented policy on inference data retention periods and deletion |
-
-**Maturity target:** L2 minimum; GDPR creates legal obligations for inference data handling.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Audit all inference logging configurations
-- Remove any inference data logging not required for operations
-- Apply encryption to all inference logs at rest
-
-**Tier 2 — Short-term:**
-- Implement inference data scrubbing: PII removed from logs before storage
-- Review third-party model provider data retention terms
-- Define and enforce inference log retention periods and deletion
-
-**Tier 3 — Strategic:**
-- G-PC L3: privacy impact assessment for all inference data flows
-- O-EM L3: automated inference data lifecycle management
-- Data residency controls for regulated sectors
-
-#### Cross-references
-
-- LLM Top 10: LLM02 (Sensitive Information Disclosure)
-- DSGAI03 (Sensitive Data in Training Sets)
-- See also: [DSGAI_EUAIAct.md](DSGAI_EUAIAct.md), [DSGAI_SOC2.md](DSGAI_SOC2.md)
-
----
-
-### DSGAI16 — Third-Party Data Dependencies
-
-GenAI systems depend on external data sources — APIs, data brokers,
-open datasets, web scraping — whose quality, security, or availability
-cannot be guaranteed, introducing poisoning, quality degradation, or
-supply chain risks.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Governance / Policy & Compliance (G-PC) | A — Policy | Third-party data source policy | L2 required | Approved vendor list for all external data sources |
-| Implementation / Secure Build (I-SB) | B — Dependencies | Data source SBOM | L2 required | Inventory of all external data sources with security contact and last-verified date |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Data dependency architecture review | L2 required | Architecture review validates all external data dependencies against policy |
-| Operations / Operational Management (O-OM) | B — Review | Data source monitoring | L1 minimum | Track security advisories and availability for all integrated data sources |
-
-**Maturity target:** L2 minimum.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Inventory all third-party data sources in use
-- Flag sources without security contact or recent review
-- Pin data source versions where possible; reject unversioned public data in production
-
-**Tier 2 — Short-term:**
-- Implement data source review process: all new sources require security assessment
-- Add integrity verification for all third-party data at ingestion
-- Monitor for security advisories on all data source providers
-
-**Tier 3 — Strategic:**
-- G-PC L3: formal vendor security assessment programme for data dependencies
-- I-SB L3: automated data dependency scanning in CI/CD
-- Periodic supply chain red team exercise targeting data source compromise
-
-#### Cross-references
-
-- LLM Top 10: LLM03 (Supply Chain Vulnerabilities)
-- Agentic: ASI07 (Supply Chain Compromise in Agent Ecosystems)
-- DSGAI17 (Model Supply Chain Risks)
-- See also: [DSGAI_CWE_CVE.md](DSGAI_CWE_CVE.md), [DSGAI_ISO27001.md](DSGAI_ISO27001.md)
-
----
-
-### DSGAI17 — Model Supply Chain Risks
-
-Pre-trained models, fine-tuning datasets, model hubs, and ML
-frameworks are compromised — introducing backdoored models, malicious
-adapters, or vulnerable ML library code into production GenAI systems.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Governance / Policy & Compliance (G-PC) | A — Policy | Model provenance policy | L2 required | Only approved model sources; provenance verification required |
-| Implementation / Secure Build (I-SB) | B — Dependencies | Model SBOM | L2 required | SBOM covering base models, adapters, and ML framework dependencies |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Model supply chain architecture review | L2 required | Architecture review validates model sourcing against policy |
-| Design / Threat Assessment (D-TA) | A — Threat Modeling | Model supply chain threat model | L2 required | Model compromise scenarios for base models, adapters, and frameworks |
-| Operations / Operational Management (O-OM) | B — Review | Model security advisory monitoring | L1 minimum | Track CVEs and security advisories for all model components |
-
-**Maturity target:** L2 minimum; no production deployment of unverified base models.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Verify provenance of all models currently in production
-- Flag any models from unverified sources for review
-- Pin all model versions; reject floating references in production
-
-**Tier 2 — Short-term:**
-- Implement model hash verification at deployment
-- G-PC: model review board for all new base model or adapter integrations
-- V-ST: adversarial probing of fine-tuned models for backdoor triggers
-
-**Tier 3 — Strategic:**
-- I-SB L3: automated model supply chain scanning in CI/CD
-- Periodic re-evaluation of production models against clean evaluation set
-- Formal model provenance attestation for regulated deployments
-
-#### Cross-references
-
-- LLM Top 10: LLM03 (Supply Chain Vulnerabilities), LLM04 (Data and Model Poisoning)
-- Agentic: ASI07 (Supply Chain Compromise)
-- See also: [DSGAI_MITREATLAS.md](DSGAI_MITREATLAS.md) AML.T0010
-
----
-
-### DSGAI18 — Data Retention and Deletion Failures
-
-GenAI systems retain personal data, training artefacts, or inference
-logs beyond required retention periods — or fail to honour deletion
-requests — creating regulatory violations and unnecessary exposure.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Governance / Policy & Compliance (G-PC) | A — Policy | Data retention and deletion policy | L2 required | Documented retention periods and deletion procedures for all GenAI data |
-| Design / Security Requirements (D-SR) | A — Requirements | Deletion requirements | L1 minimum | Right-to-erasure and retention limits built into system requirements |
-| Operations / Operational Management (O-OM) | A — Monitoring | Retention compliance monitoring | L1 minimum | Automated verification that data is deleted per retention schedule |
-| Governance / Strategy & Metrics (G-SM) | B — Roadmap | Privacy programme integration | L1 minimum | GenAI data lifecycle integrated into existing privacy programme |
-
-**Maturity target:** L1 minimum before production; GDPR Art. 17 creates right to erasure obligations.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Document all data stores containing GenAI system data
-- Define retention periods for each data store; implement deletion schedule
-- Verify deletion capability: confirm data can actually be deleted from each store
-
-**Tier 2 — Short-term:**
-- Implement automated retention policy enforcement
-- Test deletion procedures: verify data is unrecoverable after deletion
-- Add right-to-erasure workflow for user data in inference logs
-
-**Tier 3 — Strategic:**
-- G-PC L3: formal data lifecycle governance for all GenAI data
-- Privacy-by-design: new features require retention review before deployment
-- Annual audit of retention compliance across all GenAI data stores
-
-#### Cross-references
-
-- LLM Top 10: LLM02 (Sensitive Information Disclosure)
-- DSGAI15 (Inference Data Exposure)
-- See also: [DSGAI_EUAIAct.md](DSGAI_EUAIAct.md), [DSGAI_SOC2.md](DSGAI_SOC2.md)
-
----
-
-### DSGAI19 — Cascading Data Failures
-
-Failures in data pipelines — corrupt embeddings, failed ingestion,
-incorrect transformations — propagate through multiple GenAI system
-components, causing compounding degradation or failures in dependent
-downstream components.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Design / Security Architecture (D-SA) | A — Architecture | Pipeline fault isolation | L2 required | Design circuit breakers and isolation boundaries between data pipeline stages |
-| Operations / Incident Management (O-IM) | A — Incident Detection | Cascade detection alerting | L2 required | Detect correlated failures across pipeline stages; alert before full cascade |
-| Operations / Environment Management (O-EM) | A — Patching | Pipeline health monitoring | L2 required | Continuous health checks across all pipeline components |
-| Verification / Architecture Assessment (V-AA) | A — Assessment | Cascade failure architecture review | L1 minimum | Verify blast radius containment design before deployment |
-| Operations / Incident Management (O-IM) | B — Response | Pipeline incident playbook | L1 minimum | Documented runbook for data pipeline cascade scenarios |
-
-**Maturity target:** L2 minimum; O-IM playbook required before production for complex multi-stage pipelines.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Add health checks to all pipeline stages
-- Implement circuit breaker pattern between pipeline stages
-- Document blast radius: if stage X fails, which downstream components are affected?
-
-**Tier 2 — Short-term:**
-- Red team: simulate cascading failure from one corrupted pipeline stage
-- Deploy O-IM playbook for data pipeline cascade incidents
-- Add per-stage data validation checkpoints
-
-**Tier 3 — Strategic:**
-- D-SA L3: formal chaos engineering programme for data pipelines
-- O-EM L3: automated cascade detection with predictive alerting
-- Architecture pattern: idempotent pipeline stages with rollback capability
-
-#### Cross-references
-
-- Agentic: ASI10 (Cascading Agent Failures)
-- See also: [DSGAI_NISTCSF2.md](DSGAI_NISTCSF2.md), [DSGAI_ISO27001.md](DSGAI_ISO27001.md)
-
----
-
-### DSGAI20 — Regulatory Non-Compliance in Data Use
-
-GenAI systems process personal data, biometric data, or regulated
-information in ways that violate applicable law — GDPR, CCPA, HIPAA,
-PCI DSS, EU AI Act — through inadequate consent management, cross-border
-transfers, prohibited processing, or insufficient documentation.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Governance / Policy & Compliance (G-PC) | A — Policy | Regulatory compliance programme | L2 required | Mapped regulatory obligations for all applicable jurisdictions |
-| Governance / Strategy & Metrics (G-SM) | A — Policy | Compliance metrics and reporting | L2 required | Compliance KPIs tracked and reported to leadership |
-| Design / Security Requirements (D-SR) | A — Requirements | Regulatory requirements in design | L2 required | Regulatory obligations surfaced as design requirements for all data flows |
-| Operations / Operational Management (O-OM) | A — Monitoring | Compliance monitoring | L2 required | Continuous monitoring for regulatory control effectiveness |
-| Governance / Education & Guidance (G-EG) | B — Training | Compliance training | L1 minimum | All staff handling regulated data understand applicable obligations |
-
-**Maturity target:** L2 minimum; G-PC at L2 is non-negotiable for any organisation processing personal data.
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Map all applicable regulations for each GenAI data flow
-- Identify any processing without legal basis
-- Document data processing activities (GDPR Art. 30 records of processing)
-
-**Tier 2 — Short-term:**
-- Implement consent management for any user-facing data collection
-- Complete DPIA for high-risk processing activities (EU AI Act + GDPR)
-- G-PC: legal review of cross-border data transfer mechanisms
-
-**Tier 3 — Strategic:**
-- G-PC L3: formal compliance monitoring programme with external audit
-- G-SM L3: compliance dashboard with real-time regulatory status
-- Annual regulatory impact assessment for all new GenAI features
-
-#### Cross-references
-
-- LLM Top 10: LLM02 (Sensitive Information Disclosure)
-- See also: [DSGAI_EUAIAct.md](DSGAI_EUAIAct.md), [DSGAI_SOC2.md](DSGAI_SOC2.md), [DSGAI_PCIDSS.md](DSGAI_PCIDSS.md)
-
----
-
-### DSGAI21 — Data Provenance and Lineage Failures
-
-GenAI systems cannot demonstrate where training data, retrieved
-documents, or inference inputs originated — making it impossible to
-audit decisions, respond to data quality incidents, or comply with
-traceability requirements in regulated sectors.
-
-#### SAMM mapping
-
-| Practice | Stream | Activity | Maturity Level | How it applies |
-|---|---|---|---|---|
-| Governance / Policy & Compliance (G-PC) | A — Policy | Data provenance policy | L1 minimum | Policy requiring provenance metadata for all GenAI data |
-| Design / Security Requirements (D-SR) | A — Requirements | Provenance tracking requirements | L1 minimum | Provenance metadata built into data pipeline requirements |
-| Operations / Operational Management (O-OM) | A — Monitoring | Lineage monitoring | L1 minimum | Alert on loss of provenance metadata in data flows |
-| Verification / Requirements-Driven Testing (V-RT) | A — Testing | Provenance coverage tests | L1 minimum | Tests verifying provenance metadata is preserved through pipeline |
-| Governance / Strategy & Metrics (G-SM) | B — Roadmap | Data governance roadmap | L1 minimum | Provenance programme included in data governance roadmap |
-
-**Maturity target:** L1 minimum for all deployments; L2 for regulated sectors (financial services, healthcare).
-
-#### Three-tier mitigations
-
-**Tier 1 — Immediate:**
-- Attach source metadata to all ingested data
-- Log origin, timestamp, and version for all training datasets
-- Add provenance fields to corpus document schema
-
-**Tier 2 — Short-term:**
-- Implement end-to-end lineage tracking in data pipelines
-- V-RT: automated provenance coverage test suite
-- G-PC: provenance requirements documented and signed off
-
-**Tier 3 — Strategic:**
-- Immutable lineage ledger for regulatory traceability
-- G-PC L3: formal data governance programme with lineage as a core requirement
-- Integration with CROSSREF.md for cross-source-list risk traceability
+**Tier 1 — Immediate:** validate/quarantine anomalous records at ingest; verify weight signatures at load.
+**Tier 2 — Short-term:** provenance-track all training/RAG sources; add poisoning tests to CI.
+**Tier 3 — Strategic:** D-TA L3 refreshed per new data source; continuous integrity monitoring.
 
 #### Cross-references
 
 - LLM Top 10: LLM04 (Data and Model Poisoning)
-- DSGAI02 (Training Data Poisoning), DSGAI09 (RAG Corpus Manipulation)
-- See also: [DSGAI_ISO42001.md](DSGAI_ISO42001.md), [DSGAI_NISTAIRMF.md](DSGAI_NISTAIRMF.md)
+- Agentic: ASI04 (Agentic Supply Chain)
+
+---
+
+### DSGAI05 — Data Integrity & Validation Failures
+
+GenAI systems ingest data without sufficient validation, allowing malformed or
+adversarial inputs to corrupt downstream behaviour.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Requirements (D-SR) | A — Requirements | Validation requirements per data boundary | L2 required | Specify schema/type/size validation at every ingestion point |
+| Implementation / Secure Build (I-SB) | A — Build Process | Boundary validation in pipelines | L2 required | Enforce validation before data is persisted or used |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Malformed-input test suite | L2 required | Fuzz ingestion channels with malformed and adversarial records |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** schema-validate all ingested data; reject on violation with safe errors.
+**Tier 2 — Short-term:** fuzz ingestion paths in CI; add integrity-drift detection.
+**Tier 3 — Strategic:** formal data contracts between pipeline stages.
+
+#### Cross-references
+
+- LLM Top 10: LLM05 (Improper Output Handling)
+- Agentic: ASI05 (Unexpected Code Execution)
+
+---
+
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
+
+Data exchanged with external tools, plugins, or sub-agents crosses trust
+boundaries with insufficient validation in both directions.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Architecture (D-SA) | B — Architecture Design | Tool trust-boundary model | L2 required | Treat all tool I/O as crossing a trust boundary |
+| Implementation / Secure Build (I-SB) | A — Build Process | Validate tool returns; minimise tool inputs | L2 required | Validate tool responses before use; send only required fields |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Untrusted tool-return tests | L2 required | Inject malicious tool responses and verify handling |
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Third-party tool vetting | L2 required | Require review before a tool/plugin is connected |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** treat tool output as untrusted; strip sensitive fields from tool inputs.
+**Tier 2 — Short-term:** add tool-return validation tests; maintain a vetted-tool registry.
+**Tier 3 — Strategic:** D-SA L3 boundary model reviewed per new integration.
+
+#### Cross-references
+
+- LLM Top 10: LLM06 (Excessive Agency)
+- Agentic: ASI02 (Tool Misuse & Exploitation)
+
+---
+
+### DSGAI07 — Data Governance, Lifecycle & Classification
+
+GenAI systems lack data classification, retention, and lifecycle controls,
+leaving sensitive data unmanaged across its lifecycle.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Data classification & retention policy | L2 required | Mandate classification and lifecycle rules for GenAI data |
+| Governance / Strategy & Metrics (G-SM) | A — Create & Promote | Governance ownership & metrics | L2 required | Assign owners; track classification coverage |
+| Design / Security Requirements (D-SR) | A — Requirements | Lifecycle requirements per data store | L2 required | Specify retention, deletion, and access per data class |
+| Operations / Operational Management (O-OM) | A — Data Protection | Lifecycle enforcement & auditability | L2 required | Enforce retention/deletion; make access auditable |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** classify data on ingest; assign data owners.
+**Tier 2 — Short-term:** enforce retention/deletion; audit access to classified stores.
+**Tier 3 — Strategic:** G-SM L3 governance metrics; automated lifecycle enforcement.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI06 (Memory & Context Poisoning)
+
+---
+
+### DSGAI08 — Non-Compliance & Regulatory Violations
+
+GenAI deployments process data in ways that violate GDPR, the EU AI Act, HIPAA,
+PCI DSS, or sector rules, or fail to honour data-subject rights.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Governance / Policy & Compliance (G-PC) | B — Compliance Management | Regulatory mapping & lawful basis | L2 required | Map processing to applicable regulation and recorded lawful basis |
+| Governance / Strategy & Metrics (G-SM) | B — Application Risk Profile | Compliance risk in the risk profile | L2 required | Track regulatory exposure as a programme metric |
+| Design / Security Requirements (D-SR) | A — Requirements | Data-subject-rights requirements | L2 required | Build erasure/access/rectification into the design |
+| Operations / Operational Management (O-OM) | A — Data Protection | Processing records & evidence | L2 required | Log processing activities for accountability/audit |
+
+**Maturity target:** L2 minimum (legal baseline under GDPR/CCPA).
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** record lawful basis; map regulated data flows.
+**Tier 2 — Short-term:** implement end-to-end data-subject-rights handling incl. RAG/embeddings.
+**Tier 3 — Strategic:** continuous compliance monitoring and evidence generation.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI03 (Identity & Privilege Abuse)
+
+---
+
+### DSGAI09 — Multimodal Cross-Channel Data Leakage
+
+Sensitive data embedded in images, audio, video, or documents traverses
+channels that text-centric controls miss.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Per-modality threat model | L2 required | Model hidden-data and injection paths across every modality |
+| Implementation / Secure Build (I-SB) | A — Build Process | Cross-modal extraction & redaction | L2 required | Extract and redact sensitive content from all modalities |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Multimodal leakage tests | L2 required | Probe EXIF/steganography/embedded-text and generated-media leakage |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** strip metadata; scan non-text inputs for embedded data.
+**Tier 2 — Short-term:** modality-aware redaction; multimodal leakage tests in CI.
+**Tier 3 — Strategic:** D-TA L3 modality threat model maintained per new input type.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI01 (Agent Goal Hijack)
+
+---
+
+### DSGAI10 — Synthetic Data & Anonymisation Pitfalls
+
+Synthetic data re-identifies original subjects, or anonymisation fails under
+linkage attacks.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Requirements (D-SR) | A — Requirements | Privacy/anonymisation requirements | L2 required | Specify privacy thresholds and re-identification limits |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Re-identification / linkage testing | L2 required | Attack synthetic/anonymised sets with linkage and membership attacks |
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Anonymisation standard | L1 minimum | Mandate a documented anonymisation method and review |
+
+**Maturity target:** L1 minimum; L2 for regulated data.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** document the anonymisation method and its assumptions.
+**Tier 2 — Short-term:** run linkage/membership attacks against released data.
+**Tier 3 — Strategic:** differential-privacy guarantees with measured budgets.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI03 (Identity & Privilege Abuse)
+
+---
+
+### DSGAI11 — Cross-Context Conversation Bleed
+
+Context from one user session leaks into another through shared caches, memory,
+or improper isolation.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Architecture (D-SA) | B — Architecture Design | Session/tenant isolation model | L2 required | Design per-session/tenant isolation for memory and caches |
+| Implementation / Secure Build (I-SB) | A — Build Process | State scrubbing & isolation | L2 required | Scrub session state on teardown; key caches per principal |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Cross-session bleed tests | L2 required | Probe for context bleed under concurrency and reuse |
+| Operations / Environment Management (O-EM) | A — Configuration | Cache/memory configuration hardening | L2 required | Configure isolation in shared memory/cache layers |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** key all session state per user/tenant; clear on teardown.
+**Tier 2 — Short-term:** add cross-session bleed tests; review cache configs.
+**Tier 3 — Strategic:** D-SA L3 isolation model verified under load.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI06 (Memory & Context Poisoning)
+
+---
+
+### DSGAI12 — Unsafe NL Data Gateways
+
+Natural-language interfaces to databases and APIs execute unvalidated,
+model-generated queries (NL-to-SQL/API), enabling injection and over-broad access.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Requirements (D-SR) | A — Requirements | Generated-query safety requirements | L2 required | Require parameterisation, allowlisting, and scope limits |
+| Implementation / Secure Build (I-SB) | A — Build Process | Parameterised execution & identity passthrough | L2 required | Execute under the user's permissions; never a privileged service account |
+| Verification / Security Testing (V-ST) | B — Deep Testing | NL-to-SQL injection tests | L2 required | Probe for destructive/over-broad generated queries |
+
+**Maturity target:** L2 minimum; L3 for write-capable gateways.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** parameterise generated queries; read-scope by default.
+**Tier 2 — Short-term:** enforce execution-time user identity; add injection tests.
+**Tier 3 — Strategic:** allowlist query patterns; D-SR L3 gateway requirements.
+
+#### Cross-references
+
+- LLM Top 10: LLM05 (Improper Output Handling)
+- Agentic: ASI05 (Unexpected Code Execution)
+
+---
+
+### DSGAI13 — Vector Store Platform Security
+
+Vector databases are inadequately secured — weak authentication, injection,
+unencrypted embeddings, or tenant bleed.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Architecture (D-SA) | B — Architecture Design | Vector-store access & isolation design | L2 required | Per-namespace/tenant access control on the vector store |
+| Implementation / Secure Deployment (I-SD) | A — Deployment Process | Hardened vector-DB deployment | L2 required | Authenticated, network-restricted, encrypted-at-rest deployment |
+| Verification / Architecture Assessment (V-AA) | A — Architecture Validation | Vector-store config review | L2 required | Validate auth, isolation, and exposure |
+| Operations / Environment Management (O-EM) | B — Configuration Hardening | Patch & config management | L2 required | Keep the vector DB patched and hardened |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** authenticate and network-restrict the vector store; encrypt embeddings at rest.
+**Tier 2 — Short-term:** namespace isolation tests; config review in CI.
+**Tier 3 — Strategic:** V-AA L2+ recurring assessment of the RAG data tier.
+
+#### Cross-references
+
+- LLM Top 10: LLM08 (Vector and Embedding Weaknesses)
+- Agentic: ASI06 (Memory & Context Poisoning)
+
+---
+
+### DSGAI14 — Excessive Telemetry & Monitoring Leakage
+
+Observability pipelines capture and retain sensitive data (prompts, outputs,
+PII) in logs and traces.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Operations / Operational Management (O-OM) | A — Data Protection | Telemetry redaction & retention | L2 required | Redact/hash sensitive fields before logging; bound retention |
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Logging data-handling policy | L2 required | Define what telemetry may capture and for how long |
+| Implementation / Secure Build (I-SB) | A — Build Process | Redaction in the telemetry path | L2 required | Build redaction into logging/tracing libraries |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** redact prompts/outputs in logs; restrict log access.
+**Tier 2 — Short-term:** enforce retention limits; scan telemetry sinks for PII.
+**Tier 3 — Strategic:** privacy-by-design telemetry with field-level governance.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI03 (Identity & Privilege Abuse)
+
+---
+
+### DSGAI15 — Over-Broad Context Windows
+
+Context windows populated with excessive data create a single concentrated
+exfiltration target.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Architecture (D-SA) | B — Architecture Design | Context-minimisation design | L2 required | Assemble only need-to-know data into context per task |
+| Design / Security Requirements (D-SR) | A — Requirements | Per-item context authorisation | L2 required | Require each context item to be authorised for the caller |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Context-extraction tests | L2 required | Attempt to extract the full assembled context |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** trim context to task need; authorise each item.
+**Tier 2 — Short-term:** add context-extraction tests; cap context assembly.
+**Tier 3 — Strategic:** D-SA L3 data-need model per task type.
+
+#### Cross-references
+
+- LLM Top 10: LLM08 (Vector and Embedding Weaknesses)
+- Agentic: ASI06 (Memory & Context Poisoning)
+
+---
+
+### DSGAI16 — Endpoint & Browser Assistant Overreach
+
+AI assistants embedded on endpoints and browsers access data beyond their
+defined scope (files, tabs, clipboard).
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Security Architecture (D-SA) | B — Architecture Design | Endpoint scope & permission model | L2 required | Constrain assistant access to declared resources only |
+| Implementation / Secure Deployment (I-SD) | A — Deployment Process | Least-privilege endpoint permissions | L2 required | Grant minimal local permissions; require explicit consent |
+| Verification / Architecture Assessment (V-AA) | A — Architecture Validation | Scope-enforcement review | L2 required | Validate the assistant cannot read out-of-scope data |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** restrict local file/tab/clipboard access; require consent.
+**Tier 2 — Short-term:** test out-of-scope access; log local actions.
+**Tier 3 — Strategic:** D-SA L3 endpoint permission model.
+
+#### Cross-references
+
+- LLM Top 10: LLM06 (Excessive Agency)
+- Agentic: ASI02 (Tool Misuse & Exploitation)
+
+---
+
+### DSGAI17 — Data Availability & Resilience Failures
+
+GenAI systems lack resilience controls — training data, model artefacts, and
+vector stores have no tested backup/recovery, and pipelines have no DoS protection.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Operations / Environment Management (O-EM) | A — Configuration | Backup & recovery for data/model assets | L2 required | Back up corpora, weights, and indices with tested restore |
+| Operations / Incident Management (O-IM) | B — Incident Response | Availability incident response | L2 required | Detect and respond to exhaustion/degradation |
+| Design / Security Architecture (D-SA) | B — Architecture Design | Resilience & rate-limit design | L2 required | Design quotas, rate limits, and graceful degradation |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** back up data/model/index assets; add rate limits.
+**Tier 2 — Short-term:** run restore drills (measure RTO/RPO); alert on exhaustion.
+**Tier 3 — Strategic:** D-SA L3 resilience architecture; chaos/availability testing.
+
+#### Cross-references
+
+- LLM Top 10: LLM10 (Unbounded Consumption)
+- Agentic: ASI08 (Cascading Agent Failures)
+
+---
+
+### DSGAI18 — Inference & Data Reconstruction
+
+Attackers extract training data through membership inference, model inversion,
+or attribute inference.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Inference-attack threat model | L2 required | Model membership/inversion/attribute-inference exposure |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Membership-inference testing | L2 required | Measure attack advantage against a documented threshold |
+| Operations / Operational Management (O-OM) | A — Data Protection | Confidence/output limiting | L2 required | Limit signals (logits/confidence) that aid inference |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** suppress raw logits/confidence; rate-limit queries.
+**Tier 2 — Short-term:** run membership-inference tests; measure AUC.
+**Tier 3 — Strategic:** differential privacy / output-perturbation controls.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI03 (Identity & Privilege Abuse)
+
+---
+
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
+
+Human reviewers, labellers, and RLHF annotators access sensitive data without
+minimisation or controls.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Reviewer data-handling policy | L1 minimum | Define what labellers may see and how it is controlled |
+| Design / Security Requirements (D-SR) | A — Requirements | Reviewer-facing minimisation | L2 required | Mask non-essential sensitive fields in review/labeling UIs |
+| Operations / Operational Management (O-OM) | A — Data Protection | Reviewer access audit | L2 required | Authorise and log reviewer access to records |
+
+**Maturity target:** L1 minimum; L2 for regulated data.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** mask non-essential PII in labeling UIs; restrict queues.
+**Tier 2 — Short-term:** log/audit reviewer access; minimise per-task data.
+**Tier 3 — Strategic:** privacy-preserving review workflows.
+
+#### Cross-references
+
+- LLM Top 10: LLM02 (Sensitive Information Disclosure)
+- Agentic: ASI03 (Identity & Privilege Abuse)
+
+---
+
+### DSGAI20 — Model Exfiltration & IP Replication
+
+Adversaries extract model weights or build functional equivalents via
+extraction queries.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Extraction threat model | L2 required | Model query-based extraction and weight-theft paths |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Extraction-pattern testing | L2 required | Simulate model-stealing query campaigns |
+| Operations / Operational Management (O-OM) | A — Data Protection | Query budgeting & anomaly detection | L2 required | Per-principal budgets; detect systematic querying |
+| Governance / Policy & Compliance (G-PC) | A — Policy & Standards | Model-as-IP protection policy | L2 required | Access-control weights; classify the model as IP |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** access-control weight artefacts; add per-principal rate limits.
+**Tier 2 — Short-term:** detect extraction query patterns; throttle/alert.
+**Tier 3 — Strategic:** watermarking / output-perturbation defences.
+
+#### Cross-references
+
+- LLM Top 10: LLM10 (Unbounded Consumption)
+- Agentic: ASI04 (Agentic Supply Chain)
+
+---
+
+### DSGAI21 — Disinformation via Data Poisoning
+
+Attackers poison training or RAG data to cause systematic, targeted false outputs.
+
+#### SAMM mapping
+
+| Practice | Stream | Activity | Maturity Level | How it applies |
+|---|---|---|---|---|
+| Design / Threat Assessment (D-TA) | A — Threat Modeling | Source-integrity threat model | L2 required | Model disinformation injection into training/RAG sources |
+| Implementation / Secure Build (I-SB) | A — Build Process | Source vetting & provenance | L2 required | Vet, sign, and provenance-track training/RAG sources |
+| Verification / Security Testing (V-ST) | B — Deep Testing | Targeted-falsehood probing | L2 required | Probe for systematically false outputs on poisoned topics |
+| Operations / Incident Management (O-IM) | A — Incident Detection | Corpus-integrity monitoring | L2 required | Detect anomalous content injected over time |
+
+**Maturity target:** L2 minimum.
+
+#### Three-tier mitigations
+
+**Tier 1 — Immediate:** vet RAG/training sources; ground outputs with citations.
+**Tier 2 — Short-term:** corpus-integrity monitoring; targeted-falsehood tests.
+**Tier 3 — Strategic:** D-TA L3 provenance model across the data supply chain.
+
+#### Cross-references
+
+- LLM Top 10: LLM09 (Misinformation)
+- Agentic: ASI04 (Agentic Supply Chain)
 
 ---
 
@@ -1015,7 +718,7 @@ traceability requirements in regulated sectors.
 | D-SR Security Requirements | L2 | | | |
 | D-SA Security Architecture | L2 | | | |
 | I-SB Secure Build | L2 | | | |
-| I-SD Secure Deployment | L1 | | | |
+| I-SD Secure Deployment | L2 | | | |
 | I-DM Defect Management | L1 | | | |
 | V-AA Architecture Assessment | L2 | | | |
 | V-RT Requirements-Driven Testing | L1 | | | |
@@ -1036,10 +739,10 @@ personal data in GenAI systems operating in jurisdictions covered by GDPR or CCP
 
 | Priority | Practices | DSGAI entries addressed |
 |---|---|---|
-| P1 — Pre-production gate | D-TA L2, I-SB L2, G-PC L2 | DSGAI01, DSGAI02, DSGAI03, DSGAI09 |
-| P2 — First 30 days | D-SA L2, V-ST L2, O-IM L2 | DSGAI04, DSGAI05, DSGAI06, DSGAI08 |
-| P3 — 60-day milestone | V-AA L2, O-OM L2, D-SR L2 | DSGAI07, DSGAI13, DSGAI15, DSGAI20 |
-| P4 — Programme maturity | All practices L3, formal audits | DSGAI12, DSGAI14, DSGAI19 |
+| P1 — Pre-production gate | D-SR L2, I-SB L2, G-PC L2 | DSGAI01, DSGAI02, DSGAI04, DSGAI12 |
+| P2 — First 30 days | D-SA L2, V-ST L2, O-IM L2 | DSGAI05, DSGAI06, DSGAI11, DSGAI13 |
+| P3 — 60-day milestone | V-AA L2, O-OM L2, G-PC L2 | DSGAI03, DSGAI07, DSGAI08, DSGAI14 |
+| P4 — Programme maturity | All practices L3, formal audits | DSGAI18, DSGAI20, DSGAI21 |
 
 ---
 
@@ -1048,6 +751,20 @@ personal data in GenAI systems operating in jurisdictions covered by GDPR or CCP
 - [LLM Top 10 × SAMM](../llm-top10/LLM_SAMM.md)
 - [Agentic Top 10 × SAMM](../agentic-top10/Agentic_SAMM.md)
 - [Agentic Top 10 × MAESTRO](../agentic-top10/Agentic_MAESTRO.md)
+
+Related DSGAI 2026 mappings:
+[ASVS](DSGAI_ASVS.md) ·
+[CIS Controls](DSGAI_CISControls.md) ·
+[CWE/CVE](DSGAI_CWE_CVE.md) ·
+[ENISA](DSGAI_ENISA.md) ·
+[EU AI Act](DSGAI_EUAIAct.md) ·
+[ISO 27001](DSGAI_ISO27001.md) ·
+[ISO 42001](DSGAI_ISO42001.md) ·
+[MITRE ATLAS](DSGAI_MITREATLAS.md) ·
+[NIST AI RMF](DSGAI_NISTAIRMF.md) ·
+[NIST CSF 2.0](DSGAI_NISTCSF2.md) ·
+[PCI DSS](DSGAI_PCIDSS.md) ·
+[SOC 2](DSGAI_SOC2.md)
 
 ---
 
@@ -1067,6 +784,7 @@ personal data in GenAI systems operating in jurisdictions covered by GDPR or CCP
 | Version | Date | Change |
 |---|---|---|
 | 1.0.0 | 2026-03-27 | Initial release — full mapping DSGAI01–DSGAI21 to SAMM v2.0 |
+| 1.1.0 | 2026-05-29 | Corrected to canonical DSGAI 2026 taxonomy (entries had used a pre-release taxonomy); SAMM practice mappings, mitigations, and cross-references rewritten to match |
 
 ---
 

@@ -259,11 +259,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
+      "control_id": "Common ICS vulnerabilities",
       "control_name": "§5.3",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data integrity in OT — training data is OT data"
+      "notes": "Credential exposure is a primary OT compromise vector"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -271,7 +271,7 @@
       "control_name": "§6.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Assess training data integrity as OT risk"
+      "notes": "Assess blast radius of each OT-reaching agent credential"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -279,7 +279,7 @@
       "control_name": "§7.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Integrity verification on all OT data used for training"
+      "notes": "Strong authentication and secret management at the OT boundary"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -414,35 +414,19 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-TA",
-      "control_name": "Design / Threat Assessment",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Enumerate all sources, custodians, and transformation stages of training data"
+      "notes": "Each agent acts under a least-privilege, time-bound identity — never a shared secret"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
+      "control_id": "I-SD",
+      "control_name": "Implementation / Secure Deployment",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Hash verification, provenance tracking, and anomaly detection in training data"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "V-ST",
-      "control_name": "Verification / Security Testing",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Statistical analysis and adversarial probing for poisoned behaviours"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-IM",
-      "control_name": "Operations / Incident Management",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Alert on model output drift that may indicate active poisoning"
+      "notes": "Inject secrets from a vault at runtime; never bake them into prompts or images"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -450,7 +434,15 @@
       "control_name": "Governance / Policy & Compliance",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Formal policy for data source approval, verification, and chain of custody"
+      "notes": "Mandate rotation, scoping, and prohibition of secrets in model context"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-EM",
+      "control_name": "Operations / Environment Management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Scrub secrets from logs, memory, and tool payloads"
     },
     {
       "framework": "CWE/CVE",
@@ -555,43 +547,59 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Write access to training data stores enables poisoning",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "Agent secrets surface in prompts, memory, logs, tool payloads",
+      "control_name": "NHI-2 Secret Leakage",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Separate read and write credentials; write requires MFA"
+      "notes": "Secret-scan all agent I/O; never embed secrets in context"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Training pipeline credentials in plaintext config",
+      "control_id": "Cached agent credentials stored insecurely",
       "control_name": "NHI-6 Insecure Credential Storage",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Vault all training pipeline credentials"
+      "notes": "Store all credentials in a vault, encrypted at rest"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived write credentials create persistent poisoning window",
+      "control_id": "Stolen agent tokens remain valid indefinitely",
       "control_name": "NHI-7 Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Short-lived write tokens; rotate frequently"
+      "notes": "Issue short-lived, auto-rotated tokens"
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "A compromised agent identity has excessive reach",
+      "control_name": "NHI-5 Over-Privileged NHI",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Scope each agent identity to least privilege"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — data inventory and classification",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect secrets and artefacts from unauthorised access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define security requirements mandating a complete data inventory covering all datasets used in training, fine-tuning, RAG, and evaluation; classify by sensitivity"
+      "notes": "Vault all credentials; keep secrets out of prompts/memory"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.2.1-PS",
-      "control_name": "Design software — data flow transparency",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Provenance & protected release management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Design AI pipelines with documented data flow diagrams showing data origins, transformations, storage locations, and access points; maintain as living artefacts"
+      "notes": "Track and protect signed artefacts and their access"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Secure credential handling in code",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "No hardcoded secrets; inject from a vault at runtime"
     },
     {
       "framework": "FedRAMP",
@@ -690,26 +698,6 @@
       "url": "https://github.com/spiffe/spire"
     },
     {
-      "name": "Apache Atlas",
-      "type": "open-source",
-      "url": "https://atlas.apache.org"
-    },
-    {
-      "name": "Amundsen",
-      "type": "open-source",
-      "url": "https://www.amundsen.io"
-    },
-    {
-      "name": "Google Data Catalog",
-      "type": "commercial",
-      "url": "https://cloud.google.com/data-catalog"
-    },
-    {
-      "name": "Collibra",
-      "type": "commercial",
-      "url": "https://www.collibra.com"
-    },
-    {
       "name": "AWS Secrets Manager / Azure Key Vault",
       "type": "commercial",
       "url": "https://aws.amazon.com/secrets-manager/"
@@ -779,7 +767,6 @@
     "agentic_top10": [
       "ASI03",
       "ASI07",
-      "ASI04",
       "ASI02"
     ],
     "dsgai_2026": [
@@ -787,9 +774,6 @@
     ],
     "llm_top10": [
       "LLM06",
-      "LLM04",
-      "LLM03",
-      "LLM05",
       "LLM02"
     ]
   },

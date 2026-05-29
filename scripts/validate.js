@@ -456,6 +456,65 @@ function checkEvals() {
   }
 }
 
+// ─── DSGAI canonical taxonomy check ─────────────────────────────────────────
+
+/**
+ * 12. DSGAI entry headings must not use a retired pre-release taxonomy.
+ *     Several dsgai-2026 files historically shipped *wholesale-different*
+ *     taxonomies (e.g. "DSGAI01 — Prompt Injection via Data Channels" or
+ *     "DSGAI01 — Data Access Logging"). The validator only checked the ID
+ *     token, so the drift went unnoticed. Canonical headings vary slightly in
+ *     wording across files, so this uses a blocklist of distinctive retired
+ *     names rather than an exact-match list — it flags the wrong-taxonomy
+ *     problem without false-flagging legitimate wording variants.
+ */
+const RETIRED_DSGAI_NAMES = new Set([
+  // Pre-release taxonomy A (NHI / NIST SP 800-82 / SAMM)
+  'Prompt Injection via Data Channels', 'Training Data Poisoning',
+  'Sensitive Data in Training Sets', 'Insecure Data Pipelines',
+  'Guardrail Circumvention', 'Unintended Data Disclosure',
+  'Excessive Data Access', 'Data Leakage in Retrieval',
+  'RAG Corpus Manipulation', 'Context Window Poisoning',
+  'Session Persistence Attacks', 'Model Inversion and Extraction',
+  'Data Leakage through Tool Integration', 'Model Weight Theft',
+  'Inference Data Exposure', 'Third-Party Data Dependencies',
+  'Model Supply Chain Risks', 'Data Retention and Deletion Failures',
+  'Cascading Data Failures', 'Regulatory Non-Compliance in Data Use',
+  'Data Provenance and Lineage Failures',
+  // Pre-release taxonomy B (SP 800-218A)
+  'Data Access Logging', 'Data Visibility & Transparency',
+  'Shadow AI & Unvetted Tools', 'Data Provenance & Quality',
+  'Data Lineage Fragmentation', 'Excessive Data Aggregation',
+  'Intellectual Property Theft', 'Synthetic Data Generation Risk',
+  'Data Ownership & Monetisation', 'Data Misuse & Manipulation',
+  'Consent Management Failures', 'Data Minimisation Violations',
+  'Erosion of Privacy', 'Bias in Data', 'Governance Gaps',
+  'Data Localization Violations', 'Non-Compliance with Data Laws',
+]);
+
+function checkDsgaiTaxonomy() {
+  const dir = path.join(ROOT, 'dsgai-2026');
+  if (!fs.existsSync(dir)) return;
+  const norm = (s) => s.replace(/\s+/g, ' ').trim();
+  // Accept em-dash, en-dash, or hyphen as the heading separator.
+  const headingRe = /^###\s+DSGAI(\d{2})\s*[—–-]\s*(.+?)\s*$/gm;
+
+  for (const filename of fs.readdirSync(dir)) {
+    if (!filename.endsWith('.md')) continue;
+    const rel = `dsgai-2026/${filename}`;
+    const content = fs.readFileSync(path.join(dir, filename), 'utf8');
+    let bad = 0;
+    for (const m of content.matchAll(headingRe)) {
+      const name = norm(m[2]);
+      if (RETIRED_DSGAI_NAMES.has(name)) {
+        fail(rel, `DSGAI${m[1]} uses retired pre-release taxonomy name: "${name}"`);
+        bad++;
+      }
+    }
+    if (bad === 0) pass(rel, 'DSGAI headings free of retired taxonomy names');
+  }
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 function collectMappingFiles(targetFile) {
@@ -494,6 +553,7 @@ function run() {
   checkCrossRefFile();
   checkReadmeCounts();
   checkEvals();
+  checkDsgaiTaxonomy();
 
   // Per-file checks
   const allFiles = collectMappingFiles(targetFile);

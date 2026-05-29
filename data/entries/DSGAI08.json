@@ -229,27 +229,19 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data confidentiality",
-      "control_name": "§5.4",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "OT data in retrieval corpora requires access control"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
+      "control_id": "Risk management",
       "control_name": "§6.2",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Entitlement leakage in OT data retrieval"
+      "notes": "Map OT data processing to applicable regulation"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network monitoring",
-      "control_name": "§7.3",
-      "tier": "Hardening",
+      "control_id": "OT security program",
+      "control_name": "§8.2",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor retrieval patterns for unauthorised OT data access"
+      "notes": "Evidence accountable, compliant processing"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -377,43 +369,35 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-TA",
-      "control_name": "Design / Threat Assessment",
-      "tier": "Hardening",
+      "control_id": "G-PC",
+      "control_name": "Governance / Policy & Compliance",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Model all paths where over-retrieval can expose unauthorised content"
+      "notes": "Map processing to applicable regulation and recorded lawful basis"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
-      "tier": "Hardening",
+      "control_id": "G-SM",
+      "control_name": "Governance / Strategy & Metrics",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce per-query entitlement filtering in retrieval pipeline"
+      "notes": "Track regulatory exposure as a programme metric"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-ST",
-      "control_name": "Verification / Security Testing",
-      "tier": "Hardening",
+      "control_id": "D-SR",
+      "control_name": "Design / Security Requirements",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Test whether queries can retrieve documents from other tenants or restricted tiers"
+      "notes": "Build erasure/access/rectification into the design"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "O-OM",
       "control_name": "Operations / Operational Management",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Log all retrieved documents with user identity for forensic review"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Policy mapping corpus access to user roles and data classification"
+      "notes": "Log processing activities for accountability/audit"
     },
     {
       "framework": "CWE/CVE",
@@ -510,51 +494,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Embedding store service account with cross-tenant read access",
-      "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Hardening",
+      "control_id": "No attribution → cannot demonstrate lawful, accountable processing",
+      "control_name": "NHI-10 Human Use of NHI",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Per-tenant credentials or row-level security with minimum scope"
+      "notes": "Enforce human/governed identity for regulated data"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Unauthenticated embedding store access",
-      "control_name": "NHI-4 Insecure Authentication",
-      "tier": "Hardening",
+      "control_id": "Stale access breaches retention and access obligations",
+      "control_name": "NHI-1 Improper Offboarding",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Require authentication for all vector database connections"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Same embedding store credential used for multiple tenants",
-      "control_name": "NHI-9 NHI Reuse",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Separate credentials per tenant or use row-level security"
+      "notes": "Revoke access on offboarding; evidence it"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — data exfiltration prevention",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Regulatory & compliance requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement controls preventing sensitive data exfiltration through model interfaces, API endpoints, and pipeline outputs; enforce data classification boundaries"
+      "notes": "Map processing to regulation and lawful basis"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.5.1-PS",
-      "control_name": "Secure coding — data handling in AI pipelines",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design for data-subject rights",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce secure coding practices for all data handling in AI pipelines; implement output filtering, PII detection, and data masking before model responses reach consumers"
+      "notes": "Build erasure/access/rectification into design"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.7.2-PS",
-      "control_name": "Review for security vulnerabilities — data leakage review",
+      "control_id": "RV.3.1-PS",
+      "control_name": "Compliance failure analysis",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data leakage and memorisation scenarios in pre-release security reviews; verify that outputs cannot reveal training data or sensitive context"
+      "notes": "Root-cause and remediate compliance gaps"
     },
     {
       "framework": "FedRAMP",
@@ -656,21 +632,6 @@
       "name": "Privado",
       "type": "open-source",
       "url": "https://github.com/Privado-Inc/privado"
-    },
-    {
-      "name": "Presidio",
-      "type": "open-source",
-      "url": "https://github.com/microsoft/presidio"
-    },
-    {
-      "name": "LLM Guard",
-      "type": "open-source",
-      "url": "https://github.com/protectai/llm-guard"
-    },
-    {
-      "name": "Nightfall",
-      "type": "commercial",
-      "url": "https://www.nightfall.ai"
     },
     {
       "name": "TrustArc",
@@ -803,16 +764,11 @@
       "DSGAI07"
     ],
     "llm_top10": [
-      "LLM02",
-      "LLM08",
-      "LLM07",
-      "LLM01"
+      "LLM02"
     ],
     "agentic_top10": [
-      "ASI06",
-      "ASI01",
-      "ASI02",
-      "ASI03"
+      "ASI03",
+      "ASI02"
     ]
   },
   "changelog": [

@@ -229,27 +229,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risks",
-      "control_name": "§5.5",
+      "control_id": "Common ICS vulnerabilities",
+      "control_name": "§5.3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Third-party data in OT context"
+      "notes": "Workstation assistant overreach into OT data"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk management",
-      "control_name": "§6.3",
+      "control_id": "Risk assessment",
+      "control_name": "§6.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data source assessment for OT GenAI"
+      "notes": "Assess endpoint assistant scope"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Third-party management",
-      "control_name": "§8.4",
+      "control_id": "Security controls",
+      "control_name": "§7.1",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vendor programme for OT data suppliers"
+      "notes": "Constrain endpoint access"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -377,19 +377,19 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Approved vendor list for all external data sources"
+      "notes": "Constrain assistant access to declared resources only"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
+      "control_id": "I-SD",
+      "control_name": "Implementation / Secure Deployment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Inventory of all external data sources with security contact and last-verified date"
+      "notes": "Grant minimal local permissions; require explicit consent"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -397,15 +397,7 @@
       "control_name": "Verification / Architecture Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Architecture review validates all external data dependencies against policy"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Track security advisories and availability for all integrated data sources"
+      "notes": "Validate the assistant cannot read out-of-scope data"
     },
     {
       "framework": "CWE/CVE",
@@ -502,51 +494,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party data source API keys with excessive scope",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "The assistant identity can access files/resources beyond scope",
+      "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Review all third-party credentials; reduce to minimum"
+      "notes": "Grant minimal, declared local permissions"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party development credentials used in production",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "Assistant acts as the user without attribution",
+      "control_name": "NHI-10 Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Enforce environment isolation for third-party credentials"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party credentials embedded in shared config",
-      "control_name": "NHI-2 Secret Leakage",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Vault all third-party data source credentials"
+      "notes": "Bind actions to an attributable identity with consent"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — privacy preservation requirements",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Vet endpoint extensions",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define security requirements that mandate privacy impact assessments, privacy-preserving techniques, and limits on inference of sensitive attributes for all AI systems"
-    },
-    {
-      "framework": "NIST SP 800-218A",
-      "control_id": "PW.2.1-PS",
-      "control_name": "Design software — privacy-preserving AI architecture",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Design AI systems with privacy preservation as a core architectural principle; embed differential privacy, federated learning, or secure computation where appropriate"
+      "notes": "Review assistant/extension permissions before use"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — privacy boundary enforcement",
+      "control_name": "Protect local data access",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement access controls that prevent cross-context data combination enabling re-identification or sensitive attribute inference"
+      "notes": "Constrain to declared resources; require consent"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design review of scope",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Model endpoint data-access boundaries"
     },
     {
       "framework": "FedRAMP",
@@ -637,26 +621,6 @@
       "url": "https://www.crowdstrike.com"
     },
     {
-      "name": "OpenDP",
-      "type": "open-source",
-      "url": "https://opendp.org"
-    },
-    {
-      "name": "PySyft",
-      "type": "open-source",
-      "url": "https://github.com/OpenMined/PySyft"
-    },
-    {
-      "name": "TensorFlow Privacy",
-      "type": "open-source",
-      "url": "https://github.com/tensorflow/privacy"
-    },
-    {
-      "name": "Flower (Federated Learning)",
-      "type": "open-source",
-      "url": "https://flower.ai"
-    },
-    {
       "name": "Microsoft Defender for Endpoint",
       "type": "commercial",
       "url": "https://www.microsoft.com/en-us/security/business/endpoint-security"
@@ -719,19 +683,13 @@
     "agentic_top10": [
       "ASI10",
       "ASI02",
-      "ASI03",
-      "ASI07",
-      "ASI09"
+      "ASI03"
     ],
     "dsgai_2026": [
-      "DSGAI03",
-      "DSGAI17"
+      "DSGAI03"
     ],
     "llm_top10": [
-      "LLM06",
-      "LLM03",
-      "LLM08",
-      "LLM01"
+      "LLM06"
     ]
   },
   "changelog": [

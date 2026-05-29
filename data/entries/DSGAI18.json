@@ -207,19 +207,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data confidentiality",
+      "control_id": "Data security",
       "control_name": "§5.4",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Retention of OT data beyond required period is a confidentiality risk"
+      "notes": "Protect against inference-based OT data recovery"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Risk assessment",
       "control_name": "§6.2",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data retention as OT risk scenario"
+      "notes": "Assess inference exposure"
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "Data flow controls",
+      "control_name": "§7.3",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Limit signals enabling inference"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -347,35 +355,27 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Foundational",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Documented retention periods and deletion procedures for all GenAI data"
+      "notes": "Model membership/inversion/attribute-inference exposure"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
-      "tier": "Foundational",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Right-to-erasure and retention limits built into system requirements"
+      "notes": "Measure attack advantage against a documented threshold"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "O-OM",
       "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Automated verification that data is deleted per retention schedule"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-SM",
-      "control_name": "Governance / Strategy & Metrics",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "GenAI data lifecycle integrated into existing privacy programme"
+      "notes": "Limit signals (logits/confidence) that aid inference"
     },
     {
       "framework": "CWE/CVE",
@@ -456,43 +456,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Service account with access to retained data beyond declared function",
+      "control_id": "Broad inference API scope enables high-volume probing",
       "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Minimum scope for data access credentials"
+      "notes": "Scope and rate-limit inference identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Humans using machine credentials for data deletion — no audit trail",
-      "control_name": "NHI-10 Human Use of NHI",
-      "tier": "Foundational",
+      "control_id": "Durable API keys sustain extraction campaigns",
+      "control_name": "NHI-7 Long-Lived Credentials",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Enforce human identity for all compliance operations"
+      "notes": "Short-lived inference tokens with per-principal budgets"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — AI data governance requirements",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Adversarial inference testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define security requirements mandating AI-specific data governance including data stewardship, accountability structures, and policy enforcement mechanisms"
+      "notes": "Run membership-inference/inversion attacks"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.2.1-PS",
-      "control_name": "Design software — governance-integrated AI architecture",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review of inference exposure",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Design AI systems with governance controls integrated into pipeline architecture; embed policy enforcement, approval workflows, and audit capabilities"
+      "notes": "Limit signals (logits/confidence) aiding inference"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "RV.3.1-PS",
-      "control_name": "Analyse root causes — governance failure analysis",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect training data",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "When data governance failures contribute to AI incidents, conduct root cause analysis to identify governance gaps and strengthen frameworks"
+      "notes": "Access-control and minimise training data"
     },
     {
       "framework": "FedRAMP",
@@ -581,26 +581,6 @@
       "url": "https://github.com/opendp/opendp"
     },
     {
-      "name": "Collibra",
-      "type": "commercial",
-      "url": "https://www.collibra.com"
-    },
-    {
-      "name": "Atlan",
-      "type": "commercial",
-      "url": "https://atlan.com"
-    },
-    {
-      "name": "Apache Atlas",
-      "type": "open-source",
-      "url": "https://atlas.apache.org"
-    },
-    {
-      "name": "Open Policy Agent",
-      "type": "open-source",
-      "url": "https://www.openpolicyagent.org"
-    },
-    {
       "name": "Opacus",
       "type": "open-source",
       "url": "https://opacus.ai"
@@ -638,17 +618,12 @@
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM08",
-      "LLM06",
-      "LLM05"
+      "LLM08"
     ],
     "dsgai_2026": [
-      "DSGAI10",
-      "DSGAI15"
+      "DSGAI10"
     ],
     "agentic_top10": [
-      "ASI04",
-      "ASI09",
       "ASI03",
       "ASI01"
     ]

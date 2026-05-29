@@ -229,27 +229,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT data confidentiality",
-      "control_name": "§5.4",
+      "control_id": "Supply chain / connectivity",
+      "control_name": "§5.5",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT data must not be disclosed without authorisation"
+      "notes": "Tool/vendor integrations cross the OT trust boundary"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "Supply chain risk",
+      "control_name": "§6.3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Assess disclosure risk for each OT data type in GenAI outputs"
+      "notes": "Assess each integration's data exchange"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network monitoring",
+      "control_id": "Data flow controls",
       "control_name": "§7.3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor outputs for OT data disclosure patterns"
+      "notes": "Validate and minimise cross-boundary data"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -377,11 +377,11 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define what categories of data may appear in model outputs"
+      "notes": "Treat all tool I/O as crossing a trust boundary"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -389,7 +389,7 @@
       "control_name": "Implementation / Secure Build",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Apply DLP scanning to all model outputs before delivery"
+      "notes": "Validate tool responses before use; send only required fields"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -397,15 +397,7 @@
       "control_name": "Verification / Security Testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Automated testing for memorisation and over-retrieval of sensitive content"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Continuous monitoring of production outputs for sensitive content patterns"
+      "notes": "Inject malicious tool responses and verify handling"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -413,7 +405,7 @@
       "control_name": "Governance / Policy & Compliance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Documented policy on what data may be surfaced in model responses"
+      "notes": "Require review before a tool/plugin is connected"
     },
     {
       "framework": "CWE/CVE",
@@ -518,35 +510,51 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Credentials embedded in model outputs or training data surface in responses",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "Tool tokens carry excessive permissions",
+      "control_name": "NHI-3 Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Output scanning for credential patterns"
+      "notes": "Vet and minimum-scope every tool credential"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Over-broad retrieval credentials return data beyond user entitlement",
+      "control_id": "A tool identity can reach more data than the task needs",
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Minimum scope for retrieval service accounts"
+      "notes": "Scope tool identities per function"
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "One credential shared across tools amplifies compromise",
+      "control_name": "NHI-9 NHI Reuse",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Distinct credential per tool/integration"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.3.1-PS",
-      "control_name": "Archive and protect software releases — lineage-aware artefact management",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Vet third-party tools & plugins",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Maintain end-to-end data lineage records linking every model version to its training data, transformations, and intermediate artefacts"
+      "scope": "Both",
+      "notes": "Review and minimum-scope each integration"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect data exchanged with tools",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Validate tool returns; minimise tool inputs"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.2.1-PS",
-      "control_name": "Design software — traceable data pipeline architecture",
+      "control_name": "Design review of trust boundaries",
       "tier": "Foundational",
-      "scope": "Build",
-      "notes": "Design AI data pipelines with built-in lineage tracking; require lineage metadata capture at every transformation step as an explicit design requirement"
+      "scope": "Both",
+      "notes": "Model tool I/O as a trust boundary"
     },
     {
       "framework": "FedRAMP",
@@ -645,26 +653,6 @@
       "url": "https://github.com/NVIDIA/NeMo-Guardrails"
     },
     {
-      "name": "OpenLineage",
-      "type": "open-source",
-      "url": "https://openlineage.io"
-    },
-    {
-      "name": "Marquez",
-      "type": "open-source",
-      "url": "https://marquezproject.ai"
-    },
-    {
-      "name": "MLflow",
-      "type": "open-source",
-      "url": "https://mlflow.org"
-    },
-    {
-      "name": "DataHub",
-      "type": "open-source",
-      "url": "https://datahubproject.io"
-    },
-    {
       "name": "Open Policy Agent",
       "type": "open-source",
       "url": "https://www.openpolicyagent.org"
@@ -688,6 +676,11 @@
       "name": "Nightfall DLP",
       "type": "commercial",
       "url": "https://www.nightfall.ai"
+    },
+    {
+      "name": "MLflow",
+      "url": "https://github.com/mlflow/mlflow",
+      "type": "open-source"
     }
   ],
   "incidents": [
@@ -714,14 +707,12 @@
     "agentic_top10": [
       "ASI02",
       "ASI04",
-      "ASI07",
-      "ASI06"
+      "ASI07"
     ],
     "llm_top10": [
       "LLM06",
       "LLM03",
-      "LLM05",
-      "LLM02"
+      "LLM05"
     ]
   },
   "changelog": [

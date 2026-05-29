@@ -252,27 +252,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data confidentiality",
-      "control_name": "§5.4",
-      "tier": "Hardening",
+      "control_id": "Common ICS vulnerabilities",
+      "control_name": "§5.3",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT knowledge encoded in models requires protection"
+      "notes": "Injectable query interfaces to OT data"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
       "control_id": "Risk assessment",
       "control_name": "§6.2",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Model extraction as OT intelligence gathering vector"
+      "notes": "Assess generated-query reach"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network monitoring",
-      "control_name": "§7.3",
-      "tier": "Hardening",
+      "control_id": "Security controls",
+      "control_name": "§7.2",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor for systematic extraction query patterns"
+      "notes": "Parameterise and scope generated queries"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -407,35 +407,27 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-TA",
-      "control_name": "Design / Threat Assessment",
-      "tier": "Hardening",
+      "control_id": "D-SR",
+      "control_name": "Design / Security Requirements",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Model extraction attack surface: API rate limits, confidence scores, output verbosity"
+      "notes": "Require parameterisation, allowlisting, and scope limits"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "I-SB",
+      "control_name": "Implementation / Secure Build",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Execute under the user's permissions; never a privileged service account"
     },
     {
       "framework": "OWASP SAMM v2.0",
       "control_id": "V-ST",
       "control_name": "Verification / Security Testing",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Attempt model extraction via systematic querying; verify detection and rate limiting"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Alert on systematic query patterns consistent with extraction attempts"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Minimise logit exposure, confidence scores, and internal state leakage"
+      "notes": "Probe for destructive/over-broad generated queries"
     },
     {
       "framework": "CWE/CVE",
@@ -540,35 +532,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "API credentials with high quota enabling systematic extraction",
+      "control_id": "Gateway service account can run destructive/over-broad queries",
       "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Hardening",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Per-user quotas; minimum default quota"
+      "notes": "Execute under the user's scoped permissions, not a privileged account"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived inference API credentials enable sustained extraction campaigns",
-      "control_name": "NHI-7 Long-Lived Credentials",
-      "tier": "Hardening",
+      "control_id": "Weak gateway-to-DB auth enables spoofing",
+      "control_name": "NHI-4 Insecure Authentication",
+      "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rotate API credentials; implement per-session tokens"
+      "notes": "Strong mutual auth to the data source"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — data ownership and rights management",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Parameterised query handling",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define security requirements that establish clear data ownership, licensing terms, and permitted use for all datasets in AI pipelines"
+      "notes": "Parameterise and scope generated queries"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review/test of gateway code",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Injection tests against the gateway"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — ownership-based access controls",
+      "control_name": "Execution-time access control",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement access controls that enforce data ownership boundaries; prevent use of datasets outside their licensed scope or ownership agreement"
+      "notes": "Run under the user's permissions, not a service account"
     },
     {
       "framework": "FedRAMP",
@@ -667,26 +667,6 @@
       "url": "https://github.com/sqlfluff/sqlfluff"
     },
     {
-      "name": "Collibra",
-      "type": "commercial",
-      "url": "https://www.collibra.com"
-    },
-    {
-      "name": "Alation",
-      "type": "commercial",
-      "url": "https://www.alation.com"
-    },
-    {
-      "name": "Apache Atlas",
-      "type": "open-source",
-      "url": "https://atlas.apache.org"
-    },
-    {
-      "name": "CycloneDX",
-      "type": "open-source",
-      "url": "https://cyclonedx.org"
-    },
-    {
       "name": "LLM Guard",
       "type": "open-source",
       "url": "https://github.com/protectai/llm-guard"
@@ -731,18 +711,12 @@
     "llm_top10": [
       "LLM05",
       "LLM01",
-      "LLM02",
-      "LLM03",
       "LLM06"
     ],
     "agentic_top10": [
       "ASI02",
       "ASI05",
-      "ASI01",
-      "ASI04"
-    ],
-    "dsgai_2026": [
-      "DSGAI14"
+      "ASI01"
     ]
   },
   "changelog": [
