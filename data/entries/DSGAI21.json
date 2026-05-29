@@ -254,19 +254,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
-      "tier": "Foundational",
+      "control_id": "Supply chain / connectivity",
+      "control_name": "§5.5",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Provenance as OT data quality and audit risk"
+      "notes": "Tainted external OT data sources"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT security programme",
-      "control_name": "§8.2",
-      "tier": "Foundational",
+      "control_id": "Supply chain risk",
+      "control_name": "§6.3",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Data lineage as OT governance requirement"
+      "notes": "Vet OT data-source provenance"
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "Supply chain program",
+      "control_name": "§8.4",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Provenance across the OT data supply chain"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -394,43 +402,35 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Foundational",
+      "control_id": "D-TA",
+      "control_name": "Design / Threat Assessment",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Policy requiring provenance metadata for all GenAI data"
+      "notes": "Model disinformation injection into training/RAG sources"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
-      "tier": "Foundational",
+      "control_id": "I-SB",
+      "control_name": "Implementation / Secure Build",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Provenance metadata built into data pipeline requirements"
+      "notes": "Vet, sign, and provenance-track training/RAG sources"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
+      "control_id": "V-ST",
+      "control_name": "Verification / Security Testing",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Alert on loss of provenance metadata in data flows"
+      "notes": "Probe for systematically false outputs on poisoned topics"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-RT",
-      "control_name": "Verification / Requirements-Driven Testing",
-      "tier": "Foundational",
+      "control_id": "O-IM",
+      "control_name": "Operations / Incident Management",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Tests verifying provenance metadata is preserved through pipeline"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-SM",
-      "control_name": "Governance / Strategy & Metrics",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Provenance programme included in data governance roadmap"
+      "notes": "Detect anomalous content injected over time"
     },
     {
       "framework": "CWE/CVE",
@@ -543,115 +543,115 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Machine credentials used for ingestion operations — no individual attribution",
-      "control_name": "NHI-10 Human Use of NHI",
-      "tier": "Foundational",
+      "control_id": "Third-party source credentials inject tainted content",
+      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Enforce machine identity per pipeline component; log with component identity"
+      "notes": "Vet and scope third-party data-source identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Decommissioned pipeline identities remain in lineage records",
-      "control_name": "NHI-1 Improper Offboarding",
-      "tier": "Foundational",
+      "control_id": "Write access to corpora enables systematic injection",
+      "control_name": "NHI-5 Over-Privileged NHI",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Timely offboarding of pipeline NHIs"
+      "notes": "Read-only by default; scoped, signed ingestion"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Lineage system credentials leaked — provenance records can be tampered",
-      "control_name": "NHI-2 Secret Leakage",
-      "tier": "Foundational",
+      "control_id": "Durable write tokens sustain a poisoning campaign",
+      "control_name": "NHI-7 Long-Lived Credentials",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Protect lineage system credentials"
+      "notes": "Ephemeral, job-scoped write credentials"
     },
     {
       "framework": "OWASP NHI Top 10",
       "control_id": "DSGAI entries most affected",
       "control_name": "NHI Risk",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI21",
+      "control_id": "DSGAI07, DSGAI08, DSGAI17",
       "control_name": "NHI-1 Improper Offboarding",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI03, DSGAI06, DSGAI16",
+      "control_id": "DSGAI01, DSGAI02, DSGAI14",
       "control_name": "NHI-2 Secret Leakage",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "DevSecOps"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI13, DSGAI16, DSGAI17",
+      "control_id": "DSGAI03, DSGAI06, DSGAI21",
       "control_name": "NHI-3 Third-Party NHI",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Security"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI04, DSGAI08",
+      "control_id": "DSGAI05, DSGAI12, DSGAI13",
       "control_name": "NHI-4 Insecure Authentication",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Platform"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI02, DSGAI07, DSGAI08, DSGAI09",
+      "control_id": "DSGAI01, DSGAI04, DSGAI18, DSGAI20",
       "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI02, DSGAI09, DSGAI14",
+      "control_id": "DSGAI02, DSGAI13, DSGAI20",
       "control_name": "NHI-6 Insecure Storage",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Platform"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI02, DSGAI07, DSGAI09, DSGAI12",
+      "control_id": "DSGAI02, DSGAI04, DSGAI18, DSGAI20",
       "control_name": "NHI-7 Long-Lived",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI16, DSGAI17",
+      "control_id": "DSGAI11, DSGAI17",
       "control_name": "NHI-8 Env Isolation",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "DevSecOps"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI04, DSGAI07, DSGAI08, DSGAI19",
+      "control_id": "DSGAI06, DSGAI11",
       "control_name": "NHI-9 NHI Reuse",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI18, DSGAI20, DSGAI21",
+      "control_id": "DSGAI03, DSGAI08, DSGAI19",
       "control_name": "NHI-10 Human Use",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
       "control_id": "Date",
       "control_name": "Version",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Change"
     },
@@ -659,33 +659,41 @@
       "framework": "OWASP NHI Top 10",
       "control_id": "2026-03-27",
       "control_name": "1.0.0",
-      "tier": "Foundational",
+      "tier": "Hardening",
       "scope": "Both",
       "notes": "Initial release — full mapping DSGAI01–DSGAI21 to NHI Top 10"
     },
     {
-      "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — regulatory compliance requirements",
-      "tier": "Foundational",
+      "framework": "OWASP NHI Top 10",
+      "control_id": "2026-05-29",
+      "control_name": "1.1.0",
+      "tier": "Hardening",
       "scope": "Both",
-      "notes": "Define security requirements that mandate compliance with all applicable data protection, privacy, and AI-specific regulations for each AI system deployment"
+      "notes": "Corrected to canonical DSGAI 2026 taxonomy (entries had used a pre-release taxonomy); NHI mappings, mitigations, and cross-references rewritten to match"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.2.1-PS",
-      "control_name": "Design software — compliance-by-design",
+      "control_id": "PW.4.1-PS",
+      "control_name": "Vet & sign data sources",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Design AI systems with regulatory compliance built into architecture; embed compliance controls, audit capabilities, and regulatory reporting into pipeline design"
+      "notes": "Provenance-track training/RAG sources"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Integrity verification",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Detect injected/tampered content"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "RV.3.1-PS",
-      "control_name": "Analyse root causes — compliance failure analysis",
+      "control_name": "Root-cause of disinformation incidents",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "When regulatory non-compliance is identified, conduct root cause analysis to determine the gap, affected data subjects, and required remediation"
+      "notes": "Analyse and remediate poisoning systemically"
     },
     {
       "framework": "FedRAMP",
@@ -789,26 +797,6 @@
       "url": "https://github.com/explodinggradients/ragas"
     },
     {
-      "name": "OneTrust",
-      "type": "commercial",
-      "url": "https://www.onetrust.com"
-    },
-    {
-      "name": "TrustArc",
-      "type": "commercial",
-      "url": "https://trustarc.com"
-    },
-    {
-      "name": "Open Policy Agent",
-      "type": "open-source",
-      "url": "https://www.openpolicyagent.org"
-    },
-    {
-      "name": "Transcend",
-      "type": "commercial",
-      "url": "https://transcend.io"
-    },
-    {
       "name": "LLM Guard",
       "type": "open-source",
       "url": "https://github.com/protectai/llm-guard"
@@ -870,12 +858,11 @@
   "crossrefs": {
     "llm_top10": [
       "LLM04",
-      "LLM09",
-      "LLM06",
-      "LLM07"
+      "LLM09"
     ],
     "agentic_top10": [
       "ASI06",
+      "ASI04",
       "ASI09"
     ],
     "dsgai_2026": [

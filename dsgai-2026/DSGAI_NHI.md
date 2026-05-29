@@ -11,8 +11,8 @@
 
 Mapping the [OWASP GenAI Data Security Risks 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
 (DSGAI01–DSGAI21) to the [OWASP Non-Human Identities (NHI) Top 10](https://owasp.org/www-project-non-human-identities-top-10/) —
-the framework for securing machine identities including service
-accounts, API keys, OAuth tokens, certificates, and pipeline credentials.
+the framework for securing the machine identities, service accounts, tokens,
+and secrets that every GenAI data flow depends on.
 
 ---
 
@@ -26,16 +26,18 @@ logging systems all authenticate with Non-Human Identities.
 
 The NHI risks that most directly amplify DSGAI vulnerabilities:
 
-- **Training data poisoning (DSGAI02):** possible only when pipeline
-  credentials have write access to training stores (NHI-5).
-- **RAG corpus manipulation (DSGAI09):** possible only when corpus
-  write credentials are insufficiently protected (NHI-5, NHI-6, NHI-7).
-- **Data leakage in retrieval (DSGAI08):** enabled when embedding
-  store service accounts have cross-tenant read scope (NHI-5).
-- **Third-party data dependencies (DSGAI16):** third-party data
-  source credentials are rarely reviewed for scope (NHI-3).
-- **Data pipeline security (DSGAI04):** pipeline service accounts
-  frequently hold over-broad access to all pipeline stages (NHI-5, NHI-9).
+- **Agent identity & credential exposure (DSGAI02):** the most
+  NHI-central risk — secrets in prompts/memory, weak storage, and
+  long-lived tokens (NHI-2, NHI-6, NHI-7) are exactly what attackers
+  extract and replay.
+- **Sensitive data leakage (DSGAI01):** over-privileged service
+  accounts turn RAG over-retrieval into mass disclosure (NHI-5).
+- **Data, model & artifact poisoning (DSGAI04):** possible only when
+  pipeline credentials have write access to training/RAG stores (NHI-5, NHI-7).
+- **Vector store platform security (DSGAI13):** weak machine-to-machine
+  auth and over-scoped tokens expose the embedding tier (NHI-4, NHI-5).
+- **Model exfiltration (DSGAI20):** long-lived, over-scoped inference
+  API credentials enable sustained extraction campaigns (NHI-5, NHI-7).
 
 NHI programme maturity is a prerequisite for DSGAI risk reduction —
 you cannot secure GenAI data flows without securing the credentials
@@ -64,34 +66,34 @@ that access them.
 
 | DSGAI ID | Name | Severity | Primary NHI Entries | Tier |
 |---|---|---|---|---|
-| DSGAI01 | Prompt Injection via Data Channels | Critical | NHI-5, NHI-7 (blast radius) | Foundational–Advanced |
-| DSGAI02 | Training Data Poisoning | Critical | NHI-5, NHI-6, NHI-7 (write access) | Hardening–Advanced |
-| DSGAI03 | Sensitive Data in Training Sets | High | NHI-5, NHI-2 (pipeline access) | Foundational–Hardening |
-| DSGAI04 | Insecure Data Pipelines | High | NHI-4, NHI-5, NHI-9 | Foundational–Hardening |
-| DSGAI05 | Guardrail Circumvention | High | NHI-5 (bypass via pipeline access) | Hardening–Advanced |
-| DSGAI06 | Unintended Data Disclosure | High | NHI-2, NHI-5 | Foundational–Hardening |
-| DSGAI07 | Excessive Data Access | High | NHI-5, NHI-7, NHI-9 | Foundational–Hardening |
-| DSGAI08 | Data Leakage in Retrieval | High | NHI-5, NHI-4, NHI-9 | Hardening–Advanced |
-| DSGAI09 | RAG Corpus Manipulation | Critical | NHI-5, NHI-6, NHI-7 (write access) | Hardening–Advanced |
-| DSGAI10 | Context Window Poisoning | High | NHI-5 (data feed access) | Hardening–Advanced |
-| DSGAI11 | Session Persistence Attacks | High | NHI-5, NHI-6 (session store) | Hardening–Advanced |
-| DSGAI12 | Model Inversion and Extraction | High | NHI-5, NHI-7 (API access) | Hardening–Advanced |
-| DSGAI13 | Data Leakage through Tool Integration | High | NHI-3, NHI-5, NHI-9 | Foundational–Hardening |
-| DSGAI14 | Model Weight Theft | High | NHI-5, NHI-6 (model storage) | Hardening–Advanced |
-| DSGAI15 | Inference Data Exposure | High | NHI-5, NHI-2 (log access) | Foundational–Hardening |
-| DSGAI16 | Third-Party Data Dependencies | High | NHI-3, NHI-8, NHI-2 | Foundational–Hardening |
-| DSGAI17 | Model Supply Chain Risks | High | NHI-3, NHI-8, NHI-2 | Foundational–Hardening |
-| DSGAI18 | Data Retention and Deletion Failures | Medium | NHI-5, NHI-10 | Foundational–Hardening |
-| DSGAI19 | Cascading Data Failures | High | NHI-9, NHI-5 (cascade amplifiers) | Hardening–Advanced |
-| DSGAI20 | Regulatory Non-Compliance | High | NHI-10, NHI-2 (attribution) | Foundational–Hardening |
-| DSGAI21 | Data Provenance and Lineage Failures | Medium | NHI-10 (attribution), NHI-2 | Foundational–Hardening |
+| DSGAI01 | Sensitive Data Leakage | Critical | NHI-5, NHI-2 | Foundational–Advanced |
+| DSGAI02 | Agent Identity & Credential Exposure | Critical | NHI-2, NHI-6, NHI-7, NHI-5 | Hardening–Advanced |
+| DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | NHI-3, NHI-10, NHI-8 | Foundational–Hardening |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | NHI-5, NHI-7 (write access) | Hardening–Advanced |
+| DSGAI05 | Data Integrity & Validation Failures | High | NHI-4, NHI-5 | Foundational–Hardening |
+| DSGAI06 | Tool, Plugin & Agent Data Exchange | High | NHI-3, NHI-5, NHI-9 | Foundational–Hardening |
+| DSGAI07 | Data Governance, Lifecycle & Classification | High | NHI-1, NHI-10 | Foundational–Hardening |
+| DSGAI08 | Non-Compliance & Regulatory Violations | High | NHI-10, NHI-1 (attribution) | Foundational–Hardening |
+| DSGAI09 | Multimodal Cross-Channel Data Leakage | High | NHI-5, NHI-2 | Hardening–Advanced |
+| DSGAI10 | Synthetic Data & Anonymisation Pitfalls | Medium | NHI-5 (pipeline access) | Hardening–Advanced |
+| DSGAI11 | Cross-Context Conversation Bleed | High | NHI-9, NHI-8 | Hardening–Advanced |
+| DSGAI12 | Unsafe NL Data Gateways | Critical | NHI-5, NHI-4 | Foundational–Advanced |
+| DSGAI13 | Vector Store Platform Security | High | NHI-4, NHI-5, NHI-6 | Foundational–Hardening |
+| DSGAI14 | Excessive Telemetry & Monitoring Leakage | High | NHI-2, NHI-5 (log access) | Foundational–Hardening |
+| DSGAI15 | Over-Broad Context Windows | High | NHI-5 | Hardening–Advanced |
+| DSGAI16 | Endpoint & Browser Assistant Overreach | High | NHI-5, NHI-10 | Foundational–Hardening |
+| DSGAI17 | Data Availability & Resilience Failures | High | NHI-1, NHI-8 | Foundational–Hardening |
+| DSGAI18 | Inference & Data Reconstruction | High | NHI-5, NHI-7 (API access) | Hardening–Advanced |
+| DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | NHI-10, NHI-5 | Foundational–Hardening |
+| DSGAI20 | Model Exfiltration & IP Replication | High | NHI-5, NHI-7, NHI-6 | Hardening–Advanced |
+| DSGAI21 | Disinformation via Data Poisoning | High | NHI-3, NHI-5, NHI-7 | Hardening–Advanced |
 
 ---
 
 ## Audience tags
 
 - **Identity and access management (IAM) team** — full file
-- **Data engineer / ML engineer** — DSGAI02, DSGAI04, DSGAI09 — pipeline NHI
+- **Data engineer / ML engineer** — DSGAI04, DSGAI13 — pipeline and vector-store NHI
 - **Security engineer** — NHI-2/NHI-5/NHI-7 most actionable
 - **Platform engineer** — NHI-4/NHI-8/NHI-9 for infrastructure design
 - **Auditor** — NHI-1/NHI-10 for attribution and offboarding evidence
@@ -102,435 +104,385 @@ that access them.
 
 ---
 
-### DSGAI01 — Prompt Injection via Data Channels
+### DSGAI01 — Sensitive Data Leakage
 
-NHI amplifies injection: a system where data channels carry injected
-content is more dangerous when the processing pipeline holds
-over-privileged credentials. The injected instruction can only
-cause damage proportional to the credential scope of the pipeline.
+Over-privileged service accounts turn a single RAG query into mass disclosure:
+the model can only return what the retrieval identity is allowed to read, and
+secrets reachable by that identity may surface in outputs.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Injection blast radius limited only by credential scope | Apply least-privilege to all data pipeline credentials |
-| NHI-7 Long-Lived Credentials | Injected actions can use pipeline tokens for extended period | Short-lived tokens for all data pipeline service accounts |
+| NHI-5 Over-Privileged NHI | Retrieval/service account scope defines the disclosure blast radius | Least-privilege, per-tenant retrieval identities |
+| NHI-2 Secret Leakage | Credentials reachable by the pipeline can leak into outputs/logs | Keep secrets out of context; scan outputs for credential patterns |
 
 **Mitigations:**
-- NHI-5: audit and reduce scope of all data pipeline credentials
-- NHI-7: automate rotation of all pipeline service account credentials
-- Minimum scope per data channel: read-only credentials for data consumption
+- NHI-5: scope retrieval credentials to the caller's authorised data only.
+- NHI-2: vault all secrets; never place them in prompts or system messages.
 
 ---
 
-### DSGAI02 — Training Data Poisoning
+### DSGAI02 — Agent Identity & Credential Exposure
 
-Credential access is the attack path for training data poisoning.
-Without write credentials to training data stores, external poisoning
-is not possible. NHI-5 and NHI-6 are the enabling conditions.
+The most NHI-central DSGAI risk: agents inherit, cache, and pass machine
+credentials that attackers extract or replay. Secrets in prompts, weak storage,
+and long-lived tokens are the direct failure modes.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Write access to training data stores enables poisoning | Separate read and write credentials; write requires MFA |
-| NHI-6 Insecure Credential Storage | Training pipeline credentials in plaintext config | Vault all training pipeline credentials |
-| NHI-7 Long-Lived Credentials | Long-lived write credentials create persistent poisoning window | Short-lived write tokens; rotate frequently |
+| NHI-2 Secret Leakage | Agent secrets surface in prompts, memory, logs, tool payloads | Secret-scan all agent I/O; never embed secrets in context |
+| NHI-6 Insecure Credential Storage | Cached agent credentials stored insecurely | Store all credentials in a vault, encrypted at rest |
+| NHI-7 Long-Lived Credentials | Stolen agent tokens remain valid indefinitely | Issue short-lived, auto-rotated tokens |
+| NHI-5 Over-Privileged NHI | A compromised agent identity has excessive reach | Scope each agent identity to least privilege |
 
 **Mitigations:**
-- NHI-5: read-only credentials for data consumption; separate write credentials with MFA
-- NHI-6: vault all training pipeline credentials; no plaintext in config
-- NHI-7: automated rotation for all training data write credentials
-- Audit who has current write access to training data stores
+- NHI-2/NHI-6: vault + secret-scan; remove credentials from model context entirely.
+- NHI-7: short-lived tokens with automated rotation and revocation.
+- NHI-5: per-agent scoped identities; no shared high-privilege secret.
 
 ---
 
-### DSGAI03 — Sensitive Data in Training Sets
+### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
-Pipeline credentials with broad data access enable ingestion of
-sensitive data that would be excluded with properly scoped credentials.
+Unapproved AI tools authenticate with unmanaged third-party identities and
+machine credentials used without attribution, moving data outside the boundary.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Pipeline service account with access to sensitive data stores | Scope pipeline credentials to approved data sources only |
-| NHI-2 Secret Leakage | Credentials embedded in config files include sensitive data source access | Audit config files for embedded credentials |
+| NHI-3 Vulnerable Third-Party NHI | Unsanctioned tools hold unreviewed, over-scoped tokens | Inventory and gate third-party AI integrations |
+| NHI-10 Human Use of NHI | Staff use shared machine credentials for shadow tools, no attribution | Enforce human identity; block shared-credential use |
+| NHI-8 Environment Isolation Failure | Shadow flows reuse prod credentials in unmanaged contexts | Separate and scope credentials per environment |
 
 **Mitigations:**
-- NHI-5: pipeline credentials scoped to approved training data sources only
-- NHI-2: automated secret scanning of all pipeline config files
-- Document and justify every data source in training pipeline
+- NHI-3: allowlist and scope-review every third-party AI integration.
+- NHI-10: attribute all access to a human or governed service identity.
 
 ---
 
-### DSGAI04 — Insecure Data Pipelines
+### DSGAI04 — Data, Model & Artifact Poisoning
 
-Pipeline authentication gaps are NHI problems: unauthenticated
-pipeline connections (NHI-4), shared credentials across pipeline
-stages (NHI-9), and environment isolation failures (NHI-8) are
-the structural causes of insecure data pipelines.
+Poisoning of training data, weights, or RAG corpora is only possible when the
+pipeline identity holds write access — and long-lived write tokens widen the window.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-4 Insecure Authentication | Unauthenticated connections between pipeline stages | Require mTLS or token auth for all pipeline connections |
-| NHI-5 Over-Privileged NHI | Pipeline service account with access to all stages | Per-stage credentials with minimum scope |
-| NHI-9 NHI Reuse | Same credential used for multiple pipeline stages | Separate credentials per stage |
+| NHI-5 Over-Privileged NHI | Write access to training/RAG stores enables poisoning | Read-only by default; write scoped to vetted ingestion jobs |
+| NHI-7 Long-Lived Credentials | Persistent write tokens give attackers a durable poisoning path | Short-lived, job-scoped write credentials |
 
 **Mitigations:**
-- NHI-4: mTLS or token authentication for all pipeline stage connections
-- NHI-9: separate service account per pipeline stage
-- NHI-5: minimum scope per stage — each stage accesses only its declared data
-- NHI-8: environment isolation — development pipeline credentials differ from production
+- NHI-5: separate read vs write identities; restrict write to signed ingestion.
+- NHI-7: ephemeral write tokens per ingestion run; revoke on completion.
 
 ---
 
-### DSGAI05 — Guardrail Circumvention
+### DSGAI05 — Data Integrity & Validation Failures
 
-Administrative access to guardrail configuration — held by over-privileged
-service accounts — enables disabling or bypassing safety controls.
+Weak machine-to-machine authentication lets unvalidated or spoofed data enter
+pipelines; over-scoped identities let it propagate.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Service account with guardrail configuration write access | Minimum scope; no service account has guardrail disable capability |
+| NHI-4 Insecure Authentication | Unauthenticated pipeline stages accept spoofed/malformed data | Enforce mTLS / signed requests between stages |
+| NHI-5 Over-Privileged NHI | Over-scoped jobs persist bad data widely | Scope each pipeline stage's identity to its inputs/outputs |
 
 **Mitigations:**
-- NHI-5: no service account holds guardrail configuration write access in production
-- Guardrail configuration changes require human authentication and MFA
-- Log all guardrail configuration access
+- NHI-4: mutual authentication on every inter-service data hop.
+- NHI-5: per-stage least-privilege identities.
 
 ---
 
-### DSGAI06 — Unintended Data Disclosure
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
-Credentials appearing in model outputs (NHI-2) or over-broad service
-account access to sensitive data stores (NHI-5) enable disclosure.
+Tool and plugin integrations authenticate with third-party and reused
+identities; over-scoped or shared credentials widen the exchange's trust gap.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-2 Secret Leakage | Credentials embedded in model outputs or training data surface in responses | Output scanning for credential patterns |
-| NHI-5 Over-Privileged NHI | Over-broad retrieval credentials return data beyond user entitlement | Minimum scope for retrieval service accounts |
+| NHI-3 Vulnerable Third-Party NHI | Tool tokens carry excessive permissions | Vet and minimum-scope every tool credential |
+| NHI-5 Over-Privileged NHI | A tool identity can reach more data than the task needs | Scope tool identities per function |
+| NHI-9 NHI Reuse | One credential shared across tools amplifies compromise | Distinct credential per tool/integration |
 
 **Mitigations:**
-- NHI-2: automated credential pattern detection in output pipeline
-- NHI-5: per-user retrieval credentials or query-scoped access only
-- Secret scanning in all data sources that feed the model
+- NHI-3/NHI-5: per-tool least-privilege, reviewed credentials.
+- NHI-9: never reuse a credential across tools or data flows.
 
 ---
 
-### DSGAI07 — Excessive Data Access
+### DSGAI07 — Data Governance, Lifecycle & Classification
 
-Data access scope is a direct function of credential scope. This
-entry is the DSGAI expression of NHI-5 — it describes what happens
-when NHI-5 is not remediated.
+Ungoverned identities outlive the integrations they served and obscure who/what
+touched data, undermining lifecycle and classification controls.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | GenAI system service account has access to more data than declared function requires | Audit and reduce credential scope per system component |
-| NHI-7 Long-Lived Credentials | Long-lived credentials maintain excessive access indefinitely | Rotate or replace with short-lived tokens |
-| NHI-9 NHI Reuse | Same data access credential used across multiple GenAI system functions | Separate credentials per function |
+| NHI-1 Improper Offboarding | Identities for retired data flows linger with live access | Auto-revoke NHI on component decommission |
+| NHI-10 Human Use of NHI | Shared machine identities break data-access attribution | Enforce attributable identity per access |
 
 **Mitigations:**
-- NHI-5: audit all GenAI system data access credentials; reduce to minimum
-- NHI-7: JIT short-lived tokens for data access (see RECIPES.md)
-- NHI-9: separate credential per GenAI system component
-- Quarterly data access credential review
+- NHI-1: tie identity lifecycle to component lifecycle.
+- NHI-10: attributable access underpins classification/lifecycle audit.
 
 ---
 
-### DSGAI08 — Data Leakage in Retrieval
+### DSGAI08 — Non-Compliance & Regulatory Violations
 
-Cross-tenant retrieval leakage is enabled by embedding store service
-accounts with cross-tenant read scope (NHI-5) or unauthenticated
-embedding store connections (NHI-4).
+Compliance requires attribution and lawful, revocable access — undermined when
+machine identities are unattributable or not offboarded.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Embedding store service account with cross-tenant read access | Per-tenant credentials or row-level security with minimum scope |
-| NHI-4 Insecure Authentication | Unauthenticated embedding store access | Require authentication for all vector database connections |
-| NHI-9 NHI Reuse | Same embedding store credential used for multiple tenants | Separate credentials per tenant or use row-level security |
+| NHI-10 Human Use of NHI | No attribution → cannot demonstrate lawful, accountable processing | Enforce human/governed identity for regulated data |
+| NHI-1 Improper Offboarding | Stale access breaches retention and access obligations | Revoke access on offboarding; evidence it |
 
 **Mitigations:**
-- NHI-5: per-tenant embedding store credentials or fine-grained access controls
-- NHI-4: mTLS or token authentication for all embedding store connections
-- NHI-9: tenant isolation via separate credentials or RBAC
+- NHI-10: attributable access for every regulated-data operation.
+- NHI-1: auditable revocation tied to lawful-basis lifecycle.
 
 ---
 
-### DSGAI09 — RAG Corpus Manipulation
+### DSGAI09 — Multimodal Cross-Channel Data Leakage
 
-The most critical DSGAI entry for NHI. Corpus manipulation requires
-write access to the corpus store. Without write credentials, most
-corpus manipulation attacks are not possible. NHI-5/NHI-6/NHI-7
-are the enabling conditions.
+Multimodal pipelines add ingestion identities (image/audio/doc processors);
+over-scoped ones widen leakage paths, and secrets can surface in extracted content.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Corpus write access held by service accounts that do not need it | Separate read and write credentials; write accounts require MFA |
-| NHI-6 Insecure Credential Storage | Corpus write credentials in plaintext config | Vault all corpus write credentials |
-| NHI-7 Long-Lived Credentials | Long-lived corpus write credentials persist beyond need | Rotate corpus write credentials; implement short-lived write pattern |
+| NHI-5 Over-Privileged NHI | Modality processors reach more data than needed | Scope each modality pipeline identity |
+| NHI-2 Secret Leakage | Secrets embedded in media/metadata surface via processors | Strip metadata; scan extracted content for secrets |
 
-**Mitigations (highest priority):**
-- NHI-5: read-only credentials for inference-time corpus access; write credentials separate and MFA-protected
-- NHI-6: vault all corpus write credentials; no plaintext in deployment config
-- NHI-7: automated rotation for all corpus write credentials
-- Audit who holds current corpus write credentials; remove any unnecessary access
+**Mitigations:**
+- NHI-5: least-privilege per modality processor.
+- NHI-2: redact secrets from all extracted modality content.
 
 ---
 
-### DSGAI10 — Context Window Poisoning
+### DSGAI10 — Synthetic Data & Anonymisation Pitfalls
 
-Data feeds contributing to context window require authenticated,
-minimum-scope credentials. Over-privileged data feed credentials
-expand the attack surface for context poisoning.
+Synthetic-data generation jobs need access to source (often sensitive) data;
+over-scoped generation identities expand the re-identification exposure.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Data feed service accounts with access to sensitive data that should not enter context | Scope data feed credentials to approved data only |
+| NHI-5 Over-Privileged NHI | Generation jobs read broad source data, raising linkage risk | Scope generation identities to the minimum source set |
 
 **Mitigations:**
-- NHI-5: credentials for each data feed scoped to the data sources approved for context assembly
-- Audit all data sources contributing to context window
-- Separate credentials per data feed
+- NHI-5: minimum-scope source access for synthetic-data pipelines; isolate outputs.
 
 ---
 
-### DSGAI11 — Session Persistence Attacks
+### DSGAI11 — Cross-Context Conversation Bleed
 
-Session store access credentials determine who can read or write
-session data. Over-broad session store credentials (NHI-5) or
-insecurely stored session store access keys (NHI-6) enable
-cross-session attacks.
+Reused identities and shared environments cause session/tenant state to bleed
+across contexts.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Session store service account with cross-user read/write access | Per-user session store access controls |
-| NHI-6 Insecure Credential Storage | Session store access credentials in plaintext | Vault session store credentials |
+| NHI-9 NHI Reuse | A shared session-store identity links tenants/sessions | Distinct identity per tenant/session boundary |
+| NHI-8 Environment Isolation Failure | Shared-environment credentials cross context boundaries | Enforce per-environment credential isolation |
 
 **Mitigations:**
-- NHI-5: enforce per-user session isolation at credential level
-- NHI-6: vault all session store credentials
-- Session store credentials have minimum scope: one user context, no cross-session access
+- NHI-9: no shared credential across tenants/sessions.
+- NHI-8: isolate credentials and state per environment.
 
 ---
 
-### DSGAI12 — Model Inversion and Extraction
+### DSGAI12 — Unsafe NL Data Gateways
 
-Extraction attacks succeed at scale when API credentials have no
-effective rate limiting. Long-lived, high-quota API credentials
-(NHI-7) and over-privileged inference API access (NHI-5) amplify
-extraction attack surface.
+NL-to-SQL/API gateways execute under a machine identity; if that identity is
+over-privileged, generated queries inherit excessive reach.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | API credentials with high quota enabling systematic extraction | Per-user quotas; minimum default quota |
-| NHI-7 Long-Lived Credentials | Long-lived inference API credentials enable sustained extraction campaigns | Rotate API credentials; implement per-session tokens |
+| NHI-5 Over-Privileged NHI | Gateway service account can run destructive/over-broad queries | Execute under the user's scoped permissions, not a privileged account |
+| NHI-4 Insecure Authentication | Weak gateway-to-DB auth enables spoofing | Strong mutual auth to the data source |
 
 **Mitigations:**
-- NHI-5: per-user quota limits; no credential class has unlimited inference access
-- NHI-7: implement per-session inference tokens; rotate API credentials regularly
-- Monitor for systematic query patterns per credential
+- NHI-5: identity passthrough; read-scoped, parameterised execution.
+- NHI-4: authenticated, least-privilege DB connections.
 
 ---
 
-### DSGAI13 — Data Leakage through Tool Integration
+### DSGAI13 — Vector Store Platform Security
 
-Third-party tool credentials (NHI-3) and shared tool credentials
-(NHI-9) create data leakage paths via tool API responses.
+The embedding tier authenticates with machine identities; weak auth, over-scope,
+or insecure secret storage exposes the whole RAG corpus.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-3 Vulnerable Third-Party NHI | Third-party tool credentials with excessive data access | Review all third-party tool credentials; reduce to minimum scope |
-| NHI-5 Over-Privileged NHI | Tool integration credentials with broad data access | Minimum scope per tool integration |
-| NHI-9 NHI Reuse | Same credential used across multiple tool integrations | Separate credentials per tool |
+| NHI-4 Insecure Authentication | Vector DB exposed via weak/no auth | Enforce strong auth and network restriction |
+| NHI-5 Over-Privileged NHI | Service accounts read across namespaces/tenants | Per-namespace scoped identities |
+| NHI-6 Insecure Credential Storage | Vector-store credentials stored in plaintext | Vault all vector-store credentials |
 
 **Mitigations:**
-- NHI-3: assess and reduce scope of all third-party tool credentials
-- NHI-9: separate credentials per tool integration
-- NHI-5: data minimisation enforced at credential level — credentials cannot access data beyond declared function
+- NHI-4/NHI-5: authenticated, per-namespace least-privilege access.
+- NHI-6: vault credentials; rotate regularly.
 
 ---
 
-### DSGAI14 — Model Weight Theft
+### DSGAI14 — Excessive Telemetry & Monitoring Leakage
 
-Model weight storage credentials determine who can exfiltrate
-proprietary models. NHI-5 and NHI-6 are the direct enabling
-conditions for weight theft.
+Telemetry systems both capture secrets (NHI-2) and run under identities that, if
+over-scoped, expose the captured data.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Model storage service account with read access from unexpected paths | Minimum scope: only authorised inference service can read model weights |
-| NHI-6 Insecure Credential Storage | Model storage credentials in plaintext config | Vault all model storage credentials |
+| NHI-2 Secret Leakage | Credentials captured in logs/traces | Redact secrets before logging; scan sinks |
+| NHI-5 Over-Privileged NHI | Broad log-store access widens exposure | Scope log-store access; restrict who/what reads telemetry |
 
 **Mitigations:**
-- NHI-5: model weight read access restricted to authorised inference service identity only
-- NHI-6: vault all model storage access credentials
-- Alert on any model weight access from unexpected service identity
+- NHI-2: redaction in the telemetry path; CI secret scanning.
+- NHI-5: least-privilege access to log/trace stores.
 
 ---
 
-### DSGAI15 — Inference Data Exposure
+### DSGAI15 — Over-Broad Context Windows
 
-Inference log credentials determine who can access submitted inputs
-and generated outputs. NHI-5 (over-broad log access) and NHI-2
-(credential leakage into logs) are the primary NHI vectors.
+Context assembly runs under a retrieval identity; an over-scoped one pulls more
+data into the window than the task authorises.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Inference log service account with broad read access | Minimum scope: only authorised audit function can read inference logs |
-| NHI-2 Secret Leakage | Service account credentials embedded in inference log entries | Scan and scrub credentials from inference logs |
+| NHI-5 Over-Privileged NHI | The assembling identity can fetch beyond task need | Scope context-assembly identity to the caller's authorised data |
 
 **Mitigations:**
-- NHI-5: inference log access restricted to authorised audit identity
-- NHI-2: credential scrubbing in inference log pipeline
-- Log access audit: alert on unexpected read of inference logs
+- NHI-5: authorise each context item against the caller's identity, not a broad service account.
 
 ---
 
-### DSGAI16 — Third-Party Data Dependencies
+### DSGAI16 — Endpoint & Browser Assistant Overreach
 
-Third-party data source credentials are NHI-3 by definition —
-external credentials held by the organisation on behalf of a
-third-party relationship, often with excessive scope.
+Endpoint assistants act under local/machine identities; over-scope or human use
+of machine credentials lets them reach data beyond their mandate.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-3 Vulnerable Third-Party NHI | Third-party data source API keys with excessive scope | Review all third-party credentials; reduce to minimum |
-| NHI-8 Environment Isolation Failure | Third-party development credentials used in production | Enforce environment isolation for third-party credentials |
-| NHI-2 Secret Leakage | Third-party credentials embedded in shared config | Vault all third-party data source credentials |
+| NHI-5 Over-Privileged NHI | The assistant identity can access files/resources beyond scope | Grant minimal, declared local permissions |
+| NHI-10 Human Use of NHI | Assistant acts as the user without attribution | Bind actions to an attributable identity with consent |
 
 **Mitigations:**
-- NHI-3: review and reduce scope of all third-party data source credentials
-- NHI-8: separate third-party credentials per environment
-- NHI-2: vault all third-party credentials; automated secret scanning in config
+- NHI-5: least-privilege endpoint permissions; explicit consent.
+- NHI-10: attributable, consented local actions.
 
 ---
 
-### DSGAI17 — Model Supply Chain Risks
+### DSGAI17 — Data Availability & Resilience Failures
 
-Model provider credentials, model registry tokens, and ML framework
-access are third-party NHIs with security implications if compromised.
+Resilience depends on identity lifecycle and environment separation — stale
+identities and shared-environment credentials undermine recovery integrity.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-3 Vulnerable Third-Party NHI | Model provider API keys with excessive access to model versions | Review and scope all model provider credentials |
-| NHI-8 Environment Isolation Failure | Same model registry token used across dev/staging/production | Separate credentials per environment |
-| NHI-2 Secret Leakage | Model provider credentials in pipeline config | Vault all model provider credentials |
+| NHI-1 Improper Offboarding | Orphaned identities complicate clean recovery/failover | Lifecycle-managed identities for data/model assets |
+| NHI-8 Environment Isolation Failure | Shared credentials let one environment's failure cascade | Separate credentials per environment |
 
 **Mitigations:**
-- NHI-3: assess and reduce scope of all model provider credentials
-- NHI-8: separate credentials per environment and model version
-- NHI-2: vault all model supply chain credentials; automated secret scanning
+- NHI-1: identity lifecycle tied to asset lifecycle; tested recovery.
+- NHI-8: environment-isolated credentials limit cascade scope.
 
 ---
 
-### DSGAI18 — Data Retention and Deletion Failures
+### DSGAI18 — Inference & Data Reconstruction
 
-Retention and deletion operations require appropriate credentials.
-NHI-10 (human use of machine credentials) destroys the attribution
-needed to prove compliance with deletion obligations.
+Sustained extraction needs API access; over-scoped, long-lived inference
+credentials enable large query campaigns that reconstruct training data.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-5 Over-Privileged NHI | Service account with access to retained data beyond declared function | Minimum scope for data access credentials |
-| NHI-10 Human Use of NHI | Humans using machine credentials for data deletion — no audit trail | Enforce human identity for all compliance operations |
+| NHI-5 Over-Privileged NHI | Broad inference API scope enables high-volume probing | Scope and rate-limit inference identities |
+| NHI-7 Long-Lived Credentials | Durable API keys sustain extraction campaigns | Short-lived inference tokens with per-principal budgets |
 
 **Mitigations:**
-- NHI-10: all compliance operations (deletion, access review) require human identity, not machine credential
-- NHI-5: data access credentials scoped to minimum required for each retention period
-- Audit trail of all deletion operations with human attribution
+- NHI-5/NHI-7: scoped, short-lived, budgeted inference credentials.
 
 ---
 
-### DSGAI19 — Cascading Data Failures
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
-Credential reuse (NHI-9) across pipeline stages is a cascade amplifier:
-one compromised credential can affect all stages sharing it. Over-privileged
-credentials amplify the blast radius of any single-stage failure.
+Reviewers often use shared machine identities to access labeling data, removing
+attribution and over-exposing sensitive records.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-9 NHI Reuse | Shared credential across pipeline stages — one failure affects all | Separate credentials per pipeline stage |
-| NHI-5 Over-Privileged NHI | Single credential covering multiple pipeline stages amplifies cascade | Per-stage minimum scope credentials |
+| NHI-10 Human Use of NHI | Labellers share a machine identity, no per-reviewer attribution | Attributable per-reviewer identity |
+| NHI-5 Over-Privileged NHI | Reviewer tooling reaches more records than the queue needs | Scope reviewer access to assigned items |
 
 **Mitigations:**
-- NHI-9: separate credentials per pipeline stage — stage failure cannot cascade via shared credential
-- NHI-5: minimum scope per stage limits what a compromised stage can affect
-- Circuit breaker: pipeline stage isolation enforced at credential level
+- NHI-10: attributable reviewer identities; audit access.
+- NHI-5: queue-scoped access; mask non-essential fields.
 
 ---
 
-### DSGAI20 — Regulatory Non-Compliance in Data Use
+### DSGAI20 — Model Exfiltration & IP Replication
 
-Attribution is required for compliance. NHI-10 (human use of machine
-credentials) destroys attribution needed for GDPR, CCPA, and other
-regulatory audit trails.
+Weights and inference APIs are accessed via machine identities; over-scope,
+long-lived keys, and insecure weight storage enable extraction and theft.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-10 Human Use of NHI | Humans using machine credentials — no attribution for compliance evidence | Enforce human identity for all regulated data operations |
-| NHI-2 Secret Leakage | Compliance audit credentials leaked — tampering with evidence possible | Protect audit credential integrity |
+| NHI-5 Over-Privileged NHI | Broad API/weight access enables extraction | Scope inference and artifact-store identities |
+| NHI-7 Long-Lived Credentials | Durable keys sustain stealing campaigns | Short-lived keys; per-principal query budgets |
+| NHI-6 Insecure Credential Storage | Weight-store credentials in plaintext enable direct theft | Vault weight-store credentials; encrypt at rest |
 
 **Mitigations:**
-- NHI-10: all regulated data operations require human identity with MFA
-- NHI-2: protect compliance audit system credentials as high-sensitivity NHI
-- Separate credentials for compliance vs operational data access
+- NHI-5/NHI-7: scoped, short-lived, budgeted access; anomaly detection.
+- NHI-6: protect weight artefacts behind vaulted, least-privilege identities.
 
 ---
 
-### DSGAI21 — Data Provenance and Lineage Failures
+### DSGAI21 — Disinformation via Data Poisoning
 
-Provenance and lineage records require attribution — knowing which
-identity ingested or transformed which data. NHI-10 destroys this
-attribution. NHI-1 (improper offboarding) leaves orphaned identities
-in lineage records.
+Disinformation injection mirrors poisoning: it requires write/ingest access via
+third-party or over-scoped identities, often with long-lived tokens.
 
 #### NHI mapping
 
 | NHI Entry | How it applies | Mitigation |
 |---|---|---|
-| NHI-10 Human Use of NHI | Machine credentials used for ingestion operations — no individual attribution | Enforce machine identity per pipeline component; log with component identity |
-| NHI-1 Improper Offboarding | Decommissioned pipeline identities remain in lineage records | Timely offboarding of pipeline NHIs |
-| NHI-2 Secret Leakage | Lineage system credentials leaked — provenance records can be tampered | Protect lineage system credentials |
+| NHI-3 Vulnerable Third-Party NHI | Third-party source credentials inject tainted content | Vet and scope third-party data-source identities |
+| NHI-5 Over-Privileged NHI | Write access to corpora enables systematic injection | Read-only by default; scoped, signed ingestion |
+| NHI-7 Long-Lived Credentials | Durable write tokens sustain a poisoning campaign | Ephemeral, job-scoped write credentials |
 
 **Mitigations:**
-- NHI-10: each pipeline stage has its own machine identity — lineage records include identity
-- NHI-1: automated offboarding triggers when pipeline components are decommissioned
-- NHI-2: protect lineage and audit system credentials as high-sensitivity NHI
+- NHI-3/NHI-5/NHI-7: vetted, scoped, short-lived ingestion identities; provenance tracking.
 
 ---
 
@@ -538,16 +490,16 @@ in lineage records.
 
 | NHI Risk | DSGAI entries most affected | Target state | Owner |
 |---|---|---|---|
-| NHI-1 Improper Offboarding | DSGAI21 | Automated on component decommission | IAM |
-| NHI-2 Secret Leakage | DSGAI03, DSGAI06, DSGAI16 | Automated scanning in CI/CD | DevSecOps |
-| NHI-3 Third-Party NHI | DSGAI13, DSGAI16, DSGAI17 | Assessed and minimum-scoped | Security |
-| NHI-4 Insecure Authentication | DSGAI04, DSGAI08 | mTLS enforced across pipelines | Platform |
-| NHI-5 Over-Privileged NHI | DSGAI02, DSGAI07, DSGAI08, DSGAI09 | Least-privilege per component | IAM |
-| NHI-6 Insecure Storage | DSGAI02, DSGAI09, DSGAI14 | All credentials in vault | Platform |
-| NHI-7 Long-Lived | DSGAI02, DSGAI07, DSGAI09, DSGAI12 | Rotation automated | IAM |
-| NHI-8 Env Isolation | DSGAI16, DSGAI17 | Env separation enforced | DevSecOps |
-| NHI-9 NHI Reuse | DSGAI04, DSGAI07, DSGAI08, DSGAI19 | Separate credential per component | IAM |
-| NHI-10 Human Use | DSGAI18, DSGAI20, DSGAI21 | Human identity enforced for compliance | IAM |
+| NHI-1 Improper Offboarding | DSGAI07, DSGAI08, DSGAI17 | Automated on component decommission | IAM |
+| NHI-2 Secret Leakage | DSGAI01, DSGAI02, DSGAI14 | Automated scanning in CI/CD | DevSecOps |
+| NHI-3 Third-Party NHI | DSGAI03, DSGAI06, DSGAI21 | Assessed and minimum-scoped | Security |
+| NHI-4 Insecure Authentication | DSGAI05, DSGAI12, DSGAI13 | mTLS enforced across pipelines | Platform |
+| NHI-5 Over-Privileged NHI | DSGAI01, DSGAI04, DSGAI18, DSGAI20 | Least-privilege per component | IAM |
+| NHI-6 Insecure Storage | DSGAI02, DSGAI13, DSGAI20 | All credentials in vault | Platform |
+| NHI-7 Long-Lived | DSGAI02, DSGAI04, DSGAI18, DSGAI20 | Rotation automated | IAM |
+| NHI-8 Env Isolation | DSGAI11, DSGAI17 | Env separation enforced | DevSecOps |
+| NHI-9 NHI Reuse | DSGAI06, DSGAI11 | Separate credential per component | IAM |
+| NHI-10 Human Use | DSGAI03, DSGAI08, DSGAI19 | Human identity enforced for compliance | IAM |
 
 ---
 
@@ -573,6 +525,7 @@ in lineage records.
 | Version | Date | Change |
 |---|---|---|
 | 1.0.0 | 2026-03-27 | Initial release — full mapping DSGAI01–DSGAI21 to NHI Top 10 |
+| 1.1.0 | 2026-05-29 | Corrected to canonical DSGAI 2026 taxonomy (entries had used a pre-release taxonomy); NHI mappings, mitigations, and cross-references rewritten to match |
 
 ---
 

@@ -236,11 +236,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
+      "control_id": "Common ICS vulnerabilities",
       "control_name": "§5.3",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Persistent compromise of OT decision support"
+      "notes": "Shared-resource bleed across OT tenants"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -248,7 +248,15 @@
       "control_name": "§6.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Session persistence as OT risk scenario"
+      "notes": "Assess multi-site/tenant isolation"
+    },
+    {
+      "framework": "NIST SP 800-82 Rev 3",
+      "control_id": "Data flow controls",
+      "control_name": "§7.3",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Enforce session/site isolation"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -380,7 +388,7 @@
       "control_name": "Design / Security Architecture",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Design session boundary enforcement; no cross-session data leakage"
+      "notes": "Design per-session/tenant isolation for memory and caches"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -388,15 +396,7 @@
       "control_name": "Implementation / Secure Build",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Encrypt, sign, and access-control all persistent session data"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-EM",
-      "control_name": "Operations / Environment Management",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Apply access controls and encryption to all session persistence stores"
+      "notes": "Scrub session state on teardown; key caches per principal"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -404,7 +404,15 @@
       "control_name": "Verification / Security Testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Test whether session data is accessible or injectable across user boundaries"
+      "notes": "Probe for context bleed under concurrency and reuse"
+    },
+    {
+      "framework": "OWASP SAMM v2.0",
+      "control_id": "O-EM",
+      "control_name": "Operations / Environment Management",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Configure isolation in shared memory/cache layers"
     },
     {
       "framework": "CWE/CVE",
@@ -493,43 +501,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Session store service account with cross-user read/write access",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "A shared session-store identity links tenants/sessions",
+      "control_name": "NHI-9 NHI Reuse",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Per-user session store access controls"
+      "notes": "Distinct identity per tenant/session boundary"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Session store access credentials in plaintext",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "Shared-environment credentials cross context boundaries",
+      "control_name": "NHI-8 Environment Isolation Failure",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Vault session store credentials"
+      "notes": "Enforce per-environment credential isolation"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — data retention and deletion policies",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Isolation in secure coding",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define security requirements governing data retention periods, deletion procedures, and right-to-erasure compliance for all data in AI pipelines"
+      "notes": "Per-session/tenant state isolation; scrub on teardown"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.3.1-PS",
-      "control_name": "Archive and protect software releases — retention-aware artefact management",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect session state",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Maintain versioned data and model artefacts with retention metadata; enable selective data removal and model retraining on deletion requests"
+      "notes": "Key caches/memory per principal"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "RV.2.1-PS",
-      "control_name": "Assess, prioritise, and remediate — deletion request remediation",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Bleed testing",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define procedures to assess and remediate data deletion requests including impact analysis on trained models and retraining requirements"
+      "notes": "Test cross-session/tenant isolation under load"
     },
     {
       "framework": "FedRAMP",
@@ -628,26 +636,6 @@
       "url": "https://portswigger.net/burp/communitydownload"
     },
     {
-      "name": "Apache Atlas",
-      "type": "open-source",
-      "url": "https://atlas.apache.org"
-    },
-    {
-      "name": "Immuta",
-      "type": "commercial",
-      "url": "https://www.immuta.com"
-    },
-    {
-      "name": "OneTrust",
-      "type": "commercial",
-      "url": "https://www.onetrust.com"
-    },
-    {
-      "name": "DVC (Data Version Control)",
-      "type": "open-source",
-      "url": "https://dvc.org"
-    },
-    {
       "name": "Open Policy Agent",
       "type": "open-source",
       "url": "https://www.openpolicyagent.org"
@@ -714,16 +702,13 @@
   "crossrefs": {
     "llm_top10": [
       "LLM02",
-      "LLM07",
-      "LLM03",
-      "LLM08"
+      "LLM07"
     ],
     "dsgai_2026": [
       "DSGAI13"
     ],
     "agentic_top10": [
-      "ASI06",
-      "ASI03"
+      "ASI06"
     ]
   },
   "changelog": [

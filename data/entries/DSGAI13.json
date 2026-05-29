@@ -237,27 +237,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risks",
-      "control_name": "§5.5",
+      "control_id": "Data security",
+      "control_name": "§5.4",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Third-party OT tool data leakage"
+      "notes": "Protect the OT RAG/embedding tier"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk management",
-      "control_name": "§6.3",
+      "control_id": "Security controls",
+      "control_name": "§7.1",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Tool data scope in OT security assessment"
+      "notes": "Harden the vector store deployment"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network monitoring",
+      "control_id": "Data flow controls",
       "control_name": "§7.3",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor OT tool data flows"
+      "notes": "Scope retrieval to authorised OT data"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -385,43 +385,35 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
+      "control_id": "D-SA",
+      "control_name": "Design / Security Architecture",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Minimum data returned per tool; response scope limitations"
+      "notes": "Per-namespace/tenant access control on the vector store"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
+      "control_id": "I-SD",
+      "control_name": "Implementation / Secure Deployment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Filter tool responses to minimum data required before passing to model"
+      "notes": "Authenticated, network-restricted, encrypted-at-rest deployment"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-ST",
-      "control_name": "Verification / Security Testing",
+      "control_id": "V-AA",
+      "control_name": "Verification / Architecture Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Automated tests verifying tool responses are scoped to minimum"
+      "notes": "Validate auth, isolation, and exposure"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
+      "control_id": "O-EM",
+      "control_name": "Operations / Environment Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "All tools reviewed for data scope before integration"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Log all tool responses; alert on anomalous data volumes"
+      "notes": "Keep the vector DB patched and hardened"
     },
     {
       "framework": "CWE/CVE",
@@ -510,51 +502,51 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party tool credentials with excessive data access",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "Vector DB exposed via weak/no auth",
+      "control_name": "NHI-4 Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Review all third-party tool credentials; reduce to minimum scope"
+      "notes": "Enforce strong auth and network restriction"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Tool integration credentials with broad data access",
+      "control_id": "Service accounts read across namespaces/tenants",
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Minimum scope per tool integration"
+      "notes": "Per-namespace scoped identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Same credential used across multiple tool integrations",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "Vector-store credentials stored in plaintext",
+      "control_name": "NHI-6 Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Separate credentials per tool"
+      "notes": "Vault all vector-store credentials"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — purpose limitation controls",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect the vector store",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define security requirements enforcing data purpose limitation — each dataset must have documented permitted uses and technical controls preventing unauthorised repurposing"
+      "notes": "Authenticated, per-namespace access; encrypt embeddings"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PW.7.2-PS",
-      "control_name": "Review for security vulnerabilities — misuse and manipulation detection",
+      "control_id": "PS.2.1-PS",
+      "control_name": "Integrity of the embedding tier",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Include data misuse and manipulation scenarios in pre-release reviews; verify that purpose limitation controls are enforced and cannot be bypassed"
+      "notes": "Detect tampering of stored vectors"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "RV.1.1-PS",
-      "control_name": "Identify and confirm vulnerabilities — production misuse monitoring",
+      "control_id": "PW.6.1-PS",
+      "control_name": "Secure configuration",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Establish procedures to detect data misuse and manipulation in production including monitoring for purpose-scope violations and data manipulation patterns"
+      "notes": "Harden vector-DB configuration and exposure"
     },
     {
       "framework": "FedRAMP",
@@ -648,26 +640,6 @@
       "url": "https://github.com/qdrant/qdrant"
     },
     {
-      "name": "Immuta",
-      "type": "commercial",
-      "url": "https://www.immuta.com"
-    },
-    {
-      "name": "Privacera",
-      "type": "commercial",
-      "url": "https://privacera.com"
-    },
-    {
-      "name": "Apache Ranger",
-      "type": "open-source",
-      "url": "https://ranger.apache.org"
-    },
-    {
-      "name": "Collibra",
-      "type": "commercial",
-      "url": "https://www.collibra.com"
-    },
-    {
       "name": "HashiCorp Vault",
       "type": "commercial",
       "url": "https://www.vaultproject.io"
@@ -751,16 +723,10 @@
   "crossrefs": {
     "llm_top10": [
       "LLM08",
-      "LLM07",
-      "LLM06",
-      "LLM03",
       "LLM02"
     ],
     "agentic_top10": [
-      "ASI06",
-      "ASI05",
-      "ASI01",
-      "ASI02"
+      "ASI06"
     ]
   },
   "changelog": [

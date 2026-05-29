@@ -207,11 +207,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "Data security",
+      "control_name": "§5.4",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "In-context manipulation of OT decision support"
+      "notes": "Protect source OT data used for synthesis"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -219,7 +219,7 @@
       "control_name": "§6.2",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Context poisoning risk for OT data feeds"
+      "notes": "Assess re-identification risk of synthetic OT data"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -347,19 +347,11 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-TA",
-      "control_name": "Design / Threat Assessment",
+      "control_id": "D-SR",
+      "control_name": "Design / Security Requirements",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Map all sources that contribute to context window; assess trust level per source"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Validate and sanitise all content before context window assembly"
+      "notes": "Specify privacy thresholds and re-identification limits"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -367,15 +359,15 @@
       "control_name": "Verification / Security Testing",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Adversarial tests injecting malicious content via each context source"
+      "notes": "Attack synthetic/anonymised sets with linkage and membership attacks"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-IM",
-      "control_name": "Operations / Incident Management",
+      "control_id": "G-PC",
+      "control_name": "Governance / Policy & Compliance",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Alert on reasoning deviations correlated with external content in context"
+      "notes": "Mandate a documented anonymisation method and review"
     },
     {
       "framework": "CWE/CVE",
@@ -441,35 +433,35 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Data feed service accounts with access to sensitive data that should not enter context",
+      "control_id": "Generation jobs read broad source data, raising linkage risk",
       "control_name": "NHI-5 Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
-      "notes": "Scope data feed credentials to approved data only"
+      "notes": "Scope generation identities to the minimum source set"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.7.2-PS",
-      "control_name": "Review for security vulnerabilities — synthetic data quality review",
+      "control_name": "Privacy review of synthetic data",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Review synthetic data for bias inheritance, privacy leakage, and statistical fidelity before use in training pipelines; verify privacy guarantees are meaningful"
+      "notes": "Review anonymisation method and assumptions"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.8.2-PS",
-      "control_name": "Test for security vulnerabilities — synthetic data adversarial testing",
+      "control_name": "Adversarial re-identification testing",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "Conduct adversarial testing of synthetic data for membership inference, attribute inference, and reconstruction attacks to validate privacy claims"
+      "notes": "Run linkage/membership attacks on released data"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "RV.3.1-PS",
-      "control_name": "Analyse root causes — synthetic data failure analysis",
+      "control_name": "Root-cause of privacy failures",
       "tier": "Foundational",
       "scope": "Build",
-      "notes": "When model failures trace to synthetic training data, conduct root cause analysis of the generation process, source data, and privacy mechanism"
+      "notes": "Remediate anonymisation gaps"
     },
     {
       "framework": "FedRAMP",
@@ -577,11 +569,6 @@
       "url": "https://github.com/sdv-dev/SDV"
     },
     {
-      "name": "Anonymeter",
-      "type": "open-source",
-      "url": "https://github.com/statice/anonymeter"
-    },
-    {
       "name": "ARX Data Anonymization",
       "type": "open-source",
       "url": "https://arx.deidentifier.org"
@@ -631,16 +618,13 @@
     ],
     "llm_top10": [
       "LLM02",
-      "LLM01",
-      "LLM08",
       "LLM09",
-      "LLM03",
       "LLM04"
     ],
     "agentic_top10": [
       "ASI03",
-      "ASI06",
-      "ASI09"
+      "ASI09",
+      "ASI06"
     ]
   },
   "changelog": [

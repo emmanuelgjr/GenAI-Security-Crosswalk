@@ -243,11 +243,11 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data confidentiality",
-      "control_name": "§5.4",
+      "control_id": "Supply chain / external connectivity",
+      "control_name": "§5.5",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "OT data confidentiality requirements apply to training data"
+      "notes": "Unsanctioned external AI is an uncontrolled data egress path"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
@@ -255,15 +255,15 @@
       "control_name": "§6.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Assess sensitivity of OT data in training sets"
+      "notes": "Assess data-egress risk to external AI services"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network monitoring",
-      "control_name": "§7.3",
+      "control_id": "Security controls",
+      "control_name": "§7.1",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Monitor for unexpected exfiltration of OT training data"
+      "notes": "Boundary controls block data flow to non-approved services"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -391,43 +391,35 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SR",
-      "control_name": "Design / Security Requirements",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Require data classification check before any dataset enters training pipeline"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
       "control_id": "G-PC",
       "control_name": "Governance / Policy & Compliance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Policy mandating PII/sensitive data removal before training"
+      "notes": "Define approved AI services and prohibited data classes"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "I-SB",
-      "control_name": "Implementation / Secure Build",
+      "control_id": "G-SM",
+      "control_name": "Governance / Strategy & Metrics",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Automated PII scanning of all training datasets before use"
+      "notes": "Track unsanctioned-AI usage as a tracked programme metric"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-RT",
-      "control_name": "Verification / Requirements-Driven Testing",
+      "control_id": "V-AA",
+      "control_name": "Verification / Architecture Assessment",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Automated tests verifying PII detection coverage"
+      "notes": "Identify all paths by which data can reach external AI endpoints"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "O-OM",
-      "control_name": "Operations / Operational Management",
+      "control_id": "O-EM",
+      "control_name": "Operations / Environment Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Periodic probing of deployed models for sensitive data memorisation"
+      "notes": "Detect and block data flow to non-allowlisted AI services"
     },
     {
       "framework": "CWE/CVE",
@@ -524,43 +516,51 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Pipeline service account with access to sensitive data stores",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "Unsanctioned tools hold unreviewed, over-scoped tokens",
+      "control_name": "NHI-3 Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Scope pipeline credentials to approved data sources only"
+      "notes": "Inventory and gate third-party AI integrations"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Credentials embedded in config files include sensitive data source access",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "Staff use shared machine credentials for shadow tools, no attribution",
+      "control_name": "NHI-10 Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Audit config files for embedded credentials"
+      "notes": "Enforce human identity; block shared-credential use"
+    },
+    {
+      "framework": "OWASP NHI Top 10",
+      "control_id": "Shadow flows reuse prod credentials in unmanaged contexts",
+      "control_name": "NHI-8 Environment Isolation Failure",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Separate and scope credentials per environment"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.4.1-PS",
-      "control_name": "Reuse existing well-secured software — AI tool vetting",
+      "control_name": "Vet third-party / reused components & services",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Vet all AI tools, services, and plugins before organisational adoption; verify data handling, security posture, and compliance capabilities"
+      "notes": "Allowlist and assess external AI tools before use"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "PS.1.1-PS",
-      "control_name": "Protect all code from unauthorised access — shadow AI detection",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security & governance requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Implement controls to detect and prevent unauthorised AI tool usage that processes organisational data outside governed pipelines"
+      "notes": "Policy on approved AI services and data classes"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "RV.1.1-PS",
-      "control_name": "Identify and confirm vulnerabilities — shadow AI exposure monitoring",
+      "control_name": "Monitor for unauthorised use",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Establish procedures to identify data exposure from shadow AI tool usage; define triage and remediation workflows for unsanctioned data processing"
+      "notes": "Detect egress to non-approved AI endpoints"
     },
     {
       "framework": "FedRAMP",
@@ -656,19 +656,14 @@
       "url": "https://www.zscaler.com"
     },
     {
-      "name": "Netskope",
-      "type": "commercial",
-      "url": "https://www.netskope.com"
-    },
-    {
-      "name": "Zscaler",
-      "type": "commercial",
-      "url": "https://www.zscaler.com"
-    },
-    {
       "name": "Nightfall DLP",
       "type": "commercial",
       "url": "https://www.nightfall.ai"
+    },
+    {
+      "name": "Netskope",
+      "type": "commercial",
+      "url": "https://www.netskope.com"
     },
     {
       "name": "Open Policy Agent",
@@ -716,12 +711,10 @@
     "llm_top10": [
       "LLM03",
       "LLM02",
-      "LLM05",
-      "LLM06"
+      "LLM05"
     ],
     "agentic_top10": [
-      "ASI04",
-      "ASI10"
+      "ASI04"
     ]
   },
   "changelog": [

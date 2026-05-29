@@ -236,27 +236,19 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
-      "control_name": "§5.3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Excessive OT data access is a documented vulnerability"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
+      "control_id": "Risk management",
       "control_name": "§6.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Data access scope in OT risk assessment"
+      "notes": "Classify OT data by safety/operational impact"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Secure architecture",
-      "control_name": "§7.1",
+      "control_id": "OT security program",
+      "control_name": "§8.2",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Least privilege enforced at OT data boundary"
+      "notes": "Lifecycle governance for OT data in GenAI"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -384,11 +376,11 @@
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "D-SA",
-      "control_name": "Design / Security Architecture",
+      "control_id": "G-PC",
+      "control_name": "Governance / Policy & Compliance",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define minimum data scope for each system component"
+      "notes": "Mandate classification and lifecycle rules for GenAI data"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -396,15 +388,15 @@
       "control_name": "Governance / Strategy & Metrics",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Formalise data access review as part of security programme"
+      "notes": "Assign owners; track classification coverage"
     },
     {
       "framework": "OWASP SAMM v2.0",
-      "control_id": "V-AA",
-      "control_name": "Verification / Architecture Assessment",
+      "control_id": "D-SR",
+      "control_name": "Design / Security Requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Periodic review of declared vs actual data access per component"
+      "notes": "Specify retention, deletion, and access per data class"
     },
     {
       "framework": "OWASP SAMM v2.0",
@@ -412,15 +404,7 @@
       "control_name": "Operations / Operational Management",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Alert when component requests data outside declared scope"
-    },
-    {
-      "framework": "OWASP SAMM v2.0",
-      "control_id": "G-PC",
-      "control_name": "Governance / Policy & Compliance",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Documented policy requiring data access justification"
+      "notes": "Enforce retention/deletion; make access auditable"
     },
     {
       "framework": "CWE/CVE",
@@ -509,43 +493,43 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "GenAI system service account has access to more data than declared function requires",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "Identities for retired data flows linger with live access",
+      "control_name": "NHI-1 Improper Offboarding",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Audit and reduce credential scope per system component"
+      "notes": "Auto-revoke NHI on component decommission"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived credentials maintain excessive access indefinitely",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "Shared machine identities break data-access attribution",
+      "control_name": "NHI-10 Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Rotate or replace with short-lived tokens"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Same data access credential used across multiple GenAI system functions",
-      "control_name": "NHI-9 NHI Reuse",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Separate credentials per function"
+      "notes": "Enforce attributable identity per access"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.1.1-PS",
-      "control_name": "Define security requirements — data aggregation controls",
+      "control_name": "Governance & classification requirements",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Define security requirements governing how datasets may be combined for AI training and inference; require aggregation impact assessments before merging datasets"
+      "notes": "Mandate classification, retention, ownership"
     },
     {
       "framework": "NIST SP 800-218A",
       "control_id": "PW.2.1-PS",
-      "control_name": "Design software — aggregation-aware data architecture",
+      "control_name": "Lifecycle design review",
       "tier": "Foundational",
       "scope": "Both",
-      "notes": "Design AI data pipelines with aggregation controls that prevent combination of datasets whose joint sensitivity exceeds authorised classification levels"
+      "notes": "Design retention/deletion into the pipeline"
+    },
+    {
+      "framework": "NIST SP 800-218A",
+      "control_id": "PS.3.1-PS",
+      "control_name": "Provenance & versioned artefacts",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Track data/artefact lineage across the lifecycle"
     },
     {
       "framework": "FedRAMP",
@@ -634,26 +618,6 @@
       "url": "https://github.com/amundsen-io/amundsen"
     },
     {
-      "name": "ARX Data Anonymization",
-      "type": "open-source",
-      "url": "https://arx.deidentifier.org"
-    },
-    {
-      "name": "OpenDP",
-      "type": "open-source",
-      "url": "https://opendp.org"
-    },
-    {
-      "name": "Google Differential Privacy",
-      "type": "open-source",
-      "url": "https://github.com/google/differential-privacy"
-    },
-    {
-      "name": "Presidio",
-      "type": "open-source",
-      "url": "https://github.com/microsoft/presidio"
-    },
-    {
       "name": "AWS S3 Lifecycle / Azure Lifecycle Management",
       "type": "commercial",
       "url": "https://aws.amazon.com/s3/"
@@ -706,15 +670,11 @@
       "DSGAI01"
     ],
     "llm_top10": [
-      "LLM02",
-      "LLM06",
-      "LLM03",
-      "LLM08"
+      "LLM02"
     ],
     "agentic_top10": [
-      "ASI03",
-      "ASI02",
       "ASI06",
+      "ASI03",
       "ASI09"
     ]
   },
