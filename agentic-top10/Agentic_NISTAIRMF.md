@@ -31,7 +31,7 @@ technical controls.
 
 ## Why NIST AI RMF for agentic AI security
 
-The NIST AI Risk Management Framework (AI RMF 1.0) is the primary US federal AI risk management framework, required for US federal agencies under Executive Order 14110 and widely adopted globally by enterprises and critical infrastructure operators. Its four-function lifecycle structure (GOVERN, MAP, MEASURE, MANAGE) maps naturally to agentic risk because agentic risks compound across the lifecycle -- a governance gap enables a mapping gap that manifests as an undetected cascade. This mapping traces each OWASP Agentic Top 10 risk to specific AI RMF subcategories for teams deploying autonomous AI agents.
+The NIST AI Risk Management Framework (AI RMF 1.0) is the primary US federal AI risk management framework, which US federal agencies were directed to align with under Executive Order 14110 (revoked January 2025) and which is widely adopted globally by enterprises and critical infrastructure operators. The AI RMF itself remains a voluntary framework. Its four-function lifecycle structure (GOVERN, MAP, MEASURE, MANAGE) maps naturally to agentic risk because agentic risks compound across the lifecycle -- a governance gap enables a mapping gap that manifests as an undetected cascade. This mapping traces each OWASP Agentic Top 10 risk to specific AI RMF subcategories for teams deploying autonomous AI agents.
 
 ---
 
@@ -67,7 +67,7 @@ The NIST AI Risk Management Framework (AI RMF 1.0) is the primary US federal AI 
 
 - **CISO / governance** — full file, AI RMF alignment for agentic AI programme
 - **Risk manager** — MAP and MEASURE subcategories, risk register entries
-- **Federal agency teams** — EO 14110 alignment for agentic deployments
+- **Federal agency teams** — federal AI governance alignment for agentic deployments (AI RMF; EO 14110 revoked January 2025)
 - **AI/ML engineer** — MEASURE subcategories, testing and monitoring entries
 - **Security engineer** — MANAGE subcategories, incident response entries
 - **OT engineer** — ASI02, ASI08 with ISA 62443 crosswalk for OT context
@@ -792,7 +792,7 @@ covered in the evaluation programme (MS-2.5) and incident response
 - [NIST AI RMF Playbook](https://airc.nist.gov/Docs/2)
 - [OWASP Agentic Top 10 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 - [OWASP AIVSS](https://aivss.owasp.org)
-- [Executive Order 14110](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/)
+- [Executive Order 14110 on Safe, Secure, and Trustworthy AI (revoked January 2025)](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/)
 
 ---
 

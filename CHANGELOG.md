@@ -9,6 +9,16 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+- `scripts/validate.js`: MITRE ATLAS URL hash-routing check — flags bare `atlas.mitre.org/techniques/…` links (which 404) and requires the SPA `/#/techniques/…` form
+
+### Fixed
+- Stale incident counts corrected to **114** in `README.md` and `data/README.md` (were "50", out of sync with `data/incidents.json`)
+- Corrected stale total-mappings figure in `README.md` (3,210 → **3,235**, matching `data/entries`)
+- EO 14110 framing in NIST AI RMF files (LLM, Agentic, DSGAI): the AI RMF is voluntary; EO 14110 was revoked January 2025 — removed inaccurate "required" language and aligned reference/audience notes
+- `i18n/README.md` translation status table now reflects actual state (Spanish, German, Japanese machine-assisted drafts synced 2026-03-28; Portuguese planned)
+- Added missing `## See also` back-reference (DSGAI × AIUC-1 → DSGAI × ISO 42001), resolving the last validator warning
+
 Next: npm publish to npmjs.com, custom domain (crosswalk.owasp.org), vendor integration packs, NeMo Guardrails configs.
 
 ---

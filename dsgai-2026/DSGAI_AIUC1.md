@@ -546,6 +546,7 @@ Adversaries poison RAG knowledge bases, manipulate training data, or exploit mod
 
 - [LLM Top 10 × AIUC-1](../llm-top10/LLM_AIUC1.md)
 - [Agentic Top 10 × AIUC-1](../agentic-top10/Agentic_AIUC1.md)
+- [DSGAI 2026 × ISO 42001](DSGAI_ISO42001.md)
 
 ---
 
