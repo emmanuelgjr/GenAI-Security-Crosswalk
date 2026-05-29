@@ -688,7 +688,7 @@ session does not include content from another user's session.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical | **Originating layer:** L3 — Agent Frameworks
 

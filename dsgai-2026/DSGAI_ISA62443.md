@@ -699,7 +699,7 @@ shifts or roles.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **OT Severity:** Critical
 

@@ -570,7 +570,7 @@ isolation requirements.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 

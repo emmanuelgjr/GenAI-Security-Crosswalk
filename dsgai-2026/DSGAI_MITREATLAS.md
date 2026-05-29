@@ -591,7 +591,7 @@ where session isolation failure becomes a data access path.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 

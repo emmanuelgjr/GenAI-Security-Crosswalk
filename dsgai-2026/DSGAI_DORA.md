@@ -63,24 +63,24 @@ This mapping traces each OWASP DSGAI 2026 data security risk to specific DORA co
 | DSGAI01 | Sensitive Data Leakage | Critical | Art. 9, Art. 10, Art. 17–23 | Both |
 | DSGAI02 | Agent Identity & Credential Exposure | Critical | Art. 9, Art. 8, Art. 10 | Both |
 | DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | Art. 28–44, Art. 8, Art. 5–7 | Both |
-| DSGAI04 | Data Model & Artifact Poisoning | Critical | Art. 9, Art. 24–27, Art. 12 | Both |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | Art. 9, Art. 24–27, Art. 12 | Both |
 | DSGAI05 | Data Integrity & Validation Failures | High | Art. 9, Art. 8, Art. 10 | Both |
-| DSGAI06 | Tool Plugin & Agent Data Exchange | High | Art. 28–44, Art. 9, Art. 10 | Both |
-| DSGAI07 | Data Governance & Lifecycle | High | Art. 5–7, Art. 8, Art. 12 | Both |
+| DSGAI06 | Tool, Plugin & Agent Data Exchange | High | Art. 28–44, Art. 9, Art. 10 | Both |
+| DSGAI07 | Data Governance, Lifecycle & Classification | High | Art. 5–7, Art. 8, Art. 12 | Both |
 | DSGAI08 | Non-Compliance & Regulatory Violations | High | Art. 5–7, Art. 17–23, Art. 13 | Both |
-| DSGAI09 | Multimodal Cross-Channel Leakage | Medium | Art. 9, Art. 10, Art. 17–23 | Both |
-| DSGAI10 | Synthetic Data & Anonymization Pitfalls | Medium | Art. 9, Art. 24–27, Art. 13 | Build |
+| DSGAI09 | Multimodal Cross-Channel Data Leakage | Medium | Art. 9, Art. 10, Art. 17–23 | Both |
+| DSGAI10 | Synthetic Data & Anonymisation Pitfalls | Medium | Art. 9, Art. 24–27, Art. 13 | Build |
 | DSGAI11 | Cross-Context Conversation Bleed | High | Art. 9, Art. 10, Art. 17–23 | Both |
 | DSGAI12 | Unsafe NL Data Gateways | Critical | Art. 9, Art. 10, Art. 24–27 | Both |
 | DSGAI13 | Vector Store Platform Security | High | Art. 9, Art. 8, Art. 12 | Both |
 | DSGAI14 | Excessive Telemetry & Monitoring Leakage | Medium | Art. 9, Art. 5–7, Art. 10 | Both |
 | DSGAI15 | Over-Broad Context Windows | High | Art. 9, Art. 5–7, Art. 10 | Both |
-| DSGAI16 | Endpoint & Browser Overreach | High | Art. 9, Art. 10, Art. 28–44 | Both |
+| DSGAI16 | Endpoint & Browser Assistant Overreach | High | Art. 9, Art. 10, Art. 28–44 | Both |
 | DSGAI17 | Data Availability & Resilience Failures | High | Art. 11, Art. 12, Art. 24–27 | Both |
 | DSGAI18 | Inference & Data Reconstruction | High | Art. 9, Art. 24–27, Art. 10 | Both |
 | DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | Art. 9, Art. 5–7, Art. 28–44 | Both |
 | DSGAI20 | Model Exfiltration & IP Replication | Critical | Art. 9, Art. 10, Art. 28–44 | Both |
-| DSGAI21 | Disinformation & Integrity Attacks | High | Art. 9, Art. 24–27, Art. 13 | Both |
+| DSGAI21 | Disinformation via Data Poisoning | High | Art. 9, Art. 24–27, Art. 13 | Both |
 
 ---
 
@@ -101,7 +101,7 @@ This mapping traces each OWASP DSGAI 2026 data security risk to specific DORA co
 
 ---
 
-### DSGAI01 – Sensitive Data Leakage
+### DSGAI01 — Sensitive Data Leakage
 
 **Severity:** Critical
 
@@ -172,7 +172,7 @@ trading strategies, or regulatory-protected information.
 
 ---
 
-### DSGAI02 – Agent Identity & Credential Exposure
+### DSGAI02 — Agent Identity & Credential Exposure
 
 **Severity:** Critical
 
@@ -243,7 +243,7 @@ payment systems, trading platforms, and customer accounts.
 
 ---
 
-### DSGAI03 – Shadow AI & Unsanctioned Data Flows
+### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
 **Severity:** High
 
@@ -309,7 +309,7 @@ oversight.
 
 ---
 
-### DSGAI04 – Data Model & Artifact Poisoning
+### DSGAI04 — Data, Model & Artifact Poisoning
 
 **Severity:** Critical
 
@@ -381,7 +381,7 @@ or biased credit decisions.
 
 ---
 
-### DSGAI05 – Data Integrity & Validation Failures
+### DSGAI05 — Data Integrity & Validation Failures
 
 **Severity:** High
 
@@ -452,7 +452,7 @@ or corrupted compliance records.
 
 ---
 
-### DSGAI06 – Tool Plugin & Agent Data Exchange
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 
@@ -521,7 +521,7 @@ financial data, trading information, or regulatory-protected content.
 
 ---
 
-### DSGAI07 – Data Governance & Lifecycle
+### DSGAI07 — Data Governance, Lifecycle & Classification
 
 **Severity:** High
 
@@ -590,7 +590,7 @@ compliance for AI data assets, creating regulatory exposure.
 
 ---
 
-### DSGAI08 – Non-Compliance & Regulatory Violations
+### DSGAI08 — Non-Compliance & Regulatory Violations
 
 **Severity:** High
 
@@ -660,7 +660,7 @@ significant fines, licence revocation, and reputational damage.
 
 ---
 
-### DSGAI09 – Multimodal Cross-Channel Leakage
+### DSGAI09 — Multimodal Cross-Channel Data Leakage
 
 **Severity:** Medium
 
@@ -726,7 +726,7 @@ data across channel boundaries.
 
 ---
 
-### DSGAI10 – Synthetic Data & Anonymization Pitfalls
+### DSGAI10 — Synthetic Data & Anonymisation Pitfalls
 
 **Severity:** Medium
 
@@ -793,7 +793,7 @@ model training and testing, making privacy validation critical.
 
 ---
 
-### DSGAI11 – Cross-Context Conversation Bleed
+### DSGAI11 — Cross-Context Conversation Bleed
 
 **Severity:** High
 
@@ -862,7 +862,7 @@ creating regulatory and reputational risk.
 
 ---
 
-### DSGAI12 – Unsafe NL Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 
@@ -931,7 +931,7 @@ customer databases.
 
 ---
 
-### DSGAI13 – Vector Store Platform Security
+### DSGAI13 — Vector Store Platform Security
 
 **Severity:** High
 
@@ -1001,7 +1001,7 @@ documents, and proprietary knowledge.
 
 ---
 
-### DSGAI14 – Excessive Telemetry & Monitoring Leakage
+### DSGAI14 — Excessive Telemetry & Monitoring Leakage
 
 **Severity:** Medium
 
@@ -1070,7 +1070,7 @@ create a secondary exposure channel for customer data.
 
 ---
 
-### DSGAI15 – Over-Broad Context Windows
+### DSGAI15 — Over-Broad Context Windows
 
 **Severity:** High
 
@@ -1140,7 +1140,7 @@ or internal documents to extraction attacks.
 
 ---
 
-### DSGAI16 – Endpoint & Browser Overreach
+### DSGAI16 — Endpoint & Browser Assistant Overreach
 
 **Severity:** High
 
@@ -1211,7 +1211,7 @@ boundaries.
 
 ---
 
-### DSGAI17 – Data Availability & Resilience Failures
+### DSGAI17 — Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -1281,7 +1281,7 @@ data pipeline resilience.
 
 ---
 
-### DSGAI18 – Inference & Data Reconstruction
+### DSGAI18 — Inference & Data Reconstruction
 
 **Severity:** High
 
@@ -1351,7 +1351,7 @@ from deployed models.
 
 ---
 
-### DSGAI19 – Human-in-Loop & Labeler Overexposure
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 **Severity:** Medium
 
@@ -1419,7 +1419,7 @@ financial data, fraud content, and harmful material.
 
 ---
 
-### DSGAI20 – Model Exfiltration & IP Replication
+### DSGAI20 — Model Exfiltration & IP Replication
 
 **Severity:** Critical
 
@@ -1488,7 +1488,7 @@ advantages.
 
 ---
 
-### DSGAI21 – Disinformation & Integrity Attacks
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 

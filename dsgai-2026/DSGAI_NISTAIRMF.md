@@ -427,7 +427,7 @@ arbitrary file write on vector DB hosts.
 
 ---
 
-### DSGAI06 — Tool, Plugin & Agent Data Exchange Risks
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 
@@ -744,7 +744,7 @@ may preserve statistical properties of sensitive source data.
 
 ---
 
-### DSGAI11 — Cross-Context & Multi-User Conversation Bleed
+### DSGAI11 — Cross-Context Conversation Bleed
 
 **Severity:** High
 
@@ -808,7 +808,7 @@ stores, or system prompt contamination between sessions.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 
@@ -1013,7 +1013,7 @@ exfiltration path.
 
 ---
 
-### DSGAI15 — Over-Broad Context Windows & Prompt Over-Sharing
+### DSGAI15 — Over-Broad Context Windows
 
 **Severity:** High
 
@@ -1150,7 +1150,7 @@ exfiltration.
 
 ---
 
-### DSGAI17 — Data Availability & Resilience Failures in AI Pipelines
+### DSGAI17 — Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -1285,7 +1285,7 @@ data access.
 
 ---
 
-### DSGAI19 — Human-in-the-Loop & Labeler Overexposure
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 **Severity:** Medium
 
@@ -1414,7 +1414,7 @@ original weights.
 
 ---
 
-### DSGAI21 — Disinformation & Integrity Attacks via Data Poisoning
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 

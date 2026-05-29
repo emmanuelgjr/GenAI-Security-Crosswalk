@@ -69,24 +69,24 @@ generic controls alone cannot cover.
 | DSGAI01 | Sensitive Data Leakage | Critical | SC-28, AC-3, SI-4, AU-2 | Both |
 | DSGAI02 | Agent Identity & Credential Exposure | Critical | IA-5, AC-6, AU-12, SC-28 | Both |
 | DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | CM-7, SA-9, AC-3, SI-4 | Both |
-| DSGAI04 | Data Model & Artifact Poisoning | Critical | SR-2, SR-3, SI-3, SC-28 | Both |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | SR-2, SR-3, SI-3, SC-28 | Both |
 | DSGAI05 | Data Integrity & Validation Failures | High | SI-10, SI-7, CM-3 | Both |
-| DSGAI06 | Tool Plugin & Agent Data Exchange | High | AC-3, SA-9, AU-2, SC-7 | Both |
-| DSGAI07 | Data Governance & Lifecycle | High | CM-3, PM-9, AU-2, SC-28 | Both |
+| DSGAI06 | Tool, Plugin & Agent Data Exchange | High | AC-3, SA-9, AU-2, SC-7 | Both |
+| DSGAI07 | Data Governance, Lifecycle & Classification | High | CM-3, PM-9, AU-2, SC-28 | Both |
 | DSGAI08 | Non-Compliance & Regulatory Violations | High | PM-9, RA-3, AU-2, CA-7 | Both |
-| DSGAI09 | Multimodal Cross-Channel Leakage | Medium | SC-7, AC-3, SI-4, AU-2 | Both |
-| DSGAI10 | Synthetic Data & Anonymization Pitfalls | Medium | SI-4, RA-5, PM-9 | Build |
+| DSGAI09 | Multimodal Cross-Channel Data Leakage | Medium | SC-7, AC-3, SI-4, AU-2 | Both |
+| DSGAI10 | Synthetic Data & Anonymisation Pitfalls | Medium | SI-4, RA-5, PM-9 | Build |
 | DSGAI11 | Cross-Context Conversation Bleed | High | AC-4, SC-7, AU-2, AC-3 | Both |
 | DSGAI12 | Unsafe NL Data Gateways | Critical | SI-10, AC-3, AU-2, SC-7 | Both |
 | DSGAI13 | Vector Store Platform Security | High | SC-28, AC-3, AU-12, CM-6 | Both |
 | DSGAI14 | Excessive Telemetry & Monitoring Leakage | Medium | AC-3, AU-2, SI-4, PM-9 | Both |
 | DSGAI15 | Over-Broad Context Windows | High | AC-6, CM-7, SI-10 | Both |
-| DSGAI16 | Endpoint & Browser Overreach | High | AC-6, CM-7, SC-7, AU-2 | Both |
+| DSGAI16 | Endpoint & Browser Assistant Overreach | High | AC-6, CM-7, SC-7, AU-2 | Both |
 | DSGAI17 | Data Availability & Resilience Failures | High | CP-9, CP-10, SI-4, CA-7 | Both |
 | DSGAI18 | Inference & Data Reconstruction | High | SC-28, AC-3, SI-4, RA-5 | Both |
 | DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | AC-3, PS-3, AT-2, AU-2 | Build |
 | DSGAI20 | Model Exfiltration & IP Replication | Critical | SC-28, AC-3, AU-12, SI-4 | Both |
-| DSGAI21 | Disinformation & Integrity Attacks | High | SI-3, SI-7, AU-2, SR-3 | Both |
+| DSGAI21 | Disinformation via Data Poisoning | High | SI-3, SI-7, AU-2, SR-3 | Both |
 
 ---
 
@@ -107,7 +107,7 @@ generic controls alone cannot cover.
 
 ---
 
-### DSGAI01 – Sensitive Data Leakage
+### DSGAI01 — Sensitive Data Leakage
 
 **Severity:** Critical
 
@@ -167,7 +167,7 @@ event logging for forensic reconstruction (AU-2).
 
 ---
 
-### DSGAI02 – Agent Identity & Credential Exposure
+### DSGAI02 — Agent Identity & Credential Exposure
 
 **Severity:** Critical
 
@@ -230,7 +230,7 @@ events (AU-12), and encryption protecting stored credentials (SC-28).
 
 ---
 
-### DSGAI03 – Shadow AI & Unsanctioned Data Flows
+### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
 **Severity:** High
 
@@ -293,7 +293,7 @@ AI activity (SI-4).
 
 ---
 
-### DSGAI04 – Data Model & Artifact Poisoning
+### DSGAI04 — Data, Model & Artifact Poisoning
 
 **Severity:** Critical
 
@@ -354,7 +354,7 @@ provenance (SR-3), malicious code protection for training pipelines
 
 ---
 
-### DSGAI05 – Data Integrity & Validation Failures
+### DSGAI05 — Data Integrity & Validation Failures
 
 **Severity:** High
 
@@ -415,7 +415,7 @@ configuration change control tracking data pipeline modifications (CM-3).
 
 ---
 
-### DSGAI06 – Tool Plugin & Agent Data Exchange
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 
@@ -477,7 +477,7 @@ protection controlling data flow to external tools (SC-7).
 
 ---
 
-### DSGAI07 – Data Governance & Lifecycle
+### DSGAI07 — Data Governance, Lifecycle & Classification
 
 **Severity:** High
 
@@ -538,7 +538,7 @@ data assets (SC-28).
 
 ---
 
-### DSGAI08 – Non-Compliance & Regulatory Violations
+### DSGAI08 — Non-Compliance & Regulatory Violations
 
 **Severity:** High
 
@@ -599,7 +599,7 @@ tracking ongoing compliance (CA-7).
 
 ---
 
-### DSGAI09 – Multimodal Cross-Channel Leakage
+### DSGAI09 — Multimodal Cross-Channel Data Leakage
 
 **Severity:** Medium
 
@@ -659,7 +659,7 @@ movement (AU-2).
 
 ---
 
-### DSGAI10 – Synthetic Data & Anonymization Pitfalls
+### DSGAI10 — Synthetic Data & Anonymisation Pitfalls
 
 **Severity:** Medium
 
@@ -716,7 +716,7 @@ covering privacy guarantees (PM-9).
 
 ---
 
-### DSGAI11 – Cross-Context Conversation Bleed
+### DSGAI11 — Cross-Context Conversation Bleed
 
 **Severity:** High
 
@@ -776,7 +776,7 @@ access (AU-2), and access enforcement restricting session-scoped data
 
 ---
 
-### DSGAI12 – Unsafe NL Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 
@@ -838,7 +838,7 @@ protection controlling gateway data flows (SC-7).
 
 ---
 
-### DSGAI13 – Vector Store Platform Security
+### DSGAI13 — Vector Store Platform Security
 
 **Severity:** High
 
@@ -901,7 +901,7 @@ settings (CM-6).
 
 ---
 
-### DSGAI14 – Excessive Telemetry & Monitoring Leakage
+### DSGAI14 — Excessive Telemetry & Monitoring Leakage
 
 **Severity:** Medium
 
@@ -962,7 +962,7 @@ telemetry (SI-4), and risk management covering telemetry governance
 
 ---
 
-### DSGAI15 – Over-Broad Context Windows
+### DSGAI15 — Over-Broad Context Windows
 
 **Severity:** High
 
@@ -1022,7 +1022,7 @@ enforcing context boundaries (SI-10).
 
 ---
 
-### DSGAI16 – Endpoint & Browser Overreach
+### DSGAI16 — Endpoint & Browser Assistant Overreach
 
 **Severity:** High
 
@@ -1083,7 +1083,7 @@ endpoint data flows (SC-7), and event logging tracking agent data access
 
 ---
 
-### DSGAI17 – Data Availability & Resilience Failures
+### DSGAI17 — Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -1144,7 +1144,7 @@ tracking availability metrics (CA-7).
 
 ---
 
-### DSGAI18 – Inference & Data Reconstruction
+### DSGAI18 — Inference & Data Reconstruction
 
 **Severity:** High
 
@@ -1206,7 +1206,7 @@ assessing reconstruction risk (RA-5).
 
 ---
 
-### DSGAI19 – Human-in-Loop & Labeler Overexposure
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 **Severity:** Medium
 
@@ -1267,7 +1267,7 @@ access (AU-2).
 
 ---
 
-### DSGAI20 – Model Exfiltration & IP Replication
+### DSGAI20 — Model Exfiltration & IP Replication
 
 **Severity:** Critical
 
@@ -1328,7 +1328,7 @@ detecting extraction patterns (SI-4).
 
 ---
 
-### DSGAI21 – Disinformation & Integrity Attacks
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 
