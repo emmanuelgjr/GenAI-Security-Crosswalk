@@ -25,7 +25,7 @@ bash evals/modelscan/scan.sh /path/to/model.bin
 bash evals/modelscan/scan.sh ~/.cache/huggingface/hub
 ```
 
-No API key, no model inference. Exit `0` = clean, `1` = unsafe operators found
+No API key, no model inference. **Runtime-verified 2026-05-29** (ModelScan 0.8.8 + serialization scanner 1.0.4) against benign and known-malicious fixtures — see [`../samples/modelscan_sample.txt`](../samples/modelscan_sample.txt). Exit `0` = clean, `1` = unsafe operators found
 (do not deploy), `2` = tooling/args error. A JSON report is written to
 `evals/results/modelscan/` for CI evidence.
 

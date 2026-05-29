@@ -1,0 +1,38 @@
+# Runtime-verified 2026-05-29 against ModelScan 0.8.8 + picklescan 1.0.4
+# (no API key required; offline static scan of serialized model artifacts)
+
+$ bash evals/modelscan/scan.sh ./benign_model.pkl
+GenAI Security Crosswalk - model artifact scan (LLM03 / DSGAI17)
+Target : ./benign_model.pkl
+----------------------------------------------------
+Scanning benign_model.pkl using modelscan.scanners.PickleUnsafeOpScan
+  total_issues: 0  (LOW 0, MEDIUM 0, HIGH 0, CRITICAL 0)
+
+picklescan (serialization-specific) -----------------
+  Scanned files: 1  Infected files: 0  Dangerous globals: 0
+
+CLEAN - no unsafe operators detected.
+$ echo $?
+0
+
+$ bash evals/modelscan/scan.sh ./malicious_model.pkl
+GenAI Security Crosswalk - model artifact scan (LLM03 / DSGAI17)
+Target : ./malicious_model.pkl
+----------------------------------------------------
+Scanning malicious_model.pkl using modelscan.scanners.PickleUnsafeOpScan
+  total_issues: 1  (CRITICAL 1)
+  issue: "Use of unsafe operator 'system' from module 'nt'"
+         operator=system  module=nt  scanner=PickleUnsafeOpScan  severity=CRITICAL
+
+picklescan (serialization-specific) -----------------
+  dangerous import 'nt system' FOUND
+  Scanned files: 1  Infected files: 1  Dangerous globals: 1
+
+FINDINGS - review the JSON report. Do not deploy this artifact until triaged.
+$ echo $?
+1
+
+# Interpretation: exit 0 = clean (deployable), exit 1 = unsafe operators found
+# (block the artifact). The malicious fixture was a serialized object whose
+# __reduce__ invoked os.system — the canonical deserialization-attack pattern
+# this track exists to catch. Illustrative; your artifacts/findings will differ.
