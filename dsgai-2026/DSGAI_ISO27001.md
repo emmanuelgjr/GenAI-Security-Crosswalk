@@ -438,7 +438,7 @@ to achieve arbitrary file write on the vector DB host.
 
 ---
 
-### DSGAI06 — Tool, Plugin & Agent Data Exchange Risks
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 
@@ -758,7 +758,7 @@ of sensitive source data.
 
 ---
 
-### DSGAI11 — Cross-Context & Multi-User Conversation Bleed
+### DSGAI11 — Cross-Context Conversation Bleed
 
 **Severity:** High
 
@@ -820,7 +820,7 @@ system prompt contamination between sessions.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 
@@ -893,7 +893,7 @@ a high-privilege service account with no row-level enforcement.
 
 ---
 
-### DSGAI13 — Vector Store Platform Data Security
+### DSGAI13 — Vector Store Platform Security
 
 **Severity:** High
 
@@ -1022,7 +1022,7 @@ exfiltration path for sensitive information.
 
 ---
 
-### DSGAI15 — Over-Broad Context Windows & Prompt Over-Sharing
+### DSGAI15 — Over-Broad Context Windows
 
 **Severity:** High
 
@@ -1158,7 +1158,7 @@ for data exfiltration.
 
 ---
 
-### DSGAI17 — Data Availability & Resilience Failures in AI Pipelines
+### DSGAI17 — Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -1290,7 +1290,7 @@ records that were present in training or retrieval corpora.
 
 ---
 
-### DSGAI19 — Human-in-the-Loop & Labeler Overexposure
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 **Severity:** Medium
 
@@ -1417,7 +1417,7 @@ original weights.
 
 ---
 
-### DSGAI21 — Disinformation & Integrity Attacks via Data Poisoning
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 

@@ -39,25 +39,25 @@ This mapping traces each OWASP DSGAI 2026 data security risk to specific PCI DSS
 | ID | Name | Severity | Primary PCI DSS v4.0 Requirements | Tier |
 |---|---|---|---|---|
 | DSGAI01 | Sensitive Data Leakage | Critical | Req 3.4, Req 3.5, Req 4.2, Req 7.2 | Foundational-Advanced |
-| DSGAI02 | Agent Identity and Credential Exposure | Critical | Req 7.2, Req 8.2, Req 10.2, Req 12.3 | Foundational-Advanced |
-| DSGAI03 | Shadow AI and Unsanctioned Data Flows | High | Req 12.8, Req 12.5, Req 1.3, Req 12.6 | Foundational-Hardening |
-| DSGAI04 | Data, Model and Artifact Poisoning | Critical | Req 6.5, Req 10.6, Req 11.3, Req 12.8 | Hardening-Advanced |
-| DSGAI05 | Data Integrity and Validation Failures | High | Req 6.2, Req 6.3, Req 11.3, Req 6.5 | Foundational-Hardening |
-| DSGAI06 | Tool, Plugin and Agent Data Exchange | High | Req 12.8, Req 7.2, Req 10.2, Req 3.5 | Foundational-Hardening |
-| DSGAI07 | Data Governance, Lifecycle and Classification | High | Req 3.1, Req 3.2, Req 9.4, Req 12.3 | Foundational-Advanced |
-| DSGAI08 | Non-Compliance and Regulatory Violations | High | Req 12.1, Req 12.3, Req 12.4, Req 12.6 | Foundational-Advanced |
+| DSGAI02 | Agent Identity & Credential Exposure | Critical | Req 7.2, Req 8.2, Req 10.2, Req 12.3 | Foundational-Advanced |
+| DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | Req 12.8, Req 12.5, Req 1.3, Req 12.6 | Foundational-Hardening |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | Req 6.5, Req 10.6, Req 11.3, Req 12.8 | Hardening-Advanced |
+| DSGAI05 | Data Integrity & Validation Failures | High | Req 6.2, Req 6.3, Req 11.3, Req 6.5 | Foundational-Hardening |
+| DSGAI06 | Tool, Plugin & Agent Data Exchange | High | Req 12.8, Req 7.2, Req 10.2, Req 3.5 | Foundational-Hardening |
+| DSGAI07 | Data Governance, Lifecycle & Classification | High | Req 3.1, Req 3.2, Req 9.4, Req 12.3 | Foundational-Advanced |
+| DSGAI08 | Non-Compliance & Regulatory Violations | High | Req 12.1, Req 12.3, Req 12.4, Req 12.6 | Foundational-Advanced |
 | DSGAI09 | Multimodal Cross-Channel Data Leakage | High | Req 3.4, Req 3.5, Req 4.2, Req 10.2 | Hardening-Advanced |
-| DSGAI10 | Synthetic Data and Anonymisation Pitfalls | Medium | Req 3.1, Req 12.3, Req 3.3, Req 3.4 | Hardening-Advanced |
+| DSGAI10 | Synthetic Data & Anonymisation Pitfalls | Medium | Req 3.1, Req 12.3, Req 3.3, Req 3.4 | Hardening-Advanced |
 | DSGAI11 | Cross-Context Conversation Bleed | High | Req 7.2, Req 3.5, Req 10.2, Req 11.3 | Foundational-Hardening |
 | DSGAI12 | Unsafe NL Data Gateways | Critical | Req 7.2, Req 6.2, Req 6.4, Req 10.2 | Foundational-Advanced |
 | DSGAI13 | Vector Store Platform Security | High | Req 3.5, Req 7.2, Req 6.3, Req 11.3 | Foundational-Hardening |
-| DSGAI14 | Excessive Telemetry and Monitoring Leakage | High | Req 3.5, Req 7.2, Req 10.2, Req 12.3 | Foundational-Hardening |
+| DSGAI14 | Excessive Telemetry & Monitoring Leakage | High | Req 3.5, Req 7.2, Req 10.2, Req 12.3 | Foundational-Hardening |
 | DSGAI15 | Over-Broad Context Windows | High | Req 7.2, Req 3.4, Req 12.3, Req 10.2 | Foundational-Hardening |
-| DSGAI16 | Endpoint and Browser Assistant Overreach | High | Req 12.8, Req 6.3, Req 10.2, Req 12.3 | Foundational-Hardening |
-| DSGAI17 | Data Availability and Resilience Failures | High | Req 12.3, Req 1.3, Req 10.6, Req 12.10 | Foundational-Advanced |
-| DSGAI18 | Inference and Data Reconstruction | High | Req 3.4, Req 3.5, Req 11.3, Req 12.3 | Hardening-Advanced |
-| DSGAI19 | Human-in-Loop and Labeler Overexposure | Medium | Req 12.8, Req 7.2, Req 3.3, Req 12.6 | Foundational-Hardening |
-| DSGAI20 | Model Exfiltration and IP Replication | High | Req 7.2, Req 10.6, Req 12.3, Req 6.4 | Hardening-Advanced |
+| DSGAI16 | Endpoint & Browser Assistant Overreach | High | Req 12.8, Req 6.3, Req 10.2, Req 12.3 | Foundational-Hardening |
+| DSGAI17 | Data Availability & Resilience Failures | High | Req 12.3, Req 1.3, Req 10.6, Req 12.10 | Foundational-Advanced |
+| DSGAI18 | Inference & Data Reconstruction | High | Req 3.4, Req 3.5, Req 11.3, Req 12.3 | Hardening-Advanced |
+| DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | Req 12.8, Req 7.2, Req 3.3, Req 12.6 | Foundational-Hardening |
+| DSGAI20 | Model Exfiltration & IP Replication | High | Req 7.2, Req 10.6, Req 12.3, Req 6.4 | Hardening-Advanced |
 | DSGAI21 | Disinformation via Data Poisoning | High | Req 6.5, Req 12.8, Req 10.6, Req 11.3 | Hardening-Advanced |
 
 ---
@@ -132,7 +132,7 @@ of these channels is a Requirement 3 violation.
 
 ---
 
-### DSGAI02 — Agent Identity and Credential Exposure
+### DSGAI02 — Agent Identity & Credential Exposure
 
 **Severity:** Critical
 
@@ -185,7 +185,7 @@ in PCI scope are a Req 7 and Req 8 finding.
 
 ---
 
-### DSGAI03 — Shadow AI and Unsanctioned Data Flows
+### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
 **Severity:** High
 
@@ -231,7 +231,7 @@ TPSP programme and have no CHD security obligations.
 
 ---
 
-### DSGAI04 — Data, Model and Artifact Poisoning
+### DSGAI04 — Data, Model & Artifact Poisoning
 
 **Severity:** Critical
 
@@ -289,7 +289,7 @@ security failure.
 
 ---
 
-### DSGAI05 — Data Integrity and Validation Failures
+### DSGAI05 — Data Integrity & Validation Failures
 
 **Severity:** High
 
@@ -334,7 +334,7 @@ achieve arbitrary file write on CDE hosts — a critical finding.
 
 ---
 
-### DSGAI06 — Tool, Plugin and Agent Data Exchange Risks
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 
@@ -379,7 +379,7 @@ agent context is a TPSP requiring PCI DSS Req 12.8 treatment.
 
 ---
 
-### DSGAI07 — Data Governance, Lifecycle and Classification
+### DSGAI07 — Data Governance, Lifecycle & Classification
 
 **Severity:** High
 
@@ -425,7 +425,7 @@ to assessors without explicit data governance documentation.
 
 ---
 
-### DSGAI08 — Non-Compliance and Regulatory Violations
+### DSGAI08 — Non-Compliance & Regulatory Violations
 
 **Severity:** High
 
@@ -515,7 +515,7 @@ CHD requiring Req 3 protection.
 
 ---
 
-### DSGAI10 — Synthetic Data and Anonymisation Pitfalls
+### DSGAI10 — Synthetic Data & Anonymisation Pitfalls
 
 **Severity:** Medium
 
@@ -596,7 +596,7 @@ Req 3 and Req 7 finding.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 
@@ -697,7 +697,7 @@ in CDE scope are Req 6.3 and Req 7 findings.
 
 ---
 
-### DSGAI14 — Excessive Telemetry and Monitoring Leakage
+### DSGAI14 — Excessive Telemetry & Monitoring Leakage
 
 **Severity:** High
 
@@ -783,7 +783,7 @@ of any successful injection against a payment-context LLM.
 
 ---
 
-### DSGAI16 — Endpoint and Browser Assistant Overreach
+### DSGAI16 — Endpoint & Browser Assistant Overreach
 
 **Severity:** High
 
@@ -828,7 +828,7 @@ treatment.
 
 ---
 
-### DSGAI17 — Data Availability and Resilience Failures
+### DSGAI17 — Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -873,7 +873,7 @@ detection LLMs is a payment processing continuity requirement.
 
 ---
 
-### DSGAI18 — Inference and Data Reconstruction
+### DSGAI18 — Inference & Data Reconstruction
 
 **Severity:** High
 
@@ -917,7 +917,7 @@ protection failure.
 
 ---
 
-### DSGAI19 — Human-in-Loop and Labeler Overexposure
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 **Severity:** Medium
 
@@ -961,7 +961,7 @@ with access to CHD are TPSPs under PCI DSS Req 12.8.
 
 ---
 
-### DSGAI20 — Model Exfiltration and IP Replication
+### DSGAI20 — Model Exfiltration & IP Replication
 
 **Severity:** High
 
@@ -1005,7 +1005,7 @@ application protection apply.
 
 ---
 
-### DSGAI21 — Disinformation and Integrity Attacks via Data Poisoning
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 

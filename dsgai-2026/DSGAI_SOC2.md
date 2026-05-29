@@ -40,25 +40,25 @@ This mapping traces each OWASP DSGAI 2026 data security risk to specific SOC 2 c
 | ID | Name | Severity | Primary SOC 2 Criteria | Tier |
 |---|---|---|---|---|
 | DSGAI01 | Sensitive Data Leakage | Critical | C1, C2, CC6, P5, CC7 | Foundational-Advanced |
-| DSGAI02 | Agent Identity and Credential Exposure | Critical | CC6, CC9, CC7, CC5 | Foundational-Advanced |
-| DSGAI03 | Shadow AI and Unsanctioned Data Flows | High | CC5, CC9, CC3, C1 | Foundational-Hardening |
-| DSGAI04 | Data, Model and Artifact Poisoning | Critical | CC3, CC8, CC9, CC7 | Hardening-Advanced |
-| DSGAI05 | Data Integrity and Validation Failures | High | PI1, CC5, CC7, CC3 | Foundational-Hardening |
-| DSGAI06 | Tool, Plugin and Agent Data Exchange | High | CC9, C2, CC6, CC5 | Foundational-Hardening |
-| DSGAI07 | Data Governance, Lifecycle and Classification | High | C1, P4, CC5, CC3 | Foundational-Advanced |
-| DSGAI08 | Non-Compliance and Regulatory Violations | High | CC5, CC3, P1, CC2 | Foundational-Advanced |
+| DSGAI02 | Agent Identity & Credential Exposure | Critical | CC6, CC9, CC7, CC5 | Foundational-Advanced |
+| DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | CC5, CC9, CC3, C1 | Foundational-Hardening |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | CC3, CC8, CC9, CC7 | Hardening-Advanced |
+| DSGAI05 | Data Integrity & Validation Failures | High | PI1, CC5, CC7, CC3 | Foundational-Hardening |
+| DSGAI06 | Tool, Plugin & Agent Data Exchange | High | CC9, C2, CC6, CC5 | Foundational-Hardening |
+| DSGAI07 | Data Governance, Lifecycle & Classification | High | C1, P4, CC5, CC3 | Foundational-Advanced |
+| DSGAI08 | Non-Compliance & Regulatory Violations | High | CC5, CC3, P1, CC2 | Foundational-Advanced |
 | DSGAI09 | Multimodal Cross-Channel Data Leakage | High | C2, P5, CC6, CC7 | Hardening-Advanced |
-| DSGAI10 | Synthetic Data and Anonymisation Pitfalls | Medium | P4, P5, CC3, C2 | Hardening-Advanced |
+| DSGAI10 | Synthetic Data & Anonymisation Pitfalls | Medium | P4, P5, CC3, C2 | Hardening-Advanced |
 | DSGAI11 | Cross-Context Conversation Bleed | High | CC6, C2, P5, CC7 | Foundational-Hardening |
 | DSGAI12 | Unsafe NL Data Gateways | Critical | CC6, CC5, PI1, CC7 | Foundational-Advanced |
 | DSGAI13 | Vector Store Platform Security | High | C2, CC6, CC7, CC8 | Foundational-Hardening |
-| DSGAI14 | Excessive Telemetry and Monitoring Leakage | High | C2, P5, CC6, CC7 | Foundational-Hardening |
+| DSGAI14 | Excessive Telemetry & Monitoring Leakage | High | C2, P5, CC6, CC7 | Foundational-Hardening |
 | DSGAI15 | Over-Broad Context Windows | High | CC6, C2, CC5, CC3 | Foundational-Hardening |
-| DSGAI16 | Endpoint and Browser Assistant Overreach | High | CC6, CC5, CC9, CC3 | Foundational-Hardening |
-| DSGAI17 | Data Availability and Resilience Failures | High | A1, CC7, CC3, CC5 | Foundational-Advanced |
-| DSGAI18 | Inference and Data Reconstruction | High | C2, P5, CC7, CC3 | Hardening-Advanced |
-| DSGAI19 | Human-in-Loop and Labeler Overexposure | Medium | CC9, C2, P3, P5 | Foundational-Hardening |
-| DSGAI20 | Model Exfiltration and IP Replication | High | C2, CC6, CC7, CC3 | Hardening-Advanced |
+| DSGAI16 | Endpoint & Browser Assistant Overreach | High | CC6, CC5, CC9, CC3 | Foundational-Hardening |
+| DSGAI17 | Data Availability & Resilience Failures | High | A1, CC7, CC3, CC5 | Foundational-Advanced |
+| DSGAI18 | Inference & Data Reconstruction | High | C2, P5, CC7, CC3 | Hardening-Advanced |
+| DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | CC9, C2, P3, P5 | Foundational-Hardening |
+| DSGAI20 | Model Exfiltration & IP Replication | High | C2, CC6, CC7, CC3 | Hardening-Advanced |
 | DSGAI21 | Disinformation via Data Poisoning | High | PI1, CC9, CC7, CC3 | Hardening-Advanced |
 
 ---
@@ -139,7 +139,7 @@ customer inquiry or audit finding for AI-powered SaaS providers.
 
 ---
 
-### DSGAI02 — Agent Identity and Credential Exposure
+### DSGAI02 — Agent Identity & Credential Exposure
 
 **Severity:** Critical
 
@@ -192,7 +192,7 @@ and CC7 (monitoring — credential anomaly detection) also apply.
 
 ---
 
-### DSGAI03 — Shadow AI and Unsanctioned Data Flows
+### DSGAI03 — Shadow AI & Unsanctioned Data Flows
 
 **Severity:** High
 
@@ -243,7 +243,7 @@ cover shadow AI.
 
 ---
 
-### DSGAI04 — Data, Model and Artifact Poisoning
+### DSGAI04 — Data, Model & Artifact Poisoning
 
 **Severity:** Critical
 
@@ -296,7 +296,7 @@ changes), CC9 (vendor risk — training data providers), and CC7
 
 ---
 
-### DSGAI05 — Data Integrity and Validation Failures
+### DSGAI05 — Data Integrity & Validation Failures
 
 **Severity:** High
 
@@ -347,7 +347,7 @@ detection) also apply.
 
 ---
 
-### DSGAI06 — Tool, Plugin and Agent Data Exchange Risks
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 
@@ -397,7 +397,7 @@ permissions) also apply.
 
 ---
 
-### DSGAI07 — Data Governance, Lifecycle and Classification
+### DSGAI07 — Data Governance, Lifecycle & Classification
 
 **Severity:** High
 
@@ -447,7 +447,7 @@ retention management for derived assets are SOC 2 audit requirements.
 
 ---
 
-### DSGAI08 — Non-Compliance and Regulatory Violations
+### DSGAI08 — Non-Compliance & Regulatory Violations
 
 **Severity:** High
 
@@ -540,7 +540,7 @@ privacy obligations) are the primary criteria.
 
 ---
 
-### DSGAI10 — Synthetic Data and Anonymisation Pitfalls
+### DSGAI10 — Synthetic Data & Anonymisation Pitfalls
 
 **Severity:** Medium
 
@@ -633,7 +633,7 @@ applies where personal data is involved.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 
@@ -731,7 +731,7 @@ protection — embeddings of confidential data protected) and CC6
 
 ---
 
-### DSGAI14 — Excessive Telemetry and Monitoring Leakage
+### DSGAI14 — Excessive Telemetry & Monitoring Leakage
 
 **Severity:** High
 
@@ -778,7 +778,7 @@ obligations) are the primary criteria.
 
 ---
 
-### DSGAI15 — Over-Broad Context Windows and Prompt Over-Sharing
+### DSGAI15 — Over-Broad Context Windows
 
 **Severity:** High
 
@@ -821,7 +821,7 @@ protection — context classification ceiling) are the primary criteria.
 
 ---
 
-### DSGAI16 — Endpoint and Browser Assistant Overreach
+### DSGAI16 — Endpoint & Browser Assistant Overreach
 
 **Severity:** High
 
@@ -863,7 +863,7 @@ primary criteria.
 
 ---
 
-### DSGAI17 — Data Availability and Resilience Failures
+### DSGAI17 — Data Availability & Resilience Failures
 
 **Severity:** High
 
@@ -913,7 +913,7 @@ responses, not just uptime.
 
 ---
 
-### DSGAI18 — Inference and Data Reconstruction
+### DSGAI18 — Inference & Data Reconstruction
 
 **Severity:** High
 
@@ -964,7 +964,7 @@ criteria.
 
 ---
 
-### DSGAI19 — Human-in-Loop and Labeler Overexposure
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 **Severity:** Medium
 
@@ -1013,7 +1013,7 @@ are the primary criteria.
 
 ---
 
-### DSGAI20 — Model Exfiltration and IP Replication
+### DSGAI20 — Model Exfiltration & IP Replication
 
 **Severity:** High
 
@@ -1063,7 +1063,7 @@ limiting as access control) are the primary criteria.
 
 ---
 
-### DSGAI21 — Disinformation and Integrity Attacks via Data Poisoning
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 

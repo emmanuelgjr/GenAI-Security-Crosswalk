@@ -431,7 +431,7 @@ Art. 15 violations: up to **€15M or 3% global turnover**.
 
 ---
 
-### DSGAI06 — Tool, Plugin & Agent Data Exchange Risks
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 **Applies to:** High-risk · GPAI models
@@ -741,7 +741,7 @@ GDPR violations from failed anonymisation: up to **€20M or 4%**.
 
 ---
 
-### DSGAI11 — Cross-Context & Multi-User Conversation Bleed
+### DSGAI11 — Cross-Context Conversation Bleed
 
 **Severity:** High
 **Applies to:** High-risk · GPAI models · GDPR
@@ -797,7 +797,7 @@ GDPR Art. 32 violations: up to **€20M or 4% global turnover**.
 
 ---
 
-### DSGAI12 — Unsafe Natural-Language Data Gateways
+### DSGAI12 — Unsafe NL Data Gateways
 
 **Severity:** Critical
 **Applies to:** High-risk · GPAI models
@@ -975,7 +975,7 @@ GDPR Art. 32 violations: up to **€20M or 4% global turnover**.
 
 ---
 
-### DSGAI15 — Over-Broad Context Windows & Prompt Over-Sharing
+### DSGAI15 — Over-Broad Context Windows
 
 **Severity:** High
 **Applies to:** High-risk · GPAI models
@@ -1082,7 +1082,7 @@ Art. 29 deployer violations: up to **€15M or 3% global turnover**.
 
 ---
 
-### DSGAI17 — Data Availability & Resilience Failures in AI Pipelines
+### DSGAI17 — Data Availability & Resilience Failures
 
 **Severity:** High
 **Applies to:** High-risk · GPAI models
@@ -1197,7 +1197,7 @@ GDPR Art. 25 violations: up to **€20M or 4% global turnover**.
 
 ---
 
-### DSGAI19 — Human-in-the-Loop & Labeler Overexposure
+### DSGAI19 — Human-in-Loop & Labeler Overexposure
 
 **Severity:** Medium
 **Applies to:** High-risk · GPAI models · GDPR Art. 28
@@ -1299,7 +1299,7 @@ Art. 53 GPAI documentation violations: up to **€15M or 3%**.
 
 ---
 
-### DSGAI21 — Disinformation & Integrity Attacks via Data Poisoning
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 **Applies to:** High-risk · GPAI models · GPAI systemic risk

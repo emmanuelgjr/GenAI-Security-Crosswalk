@@ -47,24 +47,24 @@ AIUC-1 provides the most direct single-framework coverage for DSGAI data securit
 | DSGAI01 | Sensitive Data Leakage | Critical | A (all), B009, B006 | Foundational–Hardening |
 | DSGAI02 | Agent Identity & Credential Exposure | Critical | A, B007, B008, E | Foundational–Hardening |
 | DSGAI03 | Shadow AI & Unsanctioned Data Flows | High | A, E, B007, F | Foundational–Hardening |
-| DSGAI04 | Data Model & Artifact Poisoning | Critical | A, B001, B002, B008 | Hardening–Advanced |
+| DSGAI04 | Data, Model & Artifact Poisoning | Critical | A, B001, B002, B008 | Hardening–Advanced |
 | DSGAI05 | Data Integrity & Validation Failures | High | A, B005, B006 | Foundational–Hardening |
-| DSGAI06 | Tool Plugin & Agent Data Exchange | High | A, B003, B007, E | Foundational–Hardening |
-| DSGAI07 | Data Governance & Lifecycle | High | A, E, F | Foundational–Hardening |
+| DSGAI06 | Tool, Plugin & Agent Data Exchange | High | A, B003, B007, E | Foundational–Hardening |
+| DSGAI07 | Data Governance, Lifecycle & Classification | High | A, E, F | Foundational–Hardening |
 | DSGAI08 | Non-Compliance & Regulatory Violations | High | A, E, F, C | Foundational–Hardening |
-| DSGAI09 | Multimodal Cross-Channel Leakage | Medium | A, B009, B006 | Hardening–Advanced |
-| DSGAI10 | Synthetic Data & Anonymization Pitfalls | Medium | A, F | Hardening–Advanced |
+| DSGAI09 | Multimodal Cross-Channel Data Leakage | Medium | A, B009, B006 | Hardening–Advanced |
+| DSGAI10 | Synthetic Data & Anonymisation Pitfalls | Medium | A, F | Hardening–Advanced |
 | DSGAI11 | Cross-Context Conversation Bleed | High | A, B006, E | Foundational–Hardening |
 | DSGAI12 | Unsafe NL Data Gateways | Critical | B005, B006, B009, A | Foundational–Advanced |
 | DSGAI13 | Vector Store Platform Security | High | A, B008, E | Hardening–Advanced |
 | DSGAI14 | Excessive Telemetry & Monitoring Leakage | Medium | A, E, B009 | Foundational–Hardening |
 | DSGAI15 | Over-Broad Context Windows | High | A, B005, B006 | Foundational–Hardening |
-| DSGAI16 | Endpoint & Browser Overreach | High | B006, B007, A | Foundational–Hardening |
+| DSGAI16 | Endpoint & Browser Assistant Overreach | High | B006, B007, A | Foundational–Hardening |
 | DSGAI17 | Data Availability & Resilience Failures | High | D, A, E | Foundational–Hardening |
 | DSGAI18 | Inference & Data Reconstruction | High | A, B004, B006 | Hardening–Advanced |
 | DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | A, E, F | Foundational–Hardening |
 | DSGAI20 | Model Exfiltration & IP Replication | Critical | A, B004, B006, E | Hardening–Advanced |
-| DSGAI21 | Disinformation & Integrity Attacks | High | C, F, B002, B005 | Hardening–Advanced |
+| DSGAI21 | Disinformation via Data Poisoning | High | C, F, B002, B005 | Hardening–Advanced |
 
 ---
 
@@ -152,7 +152,7 @@ Employees or teams deploy unauthorised GenAI tools that process corporate data o
 
 ---
 
-### DSGAI04 — Data Model & Artifact Poisoning
+### DSGAI04 — Data, Model & Artifact Poisoning
 
 **Severity:** Critical
 
@@ -196,7 +196,7 @@ Insufficient validation on AI data ingestion interfaces allows corrupted, malfor
 
 ---
 
-### DSGAI06 — Tool Plugin & Agent Data Exchange
+### DSGAI06 — Tool, Plugin & Agent Data Exchange
 
 **Severity:** High
 
@@ -219,7 +219,7 @@ Sensitive context — user data, credentials, conversation history — exchanged
 
 ---
 
-### DSGAI07 — Data Governance & Lifecycle
+### DSGAI07 — Data Governance, Lifecycle & Classification
 
 **Severity:** High
 
@@ -264,7 +264,7 @@ GenAI systems fail to meet regulatory obligations — GDPR, EU AI Act, sector-sp
 
 ---
 
-### DSGAI09 — Multimodal Cross-Channel Leakage
+### DSGAI09 — Multimodal Cross-Channel Data Leakage
 
 **Severity:** Medium
 
@@ -285,7 +285,7 @@ Data leaks across modalities — text-to-image, speech-to-text, OCR — when sen
 
 ---
 
-### DSGAI10 — Synthetic Data & Anonymization Pitfalls
+### DSGAI10 — Synthetic Data & Anonymisation Pitfalls
 
 **Severity:** Medium
 
@@ -412,7 +412,7 @@ Excessive content injected into LLM context windows — full documents, entire c
 
 ---
 
-### DSGAI16 — Endpoint & Browser Overreach
+### DSGAI16 — Endpoint & Browser Assistant Overreach
 
 **Severity:** High
 
@@ -519,7 +519,7 @@ Model weights, architectures, or trained capabilities are extracted through syst
 
 ---
 
-### DSGAI21 — Disinformation & Integrity Attacks
+### DSGAI21 — Disinformation via Data Poisoning
 
 **Severity:** High
 
