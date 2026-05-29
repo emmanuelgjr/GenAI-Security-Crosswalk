@@ -433,6 +433,20 @@
       "notes": "Detect anomalous content injected over time"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Source Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Provenance Repudiation",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-345",
       "control_name": "CWE-345",

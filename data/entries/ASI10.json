@@ -460,6 +460,27 @@
       "notes": "Documented runbook: kill switch, audit, state validation, forensic capture"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Unauthorised Privilege Use",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Behaviour Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Action Repudiation",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Improper Access Control",
       "control_name": "CWE-284",
@@ -874,7 +895,8 @@
     "dsgai_2026": [
       "DSGAI16",
       "DSGAI03",
-      "DSGAI02"
+      "DSGAI02",
+      "DSGAI20"
     ]
   },
   "changelog": [

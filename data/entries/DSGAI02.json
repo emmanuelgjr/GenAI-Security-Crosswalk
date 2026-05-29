@@ -445,6 +445,27 @@
       "notes": "Scrub secrets from logs, memory, and tool payloads"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Credential Spoofing",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Secret Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Privilege Elevation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-312",
       "control_name": "CWE-312",

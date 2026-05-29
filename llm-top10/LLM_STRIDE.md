@@ -688,6 +688,8 @@ To integrate this mapping into a DFD-based threat model:
 ## See also
 
 - [LLM Top 10 × AIUC-1](LLM_AIUC1.md)
+- [Agentic Top 10 × STRIDE](../agentic-top10/Agentic_STRIDE.md)
+- [DSGAI 2026 × STRIDE](../dsgai-2026/DSGAI_STRIDE.md)
 
 ---
 

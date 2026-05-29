@@ -415,6 +415,20 @@
       "notes": "Configure isolation in shared memory/cache layers"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Cross-Session Disclosure",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Boundary Privilege Elevation",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-200",
       "control_name": "CWE-200",

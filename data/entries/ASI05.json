@@ -452,6 +452,20 @@
       "notes": "No production agent with code execution without signed sandbox architecture review"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Code-Execution Privilege Elevation",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Execution-Path Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Improper Control of Generation of Code",
       "control_name": "CWE-94",

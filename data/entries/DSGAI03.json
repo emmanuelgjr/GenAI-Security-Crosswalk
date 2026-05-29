@@ -422,6 +422,20 @@
       "notes": "Detect and block data flow to non-allowlisted AI services"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Egress Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Flow Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-668",
       "control_name": "CWE-668",

@@ -400,6 +400,20 @@
       "notes": "Probe EXIF/steganography/embedded-text and generated-media leakage"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Cross-Modal Disclosure",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Modality Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-200",
       "control_name": "CWE-200",

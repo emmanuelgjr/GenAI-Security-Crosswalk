@@ -431,6 +431,27 @@
       "notes": "Alert on anomalous ingestion and behaviour drift"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Data/Artifact Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Source Spoofing",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Integrity Repudiation",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-345",
       "control_name": "CWE-345",

@@ -10,13 +10,13 @@
   <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-3.1.0-green" alt="Version"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/frameworks-25-orange" alt="Frameworks"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/controls-1,514-blueviolet" alt="Controls"></a>
-  <a href="README.md"><img src="https://img.shields.io/badge/mapping%20files-68-brightgreen" alt="Mapping Files"></a>
+  <a href="README.md"><img src="https://img.shields.io/badge/mapping%20files-70-brightgreen" alt="Mapping Files"></a>
   <a href="https://www.npmjs.com/package/genai-security-crosswalk"><img src="https://img.shields.io/npm/v/genai-security-crosswalk?color=red&label=npm" alt="npm"></a>
 </p>
 
 <p align="center">
   <strong>The most comprehensive mapping of AI security risks to compliance frameworks.</strong><br>
-  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,295 mappings &middot; 114 incidents &middot; ML classifier pipeline
+  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,351 mappings &middot; 114 incidents &middot; ML classifier pipeline
 </p>
 
 <p align="center">
@@ -125,7 +125,7 @@ Every file answers one question: **which controls from framework X address vulne
 |---|---|
 | **3** source lists | LLM Top 10 · Agentic Top 10 · DSGAI 2026 |
 | **25** frameworks | Compliance · Governance · Threat modeling · Testing · OT/ICS · Identity · Secure SDLC · Financial |
-| **68** mapping files | Every source list entry × every applicable framework |
+| **70** mapping files | Every source list entry × every applicable framework |
 | **21** implementation recipes | Production-ready Python patterns |
 | **70+** open-source tools | Catalogued and organised by function |
 | **8** eval tool tracks | Garak · PyRIT · LAAF · promptfoo · Inspect/AgentDojo · ModelScan · guardrails · privacy — mapped to OWASP entries |
@@ -210,7 +210,7 @@ All free. All open-source. Built for practitioners.
 | [LLM_FedRAMP.md](llm-top10/LLM_FedRAMP.md) | FedRAMP | SP 800-53 AI overlay — AC/AU/CA/CM/IA/IR/RA/SA/SC/SI/SR control families |
 | [LLM_DORA.md](llm-top10/LLM_DORA.md) | DORA | EU financial sector resilience — Art. 5–45 per LLM entry |
 
-### Agentic Top 10 2026 — 23 framework mappings
+### Agentic Top 10 2026 — 24 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -232,6 +232,7 @@ All free. All open-source. Built for practitioners.
 | [Agentic_SOC2.md](agentic-top10/Agentic_SOC2.md) | SOC 2 Trust Services Criteria | TSC mapping for agentic AI — autonomous action scope, processing integrity, supply chain criteria |
 | [Agentic_PCIDSS.md](agentic-top10/Agentic_PCIDSS.md) | PCI DSS v4.0 | PCI audit guidance for agents with tool access to payment systems, Req 6/7/8/10/11/12 per entry |
 | [Agentic_SAMM.md](agentic-top10/Agentic_SAMM.md) | OWASP SAMM v2.0 | L1–L3 maturity scorecard for agentic AI — pre-deployment gates and programme maturity roadmap |
+| [Agentic_STRIDE.md](agentic-top10/Agentic_STRIDE.md) | STRIDE | Threat-model categories (S/T/R/I/D/E) per agentic risk with tiered mitigations |
 | [Agentic_NISTSP80082.md](agentic-top10/Agentic_NISTSP80082.md) | NIST SP 800-82 Rev 3 | OT agent placement, SP 800-53 controls, U.S. regulatory crosswalk (NERC CIP, AWIA, CMMC) |
 | [Agentic_SP800218A.md](agentic-top10/Agentic_SP800218A.md) | NIST SP 800-218A | Secure agentic SDLC — tool access, memory integrity, multi-agent pipeline practices |
 | [Agentic_FedRAMP.md](agentic-top10/Agentic_FedRAMP.md) | FedRAMP | Federal agentic AI authorization — agent identity, tool access, cascade controls |
@@ -239,7 +240,7 @@ All free. All open-source. Built for practitioners.
 
 > **Also in this folder:** [Agentic_CWE_CVE.md](agentic-top10/Agentic_CWE_CVE.md) — CWE root cause taxonomy, confirmed CVEs, full CWE cross-reference index.
 
-### DSGAI 2026 — 22 framework mappings
+### DSGAI 2026 — 23 framework mappings
  
 | File | Framework | Standout content |
 |---|---|---|
@@ -259,6 +260,7 @@ All free. All open-source. Built for practitioners.
 | [DSGAI_ENISA.md](dsgai-2026/DSGAI_ENISA.md) | ENISA Multilayer Framework | L1/L2/L3 layer mapping, EU AI Act and NIS2 alignment for all 21 DSGAI entries |
 | [DSGAI_ISO42001.md](dsgai-2026/DSGAI_ISO42001.md) | ISO/IEC 42001:2023 | AIMS controls per DSGAI entry, ISO 27001 integration guidance, A.7 data governance reference |
 | [DSGAI_SAMM.md](dsgai-2026/DSGAI_SAMM.md) | OWASP SAMM v2.0 | L1–L3 maturity scorecard for GenAI data security — GDPR and regulatory compliance baseline |
+| [DSGAI_STRIDE.md](dsgai-2026/DSGAI_STRIDE.md) | STRIDE | Threat-model categories (S/T/R/I/D/E) per DSGAI risk — I/T-dominant, with tiered mitigations |
 | [DSGAI_NISTSP80082.md](dsgai-2026/DSGAI_NISTSP80082.md) | NIST SP 800-82 Rev 3 | OT data placement, SP 800-53 controls per DSGAI entry, NERC CIP/FISMA/CMMC crosswalk |
 | [DSGAI_AIUC1.md](dsgai-2026/DSGAI_AIUC1.md) | AIUC-1 | Domain A (Data & Privacy) covers 50%+ of DSGAI entries — certification readiness table |
 | [DSGAI_NHI.md](dsgai-2026/DSGAI_NHI.md) | OWASP NHI Top 10 | NHI as enabling condition for DSGAI risks — NHI programme maturity table for GenAI data |

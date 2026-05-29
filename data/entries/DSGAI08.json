@@ -400,6 +400,20 @@
       "notes": "Log processing activities for accountability/audit"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Accountability Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Unlawful Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-359",
       "control_name": "CWE-359",

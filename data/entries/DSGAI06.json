@@ -408,6 +408,27 @@
       "notes": "Require review before a tool/plugin is connected"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Exchange Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Cross-Boundary Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Privilege Elevation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
       "control_name": "CWE-284",

@@ -8855,6 +8855,27 @@ window.CROSSWALK_DATA = [
         "notes": "All developers with access to agent code understand injection risk model"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Instruction Spoofing",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Goal Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Privilege Elevation via Hijack",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "Improper Input Validation",
         "control_name": "CWE-20",
@@ -9866,6 +9887,27 @@ window.CROSSWALK_DATA = [
         "notes": "Alert on tool calls outside normal operating parameters; misuse pattern detection"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Privilege Abuse via Tools",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Action Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Tool/Target Spoofing",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "Improper Access Control",
         "control_name": "CWE-284",
@@ -10335,7 +10377,8 @@ window.CROSSWALK_DATA = [
       ],
       "dsgai_2026": [
         "DSGAI06",
-        "DSGAI12"
+        "DSGAI12",
+        "DSGAI16"
       ]
     },
     "changelog": [
@@ -10815,6 +10858,27 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Document that each agent must have unique NHI with minimum scope and short TTL"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Identity Spoofing",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Privilege Elevation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Action Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -11755,6 +11819,27 @@ window.CROSSWALK_DATA = [
         "notes": "Track security advisories for all integrated components"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Component Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Component Spoofing",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Supply-Chain Privilege Elevation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "Download of Code Without Integrity Check",
         "control_name": "CWE-494",
@@ -12147,7 +12232,8 @@ window.CROSSWALK_DATA = [
       ],
       "dsgai_2026": [
         "DSGAI04",
-        "DSGAI06"
+        "DSGAI06",
+        "DSGAI21"
       ]
     },
     "changelog": [
@@ -12611,6 +12697,20 @@ window.CROSSWALK_DATA = [
         "tier": "Advanced",
         "scope": "Both",
         "notes": "No production agent with code execution without signed sandbox architecture review"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Code-Execution Privilege Elevation",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Execution-Path Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -13471,6 +13571,27 @@ window.CROSSWALK_DATA = [
         "notes": "Confirm memory stores have appropriate access controls and integrity verification"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Memory Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Source Spoofing",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Integrity Repudiation",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "Acceptance of Extraneous Untrusted Data with Trusted Data",
         "control_name": "CWE-349",
@@ -13848,7 +13969,8 @@ window.CROSSWALK_DATA = [
       ],
       "dsgai_2026": [
         "DSGAI04",
-        "DSGAI13"
+        "DSGAI13",
+        "DSGAI11"
       ]
     },
     "changelog": [
@@ -14314,6 +14436,27 @@ window.CROSSWALK_DATA = [
         "notes": "Test for spoofing, replay, schema violations, and agent-in-the-middle attacks"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Peer Spoofing",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Message Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Inter-Agent Disclosure",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "Improper Authentication",
         "control_name": "CWE-287",
@@ -14637,7 +14780,12 @@ window.CROSSWALK_DATA = [
     ],
     "crossrefs": {
       "dsgai_2026": [
-        "DSGAI02"
+        "DSGAI02",
+        "DSGAI06",
+        "DSGAI01"
+      ],
+      "llm_top10": [
+        "LLM01"
       ]
     },
     "changelog": [
@@ -15101,6 +15249,27 @@ window.CROSSWALK_DATA = [
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Documented runbook for cascade scenarios including rollback procedures"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "D",
+        "control_name": "Availability Denial",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Propagated Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Cascade Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -15898,6 +16067,27 @@ window.CROSSWALK_DATA = [
         "notes": "Alert when operators approve high-risk actions without independent verification"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Trust Spoofing",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Decision Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Persuasion-Driven Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "Permissive List of Allowed Inputs",
         "control_name": "CWE-183",
@@ -16274,7 +16464,8 @@ window.CROSSWALK_DATA = [
         "LLM09"
       ],
       "dsgai_2026": [
-        "DSGAI21"
+        "DSGAI21",
+        "DSGAI19"
       ]
     },
     "changelog": [
@@ -16748,6 +16939,27 @@ window.CROSSWALK_DATA = [
         "notes": "Documented runbook: kill switch, audit, state validation, forensic capture"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Unauthorised Privilege Use",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Behaviour Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Action Repudiation",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "Improper Access Control",
         "control_name": "CWE-284",
@@ -17162,7 +17374,8 @@ window.CROSSWALK_DATA = [
       "dsgai_2026": [
         "DSGAI16",
         "DSGAI03",
-        "DSGAI02"
+        "DSGAI02",
+        "DSGAI20"
       ]
     },
     "changelog": [
@@ -17626,6 +17839,20 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Encrypt corpora; enforce least-privilege on data stores feeding the model"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Data Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Access Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -18517,6 +18744,27 @@ window.CROSSWALK_DATA = [
         "notes": "Scrub secrets from logs, memory, and tool payloads"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Credential Spoofing",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Secret Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Privilege Elevation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-312",
         "control_name": "CWE-312",
@@ -19282,6 +19530,20 @@ window.CROSSWALK_DATA = [
         "notes": "Detect and block data flow to non-allowlisted AI services"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Egress Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Flow Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-668",
         "control_name": "CWE-668",
@@ -20017,6 +20279,27 @@ window.CROSSWALK_DATA = [
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Alert on anomalous ingestion and behaviour drift"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Data/Artifact Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "S",
+        "control_name": "Source Spoofing",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Integrity Repudiation",
+        "tier": "Hardening",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -20777,6 +21060,20 @@ window.CROSSWALK_DATA = [
         "notes": "Fuzz ingestion channels with malformed and adversarial records"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Input Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Integrity Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-20",
         "control_name": "CWE-20",
@@ -21519,6 +21816,27 @@ window.CROSSWALK_DATA = [
         "notes": "Require review before a tool/plugin is connected"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Exchange Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Cross-Boundary Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Privilege Elevation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
         "control_name": "CWE-284",
@@ -22244,6 +22562,20 @@ window.CROSSWALK_DATA = [
         "notes": "Enforce retention/deletion; make access auditable"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Governance Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Unmanaged Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-359",
         "control_name": "CWE-359",
@@ -22924,6 +23256,20 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Log processing activities for accountability/audit"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Accountability Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Unlawful Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -23708,6 +24054,20 @@ window.CROSSWALK_DATA = [
         "notes": "Probe EXIF/steganography/embedded-text and generated-media leakage"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Cross-Modal Disclosure",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Modality Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
         "control_name": "CWE-200",
@@ -24383,6 +24743,13 @@ window.CROSSWALK_DATA = [
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Mandate a documented anonymisation method and review"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Re-identification Disclosure",
+        "tier": "Hardening",
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
@@ -25066,6 +25433,20 @@ window.CROSSWALK_DATA = [
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Configure isolation in shared memory/cache layers"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Cross-Session Disclosure",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Boundary Privilege Elevation",
+        "tier": "Hardening",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -25805,6 +26186,27 @@ window.CROSSWALK_DATA = [
         "notes": "Probe for destructive/over-broad generated queries"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Query Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Execution Privilege Elevation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Query-Driven Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-89",
         "control_name": "CWE-89",
@@ -26519,6 +26921,27 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Keep the vector DB patched and hardened"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Embedding Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Index Tampering",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Namespace Privilege Elevation",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -27251,6 +27674,20 @@ window.CROSSWALK_DATA = [
         "notes": "Build redaction into logging/tracing libraries"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Telemetry Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Log-Access Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-312",
         "control_name": "CWE-312",
@@ -27979,6 +28416,13 @@ window.CROSSWALK_DATA = [
         "notes": "Attempt to extract the full assembled context"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Aggregated Disclosure",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
         "control_name": "CWE-200",
@@ -28655,6 +29099,20 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validate the assistant cannot read out-of-scope data"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Local Data Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "E",
+        "control_name": "Scope Privilege Elevation",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -29351,6 +29809,13 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Design quotas, rate limits, and graceful degradation"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "D",
+        "control_name": "Availability Denial",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -30077,6 +30542,13 @@ window.CROSSWALK_DATA = [
         "notes": "Limit signals (logits/confidence) that aid inference"
       },
       {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Inference Disclosure",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
         "control_name": "CWE-200",
@@ -30728,6 +31200,20 @@ window.CROSSWALK_DATA = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Authorise and log reviewer access to records"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Reviewer Disclosure",
+        "tier": "Foundational",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Reviewer Repudiation",
+        "tier": "Foundational",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -31426,6 +31912,20 @@ window.CROSSWALK_DATA = [
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Access-control weights; classify the model as IP"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "I",
+        "control_name": "Model Disclosure",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Replication Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
@@ -32167,6 +32667,20 @@ window.CROSSWALK_DATA = [
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Detect anomalous content injected over time"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "T",
+        "control_name": "Source Tampering",
+        "tier": "Hardening",
+        "scope": "Both"
+      },
+      {
+        "framework": "STRIDE",
+        "control_id": "R",
+        "control_name": "Provenance Repudiation",
+        "tier": "Hardening",
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",

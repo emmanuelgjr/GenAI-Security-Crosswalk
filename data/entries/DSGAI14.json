@@ -406,6 +406,20 @@
       "notes": "Build redaction into logging/tracing libraries"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Telemetry Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Log-Access Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-312",
       "control_name": "CWE-312",

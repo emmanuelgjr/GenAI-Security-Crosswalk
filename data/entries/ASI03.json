@@ -468,6 +468,27 @@
       "notes": "Document that each agent must have unique NHI with minimum scope and short TTL"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Identity Spoofing",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Privilege Elevation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Action Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Execution with Unnecessary Privileges",
       "control_name": "CWE-250",

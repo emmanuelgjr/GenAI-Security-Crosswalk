@@ -400,6 +400,13 @@
       "notes": "Attempt to extract the full assembled context"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Aggregated Disclosure",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-200",
       "control_name": "CWE-200",

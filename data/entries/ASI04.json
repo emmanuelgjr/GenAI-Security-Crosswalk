@@ -452,6 +452,27 @@
       "notes": "Track security advisories for all integrated components"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Component Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Component Spoofing",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Supply-Chain Privilege Elevation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Download of Code Without Integrity Check",
       "control_name": "CWE-494",
@@ -844,7 +865,8 @@
     ],
     "dsgai_2026": [
       "DSGAI04",
-      "DSGAI06"
+      "DSGAI06",
+      "DSGAI21"
     ]
   },
   "changelog": [

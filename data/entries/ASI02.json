@@ -468,6 +468,27 @@
       "notes": "Alert on tool calls outside normal operating parameters; misuse pattern detection"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Privilege Abuse via Tools",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Action Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Tool/Target Spoofing",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Improper Access Control",
       "control_name": "CWE-284",
@@ -937,7 +958,8 @@
     ],
     "dsgai_2026": [
       "DSGAI06",
-      "DSGAI12"
+      "DSGAI12",
+      "DSGAI16"
     ]
   },
   "changelog": [
