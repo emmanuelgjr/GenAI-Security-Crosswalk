@@ -444,6 +444,27 @@
       "notes": "Alert when operators approve high-risk actions without independent verification"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Trust Spoofing",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Decision Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Persuasion-Driven Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Permissive List of Allowed Inputs",
       "control_name": "CWE-183",
@@ -820,7 +841,8 @@
       "LLM09"
     ],
     "dsgai_2026": [
-      "DSGAI21"
+      "DSGAI21",
+      "DSGAI19"
     ]
   },
   "changelog": [

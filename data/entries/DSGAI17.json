@@ -393,6 +393,13 @@
       "notes": "Design quotas, rate limits, and graceful degradation"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "D",
+      "control_name": "Availability Denial",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-400",
       "control_name": "CWE-400",

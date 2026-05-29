@@ -400,6 +400,20 @@
       "notes": "Validate the assistant cannot read out-of-scope data"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Local Data Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Scope Privilege Elevation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-668",
       "control_name": "CWE-668",

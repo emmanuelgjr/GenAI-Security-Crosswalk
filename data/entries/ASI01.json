@@ -476,6 +476,27 @@
       "notes": "All developers with access to agent code understand injection risk model"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Instruction Spoofing",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Goal Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Privilege Elevation via Hijack",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Improper Input Validation",
       "control_name": "CWE-20",

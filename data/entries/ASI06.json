@@ -453,6 +453,27 @@
       "notes": "Confirm memory stores have appropriate access controls and integrity verification"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Memory Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Source Spoofing",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Integrity Repudiation",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Acceptance of Extraneous Untrusted Data with Trusted Data",
       "control_name": "CWE-349",
@@ -830,7 +851,8 @@
     ],
     "dsgai_2026": [
       "DSGAI04",
-      "DSGAI13"
+      "DSGAI13",
+      "DSGAI11"
     ]
   },
   "changelog": [

@@ -392,6 +392,20 @@
       "notes": "Authorise and log reviewer access to records"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Reviewer Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Reviewer Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-285",
       "control_name": "CWE-285",

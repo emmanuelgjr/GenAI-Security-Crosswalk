@@ -430,6 +430,27 @@
       "notes": "Probe for destructive/over-broad generated queries"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Query Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Execution Privilege Elevation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Query-Driven Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-89",
       "control_name": "CWE-89",

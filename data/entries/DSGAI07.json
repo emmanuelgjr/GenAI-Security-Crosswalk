@@ -407,6 +407,20 @@
       "notes": "Enforce retention/deletion; make access auditable"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Governance Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Unmanaged Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-359",
       "control_name": "CWE-359",

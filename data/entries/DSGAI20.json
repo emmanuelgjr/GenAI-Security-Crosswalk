@@ -408,6 +408,20 @@
       "notes": "Access-control weights; classify the model as IP"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Model Disclosure",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Replication Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
       "control_name": "CWE-284",

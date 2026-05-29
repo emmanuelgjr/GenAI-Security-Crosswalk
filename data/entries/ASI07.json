@@ -452,6 +452,27 @@
       "notes": "Test for spoofing, replay, schema violations, and agent-in-the-middle attacks"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "S",
+      "control_name": "Peer Spoofing",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Message Tampering",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Inter-Agent Disclosure",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Improper Authentication",
       "control_name": "CWE-287",
@@ -775,7 +796,12 @@
   ],
   "crossrefs": {
     "dsgai_2026": [
-      "DSGAI02"
+      "DSGAI02",
+      "DSGAI06",
+      "DSGAI01"
+    ],
+    "llm_top10": [
+      "LLM01"
     ]
   },
   "changelog": [

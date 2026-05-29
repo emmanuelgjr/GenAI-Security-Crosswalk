@@ -36775,6 +36775,24 @@ window.CROSSWALK_BACKLINKS = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": null
+      },
+      {
+        "id": "ASI08",
+        "name": "Cascading Agent Failures",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI17",
+        "name": "Data Availability and Resilience Failures",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
       }
     ]
   },
@@ -36818,6 +36836,114 @@ window.CROSSWALK_BACKLINKS = [
         "tier": "Foundational",
         "scope": "Build",
         "notes": null
+      },
+      {
+        "id": "ASI01",
+        "name": "Agent Goal Hijack",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI02",
+        "name": "Tool Misuse and Exploitation",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI03",
+        "name": "Identity and Privilege Abuse",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI04",
+        "name": "Agentic Supply Chain",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI05",
+        "name": "Unexpected Code Execution",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI10",
+        "name": "Rogue Agents",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI02",
+        "name": "Agent Identity and Credential Exposure",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI06",
+        "name": "Tool Plugin and Agent Data Exchange",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI11",
+        "name": "Cross-Context Conversation Bleed",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI12",
+        "name": "Unsafe Natural Language Data Gateways",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI13",
+        "name": "Vector Store Platform Security",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI16",
+        "name": "Endpoint and Browser Overreach",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
       }
     ]
   },
@@ -36851,6 +36977,177 @@ window.CROSSWALK_BACKLINKS = [
         "severity": "Medium",
         "tier": "Hardening",
         "scope": "Build",
+        "notes": null
+      },
+      {
+        "id": "ASI07",
+        "name": "Insecure Inter-Agent Communications",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI09",
+        "name": "Human-Agent Trust Exploitation",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI01",
+        "name": "Sensitive Data Leakage",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI02",
+        "name": "Agent Identity and Credential Exposure",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI03",
+        "name": "Shadow AI and Unsanctioned Data Flows",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI06",
+        "name": "Tool Plugin and Agent Data Exchange",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI07",
+        "name": "Data Governance and Lifecycle",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI08",
+        "name": "Non-Compliance and Regulatory Violations",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI09",
+        "name": "Multimodal Cross-Channel Leakage",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI10",
+        "name": "Synthetic Data and Anonymization Pitfalls",
+        "source_list": "DSGAI-2026",
+        "severity": "Medium",
+        "tier": "Hardening",
+        "scope": "Build",
+        "notes": null
+      },
+      {
+        "id": "DSGAI11",
+        "name": "Cross-Context Conversation Bleed",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI12",
+        "name": "Unsafe Natural Language Data Gateways",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI13",
+        "name": "Vector Store Platform Security",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI14",
+        "name": "Excessive Telemetry and Monitoring Leakage",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI15",
+        "name": "Over-Broad Context Windows",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI16",
+        "name": "Endpoint and Browser Overreach",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI18",
+        "name": "Inference and Data Reconstruction",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI19",
+        "name": "Human-in-Loop and Labeler Overexposure",
+        "source_list": "DSGAI-2026",
+        "severity": "Medium",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI20",
+        "name": "Model Exfiltration and IP Replication",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
         "notes": null
       }
     ]
@@ -36895,6 +37192,132 @@ window.CROSSWALK_BACKLINKS = [
         "tier": "Foundational",
         "scope": "Both",
         "notes": null
+      },
+      {
+        "id": "ASI03",
+        "name": "Identity and Privilege Abuse",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI06",
+        "name": "Memory and Context Poisoning",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI08",
+        "name": "Cascading Agent Failures",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI09",
+        "name": "Human-Agent Trust Exploitation",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI10",
+        "name": "Rogue Agents",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI01",
+        "name": "Sensitive Data Leakage",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI03",
+        "name": "Shadow AI and Unsanctioned Data Flows",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI04",
+        "name": "Data Model and Artifact Poisoning",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI05",
+        "name": "Data Integrity and Validation Failures",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI07",
+        "name": "Data Governance and Lifecycle",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI08",
+        "name": "Non-Compliance and Regulatory Violations",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI14",
+        "name": "Excessive Telemetry and Monitoring Leakage",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI19",
+        "name": "Human-in-Loop and Labeler Overexposure",
+        "source_list": "DSGAI-2026",
+        "severity": "Medium",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI21",
+        "name": "Disinformation via Data Poisoning",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
       }
     ]
   },
@@ -36918,6 +37341,87 @@ window.CROSSWALK_BACKLINKS = [
         "source_list": "LLM-Top10-2025",
         "severity": "High",
         "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI01",
+        "name": "Agent Goal Hijack",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI02",
+        "name": "Tool Misuse and Exploitation",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI03",
+        "name": "Identity and Privilege Abuse",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI04",
+        "name": "Agentic Supply Chain",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI06",
+        "name": "Memory and Context Poisoning",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI07",
+        "name": "Insecure Inter-Agent Communications",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI09",
+        "name": "Human-Agent Trust Exploitation",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI02",
+        "name": "Agent Identity and Credential Exposure",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI04",
+        "name": "Data Model and Artifact Poisoning",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": null
       }
@@ -36988,6 +37492,150 @@ window.CROSSWALK_BACKLINKS = [
         "source_list": "LLM-Top10-2025",
         "severity": "Medium",
         "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI01",
+        "name": "Agent Goal Hijack",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI02",
+        "name": "Tool Misuse and Exploitation",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI04",
+        "name": "Agentic Supply Chain",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI05",
+        "name": "Unexpected Code Execution",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI06",
+        "name": "Memory and Context Poisoning",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI07",
+        "name": "Insecure Inter-Agent Communications",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI08",
+        "name": "Cascading Agent Failures",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "ASI10",
+        "name": "Rogue Agents",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI04",
+        "name": "Data Model and Artifact Poisoning",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI05",
+        "name": "Data Integrity and Validation Failures",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI06",
+        "name": "Tool Plugin and Agent Data Exchange",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI09",
+        "name": "Multimodal Cross-Channel Leakage",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI12",
+        "name": "Unsafe Natural Language Data Gateways",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI13",
+        "name": "Vector Store Platform Security",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI20",
+        "name": "Model Exfiltration and IP Replication",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": null
+      },
+      {
+        "id": "DSGAI21",
+        "name": "Disinformation via Data Poisoning",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Hardening",
         "scope": "Both",
         "notes": null
       }

@@ -452,6 +452,27 @@
       "notes": "Documented runbook for cascade scenarios including rollback procedures"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "D",
+      "control_name": "Availability Denial",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Propagated Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Cascade Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "Uncontrolled Resource Consumption",
       "control_name": "CWE-400",

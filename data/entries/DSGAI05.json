@@ -401,6 +401,20 @@
       "notes": "Fuzz ingestion channels with malformed and adversarial records"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Input Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "R",
+      "control_name": "Integrity Repudiation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-20",
       "control_name": "CWE-20",

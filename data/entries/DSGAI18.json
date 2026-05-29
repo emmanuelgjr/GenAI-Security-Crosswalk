@@ -378,6 +378,13 @@
       "notes": "Limit signals (logits/confidence) that aid inference"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Inference Disclosure",
+      "tier": "Hardening",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-200",
       "control_name": "CWE-200",

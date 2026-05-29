@@ -416,6 +416,27 @@
       "notes": "Keep the vector DB patched and hardened"
     },
     {
+      "framework": "STRIDE",
+      "control_id": "I",
+      "control_name": "Embedding Disclosure",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "T",
+      "control_name": "Index Tampering",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
+      "framework": "STRIDE",
+      "control_id": "E",
+      "control_name": "Namespace Privilege Elevation",
+      "tier": "Foundational",
+      "scope": "Both"
+    },
+    {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
       "control_name": "CWE-284",
