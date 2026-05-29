@@ -393,17 +393,24 @@ function checkEvals() {
   ]);
 
   // Collect eval source files. garak/pyrit are per-entry profiles (require a
-  // declared OWASP ID); laaf holds multi-stage reporters/configs (path-checked only).
+  // declared OWASP ID); the other tracks hold multi-entry configs/reporters
+  // (path-checked only). Scan recursively so nested configs (e.g. guardrails/nemo)
+  // are covered too.
+  const perEntryDirs = new Set(['garak', 'pyrit']);
+  const evalSubdirs = ['garak', 'pyrit', 'laaf', 'promptfoo', 'inspect', 'modelscan', 'guardrails', 'privacy'];
   const evalFiles = [];
-  for (const sub of ['garak', 'pyrit', 'laaf']) {
-    const dir = path.join(evalsDir, sub);
-    if (!fs.existsSync(dir)) continue;
-    const perEntry = sub === 'garak' || sub === 'pyrit';
-    for (const f of fs.readdirSync(dir)) {
-      if (/\.(ya?ml|py)$/.test(f) && !f.startsWith('_') && f !== 'run_all.sh') {
-        evalFiles.push({ fp: path.join(dir, f), perEntry });
+  const walk = (dir, perEntry) => {
+    if (!fs.existsSync(dir)) return;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(full, perEntry); continue; }
+      if (/\.(ya?ml|py)$/.test(entry.name) && !entry.name.startsWith('_') && entry.name !== 'run_all.sh') {
+        evalFiles.push({ fp: full, perEntry });
       }
     }
+  };
+  for (const sub of evalSubdirs) {
+    walk(path.join(evalsDir, sub), perEntryDirs.has(sub));
   }
 
   let issues = 0;
