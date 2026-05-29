@@ -28,7 +28,11 @@ certification does not substitute for those obligations but provides
 foundational evidence of security controls.
 
 ---
-## Why # DSGAI 2026 × ISO/IEC 27001:2022 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × ISO/IEC 27001:2022 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × ISO/IEC 27001:2022 compliance and governance programmes.---
+## Why ISO/IEC 27001:2022 for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific ISO/IEC 27001:2022 controls, enabling data security teams to address GenAI-specific data risks within their existing ISO/IEC 27001:2022 compliance and governance programmes.
+
+---
 
 ## ISO 27001:2022 Annex A control domains
 

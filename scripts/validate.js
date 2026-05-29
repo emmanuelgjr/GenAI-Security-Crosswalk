@@ -110,6 +110,13 @@ function checkSections(filePath, content) {
       ok = false;
     }
   }
+  // Malformed "## Why" heading: a templating-substitution bug pasted the H1
+  // title into the heading (e.g. "## Why # DSGAI 2026 × …"). The heading must
+  // not contain a "#" after "Why".
+  if (/^##\s+why\s+#/im.test(content)) {
+    fail(rel, 'Malformed "## Why" heading (contains a "#" — templating-substitution bug)');
+    ok = false;
+  }
   if (ok) pass(rel, 'All required sections present');
   return ok;
 }

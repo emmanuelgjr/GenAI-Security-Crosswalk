@@ -23,7 +23,11 @@ and service provider management (CIS 15) — covering the full GenAI data lifecy
 from training through inference.
 
 ---
-## Why # DSGAI 2026 × CIS Controls v8.1 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × CIS Controls v8.1 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × CIS Controls v8.1 compliance and governance programmes.---
+## Why CIS Controls v8.1 for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific CIS Controls v8.1 controls, enabling data security teams to address GenAI-specific data risks within their existing CIS Controls v8.1 compliance and governance programmes.
+
+---
 
 ## CIS Controls structure
 

@@ -18,7 +18,11 @@ the Cloud Security Alliance's threat modeling framework for agentic AI.
 Co-Chair of AI Safety Working Groups, Cloud Security Alliance.
 
 ---
-## Why # DSGAI 2026 × MAESTRO for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × MAESTRO controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × MAESTRO compliance and governance programmes.---
+## Why MAESTRO for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific MAESTRO controls, enabling data security teams to address GenAI-specific data risks within their existing MAESTRO compliance and governance programmes.
+
+---
 
 ## MAESTRO and GenAI data security
 

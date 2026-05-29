@@ -21,7 +21,11 @@ data security — data governance policy, supply chain oversight,
 and acceptable use requirements are GOVERN responsibilities.
 
 ---
-## Why # DSGAI 2026 × NIST CSF 2.0 for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × NIST CSF 2.0 controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × NIST CSF 2.0 compliance and governance programmes.---
+## Why NIST CSF 2.0 for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific NIST CSF 2.0 controls, enabling data security teams to address GenAI-specific data risks within their existing NIST CSF 2.0 compliance and governance programmes.
+
+---
 
 ## Quick-reference summary
 

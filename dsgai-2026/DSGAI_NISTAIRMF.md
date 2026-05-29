@@ -29,7 +29,11 @@ governance programmes who need to operationalise the DSGAI risks within
 their existing framework.
 
 ---
-## Why # DSGAI 2026 × NIST AI RMF for GenAI data securityThis mapping traces each OWASP DSGAI 2026 data security risk to specific # DSGAI 2026 × NIST AI RMF controls, enabling data security teams to address GenAI-specific data risks within their existing # DSGAI 2026 × NIST AI RMF compliance and governance programmes.---
+## Why NIST AI RMF for GenAI data security
+
+This mapping traces each OWASP DSGAI 2026 data security risk to specific NIST AI RMF controls, enabling data security teams to address GenAI-specific data risks within their existing NIST AI RMF compliance and governance programmes.
+
+---
 
 ## AI RMF core functions — GenAI data security lens
 
