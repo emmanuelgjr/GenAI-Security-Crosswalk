@@ -1,37 +1,36 @@
 #!/usr/bin/env bash
 # GenAI Security Crosswalk — Run all Garak evaluation profiles
 # ─────────────────────────────────────────────────────────────
+# Discovers and runs EVERY *.yaml profile in this directory (no hardcoded
+# list to drift out of sync). Pinned to garak >= 0.15.0.
+#
 # Usage:
 #   bash evals/garak/run_all.sh
-#   GARAK_MODEL_TYPE=openai GARAK_MODEL_NAME=gpt-4o bash evals/garak/run_all.sh
+#   GARAK_TARGET_TYPE=openai GARAK_TARGET_NAME=gpt-4o bash evals/garak/run_all.sh
 #
 # Environment variables:
-#   GARAK_MODEL_TYPE  — model type (default: openai)
-#   GARAK_MODEL_NAME  — model name (default: gpt-4o-mini)
-#   OPENAI_API_KEY    — required for openai model type
+#   GARAK_TARGET_TYPE  — target type (default: openai)
+#   GARAK_TARGET_NAME  — target/model name (default: gpt-4o-mini)
+#   OPENAI_API_KEY     — required for the openai target type
 #
 # Results are written to evals/results/<timestamp>/
-# Exit code: 0 if all profiles pass, 1 if any fail
+# Exit code: 0 if all profiles pass, 1 if any fail.
+# ─────────────────────────────────────────────────────────────
 
 set -euo pipefail
 
-MODEL_TYPE="${GARAK_MODEL_TYPE:-openai}"
-MODEL_NAME="${GARAK_MODEL_NAME:-gpt-4o-mini}"
+command -v garak >/dev/null 2>&1 || { echo "ERROR: garak not installed. Run: pip install 'garak>=0.15.0'"; exit 2; }
+
+TARGET_TYPE="${GARAK_TARGET_TYPE:-openai}"
+TARGET_NAME="${GARAK_TARGET_NAME:-gpt-4o-mini}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 RESULTS_DIR="$REPO_ROOT/evals/results/$(date +%Y%m%d_%H%M%S)"
 
 mkdir -p "$RESULTS_DIR"
 
-PROFILES=(
-  "$SCRIPT_DIR/LLM01_prompt_injection.yaml"
-  "$SCRIPT_DIR/LLM02_sensitive_disclosure.yaml"
-  "$SCRIPT_DIR/LLM04_data_poisoning.yaml"
-  "$SCRIPT_DIR/LLM07_system_prompt_leakage.yaml"
-  "$SCRIPT_DIR/LLM09_misinformation.yaml"
-  "$SCRIPT_DIR/ASI01_goal_hijack.yaml"
-  "$SCRIPT_DIR/ASI05_code_execution.yaml"
-)
+# Auto-discover every profile in this directory, sorted for stable ordering.
+mapfile -t PROFILES < <(find "$SCRIPT_DIR" -maxdepth 1 -name '*.yaml' | sort)
 
 PASS=0
 FAIL=0
@@ -39,7 +38,8 @@ FAILED_PROFILES=()
 
 echo ""
 echo "GenAI Security Crosswalk — Garak evaluation suite"
-echo "Model: $MODEL_TYPE / $MODEL_NAME"
+echo "Target: $TARGET_TYPE / $TARGET_NAME"
+echo "Profiles discovered: ${#PROFILES[@]}"
 echo "Results: $RESULTS_DIR"
 echo "────────────────────────────────────────────────────"
 
@@ -50,8 +50,8 @@ for profile in "${PROFILES[@]}"; do
 
   if garak \
       --config "$profile" \
-      --model_type "$MODEL_TYPE" \
-      --model_name "$MODEL_NAME" \
+      --target_type "$TARGET_TYPE" \
+      --target_name "$TARGET_NAME" \
       --report_prefix "$RESULTS_DIR/$name" \
       2>&1 | tee "$RESULTS_DIR/${name}.log"; then
     echo "✓  PASS: $name"
@@ -65,7 +65,7 @@ done
 
 echo ""
 echo "────────────────────────────────────────────────────"
-echo "Results: $PASS passed, $FAIL failed"
+echo "Results: $PASS passed, $FAIL failed (of ${#PROFILES[@]})"
 
 if [ "${#FAILED_PROFILES[@]}" -gt 0 ]; then
   echo ""
