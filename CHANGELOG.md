@@ -11,6 +11,14 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 - **`dsgai-2026/DSGAI_AITG.md`** — DSGAI 2026 × OWASP AI Testing Guide mapping. Closes the AITG coverage gap (AITG previously mapped for LLM and Agentic but not DSGAI). Maps all 21 DSGAI risks to AITG test categories (IHT/MBT/OHT/ACT/DPT/SCT/AVT/LMT/AST) with concrete, reproducible test cases. Registered in `scripts/generate.js`; regenerated `data/entries` (total mappings 3,235 → **3,295**). Added reciprocal `## See also` links in `DSGAI_ASVS`, `LLM_AITG`, and `Agentic_AITG`.
+- `scripts/validate.js`: MITRE ATLAS URL hash-routing check — flags bare `atlas.mitre.org/techniques/…` links (which 404) and requires the SPA `/#/techniques/…` form
+
+### Fixed
+- Stale incident counts corrected to **114** in `README.md` and `data/README.md` (were "50", out of sync with `data/incidents.json`)
+- Corrected stale total-mappings figure in `README.md` (3,210 → **3,295**, matching `data/entries` after the AITG addition)
+- EO 14110 framing in NIST AI RMF files (LLM, Agentic, DSGAI): the AI RMF is voluntary; EO 14110 was revoked January 2025 — removed inaccurate "required" language and aligned reference/audience notes
+- `i18n/README.md` translation status table now reflects actual state (Spanish, German, Japanese machine-assisted drafts synced 2026-03-28; Portuguese planned)
+- Added missing `## See also` back-reference (DSGAI × AIUC-1 → DSGAI × ISO 42001), resolving the last validator warning
 
 Next: npm publish to npmjs.com, custom domain (crosswalk.owasp.org), vendor integration packs, NeMo Guardrails configs.
 

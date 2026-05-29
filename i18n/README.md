@@ -13,8 +13,10 @@ OWASP GenAI security research to the global community.
 
 | Language | Code | Status | Maintainer |
 |---|---|---|---|
-| Spanish | `es/` | ?? Planned — contributions welcome | Open |
-| Portuguese | `pt/` | ?? Planned — contributions welcome | Open |
+| Spanish | `es/` | Machine-assisted draft (synced 2026-03-28) — needs native-speaker review & re-sync | Open |
+| German | `de/` | Machine-assisted draft (synced 2026-03-28) — needs native-speaker review & re-sync | Open |
+| Japanese | `ja/` | Machine-assisted draft (synced 2026-03-28) — needs native-speaker review & re-sync | Open |
+| Portuguese | `pt/` | Planned — contributions welcome | Open |
 
 To add your language, see **Contributing a translation** below.
 

@@ -200,6 +200,34 @@ function checkCrossRefFormat(filePath, content) {
 }
 
 /**
+ * 6b. MITRE ATLAS URL hash-routing
+ *     atlas.mitre.org is a single-page app using hash routing, so deep links
+ *     must use the `/#/techniques/AML.TXXXX` form. The bare `/techniques/...`
+ *     form (no `/#`) 404s. Same for /tactics/ and /mitigations/.
+ */
+function checkAtlasUrls(filePath, content) {
+  const rel = relPath(filePath);
+  // Match any atlas.mitre.org URL and capture the path that follows the host
+  const urlRe = /https?:\/\/atlas\.mitre\.org(\/[^)\s"'<>]*)/g;
+  let bad = 0;
+
+  for (const match of content.matchAll(urlRe)) {
+    const urlPath = match[1];
+    // Routed sections must be reached via the SPA hash (`/#/...`)
+    if (/^\/(techniques|tactics|mitigations|matrices|studies)\//.test(urlPath)) {
+      fail(
+        rel,
+        `MITRE ATLAS URL must use hash routing (/#${urlPath}); bare ${urlPath} 404s`
+      );
+      bad++;
+    }
+  }
+
+  if (bad === 0) pass(rel, 'MITRE ATLAS URLs use hash routing');
+  return bad === 0;
+}
+
+/**
  * 7. Bidirectional cross-references
  *    If file A mentions "See also: Agentic_FOO.md", then Agentic_FOO.md
  *    should mention a link back to the source file or its parent source list.
@@ -402,6 +430,7 @@ function run() {
     checkChangelog(fp, content);
     checkHeader(fp, content);
     checkCrossRefFormat(fp, content);
+    checkAtlasUrls(fp, content);
   }
 
   // Bidirectional cross-reference check (expensive — skip in quick mode)
