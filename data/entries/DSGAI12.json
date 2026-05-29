@@ -462,6 +462,30 @@
       "url": "https://cwe.mitre.org/data/definitions/284.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "NL-to-query injection",
+      "control_name": "IHT — Input Handling",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Craft prompts that induce destructive or over-broad generated queries"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Generated-query validation",
+      "control_name": "OHT — Output Handling",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify generated queries are parameterised, allowlisted, and scope-limited before execution"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Execution-time authorisation",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm the gateway executes under the user's permissions, not a privileged service account"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L3",
       "control_name": "Agent Frameworks",

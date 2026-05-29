@@ -394,6 +394,22 @@
       "url": "https://cwe.mitre.org/data/definitions/330.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Re-identification resistance",
+      "control_name": "DPT — Data Protection",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Attempt linkage/membership attacks against synthetic or anonymised datasets"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Memorisation of source records",
+      "control_name": "MBT — Model Behaviour",
+      "tier": "Hardening",
+      "scope": "Both",
+      "notes": "Probe a model trained on synthetic data for leakage of original records"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

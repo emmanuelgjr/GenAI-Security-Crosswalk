@@ -9,6 +9,9 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+- **`dsgai-2026/DSGAI_AITG.md`** — DSGAI 2026 × OWASP AI Testing Guide mapping. Closes the AITG coverage gap (AITG previously mapped for LLM and Agentic but not DSGAI). Maps all 21 DSGAI risks to AITG test categories (IHT/MBT/OHT/ACT/DPT/SCT/AVT/LMT/AST) with concrete, reproducible test cases. Registered in `scripts/generate.js`; regenerated `data/entries` (total mappings 3,235 → **3,295**). Added reciprocal `## See also` links in `DSGAI_ASVS`, `LLM_AITG`, and `Agentic_AITG`.
+
 Next: npm publish to npmjs.com, custom domain (crosswalk.owasp.org), vendor integration packs, NeMo Guardrails configs.
 
 ---

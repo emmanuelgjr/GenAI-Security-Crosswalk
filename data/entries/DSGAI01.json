@@ -484,6 +484,30 @@
       "url": "https://cwe.mitre.org/data/definitions/312.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Memorisation and over-retrieval",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Probe for verbatim training data and pull RAG documents the requesting principal is not authorised to see"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Redaction effectiveness",
+      "control_name": "OHT — Output Handling",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify PII/secret patterns are detected and masked in outputs before delivery, including partial and obfuscated forms"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Deny-by-default retrieval",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm retrieval honours the caller's authorisation, not the service account's broad access"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

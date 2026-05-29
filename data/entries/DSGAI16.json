@@ -432,6 +432,30 @@
       "url": "https://cwe.mitre.org/data/definitions/284.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Endpoint scope enforcement",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify the assistant accesses only authorised files/pages/resources"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Local action boundaries",
+      "control_name": "AST — Agent-Specific",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm local actions (read/write/exec) honour an allowlist and user consent"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Local data egress",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify local sensitive data is not exfiltrated to the model backend"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L4",
       "control_name": "Deployment & Infrastructure",

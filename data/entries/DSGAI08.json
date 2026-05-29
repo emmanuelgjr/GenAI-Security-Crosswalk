@@ -432,6 +432,30 @@
       "url": "https://cwe.mitre.org/data/definitions/778.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Data-subject rights",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify erasure, access, and rectification requests are honoured end-to-end"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Processing records",
+      "control_name": "LMT — Logging & Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm processing activities are logged for accountability"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Lawful-basis gating",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify processing is gated on a recorded lawful basis / consent"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L6",
       "control_name": "Security & Compliance",

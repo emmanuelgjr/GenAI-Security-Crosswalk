@@ -432,6 +432,30 @@
       "url": "https://cwe.mitre.org/data/definitions/285.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Context minimisation",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify only need-to-know data is placed in context for a task"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Per-item context authorisation",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm each item added to context is authorised for the caller"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Context exfiltration",
+      "control_name": "AST — Agent-Specific",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Attempt to extract the full assembled context via the model"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

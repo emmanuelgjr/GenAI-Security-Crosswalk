@@ -440,6 +440,30 @@
       "url": "https://cwe.mitre.org/data/definitions/602.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Tool I/O trust boundaries",
+      "control_name": "AST — Agent-Specific",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify tool return values are treated as untrusted and validated before use"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Per-tool data scoping",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm each tool receives only the data it requires for its function"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Data minimisation to tools",
+      "control_name": "OHT — Output Handling",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify sensitive fields are stripped from tool inputs unless required"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L3",
       "control_name": "Agent Frameworks",

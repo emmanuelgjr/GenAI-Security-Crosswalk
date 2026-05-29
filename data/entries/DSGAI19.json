@@ -424,6 +424,30 @@
       "url": "https://cwe.mitre.org/data/definitions/359.html"
     },
     {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Reviewer authorisation",
+      "control_name": "ACT — Access Control",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify reviewers access only the records assigned to their queue"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Reviewer-facing minimisation",
+      "control_name": "DPT — Data Protection",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Confirm sensitive fields are masked in review/labeling UIs where not needed"
+    },
+    {
+      "framework": "OWASP AI Testing Guide",
+      "control_id": "Reviewer access audit",
+      "control_name": "LMT — Logging & Monitoring",
+      "tier": "Foundational",
+      "scope": "Both",
+      "notes": "Verify reviewer access to records is logged and auditable"
+    },
+    {
       "framework": "MAESTRO",
       "control_id": "L2",
       "control_name": "Data Operations",

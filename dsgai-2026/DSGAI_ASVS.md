@@ -1059,6 +1059,7 @@ targeting specific topics, entities, or user segments with malicious intent.
 ## See also
 
 - [DSGAI 2026 × SAMM](DSGAI_SAMM.md)
+- [DSGAI 2026 × OWASP AI Testing Guide](DSGAI_AITG.md)
 
 ---
 
