@@ -13,7 +13,7 @@ Runnable security test profiles mapped to OWASP GenAI vulnerability entries.
 > or have explicit written permission to test. They are for pre-production
 > gates, red-team exercises, and defensive validation — not for testing
 > third-party systems.
-
+>
 > **Reproducibility.** Tool APIs and probe catalogues change between releases.
 > All profiles are pinned and validated against the versions in
 > [`requirements.txt`](requirements.txt) (**garak 0.15.0**, **PyRIT 0.13.0**).

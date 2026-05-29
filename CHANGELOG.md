@@ -16,8 +16,6 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 - **Evals were non-functional and never executed.** Rewrote all 13 Garak configs: `probe_spec`/`detector_spec`/`extended_detectors` were misplaced at the wrong YAML level (silently ignored) and most referenced probe modules/classes that do not exist in garak 0.15.0 (`promptinject` mis-nested, plus removed `jailbreak`/`knownbadsignatures`/`leakage`/`xss`); replaced with verified probes and `target_type`/`target_name`. Removed the `always.Fail` detector that forced LLM01/LLM02/LLM03 to always report failure. `run_all.sh` now auto-discovers all profiles (was a hardcoded list running only 7 of 13). Rewrote the 6 PyRIT scripts to the current 0.13.0 `executor.attack` API with proper scorers (was keyword-tautology matching against a removed `pyrit.orchestrator` API). Fixed stale taxonomy: `dsgai08_data_leakage`→`dsgai01_sensitive_data_leakage`, `dsgai17_bias_detection`→`dsgai18_inference_reconstruction`, and retired `data-security/` paths. Rewrote `evals/README.md` (was claiming 7 Garak/3 PyRIT and omitting LAAF entirely) and pinned tool versions in the CI workflow.
-
-### Fixed
 - Stale incident counts corrected to **114** in `README.md` and `data/README.md` (were "50", out of sync with `data/incidents.json`)
 - Corrected stale total-mappings figure in `README.md` (3,210 → **3,295**, matching `data/entries` after the AITG addition)
 - EO 14110 framing in NIST AI RMF files (LLM, Agentic, DSGAI): the AI RMF is voluntary; EO 14110 was revoked January 2025 — removed inaccurate "required" language and aligned reference/audience notes
