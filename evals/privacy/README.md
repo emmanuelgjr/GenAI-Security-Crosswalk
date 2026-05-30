@@ -36,11 +36,17 @@ internals).
 pip install "presidio-analyzer==2.2.362"
 python -m spacy download en_core_web_lg
 python evals/privacy/pii_output_scan.py transcript.jsonl --field response
+python evals/privacy/pii_output_scan.py transcript.jsonl --broad   # add PERSON/LOCATION
 ```
 
 Scans captured model outputs (e.g. from a garak/PyRIT run or production logs)
 for PII entities above a confidence threshold — an **output-DLP gate**. Any
 high-confidence PII in a response is a DSGAI01 finding.
+
+By default it checks **high-precision identifiers** (credit card, SSN, email,
+IBAN, IP, phone, passport, bank/medical numbers) that rarely false-positive.
+Pass `--broad` to also flag NER entities (PERSON, LOCATION, NRP, DATE_TIME) for
+higher recall at the cost of noise — e.g. "the weather in Lisbon" trips LOCATION.
 
 ## Why this matters
 
