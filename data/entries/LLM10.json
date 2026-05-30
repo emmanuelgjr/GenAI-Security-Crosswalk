@@ -708,28 +708,22 @@
   ],
   "incidents": [
     {
-      "name": "Clarkesworld magazine overwhelmed by AI-generated fiction submissions",
+      "name": "Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-014"
+      "year": 2025,
+      "incident_id": "INC-02426"
     },
     {
-      "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "name": "vLLM Unsafe Tensor Deserialization (CVE-2025-62164)",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-017"
+      "year": 2025,
+      "incident_id": "INC-03337"
     },
     {
-      "name": "AI voice deepfake CEO fraud — Hong Kong $25M loss",
+      "name": "OpenAI GPT-4 system prompt extraction toolkit — systematic prompt leakage",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
-      "incident_id": "INC-026"
-    },
-    {
-      "name": "Anthropic Claude context flooding — resource exhaustion via adversarial long-context prompts",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-045"
+      "incident_id": "INC-04067"
     }
   ],
   "crossrefs": {

@@ -16,7 +16,7 @@
 
 <p align="center">
   <strong>The most comprehensive mapping of AI security risks to compliance frameworks.</strong><br>
-  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,351 mappings &middot; 114 incidents &middot; ML classifier pipeline
+  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,351 mappings &middot; 125 incidents &middot; ML classifier pipeline
 </p>
 
 <p align="center">
@@ -65,7 +65,7 @@ node scripts/incidents-report.js --format stix              # SIEM/SOAR export
 | **Red teamer** | [LAAF guide](evals/laaf/README.md) → run S1–S6 attack stages, map results to OWASP |
 | **GRC / auditor** | `compliance-report.js --format grc` → import into ServiceNow/Archer/Drata |
 | **Developer** | `npm install genai-security-crosswalk` → query risks + controls programmatically |
-| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 114 AI incidents into Sentinel/Splunk |
+| **Threat intel analyst** | `incidents-report.js --format stix` → ingest 125 AI incidents into Sentinel/Splunk |
 | **Framework author** | [Submit your standard](https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/#/submit) → classifier maps it automatically |
 
 ---
@@ -130,7 +130,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **70+** open-source tools | Catalogued and organised by function |
 | **8** eval tool tracks | Garak · PyRIT · LAAF · promptfoo · Inspect/AgentDojo · ModelScan · guardrails · privacy — mapped to OWASP entries |
 | **23** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL, GRC) |
-| **114** documented incidents | Real-world + research incidents with MAESTRO layer attribution (MD, CSV, JSON, STIX 2.1) |
+| **125** documented incidents | Synced from the [genai_incidents](https://github.com/emmanuelgjr/genai_incidents) source of truth (curated tier); MAESTRO attribution, MD/CSV/JSON/STIX 2.1 |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
 | **25** framework registries | First-class control inventories (1,514 controls) with backlink index |
 | **Classifier pipeline** | BGE bi-encoder + cross-encoder reranker — auto-maps new frameworks to OWASP entries |
@@ -385,7 +385,7 @@ GenAI-Security-Crosswalk/
 │   ├── framework-schema.json        ← JSON Schema for framework registries
 │   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
 │   ├── backlinks.json               ← 1,097 control-to-entry reverse index
-│   ├── incidents.json               ← 114 incidents with MAESTRO layer attribution
+│   ├── incidents.json               ← 125 incidents (generated view of genai_incidents — see scripts/sync-incidents.mjs)
 │   ├── incidents-schema.json        ← JSON Schema for incidents
 │   ├── tools-supplement.json        ← Supplemental tools merged at generation time
 │   └── README.md                    ← Data layer docs, jq query examples

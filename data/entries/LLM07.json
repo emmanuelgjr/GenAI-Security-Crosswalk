@@ -677,64 +677,40 @@
   ],
   "incidents": [
     {
-      "name": "GitHub Copilot reproduces verbatim licensed code and embedded secrets",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-008"
-    },
-    {
-      "name": "WormGPT — uncensored LLM sold for cybercrime on dark web forums",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-011"
-    },
-    {
-      "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2022,
-      "incident_id": "INC-013"
-    },
-    {
-      "name": "GPT-4 system prompt extraction via jailbreak in production deployments",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-018"
-    },
-    {
-      "name": "LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs",
+      "name": "Claudy Day -- Claude.ai Prompt Injection Attack Chain",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2026,
-      "incident_id": "INC-021"
+      "incident_id": "INC-00833"
     },
     {
-      "name": "Greshake et al. \"Not What You've Signed Up For\" indirect prompt injection paper",
+      "name": "Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-022"
+      "year": 2025,
+      "incident_id": "INC-02426"
     },
     {
-      "name": "GitHub Copilot Workspace prompt injection via repository content",
+      "name": "GPT-4.1 jailbreak via tool poisoning",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-025"
-    },
-    {
-      "name": "Skeleton Key: direct system prompt override (Microsoft)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-030"
-    },
-    {
-      "name": "DPD AI chatbot swears at customer and criticises company — prompt injection via customer input",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-053"
+      "year": 2025,
+      "incident_id": "INC-02646"
     },
     {
       "name": "OpenAI GPT-4 system prompt extraction toolkit — systematic prompt leakage",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2024,
-      "incident_id": "INC-065"
+      "incident_id": "INC-04067"
+    },
+    {
+      "name": "Skeleton Key: direct system prompt override (Microsoft)",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-04207"
+    },
+    {
+      "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2022,
+      "incident_id": "INC-05172"
     }
   ],
   "crossrefs": {
