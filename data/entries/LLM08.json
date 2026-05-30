@@ -733,73 +733,73 @@
   "incidents": [
     {
       "name": "Claude Cowork File Exfiltration",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00827.html",
       "year": 2026,
       "incident_id": "INC-00827"
     },
     {
       "name": "CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00860.html",
       "year": 2026,
       "incident_id": "INC-00860"
     },
     {
       "name": "Eight Attack Vectors in AWS Bedrock Agents",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00928.html",
       "year": 2026,
       "incident_id": "INC-00928"
     },
     {
       "name": "Microsoft Semantic Kernel RCE (CVE-2026-26030)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01440.html",
       "year": 2026,
       "incident_id": "INC-01440"
     },
     {
       "name": "Devin AI Agent Prompt Injection & Data Exfiltration",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02512.html",
       "year": 2025,
       "incident_id": "INC-02512"
     },
     {
       "name": "HashJack -- URL Fragment Prompt Injection for AI Browsers",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02686.html",
       "year": 2025,
       "incident_id": "INC-02686"
     },
     {
       "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03036.html",
       "year": 2025,
       "incident_id": "INC-03036"
     },
     {
       "name": "ToolShell RCE via SharePoint",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03300.html",
       "year": 2025,
       "incident_id": "INC-03300"
     },
     {
       "name": "Windsurf Data Exfiltration & SpAIware (Multiple Vectors)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03376.html",
       "year": 2025,
       "incident_id": "INC-03376"
     },
     {
       "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04027.html",
       "year": 2024,
       "incident_id": "INC-04027"
     },
     {
       "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04142.html",
       "year": 2024,
       "incident_id": "INC-04142"
     },
     {
       "name": "Slack AI indirect injection via channel content",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04208.html",
       "year": 2024,
       "incident_id": "INC-04208"
     }

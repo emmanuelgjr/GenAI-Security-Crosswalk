@@ -707,7 +707,7 @@
   "incidents": [
     {
       "name": "Anthropic Sleeper Agents paper — models trained to hide malicious behaviour",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03572.html",
       "year": 2024,
       "incident_id": "INC-03572"
     }

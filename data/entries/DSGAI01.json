@@ -716,103 +716,103 @@
   "incidents": [
     {
       "name": "Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00740.html",
       "year": 2026,
       "incident_id": "INC-00740"
     },
     {
       "name": "Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00806.html",
       "year": 2026,
       "incident_id": "INC-00806"
     },
     {
       "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00924.html",
       "year": 2026,
       "incident_id": "INC-00924"
     },
     {
       "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01064.html",
       "year": 2026,
       "incident_id": "INC-01064"
     },
     {
       "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
       "year": 2026,
       "incident_id": "INC-01411"
     },
     {
       "name": "Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01465.html",
       "year": 2026,
       "incident_id": "INC-01465"
     },
     {
       "name": "ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02590.html",
       "year": 2025,
       "incident_id": "INC-02590"
     },
     {
       "name": "GPT-4.1 jailbreak via tool poisoning",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02646.html",
       "year": 2025,
       "incident_id": "INC-02646"
     },
     {
       "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02899.html",
       "year": 2025,
       "incident_id": "INC-02899"
     },
     {
       "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03194.html",
       "year": 2025,
       "incident_id": "INC-03194"
     },
     {
       "name": "ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03208.html",
       "year": 2025,
       "incident_id": "INC-03208"
     },
     {
       "name": "ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03210.html",
       "year": 2025,
       "incident_id": "INC-03210"
     },
     {
       "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03368.html",
       "year": 2025,
       "incident_id": "INC-03368"
     },
     {
       "name": "Microsoft-Powered New York City Chatbot Advises Illegal Practices",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04007.html",
       "year": 2024,
       "incident_id": "INC-04007"
     },
     {
       "name": "OpenAI GPT-4 system prompt extraction toolkit — systematic prompt leakage",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04067.html",
       "year": 2024,
       "incident_id": "INC-04067"
     },
     {
       "name": "Slack AI indirect injection via channel content",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04208.html",
       "year": 2024,
       "incident_id": "INC-04208"
     },
     {
       "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-05172.html",
       "year": 2022,
       "incident_id": "INC-05172"
     }

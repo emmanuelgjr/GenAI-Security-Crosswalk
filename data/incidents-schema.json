@@ -63,6 +63,21 @@
           "items": { "type": "string", "pattern": "^(LLM|ASI|DSGAI)\\d{2}$" },
           "description": "OWASP entry IDs this incident exemplifies (owasp_llm + owasp_asi + owasp_dsgai upstream)"
         },
+        "mitre_atlas": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "MITRE ATLAS technique IDs (e.g. AML.T0051) — passthrough from upstream"
+        },
+        "mitre_atlas_tactics": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "MITRE ATLAS tactic IDs — passthrough from upstream"
+        },
+        "nist_ai_rmf": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "NIST AI RMF subcategory IDs (e.g. GOVERN-1.1) — passthrough from upstream"
+        },
         "maestro_layers": {
           "type": "array",
           "description": "MAESTRO architectural layer mapping (optional enrichment from upstream)",

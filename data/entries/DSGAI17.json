@@ -654,13 +654,13 @@
   "incidents": [
     {
       "name": "Clearview AI biometric bias — $50M class action settlement",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02454.html",
       "year": 2025,
       "incident_id": "INC-02454"
     },
     {
       "name": "Microsoft-Powered New York City Chatbot Advises Illegal Practices",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04007.html",
       "year": 2024,
       "incident_id": "INC-04007"
     }

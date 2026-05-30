@@ -16,6 +16,40 @@ window.CROSSWALK_INCIDENTS = [
       "ASI07",
       "ASI08"
     ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0048",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MANAGE-4.1",
+      "MAP-2.1",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "A2A Protocol",
     "severity": "Medium",
@@ -41,6 +75,35 @@ window.CROSSWALK_INCIDENTS = [
       "ASI06",
       "ASI09",
       "DSGAI04"
+    ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -97,6 +160,43 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "AnythingLLM Multiple CVEs",
@@ -178,6 +278,26 @@ window.CROSSWALK_INCIDENTS = [
       "ASI08",
       "ASI10"
     ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-4.1",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "other",
     "affected": "AWS Bedrock AgentCore \"Agent God Mode\" Privilege Escalation",
     "severity": "High",
@@ -203,6 +323,35 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "DSGAI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -253,6 +402,25 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI03"
     ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MAP-3.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "ssrf",
     "affected": "ChainLeak",
     "severity": "Medium",
@@ -283,6 +451,30 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI01",
       "DSGAI02",
       "DSGAI15"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0055",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -339,6 +531,41 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.6",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "data-exfiltration",
     "affected": "ChatGPT Data Exfiltration via DNS Covert Channel",
     "severity": "Critical",
@@ -389,6 +616,38 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI10",
       "DSGAI01"
+    ],
+    "mitre_atlas": [
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0007",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -457,6 +716,43 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI09"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0048.003",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852)",
@@ -549,6 +845,36 @@ window.CROSSWALK_INCIDENTS = [
       "ASI06",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.6",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Claude Cowork File Exfiltration",
     "severity": "High",
@@ -581,6 +907,42 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI06",
       "ASI09"
+    ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0056",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.6",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "attack_vector": "prompt-injection",
     "affected": "Claudy Day",
@@ -615,6 +977,45 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI10"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0059",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -671,6 +1072,44 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0060",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "ssrf",
     "affected": "CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.)",
@@ -732,6 +1171,29 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Docker MCP Server OS Command Injection (CVE-2026-5741)",
     "severity": "Medium",
@@ -770,6 +1232,54 @@ window.CROSSWALK_INCIDENTS = [
       "ASI08",
       "ASI09",
       "DSGAI01"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0048",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0007",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.1",
+      "MANAGE-2.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.2",
+      "MANAGE-4.1",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.6",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -886,6 +1396,41 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI06"
     ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Eight Attack Vectors in AWS Bedrock Agents",
     "severity": "Medium",
@@ -909,6 +1454,32 @@ window.CROSSWALK_INCIDENTS = [
       "LLM06",
       "ASI02",
       "ASI03"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "Gemini Live in Chrome Hijacking (CVE-2026-0628)",
@@ -939,6 +1510,44 @@ window.CROSSWALK_INCIDENTS = [
       "ASI09",
       "DSGAI01",
       "DSGAI19"
+    ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.6",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -1001,6 +1610,33 @@ window.CROSSWALK_INCIDENTS = [
       "ASI05",
       "DSGAI08"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L7",
@@ -1053,6 +1689,30 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966)",
     "severity": "Critical",
@@ -1102,6 +1762,33 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI10"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-2.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "prompt-injection",
     "affected": "Langflow Unauthenticated RCE (CVE-2026-33017)",
@@ -1175,6 +1862,42 @@ window.CROSSWALK_INCIDENTS = [
       "ASI05",
       "DSGAI08"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0055",
+      "AML.T0059",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L7",
@@ -1225,6 +1948,27 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "MANAGE-2.3",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Marimo Pre-Auth RCE (CVE-2026-39987)",
     "severity": "Critical",
@@ -1246,6 +1990,25 @@ window.CROSSWALK_INCIDENTS = [
     "owasp_entries": [
       "ASI02",
       "ASI03"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MAP-3.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "ssrf",
     "affected": "MCP fURI",
@@ -1276,6 +2039,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "MCPJam Inspector RCE (CVE-2026-23744)",
@@ -1322,6 +2111,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MANAGE-3.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "MCPwned",
@@ -1372,6 +2187,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI09",
       "ASI10",
       "DSGAI01"
+    ],
+    "mitre_atlas": [
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0053",
+      "AML.T0058"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-4.1",
+      "MANAGE-4.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -1429,6 +2270,39 @@ window.CROSSWALK_INCIDENTS = [
       "ASI06",
       "ASI09",
       "DSGAI04"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -1496,6 +2370,36 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "attack_vector": "data-exfiltration",
     "affected": "Microsoft Excel XSS Weaponizes Copilot Agent (CVE-2026-26144)",
     "severity": "High",
@@ -1544,6 +2448,37 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0059",
+      "AML.T0060",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Microsoft Semantic Kernel RCE (CVE-2026-26030)",
     "severity": "Critical",
@@ -1574,6 +2509,30 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI01",
       "DSGAI02",
       "DSGAI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0055",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -1626,6 +2585,33 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "data-exfiltration",
     "affected": "n8n Unauthenticated RCE \"Ni8mare\" (CVE-2026-21858)",
@@ -1680,6 +2666,45 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI10"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -1738,6 +2763,28 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "PerplexedBrowser",
     "severity": "Medium",
@@ -1762,6 +2809,31 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI05",
       "ASI07"
+    ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "PraisonAI Quadruple CVE Disclosure",
@@ -1793,6 +2865,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989)",
@@ -1838,6 +2936,29 @@ window.CROSSWALK_INCIDENTS = [
       "LLM05",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "vLLM RCE via Malicious Video URL (CVE-2026-22778)",
@@ -1892,6 +3013,19 @@ window.CROSSWALK_INCIDENTS = [
       "LLM03",
       "ASI04"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MAP-4.1"
+    ],
     "attack_vector": "supply-chain",
     "affected": "VS Code Forks OpenVSX Extension Recommendations Supply Chain Risk",
     "severity": "Medium",
@@ -1914,6 +3048,29 @@ window.CROSSWALK_INCIDENTS = [
       "LLM06",
       "ASI05",
       "ASI10"
+    ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-3.5",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -1975,6 +3132,52 @@ window.CROSSWALK_INCIDENTS = [
       "ASI08",
       "ASI10"
     ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0048.001",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0058",
+      "AML.T0059",
+      "AML.T0060",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.2",
+      "MANAGE-4.1",
+      "MANAGE-4.3",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "maestro_layers": [
       {
         "layer": "L7",
@@ -2028,6 +3231,39 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L7",
@@ -2077,6 +3313,25 @@ window.CROSSWALK_INCIDENTS = [
       "LLM03",
       "ASI04"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0010"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "data-exfiltration",
     "affected": "AgentSmith Prompt-Hub Proxy Attack",
     "severity": "Medium",
@@ -2098,6 +3353,29 @@ window.CROSSWALK_INCIDENTS = [
     "owasp_entries": [
       "ASI02",
       "ASI03"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
     ],
     "attack_vector": "data-exfiltration",
     "affected": "Amazon Bedrock AgentCore Sandbox DNS Escape",
@@ -2132,6 +3410,44 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI09"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0048.003",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "other",
     "affected": "Amazon Q Prompt Poisoning",
@@ -2199,6 +3515,33 @@ window.CROSSWALK_INCIDENTS = [
       "ASI05",
       "ASI07"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Anthropic MCP Git Server Triple Flaw (CVE-2025-68143, -68144, -68145)",
     "severity": "High",
@@ -2255,6 +3598,42 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI06"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Anthropic SQLite MCP Server SQL Injection",
     "severity": "Medium",
@@ -2287,6 +3666,56 @@ window.CROSSWALK_INCIDENTS = [
       "ASI07",
       "ASI09",
       "ASI10"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0017",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0029",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0048.003",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0055",
+      "AML.T0056",
+      "AML.T0057",
+      "AML.T0058",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0007",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.3",
+      "GOVERN-1.4",
+      "GOVERN-1.5",
+      "GOVERN-3.2",
+      "GOVERN-6.2",
+      "MANAGE-2.1",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-2.1",
+      "MAP-2.3",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.11",
+      "MEASURE-2.4",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "attack_vector": "other",
     "impact": "Autonomous mass cyberattacks; data exfiltration; vulnerability exploitation at scale; state-sponsored AI weaponization",
@@ -2363,6 +3792,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI04"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0024",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Claude Code DNS Exfiltration (CVE-2025-55284)",
     "severity": "High",
@@ -2402,6 +3857,26 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Claude Desktop PromptJacking RCE",
     "severity": "Critical",
@@ -2426,6 +3901,31 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI02",
       "ASI09"
+    ],
+    "mitre_atlas": [
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
     ],
     "attack_vector": "data-exfiltration",
     "affected": "Claude Pirate Data Exfiltration",
@@ -2457,6 +3957,31 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI04"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Claude Skills Data Exfiltration",
     "severity": "Medium",
@@ -2483,6 +4008,37 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI10"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -2545,6 +4101,10 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI14",
       "DSGAI17",
       "DSGAI21"
+    ],
+    "nist_ai_rmf": [
+      "MAP-4.1",
+      "MEASURE-2.10"
     ],
     "maestro_layers": [
       {
@@ -2625,6 +4185,35 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Cline AI Coding Agent Vulnerabilities",
     "severity": "Medium",
@@ -2648,6 +4237,28 @@ window.CROSSWALK_INCIDENTS = [
       "LLM05",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "other",
     "affected": "Cursor \"Open-Folder\" Autorun Vulnerability",
@@ -2673,6 +4284,34 @@ window.CROSSWALK_INCIDENTS = [
       "LLM05",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.1",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "Cursor & Windsurf Forked Chromium 94+ N-Day Vulnerabilities",
@@ -2705,6 +4344,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "Cursor CLI Project Config RCE",
@@ -2758,6 +4423,29 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "MANAGE-2.3",
+      "MANAGE-3.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Cursor Config Overwrite via Case Mismatch",
     "severity": "Critical",
@@ -2802,6 +4490,23 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "other",
     "affected": "Cursor Workspace File Injection",
     "severity": "High",
@@ -2843,6 +4548,27 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "other",
     "affected": "Cursorignore Bypass via New Cursorignore Write",
     "severity": "High",
@@ -2880,6 +4606,33 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0060",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Devin AI Agent Prompt Injection & Data Exfiltration",
     "severity": "Medium",
@@ -2905,6 +4658,31 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "Dify SSRF via RemoteFileUploadApi (CVE-2025-56520)",
@@ -2945,6 +4723,28 @@ window.CROSSWALK_INCIDENTS = [
       "LLM05",
       "ASI03",
       "ASI04"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "Dify Unauthenticated Information Disclosure (CVE-2025-63387)",
@@ -3041,6 +4841,28 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "EscapeRoute",
     "severity": "High",
@@ -3102,6 +4924,36 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "DSGAI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -3188,6 +5040,24 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "other",
     "affected": "Flowise Pre-Auth Arbitrary File Upload",
     "severity": "Critical",
@@ -3235,6 +5105,31 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "DSGAI01",
       "DSGAI19"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -3315,6 +5210,28 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Framelink Figma MCP RCE",
     "severity": "Critical",
@@ -3382,6 +5299,49 @@ window.CROSSWALK_INCIDENTS = [
       "ASI08",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0018",
+      "AML.T0024",
+      "AML.T0048",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.1",
+      "MANAGE-4.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.6",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "attack_vector": "supply-chain",
     "affected": "GitHub Copilot & Cursor Code-Agent Exploit",
     "severity": "Critical",
@@ -3442,6 +5402,49 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI09"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0048.003",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0007",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "GitHub Copilot Multi-Root Workspace RCE",
@@ -3738,6 +5741,45 @@ window.CROSSWALK_INCIDENTS = [
       "ASI08",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0048",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MANAGE-4.1",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "GitPublic Issue Repo Hijack",
     "severity": "Critical",
@@ -3766,6 +5808,26 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "other",
     "affected": "Google Antigravity AI Data Wipe",
     "severity": "Medium",
@@ -3793,6 +5855,39 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05",
       "ASI09"
+    ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "attack_vector": "rce",
     "affected": "Google Antigravity IDE Vulnerabilities",
@@ -3826,6 +5921,22 @@ window.CROSSWALK_INCIDENTS = [
       "LLM05",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "other",
     "affected": "Google Gemini CLI File Loss",
     "severity": "Medium",
@@ -3848,6 +5959,24 @@ window.CROSSWALK_INCIDENTS = [
       "LLM01",
       "ASI01",
       "ASI02"
+    ],
+    "mitre_atlas": [
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "prompt-injection",
     "affected": "Google Gemini Trifecta",
@@ -3882,6 +6011,43 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI01",
       "DSGAI02",
       "DSGAI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0012",
+      "AML.T0015",
+      "AML.T0024",
+      "AML.T0040",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0053",
+      "AML.T0056",
+      "AML.T0057",
+      "AML.T0058",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0000",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0007",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "MANAGE-2.2",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.6",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "attack_vector": "tool-abuse",
     "affected": "OpenAI GPT-4.1 (tool/agent integrations)",
@@ -3964,6 +6130,34 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI02"
     ],
+    "mitre_atlas": [
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "data-exfiltration",
     "affected": "HashJack",
     "severity": "High",
@@ -3990,6 +6184,23 @@ window.CROSSWALK_INCIDENTS = [
     "description": "Malicious tool input exploited Heroku MCP's trust boundary, hijacking app ownership without authorization via agent-mediated call injection.",
     "owasp_entries": [
       "ASI03"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "MAP-2.1",
+      "MEASURE-2.7"
     ],
     "attack_vector": "prompt-injection",
     "affected": "Heroku MCP App Ownership Hijack",
@@ -4020,6 +6231,39 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI07"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "data-exfiltration",
     "affected": "Hub MCP Prompt Injection (Cross-Context)",
@@ -4075,6 +6319,18 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI15",
       "DSGAI16",
       "DSGAI21"
+    ],
+    "mitre_atlas": [
+      "AML.T0049",
+      "AML.T0050"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -4158,6 +6414,22 @@ window.CROSSWALK_INCIDENTS = [
       "LLM05",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Kiro IDE Command Injection (CVE-2026-0830)",
     "severity": "Medium",
@@ -4185,6 +6457,38 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "LangGrinch",
@@ -4253,6 +6557,30 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-4.1",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L7",
@@ -4315,6 +6643,26 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI07"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0050",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "deepfake",
     "affected": "Malicious MCP Server Impersonating Postmark",
     "severity": "Medium",
@@ -4345,6 +6693,31 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI07"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0059"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "MANAGE-3.2",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.7"
     ],
     "attack_vector": "other",
     "affected": "MCP OAuth Response Exploit",
@@ -4387,6 +6760,37 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0011",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.1",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -4456,6 +6860,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI05",
       "ASI07"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0019",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "mcp-remote OAuth Command Injection (CVE-2025-6514)",
     "severity": "Critical",
@@ -4513,6 +6943,36 @@ window.CROSSWALK_INCIDENTS = [
       "ASI09",
       "DSGAI01",
       "DSGAI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0024",
+      "AML.T0048",
+      "AML.T0048.003",
+      "AML.T0051",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0085.001"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0009",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "MANAGE-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -4586,6 +7046,28 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Notion 3.0 AI Agent Data Exfiltration via Prompt Injection",
     "severity": "Medium",
@@ -4613,6 +7095,44 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "ASI10"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.1",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "NVIDIA Triton (Python backend)",
@@ -4981,6 +7501,37 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0059",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Ollama GGUF Model File RCE",
     "severity": "Critical",
@@ -5003,6 +7554,25 @@ window.CROSSWALK_INCIDENTS = [
       "LLM01",
       "ASI01",
       "ASI09"
+    ],
+    "mitre_atlas": [
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "attack_vector": "prompt-injection",
     "affected": "OpenAI ChatGPT Atlas Browser Prompt Injection",
@@ -5041,6 +7611,56 @@ window.CROSSWALK_INCIDENTS = [
       "ASI07",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0012",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0048",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "OpenAI ChatGPT Operator Vulnerability",
     "severity": "Medium",
@@ -5065,6 +7685,26 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "OpenHands ZombAI RCE",
     "severity": "Medium",
@@ -5088,6 +7728,28 @@ window.CROSSWALK_INCIDENTS = [
       "ASI03",
       "ASI09",
       "DSGAI15"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MAP-3.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -5142,6 +7804,31 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI04",
       "DSGAI05"
     ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0059",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-4.2",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L2",
@@ -5192,6 +7879,26 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "sql-injection",
     "affected": "Postgres MCP Server SQL Injection",
     "severity": "Medium",
@@ -5215,6 +7922,28 @@ window.CROSSWALK_INCIDENTS = [
       "LLM05",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "React2Shell Impacting Dify and AI Platforms (CVE-2025-55182)",
@@ -5251,6 +7980,34 @@ window.CROSSWALK_INCIDENTS = [
       "ASI09",
       "ASI10",
       "DSGAI11"
+    ],
+    "mitre_atlas": [
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0058"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-4.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -5311,6 +8068,32 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI08",
       "DSGAI19"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0012",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0055",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L7",
@@ -5363,6 +8146,31 @@ window.CROSSWALK_INCIDENTS = [
       "ASI09",
       "DSGAI01",
       "DSGAI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0055"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -5428,6 +8236,28 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI01",
       "DSGAI19"
     ],
+    "mitre_atlas": [
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
+    ],
     "maestro_layers": [
       {
         "layer": "L3",
@@ -5492,6 +8322,33 @@ window.CROSSWALK_INCIDENTS = [
       "ASI05",
       "DSGAI08"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0024",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L4",
@@ -5554,6 +8411,25 @@ window.CROSSWALK_INCIDENTS = [
       "LLM08",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0060",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "ToolShell RCE via SharePoint",
     "severity": "Medium",
@@ -5588,6 +8464,26 @@ window.CROSSWALK_INCIDENTS = [
       "ASI01",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "prompt-injection",
     "affected": "Trail of Bits: Prompt Injection to RCE in AI Agents",
     "severity": "Medium",
@@ -5614,6 +8510,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI02",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "prompt-injection",
     "affected": "Visual Studio Code & Agentic AI workflows RCE",
@@ -5649,6 +8571,33 @@ window.CROSSWALK_INCIDENTS = [
       "LLM09",
       "ASI04",
       "ASI05"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0011",
+      "AML.T0048.001",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0058",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-4.3",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8"
     ],
     "attack_vector": "rce",
     "affected": "vLLM Model Config Auto-Map RCE (CVE-2025-66448)",
@@ -5727,6 +8676,36 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0029",
+      "AML.T0034",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0059",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-4.2",
+      "MEASURE-2.4",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "vLLM Unsafe Tensor Deserialization (CVE-2025-62164)",
     "severity": "High",
@@ -5803,6 +8782,45 @@ window.CROSSWALK_INCIDENTS = [
       "ASI07",
       "DSGAI01"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0024",
+      "AML.T0025",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0059"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L7",
@@ -5866,6 +8884,44 @@ window.CROSSWALK_INCIDENTS = [
       "ASI06",
       "ASI09"
     ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0048.003",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0060",
+      "AML.T0066",
+      "AML.T0070"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "Windsurf Data Exfiltration & SpAIware (Multiple Vectors)",
     "severity": "High",
@@ -5911,6 +8967,39 @@ window.CROSSWALK_INCIDENTS = [
       "ASI10",
       "DSGAI05",
       "DSGAI06"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0039",
+      "AML.T0048",
+      "AML.T0048.003",
+      "AML.T0053",
+      "AML.T0059"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.4",
+      "MANAGE-3.1",
+      "MANAGE-3.2",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -5979,6 +9068,34 @@ window.CROSSWALK_INCIDENTS = [
       "LLM06",
       "ASI01",
       "ASI06"
+    ],
+    "mitre_atlas": [
+      "AML.T0020",
+      "AML.T0048",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0007",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -6053,6 +9170,37 @@ window.CROSSWALK_INCIDENTS = [
       "LLM06",
       "ASI01"
     ],
+    "mitre_atlas": [
+      "AML.T0018",
+      "AML.T0019",
+      "AML.T0020",
+      "AML.T0048",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0059"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0007",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MANAGE-3.2",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.2",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L1",
@@ -6114,6 +9262,32 @@ window.CROSSWALK_INCIDENTS = [
       "ASI09",
       "DSGAI01",
       "DSGAI17"
+    ],
+    "mitre_atlas": [
+      "AML.T0048",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0053",
+      "AML.T0058"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-1.3",
+      "MANAGE-2.4",
+      "MANAGE-4.3",
+      "MAP-3.5",
+      "MEASURE-2.5",
+      "MEASURE-2.7",
+      "MEASURE-2.8",
+      "MEASURE-2.9"
     ],
     "attack_vector": "other",
     "impact": "Potential for businesses to unknowingly violate labour law based on AI guidance; public credibility damage; city forced to add disclaimers",
@@ -6182,6 +9356,38 @@ window.CROSSWALK_INCIDENTS = [
       "ASI07",
       "ASI08",
       "DSGAI04"
+    ],
+    "mitre_atlas": [
+      "AML.T0020",
+      "AML.T0048",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "GOVERN-6.2",
+      "MANAGE-2.1",
+      "MANAGE-2.3",
+      "MANAGE-4.1",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -6281,6 +9487,33 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI01",
       "DSGAI08"
     ],
+    "mitre_atlas": [
+      "AML.T0024",
+      "AML.T0024.001",
+      "AML.T0029",
+      "AML.T0044",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0056",
+      "AML.T0067"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0000",
+      "AML.TA0005",
+      "AML.TA0007",
+      "AML.TA0010",
+      "AML.TA0011"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.4",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MEASURE-2.10",
+      "MEASURE-2.4",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L3",
@@ -6351,6 +9584,35 @@ window.CROSSWALK_INCIDENTS = [
       "ASI08",
       "DSGAI04"
     ],
+    "mitre_atlas": [
+      "AML.T0020",
+      "AML.T0048",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0059",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-4.1",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MAP-4.2",
+      "MAP-5.1",
+      "MEASURE-2.11",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L2",
@@ -6401,11 +9663,17 @@ window.CROSSWALK_INCIDENTS = [
         "title": "AgentDojo: A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents",
         "url": "https://arxiv.org/abs/2406.13352",
         "type": "research"
+      },
+      {
+        "title": "AgentDojo repo",
+        "url": "https://github.com/ethz-spylab/agentdojo",
+        "type": "research"
       }
     ],
     "tags": [
       "a2a",
       "agent",
+      "agentdojo",
       "benchmark",
       "black-box",
       "cascade",
@@ -6418,6 +9686,8 @@ window.CROSSWALK_INCIDENTS = [
       "prompt-injection",
       "propagation",
       "rag-poisoning",
+      "red-team",
+      "research-demonstrated",
       "retrieval",
       "usenix-2025",
       "worm"
@@ -6439,6 +9709,34 @@ window.CROSSWALK_INCIDENTS = [
       "DSGAI14",
       "DSGAI16",
       "DSGAI19"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0010.003",
+      "AML.T0048",
+      "AML.T0048.001",
+      "AML.T0048.003",
+      "AML.T0053",
+      "AML.T0058"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.4",
+      "MANAGE-4.3",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.5",
+      "MEASURE-2.8"
     ],
     "maestro_layers": [
       {
@@ -6525,6 +9823,32 @@ window.CROSSWALK_INCIDENTS = [
       "LLM07",
       "ASI01"
     ],
+    "mitre_atlas": [
+      "AML.T0048",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0054",
+      "AML.T0056",
+      "AML.T0067"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0007",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L1",
@@ -6595,6 +9919,38 @@ window.CROSSWALK_INCIDENTS = [
       "ASI06",
       "ASI09",
       "DSGAI01"
+    ],
+    "mitre_atlas": [
+      "AML.T0024",
+      "AML.T0048",
+      "AML.T0048.003",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0066"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-3.2",
+      "MANAGE-2.1",
+      "MANAGE-2.2",
+      "MANAGE-2.3",
+      "MANAGE-2.4",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.6",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {
@@ -6705,6 +10061,29 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-3.2",
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.7"
+    ],
     "maestro_layers": [
       {
         "layer": "L3",
@@ -6803,6 +10182,36 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05"
     ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0011",
+      "AML.T0029",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-6.1",
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
+    ],
     "attack_vector": "rce",
     "affected": "LangChain SSRF & PALChain RCE (CVE-2023-46229 & CVE-2023-44467)",
     "severity": "Critical",
@@ -6871,6 +10280,49 @@ window.CROSSWALK_INCIDENTS = [
       "ASI04",
       "ASI05",
       "DSGAI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0010",
+      "AML.T0010.001",
+      "AML.T0011",
+      "AML.T0018",
+      "AML.T0040",
+      "AML.T0048",
+      "AML.T0049",
+      "AML.T0050",
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0055",
+      "AML.T0057",
+      "AML.T0060"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0000",
+      "AML.TA0001",
+      "AML.TA0003",
+      "AML.TA0004",
+      "AML.TA0005",
+      "AML.TA0006",
+      "AML.TA0010",
+      "AML.TA0011",
+      "AML.TA0012",
+      "AML.TA0013"
+    ],
+    "nist_ai_rmf": [
+      "GOVERN-1.1",
+      "GOVERN-1.4",
+      "GOVERN-6.1",
+      "GOVERN-6.2",
+      "MANAGE-2.3",
+      "MANAGE-3.1",
+      "MAP-2.1",
+      "MAP-3.5",
+      "MAP-4.1",
+      "MEASURE-2.10",
+      "MEASURE-2.5",
+      "MEASURE-2.7"
     ],
     "attack_vector": "rce",
     "affected": "Anyscale Ray users",
@@ -6949,6 +10401,24 @@ window.CROSSWALK_INCIDENTS = [
       "LLM01",
       "LLM07",
       "DSGAI01"
+    ],
+    "mitre_atlas": [
+      "AML.T0051",
+      "AML.T0051.000",
+      "AML.T0051.001",
+      "AML.T0056",
+      "AML.T0067"
+    ],
+    "mitre_atlas_tactics": [
+      "AML.TA0005",
+      "AML.TA0007",
+      "AML.TA0010"
+    ],
+    "nist_ai_rmf": [
+      "MANAGE-2.3",
+      "MAP-2.1",
+      "MEASURE-2.10",
+      "MEASURE-2.7"
     ],
     "maestro_layers": [
       {

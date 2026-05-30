@@ -66,6 +66,9 @@ function mapIncident(u) {
   if (u.category) out.category = u.category;
   out.description = u.description;
   out.owasp_entries = owasp_entries;
+  if (Array.isArray(u.mitre_atlas) && u.mitre_atlas.length) out.mitre_atlas = u.mitre_atlas;
+  if (Array.isArray(u.mitre_atlas_tactics) && u.mitre_atlas_tactics.length) out.mitre_atlas_tactics = u.mitre_atlas_tactics;
+  if (Array.isArray(u.nist_ai_rmf) && u.nist_ai_rmf.length) out.nist_ai_rmf = u.nist_ai_rmf;
   if (Array.isArray(u.maestro_layers) && u.maestro_layers.length) {
     out.maestro_layers = u.maestro_layers;
   }

@@ -759,91 +759,91 @@
   "incidents": [
     {
       "name": "A2A Protocol -- Agent Card Poisoning Vulnerability",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00036.html",
       "year": 2026,
       "incident_id": "INC-00036"
     },
     {
       "name": "PraisonAI Quadruple CVE Disclosure",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01666.html",
       "year": 2026,
       "incident_id": "INC-01666"
     },
     {
       "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02186.html",
       "year": 2025,
       "incident_id": "INC-02186"
     },
     {
       "name": "Anthropic MCP Git Server Triple Flaw (CVE-2025-68143, -68144, -68145)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02321.html",
       "year": 2025,
       "incident_id": "INC-02321"
     },
     {
       "name": "Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02426.html",
       "year": 2025,
       "incident_id": "INC-02426"
     },
     {
       "name": "GitPublic Issue Repo Hijack",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02613.html",
       "year": 2025,
       "incident_id": "INC-02613"
     },
     {
       "name": "Hub MCP Prompt Injection (Cross-Context)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02700.html",
       "year": 2025,
       "incident_id": "INC-02700"
     },
     {
       "name": "Malicious MCP Server Impersonating Postmark",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02849.html",
       "year": 2025,
       "incident_id": "INC-02849"
     },
     {
       "name": "MCP OAuth Response Exploit",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02871.html",
       "year": 2025,
       "incident_id": "INC-02871"
     },
     {
       "name": "mcp-remote OAuth Command Injection (CVE-2025-6514)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02878.html",
       "year": 2025,
       "incident_id": "INC-02878"
     },
     {
       "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02899.html",
       "year": 2025,
       "incident_id": "INC-02899"
     },
     {
       "name": "OpenAI ChatGPT Operator Vulnerability",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02997.html",
       "year": 2025,
       "incident_id": "INC-02997"
     },
     {
       "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03368.html",
       "year": 2025,
       "incident_id": "INC-03368"
     },
     {
       "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04027.html",
       "year": 2024,
       "incident_id": "INC-04027"
     },
     {
       "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04142.html",
       "year": 2024,
       "incident_id": "INC-04142"
     }
