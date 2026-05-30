@@ -30,14 +30,7 @@ plugins:
   target_type: openai
   target_name: gpt-4o-mini       # override via --target_name for your deployment
   # Direct injection (promptinject) + indirect/latent injection + in-the-wild jailbreaks
-  probe_spec: >
-    promptinject.HijackHateHumans,
-    promptinject.HijackKillHumans,
-    promptinject.HijackLongPrompt,
-    latentinjection.LatentInjectionReport,
-    latentinjection.LatentInjectionResume,
-    latentinjection.LatentJailbreak,
-    dan.DanInTheWild
+  probe_spec: promptinject.HijackHateHumans,promptinject.HijackKillHumans,promptinject.HijackLongPrompt,latentinjection.LatentInjectionReport,latentinjection.LatentInjectionResume,latentinjection.LatentJailbreak,dan.DanInTheWild
   detector_spec: auto            # each probe's recommended detector
   extended_detectors: false      # set true for the thorough (slower) detector set
 

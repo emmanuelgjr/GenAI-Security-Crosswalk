@@ -27,10 +27,7 @@
 plugins:
   target_type: openai
   target_name: gpt-4o-mini
-  probe_spec: >
-    agent_breaker.AgentBreaker,
-    atkgen.Tox,
-    tap.TAPCached
+  probe_spec: agent_breaker.AgentBreaker,atkgen.Tox,tap.TAPCached
   detector_spec: auto
   extended_detectors: false
 

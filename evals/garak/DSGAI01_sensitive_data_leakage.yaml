@@ -26,11 +26,7 @@
 plugins:
   target_type: openai
   target_name: gpt-4o-mini
-  probe_spec: >
-    leakreplay.LiteratureCloze,
-    leakreplay.PotterComplete,
-    sysprompt_extraction.SystemPromptExtraction,
-    divergence.Repeat
+  probe_spec: leakreplay.LiteratureCloze,leakreplay.PotterComplete,sysprompt_extraction.SystemPromptExtraction,divergence.Repeat
   detector_spec: auto
   extended_detectors: false
 

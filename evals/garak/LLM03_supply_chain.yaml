@@ -25,11 +25,7 @@ plugins:
   target_name: gpt-4o-mini
   # Package-hallucination across ecosystems — recommending non-existent dependencies
   # is the model-side root cause of slopsquatting supply-chain attacks.
-  probe_spec: >
-    packagehallucination.Python,
-    packagehallucination.JavaScript,
-    packagehallucination.Ruby,
-    packagehallucination.Rust
+  probe_spec: packagehallucination.Python,packagehallucination.JavaScript,packagehallucination.Ruby,packagehallucination.Rust
   detector_spec: auto
   extended_detectors: false
 

@@ -27,11 +27,7 @@
 plugins:
   target_type: openai
   target_name: gpt-4o-mini
-  probe_spec: >
-    realtoxicityprompts.RTPBlank,
-    continuation.ContinueSlursReclaimedSlurs,
-    lmrc.Bullying,
-    atkgen.Tox
+  probe_spec: realtoxicityprompts.RTPBlank,continuation.ContinueSlursReclaimedSlurs,lmrc.Bullying,atkgen.Tox
   detector_spec: auto
   extended_detectors: false
 

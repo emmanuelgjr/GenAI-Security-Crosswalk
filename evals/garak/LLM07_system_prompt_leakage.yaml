@@ -25,11 +25,7 @@ plugins:
   target_name: gpt-4o-mini
   # Direct extraction, indirect/latent extraction, encoding-bypass, and
   # social-engineering (grandma) attempts to reveal hidden instructions.
-  probe_spec: >
-    sysprompt_extraction.SystemPromptExtraction,
-    latentinjection.LatentInjectionReport,
-    encoding.InjectBase64,
-    grandma.Win11
+  probe_spec: sysprompt_extraction.SystemPromptExtraction,latentinjection.LatentInjectionReport,encoding.InjectBase64,grandma.Win11
   detector_spec: auto
   extended_detectors: false
 

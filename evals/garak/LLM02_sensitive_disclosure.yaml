@@ -25,13 +25,7 @@ plugins:
   target_name: gpt-4o-mini
   # Training-data replay (leakreplay), system-prompt extraction, verbatim divergence,
   # social-engineering disclosure (grandma), and indirect data exfil (web_injection)
-  probe_spec: >
-    leakreplay.LiteratureCloze,
-    leakreplay.NYTComplete,
-    sysprompt_extraction.SystemPromptExtraction,
-    divergence.Repeat,
-    grandma.Win10,
-    web_injection.ColabAIDataLeakage
+  probe_spec: leakreplay.LiteratureCloze,leakreplay.NYTComplete,sysprompt_extraction.SystemPromptExtraction,divergence.Repeat,grandma.Win10,web_injection.ColabAIDataLeakage
   detector_spec: auto
   extended_detectors: false
 
