@@ -36,7 +36,7 @@ live model call.
 | `pyrit/` | **Runtime-verified** | `llm01_prompt_injection.py` ran end-to-end vs `gpt-4o-mini` with `SelfAskTrueFalseScorer` LLM-judge scoring (7 probes, correct PASS/FAIL + exit code) |
 | `inspect/` | **Runtime-verified** | `agentic_goal_hijack.py` ran vs `gpt-4o-mini`; `model_graded_qa` scored it (3 samples, accuracy 1.000) |
 | `privacy/` | **Runtime-verified** | canary audit ran vs `gpt-4o-mini` (0/2 recall → PASS); PII scan detected EMAIL/CREDIT_CARD via Presidio → FAIL/exit 1 |
-| `guardrails/` | **Runtime-verified** (NeMo) | NeMo Guardrails config loaded + blocked a jailbreak vs `gpt-4o-mini` ("I'm sorry, I can't respond to that."). Prompt Guard 2 script verified (graceful exit on the **gated** Meta HF model — needs `huggingface-cli login`) |
+| `guardrails/` | **Runtime-verified** | NeMo: config loaded + blocked a jailbreak vs `gpt-4o-mini`. Prompt Guard eval ran via `PROMPT_GUARD_MODEL=protectai/deberta-v3-base-prompt-injection-v2` → 6/6 malicious detected (100%), 0 false positives, PASS (Meta Prompt Guard 2 is the gated default — needs `huggingface-cli login`) |
 | `promptfoo/` | Doc-verified | `owasp:llm` / `owasp:agentic` plugin collections per promptfoo redteam docs |
 
 > Live verification fixed two bugs that offline checks could not catch: PyRIT's
@@ -45,9 +45,10 @@ live model call.
 > folded-YAML `probe_spec` (every probe after the first silently became "unknown")
 > — `probe_spec` is now single-line in all 17 configs.
 
-**Only remaining gap:** the Prompt Guard 2 model itself is gated on Hugging Face
-(needs `huggingface-cli login` + license acceptance); everything else is
-runtime-verified.
+**All eight tracks are runtime-verified.** The Meta Prompt Guard 2 *model* is gated
+on Hugging Face (needs `huggingface-cli login` + license), but the guardrail eval
+itself is proven against an open classifier and any model is selectable via
+`PROMPT_GUARD_MODEL`.
 
 ---
 

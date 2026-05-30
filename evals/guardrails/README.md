@@ -20,13 +20,21 @@ control works.
 
 ```bash
 pip install "transformers>=4.43" "torch>=2.2"
-huggingface-cli login          # gated meta-llama model
+
+# Default = Meta Prompt Guard 2 (gated — accept the license + `huggingface-cli login`)
+huggingface-cli login
 python evals/guardrails/prompt_guard_eval.py
+
+# Or point at any non-gated text-classification guardrail (no HF auth needed):
+PROMPT_GUARD_MODEL=protectai/deberta-v3-base-prompt-injection-v2 \
+  python evals/guardrails/prompt_guard_eval.py
 ```
 
 Runs locally (no LLM API key). Reports detection rate on known-malicious inputs
 (must be ≥80%) and false-positive rate on benign inputs (must be ≤10%); exits
-non-zero if the guardrail misses the bar.
+non-zero if the guardrail misses the bar. The classifier is selectable via
+`PROMPT_GUARD_MODEL`, and label handling is robust across schemes
+(`LABEL_0/1`, `SAFE/INJECTION`, `benign/malicious`).
 
 ## NeMo Guardrails (programmable rails)
 
