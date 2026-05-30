@@ -34,9 +34,9 @@ live model call.
 | `modelscan/` | **Runtime-verified** | benign → CLEAN/exit 0, malicious fixture → CRITICAL/exit 1 ([sample](samples/modelscan_sample.txt)) |
 | `garak/` | **Runtime-verified** | all 17 configs load their probes (`test.Blank`, no API); `LLM01` ran end-to-end vs `gpt-4o-mini` (e.g. `dan.DanInTheWild` 185/256, 27.7% attack-success) |
 | `pyrit/` | **Runtime-verified** | `llm01_prompt_injection.py` ran end-to-end vs `gpt-4o-mini` with `SelfAskTrueFalseScorer` LLM-judge scoring (7 probes, correct PASS/FAIL + exit code) |
-| `inspect/` | **Offline-verified** | `agentic_goal_hijack.py` builds a valid Inspect `Task` against inspect-ai 0.3.229 |
-| `privacy/` | **Offline-verified** | `openai` SDK + Presidio `AnalyzerEngine` import; both scripts import |
-| `guardrails/` | **Offline-verified** (partial) | scripts import; the Prompt Guard 2 model is gated (needs `huggingface-cli login`) |
+| `inspect/` | **Runtime-verified** | `agentic_goal_hijack.py` ran vs `gpt-4o-mini`; `model_graded_qa` scored it (3 samples, accuracy 1.000) |
+| `privacy/` | **Runtime-verified** | canary audit ran vs `gpt-4o-mini` (0/2 recall → PASS); PII scan detected EMAIL/CREDIT_CARD via Presidio → FAIL/exit 1 |
+| `guardrails/` | **Runtime-verified** (NeMo) | NeMo Guardrails config loaded + blocked a jailbreak vs `gpt-4o-mini` ("I'm sorry, I can't respond to that."). Prompt Guard 2 script verified (graceful exit on the **gated** Meta HF model — needs `huggingface-cli login`) |
 | `promptfoo/` | Doc-verified | `owasp:llm` / `owasp:agentic` plugin collections per promptfoo redteam docs |
 
 > Live verification fixed two bugs that offline checks could not catch: PyRIT's
@@ -45,8 +45,9 @@ live model call.
 > folded-YAML `probe_spec` (every probe after the first silently became "unknown")
 > — `probe_spec` is now single-line in all 17 configs.
 
-**Still needs a live key/auth:** Inspect eval, the privacy canary audit, and the
-gated Prompt Guard model download.
+**Only remaining gap:** the Prompt Guard 2 model itself is gated on Hugging Face
+(needs `huggingface-cli login` + license acceptance); everything else is
+runtime-verified.
 
 ---
 
