@@ -2,12 +2,24 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents-schema.json",
   "title": "GenAI Security Crosswalk — Incident Database Schema",
-  "description": "Schema for real-world AI security incidents, mapped to OWASP entries and MAESTRO layers",
+  "description": "Schema for the crosswalk's incident view. data/incidents.json is generated from the upstream genai_incidents repo (single source of truth) by scripts/sync-incidents.mjs — do not hand-edit. Enrichment fields (maestro_layers, mitigations, impact) are optional and flow through from upstream as they are added there.",
   "type": "object",
   "required": ["version", "generated", "incidents"],
   "properties": {
     "version":   { "type": "string" },
     "generated": { "type": "string", "format": "date" },
+    "source": {
+      "type": "object",
+      "description": "Provenance of this generated view (upstream repo, ref, tier, counts)",
+      "properties": {
+        "repo":           { "type": "string" },
+        "ref":            { "type": "string" },
+        "tier":           { "type": "string" },
+        "upstream_total": { "type": "integer" },
+        "synced":         { "type": "integer" },
+        "note":           { "type": "string" }
+      }
+    },
     "incidents": {
       "type": "array",
       "items": { "$ref": "#/definitions/Incident" }
@@ -16,13 +28,13 @@
   "definitions": {
     "Incident": {
       "type": "object",
-      "required": ["id", "title", "date", "description", "owasp_entries", "maestro_layers", "attack_vector", "impact", "severity"],
+      "required": ["id", "title", "date", "description", "owasp_entries", "attack_vector", "severity"],
       "additionalProperties": false,
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^INC-\\d{3}$",
-          "description": "Unique incident identifier"
+          "pattern": "^INC-\\d{3,6}$",
+          "description": "Upstream incident identifier (authoritative; kept verbatim from genai_incidents)"
         },
         "title": {
           "type": "string",
@@ -39,8 +51,8 @@
         },
         "category": {
           "type": "string",
-          "enum": ["real-world", "research-demonstrated", "red-team"],
-          "description": "Whether this is a confirmed real-world incident, researcher-demonstrated attack, or red-team finding"
+          "enum": ["real-world", "research-demonstrated", "red-team", "vulnerability-disclosure"],
+          "description": "Confirmed real-world incident, researcher-demonstrated attack, red-team finding, or vulnerability disclosure"
         },
         "description": {
           "type": "string",
@@ -49,32 +61,27 @@
         "owasp_entries": {
           "type": "array",
           "items": { "type": "string", "pattern": "^(LLM|ASI|DSGAI)\\d{2}$" },
-          "minItems": 1,
-          "description": "OWASP entry IDs this incident exemplifies"
+          "description": "OWASP entry IDs this incident exemplifies (owasp_llm + owasp_asi + owasp_dsgai upstream)"
         },
         "maestro_layers": {
           "type": "array",
+          "description": "MAESTRO architectural layer mapping (optional enrichment from upstream)",
           "items": {
             "type": "object",
-            "required": ["layer", "role"],
+            "required": ["layer"],
             "properties": {
               "layer": {
                 "type": "string",
                 "enum": ["L1", "L2", "L3", "L4", "L5", "L6", "L7"],
                 "description": "MAESTRO layer ID"
               },
-              "label": {
-                "type": "string",
-                "description": "MAESTRO layer human name"
-              },
+              "label": { "type": "string", "description": "MAESTRO layer human name" },
               "role": {
                 "type": "string",
                 "enum": ["origin", "propagation", "impact", "blind-spot"],
-                "description": "How this layer is involved: origin=where attack starts, propagation=how it spreads, impact=where harm manifests, blind-spot=where detection failed"
+                "description": "origin=where attack starts, propagation=how it spreads, impact=where harm manifests, blind-spot=where detection failed"
               },
-              "notes": {
-                "type": "string"
-              }
+              "notes": { "type": "string" }
             }
           }
         },
@@ -88,7 +95,7 @@
         },
         "impact": {
           "type": "string",
-          "description": "Actual or potential harm caused"
+          "description": "Actual or potential harm caused (optional enrichment from upstream)"
         },
         "severity": {
           "type": "string",
@@ -97,17 +104,17 @@
         "mitigations": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Controls that would prevent or contain this incident"
+          "description": "Controls that would prevent or contain this incident (optional enrichment from upstream)"
         },
         "references": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["title", "url"],
+            "required": ["url"],
             "properties": {
               "title": { "type": "string" },
               "url":   { "type": "string", "format": "uri" },
-              "type":  { "type": "string", "enum": ["news", "research", "advisory", "disclosure", "legal"] }
+              "type":  { "type": "string" }
             }
           }
         },

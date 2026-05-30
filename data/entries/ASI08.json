@@ -763,46 +763,58 @@
   ],
   "incidents": [
     {
-      "name": "AutoGPT and BabyAGI — uncontrolled web browsing and file system access",
+      "name": "A2A Protocol -- Agent Card Poisoning Vulnerability",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-017"
+      "year": 2026,
+      "incident_id": "INC-00036"
     },
     {
-      "name": "Multi-agent prompt injection cascade — demonstrated cross-agent goal propagation",
+      "name": "AWS Bedrock AgentCore \"Agent God Mode\" Privilege Escalation",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-020"
+      "year": 2026,
+      "incident_id": "INC-00668"
     },
     {
-      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-023"
-    },
-    {
-      "name": "Multi-agent financial trading system flash crash — cascading autonomous failures",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2025,
-      "incident_id": "INC-041"
-    },
-    {
-      "name": "Claude computer use red-team: autonomous agent browses to attacker-controlled site and follows instructions",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-069"
-    },
-    {
-      "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2025,
-      "incident_id": "INC-090"
+      "year": 2026,
+      "incident_id": "INC-00924"
     },
     {
       "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2026,
-      "incident_id": "INC-091"
+      "incident_id": "INC-01411"
+    },
+    {
+      "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-02186"
+    },
+    {
+      "name": "GitHub Copilot & Cursor Code-Agent Exploit",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-02607"
+    },
+    {
+      "name": "GitPublic Issue Repo Hijack",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2025,
+      "incident_id": "INC-02613"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-04027"
+    },
+    {
+      "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "year": 2024,
+      "incident_id": "INC-04142"
     }
   ],
   "crossrefs": {

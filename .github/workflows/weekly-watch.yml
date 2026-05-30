@@ -63,11 +63,17 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Sync incidents from genai_incidents (source of truth)
+        run: node scripts/sync-incidents.mjs
+
       - name: Regenerate data layer and reports
         run: |
           node scripts/generate.js
           node scripts/compliance-report.js
           node scripts/incidents-report.js
+
+      - name: Validate
+        run: node scripts/validate.js
 
       - name: Check for changes
         id: diff
@@ -84,14 +90,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "chore: monthly regeneration of data layer and compliance reports"
+          git commit -m "chore: sync incidents from genai_incidents + regenerate data layer"
           git push origin "$BRANCH"
 
           # Tolerate the "GitHub Actions is not permitted to create PRs" repo setting:
           # branch is pushed regardless; PR creation is best-effort.
           if ! gh pr create \
-            --title "chore: monthly report regeneration ($(date +%Y-%m-%d))" \
-            --body "Automated monthly regeneration of data/entries/, reports/, and docs/data.js." \
+            --title "chore: weekly incident sync + data regeneration ($(date +%Y-%m-%d))" \
+            --body "Automated: synced incidents from the genai_incidents source of truth (scripts/sync-incidents.mjs), regenerated data/entries/, reports/, docs/incidents.js, and validated." \
             --label automated-watch 2> pr-err.log; then
             echo "::warning::gh pr create failed — branch '$BRANCH' was pushed but no PR was opened. See pr-err.log."
             cat pr-err.log

@@ -608,20 +608,7 @@
       "url": "https://arx.deidentifier.org"
     }
   ],
-  "incidents": [
-    {
-      "name": "Synthetic data re-identification — de-anonymized patients from synthetic health records",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2025,
-      "incident_id": "INC-040"
-    },
-    {
-      "name": "Uber ML platform data lineage audit — fragmented provenance across 30+ feature stores",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-042"
-    }
-  ],
+  "incidents": [],
   "crossrefs": {
     "llm_top10": [
       "LLM02",

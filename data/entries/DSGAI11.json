@@ -677,40 +677,16 @@
   ],
   "incidents": [
     {
-      "name": "OpenAI Redis caching bug exposes user conversation history",
+      "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2023,
-      "incident_id": "INC-006"
-    },
-    {
-      "name": "OpenAI ChatGPT data retention GDPR challenge — right to erasure vs model training",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-050"
-    },
-    {
-      "name": "Microsoft Recall screenshots everything — OS-level data retention without consent",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-055"
-    },
-    {
-      "name": "Waymo autonomous vehicle data retention — 75 petabytes of driving footage with faces",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-066"
-    },
-    {
-      "name": "EU GDPR enforcement: ChatGPT cannot correct factually wrong personal data",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
-      "year": 2024,
-      "incident_id": "INC-068"
+      "year": 2025,
+      "incident_id": "INC-02774"
     },
     {
       "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
       "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
       "year": 2025,
-      "incident_id": "INC-106"
+      "incident_id": "INC-03152"
     }
   ],
   "crossrefs": {
