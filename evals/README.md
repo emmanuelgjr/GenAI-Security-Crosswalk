@@ -21,6 +21,29 @@ Runnable security test profiles mapped to OWASP GenAI vulnerability entries.
 
 ---
 
+## Verification status
+
+Checked **2026-05-29** against the installed pinned tool versions. "Offline-verified"
+means the config/script was validated against the real installed package (probe
+registry, API surface, task build) **without** a live model call or API key;
+"runtime-verified" means it was executed end-to-end.
+
+| Track | Status | Evidence |
+|---|---|---|
+| `modelscan/` | **Runtime-verified** | benign → CLEAN/exit 0, malicious fixture → CRITICAL/exit 1 ([sample](samples/modelscan_sample.txt)) |
+| `garak/` | **Offline-verified** | all 73 probe references across the 17 configs exist in the garak 0.15.0 registry (`garak --list_probes`) |
+| `pyrit/` | **Offline-verified** | `_harness.py` + all 6 scripts import against PyRIT 0.13.0; `OpenAIChatTarget` / `PromptSendingAttack` / `AttackScoringConfig` / `SelfAskTrueFalseScorer` / `AttackOutcome` API confirmed |
+| `inspect/` | **Offline-verified** | `agentic_goal_hijack.py` builds a valid Inspect `Task` against inspect-ai 0.3.229 |
+| `privacy/` | **Offline-verified** | `openai` SDK + Presidio `AnalyzerEngine` import; both scripts import |
+| `guardrails/` | **Offline-verified** (partial) | scripts import; the Prompt Guard 2 model is gated (needs `huggingface-cli login`) |
+| `promptfoo/` | Doc-verified | `owasp:llm` / `owasp:agentic` plugin collections per promptfoo redteam docs |
+
+**Still needs a live model endpoint / API key** to smoke-test the actual model
+calls (garak run, PyRIT attack, Inspect eval, canary audit) and the gated
+Prompt Guard model download.
+
+---
+
 ## What's here
 
 **8 tool tracks** spanning the full eval matrix — offensive *and* defensive,
