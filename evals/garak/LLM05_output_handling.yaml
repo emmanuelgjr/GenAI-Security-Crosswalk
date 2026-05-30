@@ -25,11 +25,7 @@ plugins:
   target_name: gpt-4o-mini
   # Markdown/HTML exfil + XSS payloads in output, plus SQL echoed downstream —
   # tests whether model output is safe to render/execute without sanitisation.
-  probe_spec: >
-    web_injection.MarkdownImageExfil,
-    web_injection.MarkdownXSS,
-    web_injection.TaskXSS,
-    exploitation.SQLInjectionEcho
+  probe_spec: web_injection.MarkdownImageExfil,web_injection.MarkdownXSS,web_injection.TaskXSS,exploitation.SQLInjectionEcho
   detector_spec: auto
   extended_detectors: false
 

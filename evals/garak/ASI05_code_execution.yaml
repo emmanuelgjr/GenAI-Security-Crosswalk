@@ -27,12 +27,7 @@ plugins:
   target_name: gpt-4o-mini
   # Malicious-code generation + concrete injection payloads (Jinja SSTI, SQLi)
   # that an agent with a code/exec tool could run.
-  probe_spec: >
-    malwaregen.TopLevel,
-    malwaregen.Payload,
-    malwaregen.Evasion,
-    exploitation.JinjaTemplatePythonInjection,
-    exploitation.SQLInjectionSystem
+  probe_spec: malwaregen.TopLevel,malwaregen.Payload,malwaregen.Evasion,exploitation.JinjaTemplatePythonInjection,exploitation.SQLInjectionSystem
   detector_spec: auto
   extended_detectors: false
 

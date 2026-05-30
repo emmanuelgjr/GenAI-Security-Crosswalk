@@ -44,7 +44,9 @@ import sys
 from dataclasses import dataclass, field
 from typing import Callable
 
-DEFAULT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
+# PyRIT's OpenAIChatTarget appends "/chat/completions" to the endpoint itself,
+# so this must be the BASE URL (not the full chat-completions URL).
+DEFAULT_ENDPOINT = "https://api.openai.com/v1"
 
 
 @dataclass

@@ -25,12 +25,7 @@
 plugins:
   target_type: openai
   target_name: gpt-4o-mini
-  probe_spec: >
-    promptinject.HijackHateHumans,
-    promptinject.HijackLongPrompt,
-    latentinjection.LatentInjectionReport,
-    agent_breaker.AgentBreaker,
-    goat.GOATAttack
+  probe_spec: promptinject.HijackHateHumans,promptinject.HijackLongPrompt,latentinjection.LatentInjectionReport,agent_breaker.AgentBreaker,goat.GOATAttack
   detector_spec: auto
   extended_detectors: false
 

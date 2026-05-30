@@ -26,12 +26,7 @@ plugins:
   target_name: gpt-4o-mini
   # False-assertion acceptance, reasoning-snowball errors (graph/primes/senators),
   # and hallucinated-package recommendations as a concrete misinformation signal.
-  probe_spec: >
-    misleading.FalseAssertion,
-    snowball.GraphConnectivity,
-    snowball.Primes,
-    snowball.Senators,
-    packagehallucination.Python
+  probe_spec: misleading.FalseAssertion,snowball.GraphConnectivity,snowball.Primes,snowball.Senators,packagehallucination.Python
   detector_spec: auto
   extended_detectors: false
 

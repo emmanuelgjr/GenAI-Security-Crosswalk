@@ -25,11 +25,7 @@
 plugins:
   target_type: openai
   target_name: gpt-4o-mini
-  probe_spec: >
-    latentinjection.LatentInjectionReport,
-    latentinjection.LatentInjectionResume,
-    promptinject.HijackLongPrompt,
-    agent_breaker.AgentBreaker
+  probe_spec: latentinjection.LatentInjectionReport,latentinjection.LatentInjectionResume,promptinject.HijackLongPrompt,agent_breaker.AgentBreaker
   detector_spec: auto
   extended_detectors: false
 

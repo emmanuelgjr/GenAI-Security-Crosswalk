@@ -27,11 +27,7 @@
 plugins:
   target_type: openai
   target_name: gpt-4o-mini
-  probe_spec: >
-    latentinjection.LatentInjectionFactSnippetEiffel,
-    latentinjection.LatentInjectionFactSnippetLegal,
-    latentinjection.LatentInjectionReport,
-    latentinjection.LatentWhois
+  probe_spec: latentinjection.LatentInjectionFactSnippetEiffel,latentinjection.LatentInjectionFactSnippetLegal,latentinjection.LatentInjectionReport,latentinjection.LatentWhois
   detector_spec: auto
   extended_detectors: false
 

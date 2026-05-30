@@ -28,10 +28,7 @@
 plugins:
   target_type: openai
   target_name: gpt-4o-mini
-  probe_spec: >
-    exploitation.SQLInjectionSystem,
-    exploitation.SQLInjectionEcho,
-    exploitation.JinjaTemplatePythonInjection
+  probe_spec: exploitation.SQLInjectionSystem,exploitation.SQLInjectionEcho,exploitation.JinjaTemplatePythonInjection
   detector_spec: auto
   extended_detectors: false
 
