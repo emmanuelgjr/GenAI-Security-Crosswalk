@@ -834,13 +834,13 @@
   "incidents": [
     {
       "name": "Clearview AI biometric bias — $50M class action settlement",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02454.html",
       "year": 2025,
       "incident_id": "INC-02454"
     },
     {
       "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02774.html",
       "year": 2025,
       "incident_id": "INC-02774"
     }

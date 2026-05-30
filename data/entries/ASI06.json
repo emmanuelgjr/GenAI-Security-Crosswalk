@@ -785,127 +785,127 @@
   "incidents": [
     {
       "name": "A2A Protocol -- Agent Card Poisoning Vulnerability",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00036.html",
       "year": 2026,
       "incident_id": "INC-00036"
     },
     {
       "name": "AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00198.html",
       "year": 2026,
       "incident_id": "INC-00198"
     },
     {
       "name": "Claude Cowork File Exfiltration",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00827.html",
       "year": 2026,
       "incident_id": "INC-00827"
     },
     {
       "name": "Claudy Day -- Claude.ai Prompt Injection Attack Chain",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00833.html",
       "year": 2026,
       "incident_id": "INC-00833"
     },
     {
       "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00924.html",
       "year": 2026,
       "incident_id": "INC-00924"
     },
     {
       "name": "Eight Attack Vectors in AWS Bedrock Agents",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00928.html",
       "year": 2026,
       "incident_id": "INC-00928"
     },
     {
       "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01064.html",
       "year": 2026,
       "incident_id": "INC-01064"
     },
     {
       "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01429.html",
       "year": 2026,
       "incident_id": "INC-01429"
     },
     {
       "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02186.html",
       "year": 2025,
       "incident_id": "INC-02186"
     },
     {
       "name": "Anthropic SQLite MCP Server SQL Injection",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02324.html",
       "year": 2025,
       "incident_id": "INC-02324"
     },
     {
       "name": "Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02426.html",
       "year": 2025,
       "incident_id": "INC-02426"
     },
     {
       "name": "GitHub Copilot & Cursor Code-Agent Exploit",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02607.html",
       "year": 2025,
       "incident_id": "INC-02607"
     },
     {
       "name": "GitPublic Issue Repo Hijack",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02613.html",
       "year": 2025,
       "incident_id": "INC-02613"
     },
     {
       "name": "GPT-4.1 jailbreak via tool poisoning",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02646.html",
       "year": 2025,
       "incident_id": "INC-02646"
     },
     {
       "name": "OpenAI ChatGPT Operator Vulnerability",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02997.html",
       "year": 2025,
       "incident_id": "INC-02997"
     },
     {
       "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03036.html",
       "year": 2025,
       "incident_id": "INC-03036"
     },
     {
       "name": "Windsurf Data Exfiltration & SpAIware (Multiple Vectors)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03376.html",
       "year": 2025,
       "incident_id": "INC-03376"
     },
     {
       "name": "Crescendo: multi-turn escalation attack (Microsoft)",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03687.html",
       "year": 2024,
       "incident_id": "INC-03687"
     },
     {
       "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04027.html",
       "year": 2024,
       "incident_id": "INC-04027"
     },
     {
       "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04142.html",
       "year": 2024,
       "incident_id": "INC-04142"
     },
     {
       "name": "Slack AI indirect injection via channel content",
-      "url": "https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04208.html",
       "year": 2024,
       "incident_id": "INC-04208"
     }

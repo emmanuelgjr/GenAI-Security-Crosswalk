@@ -552,7 +552,7 @@ function main() {
         if (!incidentsByEntry[eid]) incidentsByEntry[eid] = [];
         incidentsByEntry[eid].push({
           name:        inc.title,
-          url:         'https://github.com/emmanuelgjr/GenAI-Security-Crosswalk/blob/main/data/incidents.json',
+          url:         `https://emmanuelgjr.github.io/genai_incidents/incident/${inc.id}.html`,
           year:        inc.year,
           incident_id: inc.id,
         });

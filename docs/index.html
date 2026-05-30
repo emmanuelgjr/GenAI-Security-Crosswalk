@@ -4117,6 +4117,34 @@ input, select { font-family: inherit; }
         body.appendChild(maestroSection);
       }
 
+      // Framework mappings (MITRE ATLAS / NIST AI RMF) — passthrough from genai_incidents
+      if ((inc.mitre_atlas && inc.mitre_atlas.length > 0) || (inc.nist_ai_rmf && inc.nist_ai_rmf.length > 0)) {
+        var fwSection = el('div', { className: 'modal-section' });
+        fwSection.appendChild(el('div', { className: 'modal-section-title' }, 'Framework Mappings'));
+        if (inc.mitre_atlas && inc.mitre_atlas.length > 0) {
+          var atlasWrap = el('div', { style: 'margin-bottom:6px;' });
+          atlasWrap.appendChild(el('span', { style: 'font-weight:600;margin-right:6px;font-size:13px;' }, 'MITRE ATLAS'));
+          var atlasChips = el('div', { className: 'xref-chips' });
+          inc.mitre_atlas.forEach(function(t) {
+            var base = t.split('.').slice(0, 2).join('.');
+            atlasChips.appendChild(el('a', { className: 'xref-chip', href: 'https://atlas.mitre.org/#/techniques/' + base, target: '_blank', rel: 'noopener' }, t));
+          });
+          atlasWrap.appendChild(atlasChips);
+          fwSection.appendChild(atlasWrap);
+        }
+        if (inc.nist_ai_rmf && inc.nist_ai_rmf.length > 0) {
+          var nistWrap = el('div', {});
+          nistWrap.appendChild(el('span', { style: 'font-weight:600;margin-right:6px;font-size:13px;' }, 'NIST AI RMF'));
+          var nistChips = el('div', { className: 'xref-chips' });
+          inc.nist_ai_rmf.forEach(function(n) {
+            nistChips.appendChild(el('span', { className: 'xref-chip' }, n));
+          });
+          nistWrap.appendChild(nistChips);
+          fwSection.appendChild(nistWrap);
+        }
+        body.appendChild(fwSection);
+      }
+
       // Mitigations
       if (inc.mitigations && inc.mitigations.length > 0) {
         var mitSection = el('div', { className: 'modal-section' });
