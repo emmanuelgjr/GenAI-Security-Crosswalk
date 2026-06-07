@@ -62,7 +62,7 @@ runtime *and* static, model · app · agent · data-pipeline:
 | `garak/` | [Garak](https://github.com/NVIDIA/garak) 0.15.0 | offensive · model | **17** YAML profiles (10 LLM + 4 Agentic + 3 DSGAI) + auto-discovering `run_all.sh` |
 | `pyrit/` | [PyRIT](https://github.com/Azure/PyRIT) 0.13.0 | offensive · model | **6** scenario scripts + shared `_harness.py` (LLM-as-judge scoring) |
 | `laaf/` | [LAAF v2.0](https://github.com/qorvexconsulting1/laaf-V2.0) | offensive · LPCI | **6** LPCI stage configs (S1–S6) + `laaf_crosswalk.py` reporter |
-| `promptfoo/` | [promptfoo](https://www.promptfoo.dev/docs/red-team/) 0.121.13 | offensive · **app/CI** | OWASP LLM + Agentic red-team config for CI gating |
+| `promptfoo/` | [promptfoo](https://www.promptfoo.dev/docs/red-team/) 0.121.15 | offensive · **app/CI** | OWASP LLM + Agentic red-team config for CI gating |
 | `inspect/` | [Inspect AI](https://inspect.aisi.org.uk/) 0.3.229 + AgentDojo/AgentHarm | offensive · **agent** | native ASI01 task + Agentic Top 10 → `inspect_evals` mapping |
 | `modelscan/` | [ModelScan](https://github.com/protectai/modelscan) 0.8.8 | **static · supply chain** | model-artifact scanner (LLM03 / DSGAI17), no API key |
 | `guardrails/` | Prompt Guard 2 · [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) 0.22.0 | **defensive** | input/output guardrail evaluation |

@@ -63,7 +63,7 @@ jobs:
           cache: 'pip'
 
       - name: Install Garak (pinned)
-        run: pip install "garak==0.15.0" --quiet
+        run: pip install "garak==0.15.1" --quiet
 
       - name: Create results directory
         run: mkdir -p ${{ env.RESULTS_DIR }}
@@ -160,7 +160,7 @@ jobs:
           cache: 'pip'
 
       - name: Install PyRIT (pinned)
-        run: pip install "pyrit==0.13.0" --quiet
+        run: pip install "pyrit==0.14.0" --quiet
 
       - name: Run LLM01 — Prompt Injection (PyRIT)
         env:

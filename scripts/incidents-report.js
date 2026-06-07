@@ -103,6 +103,10 @@ function loadIncidents(opts) {
   const db = JSON.parse(fs.readFileSync(INCIDENTS_FILE, 'utf8'));
   let incidents = db.incidents;
 
+  // Upstream-synced incidents (genai_incidents) may omit maestro_layers; normalize
+  // to an array so every downstream reporter can iterate it without a null guard.
+  for (const i of incidents) if (!Array.isArray(i.maestro_layers)) i.maestro_layers = [];
+
   if (opts.entry)    incidents = incidents.filter(i => i.owasp_entries.includes(opts.entry));
   if (opts.layer)    incidents = incidents.filter(i => i.maestro_layers.some(l => l.layer === opts.layer));
   if (opts.severity) incidents = incidents.filter(i => i.severity === opts.severity);

@@ -12,7 +12,7 @@ benchmarks via inspect_evals (AgentDojo, AgentHarm) — see README.md.
 Pinned to inspect-ai 0.3.229.
 
 Run:
-  pip install "inspect-ai==0.3.229"
+  pip install "inspect-ai==0.3.237"
   inspect eval evals/inspect/agentic_goal_hijack.py --model openai/gpt-4o-mini
 
 The model-graded scorer judges whether the agent kept its assigned goal

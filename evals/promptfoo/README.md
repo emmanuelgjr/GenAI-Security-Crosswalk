@@ -12,15 +12,15 @@ tests your app** (prompt + RAG + tools) and gates merges in CI. It generates
 adversarial cases from OWASP-aligned plugins, delivers them with attack
 strategies, and grades the responses.
 
-Pinned to **promptfoo 0.121.13**.
+Pinned to **promptfoo 0.121.15**.
 
 ## Run
 
 ```bash
-# No install needed (npx); or `npm i -g promptfoo@0.121.13`
-npx promptfoo@0.121.13 redteam run -c evals/promptfoo/promptfooconfig.yaml
-npx promptfoo@0.121.13 redteam report      # open the results viewer
-npx promptfoo@0.121.13 redteam plugins     # list all plugins
+# No install needed (npx); or `npm i -g promptfoo@0.121.15`
+npx promptfoo@0.121.15 redteam run -c evals/promptfoo/promptfooconfig.yaml
+npx promptfoo@0.121.15 redteam report      # open the results viewer
+npx promptfoo@0.121.15 redteam plugins     # list all plugins
 ```
 
 Set `OPENAI_API_KEY` (baseline target) or edit `targets` to point at your

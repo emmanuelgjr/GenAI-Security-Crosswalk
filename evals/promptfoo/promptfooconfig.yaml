@@ -4,16 +4,16 @@
 #               model-level scan and PyRIT's bespoke campaigns)
 # OWASP Entry  : LLM01-LLM10 (owasp:llm) + ASI01-ASI10 (owasp:agentic)
 # Crosswalk ref: llm-top10/LLM_MITREATLAS.md
-# Pinned to    : promptfoo 0.121.13 (see evals/requirements.txt note)
+# Pinned to    : promptfoo 0.121.15 (see evals/requirements.txt note)
 #
 # promptfoo generates adversarial test cases from the plugins below, delivers
 # them with the listed strategies, and grades responses — ideal as a PR gate on
 # the *application* (prompt + RAG + tools), not just the base model.
 #
 # Usage:
-#   npx promptfoo@0.121.13 redteam run -c evals/promptfoo/promptfooconfig.yaml
-#   npx promptfoo@0.121.13 redteam plugins        # list available plugins
-#   npx promptfoo@0.121.13 redteam report         # view results
+#   npx promptfoo@0.121.15 redteam run -c evals/promptfoo/promptfooconfig.yaml
+#   npx promptfoo@0.121.15 redteam plugins        # list available plugins
+#   npx promptfoo@0.121.15 redteam report         # view results
 #
 # Point `targets` at YOUR application endpoint (HTTP provider) for real coverage;
 # the openai target below is a baseline placeholder.
