@@ -19,7 +19,7 @@ Pinned to **inspect-ai 0.3.229**, **inspect_evals 0.13.1**.
 ## Run
 
 ```bash
-pip install "inspect-ai==0.3.229" "inspect_evals==0.13.1"
+pip install "inspect-ai==0.3.237" "inspect_evals==0.13.2"
 
 # Native crosswalk task (ASI01 goal hijack)
 inspect eval evals/inspect/agentic_goal_hijack.py --model openai/gpt-4o-mini
