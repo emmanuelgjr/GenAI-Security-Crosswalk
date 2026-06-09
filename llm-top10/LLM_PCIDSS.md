@@ -388,7 +388,7 @@ and Req 11.3 (penetration testing) are the primary requirements.
 #### Cross-references
 - Agentic Top 10: ASI06 Memory and Context Poisoning
 - DSGAI 2026: DSGAI04 Data Model and Artifact Poisoning, DSGAI21 Disinformation via Data Poisoning
-- Other frameworks: NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0032 · ISO 27001 A.8.27
+- Other frameworks: NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0070 · ISO 27001 A.8.27
 
 ---
 

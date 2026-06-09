@@ -36,11 +36,11 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0010.000",
+      "control_id": "AML.T0010",
       "control_name": "AI Supply Chain Compromise",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0010.000",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
       "notes": "Compromising ML supply chain components — datasets, models, frameworks — to embed backdoors or malicious functionality"
     },
     {

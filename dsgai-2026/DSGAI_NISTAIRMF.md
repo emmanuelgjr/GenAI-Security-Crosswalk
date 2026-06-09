@@ -356,7 +356,7 @@ the weights and invisible to standard testing until triggered.
 #### Cross-references
 - LLM Top 10: LLM03 Supply Chain, LLM04 Data & Model Poisoning
 - Agentic Top 10: ASI04 Supply Chain, ASI06 Memory & Context Poisoning
-- Other frameworks: ISO 27001 A.8.27/A.8.29 · MITRE ATLAS AML.T0032 · CycloneDX ML SBOM
+- Other frameworks: ISO 27001 A.8.27/A.8.29 · MITRE ATLAS AML.T0070 · CycloneDX ML SBOM
 
 ---
 
@@ -1482,7 +1482,7 @@ as authoritative output, with no training access required.
 #### Cross-references
 - LLM Top 10: LLM04 Data & Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0045 · ISO 27001 A.5.7 · EU AI Act Art. 55(1)(a)
+- Other frameworks: MITRE ATLAS AML.T0048.002 · ISO 27001 A.5.7 · EU AI Act Art. 55(1)(a)
 
 ---
 

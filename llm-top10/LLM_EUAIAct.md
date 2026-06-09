@@ -369,7 +369,7 @@ testing — all directly applicable to poisoning prevention and detection.
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI21 Disinformation via Data Poisoning
-- Other frameworks: NIST AI RMF MS-3.3 · ISO 42001 8.4 · MITRE ATLAS AML.T0032
+- Other frameworks: NIST AI RMF MS-3.3 · ISO 42001 8.4 · MITRE ATLAS AML.T0070
 
 ---
 

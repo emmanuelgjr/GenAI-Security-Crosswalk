@@ -272,7 +272,7 @@ stores alters model behaviour — introducing backdoors or misinformation.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0032 — CIS 7.1 — ASVS V10
+- Other frameworks: MITRE ATLAS AML.T0070 — CIS 7.1 — ASVS V10
 
 ---
 
@@ -984,7 +984,7 @@ systematically generate false outputs for targeted topics or entities.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0045 — CIS 7.1 — EU AI Act Art. 13
+- Other frameworks: MITRE ATLAS AML.T0048.002 — CIS 7.1 — EU AI Act Art. 13
 
 ---
 

@@ -27,11 +27,11 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0063",
+      "control_id": "AML.T0071",
       "control_name": "Embedding Manipulation",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0063",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0071",
       "notes": "Crafting content whose embeddings bias future retrieval results in attacker's favour"
     },
     {

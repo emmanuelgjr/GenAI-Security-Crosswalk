@@ -27,11 +27,11 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0016.000",
+      "control_id": "AML.T0016",
       "control_name": "Obtain Capabilities",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0016.000",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
       "notes": "Acquiring agent credentials or capabilities to exfiltrate data through AI inference APIs"
     },
     {

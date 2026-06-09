@@ -262,7 +262,7 @@ misinformation persisting into production.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0032 — ASVS V10 — CWE-345
+- Other frameworks: MITRE ATLAS AML.T0070 — ASVS V10 — CWE-345
 
 ---
 
@@ -987,7 +987,7 @@ systematically generate false outputs targeting specific topics or entities.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0045 — ASVS V5 — EU AI Act Art. 13
+- Other frameworks: MITRE ATLAS AML.T0048.002 — ASVS V5 — EU AI Act Art. 13
 
 ---
 

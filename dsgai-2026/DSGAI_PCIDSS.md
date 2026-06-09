@@ -285,7 +285,7 @@ security failure.
 #### Cross-references
 - LLM Top 10: LLM03 Supply Chain, LLM04 Data and Model Poisoning
 - Agentic Top 10: ASI06 Memory and Context Poisoning
-- Other frameworks: NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0032 · ISO 27001 A.8.27
+- Other frameworks: NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0070 · ISO 27001 A.8.27
 
 ---
 
@@ -1046,7 +1046,7 @@ decisions or provide incorrect compliance guidance to analysts.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory and Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0045 · ISO 27001 A.5.7 · SOC 2 PI1.2
+- Other frameworks: MITRE ATLAS AML.T0048.002 · ISO 27001 A.5.7 · SOC 2 PI1.2
 
 ---
 

@@ -341,7 +341,7 @@ incident analysis (RS.AN) address this.
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI21 Disinformation via Data Poisoning
-- Other frameworks: NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0032 · ISO 27001 A.8.27
+- Other frameworks: NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0070 · ISO 27001 A.8.27
 
 ---
 

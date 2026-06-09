@@ -179,7 +179,7 @@ or improperly sanitised responses.
 #### Cross-references
 - Agentic Top 10: ASI03 Identity & Privilege Abuse, ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI01 Sensitive Data Leakage, DSGAI08 Privacy-Violating Inference
-- Other frameworks: MITRE ATLAS AML.T0021 — STRIDE I — ISO 27001 A.8.2
+- Other frameworks: MITRE ATLAS AML.T0057 — STRIDE I — ISO 27001 A.8.2
 
 ---
 
@@ -283,7 +283,7 @@ that persist into production.
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI03 Training & Fine-Tuning Data Risks, DSGAI04 Data Poisoning
-- Other frameworks: MITRE ATLAS AML.T0032 — NIST AI RMF MS-2.6 — ISO 42001 A.6.2
+- Other frameworks: MITRE ATLAS AML.T0070 — NIST AI RMF MS-2.6 — ISO 42001 A.6.2
 
 ---
 
@@ -336,7 +336,7 @@ secondary injection attacks: XSS, SQLi, SSRF, or OS command injection.
 #### Cross-references
 - Agentic Top 10: ASI02 Tool Misuse, ASI05 Unexpected Code Execution
 - DSGAI 2026: DSGAI05 Data Integrity & Validation Failures
-- Other frameworks: ASVS V5 — STRIDE T/E — MITRE ATLAS AML.T0037
+- Other frameworks: ASVS V5 — STRIDE T/E — MITRE ATLAS AML.T0067
 
 ---
 
@@ -430,7 +430,7 @@ are extracted by adversaries — enabling targeted attacks against the model's d
 #### Cross-references
 - Agentic Top 10: ASI01 Agent Goal Hijack
 - DSGAI 2026: DSGAI15 Over-Broad Context Windows
-- Other frameworks: STRIDE I — ASVS V14 — MITRE ATLAS AML.T0041
+- Other frameworks: STRIDE I — ASVS V14 — MITRE ATLAS AML.T0056
 
 ---
 

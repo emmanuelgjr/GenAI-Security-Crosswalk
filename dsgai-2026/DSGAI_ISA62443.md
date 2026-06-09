@@ -1206,7 +1206,7 @@ documentation system that feeds the RAG corpus.
 #### Cross-references
 - LLM Top 10: LLM04 Data & Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: NIST SP 800-82 Rev 3 Section 5.3 · IEC 61511 · MITRE ATLAS AML.T0045
+- Other frameworks: NIST SP 800-82 Rev 3 Section 5.3 · IEC 61511 · MITRE ATLAS AML.T0048.002
 
 ---
 

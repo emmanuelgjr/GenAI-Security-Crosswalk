@@ -282,7 +282,7 @@ biases, or targeted misinformation that persist into production.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0032 — CIS 7.1 — CWE-345
+- Other frameworks: MITRE ATLAS AML.T0070 — CIS 7.1 — CWE-345
 
 ---
 
@@ -1045,7 +1045,7 @@ targeting specific topics, entities, or user segments with malicious intent.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0045 — CIS 7.1 — EU AI Act Art. 13
+- Other frameworks: MITRE ATLAS AML.T0048.002 — CIS 7.1 — EU AI Act Art. 13
 
 ---
 

@@ -377,7 +377,7 @@ or biased credit decisions.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0032 – FedRAMP SR-2 – SP 800-218A PS.1.1-PS
+- Other frameworks: MITRE ATLAS AML.T0070 – FedRAMP SR-2 – SP 800-218A PS.1.1-PS
 
 ---
 
@@ -1554,7 +1554,7 @@ filings.
 #### Cross-references
 - LLM Top 10: LLM09 Misinformation, LLM04 Data and Model Poisoning
 - Agentic Top 10: ASI06 Memory & Context Poisoning, ASI09 Human-Agent Trust Exploitation
-- Other frameworks: FedRAMP SI-4 – MITRE ATLAS AML.T0032 – NIST AI RMF MAP 2.3
+- Other frameworks: FedRAMP SI-4 – MITRE ATLAS AML.T0070 – NIST AI RMF MAP 2.3
 
 ---
 
