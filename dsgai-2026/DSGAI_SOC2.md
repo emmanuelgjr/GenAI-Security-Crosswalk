@@ -292,7 +292,7 @@ changes), CC9 (vendor risk — training data providers), and CC7
 #### Cross-references
 - LLM Top 10: LLM03 Supply Chain, LLM04 Data and Model Poisoning
 - Agentic Top 10: ASI06 Memory and Context Poisoning
-- Other frameworks: NIST AI RMF MS-3.3 · ISO 27001 A.8.27 · MITRE ATLAS AML.T0032
+- Other frameworks: NIST AI RMF MS-3.3 · ISO 27001 A.8.27 · MITRE ATLAS AML.T0070
 
 ---
 
@@ -1111,7 +1111,7 @@ RAG data source providers as vendors) also applies.
 #### Cross-references
 - LLM Top 10: LLM04 Data and Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory and Context Poisoning
-- Other frameworks: MITRE ATLAS AML.T0045 · ISO 27001 A.5.7 · EU AI Act Art. 55(1)(a)
+- Other frameworks: MITRE ATLAS AML.T0048.002 · ISO 27001 A.5.7 · EU AI Act Art. 55(1)(a)
 
 ---
 

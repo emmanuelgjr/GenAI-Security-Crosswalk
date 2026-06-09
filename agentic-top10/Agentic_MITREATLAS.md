@@ -33,12 +33,12 @@ MITRE ATLAS is the authoritative adversarial threat landscape for AI systems -- 
 | ID | Name | Severity | Primary ATLAS Techniques | Agentic amplifier | Tier |
 |---|---|---|---|---|---|
 | ASI01 | Agent Goal Hijack | Critical | AML.T0051.000, AML.T0051.001, AML.T0054 | Autonomy turns single injection into multi-step attack chain | Foundational–Advanced |
-| ASI02 | Tool Misuse & Exploitation | Critical | AML.T0037, AML.T0015, AML.T0053 | Tool access converts prompt manipulation into real-world action | Foundational–Advanced |
-| ASI03 | Identity & Privilege Abuse | Critical | AML.T0021, AML.T0016.000, AML.T0024 | Cached credentials give attacker persistent access beyond session | Foundational–Advanced |
-| ASI04 | Agentic Supply Chain | High | AML.T0056, AML.T0048, AML.T0010.000 | Runtime dynamic loading means poisoned components affect all consumers | Hardening–Advanced |
-| ASI05 | Unexpected Code Execution | Critical | AML.T0040, AML.T0054, AML.T0037 | Code generation + execution capability creates RCE gateway | Foundational–Advanced |
-| ASI06 | Memory & Context Poisoning | High | AML.T0043, AML.T0063, AML.T0020, AML.T0070 | Persistence across sessions amplifies impact of single injection | Hardening–Advanced |
-| ASI07 | Insecure Inter-Agent Comms | High | AML.T0043, AML.T0021, AML.T0016.000 | A2A spoofing misdirects entire agent clusters | Hardening–Advanced |
+| ASI02 | Tool Misuse & Exploitation | Critical | AML.T0067, AML.T0015, AML.T0053 | Tool access converts prompt manipulation into real-world action | Foundational–Advanced |
+| ASI03 | Identity & Privilege Abuse | Critical | AML.T0021, AML.T0016, AML.T0024 | Cached credentials give attacker persistent access beyond session | Foundational–Advanced |
+| ASI04 | Agentic Supply Chain | High | AML.T0056, AML.T0048, AML.T0010 | Runtime dynamic loading means poisoned components affect all consumers | Hardening–Advanced |
+| ASI05 | Unexpected Code Execution | Critical | AML.T0040, AML.T0054, AML.T0067 | Code generation + execution capability creates RCE gateway | Foundational–Advanced |
+| ASI06 | Memory & Context Poisoning | High | AML.T0043, AML.T0071, AML.T0020, AML.T0070 | Persistence across sessions amplifies impact of single injection | Hardening–Advanced |
+| ASI07 | Insecure Inter-Agent Comms | High | AML.T0043, AML.T0021, AML.T0016 | A2A spoofing misdirects entire agent clusters | Hardening–Advanced |
 | ASI08 | Cascading Agent Failures | High | AML.T0029, AML.T0034, AML.T0057 | Single fault fans out across all downstream agents | Foundational–Advanced |
 | ASI09 | Human-Agent Trust Exploitation | Medium | AML.T0060, AML.T0047, AML.T0049 | Agent fluency makes manipulation invisible to audit logs | Foundational–Hardening |
 | ASI10 | Rogue Agents | Critical | AML.T0054, AML.T0015, AML.T0053 | Compliant surface masks persistent hidden goal pursuit | Hardening–Advanced |
@@ -145,7 +145,7 @@ tool does in response: delete, send, execute, publish.
 
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
-| Output Manipulation | [AML.T0037](https://atlas.mitre.org/#/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce tool calls with destructive parameters |
+| Output Manipulation | [AML.T0067](https://atlas.mitre.org/#/techniques/AML.T0067) | Influence Operations | Crafting inputs that produce tool calls with destructive parameters |
 | LLM Capability Escalation | [AML.T0015](https://atlas.mitre.org/#/techniques/AML.T0015) | Privilege Escalation | Exploiting overly permissive tool access to exceed intended agent scope |
 | AI Agent Tool Invocation | [AML.T0053](https://atlas.mitre.org/#/techniques/AML.T0053) | Execution | Agent autonomously invoking tools beyond authorised scope, harvesting data through tool chains |
 
@@ -211,7 +211,7 @@ the original session ends.
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
 | Establish Accounts | [AML.T0021](https://atlas.mitre.org/#/techniques/AML.T0021) | Resource Development | Establishing or exploiting legitimate agent accounts to access AI systems or data pipelines |
-| Obtain Capabilities | [AML.T0016.000](https://atlas.mitre.org/#/techniques/AML.T0016.000) | Resource Development | Acquiring agent credentials or capabilities to exfiltrate data through AI inference APIs |
+| Obtain Capabilities | [AML.T0016](https://atlas.mitre.org/#/techniques/AML.T0016) | Resource Development | Acquiring agent credentials or capabilities to exfiltrate data through AI inference APIs |
 | Exfiltration via AI Inference API | [AML.T0024](https://atlas.mitre.org/#/techniques/AML.T0024) | Exfiltration | Exfiltrating sensitive data accessible to the agent through inference API abuse |
 
 #### Mitigations by tier
@@ -279,7 +279,7 @@ runtime with no static inventory and no signature verification.
 |---|---|---|---|
 | Extract LLM System Prompt | [AML.T0056](https://atlas.mitre.org/#/techniques/AML.T0056) | Exfiltration | Extracting system prompts to learn agent configuration and tool access for supply chain targeting |
 | External Harms | [AML.T0048](https://atlas.mitre.org/#/techniques/AML.T0048) | Impact | Persistent malicious behaviour introduced through dynamically loaded agent components causing downstream external harms |
-| AI Supply Chain Compromise | [AML.T0010.000](https://atlas.mitre.org/#/techniques/AML.T0010.000) | Initial Access | Compromising MCP servers, prompt templates, or model adapters in the supply chain to embed trigger-based backdoors |
+| AI Supply Chain Compromise | [AML.T0010](https://atlas.mitre.org/#/techniques/AML.T0010) | Initial Access | Compromising MCP servers, prompt templates, or model adapters in the supply chain to embed trigger-based backdoors |
 
 #### Mitigations by tier
 
@@ -343,7 +343,7 @@ with the agent's full system permissions.
 |---|---|---|---|
 | Unsafe Deserialisation via LLM | [AML.T0040](https://atlas.mitre.org/#/techniques/AML.T0040) | Execution | Agent-generated code or payloads executed by downstream components |
 | LLM Jailbreak | [AML.T0054](https://atlas.mitre.org/#/techniques/AML.T0054) | Execution | Overriding code execution safety guardrails to allow arbitrary command execution |
-| Output Manipulation | [AML.T0037](https://atlas.mitre.org/#/techniques/AML.T0037) | Influence Operations | Crafting inputs that produce malicious executable code in agent output |
+| Output Manipulation | [AML.T0067](https://atlas.mitre.org/#/techniques/AML.T0067) | Influence Operations | Crafting inputs that produce malicious executable code in agent output |
 
 #### Mitigations by tier
 
@@ -407,7 +407,7 @@ without triggering any single detectable event.
 | Technique | ID | Tactic | Agentic context |
 |---|---|---|---|
 | Craft Adversarial Data | [AML.T0043](https://atlas.mitre.org/#/techniques/AML.T0043) | ML Attack Staging | Crafting adversarial content to inject into agent persistent memory or RAG stores |
-| Embedding Manipulation | [AML.T0063](https://atlas.mitre.org/#/techniques/AML.T0063) | ML Attack Staging | Crafting content whose embeddings bias future retrieval results in attacker's favour |
+| Embedding Manipulation | [AML.T0071](https://atlas.mitre.org/#/techniques/AML.T0071) | ML Attack Staging | Crafting content whose embeddings bias future retrieval results in attacker's favour |
 | Poison Training Data | [AML.T0020](https://atlas.mitre.org/#/techniques/AML.T0020) | ML Attack Staging | Establishing persistent trigger-response patterns in agent memory stores via poisoned data |
 | RAG Poisoning | [AML.T0070](https://atlas.mitre.org/#/techniques/AML.T0070) | ML Attack Staging | Injecting malicious content into RAG knowledge bases to persistently alter agent retrieval and behaviour |
 
@@ -468,7 +468,7 @@ cluster.
 |---|---|---|---|
 | Craft Adversarial Data | [AML.T0043](https://atlas.mitre.org/#/techniques/AML.T0043) | ML Attack Staging | Crafting adversarial messages to exploit inter-agent communication protocols |
 | Establish Accounts | [AML.T0021](https://atlas.mitre.org/#/techniques/AML.T0021) | Resource Development | Establishing or compromising agent accounts to impersonate trusted agents in A2A channels |
-| Obtain Capabilities | [AML.T0016.000](https://atlas.mitre.org/#/techniques/AML.T0016.000) | Resource Development | Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context |
+| Obtain Capabilities | [AML.T0016](https://atlas.mitre.org/#/techniques/AML.T0016) | Resource Development | Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context |
 
 #### Mitigations by tier
 

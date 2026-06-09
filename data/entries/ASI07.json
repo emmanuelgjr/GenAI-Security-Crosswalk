@@ -36,11 +36,11 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0016.000",
+      "control_id": "AML.T0016",
       "control_name": "Obtain Capabilities",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0016.000",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
       "notes": "Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context"
     },
     {

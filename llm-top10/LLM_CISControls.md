@@ -316,7 +316,7 @@ into the model and invisible until a trigger condition is reached.
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI21 Disinformation via Data Poisoning
-- Other frameworks: ISO 27001 A.8.27/A.8.29 · NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0032
+- Other frameworks: ISO 27001 A.8.27/A.8.29 · NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0070
 
 ---
 

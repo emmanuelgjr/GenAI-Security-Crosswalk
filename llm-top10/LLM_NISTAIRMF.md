@@ -341,7 +341,7 @@ data quality and adversarial evaluation requirement.
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI04 Data Model & Artifact Poisoning, DSGAI21 Disinformation via Data Poisoning
-- Other frameworks: MITRE ATLAS AML.T0032 · ISO 42001 6.1.2 · NIST CSF 2.0 PR.DS-8
+- Other frameworks: MITRE ATLAS AML.T0070 · ISO 42001 6.1.2 · NIST CSF 2.0 PR.DS-8
 
 ---
 
@@ -526,7 +526,7 @@ managed disclosure response.
 #### Cross-references
 - Agentic Top 10: ASI01 Agent Goal Hijack
 - DSGAI 2026: DSGAI15 Over-Broad Context Windows
-- Other frameworks: AIUC-1 B003/B009 · MITRE ATLAS AML.T0041 · CWE-200
+- Other frameworks: AIUC-1 B003/B009 · MITRE ATLAS AML.T0056 · CWE-200
 
 ---
 
@@ -588,7 +588,7 @@ systems.
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI13 Vector Store Platform Security, DSGAI18 Inference & Data Reconstruction
-- Other frameworks: AIUC-1 A · MITRE ATLAS AML.T0063 · NIST CSF 2.0 PR.DS-7
+- Other frameworks: AIUC-1 A · MITRE ATLAS AML.T0071 · NIST CSF 2.0 PR.DS-7
 
 ---
 

@@ -86,7 +86,7 @@ goal) and techniques (how they achieve it):
 | DSGAI17 | Data Availability & Resilience Failures | High | AML.T0029, AML.T0034, AML.T0057 | Foundational–Advanced |
 | DSGAI18 | Inference & Data Reconstruction | High | AML.T0024.000, AML.T0025, AML.T0024.001 | Hardening–Advanced |
 | DSGAI19 | Human-in-Loop & Labeler Overexposure | Medium | AML.T0035, AML.T0057, AML.T0020 | Foundational–Hardening |
-| DSGAI20 | Model Exfiltration & IP Replication | High | AML.T0016.000, AML.T0025, AML.T0034 | Hardening–Advanced |
+| DSGAI20 | Model Exfiltration & IP Replication | High | AML.T0016, AML.T0025, AML.T0034 | Hardening–Advanced |
 | DSGAI21 | Disinformation via Data Poisoning | High | AML.T0060, AML.T0020, AML.T0031 | Hardening–Advanced |
 
 ---
@@ -108,7 +108,7 @@ Key techniques cited throughout this mapping:
 | Technique | ID | Description |
 |---|---|---|
 | Discover AI Model Ontology | AML.T0013 | Adversary learns about the AI system architecture, data sources, and model properties |
-| Obtain Capabilities | AML.T0012 | Adversary acquires tools, infrastructure, or access needed for the attack |
+| Obtain Capabilities | AML.T0016 | Adversary acquires tools, infrastructure, or access needed for the attack |
 | AI Supply Chain Compromise | AML.T0010 | Compromise of components in the AI supply chain — datasets, models, frameworks (sub-techniques .000-.003) |
 | Poison Training Data | AML.T0020 | Adversary introduces malicious data into training pipeline to manipulate model behaviour |
 | Manipulate AI Model | AML.T0018 | Embed hidden functionality triggered by specific inputs (.000 Poison, .001 Modify Architecture) |
@@ -202,7 +202,7 @@ access to AI systems and downstream services.
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Obtain Capabilities | AML.T0012 | Resource Development | Adversary acquires agent credentials through memory inspection, log analysis, or tool payload capture |
+| Obtain Capabilities | AML.T0016 | Resource Development | Adversary acquires agent credentials through memory inspection, log analysis, or tool payload capture |
 | Exfiltrate via ML Inference API | AML.T0035 | Exfiltration | Agent credentials embedded in inference requests or responses extracted by adversary |
 | LLM Prompt Injection | AML.T0051 | Initial Access | Agent API endpoints exploited to extract credentials or elevate access |
 
@@ -244,7 +244,7 @@ external AI services voluntarily.
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Obtain Capabilities | AML.T0012 | Resource Development | Shadow AI tools are external AI capabilities the adversary may already operate or compromise |
+| Obtain Capabilities | AML.T0016 | Resource Development | Shadow AI tools are external AI capabilities the adversary may already operate or compromise |
 | LLM Prompt Injection | AML.T0051 | Initial Access | Unapproved AI services may themselves be adversary-controlled or compromised |
 | LLM Data Leakage | AML.T0057 | Exfiltration | Sensitive data pasted into shadow AI tools ends up in external data stores accessible to the AI service provider |
 
@@ -937,14 +937,14 @@ gain access to sensitive training data.
 **Severity:** High
 
 Adversaries reconstruct a functional model replica through systematic
-querying. AML.T0016.000 (Obtain Capabilities) is the canonical ATLAS
+querying. AML.T0016 (Obtain Capabilities) is the canonical ATLAS
 technique for this threat.
 
 #### ATLAS technique mapping
 
 | Technique | ID | Tactic | How it applies |
 |---|---|---|---|
-| Obtain Capabilities | AML.T0016.000 | Resource Development | Adversary systematically queries model to extract sufficient information to replicate its functionality |
+| Obtain Capabilities | AML.T0016 | Resource Development | Adversary systematically queries model to extract sufficient information to replicate its functionality |
 | Exfiltrate via Cyber Means | AML.T0025 | Exfiltration | Query results and model outputs systematically collected and transmitted to adversary infrastructure |
 | Cost Harvesting | AML.T0034 | Impact | High-volume model extraction queries consume significant compute resources — financial impact alongside IP theft |
 
@@ -957,21 +957,21 @@ technique for this threat.
 #### Mitigations mapped to ATLAS
 
 **Foundational**
-- Counter AML.T0016.000: API rate limiting — systematic
+- Counter AML.T0016: API rate limiting — systematic
   extraction requires high query volumes, hard caps
-  raise cost and trigger detection before AML.T0016.000
+  raise cost and trigger detection before AML.T0016
   succeeds
 - Counter AML.T0034: Per-user cost budgets —
   extraction campaigns bounded by cost limits
 
 **Hardening**
-- Counter AML.T0016.000: Query diversity monitoring —
-  AML.T0016.000 produces characteristic query patterns
+- Counter AML.T0016: Query diversity monitoring —
+  AML.T0016 produces characteristic query patterns
   (systematic output space coverage) detected through
   anomaly analysis
 
 **Advanced**
-- Red team AML.T0016.000: Model extraction attempt using
+- Red team AML.T0016: Model extraction attempt using
   your own API — quantify query budget required for
   meaningful replication, verify rate limiting
   prevents success at that budget
@@ -1066,7 +1066,7 @@ GenAI surfaces adversary content as authoritative
 
 **Path 4 — Model theft:**
 AML.T0013 (Discover AI Model Ontology) ?
-AML.T0016.000 (Obtain Capabilities) ?
+AML.T0016 (Obtain Capabilities) ?
 AML.T0025 (Exfiltrate via Cyber Means) ?
 Functional model replica constructed without training access
 
@@ -1075,7 +1075,7 @@ Functional model replica constructed without training access
 | ATLAS priority | DSGAI entries | Rationale |
 |---|---|---|
 | Immediate — active attack class | DSGAI01, DSGAI04, DSGAI12, DSGAI21 | AML.T0035, AML.T0020, AML.T0060, AML.T0070 are active, documented attack techniques |
-| High — rising threat | DSGAI13, DSGAI18, DSGAI20 | AML.T0024.000, AML.T0016.000 increasingly commoditised |
+| High — rising threat | DSGAI13, DSGAI18, DSGAI20 | AML.T0024.000, AML.T0016 increasingly commoditised |
 | Medium — exploitable at scale | DSGAI03, DSGAI06, DSGAI11 | AML.T0057, AML.T0051 require less sophistication as tooling matures |
 
 ---

@@ -17064,7 +17064,7 @@
   },
   {
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0010.000",
+    "control_id": "AML.T0010",
     "control_name": "AI Supply Chain Compromise",
     "entries": [
       {
@@ -17084,31 +17084,6 @@
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Compromising MCP servers, prompt templates, or model adapters in the supply chain to embed trigger-based backdoors"
-      }
-    ]
-  },
-  {
-    "framework": "MITRE ATLAS",
-    "control_id": "AML.T0012",
-    "control_name": "Obtain Capabilities",
-    "entries": [
-      {
-        "id": "DSGAI02",
-        "name": "Agent Identity and Credential Exposure",
-        "source_list": "DSGAI-2026",
-        "severity": "Critical",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Adversary acquires agent credentials through memory inspection, log analysis, or tool payload capture"
-      },
-      {
-        "id": "DSGAI03",
-        "name": "Shadow AI and Unsanctioned Data Flows",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Shadow AI tools are external AI capabilities the adversary may already operate or compromise"
       }
     ]
   },
@@ -17164,7 +17139,7 @@
   },
   {
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0016.000",
+    "control_id": "AML.T0016",
     "control_name": "Obtain Capabilities",
     "entries": [
       {
@@ -17184,6 +17159,24 @@
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context"
+      },
+      {
+        "id": "DSGAI02",
+        "name": "Agent Identity and Credential Exposure",
+        "source_list": "DSGAI-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Adversary acquires agent credentials through memory inspection, log analysis, or tool payload capture"
+      },
+      {
+        "id": "DSGAI03",
+        "name": "Shadow AI and Unsanctioned Data Flows",
+        "source_list": "DSGAI-2026",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Shadow AI tools are external AI capabilities the adversary may already operate or compromise"
       },
       {
         "id": "DSGAI20",
@@ -17752,40 +17745,6 @@
   },
   {
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0037",
-    "control_name": "Output Manipulation",
-    "entries": [
-      {
-        "id": "LLM05",
-        "name": "Insecure Output Handling",
-        "source_list": "LLM-Top10-2025",
-        "severity": "High",
-        "tier": "Foundational",
-        "scope": "Build",
-        "notes": "Crafting inputs that produce dangerous outputs consumed by downstream systems"
-      },
-      {
-        "id": "ASI02",
-        "name": "Tool Misuse and Exploitation",
-        "source_list": "Agentic-Top10-2026",
-        "severity": "Critical",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Crafting inputs that produce tool calls with destructive parameters"
-      },
-      {
-        "id": "ASI05",
-        "name": "Unexpected Code Execution",
-        "source_list": "Agentic-Top10-2026",
-        "severity": "Critical",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Crafting inputs that produce malicious executable code in agent output"
-      }
-    ]
-  },
-  {
-    "framework": "MITRE ATLAS",
     "control_id": "AML.T0040",
     "control_name": "Unsafe Deserialisation via LLM",
     "entries": [
@@ -18309,31 +18268,6 @@
   },
   {
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0063",
-    "control_name": "Embedding Manipulation",
-    "entries": [
-      {
-        "id": "LLM08",
-        "name": "Vector and Embedding Weaknesses",
-        "source_list": "LLM-Top10-2025",
-        "severity": "Medium",
-        "tier": "Hardening",
-        "scope": "Build",
-        "notes": "Crafting inputs whose embeddings manipulate similarity search results"
-      },
-      {
-        "id": "ASI06",
-        "name": "Memory and Context Poisoning",
-        "source_list": "Agentic-Top10-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Crafting content whose embeddings bias future retrieval results in attacker's favour"
-      }
-    ]
-  },
-  {
-    "framework": "MITRE ATLAS",
     "control_id": "AML.T0066",
     "control_name": "Retrieval Content Crafting",
     "entries": [
@@ -18354,6 +18288,40 @@
         "tier": "Hardening",
         "scope": "Both",
         "notes": "False content crafted to appear authoritative and rank highly in semantic similarity searches"
+      }
+    ]
+  },
+  {
+    "framework": "MITRE ATLAS",
+    "control_id": "AML.T0067",
+    "control_name": "Output Manipulation",
+    "entries": [
+      {
+        "id": "LLM05",
+        "name": "Insecure Output Handling",
+        "source_list": "LLM-Top10-2025",
+        "severity": "High",
+        "tier": "Foundational",
+        "scope": "Build",
+        "notes": "Crafting inputs that produce dangerous outputs consumed by downstream systems"
+      },
+      {
+        "id": "ASI02",
+        "name": "Tool Misuse and Exploitation",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Crafting inputs that produce tool calls with destructive parameters"
+      },
+      {
+        "id": "ASI05",
+        "name": "Unexpected Code Execution",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "Critical",
+        "tier": "Foundational",
+        "scope": "Both",
+        "notes": "Crafting inputs that produce malicious executable code in agent output"
       }
     ]
   },
@@ -18397,6 +18365,31 @@
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Injecting disinformation directly into RAG knowledge bases to corrupt downstream outputs"
+      }
+    ]
+  },
+  {
+    "framework": "MITRE ATLAS",
+    "control_id": "AML.T0071",
+    "control_name": "Embedding Manipulation",
+    "entries": [
+      {
+        "id": "LLM08",
+        "name": "Vector and Embedding Weaknesses",
+        "source_list": "LLM-Top10-2025",
+        "severity": "Medium",
+        "tier": "Hardening",
+        "scope": "Build",
+        "notes": "Crafting inputs whose embeddings manipulate similarity search results"
+      },
+      {
+        "id": "ASI06",
+        "name": "Memory and Context Poisoning",
+        "source_list": "Agentic-Top10-2026",
+        "severity": "High",
+        "tier": "Hardening",
+        "scope": "Both",
+        "notes": "Crafting content whose embeddings bias future retrieval results in attacker's favour"
       }
     ]
   },

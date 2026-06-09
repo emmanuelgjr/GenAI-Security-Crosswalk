@@ -364,7 +364,7 @@ Art. 55 systemic risk violations: up to **€35M or 7% global turnover**.
 #### Cross-references
 - LLM Top 10: LLM03 Supply Chain, LLM04 Data & Model Poisoning
 - Agentic Top 10: ASI04 Supply Chain, ASI06 Memory & Context Poisoning
-- Other frameworks: ISO 27001 A.8.27/A.8.29 · NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0032
+- Other frameworks: ISO 27001 A.8.27/A.8.29 · NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0070
 
 ---
 
@@ -1357,7 +1357,7 @@ Art. 50 transparency violations: up to **€7.5M or 1.5% global turnover**.
 #### Cross-references
 - LLM Top 10: LLM04 Data & Model Poisoning, LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory & Context Poisoning
-- Other frameworks: ISO 27001 A.5.7/A.8.27 · NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0045
+- Other frameworks: ISO 27001 A.5.7/A.8.27 · NIST AI RMF MS-3.3 · MITRE ATLAS AML.T0048.002
 
 ---
 

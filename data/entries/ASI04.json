@@ -36,11 +36,11 @@
     },
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0010.000",
+      "control_id": "AML.T0010",
       "control_name": "AI Supply Chain Compromise",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0010.000",
+      "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
       "notes": "Compromising MCP servers, prompt templates, or model adapters in the supply chain to embed trigger-based backdoors"
     },
     {

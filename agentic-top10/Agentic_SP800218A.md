@@ -542,7 +542,7 @@ for poisoning incidents (RV.3).
 #### Cross-references
 - LLM Top 10: LLM04 Data & Model Poisoning, LLM08 Vector & Embedding Weaknesses
 - DSGAI 2026: DSGAI13 Vector Store Platform Security
-- Other frameworks: MITRE ATLAS AML.T0032 – NIST CSF 2.0 PR.DS-8 – ISO 42001 6.1.2
+- Other frameworks: MITRE ATLAS AML.T0070 – NIST CSF 2.0 PR.DS-8 – ISO 42001 6.1.2
 
 ---
 

@@ -19,7 +19,7 @@
   "mappings": [
     {
       "framework": "MITRE ATLAS",
-      "control_id": "AML.T0016.000",
+      "control_id": "AML.T0016",
       "control_name": "Obtain Capabilities",
       "tier": "Hardening",
       "scope": "Both",

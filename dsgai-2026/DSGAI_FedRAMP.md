@@ -350,7 +350,7 @@ provenance (SR-3), malicious code protection for training pipelines
 #### Cross-references
 - LLM Top 10: LLM03 Training Data Poisoning
 - Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
-- Other frameworks: MITRE ATLAS AML.T0032 – SP 800-218A PS.1.1-PS – NIST CSF 2.0 PR.DS-8
+- Other frameworks: MITRE ATLAS AML.T0070 – SP 800-218A PS.1.1-PS – NIST CSF 2.0 PR.DS-8
 
 ---
 
@@ -1386,7 +1386,7 @@ controls verifying source credibility (SR-3).
 #### Cross-references
 - LLM Top 10: LLM09 Misinformation
 - Agentic Top 10: ASI06 Memory Poisoning & Context Confusion
-- Other frameworks: MITRE ATLAS AML.T0032 – SP 800-218A PW.7.2-PS – NIST CSF 2.0 PR.DS-8
+- Other frameworks: MITRE ATLAS AML.T0070 – SP 800-218A PW.7.2-PS – NIST CSF 2.0 PR.DS-8
 
 ---
 

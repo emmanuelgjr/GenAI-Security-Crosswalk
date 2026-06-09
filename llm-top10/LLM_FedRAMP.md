@@ -365,7 +365,7 @@ updates (CM-3).
 #### Cross-references
 - Agentic Top 10: ASI06 Memory & Context Poisoning
 - DSGAI 2026: DSGAI04 Data, Model & Artifact Poisoning, DSGAI05 Data Integrity & Validation Failures
-- Other frameworks: MITRE ATLAS AML.T0032 – NIST CSF 2.0 PR.DS-8 – SP 800-218A PS.1.1-PS
+- Other frameworks: MITRE ATLAS AML.T0070 – NIST CSF 2.0 PR.DS-8 – SP 800-218A PS.1.1-PS
 
 ---
 
