@@ -1,0 +1,6 @@
+interface:
+  display_name: "GenAI Security Crosswalk"
+  short_description: "Repo-specific patterns and workflows for GenAI-Security-Crosswalk"
+  default_prompt: "Use the GenAI-Security-Crosswalk repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
