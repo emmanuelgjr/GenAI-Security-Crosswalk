@@ -522,6 +522,46 @@ function checkDsgaiTaxonomy() {
   }
 }
 
+// ─── Control-ID registry join ────────────────────────────────────────────────
+
+/**
+ * 13. Every entry mapping's `control_id` must resolve to a control that exists
+ *     in its framework's registry (data/frameworks/*.json). This is the
+ *     authoritative join between data/entries and the framework registries;
+ *     a miss means a mapping cites a control ID that no longer (or never)
+ *     existed in the registry. Hard error — it must never silently reopen.
+ *     Frameworks that have no registry file are skipped (nothing to join to).
+ */
+function checkControlIdRegistry() {
+  const fwDir  = path.join(ROOT, 'data', 'frameworks');
+  const enDir  = path.join(ROOT, 'data', 'entries');
+  if (!fs.existsSync(fwDir) || !fs.existsSync(enDir)) return;
+
+  // framework name → Set(control_id)
+  const fwIds = {};
+  for (const f of fs.readdirSync(fwDir).filter(f => f.endsWith('.json'))) {
+    const d = JSON.parse(fs.readFileSync(path.join(fwDir, f), 'utf8'));
+    fwIds[d.name] = new Set((d.controls || []).map(c => c.control_id));
+  }
+
+  let misses = 0;
+  for (const f of fs.readdirSync(enDir).filter(f => f.endsWith('.json'))) {
+    const e = JSON.parse(fs.readFileSync(path.join(enDir, f), 'utf8'));
+    for (const m of e.mappings || []) {
+      const reg = fwIds[m.framework];
+      if (reg && !reg.has(m.control_id)) {
+        fail(
+          `data/entries/${f}`,
+          `${e.id}: mapping control_id ${JSON.stringify(m.control_id)} not in ${m.framework} registry`
+        );
+        misses++;
+      }
+    }
+  }
+
+  if (misses === 0) pass('data/entries/', 'All mapping control_ids resolve to a control in their framework registry');
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 function collectMappingFiles(targetFile) {
@@ -561,6 +601,7 @@ function run() {
   checkReadmeCounts();
   checkEvals();
   checkDsgaiTaxonomy();
+  checkControlIdRegistry();
 
   // Per-file checks
   const allFiles = collectMappingFiles(targetFile);
