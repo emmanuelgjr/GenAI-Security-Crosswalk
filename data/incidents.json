@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0",
-  "generated": "2026-05-30",
+  "version": "2.1.0",
+  "generated": "2026-06-10",
   "source": {
     "repo": "emmanuelgjr/genai_incidents",
     "ref": "main",
@@ -288,7 +288,6 @@
       ],
       "mitre_atlas": [
         "AML.T0012",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0055"
       ],
@@ -628,7 +627,6 @@
       "mitre_atlas": [
         "AML.T0024",
         "AML.T0025",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0050",
         "AML.T0051",
@@ -994,7 +992,6 @@
         "AML.T0018",
         "AML.T0019",
         "AML.T0020",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -1774,7 +1771,6 @@
       "mitre_atlas": [
         "AML.T0010",
         "AML.T0011",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -2197,7 +2193,6 @@
         "DSGAI01"
       ],
       "mitre_atlas": [
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0048.003",
@@ -2682,7 +2677,6 @@
         "AML.T0011",
         "AML.T0012",
         "AML.T0024",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -3059,7 +3053,6 @@
       ],
       "mitre_atlas": [
         "AML.T0011",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -3146,7 +3139,6 @@
         "AML.T0019",
         "AML.T0020",
         "AML.T0024",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0049",
@@ -3681,7 +3673,6 @@
         "AML.T0024",
         "AML.T0025",
         "AML.T0029",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.003",
         "AML.T0051",
@@ -7109,7 +7100,6 @@
         "AML.T0010.001",
         "AML.T0011",
         "AML.T0024",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -7990,7 +7980,6 @@
         "DSGAI11"
       ],
       "mitre_atlas": [
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0048.003",
@@ -8982,7 +8971,6 @@
         "AML.T0018",
         "AML.T0019",
         "AML.T0020",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.003",
         "AML.T0053",

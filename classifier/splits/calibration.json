@@ -475,7 +475,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0031",
-    "control_name": "Backdoor ML Model",
+    "control_name": "Erode AI Model Integrity",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Embedding hidden trigger-response patterns in model via poisoned training data"
@@ -637,13 +637,13 @@
     "notes": "Foundational"
   },
   {
-    "hash": "03c2d6fc3585b878b747d1f111b48f3606c857999b2af251d3478dc7e578bad7",
+    "hash": "951630685f12fb1766c103feaf82134142c0b8082dadec1d10100152b1aebeea",
     "entry_id": "ASI05",
     "entry_name": "Unexpected Code Execution",
     "source_list": "Agentic-Top10-2026",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0037",
+    "control_id": "AML.T0067",
     "control_name": "Output Manipulation",
     "tier": "Foundational",
     "scope": "Both",
@@ -904,20 +904,20 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Ungoverned embedding stores and agent memory databases accessed without access controls"
   },
   {
-    "hash": "050df1fcedadcf9362c85ece242ebee61865304e18cf4d8bb9ae2d773abcc1ae",
+    "hash": "e8ad1bd6172359989ed02c50c4f4290dabf00efa7542ebeeb1e26628dad90dee",
     "entry_id": "ASI06",
     "entry_name": "Memory and Context Poisoning",
     "source_list": "Agentic-Top10-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0032",
-    "control_name": "Data Poisoning",
+    "control_id": "AML.T0043",
+    "control_name": "Craft Adversarial Data",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Injecting malicious content into agent persistent memory or RAG stores"
@@ -1190,7 +1190,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0051",
-    "control_name": "Exploit Public-Facing Application",
+    "control_name": "LLM Prompt Injection",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Non-compliant AI deployments may lack security controls that compliance would have required"
