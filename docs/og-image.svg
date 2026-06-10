@@ -22,7 +22,7 @@
   <text x='145' y='377' font-family='system-ui,sans-serif' font-size='12' fill='#94a3b8' text-anchor='middle' letter-spacing='1'>FRAMEWORKS</text>
 
   <rect x='250' y='320' width='170' height='70' rx='10' fill='rgba(124,58,237,0.15)' stroke='rgba(124,58,237,0.3)' stroke-width='1'/>
-  <text x='335' y='352' font-family='system-ui,sans-serif' font-size='32' font-weight='800' fill='#a78bfa' text-anchor='middle'>1,514</text>
+  <text x='335' y='352' font-family='system-ui,sans-serif' font-size='32' font-weight='800' fill='#a78bfa' text-anchor='middle'>1,507</text>
   <text x='335' y='377' font-family='system-ui,sans-serif' font-size='12' fill='#94a3b8' text-anchor='middle' letter-spacing='1'>CONTROLS</text>
 
   <rect x='440' y='320' width='170' height='70' rx='10' fill='rgba(16,185,129,0.15)' stroke='rgba(16,185,129,0.3)' stroke-width='1'/>
@@ -30,11 +30,11 @@
   <text x='525' y='377' font-family='system-ui,sans-serif' font-size='12' fill='#94a3b8' text-anchor='middle' letter-spacing='1'>ENTRIES</text>
 
   <rect x='630' y='320' width='170' height='70' rx='10' fill='rgba(245,158,11,0.15)' stroke='rgba(245,158,11,0.3)' stroke-width='1'/>
-  <text x='715' y='352' font-family='system-ui,sans-serif' font-size='32' font-weight='800' fill='#fbbf24' text-anchor='middle'>67</text>
+  <text x='715' y='352' font-family='system-ui,sans-serif' font-size='32' font-weight='800' fill='#fbbf24' text-anchor='middle'>70</text>
   <text x='715' y='377' font-family='system-ui,sans-serif' font-size='12' fill='#94a3b8' text-anchor='middle' letter-spacing='1'>MAPPING FILES</text>
 
   <rect x='820' y='320' width='170' height='70' rx='10' fill='rgba(239,68,68,0.15)' stroke='rgba(239,68,68,0.3)' stroke-width='1'/>
-  <text x='905' y='352' font-family='system-ui,sans-serif' font-size='32' font-weight='800' fill='#f87171' text-anchor='middle'>114</text>
+  <text x='905' y='352' font-family='system-ui,sans-serif' font-size='32' font-weight='800' fill='#f87171' text-anchor='middle'>125</text>
   <text x='905' y='377' font-family='system-ui,sans-serif' font-size='12' fill='#94a3b8' text-anchor='middle' letter-spacing='1'>INCIDENTS</text>
 
   <!-- Architecture diagram - small -->
