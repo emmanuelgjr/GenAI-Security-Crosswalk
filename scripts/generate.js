@@ -58,7 +58,7 @@ const VULNERABILITIES = {
   DSGAI07: { name: 'Data Governance and Lifecycle',          source_list: 'DSGAI-2026', severity: 'High'     },
   DSGAI08: { name: 'Non-Compliance and Regulatory Violations', source_list: 'DSGAI-2026', severity: 'High'   },
   DSGAI09: { name: 'Multimodal Cross-Channel Leakage',       source_list: 'DSGAI-2026', severity: 'High'     },
-  DSGAI10: { name: 'Synthetic Data and Anonymization Pitfalls', source_list: 'DSGAI-2026', severity: 'Medium' },
+  DSGAI10: { name: 'Synthetic Data and Anonymisation Pitfalls', source_list: 'DSGAI-2026', severity: 'Medium' },
   DSGAI11: { name: 'Cross-Context Conversation Bleed',       source_list: 'DSGAI-2026', severity: 'High'     },
   DSGAI12: { name: 'Unsafe Natural Language Data Gateways',  source_list: 'DSGAI-2026', severity: 'Critical' },
   DSGAI13: { name: 'Vector Store Platform Security',         source_list: 'DSGAI-2026', severity: 'High'     },

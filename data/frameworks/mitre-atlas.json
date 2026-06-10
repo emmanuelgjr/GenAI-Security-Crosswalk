@@ -7,7 +7,7 @@
   "license": "Public",
   "publisher": "MITRE Corporation",
   "category": "threat-model",
-  "last_synced": "2026-06-08",
+  "last_synced": "2026-06-10",
   "source_sha": null,
   "controls": [
     {
@@ -84,6 +84,11 @@
       "control_id": "AML.T0020",
       "title": "Poison Training Data",
       "description": "Adversary manipulates training data to corrupt model behavior."
+    },
+    {
+      "control_id": "AML.T0021",
+      "title": "Establish Accounts",
+      "description": "Adversary creates accounts with services to stage AI attacks, obtain resources, or impersonate victims."
     },
     {
       "control_id": "AML.T0024",
@@ -196,6 +201,11 @@
       "description": "Adversary uses social engineering to gain access to ML systems."
     },
     {
+      "control_id": "AML.T0053",
+      "title": "AI Agent Tool Invocation",
+      "description": "Adversary abuses an AI agent’s access to invoke its connected tools, services, or resources."
+    },
+    {
       "control_id": "AML.T0054",
       "title": "LLM Jailbreak",
       "description": "Adversary circumvents model safety guardrails via crafted prompt sequences."
@@ -209,6 +219,16 @@
       "control_id": "AML.T0057",
       "title": "LLM Data Leakage",
       "description": "Adversary extracts sensitive training data from LLM responses.; Unintended exposure of training data or sensitive context through model outputs; Extraction of confidential information via targeted model queries"
+    },
+    {
+      "control_id": "AML.T0060",
+      "title": "Publish Hallucinated Entities",
+      "description": "Adversary registers a package, URL, or identity that an LLM hallucinates so victims reach attacker-controlled resources."
+    },
+    {
+      "control_id": "AML.T0066",
+      "title": "Retrieval Content Crafting",
+      "description": "Adversary authors content designed to be retrieved by user queries to influence the user, often paired with prompt injection."
     },
     {
       "control_id": "AML.T0067",
@@ -235,6 +255,11 @@
     {
       "date": "2026-06-08",
       "change": "Reconciled ATLAS layer from v4.0 to v5.6.0 (#187): remapped 6 removed IDs + ~17 renumbered/renamed techniques to current ATLAS; merged collisions; dropped 2 tactic-level umbrellas.",
+      "author": "emmanuelgjr"
+    },
+    {
+      "date": "2026-06-10",
+      "change": "Added 4 techniques referenced by entry mappings but missing from the local registry: AML.T0021 (Establish Accounts), AML.T0053 (AI Agent Tool Invocation), AML.T0060 (Publish Hallucinated Entities), AML.T0066 (Retrieval Content Crafting). All present in current upstream ATLAS dist/ATLAS.yaml.",
       "author": "emmanuelgjr"
     }
   ]

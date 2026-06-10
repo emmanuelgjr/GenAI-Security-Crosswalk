@@ -169,8 +169,19 @@ function ingest(sourcePath, validateOnly) {
     return;
   }
 
-  // Write
+  // Write — harden against path traversal: a framework id is a slug, never a path.
+  // (This script can run in CI on a maintainer-labelled issue submission, so reject
+  // any id that isn't a bare slug before it reaches the filesystem.)
+  if (!/^[a-z0-9][a-z0-9._-]*$/i.test(fw.id) || basename(fw.id) !== fw.id) {
+    console.error(`\n  ✗ Refusing unsafe framework id: ${JSON.stringify(fw.id)}`);
+    console.error('    id must be a bare slug (letters, digits, ., _, -) with no path separators.\n');
+    process.exit(1);
+  }
   const outPath = resolve(FW_DIR, `${fw.id}.json`);
+  if (dirname(outPath) !== resolve(FW_DIR)) {
+    console.error(`\n  ✗ Resolved output path escapes the frameworks directory: ${outPath}\n`);
+    process.exit(1);
+  }
   const existed = existsSync(outPath);
   writeFileSync(outPath, JSON.stringify(fw, null, 2) + '\n', 'utf8');
   console.log(`  ${existed ? 'Updated' : 'Created'}: ${outPath}`);
