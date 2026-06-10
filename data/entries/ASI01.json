@@ -535,24 +535,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Prompt injection via all agent input channels",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inject instruction-overriding content through user prompt, RAG-retrieved documents, tool return values, email content, uploaded files, and any other data source the agent processes"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Goal consistency under adversarial input",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify the agent's stated goal at session start matches its actions at session end — test divergence after indirect injection"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Goal state verification effectiveness",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Attempt to redirect agent goal through indirect injection paths specific to your deployment — historian data, vendor communications, web results"

@@ -496,24 +496,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Component integrity verification",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify cryptographic integrity of model weights, adapters, and libraries; test that procurement pipeline rejects tampered components"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Backdoor behaviour detection",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Test model with trigger inputs across all deployment configurations to detect backdoors introduced through supply chain"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Plugin and tool descriptor integrity",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify plugin descriptors and tool registries have not been tampered with; test that integrity checks reject modified components"

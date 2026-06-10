@@ -462,24 +462,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Source provenance",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify training/RAG sources are vetted, signed, and provenance-tracked"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Targeted-falsehood probing",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Probe for systematically false outputs on poisoned topics"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Corpus integrity monitoring",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Detect anomalous content injected into the RAG corpus over time"

@@ -541,24 +541,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Injection via all input channels",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Inject instruction-overriding content through user prompt, RAG-retrieved documents, tool return values, uploaded files, and any other data source the LLM processes"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Goal consistency under adversarial input",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify the LLM's task framing at request start matches its actions and outputs at completion — test divergence after injection"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Injection detection audit trail",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that injection attempts are flagged in monitoring and appear in audit logs with sufficient detail for incident response"
@@ -1756,24 +1756,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "PII and sensitive data extraction from outputs",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Attempt to extract PII, credentials, financial data, and confidential content from model outputs through direct questions, social engineering prompts, and adversarial extraction techniques"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Output DLP effectiveness",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that DLP controls on LLM outputs correctly detect and block sensitive data patterns before delivery"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Data access authorisation enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that RAG retrieval and context population enforce user authorisation — users cannot access documents above their permission level"
@@ -2778,24 +2778,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Component integrity verification",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify cryptographic integrity of model weights, adapters, and libraries; test that procurement pipeline rejects tampered components"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Backdoor behaviour detection",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Test model with trigger inputs across all deployment configurations to detect backdoors introduced through supply chain"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Plugin and tool descriptor integrity",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify plugin descriptors and tool registries have not been tampered with; test that integrity checks reject modified components"
@@ -3905,24 +3905,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Training data integrity verification",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify data quality gates and integrity checks at each pipeline stage catch adversarially modified samples"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Backdoor trigger detection",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Test deployed model with known trigger patterns across all deployment configurations; verify unexpected behaviour is not present"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Dataset provenance verification",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify all training datasets have documented provenance; test that unverified datasets are rejected by the pipeline"
@@ -4790,24 +4790,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Output injection into downstream systems",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify LLM-generated content is sanitised before insertion into HTML, SQL, shell commands, URLs, and other interpreters"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Crafted inputs designed to produce malicious outputs",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Craft inputs designed to coerce the LLM into generating content that will be interpreted as code or commands by downstream systems"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Downstream system access controls",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that downstream systems do not grant LLM outputs excessive permissions or execute LLM-generated commands without validation"
@@ -5971,24 +5971,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Permission scope enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify LLM cannot invoke capabilities, tools, or APIs outside its defined role; test scope boundaries under adversarial conditions"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Irreversibility gate enforcement",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify irreversible actions require human confirmation; test that confirmation gates cannot be bypassed through crafted inputs"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Action audit completeness",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify all LLM-initiated actions are logged with sufficient detail for forensic review"
@@ -6897,24 +6897,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "System prompt extraction via crafted inputs",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Attempt to extract system prompt contents through direct requests, indirect summarisation, translation, and instruction-override techniques"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Credential and sensitive content in system prompt",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that credentials, API keys, or sensitive business logic in the system prompt are not reproducible by any input technique"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Refusal robustness for system prompt disclosure",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that the model consistently refuses system prompt disclosure across varied request phrasings and social engineering approaches"
@@ -7638,24 +7638,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Embedding inversion and data reconstruction",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Test whether embedding vectors can be inverted to reconstruct training data; verify embedding stores do not leak source content through metadata"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Vector database security configuration",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify vector database is correctly configured — authentication, encryption, namespace isolation, API key protection"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Retrieval authorisation enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify RAG queries cannot retrieve documents above the authenticated user's permission level"
@@ -8452,24 +8452,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Factual accuracy and hallucination rate",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Test model outputs against known-correct facts across the deployment use case domain; measure hallucination rate against benchmark ground truth"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Citation verifiability",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that citations generated by the LLM are real and accurately represent source content; test that outputs requiring citations enforce this"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Misinformation incident detection",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that the monitoring pipeline can detect and flag systematic misinformation patterns — accuracy drift, citation fabrication rate"
@@ -9222,24 +9222,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Resource exhaustion and rate limiting",
-        "control_name": "AVT — Availability",
+        "control_id": "AVT",
+        "control_name": "Availability",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Test rate limiting enforcement, token budget controls, and compute throttling under load; verify graceful degradation"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Consumption anomaly detection",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify monitoring detects abnormal consumption patterns — token flooding, API abuse, wallet drainage — before service impact"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Per-user quota enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify per-user and per-tenant quotas are enforced and cannot be bypassed through session switching or credential abuse"
@@ -10024,24 +10024,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Prompt injection via all agent input channels",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Inject instruction-overriding content through user prompt, RAG-retrieved documents, tool return values, email content, uploaded files, and any other data source the agent processes"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Goal consistency under adversarial input",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify the agent's stated goal at session start matches its actions at session end — test divergence after indirect injection"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Goal state verification effectiveness",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Attempt to redirect agent goal through indirect injection paths specific to your deployment — historian data, vendor communications, web results"
@@ -11209,24 +11209,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Tool permission boundary enforcement",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Attempt to invoke tools outside the agent's defined role; test parameter ranges; verify irreversibility controls"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Per-tool authorisation",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify each tool enforces its own access controls independently of the agent framework"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "LLM-generated tool parameters",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify tool call parameters generated by the LLM are validated before execution"
@@ -12437,24 +12437,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Credential scope enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify agent cannot access systems beyond its credential scope; test scope boundaries"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Credential usage audit trail",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify all credential operations are logged with sufficient detail for forensic investigation"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Credential leakage paths",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Test whether credentials appear in agent outputs, logs, memory stores, or tool payloads"
@@ -13489,24 +13489,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Component integrity verification",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify cryptographic signatures of all agent components; scan for hidden instructions in descriptors"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Behavioural change detection post-update",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Establish behavioural baseline before component update; verify no unexpected behaviour change after update"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Runtime component monitoring",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify that component modification at runtime is detected and triggers agent suspension"
@@ -14599,24 +14599,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Code injection via crafted prompts",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Craft inputs designed to generate code containing network calls, file system access, or shell commands"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Generated code validation",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify static analysis catches dangerous operations before execution"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Sandbox escape attempts",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Test sandbox boundary enforcement from within the execution environment"
@@ -15774,24 +15774,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Memory write path injection",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Attempt to poison memory through every channel that can write to agent memory stores"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Poisoned memory influence detection",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify that behaviour influenced by poisoned memory differs detectably from baseline"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Memory content integrity",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify memory store content integrity monitoring detects unauthorised modification"
@@ -16702,24 +16702,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "A2A authentication enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Attempt unauthenticated and weakly authenticated A2A message delivery"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Replay attack prevention",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Capture and replay a valid A2A message; verify replay is rejected"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "A2A audit completeness",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify all A2A messages are logged with sender identity and content hash"
@@ -17568,24 +17568,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Circuit breaker trigger and recovery",
-        "control_name": "AVT — Availability",
+        "control_id": "AVT",
+        "control_name": "Availability",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Inject failures to verify circuit breaker activates at threshold; test recovery path"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Blast radius containment",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify failure in one agent cluster does not propagate to adjacent clusters"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Cascade detection alert",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify monitoring raises alert on cascade indicators before physical impact"
@@ -18393,24 +18393,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "AI disclosure enforcement",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify agent identifies as AI in all interface contexts; test for identity concealment"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Advisory label persistence",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify advisory labels persist through all rendering environments"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Over-trust pattern detection",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify monitoring can detect aggregate patterns of uncritical operator acceptance"
@@ -19352,24 +19352,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Behavioural baseline establishment and deviation",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Establish baseline during commissioning; inject anomalous behaviour patterns; verify detection"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Hidden goal persistence detection",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify that systematic recommendation bias is detectable through aggregate output analysis"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Kill switch activation coverage",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify kill switch activation logs are complete and anomaly-to-suspension latency meets SLA"
@@ -20223,24 +20223,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Memorisation and over-retrieval",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Probe for verbatim training data and pull RAG documents the requesting principal is not authorised to see"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Redaction effectiveness",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify PII/secret patterns are detected and masked in outputs before delivery, including partial and obfuscated forms"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Deny-by-default retrieval",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm retrieval honours the caller's authorisation, not the service account's broad access"
@@ -21058,24 +21058,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Least-privilege agent identity",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify each agent acts under a scoped, short-lived identity, not a shared high-privilege secret"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Credential leakage in memory/tools",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Inspect agent memory, scratchpads, and tool payloads for plaintext secrets"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Secret handling in transit and at rest",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm credentials are never embedded in prompts, embeddings, or persisted state"
@@ -21803,24 +21803,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Egress detection",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify outbound data flows to AI endpoints are logged and alertable"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Approved-endpoint enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm DLP/egress policy blocks data flow to unsanctioned AI services"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Data classification on egress",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify sensitive-class data is blocked or flagged before leaving the boundary"
@@ -22535,24 +22535,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Artefact and dataset integrity",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify checksums, signatures, and provenance on datasets and model weights"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Ingestion validation",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Confirm poisoned or anomalous records are detected and quarantined at ingest"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Backdoor/trigger detection",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Probe for trigger-conditioned behaviour change indicative of a backdoor"
@@ -23262,24 +23262,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Boundary validation",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Submit malformed, oversized, and adversarial inputs across all data channels"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Schema and type enforcement",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify ingested data is validated against schema before persistence/use"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Integrity drift detection",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm integrity violations are detected and alerted"
@@ -23974,24 +23974,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Tool I/O trust boundaries",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify tool return values are treated as untrusted and validated before use"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Per-tool data scoping",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm each tool receives only the data it requires for its function"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Data minimisation to tools",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify sensitive fields are stripped from tool inputs unless required"
@@ -24691,24 +24691,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Classification enforcement",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify data entering training/RAG/context is classified and handled per policy"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Lifecycle auditability",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm creation, access, and deletion of data records are auditable"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Classification-driven access",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify access decisions reference data classification"
@@ -25360,24 +25360,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Data-subject rights",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify erasure, access, and rectification requests are honoured end-to-end"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Processing records",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm processing activities are logged for accountability"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Lawful-basis gating",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify processing is gated on a recorded lawful basis / consent"
@@ -26118,24 +26118,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Multimodal input validation",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Submit sensitive data hidden in image/audio/document inputs (EXIF, steganography, embedded text)"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Cross-modal redaction",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify redaction operates on extracted content from all modalities"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Modality-aware output filtering",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Confirm generated images/audio do not embed sensitive source data"
@@ -26752,16 +26752,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Re-identification resistance",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Attempt linkage/membership attacks against synthetic or anonymised datasets"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Memorisation of source records",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Probe a model trained on synthetic data for leakage of original records"
@@ -27416,24 +27416,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Session/memory isolation",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify per-session memory and caches are isolated across users and tenants"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Tenant boundary enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm one tenant cannot reach another's context or cached state"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Cache/state scrubbing",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify session state is scrubbed on teardown"
@@ -28155,24 +28155,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "NL-to-query injection",
-        "control_name": "IHT — Input Handling",
+        "control_id": "IHT",
+        "control_name": "Input Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Craft prompts that induce destructive or over-broad generated queries"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Generated-query validation",
-        "control_name": "OHT — Output Handling",
+        "control_id": "OHT",
+        "control_name": "Output Handling",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify generated queries are parameterised, allowlisted, and scope-limited before execution"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Execution-time authorisation",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm the gateway executes under the user's permissions, not a privileged service account"
@@ -28870,24 +28870,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Index/namespace authorisation",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify per-namespace/tenant access control on the vector store"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Embedding confidentiality",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm embeddings are encrypted at rest and inversion-resistant where required"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Platform hardening",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify the vector DB version, auth config, and network exposure are hardened"
@@ -29583,16 +29583,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Telemetry redaction",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify prompts/outputs are redacted before logging and tracing"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Log access and retention",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm log stores enforce access control and retention limits"
@@ -30267,24 +30267,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Context minimisation",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify only need-to-know data is placed in context for a task"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Per-item context authorisation",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm each item added to context is authorised for the caller"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Context exfiltration",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Attempt to extract the full assembled context via the model"
@@ -30932,24 +30932,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Endpoint scope enforcement",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify the assistant accesses only authorised files/pages/resources"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Local action boundaries",
-        "control_name": "AST — Agent-Specific",
+        "control_id": "AST",
+        "control_name": "Agent-Specific",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm local actions (read/write/exec) honour an allowlist and user consent"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Local data egress",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify local sensitive data is not exfiltrated to the model backend"
@@ -31601,24 +31601,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Resource exhaustion / rate limiting",
-        "control_name": "AVT — Availability",
+        "control_id": "AVT",
+        "control_name": "Availability",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Drive high-volume and high-cost requests; verify rate limits and quotas hold"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Availability alerting",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm degradation and exhaustion are detected and alerted"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Backup and recovery",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify datasets, weights, and indices have tested restore procedures"
@@ -32270,16 +32270,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Membership/inversion resistance",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Run membership-inference and inversion attacks against the deployed model"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Confidence leakage",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify the model/API does not expose signals (logits, confidence) that aid inference"
@@ -32922,24 +32922,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Reviewer authorisation",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify reviewers access only the records assigned to their queue"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Reviewer-facing minimisation",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Confirm sensitive fields are masked in review/labeling UIs where not needed"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Reviewer access audit",
-        "control_name": "LMT — Logging & Monitoring",
+        "control_id": "LMT",
+        "control_name": "Logging & Monitoring",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Verify reviewer access to records is logged and auditable"
@@ -33614,24 +33614,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Extraction-query detection",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Detect high-volume, systematic querying characteristic of model extraction"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Query budgeting",
-        "control_name": "AVT — Availability",
+        "control_id": "AVT",
+        "control_name": "Availability",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify per-principal query budgets and rate limits constrain extraction"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Weight artefact protection",
-        "control_name": "ACT — Access Control",
+        "control_id": "ACT",
+        "control_name": "Access Control",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Confirm model weights are access-controlled and not retrievable via the serving path"
@@ -34342,24 +34342,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Source provenance",
-        "control_name": "SCT — Supply Chain",
+        "control_id": "SCT",
+        "control_name": "Supply Chain",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Verify training/RAG sources are vetted, signed, and provenance-tracked"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Targeted-falsehood probing",
-        "control_name": "MBT — Model Behaviour",
+        "control_id": "MBT",
+        "control_name": "Model Behaviour",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Probe for systematically false outputs on poisoned topics"
       },
       {
         "framework": "OWASP AI Testing Guide",
-        "control_id": "Corpus integrity monitoring",
-        "control_name": "DPT — Data Protection",
+        "control_id": "DPT",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Detect anomalous content injected into the RAG corpus over time"

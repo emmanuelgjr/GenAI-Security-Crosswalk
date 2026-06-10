@@ -392,16 +392,16 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Re-identification resistance",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Attempt linkage/membership attacks against synthetic or anonymised datasets"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Memorisation of source records",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Probe a model trained on synthetic data for leakage of original records"

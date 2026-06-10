@@ -511,24 +511,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Memory write path injection",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Attempt to poison memory through every channel that can write to agent memory stores"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Poisoned memory influence detection",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify that behaviour influenced by poisoned memory differs detectably from baseline"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Memory content integrity",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify memory store content integrity monitoring detects unauthorised modification"

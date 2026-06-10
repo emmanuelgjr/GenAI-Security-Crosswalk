@@ -519,24 +519,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Behavioural baseline establishment and deviation",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Establish baseline during commissioning; inject anomalous behaviour patterns; verify detection"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Hidden goal persistence detection",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify that systematic recommendation bias is detectable through aggregate output analysis"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Kill switch activation coverage",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify kill switch activation logs are complete and anomaly-to-suspension latency meets SLA"

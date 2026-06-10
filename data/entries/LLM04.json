@@ -497,24 +497,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Training data integrity verification",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify data quality gates and integrity checks at each pipeline stage catch adversarially modified samples"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Backdoor trigger detection",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Test deployed model with known trigger patterns across all deployment configurations; verify unexpected behaviour is not present"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Dataset provenance verification",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify all training datasets have documented provenance; test that unverified datasets are rejected by the pipeline"

@@ -511,24 +511,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Component integrity verification",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify cryptographic signatures of all agent components; scan for hidden instructions in descriptors"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Behavioural change detection post-update",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Establish behavioural baseline before component update; verify no unexpected behaviour change after update"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Runtime component monitoring",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify that component modification at runtime is detected and triggers agent suspension"

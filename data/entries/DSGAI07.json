@@ -436,24 +436,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Classification enforcement",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify data entering training/RAG/context is classified and handled per policy"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Lifecycle auditability",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm creation, access, and deletion of data records are auditable"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Classification-driven access",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify access decisions reference data classification"

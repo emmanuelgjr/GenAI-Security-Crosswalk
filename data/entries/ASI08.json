@@ -511,24 +511,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Circuit breaker trigger and recovery",
-      "control_name": "AVT — Availability",
+      "control_id": "AVT",
+      "control_name": "Availability",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inject failures to verify circuit breaker activates at threshold; test recovery path"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Blast radius containment",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify failure in one agent cluster does not propagate to adjacent clusters"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Cascade detection alert",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify monitoring raises alert on cascade indicators before physical impact"

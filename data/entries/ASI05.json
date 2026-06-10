@@ -504,24 +504,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Code injection via crafted prompts",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Craft inputs designed to generate code containing network calls, file system access, or shell commands"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Generated code validation",
-      "control_name": "OHT — Output Handling",
+      "control_id": "OHT",
+      "control_name": "Output Handling",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify static analysis catches dangerous operations before execution"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Sandbox escape attempts",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Test sandbox boundary enforcement from within the execution environment"

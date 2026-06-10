@@ -429,24 +429,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Multimodal input validation",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Submit sensitive data hidden in image/audio/document inputs (EXIF, steganography, embedded text)"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Cross-modal redaction",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify redaction operates on extracted content from all modalities"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Modality-aware output filtering",
-      "control_name": "OHT — Output Handling",
+      "control_id": "OHT",
+      "control_name": "Output Handling",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Confirm generated images/audio do not embed sensitive source data"

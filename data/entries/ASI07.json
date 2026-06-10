@@ -511,24 +511,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "A2A authentication enforcement",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Attempt unauthenticated and weakly authenticated A2A message delivery"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Replay attack prevention",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Capture and replay a valid A2A message; verify replay is rejected"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "A2A audit completeness",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify all A2A messages are logged with sender identity and content hash"

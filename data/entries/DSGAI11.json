@@ -444,24 +444,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Session/memory isolation",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify per-session memory and caches are isolated across users and tenants"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Tenant boundary enforcement",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm one tenant cannot reach another's context or cached state"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Cache/state scrubbing",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify session state is scrubbed on teardown"

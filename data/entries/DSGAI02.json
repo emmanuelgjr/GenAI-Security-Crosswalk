@@ -488,24 +488,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Least-privilege agent identity",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify each agent acts under a scoped, short-lived identity, not a shared high-privilege secret"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Credential leakage in memory/tools",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inspect agent memory, scratchpads, and tool payloads for plaintext secrets"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Secret handling in transit and at rest",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm credentials are never embedded in prompts, embeddings, or persisted state"

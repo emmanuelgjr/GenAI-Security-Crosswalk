@@ -536,24 +536,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Injection via all input channels",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inject instruction-overriding content through user prompt, RAG-retrieved documents, tool return values, uploaded files, and any other data source the LLM processes"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Goal consistency under adversarial input",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify the LLM's task framing at request start matches its actions and outputs at completion — test divergence after injection"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Injection detection audit trail",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify that injection attempts are flagged in monitoring and appear in audit logs with sufficient detail for incident response"

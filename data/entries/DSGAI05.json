@@ -437,24 +437,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Boundary validation",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Submit malformed, oversized, and adversarial inputs across all data channels"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Schema and type enforcement",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify ingested data is validated against schema before persistence/use"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Integrity drift detection",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm integrity violations are detected and alerted"

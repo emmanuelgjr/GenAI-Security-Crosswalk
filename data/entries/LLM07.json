@@ -465,24 +465,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "System prompt extraction via crafted inputs",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Attempt to extract system prompt contents through direct requests, indirect summarisation, translation, and instruction-override techniques"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Credential and sensitive content in system prompt",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify that credentials, API keys, or sensitive business logic in the system prompt are not reproducible by any input technique"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Refusal robustness for system prompt disclosure",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify that the model consistently refuses system prompt disclosure across varied request phrasings and social engineering approaches"

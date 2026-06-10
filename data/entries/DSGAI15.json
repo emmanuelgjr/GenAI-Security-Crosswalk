@@ -429,24 +429,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Context minimisation",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify only need-to-know data is placed in context for a task"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Per-item context authorisation",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm each item added to context is authorised for the caller"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Context exfiltration",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Attempt to extract the full assembled context via the model"

@@ -442,16 +442,16 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Telemetry redaction",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify prompts/outputs are redacted before logging and tracing"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Log access and retention",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm log stores enforce access control and retention limits"

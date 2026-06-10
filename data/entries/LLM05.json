@@ -481,24 +481,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Output injection into downstream systems",
-      "control_name": "OHT — Output Handling",
+      "control_id": "OHT",
+      "control_name": "Output Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify LLM-generated content is sanitised before insertion into HTML, SQL, shell commands, URLs, and other interpreters"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Crafted inputs designed to produce malicious outputs",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Craft inputs designed to coerce the LLM into generating content that will be interpreted as code or commands by downstream systems"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Downstream system access controls",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify that downstream systems do not grant LLM outputs excessive permissions or execute LLM-generated commands without validation"

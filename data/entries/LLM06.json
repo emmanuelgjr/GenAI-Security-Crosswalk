@@ -496,24 +496,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Permission scope enforcement",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify LLM cannot invoke capabilities, tools, or APIs outside its defined role; test scope boundaries under adversarial conditions"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Irreversibility gate enforcement",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify irreversible actions require human confirmation; test that confirmation gates cannot be bypassed through crafted inputs"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Action audit completeness",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify all LLM-initiated actions are logged with sufficient detail for forensic review"

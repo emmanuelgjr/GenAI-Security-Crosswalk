@@ -474,24 +474,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Resource exhaustion and rate limiting",
-      "control_name": "AVT — Availability",
+      "control_id": "AVT",
+      "control_name": "Availability",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Test rate limiting enforcement, token budget controls, and compute throttling under load; verify graceful degradation"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Consumption anomaly detection",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify monitoring detects abnormal consumption patterns — token flooding, API abuse, wallet drainage — before service impact"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Per-user quota enforcement",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify per-user and per-tenant quotas are enforced and cannot be bypassed through session switching or credential abuse"

@@ -400,16 +400,16 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Membership/inversion resistance",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Run membership-inference and inversion attacks against the deployed model"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Confidence leakage",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify the model/API does not expose signals (logits, confidence) that aid inference"
