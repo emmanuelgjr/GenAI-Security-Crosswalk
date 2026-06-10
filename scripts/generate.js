@@ -391,32 +391,32 @@ function parseControlTable(sectionBody, frameworkName, qr, regIds) {
     }
 
     if (!controlId) {
-    if (id1.url) {
-      // col1 is a link — ID is the link text, name is col0 text
-      controlId   = id1.text;
-      controlName = id0.text;
-      controlUrl  = id1.url;
-    } else if (id0.url) {
-      // col0 is a link — name + url from col0, try col1 as ID
-      controlName = id0.text;
-      controlUrl  = id0.url;
-      controlId   = looksLikeId(id1.text) ? id1.text : id0.text;
-    } else if (looksLikeId(id1.text)) {
-      // col1 is a plain control ID
-      controlId   = id1.text;
-      controlName = id0.text;
-    } else {
-      // Try to extract CODE from col0 pattern "Name (CODE)"
-      const codeMatch = col0.match(/^(.*?)\s*\(([A-Z][A-Z0-9\-]{1,12})\)\s*$/);
-      if (codeMatch) {
-        controlName = codeMatch[1].trim();
-        controlId   = codeMatch[2];
-      } else {
-        // Fall back: use col1 as ID
-        controlId   = id1.text || id0.text;
+      if (id1.url) {
+        // col1 is a link — ID is the link text, name is col0 text
+        controlId   = id1.text;
         controlName = id0.text;
+        controlUrl  = id1.url;
+      } else if (id0.url) {
+        // col0 is a link — name + url from col0, try col1 as ID
+        controlName = id0.text;
+        controlUrl  = id0.url;
+        controlId   = looksLikeId(id1.text) ? id1.text : id0.text;
+      } else if (looksLikeId(id1.text)) {
+        // col1 is a plain control ID
+        controlId   = id1.text;
+        controlName = id0.text;
+      } else {
+        // Try to extract CODE from col0 pattern "Name (CODE)"
+        const codeMatch = col0.match(/^(.*?)\s*\(([A-Z][A-Z0-9\-]{1,12})\)\s*$/);
+        if (codeMatch) {
+          controlName = codeMatch[1].trim();
+          controlId   = codeMatch[2];
+        } else {
+          // Fall back: use col1 as ID
+          controlId   = id1.text || id0.text;
+          controlName = id0.text;
+        }
       }
-    }
     }
 
     // Skip separator / header rows that leaked through

@@ -1586,7 +1586,7 @@ input, select { font-family: inherit; }
     linkedInItem.appendChild(document.createTextNode('LinkedIn'));
     linkedInItem.addEventListener('click', function(e) {
       e.stopPropagation();
-      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url), '_blank', 'width=600,height=500');
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url), '_blank', 'width=600,height=500,noopener');
       menu.classList.remove('open');
     });
     menu.appendChild(linkedInItem);
@@ -1598,7 +1598,7 @@ input, select { font-family: inherit; }
     twitterItem.addEventListener('click', function(e) {
       e.stopPropagation();
       var text = title + ' — OWASP GenAI Security Crosswalk';
-      window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '_blank', 'width=600,height=400');
+      window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '_blank', 'width=600,height=400,noopener');
       menu.classList.remove('open');
     });
     menu.appendChild(twitterItem);
@@ -2948,9 +2948,9 @@ input, select { font-family: inherit; }
         inner.appendChild(linkBtn);
 
         card.appendChild(inner);
-        card.addEventListener('click', function() { window.open(tool.url, '_blank'); });
+        card.addEventListener('click', function() { window.open(tool.url, '_blank', 'noopener'); });
         card.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(tool.url, '_blank'); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(tool.url, '_blank', 'noopener'); }
         });
         grid.appendChild(card);
       });
@@ -3112,9 +3112,9 @@ input, select { font-family: inherit; }
 
         card.appendChild(inner);
         var url = baseUrl + '#' + recipeAnchor(recipe);
-        card.addEventListener('click', function() { window.open(url, '_blank'); });
+        card.addEventListener('click', function() { window.open(url, '_blank', 'noopener'); });
         card.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(url, '_blank'); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(url, '_blank', 'noopener'); }
         });
         grid.appendChild(card);
       });
@@ -5031,7 +5031,7 @@ input, select { font-family: inherit; }
         // LinkedIn share
         linkedInBtn.onclick = function() {
           var linkedInUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
-          window.open(linkedInUrl, '_blank', 'width=600,height=600');
+          window.open(linkedInUrl, '_blank', 'width=600,height=600,noopener');
         };
 
         // Twitter/X share
@@ -5042,7 +5042,7 @@ input, select { font-family: inherit; }
             critCount + ' critical gaps identified. ' + highCount + ' high-severity gaps.\n\n' +
             'Free tool:\n\n#AISecurity #OWASP #GenAI #Cybersecurity';
           var twitterUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText) + '&url=' + encodeURIComponent(shareUrl);
-          window.open(twitterUrl, '_blank', 'width=600,height=400');
+          window.open(twitterUrl, '_blank', 'width=600,height=400,noopener');
         };
 
         // Get Badge
@@ -5441,7 +5441,7 @@ input, select { font-family: inherit; }
           if (navigator.clipboard) {
             navigator.clipboard.writeText(entry.badge);
           }
-          window.open(entry.badge, '_blank');
+          window.open(entry.badge, '_blank', 'noopener');
         });
       }
 
@@ -5743,7 +5743,7 @@ input, select { font-family: inherit; }
         '&publisher=' + encodeURIComponent(publisher) +
         '&framework-json=' + encodeURIComponent(jsonText);
 
-      window.open(issueUrl, '_blank');
+      window.open(issueUrl, '_blank', 'noopener');
     });
 
     // How it works section
