@@ -56,5 +56,20 @@
   "clean": {
     "count": 0,
     "by_source_list": {}
-  }
+  },
+  "relabels": [
+    {
+      "date": "2026-06-09",
+      "issue": "#187",
+      "reason": "MITRE ATLAS v4.0->current reconciliation (PRs #211/#212): remapped stale ATLAS control_ids by positional alignment of each entry's mapping list between split-freeze commit 10f2372 and HEAD; refreshed ATLAS control_name fields; hashes recomputed. Split membership, counts, and all non-ATLAS rows unchanged.",
+      "rows_remapped": {
+        "calibration": 2,
+        "test": 23
+      },
+      "names_refreshed": {
+        "calibration": 4,
+        "test": 52
+      }
+    }
+  ]
 }

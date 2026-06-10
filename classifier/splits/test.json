@@ -59,7 +59,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0013",
-    "control_name": "Discover ML Model Ontology",
+    "control_name": "Discover AI Model Ontology",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Adversary learns what data the browser assistant can access across open applications"
@@ -345,7 +345,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0051",
-    "control_name": "Exploit Public-Facing Application",
+    "control_name": "LLM Prompt Injection",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Agent API endpoints exploited to extract credentials or elevate access"
@@ -748,7 +748,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0016",
-    "control_name": "Exfiltration via AI Inference API",
+    "control_name": "Obtain Capabilities",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Using compromised agent credentials to exfiltrate data through inference API"
@@ -897,14 +897,14 @@
     "notes": "Monitor for security advisories and quality issues from third-party data providers; establish triage procedures for third-party data incidents"
   },
   {
-    "hash": "0ff23ee25c63dfbdd69f68ff4b41b55bfcc3e5662c3571d2c928ecf505ceec49",
+    "hash": "e7e48d077831301fa623226f70683f0dfbe6c21aeef645e434ae1c1f76efe781",
     "entry_id": "DSGAI21",
     "entry_name": "Disinformation via Data Poisoning",
     "source_list": "DSGAI-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0045",
-    "control_name": "Publish Poisoned Datasets",
+    "control_id": "AML.T0060",
+    "control_name": "Publish Hallucinated Entities",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Adversary publishes false content in public repositories, documentation sites, or knowledge bases indexed by RAG systems"
@@ -943,7 +943,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0016",
-    "control_name": "Extract ML Model",
+    "control_name": "Obtain Capabilities",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Adversary systematically queries model to extract sufficient information to replicate its functionality"
@@ -1359,7 +1359,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0051",
-    "control_name": "Exploit Public-Facing Application",
+    "control_name": "LLM Prompt Injection",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Unapproved AI services may themselves be adversary-controlled or compromised"
@@ -2451,7 +2451,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0024",
-    "control_name": "Model Inversion",
+    "control_name": "Exfiltration via AI Inference API",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Reconstructing sensitive data accessible to the agent through credential abuse"
@@ -3036,7 +3036,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0048",
-    "control_name": "Model Contamination",
+    "control_name": "External Harms",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Introducing persistent malicious behaviour into model through supply chain"
@@ -3770,14 +3770,14 @@
     "notes": "Require FedRAMP authorisation for third-party data service providers; establish SLAs covering data security, privacy, and incident notification"
   },
   {
-    "hash": "2474d1a6ebdf3b6302250a16ac3a67a1b652835ceab103a09e370a9e06b42099",
+    "hash": "c59a94e461e1551994eade26deb3849e4ee779ee10dbae704e09378e43a52746",
     "entry_id": "ASI03",
     "entry_name": "Identity and Privilege Abuse",
     "source_list": "Agentic-Top10-2026",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0022",
-    "control_name": "Valid Accounts",
+    "control_id": "AML.T0021",
+    "control_name": "Establish Accounts",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Exploiting legitimate agent credentials to access AI systems or data pipelines"
@@ -3816,7 +3816,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0051",
-    "control_name": "Exploit Public-Facing Application",
+    "control_name": "LLM Prompt Injection",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Session isolation vulnerability in multi-tenant GenAI deployment exploited to access other users' data"
@@ -4960,7 +4960,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0010",
-    "control_name": "Backdoor ML Model",
+    "control_name": "AI Supply Chain Compromise",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Trigger-based backdoors in MCP servers, prompt templates, or model adapters"
@@ -6773,14 +6773,14 @@
     "notes": "System prompts not stored in cleartext application configuration or source code"
   },
   {
-    "hash": "372e8890d8665f4fa267f7af143d37c56f4402a59cfbdf43aaa72d4573871ac0",
+    "hash": "13dffd67523038944dcee11a81bc595d51766ce201bde7ef78f21e73a4310c5d",
     "entry_id": "LLM02",
     "entry_name": "Sensitive Information Disclosure",
     "source_list": "LLM-Top10-2025",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0021",
-    "control_name": "Data Leakage",
+    "control_id": "AML.T0057",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Unintended exposure of training data or sensitive context through model outputs"
@@ -7846,7 +7846,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0010",
-    "control_name": "Backdoor ML Model",
+    "control_name": "AI Supply Chain Compromise",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Embedding trigger-based backdoors in model weights via training or fine-tuning supply chain"
@@ -7859,7 +7859,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0024.000",
-    "control_name": "Membership Inference",
+    "control_name": "Infer Membership",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Adversary determines whether specific sensitive records were used in training through systematic query analysis"
@@ -7930,14 +7930,14 @@
     "notes": "Context window risks documented \ufffd which deployments aggregate data across trust domains"
   },
   {
-    "hash": "3eaf17c953de51564321fd9825367adfdbc06bbec748c03e4ddc5a670d3364b8",
+    "hash": "f6fb1c119b2b28d8c697e4dce2e17c730ca8a696ac8612680bcbed3130ea0d09",
     "entry_id": "LLM02",
     "entry_name": "Sensitive Information Disclosure",
     "source_list": "LLM-Top10-2025",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0024",
-    "control_name": "Model Inversion",
+    "control_id": "AML.T0024.001",
+    "control_name": "Invert ML Model",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Reconstructing training data from model outputs or confidence scores"
@@ -9373,14 +9373,14 @@
     "notes": null
   },
   {
-    "hash": "4757a83cd63e3973d5f6fb69252e6031d50df164761c255ee901c1c9a472f6e4",
+    "hash": "5fa70a575331dcc0991182959dbf04ee513a2a0f5df1e040d3387e725a852688",
     "entry_id": "ASI07",
     "entry_name": "Insecure Inter-Agent Communications",
     "source_list": "Agentic-Top10-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0022",
-    "control_name": "Valid Accounts",
+    "control_id": "AML.T0021",
+    "control_name": "Establish Accounts",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Using compromised agent credentials to impersonate trusted agents in A2A channels"
@@ -11200,7 +11200,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Regulatory violations often arise from ungoverned data repositories \ufffd adversary exploits what compliance missed"
@@ -11564,7 +11564,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0018",
-    "control_name": "Backdoor ML Model",
+    "control_name": "Manipulate AI Model",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Path traversal in snapshot imports (CVE-2024-3584) enables write to model host \ufffd backdoor installation path"
@@ -11941,7 +11941,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Observability databases and log stores accessed as information repositories \ufffd sensitive content available at scale"
@@ -12448,7 +12448,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0051",
-    "control_name": "Exploit Public-Facing Application",
+    "control_name": "LLM Prompt Injection",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "NL gateway interface exploited through crafted natural language to generate destructive or exfiltrating queries"
@@ -13202,7 +13202,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0031",
-    "control_name": "Craft Adversarial Data",
+    "control_name": "Erode AI Model Integrity",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "False content crafted to appear authoritative and rank highly in semantic similarity searches"
@@ -13780,14 +13780,14 @@
     "notes": "Automated log analysis covering LLM injection indicators \ufffd anomalous inputs detected and reviewed"
   },
   {
-    "hash": "6005d64f5432f1c119debb1549f5794cfd887e7e4ffc0ba55ee0ca9cbb6a721f",
+    "hash": "fec7985a0820c9c970215ed6984820d5b74227770b605208bc5703212501f2b0",
     "entry_id": "LLM04",
     "entry_name": "Data and Model Poisoning",
     "source_list": "LLM-Top10-2025",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0027",
-    "control_name": "Model Inversion",
+    "control_id": "AML.T0020",
+    "control_name": "Poison Training Data",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Reconstructing sensitive training data from model outputs"
@@ -15847,14 +15847,14 @@
     "notes": "Goal hijack indicators treated as security events \ufffd agent suspended, human notified, actions reversed where feasible"
   },
   {
-    "hash": "6c9dad1630caccfd37f308a1ca2ce23f0340b0fc21f832a010085b0358b8dec2",
+    "hash": "c79fc0ba5287777df5d6d01960daca0415c9bf37ae8d0b64b09f0511c85eea52",
     "entry_id": "ASI02",
     "entry_name": "Tool Misuse and Exploitation",
     "source_list": "Agentic-Top10-2026",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0068",
-    "control_name": "Automated Collection",
+    "control_id": "AML.T0053",
+    "control_name": "AI Agent Tool Invocation",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Agent autonomously harvesting data through tool chains beyond authorised scope"
@@ -16283,7 +16283,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0051",
-    "control_name": "Exploit Public-Facing Application",
+    "control_name": "LLM Prompt Injection",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Malicious MCP server exploits trust relationship with agent to capture context payloads"
@@ -17336,7 +17336,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Database accessed through LLM-generated queries \ufffd adversary extracts sensitive records without direct database access"
@@ -19019,13 +19019,13 @@
     "notes": "Hidden instructions in content the model processes (documents, web, RAG)"
   },
   {
-    "hash": "820dbd8b52e7d7d3b219018b1d10716a6bf96a43d98a5d336305f7afeb090275",
+    "hash": "8c8066803f35929ae9f5d3fcf32b2b733f72b7b72fc376b300b18eaf0e8c22c9",
     "entry_id": "LLM08",
     "entry_name": "Vector and Embedding Weaknesses",
     "source_list": "LLM-Top10-2025",
     "severity": "Medium",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0063",
+    "control_id": "AML.T0071",
     "control_name": "Embedding Manipulation",
     "tier": "Hardening",
     "scope": "Build",
@@ -20144,7 +20144,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Context data flowing through tool integrations captured and transmitted to adversary"
@@ -20352,7 +20352,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0047",
-    "control_name": "Influence via Automated Content",
+    "control_name": "AI-Enabled Product or Service",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Agent produces high-volume, fluent content that overwhelms human critical assessment"
@@ -20397,14 +20397,14 @@
     "notes": "Encryption of multimodal uploads and all derived content at rest and in transit"
   },
   {
-    "hash": "8be4321b463a9732365be2b7a90310236221112322ca70833660ebeee4e093cd",
+    "hash": "dfeb706e5c98ff787c22702ef6c2fab82df8d12b7e506e4048bcb631bf30978e",
     "entry_id": "LLM02",
     "entry_name": "Sensitive Information Disclosure",
     "source_list": "LLM-Top10-2025",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0030",
-    "control_name": "Information Disclosure",
+    "control_id": "AML.T0024.000",
+    "control_name": "Infer Membership",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Extraction of confidential information via targeted model queries"
@@ -20612,7 +20612,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Pipeline failures may expose data through error messages or fallback paths that lack normal access controls"
@@ -20917,13 +20917,13 @@
     "notes": "Tool parameter validation as secure development requirement"
   },
   {
-    "hash": "8e72b877f77f2d997be01c2dcff1e73dcd7ec0265e943fe6b95cc322aa44c4fb",
+    "hash": "fc418e2220285f1ab2ea33ab26aa0fc1acf6ef9c738b9371f8c8a3d274f02c0a",
     "entry_id": "DSGAI02",
     "entry_name": "Agent Identity and Credential Exposure",
     "source_list": "DSGAI-2026",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0012",
+    "control_id": "AML.T0016",
     "control_name": "Obtain Capabilities",
     "tier": "Foundational",
     "scope": "Both",
@@ -21268,13 +21268,13 @@
     "notes": "Supply chain governance policy \ufffd approved sources for agent tools, MCP servers, and model components"
   },
   {
-    "hash": "90e3ae422a6441aa056b8e43428586416d4e61ecbc85e768ab308f8791b96dfb",
+    "hash": "ba5b89fd8f87fa569b7e259f699ce5c2a4b59eaa9802a0fc92042070d385eb1e",
     "entry_id": "ASI06",
     "entry_name": "Memory and Context Poisoning",
     "source_list": "Agentic-Top10-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0063",
+    "control_id": "AML.T0071",
     "control_name": "Embedding Manipulation",
     "tier": "Hardening",
     "scope": "Both",
@@ -22081,7 +22081,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0018",
-    "control_name": "Backdoor ML Model",
+    "control_name": "Manipulate AI Model",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Hidden functionality embedded in model weights \ufffd triggered by specific inputs, invisible to standard testing"
@@ -22919,14 +22919,14 @@
     "notes": null
   },
   {
-    "hash": "9a00b4a1959acb1c9660c478969af23a21c7997b5e73ef3619e4a588739c1654",
+    "hash": "ec8ab580d7c7ec69de5ec3496e33fcf575109a4791647920fd145517f235acfd",
     "entry_id": "DSGAI18",
     "entry_name": "Inference and Data Reconstruction",
     "source_list": "DSGAI-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0027",
-    "control_name": "Model Inversion",
+    "control_id": "AML.T0024.001",
+    "control_name": "Invert ML Model",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Adversary reconstructs sensitive training examples from model outputs through systematic query campaigns"
@@ -23680,7 +23680,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0029",
-    "control_name": "Denial of ML Service",
+    "control_name": "Denial of AI Service",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Adversary saturates GenAI pipeline \ufffd vector store, RAG retrieval, or inference endpoint rendered unavailable"
@@ -23693,7 +23693,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0056",
-    "control_name": "Adversarial Model Manipulation",
+    "control_name": "Extract LLM System Prompt",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Tampering with model weights or tool components loaded by agent at runtime"
@@ -23836,7 +23836,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0020",
-    "control_name": "Backdoor via Poisoned Memory",
+    "control_name": "Poison Training Data",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Establishing persistent trigger-response patterns in agent memory stores"
@@ -26670,7 +26670,7 @@
     "severity": "Medium",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0047",
-    "control_name": "Influence via Automated Content",
+    "control_name": "AI-Enabled Product or Service",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Generating high-volume automated content to shape perception or overwhelm fact-checking"
@@ -28353,14 +28353,14 @@
     "notes": "Agent credential lifecycle managed \ufffd issuance, rotation, revocation documented per agent"
   },
   {
-    "hash": "bb946e0dcf12c2a56680d30e1cdca143dfd390676280025153f439a111c14b2b",
+    "hash": "c0cb8808e2e4b274b0b7f91f26ad41471e1d3926c7a2822bff16d382d19e3309",
     "entry_id": "LLM04",
     "entry_name": "Data and Model Poisoning",
     "source_list": "LLM-Top10-2025",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0032",
-    "control_name": "Data Poisoning",
+    "control_id": "AML.T0043",
+    "control_name": "Craft Adversarial Data",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Injecting malicious data into training pipelines to corrupt model behaviour"
@@ -28464,7 +28464,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0051",
-    "control_name": "Exploit Public-Facing Application",
+    "control_name": "LLM Prompt Injection",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Prompt injection via LLM interface accesses all content injected into over-broad context window"
@@ -30641,13 +30641,13 @@
     "notes": "Security testing of tool API integrations \ufffd payload inspection, data minimisation validation"
   },
   {
-    "hash": "c961374833fa625da537ee689445be50a20709c0608b25de8b66ef3534108924",
+    "hash": "8bffb983e54c53008ba81a0fe594a125b646bfd7510cd60ffa56a769a99b65e9",
     "entry_id": "DSGAI05",
     "entry_name": "Data Integrity and Validation Failures",
     "source_list": "DSGAI-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0031",
+    "control_id": "AML.T0043",
     "control_name": "Craft Adversarial Data",
     "tier": "Foundational",
     "scope": "Both",
@@ -30713,7 +30713,7 @@
     "severity": "Medium",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Labelling vendor's data stores containing sensitive annotation tasks accessed as information repositories"
@@ -30849,13 +30849,13 @@
     "notes": null
   },
   {
-    "hash": "cab5b2c0379f802826503eee757f73aff73c8b9269a984280b847d0cf544e415",
+    "hash": "16d45edbded7d6dad8e9a210cd0547039280143003a09f3a1c854fe625641f49",
     "entry_id": "LLM05",
     "entry_name": "Insecure Output Handling",
     "source_list": "LLM-Top10-2025",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0037",
+    "control_id": "AML.T0067",
     "control_name": "Output Manipulation",
     "tier": "Foundational",
     "scope": "Build",
@@ -31525,13 +31525,13 @@
     "notes": "Regulatory violations in training data scope make inference API exfiltration more damaging"
   },
   {
-    "hash": "cf1b7017a48a2690c20b5d76e7d92f6390d26c8fc7578f7c5d728223e73d3f94",
+    "hash": "85bd6e9a4d8cdec2273ae81e40880be685077419bfa24423052e8024583b1e4d",
     "entry_id": "DSGAI03",
     "entry_name": "Shadow AI and Unsanctioned Data Flows",
     "source_list": "DSGAI-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0012",
+    "control_id": "AML.T0016",
     "control_name": "Obtain Capabilities",
     "tier": "Foundational",
     "scope": "Both",
@@ -32019,26 +32019,26 @@
     "notes": null
   },
   {
-    "hash": "d23ec100f3a1a736465aef24778cf693e84b50a95607bc1f0d5db08188340e79",
+    "hash": "c580dc2d96b32dad3730d8e62a6bc9a4a180c6122242ee42b0a95c615fd9f20d",
     "entry_id": "ASI10",
     "entry_name": "Rogue Agents",
     "source_list": "Agentic-Top10-2026",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0057",
-    "control_name": "Exploit Public-Facing ML Application",
+    "control_id": "AML.T0053",
+    "control_name": "AI Agent Tool Invocation",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Compromised agent maintains persistent access and hidden execution across sessions"
   },
   {
-    "hash": "d2445adb8e6ad5e2e27fec3dc196f0b966ea5f8c86b05c7a0b0b7b137728fe9b",
+    "hash": "006dce3c8a4a0bb82a5b63fc840fe26412af9388192a159fb0866175dfa65864",
     "entry_id": "DSGAI04",
     "entry_name": "Data Model and Artifact Poisoning",
     "source_list": "DSGAI-2026",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0031",
+    "control_id": "AML.T0043",
     "control_name": "Craft Adversarial Data",
     "tier": "Hardening",
     "scope": "Both",
@@ -33020,14 +33020,14 @@
     "notes": "API rate limiting as access control \ufffd systematic model extraction requires high query volumes"
   },
   {
-    "hash": "d7c3cbed6cbd8242e82e3661141b706017131ab4b65055ecdf62fed1c219b68c",
+    "hash": "8ad13500505424d2b67f38f6b3a696a42206dfacb96d91714dfcafdb010b283b",
     "entry_id": "LLM07",
     "entry_name": "System Prompt Leakage",
     "source_list": "LLM-Top10-2025",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0041",
-    "control_name": "Configuration Exposure",
+    "control_id": "AML.T0056",
+    "control_name": "Extract LLM System Prompt",
     "tier": "Foundational",
     "scope": "Build",
     "notes": "Extraction of internal model configuration, instructions, or system prompts"
@@ -33111,14 +33111,14 @@
     "notes": "Define explicit security requirements limiting the capabilities, tool access, and autonomous action scope permitted for each AI deployment"
   },
   {
-    "hash": "d836f410adcbb9842ffb063a9a5b75ee16a76991091430e47a0e52583f59bf1e",
+    "hash": "31ec044f906eb33b7ba1d3613b21ba7c438259dabfa5a916cb606c9d4ffd4877",
     "entry_id": "LLM09",
     "entry_name": "Misinformation",
     "source_list": "LLM-Top10-2025",
     "severity": "Medium",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0045",
-    "control_name": "Disinformation",
+    "control_id": "AML.T0060",
+    "control_name": "Publish Hallucinated Entities",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Using AI-generated content to deliberately spread false information"
@@ -34015,7 +34015,7 @@
     "severity": "Medium",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0029",
-    "control_name": "Denial of ML Service",
+    "control_name": "Denial of AI Service",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Overloading AI systems with computationally expensive inputs to cause service degradation"
@@ -34418,7 +34418,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0016",
-    "control_name": "Exfiltration via AI Inference API",
+    "control_name": "Obtain Capabilities",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Intercepting inter-agent messages to exfiltrate sensitive context passed between agents"
@@ -34561,7 +34561,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0043",
-    "control_name": "Network Service Scanning",
+    "control_name": "Craft Adversarial Data",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Identifying and mapping inter-agent communication endpoints for targeting"
@@ -34853,14 +34853,14 @@
     "notes": "Hardening"
   },
   {
-    "hash": "e23f045806758eb73992d8f31373c58fd07e690210499e2d9b3155805256e621",
+    "hash": "a4f06e4cefbe7205ea1bee1f3ac195ee3c890e1eeb77cdeb580bb82ce06476cd",
     "entry_id": "ASI09",
     "entry_name": "Human-Agent Trust Exploitation",
     "source_list": "Agentic-Top10-2026",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0045",
-    "control_name": "Disinformation",
+    "control_id": "AML.T0060",
+    "control_name": "Publish Hallucinated Entities",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Agent generates persuasive false information to manipulate human approvals"
@@ -36472,7 +36472,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Browser assistant accesses sensitive data across tabs and applications \ufffd adversary controls assistant to exfiltrate"
@@ -36602,7 +36602,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Data from Information Repositories",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Sensitive data pasted into shadow AI tools ends up in external data stores accessible to the AI service provider"
@@ -37057,7 +37057,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0056",
-    "control_name": "Adversarial Model Manipulation",
+    "control_name": "Extract LLM System Prompt",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Tampering with model weights, adapters, or configurations during supply chain"
@@ -38045,7 +38045,7 @@
     "severity": "High",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0048",
-    "control_name": "Model Contamination",
+    "control_name": "External Harms",
     "tier": "Hardening",
     "scope": "Both",
     "notes": "Persistent malicious behaviour introduced through dynamically loaded agent components"
@@ -38513,7 +38513,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0057",
-    "control_name": "Exploit Public-Facing ML Application",
+    "control_name": "LLM Data Leakage",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally"
@@ -38909,14 +38909,14 @@
     "notes": "Adversarial testing of context window content \ufffd cross-trust-domain aggregation and injection scenarios"
   },
   {
-    "hash": "fb09221f517f8e8e908e0bc2707b7cd90a88beb5f649580e610859ef5eede800",
+    "hash": "46dcf6841742d5abf7cfa438de075643a85cf5166df03a6228bb008a71637ee9",
     "entry_id": "LLM06",
     "entry_name": "Excessive Agency",
     "source_list": "LLM-Top10-2025",
     "severity": "High",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0068",
-    "control_name": "Automated Collection",
+    "control_id": "AML.T0053",
+    "control_name": "AI Agent Tool Invocation",
     "tier": "Foundational",
     "scope": "Build",
     "notes": "LLM autonomously collecting data beyond its intended access scope"
@@ -39098,7 +39098,7 @@
     "severity": "Critical",
     "framework": "MITRE ATLAS",
     "control_id": "AML.T0029",
-    "control_name": "Denial of ML Service",
+    "control_name": "Denial of AI Service",
     "tier": "Foundational",
     "scope": "Both",
     "notes": "Triggering cascading failure propagation to exhaust system resources or degrade service"
@@ -39533,13 +39533,13 @@
     "notes": "DLP applied to telemetry streams \ufffd sensitive content redacted before storage"
   },
   {
-    "hash": "fe027abbd0061339ee09d324f8031225eb4db80020c085c87982c150419031e3",
+    "hash": "5e2233070d66683504287f96362355cae0e2366cdee7d2ba15b191ea1f6ae400",
     "entry_id": "ASI02",
     "entry_name": "Tool Misuse and Exploitation",
     "source_list": "Agentic-Top10-2026",
     "severity": "Critical",
     "framework": "MITRE ATLAS",
-    "control_id": "AML.T0037",
+    "control_id": "AML.T0067",
     "control_name": "Output Manipulation",
     "tier": "Foundational",
     "scope": "Both",
