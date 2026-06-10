@@ -1,22 +1,6 @@
 [
   {
     "framework": "AIUC-1",
-    "control_id": "2026-Q1",
-    "control_name": "2026-05-26",
-    "entries": [
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "OWASP GenAI Data Security Initiative"
-      }
-    ]
-  },
-  {
-    "framework": "AIUC-1",
     "control_id": "A",
     "control_name": "PII protection and data leakage prevention",
     "entries": [
@@ -1131,22 +1115,6 @@
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
-      }
-    ]
-  },
-  {
-    "framework": "AIUC-1",
-    "control_id": "Date",
-    "control_name": "Version",
-    "entries": [
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Author"
       }
     ]
   },
@@ -27103,70 +27071,6 @@
   },
   {
     "framework": "OWASP NHI Top 10",
-    "control_id": "2026-03-27",
-    "control_name": "1.0.0",
-    "entries": [
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Initial release — full mapping DSGAI01–DSGAI21 to NHI Top 10"
-      }
-    ]
-  },
-  {
-    "framework": "OWASP NHI Top 10",
-    "control_id": "2026-05-29",
-    "control_name": "1.1.0",
-    "entries": [
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Corrected to canonical DSGAI 2026 taxonomy (entries had used a pre-release taxonomy); NHI mappings, mitigations, and cross-references rewritten to match"
-      }
-    ]
-  },
-  {
-    "framework": "OWASP NHI Top 10",
-    "control_id": "Date",
-    "control_name": "Version",
-    "entries": [
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Change"
-      }
-    ]
-  },
-  {
-    "framework": "OWASP NHI Top 10",
-    "control_id": "DSGAI entries most affected",
-    "control_name": "NHI Risk",
-    "entries": [
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": null
-      }
-    ]
-  },
-  {
-    "framework": "OWASP NHI Top 10",
     "control_id": "NHI-1",
     "control_name": "Improper Offboarding",
     "entries": [
@@ -27214,15 +27118,6 @@
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Lifecycle-managed identities for data/model assets"
-      },
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": null
       }
     ]
   },
@@ -27302,15 +27197,6 @@
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Attributable per-reviewer identity"
-      },
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": null
       }
     ]
   },
@@ -27426,15 +27312,6 @@
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Redact secrets before logging; scan sinks"
-      },
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "DevSecOps"
       }
     ]
   },
@@ -27575,15 +27452,6 @@
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce strong auth and network restriction"
-      },
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Platform"
       }
     ]
   },
@@ -27931,15 +27799,6 @@
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vault weight-store credentials; encrypt at rest"
-      },
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Platform"
       }
     ]
   },
@@ -28125,15 +27984,6 @@
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate credentials per environment"
-      },
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "DevSecOps"
       }
     ]
   },
@@ -28231,15 +28081,6 @@
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Distinct identity per tenant/session boundary"
-      },
-      {
-        "id": "DSGAI21",
-        "name": "Disinformation via Data Poisoning",
-        "source_list": "DSGAI-2026",
-        "severity": "High",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": null
       }
     ]
   },

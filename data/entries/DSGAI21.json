@@ -538,22 +538,6 @@
       "notes": "Hardening"
     },
     {
-      "framework": "AIUC-1",
-      "control_id": "Date",
-      "control_name": "Version",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Author"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "2026-Q1",
-      "control_name": "2026-05-26",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "OWASP GenAI Data Security Initiative"
-    },
-    {
       "framework": "OWASP NHI Top 10",
       "control_id": "NHI-3",
       "control_name": "Vulnerable Third-Party NHI",
@@ -576,112 +560,6 @@
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Ephemeral, job-scoped write credentials"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI entries most affected",
-      "control_name": "NHI Risk",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-1",
-      "control_name": "Improper Offboarding",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-2",
-      "control_name": "Secret Leakage",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "DevSecOps"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-3",
-      "control_name": "Third-Party NHI",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Security"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-4",
-      "control_name": "Insecure Authentication",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Platform"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-5",
-      "control_name": "Over-Privileged NHI",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-6",
-      "control_name": "Insecure Storage",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Platform"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-7",
-      "control_name": "Long-Lived",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-8",
-      "control_name": "Env Isolation",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "DevSecOps"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-9",
-      "control_name": "NHI Reuse",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "NHI-10",
-      "control_name": "Human Use",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Date",
-      "control_name": "Version",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Change"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "2026-03-27",
-      "control_name": "1.0.0",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Initial release — full mapping DSGAI01–DSGAI21 to NHI Top 10"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "2026-05-29",
-      "control_name": "1.1.0",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Corrected to canonical DSGAI 2026 taxonomy (entries had used a pre-release taxonomy); NHI mappings, mitigations, and cross-references rewritten to match"
     },
     {
       "framework": "NIST SP 800-218A",
@@ -852,28 +730,6 @@
       "ASI06",
       "ASI04",
       "ASI09"
-    ],
-    "dsgai_2026": [
-      "DSGAI01",
-      "DSGAI03",
-      "DSGAI07",
-      "DSGAI08",
-      "DSGAI02",
-      "DSGAI06",
-      "DSGAI12",
-      "DSGAI13",
-      "DSGAI04",
-      "DSGAI05",
-      "DSGAI11",
-      "DSGAI18",
-      "DSGAI17",
-      "DSGAI14",
-      "DSGAI15",
-      "DSGAI09",
-      "DSGAI16",
-      "DSGAI10",
-      "DSGAI19",
-      "DSGAI20"
     ]
   },
   "changelog": [

@@ -260,7 +260,11 @@ function extractSection(content, id) {
   for (let i = 0; i < lines.length; i++) {
     if (idRegex.test(lines[i])) {
       start = i + 1;
-    } else if (start !== -1 && /^###\s/.test(lines[i])) {
+    } else if (start !== -1 && /^#{2,3}\s/.test(lines[i])) {
+      // Stop at the next entry (### ) OR the next top-level section (## ), so the
+      // last entry on a page does not swallow trailing standalone sections
+      // (e.g. "## … maturity", "## See also", "## Changelog") whose tables would
+      // otherwise be misparsed as control mappings.
       return lines.slice(start, i).join('\n');
     }
   }
