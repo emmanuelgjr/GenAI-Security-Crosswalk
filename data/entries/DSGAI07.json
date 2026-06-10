@@ -236,16 +236,16 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk management",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Classify OT data by safety/operational impact"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT security program",
-      "control_name": "§8.2",
+      "control_id": "§8.2",
+      "control_name": "OT security program",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Lifecycle governance for OT data in GenAI"

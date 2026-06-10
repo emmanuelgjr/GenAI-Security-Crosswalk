@@ -259,24 +259,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Common ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "§5.3",
+      "control_name": "Common ICS vulnerabilities",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Credential exposure is a primary OT compromise vector"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Assess blast radius of each OT-reaching agent credential"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
+      "control_id": "§7.2",
+      "control_name": "Security controls",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Strong authentication and secret management at the OT boundary"

@@ -234,51 +234,19 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT configuration and topology data as espionage target",
-      "control_name": "Section 5.4 — Information disclosure",
+      "control_id": "§5.4",
+      "control_name": "Information disclosure",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "System prompts containing OT specifics treated as sensitive configuration data"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protecting sensitive OT data",
-      "control_name": "Section 7.3 — Data protection",
+      "control_id": "§7.3",
+      "control_name": "Data protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "System prompt encryption and access controls as data protection measures"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protection of Information at Rest",
-      "control_name": "SC-28",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "System prompts encrypted at rest — not stored in cleartext configuration files"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Access Enforcement",
-      "control_name": "AC-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "System prompt access restricted to authorised personnel — version controlled, access logged"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protection of Audit Information",
-      "control_name": "AU-9",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "System prompt access logs protected — unauthorised access attempts detectable"
     },
     {
       "framework": "NIST CSF 2.0",

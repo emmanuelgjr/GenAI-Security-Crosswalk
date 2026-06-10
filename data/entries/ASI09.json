@@ -250,24 +250,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "§5.3",
+      "control_name": "ICS vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inadequate human oversight cited as OT vulnerability category"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Quantify consequences of operator over-trust in agent OT recommendations"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT security programme",
-      "control_name": "§8.2",
+      "control_id": "§8.2",
+      "control_name": "OT security programme",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Governance policy for human-agent trust in OT systems"

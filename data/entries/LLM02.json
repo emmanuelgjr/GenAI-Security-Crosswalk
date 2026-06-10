@@ -274,59 +274,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Information disclosure and OT espionage",
-      "control_name": "Section 5.4 — Threats",
+      "control_id": "§5.4",
+      "control_name": "Threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLMs with historian access as a new vector for automated OT intelligence gathering"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess confidentiality of OT data",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "OT data classification applied to all data accessible by LLMs"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protecting OT data at rest and in transit",
-      "control_name": "Section 7.3 — Data protection",
+      "control_id": "§7.3",
+      "control_name": "Data protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Encryption and access controls on all OT data paths feeding LLM context"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protection of Information at Rest",
-      "control_name": "SC-28",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "OT data used in LLM context encrypted at rest — historian exports, embedding stores, prompt caches"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Access Enforcement",
-      "control_name": "AC-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM access to OT data enforced by classification — sensitive process and network data requires elevated access tier"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protection of Audit Information",
-      "control_name": "AU-9",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM access logs to OT data protected — audit trail of all OT data accessed by LLM"
     },
     {
       "framework": "NIST CSF 2.0",

@@ -287,59 +287,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Malicious code and logic attacks via IT/OT convergence",
-        "control_name": "Section 5.3 — Threats",
+        "control_id": "§5.3",
+        "control_name": "Threats",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prompt injection as a new logic attack vector through LLM at the IT/OT boundary"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Identify threats, vulnerabilities, and impacts for all OT systems",
-        "control_name": "Section 6.2 — Risk assessment",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prompt injection documented in OT risk assessment for each LLM integration"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Defense-in-depth network architecture with validated data flows",
-        "control_name": "Section 7.2 — Network segmentation",
+        "control_id": "§7.2",
+        "control_name": "Network segmentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Input validation layer at the DMZ/control zone boundary — prompt injection filtered before reaching LLM"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Information Input Validation",
-        "control_name": "SI-10",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Validate all inputs to LLMs connected to OT systems — reject inputs containing injection indicators"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Malicious Code Protection",
-        "control_name": "SI-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Treat prompt injection as a malicious code analog — detection and response controls required"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Access Enforcement",
-        "control_name": "AC-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM access to OT systems enforced by policy — injection cannot escalate LLM access beyond defined scope"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -1494,59 +1462,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Information disclosure and OT espionage",
-        "control_name": "Section 5.4 — Threats",
+        "control_id": "§5.4",
+        "control_name": "Threats",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLMs with historian access as a new vector for automated OT intelligence gathering"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Assess confidentiality of OT data",
-        "control_name": "Section 6.2 — Risk assessment",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "OT data classification applied to all data accessible by LLMs"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Protecting OT data at rest and in transit",
-        "control_name": "Section 7.3 — Data protection",
+        "control_id": "§7.3",
+        "control_name": "Data protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Encryption and access controls on all OT data paths feeding LLM context"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Protection of Information at Rest",
-        "control_name": "SC-28",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "OT data used in LLM context encrypted at rest — historian exports, embedding stores, prompt caches"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Access Enforcement",
-        "control_name": "AC-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM access to OT data enforced by classification — sensitive process and network data requires elevated access tier"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Protection of Audit Information",
-        "control_name": "AU-9",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM access logs to OT data protected — audit trail of all OT data accessed by LLM"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -2524,59 +2460,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Third-party software compromise as OT attack vector",
-        "control_name": "Section 5.5 — Supply chain threats",
+        "control_id": "§5.5",
+        "control_name": "Supply chain threats",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM model weights and plugins as supply chain risk components"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risk treatment",
-        "control_name": "Section 6.3 — Risk response",
+        "control_id": "§6.3",
+        "control_name": "Risk response",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "ML SBOM and component integrity verification as supply chain controls"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT supply chain risk management programme",
-        "control_name": "Section 8.4 — Supply chain programme",
+        "control_id": "§8.4",
+        "control_name": "Supply chain programme",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM vendors subject to same supply chain security requirements as OT software vendors"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply Chain Protection",
-        "control_name": "SA-12",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Security requirements applied to all LLM component vendors — provenance, integrity, vulnerability disclosure"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply Chain Controls and Plans",
-        "control_name": "SR-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Documented supply chain security plan covering LLM components in OT deployment"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supplier Assessments and Reviews",
-        "control_name": "SR-6",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Periodic security assessment of LLM vendors with OT-deployed components"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -3658,59 +3562,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Attacks targeting OT data and system integrity",
-        "control_name": "Section 5.3 — Integrity threats",
+        "control_id": "§5.3",
+        "control_name": "Integrity threats",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Model poisoning as an integrity attack on the LLM advisory system"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Assess integrity risks for all OT-connected systems",
-        "control_name": "Section 6.2 — Risk assessment",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Model poisoning scenarios included in OT risk assessment for each LLM"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Layered controls to maintain system integrity",
-        "control_name": "Section 7.2 — Defense-in-depth",
+        "control_id": "§7.2",
+        "control_name": "Defense-in-depth",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Independent validation of LLM outputs against rule-based reference systems"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Software, Firmware, and Information Integrity",
-        "control_name": "SI-7",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Model integrity verification before each OT deployment — hash-based integrity check"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Information Input Validation",
-        "control_name": "SI-10",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Training data validation — adversarial content detected and rejected before training"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Audit Record Generation",
-        "control_name": "AU-12",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Full audit trail of LLM outputs — poisoning indicators detectable through output analysis"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -4551,51 +4423,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Code injection and execution via data paths",
-        "control_name": "Section 5.3 — Threats",
+        "control_id": "§5.3",
+        "control_name": "Threats",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM output injection as a new instantiation of this threat at the IT/OT boundary"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Validated data flows across zone boundaries",
-        "control_name": "Section 7.2 — Network segmentation",
+        "control_id": "§7.2",
+        "control_name": "Network segmentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM output validated at DMZ boundary before entering control zone display or data systems"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Information Input Validation",
-        "control_name": "SI-10",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM outputs validated before passing to OT systems — schema validation, allowlist enforcement"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Malicious Code Protection",
-        "control_name": "SI-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM output scanning for malicious content before OT system ingestion"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Least Functionality",
-        "control_name": "CM-7",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "OT interfaces that consume LLM output configured to accept only defined, safe input formats"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -5717,59 +5557,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Unauthorised command execution via IT/OT interfaces",
-        "control_name": "Section 5.3 — Threats",
+        "control_id": "§5.3",
+        "control_name": "Threats",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM autonomous actions as a new path for unauthorised command execution"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Assess impact of unauthorised access and control",
-        "control_name": "Section 6.2 — Risk assessment",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM excessive agency assessed as an unauthorised access risk for each OT interface"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Minimal necessary connectivity at IT/OT boundary",
-        "control_name": "Section 7.1 — Architecture",
+        "control_id": "§7.1",
+        "control_name": "Architecture",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM access to OT systems restricted to minimum required — read-only by default"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Least Privilege",
-        "control_name": "AC-6",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM granted minimum necessary OT access — read-only to historian, no write access without documented justification"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Access Enforcement",
-        "control_name": "AC-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM access to OT systems enforced by policy — scope cannot be exceeded regardless of model instruction"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Audit Record Generation",
-        "control_name": "AU-12",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "All LLM actions in OT context logged — full accountability for every OT data access and any recommended action"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -6666,51 +6474,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT configuration and topology data as espionage target",
-        "control_name": "Section 5.4 — Information disclosure",
+        "control_id": "§5.4",
+        "control_name": "Information disclosure",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "System prompts containing OT specifics treated as sensitive configuration data"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Protecting sensitive OT data",
-        "control_name": "Section 7.3 — Data protection",
+        "control_id": "§7.3",
+        "control_name": "Data protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "System prompt encryption and access controls as data protection measures"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Protection of Information at Rest",
-        "control_name": "SC-28",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "System prompts encrypted at rest — not stored in cleartext configuration files"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Access Enforcement",
-        "control_name": "AC-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "System prompt access restricted to authorised personnel — version controlled, access logged"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Protection of Audit Information",
-        "control_name": "AU-9",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "System prompt access logs protected — unauthorised access attempts detectable"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -7407,51 +7183,19 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Attacks targeting the integrity of OT decision-support data",
-        "control_name": "Section 5.3 — Integrity threats",
+        "control_id": "§5.3",
+        "control_name": "Integrity threats",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vector store poisoning as an integrity attack on LLM knowledge sources"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Assess integrity risks for all OT-connected systems",
-        "control_name": "Section 6.2 — Risk assessment",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vector store integrity included in OT LLM risk assessment"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Software, Firmware, and Information Integrity",
-        "control_name": "SI-7",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Vector store integrity monitoring — alert on anomalous content or unexpected modifications"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Protection of Information at Rest",
-        "control_name": "SC-28",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "OT vector store content encrypted at rest"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Access Enforcement",
-        "control_name": "AC-3",
-        "tier": "Hardening",
-        "scope": "Both",
-        "notes": "Access controls on OT vector stores — RBAC enforced at collection level"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -8212,59 +7956,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Attacks degrading the reliability of OT decision-support",
-        "control_name": "Section 5.3 — Integrity threats",
+        "control_id": "§5.3",
+        "control_name": "Integrity threats",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM misinformation as an integrity attack on operator decision-making"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Assess reliability of OT advisory systems",
-        "control_name": "Section 6.2 — Risk assessment",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM accuracy limitations assessed in OT risk assessment per use case"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT security awareness and training",
-        "control_name": "Section 8.2 — Training",
+        "control_id": "§8.2",
+        "control_name": "Training",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Operator training on LLM limitations and verification requirements"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Malicious Code Protection",
-        "control_name": "SI-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Analogy: LLM misinformation detection controls as an integrity assurance layer on advisory outputs"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Access Enforcement",
-        "control_name": "AC-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM advisory outputs restricted to defined advisory roles — never authoritative source for safety-critical procedures"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Role-Based Training",
-        "control_name": "AT-3",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Operator training on LLM advisory limitations — mandatory for all operators using LLM decision-support tools"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -8982,59 +8694,27 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Denial of service attacks targeting OT availability",
-        "control_name": "Section 5.6 — DoS threats",
+        "control_id": "§5.6",
+        "control_name": "DoS threats",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM-induced resource exhaustion as a DoS vector affecting shared OT network infrastructure"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Assess availability risks for OT systems",
-        "control_name": "Section 6.2 — Risk assessment",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM resource consumption impact assessed on shared OT network and compute infrastructure"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Network architecture preventing DoS propagation",
-        "control_name": "Section 7.2 — Network segmentation",
+        "control_id": "§7.2",
+        "control_name": "Network segmentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM infrastructure isolated from OT control network — bandwidth caps at DMZ boundary"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Title",
-        "control_name": "Control",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "Application"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Denial of Service Protection",
-        "control_name": "SC-5",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM infrastructure protected against resource exhaustion attacks affecting OT availability"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Fail-Safe Procedures",
-        "control_name": "SI-17",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM service degradation has defined fail-safe behaviour — process control continues without LLM"
-      },
-      {
-        "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Audit Record Generation",
-        "control_name": "AU-12",
-        "tier": "Foundational",
-        "scope": "Both",
-        "notes": "LLM resource consumption logged — patterns indicating exhaustion attacks detectable"
       },
       {
         "framework": "NIST CSF 2.0",
@@ -9763,24 +9443,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Vulnerabilities common to IT/OT",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Vulnerabilities common to IT/OT",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Injection via historian and SCADA data feeds"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess injection risk at every agent data ingestion point"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls for ICS",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls for ICS",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Input validation mandatory at OT data boundary"
@@ -10948,32 +10628,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool misuse amplified by autonomous agent capabilities"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risks",
-        "control_name": "§5.5",
+        "control_id": "§5.5",
+        "control_name": "Supply chain risks",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Third-party OT tool components may enable misuse"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess agent tool misuse risk in OT risk register"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Secure architecture",
-        "control_name": "§7.1",
+        "control_id": "§7.1",
+        "control_name": "Secure architecture",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool access controls enforced at zone boundary"
@@ -12184,24 +11864,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Credential abuse enabling lateral movement between OT zones"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess agent credential scope as OT risk"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Secure architecture",
-        "control_name": "§7.1",
+        "control_id": "§7.1",
+        "control_name": "Secure architecture",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Least privilege enforced at zone boundary for all agent identities"
@@ -13236,24 +12916,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risks",
-        "control_name": "§5.5",
+        "control_id": "§5.5",
+        "control_name": "Supply chain risks",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Expanded to include agentic AI components"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risk management",
-        "control_name": "§6.3",
+        "control_id": "§6.3",
+        "control_name": "Supply chain risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "SBOM and vendor assessment for agentic stack"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Third-party management",
-        "control_name": "§8.4",
+        "control_id": "§8.4",
+        "control_name": "Third-party management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Formal vendor programme for OT agent components"
@@ -14353,24 +14033,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "ICS vulnerabilities",
         "tier": "Advanced",
         "scope": "Both",
         "notes": "Code execution bypass is a critical OT threat vector"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Advanced",
         "scope": "Both",
         "notes": "Code execution capability in OT agents must be in risk register"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Secure architecture",
-        "control_name": "§7.1",
+        "control_id": "§7.1",
+        "control_name": "Secure architecture",
         "tier": "Advanced",
         "scope": "Both",
         "notes": "Mandatory: code execution sandbox independent of OT control plane"
@@ -15529,16 +15209,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "ICS vulnerabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory corruption and state manipulation"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess agent memory stores as OT data integrity risk"
@@ -16449,24 +16129,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "ICS vulnerabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Lateral movement between control systems via A2A channels"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess inter-agent communication as OT risk"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Authenticate and encrypt all automated system-to-system communications"
@@ -17315,24 +16995,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Availability risks",
-        "control_name": "§5.6",
+        "control_id": "§5.6",
+        "control_name": "Availability risks",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Cascading failure across OT components"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Cascade failure scenarios in OT risk register"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Circuit breakers between OT automation layers"
@@ -18140,24 +17820,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "ICS vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Inadequate human oversight cited as OT vulnerability category"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Quantify consequences of operator over-trust in agent OT recommendations"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT security programme",
-        "control_name": "§8.2",
+        "control_id": "§8.2",
+        "control_name": "OT security programme",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Governance policy for human-agent trust in OT systems"
@@ -19099,24 +18779,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "ICS vulnerabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Rogue automation is the highest-severity OT threat category"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Rogue agent scenarios must be in OT risk register"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Behavioural monitoring and containment for all OT automation"
@@ -20001,24 +19681,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security & remote access",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security & remote access",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "OT data at rest/in transit to GenAI must be protected"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess disclosure risk for each OT data class fed to GenAI"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Read-only, scoped OT data access for inference/RAG"
@@ -20829,24 +20509,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Credential exposure is a primary OT compromise vector"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess blast radius of each OT-reaching agent credential"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Strong authentication and secret management at the OT boundary"
@@ -21595,24 +21275,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain / external connectivity",
-        "control_name": "§5.5",
+        "control_id": "§5.5",
+        "control_name": "Supply chain / external connectivity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Unsanctioned external AI is an uncontrolled data egress path"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess data-egress risk to external AI services"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.1",
+        "control_id": "§7.1",
+        "control_name": "Security controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Boundary controls block data flow to non-approved services"
@@ -22313,24 +21993,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Poisoned OT data feeds are a documented attack vector"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess integrity risk at every OT data ingestion point"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Integrity verification mandatory at the OT data boundary"
@@ -23055,24 +22735,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Missing validation at OT/GenAI boundary"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess validation gaps per ingestion path"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce validation before persistence/use"
@@ -23752,24 +23432,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain / connectivity",
-        "control_name": "§5.5",
+        "control_id": "§5.5",
+        "control_name": "Supply chain / connectivity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool/vendor integrations cross the OT trust boundary"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risk",
-        "control_name": "§6.3",
+        "control_id": "§6.3",
+        "control_name": "Supply chain risk",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess each integration's data exchange"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validate and minimise cross-boundary data"
@@ -24491,16 +24171,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk management",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Classify OT data by safety/operational impact"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT security program",
-        "control_name": "§8.2",
+        "control_id": "§8.2",
+        "control_name": "OT security program",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Lifecycle governance for OT data in GenAI"
@@ -25160,16 +24840,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk management",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Map OT data processing to applicable regulation"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "OT security program",
-        "control_name": "§8.2",
+        "control_id": "§8.2",
+        "control_name": "OT security program",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Evidence accountable, compliant processing"
@@ -25918,24 +25598,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Protect OT data across all media types"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess per-modality leakage paths"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Extract/redact sensitive content per modality"
@@ -26567,16 +26247,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Protect source OT data used for synthesis"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess re-identification risk of synthetic OT data"
@@ -27208,24 +26888,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Shared-resource bleed across OT tenants"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess multi-site/tenant isolation"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Enforce session/site isolation"
@@ -27934,24 +27614,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Injectable query interfaces to OT data"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess generated-query reach"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Parameterise and scope generated queries"
@@ -28655,24 +28335,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Protect the OT RAG/embedding tier"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.1",
+        "control_id": "§7.1",
+        "control_name": "Security controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Harden the vector store deployment"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scope retrieval to authorised OT data"
@@ -29376,24 +29056,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Protect telemetry containing OT data"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess what telemetry captures"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Redact OT data before logging"
@@ -30067,24 +29747,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Aggregated OT data concentrates risk"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess context-assembly data need"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Minimise and authorise context data"
@@ -30725,24 +30405,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Common ICS vulnerabilities",
-        "control_name": "§5.3",
+        "control_id": "§5.3",
+        "control_name": "Common ICS vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Workstation assistant overreach into OT data"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess endpoint assistant scope"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.1",
+        "control_id": "§7.1",
+        "control_name": "Security controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Constrain endpoint access"
@@ -31408,24 +31088,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Resilience & recovery",
-        "control_name": "§5.6",
+        "control_id": "§5.6",
+        "control_name": "Resilience & recovery",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "OT availability depends on recoverable data/model assets"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess availability impact of GenAI data loss"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Security controls",
-        "control_name": "§7.2",
+        "control_id": "§7.2",
+        "control_name": "Security controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Backup, recovery, and fail-safe design"
@@ -32077,24 +31757,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Protect against inference-based OT data recovery"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess inference exposure"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Limit signals enabling inference"
@@ -32722,24 +32402,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Protect OT data shown to reviewers"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Assess reviewer exposure"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Minimise reviewer-facing OT data"
@@ -33406,24 +33086,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data security",
-        "control_name": "§5.4",
+        "control_id": "§5.4",
+        "control_name": "Data security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Protect model artefacts as OT IP"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Risk assessment",
-        "control_name": "§6.2",
+        "control_id": "§6.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Assess extraction exposure"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Data flow controls",
-        "control_name": "§7.3",
+        "control_id": "§7.3",
+        "control_name": "Data flow controls",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Constrain inference access"
@@ -34134,24 +33814,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain / connectivity",
-        "control_name": "§5.5",
+        "control_id": "§5.5",
+        "control_name": "Supply chain / connectivity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Tainted external OT data sources"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain risk",
-        "control_name": "§6.3",
+        "control_id": "§6.3",
+        "control_name": "Supply chain risk",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vet OT data-source provenance"
       },
       {
         "framework": "NIST SP 800-82 Rev 3",
-        "control_id": "Supply chain program",
-        "control_name": "§8.4",
+        "control_id": "§8.4",
+        "control_name": "Supply chain program",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Provenance across the OT data supply chain"

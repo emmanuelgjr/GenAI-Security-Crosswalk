@@ -254,24 +254,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain / connectivity",
-      "control_name": "§5.5",
+      "control_id": "§5.5",
+      "control_name": "Supply chain / connectivity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Tainted external OT data sources"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk",
-      "control_name": "§6.3",
+      "control_id": "§6.3",
+      "control_name": "Supply chain risk",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vet OT data-source provenance"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain program",
-      "control_name": "§8.4",
+      "control_id": "§8.4",
+      "control_name": "Supply chain program",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Provenance across the OT data supply chain"

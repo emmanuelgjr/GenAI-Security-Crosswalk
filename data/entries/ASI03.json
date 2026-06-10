@@ -274,24 +274,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Common ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "§5.3",
+      "control_name": "Common ICS vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Credential abuse enabling lateral movement between OT zones"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess agent credential scope as OT risk"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Secure architecture",
-      "control_name": "§7.1",
+      "control_id": "§7.1",
+      "control_name": "Secure architecture",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least privilege enforced at zone boundary for all agent identities"

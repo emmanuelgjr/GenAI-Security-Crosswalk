@@ -229,16 +229,16 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk management",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Map OT data processing to applicable regulation"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT security program",
-      "control_name": "§8.2",
+      "control_id": "§8.2",
+      "control_name": "OT security program",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Evidence accountable, compliant processing"

@@ -221,24 +221,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data security",
-      "control_name": "§5.4",
+      "control_id": "§5.4",
+      "control_name": "Data security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Protect OT data shown to reviewers"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess reviewer exposure"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data flow controls",
-      "control_name": "§7.3",
+      "control_id": "§7.3",
+      "control_name": "Data flow controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Minimise reviewer-facing OT data"

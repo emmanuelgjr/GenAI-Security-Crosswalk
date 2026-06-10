@@ -207,16 +207,16 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data security",
-      "control_name": "§5.4",
+      "control_id": "§5.4",
+      "control_name": "Data security",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Protect source OT data used for synthesis"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Assess re-identification risk of synthetic OT data"

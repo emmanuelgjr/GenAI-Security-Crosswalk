@@ -274,24 +274,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Vulnerabilities common to IT/OT",
-      "control_name": "§5.3",
+      "control_id": "§5.3",
+      "control_name": "Vulnerabilities common to IT/OT",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Injection via historian and SCADA data feeds"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess injection risk at every agent data ingestion point"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls for ICS",
-      "control_name": "§7.2",
+      "control_id": "§7.2",
+      "control_name": "Security controls for ICS",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Input validation mandatory at OT data boundary"

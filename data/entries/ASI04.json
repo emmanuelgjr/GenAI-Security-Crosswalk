@@ -258,24 +258,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risks",
-      "control_name": "§5.5",
+      "control_id": "§5.5",
+      "control_name": "Supply chain risks",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Expanded to include agentic AI components"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk management",
-      "control_name": "§6.3",
+      "control_id": "§6.3",
+      "control_name": "Supply chain risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "SBOM and vendor assessment for agentic stack"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Third-party management",
-      "control_name": "§8.4",
+      "control_id": "§8.4",
+      "control_name": "Third-party management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Formal vendor programme for OT agent components"

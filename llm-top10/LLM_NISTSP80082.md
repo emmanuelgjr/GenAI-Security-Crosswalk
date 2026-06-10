@@ -139,11 +139,11 @@ instantiation of this documented threat pattern.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.3 — Threats | Malicious code and logic attacks via IT/OT convergence | Prompt injection as a new logic attack vector through LLM at the IT/OT boundary |
-| Section 6.2 — Risk assessment | Identify threats, vulnerabilities, and impacts for all OT systems | Prompt injection documented in OT risk assessment for each LLM integration |
-| Section 7.2 — Network segmentation | Defense-in-depth network architecture with validated data flows | Input validation layer at the DMZ/control zone boundary — prompt injection filtered before reaching LLM |
+| §5.3 — Threats | Malicious code and logic attacks via IT/OT convergence | Prompt injection as a new logic attack vector through LLM at the IT/OT boundary |
+| §6.2 — Risk assessment | Identify threats, vulnerabilities, and impacts for all OT systems | Prompt injection documented in OT risk assessment for each LLM integration |
+| §7.2 — Network segmentation | Defense-in-depth network architecture with validated data flows | Input validation layer at the DMZ/control zone boundary — prompt injection filtered before reaching LLM |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -219,11 +219,11 @@ represent a new path for automated operational intelligence gathering.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.4 — Threats | Information disclosure and OT espionage | LLMs with historian access as a new vector for automated OT intelligence gathering |
-| Section 6.2 — Risk assessment | Assess confidentiality of OT data | OT data classification applied to all data accessible by LLMs |
-| Section 7.3 — Data protection | Protecting OT data at rest and in transit | Encryption and access controls on all OT data paths feeding LLM context |
+| §5.4 — Threats | Information disclosure and OT espionage | LLMs with historian access as a new vector for automated OT intelligence gathering |
+| §6.2 — Risk assessment | Assess confidentiality of OT data | OT data classification applied to all data accessible by LLMs |
+| §7.3 — Data protection | Protecting OT data at rest and in transit | Encryption and access controls on all OT data paths feeding LLM context |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -299,11 +299,11 @@ in scope as OT software components.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.5 — Supply chain threats | Third-party software compromise as OT attack vector | LLM model weights and plugins as supply chain risk components |
-| Section 6.3 — Risk response | Supply chain risk treatment | ML SBOM and component integrity verification as supply chain controls |
-| Section 8.4 — Supply chain programme | OT supply chain risk management programme | LLM vendors subject to same supply chain security requirements as OT software vendors |
+| §5.5 — Supply chain threats | Third-party software compromise as OT attack vector | LLM model weights and plugins as supply chain risk components |
+| §6.3 — Risk response | Supply chain risk treatment | ML SBOM and component integrity verification as supply chain controls |
+| §8.4 — Supply chain programme | OT supply chain risk management programme | LLM vendors subject to same supply chain security requirements as OT software vendors |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -379,11 +379,11 @@ model's training data or weights have been compromised.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.3 — Integrity threats | Attacks targeting OT data and system integrity | Model poisoning as an integrity attack on the LLM advisory system |
-| Section 6.2 — Risk assessment | Assess integrity risks for all OT-connected systems | Model poisoning scenarios included in OT risk assessment for each LLM |
-| Section 7.2 — Defense-in-depth | Layered controls to maintain system integrity | Independent validation of LLM outputs against rule-based reference systems |
+| §5.3 — Integrity threats | Attacks targeting OT data and system integrity | Model poisoning as an integrity attack on the LLM advisory system |
+| §6.2 — Risk assessment | Assess integrity risks for all OT-connected systems | Model poisoning scenarios included in OT risk assessment for each LLM |
+| §7.2 — Defense-in-depth | Layered controls to maintain system integrity | Independent validation of LLM outputs against rule-based reference systems |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -454,10 +454,10 @@ LLM output is no exception.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.3 — Threats | Code injection and execution via data paths | LLM output injection as a new instantiation of this threat at the IT/OT boundary |
-| Section 7.2 — Network segmentation | Validated data flows across zone boundaries | LLM output validated at DMZ boundary before entering control zone display or data systems |
+| §5.3 — Threats | Code injection and execution via data paths | LLM output injection as a new instantiation of this threat at the IT/OT boundary |
+| §7.2 — Network segmentation | Validated data flows across zone boundaries | LLM output validated at DMZ boundary before entering control zone display or data systems |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -523,11 +523,11 @@ must meet this same standard of necessity.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.3 — Threats | Unauthorised command execution via IT/OT interfaces | LLM autonomous actions as a new path for unauthorised command execution |
-| Section 6.2 — Risk assessment | Assess impact of unauthorised access and control | LLM excessive agency assessed as an unauthorised access risk for each OT interface |
-| Section 7.1 — Architecture | Minimal necessary connectivity at IT/OT boundary | LLM access to OT systems restricted to minimum required — read-only by default |
+| §5.3 — Threats | Unauthorised command execution via IT/OT interfaces | LLM autonomous actions as a new path for unauthorised command execution |
+| §6.2 — Risk assessment | Assess impact of unauthorised access and control | LLM excessive agency assessed as an unauthorised access risk for each OT interface |
+| §7.1 — Architecture | Minimal necessary connectivity at IT/OT boundary | LLM access to OT systems restricted to minimum required — read-only by default |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -599,10 +599,10 @@ system prompts containing this information are in scope.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.4 — Information disclosure | OT configuration and topology data as espionage target | System prompts containing OT specifics treated as sensitive configuration data |
-| Section 7.3 — Data protection | Protecting sensitive OT data | System prompt encryption and access controls as data protection measures |
+| §5.4 — Information disclosure | OT configuration and topology data as espionage target | System prompts containing OT specifics treated as sensitive configuration data |
+| §7.3 — Data protection | Protecting sensitive OT data | System prompt encryption and access controls as data protection measures |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -663,10 +663,10 @@ technical guidance to operators.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.3 — Integrity threats | Attacks targeting the integrity of OT decision-support data | Vector store poisoning as an integrity attack on LLM knowledge sources |
-| Section 6.2 — Risk assessment | Assess integrity risks for all OT-connected systems | Vector store integrity included in OT LLM risk assessment |
+| §5.3 — Integrity threats | Attacks targeting the integrity of OT decision-support data | Vector store poisoning as an integrity attack on LLM knowledge sources |
+| §6.2 — Risk assessment | Assess integrity risks for all OT-connected systems | Vector store integrity included in OT LLM risk assessment |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -736,11 +736,11 @@ optional guidance.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.3 — Integrity threats | Attacks degrading the reliability of OT decision-support | LLM misinformation as an integrity attack on operator decision-making |
-| Section 6.2 — Risk assessment | Assess reliability of OT advisory systems | LLM accuracy limitations assessed in OT risk assessment per use case |
-| Section 8.2 — Training | OT security awareness and training | Operator training on LLM limitations and verification requirements |
+| §5.3 — Integrity threats | Attacks degrading the reliability of OT decision-support | LLM misinformation as an integrity attack on operator decision-making |
+| §6.2 — Risk assessment | Assess reliability of OT advisory systems | LLM accuracy limitations assessed in OT risk assessment per use case |
+| §8.2 — Training | OT security awareness and training | Operator training on LLM limitations and verification requirements |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|
@@ -818,11 +818,11 @@ to prevent this threat from manifesting through the IT/OT boundary.
 
 | Section | Guidance | OT application |
 |---|---|---|
-| Section 5.6 — DoS threats | Denial of service attacks targeting OT availability | LLM-induced resource exhaustion as a DoS vector affecting shared OT network infrastructure |
-| Section 6.2 — Risk assessment | Assess availability risks for OT systems | LLM resource consumption impact assessed on shared OT network and compute infrastructure |
-| Section 7.2 — Network segmentation | Network architecture preventing DoS propagation | LLM infrastructure isolated from OT control network — bandwidth caps at DMZ boundary |
+| §5.6 — DoS threats | Denial of service attacks targeting OT availability | LLM-induced resource exhaustion as a DoS vector affecting shared OT network infrastructure |
+| §6.2 — Risk assessment | Assess availability risks for OT systems | LLM resource consumption impact assessed on shared OT network and compute infrastructure |
+| §7.2 — Network segmentation | Network architecture preventing DoS propagation | LLM infrastructure isolated from OT control network — bandwidth caps at DMZ boundary |
 
-**SP 800-53 Rev 5 controls:**
+#### SP 800-53 Rev 5 controls
 
 | Control | Title | Application |
 |---|---|---|

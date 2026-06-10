@@ -226,59 +226,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Attacks degrading the reliability of OT decision-support",
-      "control_name": "Section 5.3 — Integrity threats",
+      "control_id": "§5.3",
+      "control_name": "Integrity threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM misinformation as an integrity attack on operator decision-making"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess reliability of OT advisory systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM accuracy limitations assessed in OT risk assessment per use case"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT security awareness and training",
-      "control_name": "Section 8.2 — Training",
+      "control_id": "§8.2",
+      "control_name": "Training",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Operator training on LLM limitations and verification requirements"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Malicious Code Protection",
-      "control_name": "SI-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Analogy: LLM misinformation detection controls as an integrity assurance layer on advisory outputs"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Access Enforcement",
-      "control_name": "AC-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM advisory outputs restricted to defined advisory roles — never authoritative source for safety-critical procedures"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Role-Based Training",
-      "control_name": "AT-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Operator training on LLM advisory limitations — mandatory for all operators using LLM decision-support tools"
     },
     {
       "framework": "NIST CSF 2.0",

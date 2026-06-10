@@ -222,24 +222,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Resilience & recovery",
-      "control_name": "§5.6",
+      "control_id": "§5.6",
+      "control_name": "Resilience & recovery",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "OT availability depends on recoverable data/model assets"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess availability impact of GenAI data loss"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
+      "control_id": "§7.2",
+      "control_name": "Security controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Backup, recovery, and fail-safe design"

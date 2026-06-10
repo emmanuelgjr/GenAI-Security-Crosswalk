@@ -242,51 +242,19 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Attacks targeting the integrity of OT decision-support data",
-      "control_name": "Section 5.3 — Integrity threats",
+      "control_id": "§5.3",
+      "control_name": "Integrity threats",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vector store poisoning as an integrity attack on LLM knowledge sources"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess integrity risks for all OT-connected systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vector store integrity included in OT LLM risk assessment"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Software, Firmware, and Information Integrity",
-      "control_name": "SI-7",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Vector store integrity monitoring — alert on anomalous content or unexpected modifications"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protection of Information at Rest",
-      "control_name": "SC-28",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "OT vector store content encrypted at rest"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Access Enforcement",
-      "control_name": "AC-3",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Access controls on OT vector stores — RBAC enforced at collection level"
     },
     {
       "framework": "NIST CSF 2.0",

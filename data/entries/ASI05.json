@@ -258,24 +258,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "§5.3",
+      "control_name": "ICS vulnerabilities",
       "tier": "Advanced",
       "scope": "Both",
       "notes": "Code execution bypass is a critical OT threat vector"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Advanced",
       "scope": "Both",
       "notes": "Code execution capability in OT agents must be in risk register"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Secure architecture",
-      "control_name": "§7.1",
+      "control_id": "§7.1",
+      "control_name": "Secure architecture",
       "tier": "Advanced",
       "scope": "Both",
       "notes": "Mandatory: code execution sandbox independent of OT control plane"

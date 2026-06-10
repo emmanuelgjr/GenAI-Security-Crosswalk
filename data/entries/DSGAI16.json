@@ -229,24 +229,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Common ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "§5.3",
+      "control_name": "Common ICS vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Workstation assistant overreach into OT data"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess endpoint assistant scope"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.1",
+      "control_id": "§7.1",
+      "control_name": "Security controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Constrain endpoint access"

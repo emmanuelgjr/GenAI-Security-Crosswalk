@@ -234,59 +234,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Denial of service attacks targeting OT availability",
-      "control_name": "Section 5.6 — DoS threats",
+      "control_id": "§5.6",
+      "control_name": "DoS threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM-induced resource exhaustion as a DoS vector affecting shared OT network infrastructure"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess availability risks for OT systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM resource consumption impact assessed on shared OT network and compute infrastructure"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network architecture preventing DoS propagation",
-      "control_name": "Section 7.2 — Network segmentation",
+      "control_id": "§7.2",
+      "control_name": "Network segmentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM infrastructure isolated from OT control network — bandwidth caps at DMZ boundary"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Denial of Service Protection",
-      "control_name": "SC-5",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM infrastructure protected against resource exhaustion attacks affecting OT availability"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Fail-Safe Procedures",
-      "control_name": "SI-17",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM service degradation has defined fail-safe behaviour — process control continues without LLM"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Audit Record Generation",
-      "control_name": "AU-12",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM resource consumption logged — patterns indicating exhaustion attacks detectable"
     },
     {
       "framework": "NIST CSF 2.0",

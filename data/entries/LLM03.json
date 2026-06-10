@@ -242,59 +242,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Third-party software compromise as OT attack vector",
-      "control_name": "Section 5.5 — Supply chain threats",
+      "control_id": "§5.5",
+      "control_name": "Supply chain threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM model weights and plugins as supply chain risk components"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk treatment",
-      "control_name": "Section 6.3 — Risk response",
+      "control_id": "§6.3",
+      "control_name": "Risk response",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "ML SBOM and component integrity verification as supply chain controls"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "OT supply chain risk management programme",
-      "control_name": "Section 8.4 — Supply chain programme",
+      "control_id": "§8.4",
+      "control_name": "Supply chain programme",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM vendors subject to same supply chain security requirements as OT software vendors"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply Chain Protection",
-      "control_name": "SA-12",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Security requirements applied to all LLM component vendors — provenance, integrity, vulnerability disclosure"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply Chain Controls and Plans",
-      "control_name": "SR-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Documented supply chain security plan covering LLM components in OT deployment"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supplier Assessments and Reviews",
-      "control_name": "SR-6",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Periodic security assessment of LLM vendors with OT-deployed components"
     },
     {
       "framework": "NIST CSF 2.0",

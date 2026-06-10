@@ -242,51 +242,19 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Code injection and execution via data paths",
-      "control_name": "Section 5.3 — Threats",
+      "control_id": "§5.3",
+      "control_name": "Threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM output injection as a new instantiation of this threat at the IT/OT boundary"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Validated data flows across zone boundaries",
-      "control_name": "Section 7.2 — Network segmentation",
+      "control_id": "§7.2",
+      "control_name": "Network segmentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM output validated at DMZ boundary before entering control zone display or data systems"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Information Input Validation",
-      "control_name": "SI-10",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM outputs validated before passing to OT systems — schema validation, allowlist enforcement"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Malicious Code Protection",
-      "control_name": "SI-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM output scanning for malicious content before OT system ingestion"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Least Functionality",
-      "control_name": "CM-7",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "OT interfaces that consume LLM output configured to accept only defined, safe input formats"
     },
     {
       "framework": "NIST CSF 2.0",

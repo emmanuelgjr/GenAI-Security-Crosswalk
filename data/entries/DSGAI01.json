@@ -266,24 +266,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data security & remote access",
-      "control_name": "§5.4",
+      "control_id": "§5.4",
+      "control_name": "Data security & remote access",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "OT data at rest/in transit to GenAI must be protected"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess disclosure risk for each OT data class fed to GenAI"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data flow controls",
-      "control_name": "§7.3",
+      "control_id": "§7.3",
+      "control_name": "Data flow controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Read-only, scoped OT data access for inference/RAG"

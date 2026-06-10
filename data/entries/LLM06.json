@@ -242,59 +242,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Unauthorised command execution via IT/OT interfaces",
-      "control_name": "Section 5.3 — Threats",
+      "control_id": "§5.3",
+      "control_name": "Threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM autonomous actions as a new path for unauthorised command execution"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess impact of unauthorised access and control",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM excessive agency assessed as an unauthorised access risk for each OT interface"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Minimal necessary connectivity at IT/OT boundary",
-      "control_name": "Section 7.1 — Architecture",
+      "control_id": "§7.1",
+      "control_name": "Architecture",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM access to OT systems restricted to minimum required — read-only by default"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Least Privilege",
-      "control_name": "AC-6",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM granted minimum necessary OT access — read-only to historian, no write access without documented justification"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Access Enforcement",
-      "control_name": "AC-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM access to OT systems enforced by policy — scope cannot be exceeded regardless of model instruction"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Audit Record Generation",
-      "control_name": "AU-12",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "All LLM actions in OT context logged — full accountability for every OT data access and any recommended action"
     },
     {
       "framework": "NIST CSF 2.0",

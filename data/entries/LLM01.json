@@ -282,59 +282,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Malicious code and logic attacks via IT/OT convergence",
-      "control_name": "Section 5.3 — Threats",
+      "control_id": "§5.3",
+      "control_name": "Threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Prompt injection as a new logic attack vector through LLM at the IT/OT boundary"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Identify threats, vulnerabilities, and impacts for all OT systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Prompt injection documented in OT risk assessment for each LLM integration"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Defense-in-depth network architecture with validated data flows",
-      "control_name": "Section 7.2 — Network segmentation",
+      "control_id": "§7.2",
+      "control_name": "Network segmentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Input validation layer at the DMZ/control zone boundary — prompt injection filtered before reaching LLM"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Information Input Validation",
-      "control_name": "SI-10",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Validate all inputs to LLMs connected to OT systems — reject inputs containing injection indicators"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Malicious Code Protection",
-      "control_name": "SI-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Treat prompt injection as a malicious code analog — detection and response controls required"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Access Enforcement",
-      "control_name": "AC-3",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM access to OT systems enforced by policy — injection cannot escalate LLM access beyond defined scope"
     },
     {
       "framework": "NIST CSF 2.0",

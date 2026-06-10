@@ -250,59 +250,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Attacks targeting OT data and system integrity",
-      "control_name": "Section 5.3 — Integrity threats",
+      "control_id": "§5.3",
+      "control_name": "Integrity threats",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Model poisoning as an integrity attack on the LLM advisory system"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess integrity risks for all OT-connected systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Model poisoning scenarios included in OT risk assessment for each LLM"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Layered controls to maintain system integrity",
-      "control_name": "Section 7.2 — Defense-in-depth",
+      "control_id": "§7.2",
+      "control_name": "Defense-in-depth",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Independent validation of LLM outputs against rule-based reference systems"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Software, Firmware, and Information Integrity",
-      "control_name": "SI-7",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Model integrity verification before each OT deployment — hash-based integrity check"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Information Input Validation",
-      "control_name": "SI-10",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Training data validation — adversarial content detected and rejected before training"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Audit Record Generation",
-      "control_name": "AU-12",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Full audit trail of LLM outputs — poisoning indicators detectable through output analysis"
     },
     {
       "framework": "NIST CSF 2.0",
