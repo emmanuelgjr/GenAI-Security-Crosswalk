@@ -9,14 +9,14 @@
   <a href="https://genai.owasp.org"><img src="https://img.shields.io/badge/OWASP-GenAI%20Data%20Security-blue" alt="OWASP"></a>
   <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-3.1.0-green" alt="Version"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/frameworks-25-orange" alt="Frameworks"></a>
-  <a href="README.md"><img src="https://img.shields.io/badge/controls-1,514-blueviolet" alt="Controls"></a>
+  <a href="README.md"><img src="https://img.shields.io/badge/controls-1,507-blueviolet" alt="Controls"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/mapping%20files-70-brightgreen" alt="Mapping Files"></a>
   <a href="https://www.npmjs.com/package/genai-security-crosswalk"><img src="https://img.shields.io/npm/v/genai-security-crosswalk?color=red&label=npm" alt="npm"></a>
 </p>
 
 <p align="center">
   <strong>The most comprehensive mapping of AI security risks to compliance frameworks.</strong><br>
-  25 frameworks &middot; 1,514 controls &middot; 41 entries &middot; 3,351 mappings &middot; 125 incidents &middot; ML classifier pipeline
+  25 frameworks &middot; 1,507 controls &middot; 41 entries &middot; 3,351 mappings &middot; 125 incidents &middot; ML classifier pipeline
 </p>
 
 <p align="center">
@@ -104,7 +104,7 @@ The `classifier/` directory contains a research-grade retrieval pipeline for aut
 ```bash
 cd classifier/
 pip install -r requirements.txt
-python -m classifier.index_builder            # build FAISS index (1,514 controls, ~7s)
+python -m classifier.index_builder            # build FAISS index (1,507 controls, ~7s)
 python -m classifier.classify --source LLM01 --top-k 10          # bi-encoder retrieval
 python -m classifier.classify --source LLM01 --top-k 10 --rerank # + cross-encoder reranker
 python -m classifier.eval_harness --rerank    # full eval with bootstrap CIs
@@ -132,7 +132,7 @@ Every file answers one question: **which controls from framework X address vulne
 | **23** compliance reports | Per-framework gap assessments auto-generated from data layer (MD, CSV, JSON, OSCAL, GRC) |
 | **125** documented incidents | Synced from the [genai_incidents](https://github.com/emmanuelgjr/genai_incidents) source of truth (curated tier); MAESTRO attribution, MD/CSV/JSON/STIX 2.1 |
 | **LAAF v2.0** | First agentic LPCI red-teaming framework — fully integrated with 6-stage × OWASP crosswalk |
-| **25** framework registries | First-class control inventories (1,514 controls) with backlink index |
+| **25** framework registries | First-class control inventories (1,507 controls) with backlink index |
 | **Classifier pipeline** | BGE bi-encoder + cross-encoder reranker — auto-maps new frameworks to OWASP entries |
 | **Submit-a-Standard** | Paste framework JSON → classifier proposes mappings → PR opened for review |
 
@@ -380,7 +380,7 @@ GenAI-Security-Crosswalk/
 │   └── TEMPLATE.md                  ← Canonical template for new mapping files
 │
 ├── data/
-│   ├── frameworks/                  ← 25 framework registries (1,514 controls)
+│   ├── frameworks/                  ← 25 framework registries (1,507 controls)
 │   ├── entries/                     ← 41 machine-readable entry JSON files
 │   ├── framework-schema.json        ← JSON Schema for framework registries
 │   ├── schema.json                  ← JSON Schema (Draft 7) for entry files
@@ -404,7 +404,7 @@ GenAI-Security-Crosswalk/
 ├── classifier/                      ← ML pipeline for automated mapping
 │   ├── classify.py                  ← Main classifier (bi-encoder + reranker)
 │   ├── eval_harness.py              ← Evaluation pipeline (P@k, R@k, MAP, CIs)
-│   ├── index_builder.py             ← FAISS index builder (1,514 controls)
+│   ├── index_builder.py             ← FAISS index builder (1,507 controls)
 │   ├── finetune.py                  ← Contrastive fine-tuning for BGE-small
 │   ├── reranker.py                  ← Cross-encoder reranker
 │   ├── contamination_probe.py       ← Generalization probe (CoSAI holdout)
