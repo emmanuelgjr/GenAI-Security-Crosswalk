@@ -175,7 +175,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -1400,7 +1400,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -2595,7 +2595,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -2708,7 +2708,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -3560,7 +3560,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -3689,7 +3689,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -5157,7 +5157,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -5423,7 +5423,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -6097,7 +6097,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -6487,7 +6487,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -6827,7 +6827,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -8051,7 +8051,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -9061,7 +9061,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -10062,7 +10062,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -10146,7 +10146,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -10690,7 +10690,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -10862,7 +10862,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -11531,7 +11531,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -11734,7 +11734,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -12444,7 +12444,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -12859,7 +12859,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -13097,7 +13097,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -14005,7 +14005,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -15048,7 +15048,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -15166,7 +15166,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -15289,7 +15289,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -15708,7 +15708,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -16075,7 +16075,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -16280,7 +16280,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -17368,7 +17368,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -17445,7 +17445,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -17671,7 +17671,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -18517,7 +18517,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -19092,7 +19092,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -19816,7 +19816,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -19922,7 +19922,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -20292,7 +20292,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -20520,7 +20520,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -20791,7 +20791,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -21170,7 +21170,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -22767,7 +22767,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -22882,7 +22882,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -23125,7 +23125,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Foundational",
@@ -23736,7 +23736,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -24456,7 +24456,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -26293,7 +26293,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -26645,7 +26645,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -27940,7 +27940,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -28472,7 +28472,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -29360,7 +29360,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -30742,7 +30742,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -31042,7 +31042,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -31994,7 +31994,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -32978,7 +32978,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -33241,7 +33241,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -33282,7 +33282,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -33343,7 +33343,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -36190,7 +36190,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -36414,7 +36414,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -36430,7 +36430,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -36446,7 +36446,7 @@
     "entries": [
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",
@@ -37052,7 +37052,7 @@
       },
       {
         "id": "DSGAI10",
-        "name": "Synthetic Data and Anonymization Pitfalls",
+        "name": "Synthetic Data and Anonymisation Pitfalls",
         "source_list": "DSGAI-2026",
         "severity": "Medium",
         "tier": "Hardening",

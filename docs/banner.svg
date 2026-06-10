@@ -71,7 +71,7 @@
   <text x='132' y='330' font-family='system-ui,sans-serif' font-size='10' fill='#64748b' text-anchor='middle' letter-spacing='1'>FRAMEWORKS</text>
 
   <rect x='220' y='285' width='145' height='55' rx='8' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)' stroke-width='1'/>
-  <text x='292' y='312' font-family='system-ui,sans-serif' font-size='24' font-weight='800' fill='#a78bfa' text-anchor='middle'>1,507</text>
+  <text x='292' y='312' font-family='system-ui,sans-serif' font-size='24' font-weight='800' fill='#a78bfa' text-anchor='middle'>1,511</text>
   <text x='292' y='330' font-family='system-ui,sans-serif' font-size='10' fill='#64748b' text-anchor='middle' letter-spacing='1'>CONTROLS</text>
 
   <rect x='380' y='285' width='145' height='55' rx='8' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)' stroke-width='1'/>

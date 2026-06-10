@@ -31,7 +31,7 @@ Read left to right: an LLM vulnerability ? its agentic amplification ? its data 
 | — | — | DSGAI07 Data Governance & Lifecycle | ISO 42001 · ISO 27701 · EU AI Act · NIST AI RMF |
 | — | — | DSGAI08 Non-Compliance & Regulatory Violations | EU AI Act · ISO 42001 · ISO 27701 · PCIDSS · SOC 2 |
 | — | — | DSGAI09 Multimodal Cross-Channel Leakage | ISO 27001 · AIUC-1 A · CIS Controls · ENISA |
-| — | — | DSGAI10 Synthetic Data & Anonymization Pitfalls | ISO 27701 · NIST AI RMF · EU AI Act · ENISA |
+| — | — | DSGAI10 Synthetic Data & Anonymisation Pitfalls | ISO 27701 · NIST AI RMF · EU AI Act · ENISA |
 | — | — | DSGAI11 Cross-Context Conversation Bleed | ASVS · ISO 27001 · NIST CSF 2.0 · AIUC-1 A |
 | — | — | DSGAI14 Excessive Telemetry & Monitoring Leakage | ISO 27001 · CIS Controls · SOC 2 · NIST CSF 2.0 |
 | — | — | DSGAI18 Inference & Data Reconstruction | MITRE ATLAS · ISO 27701 · ENISA · AIUC-1 A |

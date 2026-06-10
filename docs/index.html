@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Defense-in-depth CSP. The app is fully inline (scripts, styles, handlers), so
+     'unsafe-inline' is required; this still blocks external/object script injection,
+     restricts network egress to the GitHub API, and pins base-uri/form-action.
+     External: d3 from jsDelivr (SRI-pinned), open-PR list from api.github.com. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.github.com; font-src 'self' data:; base-uri 'self'; object-src 'none'; form-action 'self' https://github.com; frame-ancestors 'none'">
 <title>OWASP GenAI Security Crosswalk</title>
 <meta name="description" content="The most comprehensive mapping of AI security risks to industry frameworks. 41 entries across LLM Top 10, Agentic Top 10, and DSGAI mapped to 25 frameworks with 1,500+ controls. Submit your own standard for automated mapping.">
 <meta property="og:type" content="website">
@@ -3270,6 +3275,9 @@ input, select { font-family: inherit; }
     if (CW_D3_LOADED) return cb();
     var s = document.createElement('script');
     s.src = 'https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js';
+    // SRI-pin the CDN script so a compromised/MITM'd jsdelivr cannot inject code.
+    s.integrity = 'sha256-1rA678n2xEx7x4cTZ5x4wpUCj6kUMZEZ5cxLSVSFWxw=';
+    s.crossOrigin = 'anonymous';
     s.onload = function() { CW_D3_LOADED = true; cb(); };
     s.onerror = function() { cb(new Error('Failed to load D3')); };
     document.head.appendChild(s);
@@ -5687,7 +5695,7 @@ input, select { font-family: inherit; }
           });
         }
         if (errors.length) {
-          statusDiv.innerHTML = '<span style="color:#ef4444;">Validation errors: ' + errors.join(', ') + '</span>';
+          statusDiv.innerHTML = '<span style="color:#ef4444;">Validation errors: ' + esc(errors.join(', ')) + '</span>';
           submitBtn.disabled = true;
           submitBtn.style.opacity = '0.5';
           return null;
@@ -5697,12 +5705,12 @@ input, select { font-family: inherit; }
         if (fw.version && !verInput.value) verInput.value = fw.version;
         if (fw.url && !urlInput.value) urlInput.value = fw.url;
         if (fw.publisher && !pubInput.value) pubInput.value = fw.publisher;
-        statusDiv.innerHTML = '<span style="color:#22c55e;">Valid: ' + fw.controls.length + ' controls in "' + fw.name + '"</span>';
+        statusDiv.innerHTML = '<span style="color:#22c55e;">Valid: ' + fw.controls.length + ' controls in "' + esc(fw.name) + '"</span>';
         submitBtn.disabled = false;
         submitBtn.style.opacity = '1';
         return fw;
       } catch (e) {
-        statusDiv.innerHTML = '<span style="color:#ef4444;">JSON parse error: ' + e.message + '</span>';
+        statusDiv.innerHTML = '<span style="color:#ef4444;">JSON parse error: ' + esc(e.message) + '</span>';
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.5';
         return null;
