@@ -608,24 +608,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Hijacked agent with excess privilege causes larger blast radius",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scope all agent credentials to minimum required — least privilege enforced"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived tokens allow hijack to persist beyond session",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived credentials — tokens expire at task completion, no long-lived agent tokens"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared credentials allow hijacked agent to impersonate other agents",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Unique identity per agent — no shared service accounts across agent deployments"

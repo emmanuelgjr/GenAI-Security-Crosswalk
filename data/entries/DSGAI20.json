@@ -514,24 +514,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Broad API/weight access enables extraction",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Scope inference and artifact-store identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Durable keys sustain stealing campaigns",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived keys; per-principal query budgets"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weight-store credentials in plaintext enable direct theft",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vault weight-store credentials; encrypt at rest"

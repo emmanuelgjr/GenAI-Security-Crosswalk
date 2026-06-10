@@ -600,80 +600,80 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent credentials not revoked on decommission — dormant tokens exploitable",
-      "control_name": "NHI-1 Improper Offboarding",
+      "control_id": "NHI-1",
+      "control_name": "Improper Offboarding",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Formal agent offboarding — all credentials revoked, tokens invalidated, access removed"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent credentials exposed in memory, logs, tool payloads",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "No credentials in agent context, logs, or tool payloads — secret manager only"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party tool credentials with excessive permissions inherited by agent",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validate all third-party NHIs — revoke over-privileged third-party tokens"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weak agent-to-system authentication — credential reuse or weak secrets",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Strong authentication for all agent-to-system connections — mTLS, short-lived tokens"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent holds more permissions than required — lateral movement amplifier",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least privilege per agent role — scope enforced, reviewed quarterly"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent credentials stored in cleartext — config files, environment variables",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secret manager for all agent credentials — no cleartext storage anywhere"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent tokens without expiry — compromise persists indefinitely",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived credentials — task-scoped tokens with automatic expiry"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Production agent credentials accessible in dev/test environments",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "NHI-8",
+      "control_name": "Environment Isolation Failure",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Strict environment isolation — separate credentials per environment, no cross-environment reuse"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared agent credential across multiple instances or deployments",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Unique identity per agent deployment — no credential sharing"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Humans using agent service accounts — no attribution, no MFA",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent credentials machine-only — human use detected and blocked"

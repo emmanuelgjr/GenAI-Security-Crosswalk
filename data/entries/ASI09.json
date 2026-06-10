@@ -576,16 +576,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Humans using agent credentials — or agents using human credentials — destroys attribution",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Strict separation: agent credentials machine-only, human credentials human-only"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Over-privileged agent identity makes its recommendations appear more authoritative to users",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least privilege makes agent capabilities visible and bounded — users understand what the agent can actually do"

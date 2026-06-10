@@ -528,24 +528,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Tool tokens carry excessive permissions",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vet and minimum-scope every tool credential"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "A tool identity can reach more data than the task needs",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scope tool identities per function"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "One credential shared across tools amplifies compromise",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Distinct credential per tool/integration"

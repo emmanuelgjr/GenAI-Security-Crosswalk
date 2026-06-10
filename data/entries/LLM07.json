@@ -527,16 +527,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "API keys or tokens embedded in system prompt",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scan system prompts for credential patterns before deployment"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "System prompt stored as plaintext config with embedded credentials",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Externalise credentials to vault; reference by ID in system prompt"

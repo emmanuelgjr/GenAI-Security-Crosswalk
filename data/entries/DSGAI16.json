@@ -505,16 +505,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "The assistant identity can access files/resources beyond scope",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Grant minimal, declared local permissions"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Assistant acts as the user without attribution",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Bind actions to an attributable identity with consent"

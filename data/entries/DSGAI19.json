@@ -490,16 +490,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Labellers share a machine identity, no per-reviewer attribution",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Attributable per-reviewer identity"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Reviewer tooling reaches more records than the queue needs",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scope reviewer access to assigned items"

@@ -574,16 +574,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Write access to training data stores enables poisoning",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Read-only credentials for data consumption; separate write credentials with MFA"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party data pipeline credentials with training data write access",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Apply NHI-3 controls to all data pipeline third-party credentials"

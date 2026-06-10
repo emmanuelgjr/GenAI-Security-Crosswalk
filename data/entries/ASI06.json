@@ -577,24 +577,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Memory store credentials leaked — attacker writes poisoned content directly",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Scan all paths where memory store credentials could leak — logs, config, agent context"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Memory store credentials in cleartext — trivially extracted",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Secret manager for all memory store credentials — no cleartext anywhere"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived memory store credentials enable persistent access for attacker",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived credentials for memory store access — rotate on each agent session"

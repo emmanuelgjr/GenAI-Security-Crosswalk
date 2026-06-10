@@ -565,16 +565,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Retrieval/service account scope defines the disclosure blast radius",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least-privilege, per-tenant retrieval identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Credentials reachable by the pipeline can leak into outputs/logs",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Keep secrets out of context; scan outputs for credential patterns"

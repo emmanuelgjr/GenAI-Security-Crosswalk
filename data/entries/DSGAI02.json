@@ -565,32 +565,32 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent secrets surface in prompts, memory, logs, tool payloads",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Secret-scan all agent I/O; never embed secrets in context"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Cached agent credentials stored insecurely",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Store all credentials in a vault, encrypted at rest"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Stolen agent tokens remain valid indefinitely",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Issue short-lived, auto-rotated tokens"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "A compromised agent identity has excessive reach",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Scope each agent identity to least privilege"

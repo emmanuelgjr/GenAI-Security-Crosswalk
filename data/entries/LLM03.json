@@ -573,24 +573,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party plugin tokens with excessive permissions",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Review all third-party credentials; apply minimum scope"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party dev/staging credentials used in production",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "NHI-8",
+      "control_name": "Environment Isolation Failure",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce environment isolation for all third-party integrations"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party component credentials exposed in shared config",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credential stores per third-party component"

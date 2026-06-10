@@ -558,16 +558,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Write access to training/RAG stores enables poisoning",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Read-only by default; write scoped to vetted ingestion jobs"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Persistent write tokens give attackers a durable poisoning path",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived, job-scoped write credentials"

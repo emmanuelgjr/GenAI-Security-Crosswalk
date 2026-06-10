@@ -600,24 +600,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Agent with excess privilege can call tools in destructive ways even within normal use",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Per-tool permission manifests — each tool scoped to minimum required operations"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Compromised third-party tool identity gets full scope of agent credential",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validate all third-party tool identities — reject tokens from unregistered issuers"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Single shared credential allows tool misuse to affect multiple services",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Unique credential per tool integration — tool-scoped tokens, not agent-wide tokens"

@@ -577,24 +577,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weak or missing authentication on A2A channels — agent spoofing enabled",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Strong mutual authentication on all A2A channels — mTLS, certificate-based, short-lived"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived A2A tokens enable persistent replay attacks",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived A2A tokens with nonce-based replay protection"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared A2A credentials allow one compromised agent to impersonate others",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Unique identity per agent — A2A authentication bound to specific agent identity"

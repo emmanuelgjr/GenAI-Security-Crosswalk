@@ -543,16 +543,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Audit log service credentials leaked or compromised",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Protect audit log credentials as sensitive NHI"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Humans using LLM service account credentials — no attribution",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce separate human and machine credentials"

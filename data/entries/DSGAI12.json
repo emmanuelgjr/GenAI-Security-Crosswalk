@@ -550,16 +550,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Gateway service account can run destructive/over-broad queries",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Execute under the user's scoped permissions, not a privileged account"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weak gateway-to-DB auth enables spoofing",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Strong mutual auth to the data source"

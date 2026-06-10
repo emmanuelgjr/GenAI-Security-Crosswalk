@@ -484,16 +484,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Orphaned identities complicate clean recovery/failover",
-      "control_name": "NHI-1 Improper Offboarding",
+      "control_id": "NHI-1",
+      "control_name": "Improper Offboarding",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Lifecycle-managed identities for data/model assets"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared credentials let one environment's failure cascade",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "NHI-8",
+      "control_name": "Environment Isolation Failure",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credentials per environment"

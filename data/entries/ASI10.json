@@ -599,24 +599,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Rogue agent detected but not offboarded — credentials remain valid",
-      "control_name": "NHI-1 Improper Offboarding",
+      "control_id": "NHI-1",
+      "control_name": "Improper Offboarding",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Formal agent offboarding triggered immediately on rogue detection — all credentials revoked"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Rogue agent with excess privilege causes larger blast radius before detection",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Least privilege — rogue agent with narrow scope causes less damage before containment"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived tokens allow rogue agent to operate indefinitely after detection",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived credentials — rogue detection triggers token expiry without requiring manual revocation"

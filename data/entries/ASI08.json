@@ -577,24 +577,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Cascading agent failure with over-privileged credentials exposes all accessible systems",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least privilege per agent — cascade blast radius limited by credential scope"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared credentials mean cascade in one agent affects all agents sharing the credential",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Unique identity per agent — cascade cannot leverage shared credentials for lateral movement"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived credentials exposed during cascade remain valid for attacker use post-incident",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived credentials — cascade event triggers automatic revocation of all affected tokens"

@@ -558,16 +558,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Credentials appearing in model outputs passed to executors",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Credential detection in output pipeline before execution"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Downstream service credentials with excessive scope",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Apply least-privilege to all credentials used in downstream processing"

@@ -503,16 +503,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Credentials captured in logs/traces",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Redact secrets before logging; scan sinks"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Broad log-store access widens exposure",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scope log-store access; restrict who/what reads telemetry"

@@ -513,16 +513,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "A shared session-store identity links tenants/sessions",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Distinct identity per tenant/session boundary"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared-environment credentials cross context boundaries",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "NHI-8",
+      "control_name": "Environment Isolation Failure",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Enforce per-environment credential isolation"

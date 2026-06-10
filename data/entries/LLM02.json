@@ -605,16 +605,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "LLM outputs containing API keys, tokens, or credentials",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Output filtering: detect and redact credential patterns in all outputs"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Credentials in plaintext config files ingested by LLM",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Audit all config and data sources for embedded credentials"

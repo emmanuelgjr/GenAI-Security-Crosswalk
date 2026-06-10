@@ -521,24 +521,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Vector DB exposed via weak/no auth",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce strong auth and network restriction"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Service accounts read across namespaces/tenants",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Per-namespace scoped identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Vector-store credentials stored in plaintext",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vault all vector-store credentials"

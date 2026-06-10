@@ -528,24 +528,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Unsanctioned tools hold unreviewed, over-scoped tokens",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inventory and gate third-party AI integrations"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Staff use shared machine credentials for shadow tools, no attribution",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce human identity; block shared-credential use"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shadow flows reuse prod credentials in unmanaged contexts",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "NHI-8",
+      "control_name": "Environment Isolation Failure",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate and scope credentials per environment"

@@ -505,16 +505,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Identities for retired data flows linger with live access",
-      "control_name": "NHI-1 Improper Offboarding",
+      "control_id": "NHI-1",
+      "control_name": "Improper Offboarding",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Auto-revoke NHI on component decommission"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared machine identities break data-access attribution",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce attributable identity per access"

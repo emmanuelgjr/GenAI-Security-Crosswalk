@@ -613,16 +613,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Injection blast radius proportional to credential scope",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Apply least-privilege to all LLM application credentials"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Injected session can use stolen long-lived tokens for extended period",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Rotate all LLM application tokens; implement short-lived token pattern"

@@ -584,24 +584,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Compromised MCP server holds or can request excessive permissions",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validate all third-party NHIs at connection — revoke tokens from unverified sources"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Malicious components extract credentials from agent memory or config",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Credential isolation — components cannot access other components' credentials"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Supply chain compromise introduces credential exfiltration code",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scan all agent components for credential access patterns before deployment"

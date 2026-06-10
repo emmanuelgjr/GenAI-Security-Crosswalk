@@ -498,8 +498,8 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "The assembling identity can fetch beyond task need",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Scope context-assembly identity to the caller's authorised data"

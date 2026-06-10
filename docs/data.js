@@ -618,16 +618,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Injection blast radius proportional to credential scope",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Apply least-privilege to all LLM application credentials"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Injected session can use stolen long-lived tokens for extended period",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Rotate all LLM application tokens; implement short-lived token pattern"
@@ -1825,16 +1825,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "LLM outputs containing API keys, tokens, or credentials",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Output filtering: detect and redact credential patterns in all outputs"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Credentials in plaintext config files ingested by LLM",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Audit all config and data sources for embedded credentials"
@@ -2855,24 +2855,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party plugin tokens with excessive permissions",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Review all third-party credentials; apply minimum scope"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party dev/staging credentials used in production",
-        "control_name": "NHI-8 Environment Isolation Failure",
+        "control_id": "NHI-8",
+        "control_name": "Environment Isolation Failure",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce environment isolation for all third-party integrations"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party component credentials exposed in shared config",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate credential stores per third-party component"
@@ -3982,16 +3982,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Write access to training data stores enables poisoning",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Read-only credentials for data consumption; separate write credentials with MFA"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party data pipeline credentials with training data write access",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Apply NHI-3 controls to all data pipeline third-party credentials"
@@ -4867,16 +4867,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Credentials appearing in model outputs passed to executors",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Credential detection in output pipeline before execution"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Downstream service credentials with excessive scope",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Apply least-privilege to all credentials used in downstream processing"
@@ -6048,24 +6048,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Tool/API credentials with more scope than task requires",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Minimum credential scope per tool integration"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived tool credentials enable extended unauthorised access",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Short-lived JIT credentials per task (see RECIPES.md)"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Same credential used for multiple tools — compromise of one exposes all",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate credentials per tool integration"
@@ -6959,16 +6959,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "API keys or tokens embedded in system prompt",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scan system prompts for credential patterns before deployment"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "System prompt stored as plaintext config with embedded credentials",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Externalise credentials to vault; reference by ID in system prompt"
@@ -7715,16 +7715,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Embedding store service account with cross-tenant read access",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Per-tenant credentials or least-privilege scope restrictions"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Unauthenticated embedding store access",
-        "control_name": "NHI-4 Insecure Authentication",
+        "control_id": "NHI-4",
+        "control_name": "Insecure Authentication",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Require authentication for all vector database connections"
@@ -8529,16 +8529,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Audit log service credentials leaked or compromised",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Protect audit log credentials as sensitive NHI"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Humans using LLM service account credentials — no attribution",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce separate human and machine credentials"
@@ -9291,16 +9291,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Single credential with access to multiple services — one exhaustion affects all",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate credentials per service with independent quotas"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared credential used across services — quota exhaustion in one affects all",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate credentials per integration"
@@ -10108,24 +10108,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Hijacked agent with excess privilege causes larger blast radius",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scope all agent credentials to minimum required — least privilege enforced"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived tokens allow hijack to persist beyond session",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Short-lived credentials — tokens expire at task completion, no long-lived agent tokens"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared credentials allow hijacked agent to impersonate other agents",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Unique identity per agent — no shared service accounts across agent deployments"
@@ -11293,24 +11293,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Agent with excess privilege can call tools in destructive ways even within normal use",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Per-tool permission manifests — each tool scoped to minimum required operations"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Compromised third-party tool identity gets full scope of agent credential",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validate all third-party tool identities — reject tokens from unregistered issuers"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Single shared credential allows tool misuse to affect multiple services",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Unique credential per tool integration — tool-scoped tokens, not agent-wide tokens"
@@ -12521,80 +12521,80 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Agent credentials not revoked on decommission — dormant tokens exploitable",
-        "control_name": "NHI-1 Improper Offboarding",
+        "control_id": "NHI-1",
+        "control_name": "Improper Offboarding",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Formal agent offboarding — all credentials revoked, tokens invalidated, access removed"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Agent credentials exposed in memory, logs, tool payloads",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "No credentials in agent context, logs, or tool payloads — secret manager only"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party tool credentials with excessive permissions inherited by agent",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validate all third-party NHIs — revoke over-privileged third-party tokens"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Weak agent-to-system authentication — credential reuse or weak secrets",
-        "control_name": "NHI-4 Insecure Authentication",
+        "control_id": "NHI-4",
+        "control_name": "Insecure Authentication",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Strong authentication for all agent-to-system connections — mTLS, short-lived tokens"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Agent holds more permissions than required — lateral movement amplifier",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Least privilege per agent role — scope enforced, reviewed quarterly"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Agent credentials stored in cleartext — config files, environment variables",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secret manager for all agent credentials — no cleartext storage anywhere"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Agent tokens without expiry — compromise persists indefinitely",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Short-lived credentials — task-scoped tokens with automatic expiry"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Production agent credentials accessible in dev/test environments",
-        "control_name": "NHI-8 Environment Isolation Failure",
+        "control_id": "NHI-8",
+        "control_name": "Environment Isolation Failure",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Strict environment isolation — separate credentials per environment, no cross-environment reuse"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared agent credential across multiple instances or deployments",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Unique identity per agent deployment — no credential sharing"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Humans using agent service accounts — no attribution, no MFA",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credentials machine-only — human use detected and blocked"
@@ -13573,24 +13573,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Compromised MCP server holds or can request excessive permissions",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validate all third-party NHIs at connection — revoke tokens from unverified sources"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Malicious components extract credentials from agent memory or config",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Credential isolation — components cannot access other components' credentials"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Supply chain compromise introduces credential exfiltration code",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scan all agent components for credential access patterns before deployment"
@@ -14683,24 +14683,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Code executes in context of over-privileged agent credential — amplifies RCE impact",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Sandbox code execution under a separate, minimal credential — not the agent's primary identity"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Code execution in production context with prod credentials",
-        "control_name": "NHI-8 Environment Isolation Failure",
+        "control_id": "NHI-8",
+        "control_name": "Environment Isolation Failure",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Strict environment isolation for code execution — dedicated sandboxed identity"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared credential means RCE in one agent affects all agents sharing the credential",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Unique credential per agent — code execution in one instance cannot leverage other instances' access"
@@ -15851,24 +15851,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Memory store credentials leaked — attacker writes poisoned content directly",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Scan all paths where memory store credentials could leak — logs, config, agent context"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Memory store credentials in cleartext — trivially extracted",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Secret manager for all memory store credentials — no cleartext anywhere"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived memory store credentials enable persistent access for attacker",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Short-lived credentials for memory store access — rotate on each agent session"
@@ -16779,24 +16779,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Weak or missing authentication on A2A channels — agent spoofing enabled",
-        "control_name": "NHI-4 Insecure Authentication",
+        "control_id": "NHI-4",
+        "control_name": "Insecure Authentication",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Strong mutual authentication on all A2A channels — mTLS, certificate-based, short-lived"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived A2A tokens enable persistent replay attacks",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Short-lived A2A tokens with nonce-based replay protection"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared A2A credentials allow one compromised agent to impersonate others",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Unique identity per agent — A2A authentication bound to specific agent identity"
@@ -17645,24 +17645,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Cascading agent failure with over-privileged credentials exposes all accessible systems",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Least privilege per agent — cascade blast radius limited by credential scope"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared credentials mean cascade in one agent affects all agents sharing the credential",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Unique identity per agent — cascade cannot leverage shared credentials for lateral movement"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived credentials exposed during cascade remain valid for attacker use post-incident",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Short-lived credentials — cascade event triggers automatic revocation of all affected tokens"
@@ -18477,16 +18477,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Humans using agent credentials — or agents using human credentials — destroys attribution",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Strict separation: agent credentials machine-only, human credentials human-only"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Over-privileged agent identity makes its recommendations appear more authoritative to users",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Least privilege makes agent capabilities visible and bounded — users understand what the agent can actually do"
@@ -19443,24 +19443,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Rogue agent detected but not offboarded — credentials remain valid",
-        "control_name": "NHI-1 Improper Offboarding",
+        "control_id": "NHI-1",
+        "control_name": "Improper Offboarding",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Formal agent offboarding triggered immediately on rogue detection — all credentials revoked"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Rogue agent with excess privilege causes larger blast radius before detection",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Least privilege — rogue agent with narrow scope causes less damage before containment"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Long-lived tokens allow rogue agent to operate indefinitely after detection",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Short-lived credentials — rogue detection triggers token expiry without requiring manual revocation"
@@ -20322,16 +20322,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Retrieval/service account scope defines the disclosure blast radius",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Least-privilege, per-tenant retrieval identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Credentials reachable by the pipeline can leak into outputs/logs",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Keep secrets out of context; scan outputs for credential patterns"
@@ -21157,32 +21157,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Agent secrets surface in prompts, memory, logs, tool payloads",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Secret-scan all agent I/O; never embed secrets in context"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Cached agent credentials stored insecurely",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Store all credentials in a vault, encrypted at rest"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Stolen agent tokens remain valid indefinitely",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Issue short-lived, auto-rotated tokens"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "A compromised agent identity has excessive reach",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Scope each agent identity to least privilege"
@@ -21902,24 +21902,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Unsanctioned tools hold unreviewed, over-scoped tokens",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Inventory and gate third-party AI integrations"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Staff use shared machine credentials for shadow tools, no attribution",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce human identity; block shared-credential use"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shadow flows reuse prod credentials in unmanaged contexts",
-        "control_name": "NHI-8 Environment Isolation Failure",
+        "control_id": "NHI-8",
+        "control_name": "Environment Isolation Failure",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate and scope credentials per environment"
@@ -22641,16 +22641,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Write access to training/RAG stores enables poisoning",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Read-only by default; write scoped to vetted ingestion jobs"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Persistent write tokens give attackers a durable poisoning path",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Short-lived, job-scoped write credentials"
@@ -23346,16 +23346,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Unauthenticated pipeline stages accept spoofed/malformed data",
-        "control_name": "NHI-4 Insecure Authentication",
+        "control_id": "NHI-4",
+        "control_name": "Insecure Authentication",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce mTLS / signed requests between stages"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Over-scoped jobs persist bad data widely",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scope each pipeline stage's identity to its inputs/outputs"
@@ -24073,24 +24073,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Tool tokens carry excessive permissions",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vet and minimum-scope every tool credential"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "A tool identity can reach more data than the task needs",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scope tool identities per function"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "One credential shared across tools amplifies compromise",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Distinct credential per tool/integration"
@@ -24782,16 +24782,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Identities for retired data flows linger with live access",
-        "control_name": "NHI-1 Improper Offboarding",
+        "control_id": "NHI-1",
+        "control_name": "Improper Offboarding",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Auto-revoke NHI on component decommission"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared machine identities break data-access attribution",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce attributable identity per access"
@@ -25459,16 +25459,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "No attribution → cannot demonstrate lawful, accountable processing",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce human/governed identity for regulated data"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Stale access breaches retention and access obligations",
-        "control_name": "NHI-1 Improper Offboarding",
+        "control_id": "NHI-1",
+        "control_name": "Improper Offboarding",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Revoke access on offboarding; evidence it"
@@ -26202,16 +26202,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Modality processors reach more data than needed",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Scope each modality pipeline identity"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Secrets embedded in media/metadata surface via processors",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Strip metadata; scan extracted content for secrets"
@@ -26820,8 +26820,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Generation jobs read broad source data, raising linkage risk",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Scope generation identities to the minimum source set"
@@ -27507,16 +27507,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "A shared session-store identity links tenants/sessions",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Distinct identity per tenant/session boundary"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared-environment credentials cross context boundaries",
-        "control_name": "NHI-8 Environment Isolation Failure",
+        "control_id": "NHI-8",
+        "control_name": "Environment Isolation Failure",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Enforce per-environment credential isolation"
@@ -28254,16 +28254,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Gateway service account can run destructive/over-broad queries",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Execute under the user's scoped permissions, not a privileged account"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Weak gateway-to-DB auth enables spoofing",
-        "control_name": "NHI-4 Insecure Authentication",
+        "control_id": "NHI-4",
+        "control_name": "Insecure Authentication",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Strong mutual auth to the data source"
@@ -28961,24 +28961,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Vector DB exposed via weak/no auth",
-        "control_name": "NHI-4 Insecure Authentication",
+        "control_id": "NHI-4",
+        "control_name": "Insecure Authentication",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enforce strong auth and network restriction"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Service accounts read across namespaces/tenants",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Per-namespace scoped identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Vector-store credentials stored in plaintext",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vault all vector-store credentials"
@@ -29666,16 +29666,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Credentials captured in logs/traces",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Redact secrets before logging; scan sinks"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Broad log-store access widens exposure",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scope log-store access; restrict who/what reads telemetry"
@@ -30358,8 +30358,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "The assembling identity can fetch beyond task need",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Scope context-assembly identity to the caller's authorised data"
@@ -31023,16 +31023,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "The assistant identity can access files/resources beyond scope",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Grant minimal, declared local permissions"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Assistant acts as the user without attribution",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Bind actions to an attributable identity with consent"
@@ -31692,16 +31692,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Orphaned identities complicate clean recovery/failover",
-        "control_name": "NHI-1 Improper Offboarding",
+        "control_id": "NHI-1",
+        "control_name": "Improper Offboarding",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Lifecycle-managed identities for data/model assets"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Shared credentials let one environment's failure cascade",
-        "control_name": "NHI-8 Environment Isolation Failure",
+        "control_id": "NHI-8",
+        "control_name": "Environment Isolation Failure",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Separate credentials per environment"
@@ -32353,16 +32353,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Broad inference API scope enables high-volume probing",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Scope and rate-limit inference identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Durable API keys sustain extraction campaigns",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Short-lived inference tokens with per-principal budgets"
@@ -33013,16 +33013,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Labellers share a machine identity, no per-reviewer attribution",
-        "control_name": "NHI-10 Human Use of NHI",
+        "control_id": "NHI-10",
+        "control_name": "Human Use of NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Attributable per-reviewer identity"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Reviewer tooling reaches more records than the queue needs",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Scope reviewer access to assigned items"
@@ -33713,24 +33713,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Broad API/weight access enables extraction",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Scope inference and artifact-store identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Durable keys sustain stealing campaigns",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Short-lived keys; per-principal query budgets"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Weight-store credentials in plaintext enable direct theft",
-        "control_name": "NHI-6 Insecure Credential Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Credential Storage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vault weight-store credentials; encrypt at rest"
@@ -34457,24 +34457,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Third-party source credentials inject tainted content",
-        "control_name": "NHI-3 Vulnerable Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Vulnerable Third-Party NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vet and scope third-party data-source identities"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Write access to corpora enables systematic injection",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Read-only by default; scoped, signed ingestion"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "Durable write tokens sustain a poisoning campaign",
-        "control_name": "NHI-7 Long-Lived Credentials",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived Credentials",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Ephemeral, job-scoped write credentials"
@@ -34488,76 +34488,76 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI07, DSGAI08, DSGAI17",
-        "control_name": "NHI-1 Improper Offboarding",
+        "control_id": "NHI-1",
+        "control_name": "Improper Offboarding",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI01, DSGAI02, DSGAI14",
-        "control_name": "NHI-2 Secret Leakage",
+        "control_id": "NHI-2",
+        "control_name": "Secret Leakage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "DevSecOps"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI03, DSGAI06, DSGAI21",
-        "control_name": "NHI-3 Third-Party NHI",
+        "control_id": "NHI-3",
+        "control_name": "Third-Party NHI",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Security"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI05, DSGAI12, DSGAI13",
-        "control_name": "NHI-4 Insecure Authentication",
+        "control_id": "NHI-4",
+        "control_name": "Insecure Authentication",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Platform"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI01, DSGAI04, DSGAI18, DSGAI20",
-        "control_name": "NHI-5 Over-Privileged NHI",
+        "control_id": "NHI-5",
+        "control_name": "Over-Privileged NHI",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI02, DSGAI13, DSGAI20",
-        "control_name": "NHI-6 Insecure Storage",
+        "control_id": "NHI-6",
+        "control_name": "Insecure Storage",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Platform"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI02, DSGAI04, DSGAI18, DSGAI20",
-        "control_name": "NHI-7 Long-Lived",
+        "control_id": "NHI-7",
+        "control_name": "Long-Lived",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI11, DSGAI17",
-        "control_name": "NHI-8 Env Isolation",
+        "control_id": "NHI-8",
+        "control_name": "Env Isolation",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "DevSecOps"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI06, DSGAI11",
-        "control_name": "NHI-9 NHI Reuse",
+        "control_id": "NHI-9",
+        "control_name": "NHI Reuse",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP NHI Top 10",
-        "control_id": "DSGAI03, DSGAI08, DSGAI19",
-        "control_name": "NHI-10 Human Use",
+        "control_id": "NHI-10",
+        "control_name": "Human Use",
         "tier": "Hardening",
         "scope": "Both"
       },

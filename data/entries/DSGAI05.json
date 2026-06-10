@@ -499,16 +499,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Unauthenticated pipeline stages accept spoofed/malformed data",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce mTLS / signed requests between stages"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Over-scoped jobs persist bad data widely",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scope each pipeline stage's identity to its inputs/outputs"

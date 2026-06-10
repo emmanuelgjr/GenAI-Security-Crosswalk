@@ -506,16 +506,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "No attribution → cannot demonstrate lawful, accountable processing",
-      "control_name": "NHI-10 Human Use of NHI",
+      "control_id": "NHI-10",
+      "control_name": "Human Use of NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce human/governed identity for regulated data"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Stale access breaches retention and access obligations",
-      "control_name": "NHI-1 Improper Offboarding",
+      "control_id": "NHI-1",
+      "control_name": "Improper Offboarding",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Revoke access on offboarding; evidence it"

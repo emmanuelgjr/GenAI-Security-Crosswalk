@@ -577,24 +577,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Code executes in context of over-privileged agent credential — amplifies RCE impact",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Sandbox code execution under a separate, minimal credential — not the agent's primary identity"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Code execution in production context with prod credentials",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "NHI-8",
+      "control_name": "Environment Isolation Failure",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Strict environment isolation for code execution — dedicated sandboxed identity"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared credential means RCE in one agent affects all agents sharing the credential",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Unique credential per agent — code execution in one instance cannot leverage other instances' access"

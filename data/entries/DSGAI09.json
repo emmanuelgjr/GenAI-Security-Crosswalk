@@ -491,16 +491,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Modality processors reach more data than needed",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Scope each modality pipeline identity"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Secrets embedded in media/metadata surface via processors",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Strip metadata; scan extracted content for secrets"

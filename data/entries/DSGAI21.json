@@ -555,24 +555,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party source credentials inject tainted content",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vet and scope third-party data-source identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Write access to corpora enables systematic injection",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Read-only by default; scoped, signed ingestion"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Durable write tokens sustain a poisoning campaign",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Ephemeral, job-scoped write credentials"
@@ -586,76 +586,76 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI07, DSGAI08, DSGAI17",
-      "control_name": "NHI-1 Improper Offboarding",
+      "control_id": "NHI-1",
+      "control_name": "Improper Offboarding",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI01, DSGAI02, DSGAI14",
-      "control_name": "NHI-2 Secret Leakage",
+      "control_id": "NHI-2",
+      "control_name": "Secret Leakage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "DevSecOps"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI03, DSGAI06, DSGAI21",
-      "control_name": "NHI-3 Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Third-Party NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Security"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI05, DSGAI12, DSGAI13",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Platform"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI01, DSGAI04, DSGAI18, DSGAI20",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI02, DSGAI13, DSGAI20",
-      "control_name": "NHI-6 Insecure Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Storage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Platform"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI02, DSGAI04, DSGAI18, DSGAI20",
-      "control_name": "NHI-7 Long-Lived",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI11, DSGAI17",
-      "control_name": "NHI-8 Env Isolation",
+      "control_id": "NHI-8",
+      "control_name": "Env Isolation",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "DevSecOps"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI06, DSGAI11",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI03, DSGAI08, DSGAI19",
-      "control_name": "NHI-10 Human Use",
+      "control_id": "NHI-10",
+      "control_name": "Human Use",
       "tier": "Hardening",
       "scope": "Both"
     },

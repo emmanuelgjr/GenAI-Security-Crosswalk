@@ -550,16 +550,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Embedding store service account with cross-tenant read access",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Per-tenant credentials or least-privilege scope restrictions"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Unauthenticated embedding store access",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Require authentication for all vector database connections"

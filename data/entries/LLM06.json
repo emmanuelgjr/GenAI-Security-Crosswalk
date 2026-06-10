@@ -573,24 +573,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Tool/API credentials with more scope than task requires",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Minimum credential scope per tool integration"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived tool credentials enable extended unauthorised access",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived JIT credentials per task (see RECIPES.md)"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Same credential used for multiple tools — compromise of one exposes all",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credentials per tool integration"
