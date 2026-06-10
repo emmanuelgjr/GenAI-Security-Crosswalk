@@ -22,7 +22,6 @@
       "control_name": "Embedding Manipulation",
       "tier": "Hardening",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0071",
       "notes": "Crafting inputs whose embeddings manipulate similarity search results"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Resource Exhaustion via Embedding",
       "tier": "Hardening",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0025",
       "notes": "Flooding vector stores with adversarial embeddings to degrade retrieval quality"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "RAG Poisoning",
       "tier": "Hardening",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0070",
       "notes": "Injecting malicious content into RAG knowledge bases to manipulate retrieval results"
     },
     {
@@ -49,7 +46,6 @@
       "control_name": "Retrieval Content Crafting",
       "tier": "Hardening",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0066",
       "notes": "Crafting content specifically designed to rank highly in semantic search and influence model outputs"
     },
     {
@@ -86,24 +82,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Embedding and retrieval risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vector store attack scenarios included in risk management system"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Data quality controls applied to all data in scope — including RAG corpora",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Art. 10",
+      "control_name": "Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Quality controls on embedding generation and vector store ingestion required"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Technical robustness against adversarial manipulation",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Embedding manipulation resistance is an Art. 15 technical requirement"
@@ -166,32 +162,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "A.10.1",
-      "control_name": "Third-party AI system acquisition",
+      "control_id": "Third-party",
+      "control_name": "AI system acquisition",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vector database providers assessed as third-party AI system components"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "3.11 Encrypt sensitive data at rest",
-      "control_name": "CIS 3 — Data Protection",
+      "control_id": "CIS 3",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "All vector store content encrypted at rest"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "7.1 Establish vulnerability management",
-      "control_name": "CIS 7 — Vulnerability Management",
+      "control_id": "CIS 7",
+      "control_name": "Vulnerability Management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vector database CVEs in vulnerability management process — CVE-2024-3584 and equivalents"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Secure coding requirements for vector store integration — RBAC, encryption, input validation"
@@ -246,51 +242,19 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Attacks targeting the integrity of OT decision-support data",
-      "control_name": "Section 5.3 — Integrity threats",
+      "control_id": "§5.3",
+      "control_name": "Integrity threats",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vector store poisoning as an integrity attack on LLM knowledge sources"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess integrity risks for all OT-connected systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vector store integrity included in OT LLM risk assessment"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Software, Firmware, and Information Integrity",
-      "control_name": "SI-7",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Vector store integrity monitoring — alert on anomalous content or unexpected modifications"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Protection of Information at Rest",
-      "control_name": "SC-28",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "OT vector store content encrypted at rest"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Access Enforcement",
-      "control_name": "AC-3",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Access controls on OT vector stores — RBAC enforced at collection level"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -326,29 +290,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Embeddings of confidential information protected — encrypted at rest, access-controlled, inversion-resistant",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "C2.1",
+      "control_name": "Confidential information protection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RBAC on all vector store collections — no unauthenticated access in any environment",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Anomaly detection on vector store query patterns — bulk extraction and unusual retrieval volumes detected",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Embeddings of personal data used only for authorised purposes — privacy commitments apply to derived forms",
-      "control_name": "P5.1 — Personal information use",
+      "control_id": "P5.1",
+      "control_name": "Personal information use",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -457,47 +421,44 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-327",
-      "control_name": "CWE-327",
+      "control_name": "Use of a Broken or Risky Cryptographic Algorithm",
       "tier": "Hardening",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/327.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-330",
-      "control_name": "CWE-330",
+      "control_name": "Use of Insufficiently Random Values",
       "tier": "Hardening",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/330.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-345",
-      "control_name": "CWE-345",
+      "control_name": "Insufficient Verification of Data Authenticity",
       "tier": "Hardening",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/345.html"
+      "scope": "Build"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Embedding inversion and data reconstruction",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Test whether embedding vectors can be inverted to reconstruct training data; verify embedding stores do not leak source content through metadata"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Vector database security configuration",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify vector database is correctly configured — authentication, encryption, namespace isolation, API key protection"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Retrieval authorisation enforcement",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify RAG queries cannot retrieve documents above the authenticated user's permission level"
@@ -557,16 +518,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Embedding store service account with cross-tenant read access",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Per-tenant credentials or least-privilege scope restrictions"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Unauthenticated embedding store access",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Require authentication for all vector database connections"

@@ -75,16 +75,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI must remain accurate and available under adverse conditions",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vector store redundancy, circuit breakers, and staleness detection are Art. 15 requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Post-market monitoring covering availability and resilience",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "AI pipeline availability monitoring in quality management and post-market monitoring programme"
@@ -123,24 +123,24 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — decommissioning",
-      "control_name": "A.6.2.8",
+      "control_id": "A.6.2.8",
+      "control_name": "Lifecycle — decommissioning",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — testing",
-      "control_name": "A.6.2.6",
+      "control_id": "A.6.2.6",
+      "control_name": "Lifecycle — testing",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Operation",
-      "control_name": "Cl.8",
+      "control_id": "Cl.8",
+      "control_name": "Operation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
@@ -176,15 +176,15 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V11 Business Logic",
-      "control_name": "V11.1.7 — Anti-automation controls",
+      "control_id": "V11",
+      "control_name": "Business Logic",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V13 API",
-      "control_name": "V13.1.2 — API throttling",
+      "control_id": "V13",
+      "control_name": "API",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -222,24 +222,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Resilience & recovery",
-      "control_name": "§5.6",
+      "control_id": "§5.6",
+      "control_name": "Resilience & recovery",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "OT availability depends on recoverable data/model assets"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess availability impact of GenAI data loss"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
+      "control_id": "§7.2",
+      "control_name": "Security controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Backup, recovery, and fail-safe design"
@@ -278,29 +278,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM service availability commitments cover RAG freshness — stale data producing misinformation is an availability failure",
-      "control_name": "A1.1 — Availability policy",
+      "control_id": "A1.1",
+      "control_name": "Availability policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Circuit breakers and freshness monitoring protect availability commitments — graceful degradation over silent failure",
-      "control_name": "A1.2 — Environmental protections",
+      "control_id": "A1.2",
+      "control_name": "Environmental protections",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG freshness monitoring — alert when index staleness exceeds threshold before misinformation reaches users",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Silent RAG degradation identified as availability risk in assessment",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -402,39 +402,37 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-400",
-      "control_name": "CWE-400",
+      "control_name": "Uncontrolled Resource Consumption",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/400.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-770",
-      "control_name": "CWE-770",
+      "control_name": "Allocation of Resources Without Limits",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/770.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Resource exhaustion / rate limiting",
-      "control_name": "AVT — Availability",
+      "control_id": "AVT",
+      "control_name": "Availability",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Drive high-volume and high-cost requests; verify rate limits and quotas hold"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Availability alerting",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm degradation and exhaustion are detected and alerted"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Backup and recovery",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify datasets, weights, and indices have tested restore procedures"
@@ -486,16 +484,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Orphaned identities complicate clean recovery/failover",
-      "control_name": "NHI-1 Improper Offboarding",
+      "control_id": "NHI-1",
+      "control_name": "Improper Offboarding",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Lifecycle-managed identities for data/model assets"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared credentials let one environment's failure cascade",
-      "control_name": "NHI-8 Environment Isolation Failure",
+      "control_id": "NHI-8",
+      "control_name": "Environment Isolation Failure",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credentials per environment"

@@ -91,16 +91,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Training and retrieval data free from errors — source integrity required",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Art. 10",
+      "control_name": "Data and data governance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "RAG corpus integrity controls and source verification are Art. 10 requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI accurate and resilient against adversarial data manipulation",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Source trust scoring and ingestion validation are Art. 15 robustness requirements"
@@ -115,8 +115,8 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "AI-generated content that could be mistaken as human must be disclosed",
-      "control_name": "Art. 50 — Transparency",
+      "control_id": "Art. 50",
+      "control_name": "Transparency",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Disinformation risk amplified when users cannot distinguish AI-generated content — Art. 50 applies"
@@ -155,32 +155,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — provenance",
-      "control_name": "A.7.2",
+      "control_id": "A.7.2",
+      "control_name": "Data — provenance",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — quality",
-      "control_name": "A.7.3",
+      "control_id": "A.7.3",
+      "control_name": "Data — quality",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Impact assessment",
-      "control_name": "A.5.2",
+      "control_id": "A.5.2",
+      "control_name": "Impact assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Transparency",
-      "control_name": "A.8.1",
+      "control_id": "A.8.1",
+      "control_name": "Transparency",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
@@ -208,15 +208,15 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V5 Validation",
-      "control_name": "V5.1.3 — Server-side input validation",
+      "control_id": "V5",
+      "control_name": "Validation",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V11 Business Logic",
-      "control_name": "V11.1.4 — Enforce business logic limits",
+      "control_id": "V11.1.4",
+      "control_name": "Enforce business logic limits",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -254,24 +254,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain / connectivity",
-      "control_name": "§5.5",
+      "control_id": "§5.5",
+      "control_name": "Supply chain / connectivity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Tainted external OT data sources"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk",
-      "control_name": "§6.3",
+      "control_id": "§6.3",
+      "control_name": "Supply chain risk",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vet OT data-source provenance"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain program",
-      "control_name": "§8.4",
+      "control_id": "§8.4",
+      "control_name": "Supply chain program",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Provenance across the OT data supply chain"
@@ -310,29 +310,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG corpus integrity controls — only accurate, verified content enters the retrieval index",
-      "control_name": "PI1.2 — System inputs complete and accurate",
+      "control_id": "PI1.2",
+      "control_name": "System inputs complete and accurate",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM outputs derived from poisoned RAG are a processing integrity failure — detection before delivery",
-      "control_name": "PI1.3 — Outputs complete and accurate",
+      "control_id": "PI1.3",
+      "control_name": "Outputs complete and accurate",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG corpus data source providers assessed — content quality, update process, integrity guarantees",
-      "control_name": "CC9.1 — Vendor risk",
+      "control_id": "CC9.1",
+      "control_name": "Vendor risk",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG corpus anomaly detection — unusual content or modifications detected before reaching production",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -395,7 +395,7 @@
     {
       "framework": "ENISA Multilayer Framework",
       "control_id": "L3",
-      "control_name": "L3 — Sector-specific",
+      "control_name": "Sector-specific",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "For NIS2 essential entities and EU AI Act Annex III deployments — disinformation risk treated as a significant incident category"
@@ -449,39 +449,37 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-345",
-      "control_name": "CWE-345",
+      "control_name": "Insufficient Verification of Data Authenticity",
       "tier": "Hardening",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/345.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-20",
-      "control_name": "CWE-20",
+      "control_name": "Improper Input Validation",
       "tier": "Hardening",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/20.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Source provenance",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify training/RAG sources are vetted, signed, and provenance-tracked"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Targeted-falsehood probing",
-      "control_name": "MBT — Model Behaviour",
+      "control_id": "MBT",
+      "control_name": "Model Behaviour",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Probe for systematically false outputs on poisoned topics"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Corpus integrity monitoring",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Detect anomalous content injected into the RAG corpus over time"
@@ -540,150 +538,28 @@
       "notes": "Hardening"
     },
     {
-      "framework": "AIUC-1",
-      "control_id": "Version",
-      "control_name": "Date",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Author"
-    },
-    {
-      "framework": "AIUC-1",
-      "control_id": "2026-Q1",
-      "control_name": "2026-05-26",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "OWASP GenAI Data Security Initiative"
-    },
-    {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Third-party source credentials inject tainted content",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vet and scope third-party data-source identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Write access to corpora enables systematic injection",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Read-only by default; scoped, signed ingestion"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Durable write tokens sustain a poisoning campaign",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Ephemeral, job-scoped write credentials"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI entries most affected",
-      "control_name": "NHI Risk",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI07, DSGAI08, DSGAI17",
-      "control_name": "NHI-1 Improper Offboarding",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI01, DSGAI02, DSGAI14",
-      "control_name": "NHI-2 Secret Leakage",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "DevSecOps"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI03, DSGAI06, DSGAI21",
-      "control_name": "NHI-3 Third-Party NHI",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Security"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI05, DSGAI12, DSGAI13",
-      "control_name": "NHI-4 Insecure Authentication",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Platform"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI01, DSGAI04, DSGAI18, DSGAI20",
-      "control_name": "NHI-5 Over-Privileged NHI",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI02, DSGAI13, DSGAI20",
-      "control_name": "NHI-6 Insecure Storage",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Platform"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI02, DSGAI04, DSGAI18, DSGAI20",
-      "control_name": "NHI-7 Long-Lived",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI11, DSGAI17",
-      "control_name": "NHI-8 Env Isolation",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "DevSecOps"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI06, DSGAI11",
-      "control_name": "NHI-9 NHI Reuse",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "DSGAI03, DSGAI08, DSGAI19",
-      "control_name": "NHI-10 Human Use",
-      "tier": "Hardening",
-      "scope": "Both"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "Date",
-      "control_name": "Version",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Change"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "2026-03-27",
-      "control_name": "1.0.0",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Initial release — full mapping DSGAI01–DSGAI21 to NHI Top 10"
-    },
-    {
-      "framework": "OWASP NHI Top 10",
-      "control_id": "2026-05-29",
-      "control_name": "1.1.0",
-      "tier": "Hardening",
-      "scope": "Both",
-      "notes": "Corrected to canonical DSGAI 2026 taxonomy (entries had used a pre-release taxonomy); NHI mappings, mitigations, and cross-references rewritten to match"
     },
     {
       "framework": "NIST SP 800-218A",
@@ -854,28 +730,6 @@
       "ASI06",
       "ASI04",
       "ASI09"
-    ],
-    "dsgai_2026": [
-      "DSGAI01",
-      "DSGAI03",
-      "DSGAI07",
-      "DSGAI08",
-      "DSGAI02",
-      "DSGAI06",
-      "DSGAI12",
-      "DSGAI13",
-      "DSGAI04",
-      "DSGAI05",
-      "DSGAI11",
-      "DSGAI18",
-      "DSGAI17",
-      "DSGAI14",
-      "DSGAI15",
-      "DSGAI09",
-      "DSGAI16",
-      "DSGAI10",
-      "DSGAI19",
-      "DSGAI20"
     ]
   },
   "changelog": [

@@ -75,24 +75,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Third-party tool data exchange risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All tool integrations assessed in Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Providers document obligations flowing to deployers; deployers verify",
-      "control_name": "Art. 25 — Value chain responsibilities",
+      "control_id": "Art. 25",
+      "control_name": "Value chain responsibilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool data exchange obligations explicitly distributed along the value chain"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "GPAI providers document all third-party integrations",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_id": "Art. 53(1)(a)",
+      "control_name": "GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool and plugin data exchange documented in GPAI technical documentation"
@@ -131,32 +131,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Third-party — AI supply chain",
-      "control_name": "A.10.1",
+      "control_id": "A.10.1",
+      "control_name": "Third-party — AI supply chain",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Third-party — customer data",
-      "control_name": "A.10.2",
+      "control_id": "A.10.2",
+      "control_name": "Third-party — customer data",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — design",
-      "control_name": "A.6.1.2",
+      "control_id": "A.6.1.2",
+      "control_name": "Lifecycle — design",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — acquisition",
-      "control_name": "A.7.2",
+      "control_id": "A.7.2",
+      "control_name": "Data — acquisition",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
@@ -184,22 +184,22 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.1 — Access control on every request",
+      "control_id": "V4.1.1",
+      "control_name": "Access control on every request",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V9 Communication",
-      "control_name": "V9.1.1 — TLS for all connections",
+      "control_id": "V9.1.1",
+      "control_name": "TLS for all connections",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V11 Business Logic",
-      "control_name": "V11.1.4 — Business logic limits on repeated actions",
+      "control_id": "V11.1.4",
+      "control_name": "Business logic limits on repeated actions",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -229,24 +229,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain / connectivity",
-      "control_name": "§5.5",
+      "control_id": "§5.5",
+      "control_name": "Supply chain / connectivity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool/vendor integrations cross the OT trust boundary"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Supply chain risk",
-      "control_name": "§6.3",
+      "control_id": "§6.3",
+      "control_name": "Supply chain risk",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess each integration's data exchange"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data flow controls",
-      "control_name": "§7.3",
+      "control_id": "§7.3",
+      "control_name": "Data flow controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validate and minimise cross-boundary data"
@@ -285,29 +285,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Tool and plugin providers assessed in vendor risk programme — what data they receive, retain, and use",
-      "control_name": "CC9.1 — Vendor risk",
+      "control_id": "CC9.1",
+      "control_name": "Vendor risk",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Contractual data handling obligations for tool providers — data minimisation, retention, training use restrictions",
-      "control_name": "CC9.2 — Vendor agreements",
+      "control_id": "CC9.2",
+      "control_name": "Vendor agreements",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Context minimisation for tool calls — tools receive minimum confidential data required for function",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "C2.1",
+      "control_name": "Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Tool access scoped to minimum required — agent tool permissions as privileged access",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -431,47 +431,44 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
-      "control_name": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/284.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-269",
-      "control_name": "CWE-269",
+      "control_name": "Improper Privilege Management",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/269.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-602",
-      "control_name": "CWE-602",
+      "control_name": "Client-side Enforcement of Server-side Security",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/602.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Tool I/O trust boundaries",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify tool return values are treated as untrusted and validated before use"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Per-tool data scoping",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm each tool receives only the data it requires for its function"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Data minimisation to tools",
-      "control_name": "OHT — Output Handling",
+      "control_id": "OHT",
+      "control_name": "Output Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify sensitive fields are stripped from tool inputs unless required"
@@ -531,24 +528,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Tool tokens carry excessive permissions",
-      "control_name": "NHI-3 Vulnerable Third-Party NHI",
+      "control_id": "NHI-3",
+      "control_name": "Vulnerable Third-Party NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vet and minimum-scope every tool credential"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "A tool identity can reach more data than the task needs",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scope tool identities per function"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "One credential shared across tools amplifies compromise",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Distinct credential per tool/integration"

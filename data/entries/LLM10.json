@@ -22,7 +22,6 @@
       "control_name": "Denial of AI Service",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
       "notes": "Overloading AI systems with computationally expensive inputs to cause service degradation"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Cost Harvesting",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0034",
       "notes": "Crafting inputs that maximise token usage or API costs per request"
     },
     {
@@ -68,24 +66,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Availability risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Resource exhaustion and DoS scenarios included in risk management system"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI must remain available under adversarial conditions",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Technical resilience against denial-of-service attacks is an Art. 15 requirement"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Operational continuity procedures documented",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Post-market monitoring and incident response for availability failures required"
@@ -156,24 +154,24 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "4.1 Establish secure configuration process",
-      "control_name": "CIS 4 — Secure Configuration",
+      "control_id": "CIS 4",
+      "control_name": "Secure Configuration",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secure configuration includes resource limits — token caps, rate limits, cost budgets"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "12.6 Use of network-based URL filters",
-      "control_name": "CIS 12 — Network Infrastructure Management",
+      "control_id": "CIS 12",
+      "control_name": "Network Infrastructure Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Rate limiting and traffic controls at the API gateway and network layer"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 — Incident Response",
+      "control_id": "CIS 17",
+      "control_name": "Incident Response",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Defined response for consumption anomalies — automated rate limiting, session suspension, alerting"
@@ -236,59 +234,27 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Denial of service attacks targeting OT availability",
-      "control_name": "Section 5.6 — DoS threats",
+      "control_id": "§5.6",
+      "control_name": "DoS threats",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM-induced resource exhaustion as a DoS vector affecting shared OT network infrastructure"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Assess availability risks for OT systems",
-      "control_name": "Section 6.2 — Risk assessment",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM resource consumption impact assessed on shared OT network and compute infrastructure"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Network architecture preventing DoS propagation",
-      "control_name": "Section 7.2 — Network segmentation",
+      "control_id": "§7.2",
+      "control_name": "Network segmentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM infrastructure isolated from OT control network — bandwidth caps at DMZ boundary"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Title",
-      "control_name": "Control",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "Application"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Denial of Service Protection",
-      "control_name": "SC-5",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM infrastructure protected against resource exhaustion attacks affecting OT availability"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Fail-Safe Procedures",
-      "control_name": "SI-17",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM service degradation has defined fail-safe behaviour — process control continues without LLM"
-    },
-    {
-      "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Audit Record Generation",
-      "control_name": "AU-12",
-      "tier": "Foundational",
-      "scope": "Both",
-      "notes": "LLM resource consumption logged — patterns indicating exhaustion attacks detectable"
     },
     {
       "framework": "NIST CSF 2.0",
@@ -324,29 +290,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM service availability commitments documented — SLAs, RTO/RPO, resource limits that protect availability",
-      "control_name": "A1.1 — Availability policies",
+      "control_id": "A1.1",
+      "control_name": "Availability policies",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Rate limiting and resource controls protect LLM service availability — implemented and monitored",
-      "control_name": "A1.2 — Environmental protections",
+      "control_id": "A1.2",
+      "control_name": "Environmental protections",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Real-time monitoring of LLM resource consumption — cost anomalies and unusual volume patterns alerted",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Resource exhaustion risks identified in LLM risk assessment — DoS and sponge attack vectors assessed",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -456,47 +422,44 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-400",
-      "control_name": "CWE-400",
+      "control_name": "Uncontrolled Resource Consumption",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/400.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-770",
-      "control_name": "CWE-770",
+      "control_name": "Allocation of Resources Without Limits or Throttling",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/770.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-799",
-      "control_name": "CWE-799",
+      "control_name": "Improper Control of Interaction Frequency",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/799.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Resource exhaustion and rate limiting",
-      "control_name": "AVT — Availability",
+      "control_id": "AVT",
+      "control_name": "Availability",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Test rate limiting enforcement, token budget controls, and compute throttling under load; verify graceful degradation"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Consumption anomaly detection",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify monitoring detects abnormal consumption patterns — token flooding, API abuse, wallet drainage — before service impact"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Per-user quota enforcement",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify per-user and per-tenant quotas are enforced and cannot be bypassed through session switching or credential abuse"
@@ -548,16 +511,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Single credential with access to multiple services — one exhaustion affects all",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credentials per service with independent quotas"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared credential used across services — quota exhaustion in one affects all",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Separate credentials per integration"
@@ -727,17 +690,6 @@
     }
   ],
   "crossrefs": {
-    "llm_top10": [
-      "LLM01",
-      "LLM06",
-      "LLM07",
-      "LLM02",
-      "LLM05",
-      "LLM03",
-      "LLM04",
-      "LLM08",
-      "LLM09"
-    ],
     "agentic_top10": [
       "ASI08",
       "ASI10"

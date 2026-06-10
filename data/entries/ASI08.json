@@ -22,7 +22,6 @@
       "control_name": "Denial of AI Service",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
       "notes": "Triggering cascading failure propagation to exhaust system resources or degrade service"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Cost Harvesting",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0034",
       "notes": "Crafting inputs that trigger runaway agent loops generating unbounded costs"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
       "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally, leaking data during failure"
     },
     {
@@ -77,24 +74,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Cascade risks identified and mitigated — blast radius defined",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Cascade scenarios in Art. 9 risk management — maximum affected systems, circuit breaker thresholds"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Human oversight over high-risk AI — ability to pause and stop",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Circuit breakers and kill switches are Art. 14 human oversight mechanisms"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Technical resilience against cascading failures",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Circuit breakers, fail-safe defaults, and cascade containment architecture are Art. 15 requirements"
@@ -165,32 +162,32 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "4.1 Establish secure configuration process",
-      "control_name": "CIS 4 — Secure Configuration",
+      "control_id": "CIS 4",
+      "control_name": "Secure Configuration",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secure configuration includes circuit breakers and rate limits — cascade prevention as configuration requirement"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "12.6 Use network-based URL filters",
-      "control_name": "CIS 12 — Network Infrastructure Management",
+      "control_id": "CIS 12",
+      "control_name": "Network Infrastructure Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Network controls prevent cascade propagation across agent cluster boundaries"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 — Incident Response",
+      "control_id": "CIS 17",
+      "control_name": "Incident Response",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Defined response for cascade events — kill switch activation, process control fallback, operations notification"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.6 Collect DNS query audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent traffic monitored — cascade indicators detected before physical impact"
@@ -261,24 +258,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Availability risks",
-      "control_name": "§5.6",
+      "control_id": "§5.6",
+      "control_name": "Availability risks",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Cascading failure across OT components"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Cascade failure scenarios in OT risk register"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
+      "control_id": "§7.2",
+      "control_name": "Security controls",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Circuit breakers between OT automation layers"
@@ -317,32 +314,32 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Availability commitments defined for multi-agent system — RTO/RPO documented; cascade failure scenarios in availability risk",
-      "control_name": "A1.1",
+      "control_id": "A1.1",
+      "control_name": "Availability commitments defined for multi-agent system — RTO/RPO documented; cascade failure scenarios in availability risk",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Availability SLA, BCP documentation"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Capacity and performance monitoring — early warning of cascade failure precursors (latency, error rate, queue depth)",
-      "control_name": "A1.2",
+      "control_id": "A1.2",
+      "control_name": "Capacity and performance monitoring — early warning of cascade failure precursors (latency, error rate, queue depth)",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Monitoring dashboards, alert configuration"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Cascade failure incidents detected and responded to — incident response procedures for multi-agent failures",
-      "control_name": "CC7.3",
+      "control_id": "CC7.3",
+      "control_name": "Cascade failure incidents detected and responded to — incident response procedures for multi-agent failures",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "IR plan covering cascade scenarios, incident records"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Cascade failure risk in risk assessment — blast radius analysis, dependency mapping documented",
-      "control_name": "CC3.3",
+      "control_id": "CC3.3",
+      "control_name": "Cascade failure risk in risk assessment — blast radius analysis, dependency mapping documented",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Risk register with cascade failure entries"
@@ -474,8 +471,8 @@
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Uncontrolled Resource Consumption",
-      "control_name": "CWE-400",
+      "control_id": "CWE-400",
+      "control_name": "Uncontrolled Resource Consumption",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent resource consumption not bounded — enables exhaustion propagation across cluster"
@@ -514,24 +511,24 @@
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Circuit breaker trigger and recovery",
-      "control_name": "AVT — Availability",
+      "control_id": "AVT",
+      "control_name": "Availability",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Inject failures to verify circuit breaker activates at threshold; test recovery path"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Blast radius containment",
-      "control_name": "AST — Agent-Specific",
+      "control_id": "AST",
+      "control_name": "Agent-Specific",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify failure in one agent cluster does not propagate to adjacent clusters"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Cascade detection alert",
-      "control_name": "LMT — Logging & Monitoring",
+      "control_id": "LMT",
+      "control_name": "Logging & Monitoring",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify monitoring raises alert on cascade indicators before physical impact"
@@ -580,56 +577,56 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Cascading agent failure with over-privileged credentials exposes all accessible systems",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least privilege per agent — cascade blast radius limited by credential scope"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Shared credentials mean cascade in one agent affects all agents sharing the credential",
-      "control_name": "NHI-9 NHI Reuse",
+      "control_id": "NHI-9",
+      "control_name": "NHI Reuse",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Unique identity per agent — cascade cannot leverage shared credentials for lateral movement"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Long-lived credentials exposed during cascade remain valid for attacker use post-incident",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Short-lived credentials — cascade event triggers automatic revocation of all affected tokens"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Design circuit breakers, step limits, cost budgets, and human approval gates as explicit security requirements for all agentic automation workflows",
-      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software to meet security requirements",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Ensures cascade prevention is a design-phase requirement"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Conduct adversarial testing of cascade failure paths — test error propagation, hallucination amplification, and runaway automation scenarios",
-      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validates cascade prevention controls under attack conditions"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Define remediation procedures for cascade failure incidents including automatic circuit breaker activation, workflow suspension, cost cap enforcement, and rollback",
-      "control_name": "RV.2.1-PS – Assess, prioritise, and remediate vulnerabilities",
+      "control_id": "RV.2.1-PS",
+      "control_name": "Assess, prioritise, and remediate vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enables rapid response to cascading automation failures"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Define explicit requirements for maximum automation depth, step limits, cost budgets, and mandatory human checkpoints for each agent workflow",
-      "control_name": "PW.1.1-PS – Define security requirements",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Establishes automation boundaries as mandatory requirements"

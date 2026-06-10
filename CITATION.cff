@@ -12,7 +12,7 @@ url: "https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/"
 abstract: >-
   The most comprehensive publicly available mapping of AI security risks
   to industry compliance frameworks. Maps 41 OWASP GenAI vulnerability
-  entries (LLM Top 10, Agentic Top 10, DSGAI 2026) to 1,511 controls
+  entries (LLM Top 10, Agentic Top 10, DSGAI 2026) to 1,016 controls
   across 25 frameworks including EU AI Act, NIST AI RMF, ISO 42001,
   SOC 2, FedRAMP, DORA, PCI DSS, and MITRE ATLAS. Includes 114
   documented AI security incidents, a semantic classifier pipeline

@@ -75,32 +75,32 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "LLM gateway risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All LLM-to-database interfaces mapped in Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI designed to allow effective human oversight — ability to pause, stop, and override",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM-generated destructive database queries executing autonomously are an Art. 14 human oversight failure"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Cybersecurity measures protecting against adversarial misuse",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Least-privilege execution, query allowlisting, and SQL injection prevention are Art. 15 requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Documented procedures for LLM gateway security",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Security testing procedures and query log retention documented in quality management"
@@ -139,32 +139,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — operational",
-      "control_name": "A.6.2.3",
+      "control_id": "A.6.2.3",
+      "control_name": "Lifecycle — operational",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — testing",
-      "control_name": "A.6.2.6",
+      "control_id": "A.6.2.6",
+      "control_name": "Lifecycle — testing",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — access control",
-      "control_name": "A.7.2",
+      "control_id": "A.7.2",
+      "control_name": "Data — access control",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Use of AI systems",
-      "control_name": "A.9.1",
+      "control_id": "A.9.1",
+      "control_name": "Use of AI systems",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Foundational"
@@ -192,29 +192,29 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V5 Validation",
-      "control_name": "V5.1.1 — Allowlist input validation",
+      "control_id": "V5.1.1",
+      "control_name": "Allowlist input validation",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V5 Validation",
-      "control_name": "V5.3.4 — SQL injection prevention",
+      "control_id": "V5",
+      "control_name": "Validation",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.1 — Access control on every request",
+      "control_id": "V4.1.1",
+      "control_name": "Access control on every request",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V13 API",
-      "control_name": "V13.1.1 — API protection against enumeration",
+      "control_id": "V13.1.1",
+      "control_name": "API protection against enumeration",
       "tier": "Foundational",
       "scope": "Build"
     },
@@ -252,24 +252,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Common ICS vulnerabilities",
-      "control_name": "§5.3",
+      "control_id": "§5.3",
+      "control_name": "Common ICS vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Injectable query interfaces to OT data"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Assess generated-query reach"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.2",
+      "control_id": "§7.2",
+      "control_name": "Security controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Parameterise and scope generated queries"
@@ -308,36 +308,36 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM-generated queries execute under requesting user's permissions — least privilege, no shared high-privilege accounts",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy requiring LLM-generated queries to be validated before execution — only authorised processing permitted",
-      "control_name": "PI1.1 — Processing integrity policy",
+      "control_id": "PI1.1",
+      "control_name": "Processing integrity policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM-generated query results validated — destructive or over-broad queries blocked before execution",
-      "control_name": "PI1.3 — Outputs complete and accurate",
+      "control_id": "PI1.3",
+      "control_name": "Outputs complete and accurate",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM-generated query anomaly monitoring — bulk extraction, unusual patterns, out-of-scope queries alerted",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Query allowlisting and human confirmation procedures documented",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "CC5.2",
+      "control_name": "Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -453,47 +453,44 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-89",
-      "control_name": "CWE-89",
+      "control_name": "SQL Injection",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/89.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-20",
-      "control_name": "CWE-20",
+      "control_name": "Improper Input Validation",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/20.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
-      "control_name": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/284.html"
+      "scope": "Build"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "NL-to-query injection",
-      "control_name": "IHT — Input Handling",
+      "control_id": "IHT",
+      "control_name": "Input Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Craft prompts that induce destructive or over-broad generated queries"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Generated-query validation",
-      "control_name": "OHT — Output Handling",
+      "control_id": "OHT",
+      "control_name": "Output Handling",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify generated queries are parameterised, allowlisted, and scope-limited before execution"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Execution-time authorisation",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm the gateway executes under the user's permissions, not a privileged service account"
@@ -553,16 +550,16 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Gateway service account can run destructive/over-broad queries",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Execute under the user's scoped permissions, not a privileged account"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weak gateway-to-DB auth enables spoofing",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Strong mutual auth to the data source"

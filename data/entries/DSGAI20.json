@@ -75,24 +75,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Cybersecurity measures protecting AI system integrity",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "API rate limiting, output perturbation, and extraction monitoring are Art. 15 requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "GPAI technical documentation includes model architecture and capability details",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_id": "Art. 53(1)(a)",
+      "control_name": "GPAI documentation",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Technical documentation must be protected — model extraction enables circumvention of documentation obligations"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Post-market monitoring covering security incidents",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Model extraction detection in post-market monitoring programme"
@@ -131,32 +131,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — model artefacts",
-      "control_name": "A.7.3",
+      "control_id": "A.7.3",
+      "control_name": "Data — model artefacts",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — design",
-      "control_name": "A.6.1.2",
+      "control_id": "A.6.1.2",
+      "control_name": "Lifecycle — design",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — testing",
-      "control_name": "A.6.2.6",
+      "control_id": "A.6.2.6",
+      "control_name": "Lifecycle — testing",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Advanced"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Planning — risk",
-      "control_name": "Cl.6.1",
+      "control_id": "Cl.6.1",
+      "control_name": "Planning — risk",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Hardening"
@@ -184,22 +184,22 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.1 — Access control per request",
+      "control_id": "V4.1.1",
+      "control_name": "Access control per request",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V8 Data Protection",
-      "control_name": "V8.1.4 — Data minimisation in responses",
+      "control_id": "V8",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V10 Malicious Code",
-      "control_name": "V10.2.2 — Component integrity checking",
+      "control_id": "V10.2.2",
+      "control_name": "Component integrity checking",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -229,24 +229,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data security",
-      "control_name": "§5.4",
+      "control_id": "§5.4",
+      "control_name": "Data security",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Protect model artefacts as OT IP"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Risk assessment",
-      "control_name": "§6.2",
+      "control_id": "§6.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Assess extraction exposure"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data flow controls",
-      "control_name": "§7.3",
+      "control_id": "§7.3",
+      "control_name": "Data flow controls",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Constrain inference access"
@@ -285,29 +285,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Proprietary model artifacts classified as confidential — access controls, rate limiting, extraction detection",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "C2.1",
+      "control_name": "Confidential information protection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "API rate limiting as access control limiting systematic model extraction",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Model extraction pattern monitoring — unusual query diversity and volume detected",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Hardening",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Model extraction risks identified in risk assessment — extraction vectors, IP exposure assessed",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Hardening",
       "scope": "Both"
     },
@@ -424,39 +424,37 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
-      "control_name": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Hardening",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/284.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-201",
-      "control_name": "CWE-201",
+      "control_name": "Insertion of Sensitive Information Into Sent Data",
       "tier": "Hardening",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/201.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Extraction-query detection",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Detect high-volume, systematic querying characteristic of model extraction"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Query budgeting",
-      "control_name": "AVT — Availability",
+      "control_id": "AVT",
+      "control_name": "Availability",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Verify per-principal query budgets and rate limits constrain extraction"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Weight artefact protection",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Confirm model weights are access-controlled and not retrievable via the serving path"
@@ -516,24 +514,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Broad API/weight access enables extraction",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Scope inference and artifact-store identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Durable keys sustain stealing campaigns",
-      "control_name": "NHI-7 Long-Lived Credentials",
+      "control_id": "NHI-7",
+      "control_name": "Long-Lived Credentials",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Short-lived keys; per-principal query budgets"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Weight-store credentials in plaintext enable direct theft",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vault weight-store credentials; encrypt at rest"

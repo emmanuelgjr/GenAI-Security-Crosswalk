@@ -83,24 +83,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Vector store security risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All vector store deployments assessed in Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI infrastructure protected against cybersecurity risks",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "RBAC, encryption, and CVE patching for vector stores are Art. 15 requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Post-market monitoring covering AI infrastructure components",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vector store security monitoring in post-market monitoring programme"
@@ -139,32 +139,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — acquisition",
-      "control_name": "A.7.2",
+      "control_id": "A.7.2",
+      "control_name": "Data — acquisition",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — preparation",
-      "control_name": "A.7.3",
+      "control_id": "A.7.3",
+      "control_name": "Data — preparation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — design",
-      "control_name": "A.6.1.2",
+      "control_id": "A.6.1.2",
+      "control_name": "Lifecycle — design",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Third-party",
-      "control_name": "A.10.1",
+      "control_id": "A.10.1",
+      "control_name": "Third-party",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
@@ -192,22 +192,22 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.3 — Deny by default",
+      "control_id": "V4.1.3",
+      "control_name": "Deny by default",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V6 Cryptography",
-      "control_name": "V6.1.1 — Sensitive data not stored in cleartext",
+      "control_id": "V6.1.1",
+      "control_name": "Sensitive data not stored in cleartext",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V12 Files/Resources",
-      "control_name": "V12.1.1 — File upload validation",
+      "control_id": "V12.1.1",
+      "control_name": "File upload validation",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -237,24 +237,24 @@
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data security",
-      "control_name": "§5.4",
+      "control_id": "§5.4",
+      "control_name": "Data security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Protect the OT RAG/embedding tier"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Security controls",
-      "control_name": "§7.1",
+      "control_id": "§7.1",
+      "control_name": "Security controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Harden the vector store deployment"
     },
     {
       "framework": "NIST SP 800-82 Rev 3",
-      "control_id": "Data flow controls",
-      "control_name": "§7.3",
+      "control_id": "§7.3",
+      "control_name": "Data flow controls",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Scope retrieval to authorised OT data"
@@ -293,29 +293,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Vector store content encrypted at rest — embeddings of confidential data protected",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "C2.1",
+      "control_name": "Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RBAC on all vector store collections — no unauthenticated access",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Vector database CVE patching managed through change management — timely remediation documented",
-      "control_name": "CC8.1 — Change management",
+      "control_id": "CC8.1",
+      "control_name": "Change management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Vector store query anomaly monitoring — bulk extraction patterns detected",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -439,39 +439,37 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
-      "control_name": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/284.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-327",
-      "control_name": "CWE-327",
+      "control_name": "Use of a Broken or Risky Cryptographic Algorithm",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/327.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Index/namespace authorisation",
-      "control_name": "ACT — Access Control",
+      "control_id": "ACT",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify per-namespace/tenant access control on the vector store"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Embedding confidentiality",
-      "control_name": "DPT — Data Protection",
+      "control_id": "DPT",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Confirm embeddings are encrypted at rest and inversion-resistant where required"
     },
     {
       "framework": "OWASP AI Testing Guide",
-      "control_id": "Platform hardening",
-      "control_name": "SCT — Supply Chain",
+      "control_id": "SCT",
+      "control_name": "Supply Chain",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Verify the vector DB version, auth config, and network exposure are hardened"
@@ -523,24 +521,24 @@
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Vector DB exposed via weak/no auth",
-      "control_name": "NHI-4 Insecure Authentication",
+      "control_id": "NHI-4",
+      "control_name": "Insecure Authentication",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enforce strong auth and network restriction"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Service accounts read across namespaces/tenants",
-      "control_name": "NHI-5 Over-Privileged NHI",
+      "control_id": "NHI-5",
+      "control_name": "Over-Privileged NHI",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Per-namespace scoped identities"
     },
     {
       "framework": "OWASP NHI Top 10",
-      "control_id": "Vector-store credentials stored in plaintext",
-      "control_name": "NHI-6 Insecure Credential Storage",
+      "control_id": "NHI-6",
+      "control_name": "Insecure Credential Storage",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vault all vector-store credentials"
