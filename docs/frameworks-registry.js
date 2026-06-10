@@ -2580,7 +2580,7 @@ window.CROSSWALK_FRAMEWORKS = [
     "license": "Public Domain",
     "publisher": "GSA / FedRAMP PMO",
     "category": "certification",
-    "last_synced": "2026-04-10",
+    "last_synced": "2026-06-10",
     "source_sha": null,
     "controls": [
       {
@@ -2614,14 +2614,29 @@ window.CROSSWALK_FRAMEWORKS = [
         "description": "Enforce least privilege for all agent permissions; restrict tool access, data store access, and API scope to minimum necessary per agent role; Enforce least privilege with explicit privilege ceilings per agent; prevent accumulation of permissions through tool chaining or inter-agent delegation; Enforce least privilege across tool chains; prevent agents from combining tool invocations that individually are safe but together achieve harmful outcomes"
       },
       {
+        "control_id": "AC-4",
+        "title": "Information Flow Enforcement — context isolation",
+        "description": "Enforce approved information flows between AI pipeline stages and data domains; isolate context between tenants, sessions, and trust boundaries; prevent leakage of sensitive data across retrieval, inference, and tool contexts"
+      },
+      {
         "control_id": "CM-7",
         "title": "Least Functionality — agent capability restrictions",
         "description": "Restrict agents to minimum necessary capabilities; disable unused tools, APIs, and action types; enforce capability restrictions in agent configuration; Restrict agent code execution to minimum necessary scope; enforce sandbox boundaries, disable unnecessary language features, and limit filesystem and network access; Restrict permitted tool combinations; define allowed tool chains in configuration and deny undefined sequences"
       },
       {
+        "control_id": "CM-6",
+        "title": "Configuration Settings — vector database hardening",
+        "description": "Establish and enforce secure configuration baselines for AI infrastructure including vector databases, embedding stores, and retrieval services; harden access controls, network exposure, and authentication; detect and remediate configuration drift"
+      },
+      {
         "control_id": "IA-2",
         "title": "Identification and Authentication — agent NHI",
         "description": "Assign unique non-human identities to each AI agent; authenticate agent identity at each tool invocation and inter-agent communication boundary"
+      },
+      {
+        "control_id": "IA-5",
+        "title": "Authenticator Management — agent credential lifecycle",
+        "description": "Manage the full lifecycle of agent and non-human identity authenticators; enforce secure issuance, rotation, scoping, and revocation of agent credentials, API keys, and tokens; prevent credential reuse and stale-credential abuse"
       },
       {
         "control_id": "IR-4",
@@ -2669,6 +2684,11 @@ window.CROSSWALK_FRAMEWORKS = [
         "description": "Monitor multi-agent systems for cascade indicators — error propagation, resource exhaustion spreading, and anomalous inter-agent communication patterns; Monitor agent systems for unexpected behaviour — novel tool use patterns, unanticipated goal decomposition, and emergent inter-agent coordination; Monitor agent dependency health in real time — API availability, response latency, error rates; alert on degradation and trigger fallback procedures"
       },
       {
+        "control_id": "SI-7",
+        "title": "Software, Firmware, and Information Integrity — pipeline integrity",
+        "description": "Verify the integrity of AI pipeline software, artefacts, and data using cryptographic checksums and signatures; detect unauthorised modification of pipeline code and configuration; Verify the integrity of knowledge sources, embeddings, and retrieved content before use; detect tampering and poisoning of knowledge bases feeding AI systems"
+      },
+      {
         "control_id": "PM-9",
         "title": "Risk Management Strategy — automation risk",
         "description": "Include cascading automation risk in the organisational risk management strategy; define acceptable multi-agent coupling thresholds and circuit breaker requirements; Include data visibility and transparency requirements in AI risk management strategy; define what data flows must be documented and monitored; Include data lineage completeness in AI risk management strategy; define minimum lineage requirements per data sensitivity level"
@@ -2697,6 +2717,31 @@ window.CROSSWALK_FRAMEWORKS = [
         "control_id": "RA-3",
         "title": "Risk Assessment — governance completeness",
         "description": "Assess AI governance completeness; identify gaps in roles, policies, oversight, and accountability; Conduct regulatory compliance gap analysis for AI systems; identify areas of non-compliance and define remediation plans"
+      },
+      {
+        "control_id": "AT-2",
+        "title": "Literacy Training and Awareness — AI data risk training",
+        "description": "Provide AI literacy and awareness training covering data risks — prompt injection, data leakage, poisoning, and privacy obligations — to all personnel interacting with AI systems and the data they process"
+      },
+      {
+        "control_id": "AT-3",
+        "title": "Role-Based Training — AI trust awareness",
+        "description": "Provide role-based training for personnel responsible for AI agent systems; cover agent trust boundaries, goal-hijacking awareness, and safe operation of autonomous tools commensurate with assigned roles and responsibilities"
+      },
+      {
+        "control_id": "PS-3",
+        "title": "Personnel Screening — sensitive data role screening",
+        "description": "Screen personnel before granting access to sensitive AI training data, model weights, and data pipelines; re-screen commensurate with data sensitivity and the privilege of the assigned AI data role"
+      },
+      {
+        "control_id": "CP-9",
+        "title": "System Backup — AI data asset backup",
+        "description": "Back up critical AI data assets — training data, model weights, embedding stores, and pipeline configuration — at defined frequencies; protect backups with encryption and integrity verification, and test restorability"
+      },
+      {
+        "control_id": "CP-10",
+        "title": "System Recovery and Reconstitution — pipeline restoration",
+        "description": "Define and test procedures to recover and reconstitute AI pipelines to a known-good state after disruption, corruption, or compromise; restore models, data stores, and configuration with verified integrity and provenance"
       }
     ]
   },
