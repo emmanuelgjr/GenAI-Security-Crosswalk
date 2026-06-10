@@ -75,16 +75,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Data governance applies to all data in AI system scope — including telemetry and monitoring data",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Art. 10",
+      "control_name": "Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Telemetry data governance — classification, access controls, retention — is an Art. 10 requirement"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Post-market monitoring required — but the monitoring infrastructure must itself be secured",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Telemetry security is both an Art. 17 obligation and an Art. 10 data governance requirement"
@@ -123,8 +123,8 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — governance",
-      "control_name": "A.7.2",
+      "control_id": "A.7.2",
+      "control_name": "Data — governance",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Foundational"
@@ -139,16 +139,16 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — testing",
-      "control_name": "A.6.2.6",
+      "control_id": "A.6.2.6",
+      "control_name": "Lifecycle — testing",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Performance evaluation",
-      "control_name": "Cl.9",
+      "control_id": "Cl.9",
+      "control_name": "Performance evaluation",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Hardening"
@@ -183,29 +183,29 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V7 Logging",
-      "control_name": "V7.1.1 — No credential logging",
+      "control_id": "V7",
+      "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V7 Logging",
-      "control_name": "V7.1.2 — No sensitive data in logs",
+      "control_id": "V7",
+      "control_name": "Logging",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V8 Data Protection",
-      "control_name": "V8.1.1 — Sensitive data not in URLs",
+      "control_id": "V8.1.1",
+      "control_name": "Sensitive data not in URLs",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.1 — Access control on log stores",
+      "control_id": "V4.1.1",
+      "control_name": "Access control on log stores",
       "tier": "Foundational",
       "scope": "Build"
     },
@@ -291,29 +291,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "GenAI telemetry classified and encrypted — content captured in traces protected at same level as source data",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "C2.1",
+      "control_name": "Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information in telemetry used only for authorised purposes — same restrictions as production data",
-      "control_name": "P5.1 — Personal information use",
+      "control_id": "P5.1",
+      "control_name": "Personal information use",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access controls on telemetry stores — same rigour as production data stores",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access anomaly monitoring on telemetry stores — bulk access patterns detected",
-      "control_name": "CC7.2 — Monitoring",
+      "control_id": "CC7.2",
+      "control_name": "Monitoring",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -422,26 +422,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-312",
-      "control_name": "CWE-312",
+      "control_name": "Cleartext Storage of Sensitive Information",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/312.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-532",
-      "control_name": "CWE-532",
+      "control_name": "Insertion of Sensitive Information Into Log File",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/532.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-200",
-      "control_name": "CWE-200",
+      "control_name": "Exposure of Sensitive Information",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/200.html"
+      "scope": "Build"
     },
     {
       "framework": "OWASP AI Testing Guide",

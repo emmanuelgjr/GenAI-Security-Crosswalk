@@ -22,7 +22,6 @@
       "control_name": "Publish Hallucinated Entities",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
       "notes": "AI-generated hallucinated content published as fact, spreading false information"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "AI-Enabled Product or Service",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
       "notes": "Generating high-volume automated content via AI-enabled services to shape perception or overwhelm fact-checking"
     },
     {
@@ -68,16 +66,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI system information must include accuracy metrics and known limitations",
-      "control_name": "Art. 13 — Transparency",
+      "control_id": "Art. 13",
+      "control_name": "Transparency",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hallucination rates and accuracy limitations must be disclosed to deployers and users"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "AI-generated content must be marked as such — chatbots must disclose AI nature",
-      "control_name": "Art. 50 — Transparency for certain AI systems",
+      "control_id": "Art. 50",
+      "control_name": "Transparency for certain AI systems",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Mandatory AI disclosure prevents users from treating hallucinated content as authoritative human output"
@@ -156,24 +154,24 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "14.1 Establish security awareness programme",
-      "control_name": "CIS 14 — Security Awareness",
+      "control_id": "CIS 14",
+      "control_name": "Security Awareness",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "User training on LLM output limitations — verification requirements and critical evaluation"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 — Incident Response",
+      "control_id": "CIS 17",
+      "control_name": "Incident Response",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Defined response for LLM misinformation incidents — correction, notification, root cause"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "3.1 Establish data management process",
-      "control_name": "CIS 3 — Data Protection",
+      "control_id": "CIS 3",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "RAG data governance — quality and freshness controls on retrieval sources"
@@ -316,29 +314,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy on LLM output accuracy — acceptable accuracy thresholds, verification requirements for high-stakes use cases",
-      "control_name": "PI1.1 — Processing integrity policy",
+      "control_id": "PI1.1",
+      "control_name": "Processing integrity policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM inputs (RAG sources, training data) quality controls — authoritative, current, verified sources",
-      "control_name": "PI1.2 — System inputs are complete and accurate",
+      "control_id": "PI1.2",
+      "control_name": "System inputs are complete and accurate",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Misinformation risk identified in LLM risk assessment — harm potential of incorrect outputs per use case",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Production monitoring for accuracy degradation and hallucination patterns — drift detection",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -455,18 +453,16 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-1021",
-      "control_name": "CWE-1021",
+      "control_name": "Improper Restriction of Rendered UI Layers or Frames",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/1021.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-116",
-      "control_name": "CWE-116",
+      "control_name": "Improper Encoding or Escaping of Output",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/116.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

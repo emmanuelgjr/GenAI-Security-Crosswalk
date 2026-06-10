@@ -330,7 +330,7 @@ function parseMaestroLayers(sectionBody, frameworkName, qr) {
  * Parse framework control mappings from a vulnerability section body.
  * Returns Mapping[]
  */
-function parseControlTable(sectionBody, frameworkName, qr) {
+function parseControlTable(sectionBody, frameworkName, qr, regIds) {
   const subsections = extractSubsections(sectionBody);
 
   // Find the first subsection whose heading is NOT "Mitigations", "Tools", "Cross-ref"
@@ -345,9 +345,11 @@ function parseControlTable(sectionBody, frameworkName, qr) {
     if (layers.length) return layers;
   }
 
-  if (!mappingSection) return [];
+  // Fall back to the raw section body when there is no #### subsection heading
+  // (e.g. a bare table passed directly).
+  const tableBody = mappingSection ? mappingSection.body : sectionBody;
 
-  const rows = parseTable(mappingSection.body);
+  const rows = parseTable(tableBody);
   if (!rows.length) return [];
 
   const mappings = [];
@@ -367,6 +369,24 @@ function parseControlTable(sectionBody, frameworkName, qr) {
     const id1 = extractIdAndUrl(col1);
     const id0 = extractIdAndUrl(col0);
 
+    const leadCode = (text) => {
+      if (!text) return null;
+      const sep = text.match(/^(.*?)\s*[—–:]\s+/);
+      return (sep ? sep[1] : text.split(/\s+/)[0]).trim();
+    };
+    if (regIds && regIds.size) {
+      for (const [codeCell, otherCell] of [[id0.text, id1.text], [id1.text, id0.text]]) {
+        const cand = leadCode(codeCell);
+        if (cand && regIds.has(cand)) {
+          controlId = cand;
+          const rest = codeCell.slice(codeCell.indexOf(cand) + cand.length).replace(/^\s*[—–:]\s*/, '').trim();
+          controlName = rest || otherCell || cand;
+          break;
+        }
+      }
+    }
+
+    if (!controlId) {
     if (id1.url) {
       // col1 is a link — ID is the link text, name is col0 text
       controlId   = id1.text;
@@ -392,6 +412,7 @@ function parseControlTable(sectionBody, frameworkName, qr) {
         controlId   = id1.text || id0.text;
         controlName = id0.text;
       }
+    }
     }
 
     // Skip separator / header rows that leaked through
@@ -542,6 +563,8 @@ function main() {
   console.log(`\nGenAI Security Crosswalk — generate.js${DRY_RUN ? ' [DRY RUN]' : ''}`);
   console.log('─'.repeat(50));
 
+  const REG = loadRegistryIds();
+
   // Load incidents index from data/incidents.json if available
   const incidentsFile = path.join(ROOT, 'data', 'incidents.json');
   const incidentsByEntry = {};   // entryId -> [{name, url, year, incident_id}]
@@ -612,7 +635,7 @@ function main() {
 
       const qr = quickRef[id];
 
-      const mappings = parseControlTable(section, framework, qr);
+      const mappings = parseControlTable(section, framework, qr, REG[framework]);
       const tools    = parseTools(section);
       const xrefs    = parseCrossRefs(section);
 
@@ -812,4 +835,18 @@ function defaultAudience(sourceList) {
   return ['security-engineer', 'data-engineer', 'auditor', 'compliance'];
 }
 
-main();
+function loadRegistryIds() {
+  const fs = require('fs'); const path = require('path');
+  const dir = path.join(__dirname, '..', 'data', 'frameworks');
+  const reg = {};
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json'))) {
+    const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    reg[d.name] = new Set((d.controls || []).map(c => c.control_id));
+  }
+  return reg;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { parseControlTable, looksLikeId, splitRow, extractIdAndUrl, loadRegistryIds };
+}
+
+if (require.main === module) main();

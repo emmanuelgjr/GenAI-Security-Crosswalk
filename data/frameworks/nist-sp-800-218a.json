@@ -269,6 +269,11 @@
       "control_id": "RV.2.1-PS",
       "title": "Assess, prioritise, and remediate — deletion request remediation",
       "description": "Define procedures to assess and remediate data deletion requests including impact analysis on trained models and retraining requirements; Define remediation procedures for availability incidents including model rollback, rate limit tightening, and cost circuit breakers; Define and test remediation procedures for availability incidents — rate limit tightening, model rollback, cost circuit breaker activation"
+    },
+    {
+      "control_id": "PW.6.1-PS",
+      "title": "Secure configuration",
+      "description": "Configure the compilation, interpreter, and build processes to improve executable security for AI systems."
     }
   ]
 }

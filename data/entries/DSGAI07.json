@@ -75,24 +75,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI training data subject to governance — relevant, representative, privacy-preserving",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Art. 10",
+      "control_name": "Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data governance policy covering the full AI data lifecycle is an Art. 10 compliance requirement"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Documented quality management system including data handling procedures",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data lifecycle procedures — classification, retention, deletion — documented in quality management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "GPAI providers maintain technical documentation including training data governance",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_id": "Art. 53(1)(a)",
+      "control_name": "GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Full data governance documentation for GPAI training data is a binding Art. 53 obligation"
@@ -131,16 +131,16 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — acquisition",
-      "control_name": "A.7.2",
+      "control_id": "A.7.2",
+      "control_name": "Data — acquisition",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — preparation",
-      "control_name": "A.7.3",
+      "control_id": "A.7.3",
+      "control_name": "Data — preparation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
@@ -155,8 +155,8 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Planning — risk",
-      "control_name": "Cl.6.1",
+      "control_id": "Cl.6.1",
+      "control_name": "Planning — risk",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
@@ -191,22 +191,22 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V8 Data Protection",
-      "control_name": "V8.1.4 — Sensitive data minimisation",
+      "control_id": "V8",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V8 Data Protection",
-      "control_name": "V8.3.4 — Sensitive data identified and classified",
+      "control_id": "V8.3.4",
+      "control_name": "Sensitive data identified and classified",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.5 — Attribute-based access control",
+      "control_id": "V4",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -284,29 +284,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy identifies all confidential information in GenAI scope — including derived assets (embeddings, caches, traces)",
-      "control_name": "C1.1 — Confidentiality policy",
+      "control_id": "C1.1",
+      "control_name": "Confidentiality policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information lifecycle management covers GenAI-derived assets — embeddings inherit source data obligations",
-      "control_name": "P4.1 — Privacy information lifecycle",
+      "control_id": "P4.1",
+      "control_name": "Privacy information lifecycle",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Data lifecycle procedures documented — classification propagation, retention schedules, deletion procedures",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "CC5.2",
+      "control_name": "Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Ungoverned derived asset risks identified in assessment — embeddings, caches, agent memory outside governance scope",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -423,18 +423,16 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-359",
-      "control_name": "CWE-359",
+      "control_name": "Exposure of Private Personal Information",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/359.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-213",
-      "control_name": "CWE-213",
+      "control_name": "Exposure of Sensitive Information Due to Incompatible Policies",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/213.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

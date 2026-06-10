@@ -784,6 +784,13 @@
       "control_id": "Operational continuity procedures documented",
       "title": "Art. 17 � Quality management",
       "description": "Post-market monitoring and incident response for availability failures required"
+    },
+    {
+      "control_id": "Art. 53(1)(a)",
+      "title": "GPAI documentation",
+      "description": "Providers of general-purpose AI models shall draw up and keep up-to-date technical documentation of the model, including its training and testing process.",
+      "parent": "Art. 53",
+      "function": "GPAI"
     }
   ],
   "changelog": [

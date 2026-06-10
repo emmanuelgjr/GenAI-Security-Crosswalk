@@ -22,7 +22,6 @@
       "control_name": "Direct Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
       "notes": "Attacker directly injects goal-altering instructions into agent input"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Indirect Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.001",
       "notes": "Hidden instructions in documents, emails, RAG results, or tool outputs alter agent goals without user visibility"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "LLM Jailbreak",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
       "notes": "Override safety guardrails that constrain agent goal execution"
     },
     {
@@ -77,24 +74,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Goal hijack scenarios identified and mitigated in risk management system",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent goal hijack included in Art. 9 risk assessment for every agentic deployment"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Meaningful human oversight over high-risk AI system outputs",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agents whose goals can be hijacked and execute autonomously are an Art. 14 failure — human confirmation required before goal-changing actions"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Technical resilience against adversarial input manipulation",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Input filtering, goal-state verification, and injection detection are Art. 15 technical requirements"
@@ -165,32 +162,32 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.1 Establish secure application development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secure development standards covering agentic integrations — input validation, goal-state verification"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "18.1 Establish penetration testing programme",
-      "control_name": "CIS 18 — Penetration Testing",
+      "control_id": "CIS 18",
+      "control_name": "Penetration Testing",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Adversarial testing covering goal hijack — direct, indirect, multi-turn injection scenarios"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.2 Collect audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All agent inputs logged — injection attempts detectable through log analysis"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "13.8 Deploy a network intrusion detection solution",
-      "control_name": "CIS 13 — Network Monitoring and Defence",
+      "control_id": "CIS 13",
+      "control_name": "Network Monitoring and Defence",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Network-layer monitoring for injection indicators in agent traffic"
@@ -333,32 +330,32 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Goal hijack risk identified in risk assessment — prompt injection, indirect injection, multi-turn manipulation documented",
-      "control_name": "CC3.2",
+      "control_id": "CC3.2",
+      "control_name": "Goal hijack risk identified in risk assessment — prompt injection, indirect injection, multi-turn manipulation documented",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Risk register with goal hijack entries, treatment status"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Runtime monitoring for goal-deviation indicators — AI-specific anomaly detection covering instruction-override patterns",
-      "control_name": "CC7.2",
+      "control_id": "CC7.2",
+      "control_name": "Runtime monitoring for goal-deviation indicators — AI-specific anomaly detection covering instruction-override patterns",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Monitoring configuration, alert logs, incident records"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Control activities define acceptable agent actions — agent cannot deviate from authorised goal scope",
-      "control_name": "CC5.2",
+      "control_id": "CC5.2",
+      "control_name": "Control activities define acceptable agent actions — agent cannot deviate from authorised goal scope",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent permission policy, goal-state verification design documentation"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Agent processing is authorised — actions taken by agent correspond to user's authorised intent, not attacker's injected instruction",
-      "control_name": "PI1.1",
+      "control_id": "PI1.1",
+      "control_name": "Agent processing is authorised — actions taken by agent correspond to user's authorised intent, not attacker's injected instruction",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Action audit log, authorisation records per agent session"
@@ -498,16 +495,16 @@
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Improper Input Validation",
-      "control_name": "CWE-20",
+      "control_id": "CWE-20",
+      "control_name": "Improper Input Validation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Root cause — agent inputs not validated before entering model context; indirect injection content not treated as untrusted"
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Improper Neutralisation of Special Elements in Output Used by a Downstream Component",
-      "control_name": "CWE-74",
+      "control_id": "CWE-74",
+      "control_name": "Improper Neutralisation of Special Elements in Output Used by a Downstream Component",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Instruction elements in processed content not neutralised before agent reasoning"
@@ -635,32 +632,32 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Threat model the agent pipeline for adversarial goal manipulation vectors including direct injection, indirect injection via tool outputs, and context poisoning",
-      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software to meet security requirements",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Ensures goal integrity is a design-phase requirement for all agentic systems"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Review agent behaviour for goal deviation — verify that the agent maintains intended objectives under adversarial input conditions",
-      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review the software for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Catches goal manipulation vulnerabilities before production deployment"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Conduct adversarial red-team testing against goal hijacking vectors including injection through every data source, tool output, and context channel",
-      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validates goal integrity controls under realistic attack conditions"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Establish procedures to identify goal hijacking incidents in production including goal deviation monitoring, triage, and confirmation workflows",
-      "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enables rapid detection and response to goal manipulation in live systems"

@@ -22,7 +22,6 @@
       "control_name": "Denial of AI Service",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
       "notes": "Overloading AI systems with computationally expensive inputs to cause service degradation"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Cost Harvesting",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0034",
       "notes": "Crafting inputs that maximise token usage or API costs per request"
     },
     {
@@ -68,24 +66,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Availability risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Resource exhaustion and DoS scenarios included in risk management system"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI must remain available under adversarial conditions",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Technical resilience against denial-of-service attacks is an Art. 15 requirement"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Operational continuity procedures documented",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Post-market monitoring and incident response for availability failures required"
@@ -156,24 +154,24 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "4.1 Establish secure configuration process",
-      "control_name": "CIS 4 — Secure Configuration",
+      "control_id": "CIS 4",
+      "control_name": "Secure Configuration",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secure configuration includes resource limits — token caps, rate limits, cost budgets"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "12.6 Use of network-based URL filters",
-      "control_name": "CIS 12 — Network Infrastructure Management",
+      "control_id": "CIS 12",
+      "control_name": "Network Infrastructure Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Rate limiting and traffic controls at the API gateway and network layer"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 — Incident Response",
+      "control_id": "CIS 17",
+      "control_name": "Incident Response",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Defined response for consumption anomalies — automated rate limiting, session suspension, alerting"
@@ -324,29 +322,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM service availability commitments documented — SLAs, RTO/RPO, resource limits that protect availability",
-      "control_name": "A1.1 — Availability policies",
+      "control_id": "A1.1",
+      "control_name": "Availability policies",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Rate limiting and resource controls protect LLM service availability — implemented and monitored",
-      "control_name": "A1.2 — Environmental protections",
+      "control_id": "A1.2",
+      "control_name": "Environmental protections",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Real-time monitoring of LLM resource consumption — cost anomalies and unusual volume patterns alerted",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Resource exhaustion risks identified in LLM risk assessment — DoS and sponge attack vectors assessed",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -456,26 +454,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-400",
-      "control_name": "CWE-400",
+      "control_name": "Uncontrolled Resource Consumption",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/400.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-770",
-      "control_name": "CWE-770",
+      "control_name": "Allocation of Resources Without Limits or Throttling",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/770.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-799",
-      "control_name": "CWE-799",
+      "control_name": "Improper Control of Interaction Frequency",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/799.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

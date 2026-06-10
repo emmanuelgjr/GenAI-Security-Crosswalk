@@ -75,16 +75,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI must remain accurate and available under adverse conditions",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vector store redundancy, circuit breakers, and staleness detection are Art. 15 requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Post-market monitoring covering availability and resilience",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "AI pipeline availability monitoring in quality management and post-market monitoring programme"
@@ -123,24 +123,24 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — decommissioning",
-      "control_name": "A.6.2.8",
+      "control_id": "A.6.2.8",
+      "control_name": "Lifecycle — decommissioning",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — testing",
-      "control_name": "A.6.2.6",
+      "control_id": "A.6.2.6",
+      "control_name": "Lifecycle — testing",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Operation",
-      "control_name": "Cl.8",
+      "control_id": "Cl.8",
+      "control_name": "Operation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
@@ -176,15 +176,15 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V11 Business Logic",
-      "control_name": "V11.1.7 — Anti-automation controls",
+      "control_id": "V11",
+      "control_name": "Business Logic",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V13 API",
-      "control_name": "V13.1.2 — API throttling",
+      "control_id": "V13",
+      "control_name": "API",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -278,29 +278,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM service availability commitments cover RAG freshness — stale data producing misinformation is an availability failure",
-      "control_name": "A1.1 — Availability policy",
+      "control_id": "A1.1",
+      "control_name": "Availability policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Circuit breakers and freshness monitoring protect availability commitments — graceful degradation over silent failure",
-      "control_name": "A1.2 — Environmental protections",
+      "control_id": "A1.2",
+      "control_name": "Environmental protections",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "RAG freshness monitoring — alert when index staleness exceeds threshold before misinformation reaches users",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Silent RAG degradation identified as availability risk in assessment",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -402,18 +402,16 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-400",
-      "control_name": "CWE-400",
+      "control_name": "Uncontrolled Resource Consumption",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/400.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-770",
-      "control_name": "CWE-770",
+      "control_name": "Allocation of Resources Without Limits",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/770.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

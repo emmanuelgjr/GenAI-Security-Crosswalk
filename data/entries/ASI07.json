@@ -22,7 +22,6 @@
       "control_name": "Craft Adversarial Data",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
       "notes": "Crafting adversarial messages to exploit inter-agent communication protocols"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Establish Accounts",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
       "notes": "Establishing or compromising agent accounts to impersonate trusted agents in A2A channels"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "Obtain Capabilities",
       "tier": "Hardening",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
       "notes": "Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context"
     },
     {
@@ -77,24 +74,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "A2A communication risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Inter-agent channels in Art. 9 risk assessment — authentication, encryption, schema validation status"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Cybersecurity measures protecting all system components",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Authenticated, encrypted A2A communication is an Art. 15 requirement for high-risk agentic systems"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Documentation of A2A security controls",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "A2A authentication and encryption documented in quality management system"
@@ -149,48 +146,48 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "A.10.1",
-      "control_name": "Third-party AI system acquisition",
+      "control_id": "Third-party",
+      "control_name": "AI system acquisition",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "A2A communication infrastructure providers assessed — security obligations in arrangements"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Cl.8",
-      "control_name": "Operation",
+      "control_id": "Operation",
+      "control_name": "Cl.8",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "A2A communication documented as AIMS operational control — authentication requirements, encryption standards"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "12.4 Establish and maintain architecture diagram",
-      "control_name": "CIS 12 — Network Infrastructure Management",
+      "control_id": "CIS 12",
+      "control_name": "Network Infrastructure Management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "A2A communication channels mapped in network architecture — authentication method, encryption status"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "3.10 Encrypt sensitive data in transit",
-      "control_name": "CIS 3 — Data Protection",
+      "control_id": "CIS 3",
+      "control_name": "Data Protection",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "All A2A messages encrypted in transit — no cleartext inter-agent communication"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "All A2A messages logged — sender identity, content hash, timestamp, schema validation results"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "A2A authentication and schema validation as secure development requirements"
@@ -317,32 +314,32 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Inter-agent authentication required — all agent-to-agent messages authenticated before acting",
-      "control_name": "CC6.1",
+      "control_id": "CC6.1",
+      "control_name": "Inter-agent authentication required — all agent-to-agent messages authenticated before acting",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "mTLS configuration, certificate management records"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Inter-agent communication policy — which agents may communicate with which, under what conditions, with what data",
-      "control_name": "CC5.2",
+      "control_id": "CC5.2",
+      "control_name": "Inter-agent communication policy — which agents may communicate with which, under what conditions, with what data",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Inter-agent communication policy document"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Inter-agent traffic monitored — unexpected communication patterns, unauthorised agent requests detected",
-      "control_name": "CC7.2",
+      "control_id": "CC7.2",
+      "control_name": "Inter-agent traffic monitored — unexpected communication patterns, unauthorised agent requests detected",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Inter-agent traffic logs, anomaly alert records"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Third-party agents treated as vendor risk — agents from external providers assessed before integration",
-      "control_name": "CC9.2",
+      "control_id": "CC9.2",
+      "control_name": "Third-party agents treated as vendor risk — agents from external providers assessed before integration",
       "tier": "Hardening",
       "scope": "Both",
       "notes": "Vendor assessment records for third-party agents"
@@ -498,8 +495,8 @@
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Origin Validation Error",
-      "control_name": "CWE-346",
+      "control_id": "CWE-346",
+      "control_name": "Origin Validation Error",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent does not verify that A2A messages originate from the claimed sender"
@@ -604,32 +601,32 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Threat model all inter-agent communication paths; design mutual authentication, encryption, schema validation, and replay protection as explicit security requirements",
-      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software to meet security requirements",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Ensures A2A security is addressed at design time"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Implement secure coding for A2A communication — mutual TLS, message signing, schema validation on all inter-agent messages; no unauthenticated A2A in any environment",
-      "control_name": "PW.5.1-PS – Secure coding practices",
+      "control_id": "PW.5.1-PS",
+      "control_name": "Secure coding practices",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Prevents A2A security vulnerabilities in implementation"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Review inter-agent communication for security weaknesses — verify that authentication, encryption, and schema validation are correctly implemented at all A2A boundaries",
-      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review the software for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Catches A2A vulnerabilities before production"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Protect A2A configuration, certificates, and authentication credentials from unauthorised access and modification",
-      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Prevents tampering with A2A security controls"

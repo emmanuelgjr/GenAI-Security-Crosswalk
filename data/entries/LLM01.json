@@ -22,7 +22,6 @@
       "control_name": "Direct Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
       "notes": "Attacker directly manipulates user-facing prompt to alter model behaviour"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Indirect Prompt Injection",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.001",
       "notes": "Hidden instructions in content the model processes (documents, web, RAG)"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "LLM Jailbreak",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
       "notes": "Circumventing model safety guardrails via crafted prompt sequences"
     },
     {
@@ -77,16 +74,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Providers of high-risk AI must implement a risk management system covering all reasonably foreseeable risks",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Prompt injection must be identified, analysed, and mitigated in the risk management system"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI systems must be resilient to adversarial inputs and attempts to alter outputs or performance",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Robustness against prompt injection is a technical compliance requirement — not optional"
@@ -165,32 +162,32 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.1 Establish secure application development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secure development standards covering LLM integration — input validation, context separation"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.2 Implement code review",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Code review for all LLM integration code — prompt injection patterns reviewed"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "18.1 Establish penetration testing programme",
-      "control_name": "CIS 18 — Penetration Testing",
+      "control_id": "CIS 18",
+      "control_name": "Penetration Testing",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Adversarial testing programme covering prompt injection scenarios"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.2 Collect audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Runtime logging of all LLM inputs — injection attempts detectable through log analysis"
@@ -373,29 +370,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Prompt injection documented as a threat in LLM application risk assessment — vectors, likelihood, impact assessed",
-      "control_name": "CC3.2 — Risk assessment identifies threats and vulnerabilities",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment identifies threats and vulnerabilities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Runtime monitoring for prompt injection indicators on all LLM input channels — alerts integrated into SOC monitoring",
-      "control_name": "CC7.2 — Anomaly and threat detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly and threat detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Input validation procedures documented for all LLM integrations — implemented, tested, and reviewed",
-      "control_name": "CC5.2 — Select and develop control activities",
+      "control_id": "CC5.2",
+      "control_name": "Select and develop control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM access controls limit the blast radius of successful injection — least privilege enforced on all tool access",
-      "control_name": "CC6.1 — Logical access restrictions",
+      "control_id": "CC6.1",
+      "control_name": "Logical access restrictions",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -519,26 +516,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-20",
-      "control_name": "CWE-20",
+      "control_name": "Improper Input Validation",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/20.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-74",
-      "control_name": "CWE-74",
+      "control_name": "Improper Neutralisation of Special Elements",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/74.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-77",
-      "control_name": "CWE-77",
+      "control_name": "Command Injection",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/77.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

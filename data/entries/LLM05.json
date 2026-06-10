@@ -22,7 +22,6 @@
       "control_name": "Output Manipulation",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0067",
       "notes": "Crafting inputs that produce dangerous outputs consumed by downstream systems"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Unsafe Deserialisation via LLM",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0040",
       "notes": "LLM outputs containing serialised payloads executed by downstream components"
     },
     {
@@ -68,24 +66,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Output handling risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Insecure output handling included in risk management system"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Accurate, robust outputs resilient to misuse",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Output validation and sanitisation are Art. 15 technical requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Documented procedures covering output quality",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Post-market monitoring of output handling incidents required"
@@ -148,32 +146,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Cl.8",
-      "control_name": "Operation",
+      "control_id": "Operation",
+      "control_name": "Cl.8",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Operational controls for LLM deployment — output handling requirements documented as AIMS operational procedures"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Output encoding and sanitisation as secure development requirements"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.2 Collect audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Log all LLM outputs — injection attempts in model responses detectable"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "18.1 Establish penetration testing",
-      "control_name": "CIS 18 — Penetration Testing",
+      "control_id": "CIS 18",
+      "control_name": "Penetration Testing",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Output injection scenarios in penetration testing — XSS, SQL injection via LLM output"
@@ -324,29 +322,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy requiring LLM output validation before use in downstream processing — complete and authorised processing",
-      "control_name": "PI1.1 — Processing integrity policies",
+      "control_id": "PI1.1",
+      "control_name": "Processing integrity policies",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Input validation procedures for all systems consuming LLM output — encoding, schema validation, sanitisation",
-      "control_name": "CC5.2 — Select and develop control activities",
+      "control_id": "CC5.2",
+      "control_name": "Select and develop control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Monitoring for injection patterns in LLM output channels — detect anomalous processing before downstream harm",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Output injection risks identified in LLM risk assessment — XSS, SQL injection, command injection via AI-generated content",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -463,26 +461,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-79",
-      "control_name": "CWE-79",
+      "control_name": "Cross-site Scripting (XSS)",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/79.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-89",
-      "control_name": "CWE-89",
+      "control_name": "SQL Injection",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/89.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-78",
-      "control_name": "CWE-78",
+      "control_name": "OS Command Injection",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/78.html"
+      "scope": "Build"
     },
     {
       "framework": "OWASP AI Testing Guide",

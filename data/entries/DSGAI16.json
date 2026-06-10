@@ -75,16 +75,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Endpoint AI agent risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Browser and endpoint agent deployments assessed in Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI designed to allow human oversight — users must be able to stop and override",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Users must be able to pause and override endpoint AI agents — Art. 14 human oversight requirement"
@@ -131,16 +131,16 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Use of AI systems",
-      "control_name": "A.9.1",
+      "control_id": "A.9.1",
+      "control_name": "Use of AI systems",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — design",
-      "control_name": "A.6.1.2",
+      "control_id": "A.6.1.2",
+      "control_name": "Lifecycle — design",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
@@ -184,22 +184,22 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.2 — Least privilege",
+      "control_id": "V4",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V11 Business Logic",
-      "control_name": "V11.1.5 — Business logic prevents excess data access",
+      "control_id": "V11",
+      "control_name": "Business Logic",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V1 Architecture",
-      "control_name": "V1.1.2 — Secure architecture and design",
+      "control_id": "V1.1.2",
+      "control_name": "Secure architecture and design",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -285,29 +285,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Approved AI assistants with scoped permissions — permission minimisation documented and enforced",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Browser AI extension providers assessed in vendor risk programme — data handling, telemetry, update security",
-      "control_name": "CC9.1 — Vendor risk",
+      "control_id": "CC9.1",
+      "control_name": "Vendor risk",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Endpoint AI acceptable use procedures — approved extension list, prohibited data access, employee acknowledgement",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "CC5.2",
+      "control_name": "Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Endpoint AI overreach risks identified — data access scope, exfiltration paths assessed",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -416,26 +416,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-668",
-      "control_name": "CWE-668",
+      "control_name": "Exposure of Resource to Wrong Sphere",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/668.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-272",
-      "control_name": "CWE-272",
+      "control_name": "Least Privilege Violation",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/272.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
-      "control_name": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/284.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

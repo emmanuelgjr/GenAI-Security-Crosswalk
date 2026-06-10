@@ -75,16 +75,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Shadow AI usage is a foreseeable risk requiring mitigation in the risk management system",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Ungoverned AI tool usage mapped and treated in Art. 9 risk assessment"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Organisations deploying AI are responsible for AI used within their operations",
-      "control_name": "Art. 25 — Value chain responsibilities",
+      "control_id": "Art. 25",
+      "control_name": "Value chain responsibilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Shadow AI use by employees does not exempt the deployer from AI Act obligations triggered by that use"
@@ -131,24 +131,24 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Policies — acceptable use",
-      "control_name": "A.2.2",
+      "control_id": "Policies",
+      "control_name": "acceptable use",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Use of AI systems",
-      "control_name": "A.9.1",
+      "control_id": "A.9.1",
+      "control_name": "Use of AI systems",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Third-party relationships",
-      "control_name": "A.10.1",
+      "control_id": "A.10.1",
+      "control_name": "Third-party relationships",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
@@ -191,29 +191,29 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V1 Architecture",
-      "control_name": "V1.1.4 — Trust boundaries documented and enforced",
+      "control_id": "V1",
+      "control_name": "Architecture",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V4 Access Control",
-      "control_name": "V4.1.5 — Access control failures logged",
+      "control_id": "V4",
+      "control_name": "Access Control",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V7 Logging",
-      "control_name": "V7.2.2 — Log entries contain required information",
+      "control_id": "V7.2.2",
+      "control_name": "Log entries contain required information",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V14 Configuration",
-      "control_name": "V14.1.4 — All components inventoried",
+      "control_id": "V14",
+      "control_name": "Configuration",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -299,29 +299,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Acceptable use procedures for AI tools — approved list, prohibited use cases, employee acknowledgement",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "CC5.2",
+      "control_name": "Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Shadow AI vendors not in vendor risk programme — shadow AI discovery identifies unapproved vendors",
-      "control_name": "CC9.1 — Vendor risk",
+      "control_id": "CC9.1",
+      "control_name": "Vendor risk",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Shadow AI usage identified as a risk in assessment — ungoverned data flows, training use by vendors",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Confidentiality policy covers AI tool use — employees informed of restrictions on sharing confidential data",
-      "control_name": "C1.1 — Confidentiality policy",
+      "control_id": "C1.1",
+      "control_name": "Confidentiality policy",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -438,18 +438,16 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-668",
-      "control_name": "CWE-668",
+      "control_name": "Exposure of Resource to Wrong Sphere",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/668.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
-      "control_name": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/284.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

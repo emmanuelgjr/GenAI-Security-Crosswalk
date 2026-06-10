@@ -1008,6 +1008,27 @@
     {
       "control_id": "Resource exhaustion risks identified in LLM risk assessment � DoS and sponge attack vectors assessed",
       "title": "CC3.2 � Risk assessment"
+    },
+    {
+      "control_id": "C2.1",
+      "title": "Confidential information protection",
+      "description": "The entity protects confidential information during collection, use, retention, and disclosure to meet its objectives.",
+      "parent": null,
+      "function": "Confidentiality"
+    },
+    {
+      "control_id": "P5.1",
+      "title": "Personal information use",
+      "description": "The entity limits the use of personal information to the purposes identified in its privacy notice and for which the individual has provided consent.",
+      "parent": null,
+      "function": "Privacy"
+    },
+    {
+      "control_id": "PI1.3",
+      "title": "Outputs complete and accurate",
+      "description": "The entity implements policies and procedures over system processing to result in products, services, and reporting that are complete, accurate, and timely.",
+      "parent": null,
+      "function": "Processing Integrity"
     }
   ],
   "changelog": [

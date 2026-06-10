@@ -75,24 +75,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Mandatory risk management system for high-risk AI",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Absence of a documented risk management system is an Art. 9 violation"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Documented quality management system including post-market monitoring",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Absence of a quality management system is an Art. 17 violation"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Graduated fines based on violation type",
-      "control_name": "Art. 72 — Fines",
+      "control_id": "Art. 72",
+      "control_name": "Fines",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Understanding fine exposure is the starting point for compliance prioritisation"
@@ -139,24 +139,24 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Information for interested parties",
-      "control_name": "A.8.1",
+      "control_id": "A.8.1",
+      "control_name": "Information for interested parties",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Context — interested parties",
-      "control_name": "Cl.4.2",
+      "control_id": "Context",
+      "control_name": "interested parties",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Planning — risk",
-      "control_name": "Cl.6.1",
+      "control_id": "Cl.6.1",
+      "control_name": "Planning — risk",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Hardening"
@@ -184,22 +184,22 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V8 Data Protection",
-      "control_name": "V8.3.3 — Consent obtained before PI processing",
+      "control_id": "V8",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V8 Data Protection",
-      "control_name": "V8.3.10 — Personal data not kept longer than needed",
+      "control_id": "V8",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V7 Logging",
-      "control_name": "V7.2.2 — Audit trail sufficient for compliance",
+      "control_id": "V7.2.2",
+      "control_name": "Audit trail sufficient for compliance",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -277,29 +277,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Commitment to compliance with applicable laws and regulations including AI-specific obligations",
-      "control_name": "CC5.1 — Control environment",
+      "control_id": "CC5.1",
+      "control_name": "Control environment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Regulatory risks identified in GenAI risk assessment — GDPR, EU AI Act, sector-specific regulations",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Privacy programme covers GenAI processing of personal information — policies, notices, accountability",
-      "control_name": "P1.1 — Privacy management",
+      "control_id": "P1.1",
+      "control_name": "Privacy management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Regulatory compliance status communicated to management — AI Act obligations, NIS2 requirements",
-      "control_name": "CC2.1 — Communication",
+      "control_id": "CC2.1",
+      "control_name": "Communication",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -416,18 +416,16 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-359",
-      "control_name": "CWE-359",
+      "control_name": "Exposure of Private Personal Information",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/359.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-778",
-      "control_name": "CWE-778",
+      "control_name": "Insufficient Logging",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/778.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

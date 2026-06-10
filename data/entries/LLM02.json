@@ -22,7 +22,6 @@
       "control_name": "LLM Data Leakage",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
       "notes": "Unintended exposure of training data or sensitive context through model outputs"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Infer Membership",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0024.000",
       "notes": "Determining whether specific sensitive records were used in model training"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "Invert ML Model",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0024.001",
       "notes": "Reconstructing training data from model outputs or confidence scores"
     },
     {
@@ -77,32 +74,32 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Training data for high-risk AI must be relevant, representative, free of errors, and complete — must address privacy",
-      "control_name": "Art. 10 — Data and data governance",
+      "control_id": "Art. 10",
+      "control_name": "Data and data governance",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Privacy-preserving training data practices are a compliance requirement for high-risk LLMs"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Users must receive information about capabilities, limitations, and conditions of use",
-      "control_name": "Art. 13 — Transparency",
+      "control_id": "Art. 13",
+      "control_name": "Transparency",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Disclosure of potential data disclosure risks is a transparency obligation"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Documented quality management system including post-market monitoring",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Post-market monitoring must detect and respond to sensitive disclosure incidents"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "GPAI providers must maintain technical documentation including training data governance",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_id": "Art. 53(1)(a)",
+      "control_name": "GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data governance for GPAI training data is a binding documentation obligation from Aug 2025"
@@ -173,32 +170,32 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "3.1 Establish and maintain data management process",
-      "control_name": "CIS 3 — Data Protection",
+      "control_id": "CIS 3",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data classification and handling requirements applied to all LLM data assets"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "3.11 Encrypt sensitive data at rest",
-      "control_name": "CIS 3 — Data Protection",
+      "control_id": "CIS 3",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Embeddings, training data, and RAG caches containing sensitive data encrypted"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "14.1 Establish security awareness programme",
-      "control_name": "CIS 14 — Security Awareness",
+      "control_id": "CIS 14",
+      "control_name": "Security Awareness",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "User training on LLM data handling — what data should not be shared with LLMs"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Detailed logging of all LLM data access — RAG queries, data retrieved, outputs generated"
@@ -365,36 +362,36 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Policy identifying confidential information in LLM scope and how it is handled — training data, RAG corpus, outputs",
-      "control_name": "C1.1 — Confidentiality policy",
+      "control_id": "C1.1",
+      "control_name": "Confidentiality policy",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Technical controls protecting confidential data in LLM pipelines — encryption, access controls, output scanning",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "C2.1",
+      "control_name": "Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information in LLM scope identified — training data, RAG sources, outputs — collection documented",
-      "control_name": "P3.1 — Personal information collection",
+      "control_id": "P3.1",
+      "control_name": "Personal information collection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Personal information used only for purposes disclosed — LLM processing of customer PII limited to agreed use cases",
-      "control_name": "P5.1 — Personal information use",
+      "control_id": "P5.1",
+      "control_name": "Personal information use",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access controls on RAG data sources — users retrieve only data they are authorised to access",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -519,26 +516,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-200",
-      "control_name": "CWE-200",
+      "control_name": "Exposure of Sensitive Information to an Unauthorised Actor",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/200.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-201",
-      "control_name": "CWE-201",
+      "control_name": "Insertion of Sensitive Information Into Sent Data",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/201.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-359",
-      "control_name": "CWE-359",
+      "control_name": "Exposure of Private Personal Information to an Unauthorised Actor",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/359.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

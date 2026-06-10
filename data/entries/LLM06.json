@@ -22,7 +22,6 @@
       "control_name": "LLM Capability Escalation",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0015",
       "notes": "Exploiting overly permissive LLM tool access to perform actions beyond intended scope"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "AI Agent Tool Invocation",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
       "notes": "LLM autonomously invoking tools or APIs beyond its intended access scope"
     },
     {
@@ -68,16 +66,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Autonomy-related risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Excessive agency scenarios required in risk management system"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI systems designed to allow effective human oversight — ability to pause, stop, and override",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Human-in-the-loop requirements are a binding Art. 14 compliance obligation"
@@ -156,24 +154,24 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "5.4 Restrict administrator privileges",
-      "control_name": "CIS 5 — Account Management",
+      "control_id": "CIS 5",
+      "control_name": "Account Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "LLM tool access managed as privileged access — minimum scope, regular review"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "6.1 Establish access granting process",
-      "control_name": "CIS 6 — Access Control Management",
+      "control_id": "CIS 6",
+      "control_name": "Access Control Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Formal process for granting LLM tool access — documented justification required"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All LLM tool invocations logged — every tool call auditable with parameters"
@@ -332,29 +330,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM tool access managed under least privilege — minimum scope, documented justification, regular review",
-      "control_name": "CC6.1 — Logical access restrictions",
+      "control_id": "CC6.1",
+      "control_name": "Logical access restrictions",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM tool permissions removed promptly when no longer required — access review process covers LLM tool scope",
-      "control_name": "CC6.3 — Access removal",
+      "control_id": "CC6.3",
+      "control_name": "Access removal",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Human oversight procedures for LLM autonomous actions — confirmation requirements documented and enforced",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "CC5.2",
+      "control_name": "Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Excessive agency risks identified — what autonomous actions can the LLM take, what is the blast radius",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -478,26 +476,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-269",
-      "control_name": "CWE-269",
+      "control_name": "Improper Privilege Management",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/269.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-272",
-      "control_name": "CWE-272",
+      "control_name": "Least Privilege Violation",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/272.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-284",
-      "control_name": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/284.html"
+      "scope": "Build"
     },
     {
       "framework": "OWASP AI Testing Guide",

@@ -27,7 +27,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Direct Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
         "notes": "Attacker directly manipulates user-facing prompt to alter model behaviour"
       },
       {
@@ -36,7 +35,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Indirect Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0051.001",
         "notes": "Hidden instructions in content the model processes (documents, web, RAG)"
       },
       {
@@ -45,7 +43,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Jailbreak",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
         "notes": "Circumventing model safety guardrails via crafted prompt sequences"
       },
       {
@@ -82,16 +79,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Providers of high-risk AI must implement a risk management system covering all reasonably foreseeable risks",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prompt injection must be identified, analysed, and mitigated in the risk management system"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI systems must be resilient to adversarial inputs and attempts to alter outputs or performance",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Robustness against prompt injection is a technical compliance requirement — not optional"
@@ -170,32 +167,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure application development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secure development standards covering LLM integration — input validation, context separation"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.2 Implement code review",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Code review for all LLM integration code — prompt injection patterns reviewed"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "18.1 Establish penetration testing programme",
-        "control_name": "CIS 18 — Penetration Testing",
+        "control_id": "CIS 18",
+        "control_name": "Penetration Testing",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Adversarial testing programme covering prompt injection scenarios"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.2 Collect audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Runtime logging of all LLM inputs — injection attempts detectable through log analysis"
@@ -378,29 +375,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Prompt injection documented as a threat in LLM application risk assessment — vectors, likelihood, impact assessed",
-        "control_name": "CC3.2 — Risk assessment identifies threats and vulnerabilities",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment identifies threats and vulnerabilities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Runtime monitoring for prompt injection indicators on all LLM input channels — alerts integrated into SOC monitoring",
-        "control_name": "CC7.2 — Anomaly and threat detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly and threat detection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Input validation procedures documented for all LLM integrations — implemented, tested, and reviewed",
-        "control_name": "CC5.2 — Select and develop control activities",
+        "control_id": "CC5.2",
+        "control_name": "Select and develop control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM access controls limit the blast radius of successful injection — least privilege enforced on all tool access",
-        "control_name": "CC6.1 — Logical access restrictions",
+        "control_id": "CC6.1",
+        "control_name": "Logical access restrictions",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -524,26 +521,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-20",
-        "control_name": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/20.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-74",
-        "control_name": "CWE-74",
+        "control_name": "Improper Neutralisation of Special Elements",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/74.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-77",
-        "control_name": "CWE-77",
+        "control_name": "Command Injection",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/77.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -1248,7 +1242,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
         "notes": "Unintended exposure of training data or sensitive context through model outputs"
       },
       {
@@ -1257,7 +1250,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Infer Membership",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0024.000",
         "notes": "Determining whether specific sensitive records were used in model training"
       },
       {
@@ -1266,7 +1258,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Invert ML Model",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0024.001",
         "notes": "Reconstructing training data from model outputs or confidence scores"
       },
       {
@@ -1303,32 +1294,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training data for high-risk AI must be relevant, representative, free of errors, and complete — must address privacy",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Privacy-preserving training data practices are a compliance requirement for high-risk LLMs"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Users must receive information about capabilities, limitations, and conditions of use",
-        "control_name": "Art. 13 — Transparency",
+        "control_id": "Art. 13",
+        "control_name": "Transparency",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Disclosure of potential data disclosure risks is a transparency obligation"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented quality management system including post-market monitoring",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Post-market monitoring must detect and respond to sensitive disclosure incidents"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "GPAI providers must maintain technical documentation including training data governance",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Data governance for GPAI training data is a binding documentation obligation from Aug 2025"
@@ -1399,32 +1390,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.1 Establish and maintain data management process",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Data classification and handling requirements applied to all LLM data assets"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.11 Encrypt sensitive data at rest",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Embeddings, training data, and RAG caches containing sensitive data encrypted"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "14.1 Establish security awareness programme",
-        "control_name": "CIS 14 — Security Awareness",
+        "control_id": "CIS 14",
+        "control_name": "Security Awareness",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "User training on LLM data handling — what data should not be shared with LLMs"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.5 Collect detailed audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Detailed logging of all LLM data access — RAG queries, data retrieved, outputs generated"
@@ -1591,36 +1582,36 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Policy identifying confidential information in LLM scope and how it is handled — training data, RAG corpus, outputs",
-        "control_name": "C1.1 — Confidentiality policy",
+        "control_id": "C1.1",
+        "control_name": "Confidentiality policy",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Technical controls protecting confidential data in LLM pipelines — encryption, access controls, output scanning",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information in LLM scope identified — training data, RAG sources, outputs — collection documented",
-        "control_name": "P3.1 — Personal information collection",
+        "control_id": "P3.1",
+        "control_name": "Personal information collection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information used only for purposes disclosed — LLM processing of customer PII limited to agreed use cases",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access controls on RAG data sources — users retrieve only data they are authorised to access",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -1745,26 +1736,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information to an Unauthorised Actor",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-201",
-        "control_name": "CWE-201",
+        "control_name": "Insertion of Sensitive Information Into Sent Data",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/201.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-359",
-        "control_name": "CWE-359",
+        "control_name": "Exposure of Private Personal Information to an Unauthorised Actor",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/359.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -2316,7 +2304,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Extract LLM System Prompt",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
         "notes": "Extracting system prompts that may reveal supply chain details, internal configurations, or security controls"
       },
       {
@@ -2325,7 +2312,6 @@ window.CROSSWALK_DATA = [
         "control_name": "External Harms",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
         "notes": "Introducing persistent malicious behaviour into model through supply chain leading to downstream external harms"
       },
       {
@@ -2334,7 +2320,6 @@ window.CROSSWALK_DATA = [
         "control_name": "AI Supply Chain Compromise",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
         "notes": "Compromising ML supply chain components — datasets, models, frameworks — to embed backdoors or malicious functionality"
       },
       {
@@ -2371,32 +2356,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Supply chain risks must be identified and mitigated in the risk management system",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Third-party component risks are in scope for Art. 9 risk management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Quality management must cover supply chain controls",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Documented supply chain security procedures required"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Responsibilities distributed along the AI value chain between providers and deployers",
-        "control_name": "Art. 25 — Value chain responsibilities",
+        "control_id": "Art. 25",
+        "control_name": "Value chain responsibilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Providers must document what deployers inherit — deployers must verify"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "GPAI providers must document training data governance including third-party sources",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Third-party training data provenance is a GPAI documentation obligation"
@@ -2435,8 +2420,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "A.10.1",
-        "control_name": "Third-party AI system acquisition",
+        "control_id": "Third-party",
+        "control_name": "AI system acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Security requirements applied to all LLM component vendors — model providers, dataset suppliers, inference runtime vendors"
@@ -2467,24 +2452,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "2.1 Establish and maintain software asset inventory",
-        "control_name": "CIS 2 — Inventory and Control of Software Assets",
+        "control_id": "CIS 2",
+        "control_name": "Inventory and Control of Software Assets",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "ML SBOM maintained as part of software asset inventory — model versions, libraries, adapters"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "7.1 Establish vulnerability management process",
-        "control_name": "CIS 7 — Continuous Vulnerability Management",
+        "control_id": "CIS 7",
+        "control_name": "Continuous Vulnerability Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vulnerability management process covers LLM component CVEs and dependency risks"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.6 Use only up-to-date and trusted third-party components",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Only approved, verified LLM components used in production — unsigned components rejected"
@@ -2627,29 +2612,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM component vendors assessed before use — security questionnaires, SOC 2 reports reviewed, ongoing monitoring",
-        "control_name": "CC9.1 — Vendor risk management",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk management",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Contractual security obligations for LLM vendors — data handling, vulnerability disclosure, incident notification",
-        "control_name": "CC9.2 — Vendor agreements",
+        "control_id": "CC9.2",
+        "control_name": "Vendor agreements",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM model updates and component changes managed through change management — approval, testing, rollback",
-        "control_name": "CC8.1 — Change management",
+        "control_id": "CC8.1",
+        "control_name": "Change management",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Supply chain attack vectors identified in LLM risk assessment — training data sources, model providers, plugin vendors",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -2773,26 +2758,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-494",
-        "control_name": "CWE-494",
+        "control_name": "Download of Code Without Integrity Check",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/494.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-345",
-        "control_name": "CWE-345",
+        "control_name": "Insufficient Verification of Data Authenticity",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/345.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-1357",
-        "control_name": "CWE-1357",
+        "control_name": "Reliance on Insufficiently Trustworthy Component",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/1357.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -3448,7 +3430,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Craft Adversarial Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
         "notes": "Crafting adversarial training examples designed to corrupt model behaviour"
       },
       {
@@ -3457,7 +3438,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Erode AI Model Integrity",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0031",
         "notes": "Degrading model integrity through poisoned training data, embedding hidden trigger-response patterns"
       },
       {
@@ -3466,7 +3446,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Poison Training Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0020",
         "notes": "Injecting malicious data into training pipelines to corrupt model behaviour at the data level"
       },
       {
@@ -3503,24 +3482,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Data poisoning must be identified as a foreseeable risk and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Poisoning attack scenarios required in Art. 9 risk assessment"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training data must be subject to appropriate governance practices — relevant, representative, free of errors",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Data quality controls preventing poisoning are a compliance requirement"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI must be resilient to attempts to alter performance through data manipulation",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Technical robustness against poisoning is a binding Art. 15 requirement"
@@ -3599,32 +3578,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "7.5 Perform automated vulnerability scanning",
-        "control_name": "CIS 7 — Continuous Vulnerability Management",
+        "control_id": "CIS 7",
+        "control_name": "Continuous Vulnerability Management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Automated scanning of training pipeline components — vulnerabilities in data processing libraries"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.7 Use standard hardening configuration templates",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardened training pipeline configurations — immutable infrastructure, locked data sources"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "18.3 Remediate penetration testing findings",
-        "control_name": "CIS 18 — Penetration Testing",
+        "control_id": "CIS 18",
+        "control_name": "Penetration Testing",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Poisoning scenarios in penetration testing — verify data integrity controls hold under attack"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.12 Collect service provider logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Full audit trail of training data provenance and model training runs"
@@ -3767,29 +3746,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Data and model poisoning identified as threats in LLM risk assessment — training pipeline, supply chain, and model update vectors",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Anomaly detection on model outputs and training data distributions — poisoning indicators detected before operational impact",
-        "control_name": "CC7.2 — Threat detection",
+        "control_id": "CC7.2",
+        "control_name": "Threat detection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Model promotions managed through change management — integrity verification before production deployment",
-        "control_name": "CC8.1 — Change management",
+        "control_id": "CC8.1",
+        "control_name": "Change management",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Training data providers assessed — data provenance, quality, and integrity guarantees required from vendors",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -3906,26 +3885,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-345",
-        "control_name": "CWE-345",
+        "control_name": "Insufficient Verification of Data Authenticity",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/345.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-346",
-        "control_name": "CWE-346",
+        "control_name": "Origin Validation Error",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/346.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-20",
-        "control_name": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/20.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -4355,7 +4331,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Output Manipulation",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0067",
         "notes": "Crafting inputs that produce dangerous outputs consumed by downstream systems"
       },
       {
@@ -4364,7 +4339,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Unsafe Deserialisation via LLM",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0040",
         "notes": "LLM outputs containing serialised payloads executed by downstream components"
       },
       {
@@ -4401,24 +4375,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Output handling risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Insecure output handling included in risk management system"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Accurate, robust outputs resilient to misuse",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Output validation and sanitisation are Art. 15 technical requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented procedures covering output quality",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Post-market monitoring of output handling incidents required"
@@ -4481,32 +4455,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Cl.8",
-        "control_name": "Operation",
+        "control_id": "Operation",
+        "control_name": "Cl.8",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Operational controls for LLM deployment — output handling requirements documented as AIMS operational procedures"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Output encoding and sanitisation as secure development requirements"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.2 Collect audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Log all LLM outputs — injection attempts in model responses detectable"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "18.1 Establish penetration testing",
-        "control_name": "CIS 18 — Penetration Testing",
+        "control_id": "CIS 18",
+        "control_name": "Penetration Testing",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Output injection scenarios in penetration testing — XSS, SQL injection via LLM output"
@@ -4657,29 +4631,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Policy requiring LLM output validation before use in downstream processing — complete and authorised processing",
-        "control_name": "PI1.1 — Processing integrity policies",
+        "control_id": "PI1.1",
+        "control_name": "Processing integrity policies",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Input validation procedures for all systems consuming LLM output — encoding, schema validation, sanitisation",
-        "control_name": "CC5.2 — Select and develop control activities",
+        "control_id": "CC5.2",
+        "control_name": "Select and develop control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Monitoring for injection patterns in LLM output channels — detect anomalous processing before downstream harm",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Output injection risks identified in LLM risk assessment — XSS, SQL injection, command injection via AI-generated content",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -4796,26 +4770,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-79",
-        "control_name": "CWE-79",
+        "control_name": "Cross-site Scripting (XSS)",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/79.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-89",
-        "control_name": "CWE-89",
+        "control_name": "SQL Injection",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/89.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-78",
-        "control_name": "CWE-78",
+        "control_name": "OS Command Injection",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/78.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -5526,7 +5497,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Capability Escalation",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0015",
         "notes": "Exploiting overly permissive LLM tool access to perform actions beyond intended scope"
       },
       {
@@ -5535,7 +5505,6 @@ window.CROSSWALK_DATA = [
         "control_name": "AI Agent Tool Invocation",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
         "notes": "LLM autonomously invoking tools or APIs beyond its intended access scope"
       },
       {
@@ -5572,16 +5541,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Autonomy-related risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Excessive agency scenarios required in risk management system"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI systems designed to allow effective human oversight — ability to pause, stop, and override",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Human-in-the-loop requirements are a binding Art. 14 compliance obligation"
@@ -5660,24 +5629,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "5.4 Restrict administrator privileges",
-        "control_name": "CIS 5 — Account Management",
+        "control_id": "CIS 5",
+        "control_name": "Account Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM tool access managed as privileged access — minimum scope, regular review"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "6.1 Establish access granting process",
-        "control_name": "CIS 6 — Access Control Management",
+        "control_id": "CIS 6",
+        "control_name": "Access Control Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Formal process for granting LLM tool access — documented justification required"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.5 Collect detailed audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All LLM tool invocations logged — every tool call auditable with parameters"
@@ -5836,29 +5805,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM tool access managed under least privilege — minimum scope, documented justification, regular review",
-        "control_name": "CC6.1 — Logical access restrictions",
+        "control_id": "CC6.1",
+        "control_name": "Logical access restrictions",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM tool permissions removed promptly when no longer required — access review process covers LLM tool scope",
-        "control_name": "CC6.3 — Access removal",
+        "control_id": "CC6.3",
+        "control_name": "Access removal",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Human oversight procedures for LLM autonomous actions — confirmation requirements documented and enforced",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Excessive agency risks identified — what autonomous actions can the LLM take, what is the blast radius",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -5982,26 +5951,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-269",
-        "control_name": "CWE-269",
+        "control_name": "Improper Privilege Management",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/269.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-272",
-        "control_name": "CWE-272",
+        "control_name": "Least Privilege Violation",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/272.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
-        "control_name": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/284.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -6488,7 +6454,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Extract LLM System Prompt",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
         "notes": "Extraction of internal model configuration, instructions, or system prompts"
       },
       {
@@ -6497,7 +6462,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Direct Prompt Injection",
         "tier": "Foundational",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
         "notes": "Crafting inputs specifically designed to reveal or override system prompt content"
       },
       {
@@ -6534,16 +6498,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Users must receive sufficient information about the AI system — but this does not require disclosing system prompts",
-        "control_name": "Art. 13 — Transparency",
+        "control_id": "Art. 13",
+        "control_name": "Transparency",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Transparency obligation must be met without exposing security-sensitive system prompt content"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Configuration management documented",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "System prompt versions, access controls, and change procedures are quality management artefacts"
@@ -6614,32 +6578,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Cl.7",
-        "control_name": "Support",
+        "control_id": "Support",
+        "control_name": "Cl.7",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Documented information controls — system prompts managed as AIMS documented information with appropriate access controls"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.1 Establish data management process",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "System prompts classified as sensitive configuration — data handling policy applied"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "4.1 Establish secure configuration process",
-        "control_name": "CIS 4 — Secure Configuration",
+        "control_id": "CIS 4",
+        "control_name": "Secure Configuration",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secure configuration for LLM deployments — system prompts not in cleartext config"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.2 Collect audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "System prompt access logged — unauthorised access attempts detectable"
@@ -6782,29 +6746,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "System prompts classified as confidential — encryption at rest, access-controlled, not in cleartext config",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access controls on system prompt storage — only authorised personnel can read or modify, all access logged",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "System prompt security procedures — version control, rotation, extraction resistance testing documented",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access to system prompt storage monitored — anomalous access attempts detected and alerted",
-        "control_name": "CC7.2 — Monitoring",
+        "control_id": "CC7.2",
+        "control_name": "Monitoring",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -6913,26 +6877,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information to an Unauthorised Actor",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-312",
-        "control_name": "CWE-312",
+        "control_name": "Cleartext Storage of Sensitive Information",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/312.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-215",
-        "control_name": "CWE-215",
+        "control_name": "Insertion of Sensitive Information Into Debugging Code",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/215.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -7226,7 +7187,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Embedding Manipulation",
         "tier": "Hardening",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0071",
         "notes": "Crafting inputs whose embeddings manipulate similarity search results"
       },
       {
@@ -7235,7 +7195,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Resource Exhaustion via Embedding",
         "tier": "Hardening",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0025",
         "notes": "Flooding vector stores with adversarial embeddings to degrade retrieval quality"
       },
       {
@@ -7244,7 +7203,6 @@ window.CROSSWALK_DATA = [
         "control_name": "RAG Poisoning",
         "tier": "Hardening",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0070",
         "notes": "Injecting malicious content into RAG knowledge bases to manipulate retrieval results"
       },
       {
@@ -7253,7 +7211,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Retrieval Content Crafting",
         "tier": "Hardening",
         "scope": "Build",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0066",
         "notes": "Crafting content specifically designed to rank highly in semantic search and influence model outputs"
       },
       {
@@ -7290,24 +7247,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Embedding and retrieval risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vector store attack scenarios included in risk management system"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Data quality controls applied to all data in scope — including RAG corpora",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Quality controls on embedding generation and vector store ingestion required"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Technical robustness against adversarial manipulation",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Embedding manipulation resistance is an Art. 15 technical requirement"
@@ -7370,32 +7327,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "A.10.1",
-        "control_name": "Third-party AI system acquisition",
+        "control_id": "Third-party",
+        "control_name": "AI system acquisition",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vector database providers assessed as third-party AI system components"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.11 Encrypt sensitive data at rest",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "All vector store content encrypted at rest"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "7.1 Establish vulnerability management",
-        "control_name": "CIS 7 — Vulnerability Management",
+        "control_id": "CIS 7",
+        "control_name": "Vulnerability Management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vector database CVEs in vulnerability management process — CVE-2024-3584 and equivalents"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Secure coding requirements for vector store integration — RBAC, encryption, input validation"
@@ -7530,29 +7487,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Embeddings of confidential information protected — encrypted at rest, access-controlled, inversion-resistant",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "RBAC on all vector store collections — no unauthenticated access in any environment",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Anomaly detection on vector store query patterns — bulk extraction and unusual retrieval volumes detected",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Embeddings of personal data used only for authorised purposes — privacy commitments apply to derived forms",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -7661,26 +7618,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-327",
-        "control_name": "CWE-327",
+        "control_name": "Use of a Broken or Risky Cryptographic Algorithm",
         "tier": "Hardening",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/327.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-330",
-        "control_name": "CWE-330",
+        "control_name": "Use of Insufficiently Random Values",
         "tier": "Hardening",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/330.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-345",
-        "control_name": "CWE-345",
+        "control_name": "Insufficient Verification of Data Authenticity",
         "tier": "Hardening",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/345.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -8054,7 +8008,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Publish Hallucinated Entities",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
         "notes": "AI-generated hallucinated content published as fact, spreading false information"
       },
       {
@@ -8063,7 +8016,6 @@ window.CROSSWALK_DATA = [
         "control_name": "AI-Enabled Product or Service",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
         "notes": "Generating high-volume automated content via AI-enabled services to shape perception or overwhelm fact-checking"
       },
       {
@@ -8100,16 +8052,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI system information must include accuracy metrics and known limitations",
-        "control_name": "Art. 13 — Transparency",
+        "control_id": "Art. 13",
+        "control_name": "Transparency",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hallucination rates and accuracy limitations must be disclosed to deployers and users"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "AI-generated content must be marked as such — chatbots must disclose AI nature",
-        "control_name": "Art. 50 — Transparency for certain AI systems",
+        "control_id": "Art. 50",
+        "control_name": "Transparency for certain AI systems",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Mandatory AI disclosure prevents users from treating hallucinated content as authoritative human output"
@@ -8188,24 +8140,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "14.1 Establish security awareness programme",
-        "control_name": "CIS 14 — Security Awareness",
+        "control_id": "CIS 14",
+        "control_name": "Security Awareness",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "User training on LLM output limitations — verification requirements and critical evaluation"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "17.1 Designate personnel for incident response",
-        "control_name": "CIS 17 — Incident Response",
+        "control_id": "CIS 17",
+        "control_name": "Incident Response",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Defined response for LLM misinformation incidents — correction, notification, root cause"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.1 Establish data management process",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "RAG data governance — quality and freshness controls on retrieval sources"
@@ -8348,29 +8300,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Policy on LLM output accuracy — acceptable accuracy thresholds, verification requirements for high-stakes use cases",
-        "control_name": "PI1.1 — Processing integrity policy",
+        "control_id": "PI1.1",
+        "control_name": "Processing integrity policy",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM inputs (RAG sources, training data) quality controls — authoritative, current, verified sources",
-        "control_name": "PI1.2 — System inputs are complete and accurate",
+        "control_id": "PI1.2",
+        "control_name": "System inputs are complete and accurate",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Misinformation risk identified in LLM risk assessment — harm potential of incorrect outputs per use case",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Production monitoring for accuracy degradation and hallucination patterns — drift detection",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -8487,18 +8439,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-1021",
-        "control_name": "CWE-1021",
+        "control_name": "Improper Restriction of Rendered UI Layers or Frames",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/1021.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-116",
-        "control_name": "CWE-116",
+        "control_name": "Improper Encoding or Escaping of Output",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/116.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -8820,7 +8770,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Denial of AI Service",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
         "notes": "Overloading AI systems with computationally expensive inputs to cause service degradation"
       },
       {
@@ -8829,7 +8778,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Cost Harvesting",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0034",
         "notes": "Crafting inputs that maximise token usage or API costs per request"
       },
       {
@@ -8866,24 +8814,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Availability risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Resource exhaustion and DoS scenarios included in risk management system"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI must remain available under adversarial conditions",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Technical resilience against denial-of-service attacks is an Art. 15 requirement"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Operational continuity procedures documented",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Post-market monitoring and incident response for availability failures required"
@@ -8954,24 +8902,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "4.1 Establish secure configuration process",
-        "control_name": "CIS 4 — Secure Configuration",
+        "control_id": "CIS 4",
+        "control_name": "Secure Configuration",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secure configuration includes resource limits — token caps, rate limits, cost budgets"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "12.6 Use of network-based URL filters",
-        "control_name": "CIS 12 — Network Infrastructure Management",
+        "control_id": "CIS 12",
+        "control_name": "Network Infrastructure Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Rate limiting and traffic controls at the API gateway and network layer"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "17.1 Designate personnel for incident response",
-        "control_name": "CIS 17 — Incident Response",
+        "control_id": "CIS 17",
+        "control_name": "Incident Response",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Defined response for consumption anomalies — automated rate limiting, session suspension, alerting"
@@ -9122,29 +9070,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM service availability commitments documented — SLAs, RTO/RPO, resource limits that protect availability",
-        "control_name": "A1.1 — Availability policies",
+        "control_id": "A1.1",
+        "control_name": "Availability policies",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Rate limiting and resource controls protect LLM service availability — implemented and monitored",
-        "control_name": "A1.2 — Environmental protections",
+        "control_id": "A1.2",
+        "control_name": "Environmental protections",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Real-time monitoring of LLM resource consumption — cost anomalies and unusual volume patterns alerted",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Resource exhaustion risks identified in LLM risk assessment — DoS and sponge attack vectors assessed",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -9254,26 +9202,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-400",
-        "control_name": "CWE-400",
+        "control_name": "Uncontrolled Resource Consumption",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/400.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-770",
-        "control_name": "CWE-770",
+        "control_name": "Allocation of Resources Without Limits or Throttling",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/770.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-799",
-        "control_name": "CWE-799",
+        "control_name": "Improper Control of Interaction Frequency",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/799.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -9577,7 +9522,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Direct Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
         "notes": "Attacker directly injects goal-altering instructions into agent input"
       },
       {
@@ -9586,7 +9530,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Indirect Prompt Injection",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0051.001",
         "notes": "Hidden instructions in documents, emails, RAG results, or tool outputs alter agent goals without user visibility"
       },
       {
@@ -9595,7 +9538,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Jailbreak",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
         "notes": "Override safety guardrails that constrain agent goal execution"
       },
       {
@@ -9632,24 +9574,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Goal hijack scenarios identified and mitigated in risk management system",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent goal hijack included in Art. 9 risk assessment for every agentic deployment"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Meaningful human oversight over high-risk AI system outputs",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agents whose goals can be hijacked and execute autonomously are an Art. 14 failure — human confirmation required before goal-changing actions"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Technical resilience against adversarial input manipulation",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Input filtering, goal-state verification, and injection detection are Art. 15 technical requirements"
@@ -9720,32 +9662,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure application development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secure development standards covering agentic integrations — input validation, goal-state verification"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "18.1 Establish penetration testing programme",
-        "control_name": "CIS 18 — Penetration Testing",
+        "control_id": "CIS 18",
+        "control_name": "Penetration Testing",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Adversarial testing covering goal hijack — direct, indirect, multi-turn injection scenarios"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.2 Collect audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All agent inputs logged — injection attempts detectable through log analysis"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "13.8 Deploy a network intrusion detection solution",
-        "control_name": "CIS 13 — Network Monitoring and Defence",
+        "control_id": "CIS 13",
+        "control_name": "Network Monitoring and Defence",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Network-layer monitoring for injection indicators in agent traffic"
@@ -9888,32 +9830,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Goal hijack risk identified in risk assessment — prompt injection, indirect injection, multi-turn manipulation documented",
-        "control_name": "CC3.2",
+        "control_id": "CC3.2",
+        "control_name": "Goal hijack risk identified in risk assessment — prompt injection, indirect injection, multi-turn manipulation documented",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Risk register with goal hijack entries, treatment status"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Runtime monitoring for goal-deviation indicators — AI-specific anomaly detection covering instruction-override patterns",
-        "control_name": "CC7.2",
+        "control_id": "CC7.2",
+        "control_name": "Runtime monitoring for goal-deviation indicators — AI-specific anomaly detection covering instruction-override patterns",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Monitoring configuration, alert logs, incident records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Control activities define acceptable agent actions — agent cannot deviate from authorised goal scope",
-        "control_name": "CC5.2",
+        "control_id": "CC5.2",
+        "control_name": "Control activities define acceptable agent actions — agent cannot deviate from authorised goal scope",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent permission policy, goal-state verification design documentation"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent processing is authorised — actions taken by agent correspond to user's authorised intent, not attacker's injected instruction",
-        "control_name": "PI1.1",
+        "control_id": "PI1.1",
+        "control_name": "Agent processing is authorised — actions taken by agent correspond to user's authorised intent, not attacker's injected instruction",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Action audit log, authorisation records per agent session"
@@ -10053,16 +9995,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Input Validation",
-        "control_name": "CWE-20",
+        "control_id": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Root cause — agent inputs not validated before entering model context; indirect injection content not treated as untrusted"
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Neutralisation of Special Elements in Output Used by a Downstream Component",
-        "control_name": "CWE-74",
+        "control_id": "CWE-74",
+        "control_name": "Improper Neutralisation of Special Elements in Output Used by a Downstream Component",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Instruction elements in processed content not neutralised before agent reasoning"
@@ -10190,32 +10132,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Threat model the agent pipeline for adversarial goal manipulation vectors including direct injection, indirect injection via tool outputs, and context poisoning",
-        "control_name": "PW.2.1-PS – Design software to meet security requirements",
+        "control_id": "PW.2.1-PS",
+        "control_name": "Design software to meet security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ensures goal integrity is a design-phase requirement for all agentic systems"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Review agent behaviour for goal deviation — verify that the agent maintains intended objectives under adversarial input conditions",
-        "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review the software for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Catches goal manipulation vulnerabilities before production deployment"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Conduct adversarial red-team testing against goal hijacking vectors including injection through every data source, tool output, and context channel",
-        "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+        "control_id": "PW.8.2-PS",
+        "control_name": "Test for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validates goal integrity controls under realistic attack conditions"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Establish procedures to identify goal hijacking incidents in production including goal deviation monitoring, triage, and confirmation workflows",
-        "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+        "control_id": "RV.1.1-PS",
+        "control_name": "Identify and confirm vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enables rapid detection and response to goal manipulation in live systems"
@@ -10773,7 +10715,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Output Manipulation",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0067",
         "notes": "Crafting inputs that produce tool calls with destructive parameters"
       },
       {
@@ -10782,7 +10723,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Capability Escalation",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0015",
         "notes": "Exploiting overly permissive tool access to exceed intended agent scope"
       },
       {
@@ -10791,7 +10731,6 @@ window.CROSSWALK_DATA = [
         "control_name": "AI Agent Tool Invocation",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
         "notes": "Agent autonomously invoking tools beyond authorised scope, harvesting data through tool chains"
       },
       {
@@ -10828,24 +10767,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Tool misuse risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All agent tool integrations assessed in Art. 9 risk management — reversibility classification documented"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Human oversight over high-risk AI actions",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Irreversible tool invocations require human confirmation — Art. 14 binding requirement"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures preventing tool misuse",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Per-tool permission manifests and parameter validation are Art. 15 technical requirements"
@@ -10908,40 +10847,40 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "A.10.1",
-        "control_name": "Third-party AI system acquisition",
+        "control_id": "Third-party",
+        "control_name": "AI system acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool and MCP server providers assessed as third-party AI components — security obligations in contracts"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "5.4 Restrict administrator privileges",
-        "control_name": "CIS 5 — Account Management",
+        "control_id": "CIS 5",
+        "control_name": "Account Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent tool access managed as privileged access — minimum scope, regular review"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "6.1 Establish access granting process",
-        "control_name": "CIS 6 — Access Control Management",
+        "control_id": "CIS 6",
+        "control_name": "Access Control Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Formal process for granting agent tool access — documented justification per tool"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.5 Collect detailed audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All tool invocations logged — tool identity, parameters, agent identity, timestamp"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool parameter validation as secure development requirement"
@@ -11084,32 +11023,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Control activities define tool permission scope — which tools are permitted, which parameters are valid, which actions require confirmation",
-        "control_name": "CC5.2",
+        "control_id": "CC5.2",
+        "control_name": "Control activities define tool permission scope — which tools are permitted, which parameters are valid, which actions require confirmation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool permission policy, permitted action allowlist"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Logical access controls enforce tool permissions — agent cannot invoke tools outside authorised scope",
-        "control_name": "CC6.1",
+        "control_id": "CC6.1",
+        "control_name": "Logical access controls enforce tool permissions — agent cannot invoke tools outside authorised scope",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool invocation logs, access rejection records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Monitoring for anomalous tool invocations — destructive parameters, out-of-scope tools, unexpected sequences detected",
-        "control_name": "CC7.2",
+        "control_id": "CC7.2",
+        "control_name": "Monitoring for anomalous tool invocations — destructive parameters, out-of-scope tools, unexpected sequences detected",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool call audit log, anomaly alert records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Tool invocations are complete and accurate — parameter validation ensures tool calls match intended business operation",
-        "control_name": "PI1.2",
+        "control_id": "PI1.2",
+        "control_name": "Tool invocations are complete and accurate — parameter validation ensures tool calls match intended business operation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validation configuration, rejected call logs"
@@ -11241,8 +11180,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Access Control",
-        "control_name": "CWE-284",
+        "control_id": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent can invoke tools it should not have access to; tool parameters not range-validated"
@@ -11273,8 +11212,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Input Validation",
-        "control_name": "CWE-20",
+        "control_id": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool parameters generated by LLM not validated against safe ranges before execution"
@@ -11378,32 +11317,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Define explicit security requirements specifying per-tool permission manifests, parameter validation rules, and irreversibility classification for each agent deployment",
-        "control_name": "PW.1.1-PS – Define security requirements",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Define security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Establishes tool access control as a mandatory deployment requirement"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Threat model all agent tool access paths; design least-privilege tool manifests and enforce human confirmation for irreversible operations by design",
-        "control_name": "PW.2.1-PS – Design software to meet security requirements",
+        "control_id": "PW.2.1-PS",
+        "control_name": "Design software to meet security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ensures tool misuse prevention is designed before implementation"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Review agent tool access control enforcement — verify that tool permission manifests are correctly implemented and agents cannot be manipulated into destructive tool use",
-        "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review the software for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validates tool controls before production deployment"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Protect agent tool configuration files, permission manifests, and MCP tool descriptors from unauthorised modification; verify descriptor integrity",
-        "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect all code from unauthorised access",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents tampering with tool access control configuration"
@@ -12004,7 +11943,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Establish Accounts",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
         "notes": "Establishing or exploiting legitimate agent accounts to access AI systems or data pipelines"
       },
       {
@@ -12013,7 +11951,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Obtain Capabilities",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
         "notes": "Acquiring agent credentials or capabilities to exfiltrate data through AI inference APIs"
       },
       {
@@ -12022,7 +11959,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Exfiltration via AI Inference API",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0024",
         "notes": "Exfiltrating sensitive data accessible to the agent through inference API abuse"
       },
       {
@@ -12059,24 +11995,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Credential exposure risk identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credential lifecycle in Art. 9 risk management — NHI inventory, scope controls, rotation documented"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures protecting against credential theft",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Short-lived credentials, JIT access, PKI-backed identities are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented procedures for credential incident response",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credential incident response in quality management system — rotation, containment, lateral movement assessment"
@@ -12131,48 +12067,48 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Cl.7",
-        "control_name": "Support",
+        "control_id": "Support",
+        "control_name": "Cl.7",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Resources for AI systems include NHIs — agent identities inventoried and managed as AIMS resources"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "A.10.1",
-        "control_name": "Third-party AI system acquisition",
+        "control_id": "Third-party",
+        "control_name": "AI system acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Third-party services accessed via agent credentials assessed — security obligations in access arrangements"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "5.4 Restrict administrator privileges",
-        "control_name": "CIS 5 — Account Management",
+        "control_id": "CIS 5",
+        "control_name": "Account Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credentials managed as privileged accounts — minimum scope, regular review, JIT issuance"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "6.2 Establish an access revoking process",
-        "control_name": "CIS 6 — Access Control Management",
+        "control_id": "CIS 6",
+        "control_name": "Access Control Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credential revocation process — immediate revocation on detection, decommission procedure"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.5 Collect detailed audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All credential operations logged — issuance, use, anomalous patterns detectable"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.11 Encrypt sensitive data at rest",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credentials encrypted at rest — secret manager, no cleartext storage"
@@ -12315,32 +12251,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent credentials managed as logical access assets — provisioning, scope, rotation, revocation per access management policy",
-        "control_name": "CC6.1",
+        "control_id": "CC6.1",
+        "control_name": "Agent credentials managed as logical access assets — provisioning, scope, rotation, revocation per access management policy",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Credential lifecycle records, provisioning logs"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Credentials revoked at session end — no persistent credential caching in agent memory after session terminates",
-        "control_name": "CC6.3",
+        "control_id": "CC6.3",
+        "control_name": "Credentials revoked at session end — no persistent credential caching in agent memory after session terminates",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Session termination logs, credential TTL configuration"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Credential usage monitored — anomalous scope expansion or after-session access detected",
-        "control_name": "CC7.3",
+        "control_id": "CC7.3",
+        "control_name": "Credential usage monitored — anomalous scope expansion or after-session access detected",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Credential audit log, anomaly alert records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent credentials treated as confidential information — stored in secrets manager, access-controlled",
-        "control_name": "C1.1",
+        "control_id": "C1.1",
+        "control_name": "Agent credentials treated as confidential information — stored in secrets manager, access-controlled",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secrets management configuration, access control evidence"
@@ -12480,24 +12416,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Insufficiently Protected Credentials",
-        "control_name": "CWE-522",
+        "control_id": "CWE-522",
+        "control_name": "Insufficiently Protected Credentials",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credentials stored in cleartext memory, logs, config, or tool payloads"
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Cleartext Storage of Sensitive Information",
-        "control_name": "CWE-312",
+        "control_id": "CWE-312",
+        "control_name": "Cleartext Storage of Sensitive Information",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Credentials and tokens not encrypted at rest in agent memory or configuration"
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Use of Hard-coded Credentials",
-        "control_name": "CWE-798",
+        "control_id": "CWE-798",
+        "control_name": "Use of Hard-coded Credentials",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credentials hardcoded in prompts or source code"
@@ -12665,32 +12601,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Define explicit privilege boundaries for each agent identity — unique NHI, maximum permitted privilege level, credential scope, and short TTL requirements",
-        "control_name": "PW.1.1-PS – Define security requirements",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Define security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Establishes privilege boundaries as mandatory requirements"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Implement secure credential handling — agents must not inherit user credentials, store tokens in context, or pass credentials between agents without explicit authorisation",
-        "control_name": "PW.5.1-PS – Secure coding practices",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Secure coding practices",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents credential leakage through agent code paths"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Protect credential stores, identity configurations, and privilege mapping files from unauthorised access and modification; encrypt at rest",
-        "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect all code from unauthorised access",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents tampering with privilege boundaries"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Establish monitoring and triage procedures for credential abuse incidents — detect agents operating beyond their assigned privilege level or using inherited credentials",
-        "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+        "control_id": "RV.1.1-PS",
+        "control_name": "Identify and confirm vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enables rapid detection of identity abuse in production"
@@ -13075,7 +13011,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Extract LLM System Prompt",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
         "notes": "Extracting system prompts to learn agent configuration and tool access for supply chain targeting"
       },
       {
@@ -13084,7 +13019,6 @@ window.CROSSWALK_DATA = [
         "control_name": "External Harms",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
         "notes": "Persistent malicious behaviour introduced through dynamically loaded agent components causing downstream external harms"
       },
       {
@@ -13093,7 +13027,6 @@ window.CROSSWALK_DATA = [
         "control_name": "AI Supply Chain Compromise",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
         "notes": "Compromising MCP servers, prompt templates, or model adapters in the supply chain to embed trigger-based backdoors"
       },
       {
@@ -13130,24 +13063,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Supply chain risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All agent components in Art. 9 risk management — dynamic runtime components explicitly in scope"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Quality management includes supply chain controls",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Documented supply chain security procedures — component verification, change management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Providers document obligations; deployers verify",
-        "control_name": "Art. 25 — Value chain responsibilities",
+        "control_id": "Art. 25",
+        "control_name": "Value chain responsibilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent tool and MCP server supply chain obligations distributed along value chain"
@@ -13186,8 +13119,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "A.10.1",
-        "control_name": "Third-party AI system acquisition",
+        "control_id": "Third-party",
+        "control_name": "AI system acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All agent tool and MCP server providers assessed — security obligations, integrity guarantees, disclosure SLA in contracts"
@@ -13218,32 +13151,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "2.1 Establish and maintain software inventory",
-        "control_name": "CIS 2 — Inventory and Control of Software Assets",
+        "control_id": "CIS 2",
+        "control_name": "Inventory and Control of Software Assets",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "ML SBOM as software asset inventory — all agent components (tools, MCP servers, models, libraries)"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "7.1 Establish vulnerability management process",
-        "control_name": "CIS 7 — Continuous Vulnerability Management",
+        "control_id": "CIS 7",
+        "control_name": "Continuous Vulnerability Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent component CVEs in vulnerability management — urgent patching for code execution risks"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.6 Use only up-to-date and trusted third-party components",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Approved component list — only sourced from approved vendors, signatures verified"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "15.1 Establish service provider management process",
-        "control_name": "CIS 15 — Service Provider Management",
+        "control_id": "CIS 15",
+        "control_name": "Service Provider Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent tool and MCP providers managed as service providers — security assessment before onboarding"
@@ -13370,32 +13303,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Third-party agentic components assessed — agent frameworks, tool vendors, model providers subject to vendor risk management",
-        "control_name": "CC9.2",
+        "control_id": "CC9.2",
+        "control_name": "Third-party agentic components assessed — agent frameworks, tool vendors, model providers subject to vendor risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vendor assessments, contractual security obligations"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Component changes managed through change management — model updates, framework upgrades, tool changes require security review",
-        "control_name": "CC8.1",
+        "control_id": "CC8.1",
+        "control_name": "Component changes managed through change management — model updates, framework upgrades, tool changes require security review",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Change management records, security review sign-offs"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agentic supply chain risk included in risk assessment — compromised component scenarios documented with treatment",
-        "control_name": "CC3.3",
+        "control_id": "CC3.3",
+        "control_name": "Agentic supply chain risk included in risk assessment — compromised component scenarios documented with treatment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Risk register with supply chain entries"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Integrity checks required before component deployment — cryptographic verification of model weights and tool descriptors",
-        "control_name": "CC5.3",
+        "control_id": "CC5.3",
+        "control_name": "Integrity checks required before component deployment — cryptographic verification of model weights and tool descriptors",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Integrity verification configuration, deployment logs"
@@ -13527,8 +13460,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Download of Code Without Integrity Check",
-        "control_name": "CWE-494",
+        "control_id": "CWE-494",
+        "control_name": "Download of Code Without Integrity Check",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent tool components and MCP servers loaded without signature verification"
@@ -13551,8 +13484,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Reliance on Insufficiently Trustworthy Component",
-        "control_name": "CWE-1357",
+        "control_id": "CWE-1357",
+        "control_name": "Reliance on Insufficiently Trustworthy Component",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent dependency on third-party MCP servers without security assessment"
@@ -13664,32 +13597,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Vet all third-party agent components — tools, plugins, MCP servers, model weights, orchestration libraries — for provenance, integrity, and security posture before use",
-        "control_name": "PW.4.1-PS – Reuse existing well-secured software",
+        "control_id": "PW.4.1-PS",
+        "control_name": "Reuse existing well-secured software",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents introduction of compromised components into agent pipelines"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Verify integrity of all agent artefacts and third-party components using cryptographic signatures and checksums before deployment",
-        "control_name": "PS.2.1-PS – Verify software integrity",
+        "control_id": "PS.2.1-PS",
+        "control_name": "Verify software integrity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Detects tampering in agent supply chain artefacts"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Maintain a secure, versioned registry of all agent components with provenance records; enable auditability and rollback",
-        "control_name": "PS.3.1-PS – Archive and protect software releases",
+        "control_id": "PS.3.1-PS",
+        "control_name": "Archive and protect software releases",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ensures traceability and recovery capability for supply chain incidents"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Monitor for newly disclosed vulnerabilities in third-party agent components; establish a triage process for AI-specific supply chain disclosures",
-        "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+        "control_id": "RV.1.1-PS",
+        "control_name": "Identify and confirm vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enables rapid response to supply chain compromises"
@@ -14195,7 +14128,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Unsafe Deserialisation via LLM",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0040",
         "notes": "Agent-generated code or payloads executed by downstream components"
       },
       {
@@ -14204,7 +14136,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Jailbreak",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
         "notes": "Overriding code execution safety guardrails to allow arbitrary command execution"
       },
       {
@@ -14213,7 +14144,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Output Manipulation",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0067",
         "notes": "Crafting inputs that produce malicious executable code in agent output"
       },
       {
@@ -14250,24 +14180,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Code execution risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Agent code execution capability documented in Art. 9 risk management — sandbox status, permitted operations"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Technical robustness against adversarial code execution",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Sandboxing, input filtering, static analysis are Art. 15 requirements for agents with code execution"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring covering code execution incidents",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Code execution anomaly response in quality management system"
@@ -14338,32 +14268,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Sandbox, static analysis, and allowlist as secure development requirements for code execution"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "4.1 Establish secure configuration process",
-        "control_name": "CIS 4 — Secure Configuration",
+        "control_id": "CIS 4",
+        "control_name": "Secure Configuration",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Secure configuration includes code execution sandbox — no defaults permitting unrestricted execution"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "18.1 Establish penetration testing",
-        "control_name": "CIS 18 — Penetration Testing",
+        "control_id": "CIS 18",
+        "control_name": "Penetration Testing",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Sandbox escape and code injection in penetration testing — adversarial scenarios before each deployment"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "13.8 Deploy network intrusion detection",
-        "control_name": "CIS 13 — Network Monitoring",
+        "control_id": "CIS 13",
+        "control_name": "Network Monitoring",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Code execution environments network-monitored — outbound connection attempts from sandbox detected"
@@ -14490,32 +14420,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Control activities define permitted code execution scope — sandbox requirements, approved languages, forbidden operations",
-        "control_name": "CC5.2",
+        "control_id": "CC5.2",
+        "control_name": "Control activities define permitted code execution scope — sandbox requirements, approved languages, forbidden operations",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Code execution policy, sandbox configuration"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Execution sandboxes access-controlled — no host filesystem or network access without authorisation",
-        "control_name": "CC6.1",
+        "control_id": "CC6.1",
+        "control_name": "Execution sandboxes access-controlled — no host filesystem or network access without authorisation",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Sandbox configuration, access control evidence"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Code execution events monitored — syscall patterns, network calls, and filesystem access from sandboxes logged",
-        "control_name": "CC7.2",
+        "control_id": "CC7.2",
+        "control_name": "Code execution events monitored — syscall patterns, network calls, and filesystem access from sandboxes logged",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Execution audit log, alert configuration"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Code execution is authorised — agent cannot execute code that was not explicitly requested by authorised user",
-        "control_name": "PI1.1",
+        "control_id": "PI1.1",
+        "control_name": "Code execution is authorised — agent cannot execute code that was not explicitly requested by authorised user",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Code execution authorisation records"
@@ -14648,16 +14578,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Neutralisation of Special Elements in OS Command",
-        "control_name": "CWE-78",
+        "control_id": "CWE-78",
+        "control_name": "Improper Neutralisation of Special Elements in OS Command",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM-generated code containing shell commands executed without sanitisation"
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Neutralisation of Special Elements in Command",
-        "control_name": "CWE-77",
+        "control_id": "CWE-77",
+        "control_name": "Improper Neutralisation of Special Elements in Command",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM output used directly in command context"
@@ -14777,32 +14707,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Threat model all code execution paths in agent workflows; design sandboxing, resource limits, and execution constraints as explicit security requirements",
-        "control_name": "PW.2.1-PS – Design software to meet security requirements",
+        "control_id": "PW.2.1-PS",
+        "control_name": "Design software to meet security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ensures code execution boundaries are designed before implementation"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Implement secure coding for agent code execution — sandbox isolation, input validation for code generation, output filtering, and prevention of self-modification",
-        "control_name": "PW.5.1-PS – Secure coding practices",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Secure coding practices",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents code execution vulnerabilities in agent implementation"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Conduct adversarial testing targeting code execution — sandbox escapes, resource limit bypasses, self-modification, and host system access through generated code",
-        "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+        "control_id": "PW.8.2-PS",
+        "control_name": "Test for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validates execution boundary controls under attack conditions"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Protect agent execution environments, sandbox configurations, and runtime constraints from unauthorised modification",
-        "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect all code from unauthorised access",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents weakening of execution boundaries through configuration tampering"
@@ -15366,7 +15296,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Craft Adversarial Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
         "notes": "Crafting adversarial content to inject into agent persistent memory or RAG stores"
       },
       {
@@ -15375,7 +15304,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Embedding Manipulation",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0071",
         "notes": "Crafting content whose embeddings bias future retrieval results in attacker's favour"
       },
       {
@@ -15384,7 +15312,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Poison Training Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0020",
         "notes": "Establishing persistent trigger-response patterns in agent memory stores via poisoned data"
       },
       {
@@ -15393,7 +15320,6 @@ window.CROSSWALK_DATA = [
         "control_name": "RAG Poisoning",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0070",
         "notes": "Injecting malicious content into RAG knowledge bases to persistently alter agent retrieval and behaviour"
       },
       {
@@ -15430,24 +15356,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Data governance applies to all data influencing AI behaviour — including agent memory",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Agent memory governance — classification, access controls, integrity validation, retention — is an Art. 10 requirement"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Technical resilience against adversarial memory manipulation",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory integrity monitoring and access controls are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring for memory integrity",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory anomaly detection in post-market monitoring programme"
@@ -15518,32 +15444,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.11 Encrypt sensitive data at rest",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Agent memory stores encrypted at rest — embeddings, long-term memory, operational knowledge"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.2 Collect audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory write operations logged — who or what wrote, when, content hash"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory write validation as secure development requirement — untrusted sources cannot write directly"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "13.3 Deploy a network-based intrusion detection system",
-        "control_name": "CIS 13 — Network Monitoring",
+        "control_id": "CIS 13",
+        "control_name": "Network Monitoring",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory store access monitored — bulk read, anomalous write patterns detected"
@@ -15662,32 +15588,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Memory poisoning risk documented in risk assessment — scenarios for RAG, persistent memory, and context window corruption",
-        "control_name": "CC3.3",
+        "control_id": "CC3.3",
+        "control_name": "Memory poisoning risk documented in risk assessment — scenarios for RAG, persistent memory, and context window corruption",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Risk register with memory poisoning entries"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent memory stores monitored for unexpected modifications — baseline established, deviations trigger alerts",
-        "control_name": "CC7.2",
+        "control_id": "CC7.2",
+        "control_name": "Agent memory stores monitored for unexpected modifications — baseline established, deviations trigger alerts",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory access log, anomaly alert configuration"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Processing based on compromised memory is not authorised — memory integrity controls support PI1 evidence",
-        "control_name": "PI1.1",
+        "control_id": "PI1.1",
+        "control_name": "Processing based on compromised memory is not authorised — memory integrity controls support PI1 evidence",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Integrity verification configuration"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Controls on memory store write access — only authorised processes may write to agent memory stores",
-        "control_name": "CC5.2",
+        "control_id": "CC5.2",
+        "control_name": "Controls on memory store write access — only authorised processes may write to agent memory stores",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Memory access policy, write access controls"
@@ -15827,24 +15753,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Insufficient Verification of Data Authenticity",
-        "control_name": "CWE-345",
+        "control_id": "CWE-345",
+        "control_name": "Insufficient Verification of Data Authenticity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Memory content not integrity-verified before storage or retrieval"
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Input Validation",
-        "control_name": "CWE-20",
+        "control_id": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Content entering agent memory not validated before write"
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Access Control",
-        "control_name": "CWE-284",
+        "control_id": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vector store and memory databases with insufficient access controls permitting unauthorised writes"
@@ -15949,32 +15875,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Protect agent memory stores, context databases, and shared state repositories from unauthorised read, write, and modification; enforce access controls per agent identity",
-        "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect all code from unauthorised access",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents direct tampering with agent memory and context"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Maintain versioned, integrity-verified snapshots of agent memory and context stores; enable rollback to pre-poisoning states",
-        "control_name": "PS.3.1-PS – Archive and protect software releases",
+        "control_id": "PS.3.1-PS",
+        "control_name": "Archive and protect software releases",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ensures recovery capability for memory poisoning incidents"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Review agent behaviour for memory-influenced anomalies — verify that persistent memory and shared context do not introduce unintended behaviour changes across sessions",
-        "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review the software for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Catches memory poisoning effects before they propagate"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "When memory poisoning is detected, conduct forensic analysis to identify the poisoned records, their ingestion source, propagation path, and blast radius across agents",
-        "control_name": "RV.3.1-PS – Analyse root causes",
+        "control_id": "RV.3.1-PS",
+        "control_name": "Analyse root causes",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enables thorough incident response for memory poisoning events"
@@ -16298,7 +16224,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Craft Adversarial Data",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0043",
         "notes": "Crafting adversarial messages to exploit inter-agent communication protocols"
       },
       {
@@ -16307,7 +16232,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Establish Accounts",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0021",
         "notes": "Establishing or compromising agent accounts to impersonate trusted agents in A2A channels"
       },
       {
@@ -16316,7 +16240,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Obtain Capabilities",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0016",
         "notes": "Acquiring capabilities to intercept inter-agent messages and exfiltrate sensitive context"
       },
       {
@@ -16353,24 +16276,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "A2A communication risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Inter-agent channels in Art. 9 risk assessment — authentication, encryption, schema validation status"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures protecting all system components",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Authenticated, encrypted A2A communication is an Art. 15 requirement for high-risk agentic systems"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documentation of A2A security controls",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "A2A authentication and encryption documented in quality management system"
@@ -16425,48 +16348,48 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "A.10.1",
-        "control_name": "Third-party AI system acquisition",
+        "control_id": "Third-party",
+        "control_name": "AI system acquisition",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "A2A communication infrastructure providers assessed — security obligations in arrangements"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Cl.8",
-        "control_name": "Operation",
+        "control_id": "Operation",
+        "control_name": "Cl.8",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "A2A communication documented as AIMS operational control — authentication requirements, encryption standards"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "12.4 Establish and maintain architecture diagram",
-        "control_name": "CIS 12 — Network Infrastructure Management",
+        "control_id": "CIS 12",
+        "control_name": "Network Infrastructure Management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "A2A communication channels mapped in network architecture — authentication method, encryption status"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "3.10 Encrypt sensitive data in transit",
-        "control_name": "CIS 3 — Data Protection",
+        "control_id": "CIS 3",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "All A2A messages encrypted in transit — no cleartext inter-agent communication"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.5 Collect detailed audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "All A2A messages logged — sender identity, content hash, timestamp, schema validation results"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "16.1 Establish secure development standards",
-        "control_name": "CIS 16 — Application Software Security",
+        "control_id": "CIS 16",
+        "control_name": "Application Software Security",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "A2A authentication and schema validation as secure development requirements"
@@ -16593,32 +16516,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Inter-agent authentication required — all agent-to-agent messages authenticated before acting",
-        "control_name": "CC6.1",
+        "control_id": "CC6.1",
+        "control_name": "Inter-agent authentication required — all agent-to-agent messages authenticated before acting",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "mTLS configuration, certificate management records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Inter-agent communication policy — which agents may communicate with which, under what conditions, with what data",
-        "control_name": "CC5.2",
+        "control_id": "CC5.2",
+        "control_name": "Inter-agent communication policy — which agents may communicate with which, under what conditions, with what data",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Inter-agent communication policy document"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Inter-agent traffic monitored — unexpected communication patterns, unauthorised agent requests detected",
-        "control_name": "CC7.2",
+        "control_id": "CC7.2",
+        "control_name": "Inter-agent traffic monitored — unexpected communication patterns, unauthorised agent requests detected",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Inter-agent traffic logs, anomaly alert records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Third-party agents treated as vendor risk — agents from external providers assessed before integration",
-        "control_name": "CC9.2",
+        "control_id": "CC9.2",
+        "control_name": "Third-party agents treated as vendor risk — agents from external providers assessed before integration",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Vendor assessment records for third-party agents"
@@ -16774,8 +16697,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Origin Validation Error",
-        "control_name": "CWE-346",
+        "control_id": "CWE-346",
+        "control_name": "Origin Validation Error",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent does not verify that A2A messages originate from the claimed sender"
@@ -16880,32 +16803,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Threat model all inter-agent communication paths; design mutual authentication, encryption, schema validation, and replay protection as explicit security requirements",
-        "control_name": "PW.2.1-PS – Design software to meet security requirements",
+        "control_id": "PW.2.1-PS",
+        "control_name": "Design software to meet security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ensures A2A security is addressed at design time"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Implement secure coding for A2A communication — mutual TLS, message signing, schema validation on all inter-agent messages; no unauthenticated A2A in any environment",
-        "control_name": "PW.5.1-PS – Secure coding practices",
+        "control_id": "PW.5.1-PS",
+        "control_name": "Secure coding practices",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents A2A security vulnerabilities in implementation"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Review inter-agent communication for security weaknesses — verify that authentication, encryption, and schema validation are correctly implemented at all A2A boundaries",
-        "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review the software for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Catches A2A vulnerabilities before production"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Protect A2A configuration, certificates, and authentication credentials from unauthorised access and modification",
-        "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+        "control_id": "PS.1.1-PS",
+        "control_name": "Protect all code from unauthorised access",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Prevents tampering with A2A security controls"
@@ -17167,7 +17090,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Denial of AI Service",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0029",
         "notes": "Triggering cascading failure propagation to exhaust system resources or degrade service"
       },
       {
@@ -17176,7 +17098,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Cost Harvesting",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0034",
         "notes": "Crafting inputs that trigger runaway agent loops generating unbounded costs"
       },
       {
@@ -17185,7 +17106,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Data Leakage",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0057",
         "notes": "Exploiting an exposed agent endpoint to introduce a fault that cascades internally, leaking data during failure"
       },
       {
@@ -17222,24 +17142,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cascade risks identified and mitigated — blast radius defined",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Cascade scenarios in Art. 9 risk management — maximum affected systems, circuit breaker thresholds"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Human oversight over high-risk AI — ability to pause and stop",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Circuit breakers and kill switches are Art. 14 human oversight mechanisms"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Technical resilience against cascading failures",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Circuit breakers, fail-safe defaults, and cascade containment architecture are Art. 15 requirements"
@@ -17310,32 +17230,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "4.1 Establish secure configuration process",
-        "control_name": "CIS 4 — Secure Configuration",
+        "control_id": "CIS 4",
+        "control_name": "Secure Configuration",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secure configuration includes circuit breakers and rate limits — cascade prevention as configuration requirement"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "12.6 Use network-based URL filters",
-        "control_name": "CIS 12 — Network Infrastructure Management",
+        "control_id": "CIS 12",
+        "control_name": "Network Infrastructure Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Network controls prevent cascade propagation across agent cluster boundaries"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "17.1 Designate personnel for incident response",
-        "control_name": "CIS 17 — Incident Response",
+        "control_id": "CIS 17",
+        "control_name": "Incident Response",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Defined response for cascade events — kill switch activation, process control fallback, operations notification"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.6 Collect DNS query audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent traffic monitored — cascade indicators detected before physical impact"
@@ -17462,32 +17382,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Availability commitments defined for multi-agent system — RTO/RPO documented; cascade failure scenarios in availability risk",
-        "control_name": "A1.1",
+        "control_id": "A1.1",
+        "control_name": "Availability commitments defined for multi-agent system — RTO/RPO documented; cascade failure scenarios in availability risk",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Availability SLA, BCP documentation"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Capacity and performance monitoring — early warning of cascade failure precursors (latency, error rate, queue depth)",
-        "control_name": "A1.2",
+        "control_id": "A1.2",
+        "control_name": "Capacity and performance monitoring — early warning of cascade failure precursors (latency, error rate, queue depth)",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Monitoring dashboards, alert configuration"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Cascade failure incidents detected and responded to — incident response procedures for multi-agent failures",
-        "control_name": "CC7.3",
+        "control_id": "CC7.3",
+        "control_name": "Cascade failure incidents detected and responded to — incident response procedures for multi-agent failures",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "IR plan covering cascade scenarios, incident records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Cascade failure risk in risk assessment — blast radius analysis, dependency mapping documented",
-        "control_name": "CC3.3",
+        "control_id": "CC3.3",
+        "control_name": "Cascade failure risk in risk assessment — blast radius analysis, dependency mapping documented",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Risk register with cascade failure entries"
@@ -17619,8 +17539,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Uncontrolled Resource Consumption",
-        "control_name": "CWE-400",
+        "control_id": "CWE-400",
+        "control_name": "Uncontrolled Resource Consumption",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent resource consumption not bounded — enables exhaustion propagation across cluster"
@@ -17749,32 +17669,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Design circuit breakers, step limits, cost budgets, and human approval gates as explicit security requirements for all agentic automation workflows",
-        "control_name": "PW.2.1-PS – Design software to meet security requirements",
+        "control_id": "PW.2.1-PS",
+        "control_name": "Design software to meet security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ensures cascade prevention is a design-phase requirement"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Conduct adversarial testing of cascade failure paths — test error propagation, hallucination amplification, and runaway automation scenarios",
-        "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+        "control_id": "PW.8.2-PS",
+        "control_name": "Test for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validates cascade prevention controls under attack conditions"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Define remediation procedures for cascade failure incidents including automatic circuit breaker activation, workflow suspension, cost cap enforcement, and rollback",
-        "control_name": "RV.2.1-PS – Assess, prioritise, and remediate vulnerabilities",
+        "control_id": "RV.2.1-PS",
+        "control_name": "Assess, prioritise, and remediate vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enables rapid response to cascading automation failures"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Define explicit requirements for maximum automation depth, step limits, cost budgets, and mandatory human checkpoints for each agent workflow",
-        "control_name": "PW.1.1-PS – Define security requirements",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Define security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Establishes automation boundaries as mandatory requirements"
@@ -18003,7 +17923,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Publish Hallucinated Entities",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
         "notes": "Agent generates persuasive hallucinated content to manipulate human approvals"
       },
       {
@@ -18012,7 +17931,6 @@ window.CROSSWALK_DATA = [
         "control_name": "AI-Enabled Product or Service",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
         "notes": "Agent produces high-volume, fluent content via AI-enabled services that overwhelms human critical assessment"
       },
       {
@@ -18021,7 +17939,6 @@ window.CROSSWALK_DATA = [
         "control_name": "Spearphishing via AI",
         "tier": "Foundational",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0049",
         "notes": "Compromised agent crafts highly personalised, convincing manipulation targeted at specific users"
       },
       {
@@ -18058,24 +17975,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Users informed of capabilities, limitations, and AI nature",
-        "control_name": "Art. 13 — Transparency",
+        "control_id": "Art. 13",
+        "control_name": "Transparency",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agents must clearly communicate their AI nature and advisory limitations"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Effective human oversight over high-risk AI",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Humans must be able to override agent recommendations — trust exploitation undermines Art. 14 effectiveness"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Chatbots and AI-generated content must disclose AI nature",
-        "control_name": "Art. 50 — Transparency for certain AI systems",
+        "control_id": "Art. 50",
+        "control_name": "Transparency for certain AI systems",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All agent-user interactions require AI disclosure — universal obligation"
@@ -18146,32 +18063,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "14.1 Establish security awareness programme",
-        "control_name": "CIS 14 — Security Awareness and Skills Training",
+        "control_id": "CIS 14",
+        "control_name": "Security Awareness and Skills Training",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All users of agentic tools trained on AI limitations — verification requirements, how to identify manipulation"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "17.1 Designate personnel for incident response",
-        "control_name": "CIS 17 — Incident Response",
+        "control_id": "CIS 17",
+        "control_name": "Incident Response",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Defined response for trust exploitation incidents — operator retraining, pattern audit, interface redesign"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "5.4 Restrict administrator privileges",
-        "control_name": "CIS 5 — Account Management",
+        "control_id": "CIS 5",
+        "control_name": "Account Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Approval flows independent of agent interface — sensitive approvals cannot be completed via agent chat"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.5 Collect detailed audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent-influenced operator decisions logged — aggregate over-trust patterns detectable"
@@ -18290,24 +18207,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "AI disclosure policy — users informed when interacting with AI agents; deceptive design patterns prohibited",
-        "control_name": "CC5.3",
+        "control_id": "CC5.3",
+        "control_name": "AI disclosure policy — users informed when interacting with AI agents; deceptive design patterns prohibited",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "AI disclosure policy, UI evidence"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Trust exploitation risk in risk assessment — social engineering, impersonation, false urgency scenarios documented",
-        "control_name": "CC3.3",
+        "control_id": "CC3.3",
+        "control_name": "Trust exploitation risk in risk assessment — social engineering, impersonation, false urgency scenarios documented",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Risk register with trust exploitation entries"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent outputs are accurate and complete — outputs not designed to mislead; factual accuracy controls for high-stakes outputs",
-        "control_name": "PI1.3",
+        "control_id": "PI1.3",
+        "control_name": "Agent outputs are accurate and complete — outputs not designed to mislead; factual accuracy controls for high-stakes outputs",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Output quality controls, factual accuracy testing"
@@ -18463,8 +18380,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Origin Validation Error",
-        "control_name": "CWE-346",
+        "control_id": "CWE-346",
+        "control_name": "Origin Validation Error",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "User cannot determine whether advice originates from AI or human — no origin verification"
@@ -18479,8 +18396,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Exposure of Sensitive Information to an Unauthorised Actor",
-        "control_name": "CWE-200",
+        "control_id": "CWE-200",
+        "control_name": "Exposure of Sensitive Information to an Unauthorised Actor",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "System prompt and agent configuration not protected — extraction enables targeted trust exploitation"
@@ -18576,32 +18493,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Review agent behaviour for trust manipulation patterns — verify that agents cannot build false authority, suppress safety warnings, or manipulate approval processes",
-        "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review the software for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Catches trust exploitation risks before production"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Conduct adversarial testing targeting human-agent trust exploitation — test whether agents can manipulate operators into approving harmful actions through false confidence or urgency",
-        "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+        "control_id": "PW.8.2-PS",
+        "control_name": "Test for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validates trust controls under realistic conditions"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Establish monitoring for trust exploitation indicators — operators approving high-risk actions without verification, systematic over-reliance on agent recommendations",
-        "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+        "control_id": "RV.1.1-PS",
+        "control_name": "Identify and confirm vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enables detection of trust exploitation in production"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Define explicit requirements for human oversight — mandatory confirmation gates, independent approval flows, AI advisory labelling, and operator training requirements",
-        "control_name": "PW.1.1-PS – Define security requirements",
+        "control_id": "PW.1.1-PS",
+        "control_name": "Define security requirements",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Establishes human oversight as a mandatory requirement"
@@ -18949,7 +18866,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Jailbreak",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0054",
         "notes": "Persistent override of agent safety constraints enabling hidden goal execution"
       },
       {
@@ -18958,7 +18874,6 @@ window.CROSSWALK_DATA = [
         "control_name": "LLM Capability Escalation",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0015",
         "notes": "Rogue agent gradually escalates its own capabilities and permissions over time"
       },
       {
@@ -18967,7 +18882,6 @@ window.CROSSWALK_DATA = [
         "control_name": "AI Agent Tool Invocation",
         "tier": "Hardening",
         "scope": "Both",
-        "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
         "notes": "Rogue agent autonomously invokes tools to maintain persistent access and hidden execution across sessions"
       },
       {
@@ -19004,32 +18918,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Rogue agent scenarios identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Rogue agent risk in Art. 9 risk management — detection capability, blast radius, response documented"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Human oversight mechanisms effective against rogue behaviour",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Kill switch and behavioural monitoring are Art. 14 human oversight requirements for agentic systems"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Technical resilience against rogue agent behaviour",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Behavioural baselines, anomaly detection, and automated suspension are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring covering rogue agent detection",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Behavioural monitoring in post-market monitoring programme"
@@ -19100,32 +19014,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "8.2 Collect audit logs",
-        "control_name": "CIS 8 — Audit Log Management",
+        "control_id": "CIS 8",
+        "control_name": "Audit Log Management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Comprehensive audit logging of all agent actions — no production deployment without full observability"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "13.1 Centralise security event alerting",
-        "control_name": "CIS 13 — Network Monitoring and Defence",
+        "control_id": "CIS 13",
+        "control_name": "Network Monitoring and Defence",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Agent behavioural anomalies centralised and alerted — rogue agent patterns detected through SIEM"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "17.2 Establish incident response procedures",
-        "control_name": "CIS 17 — Incident Response",
+        "control_id": "CIS 17",
+        "control_name": "Incident Response",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Rogue agent containment as incident response procedure — kill switch, audit, state validation, forensic"
       },
       {
         "framework": "CIS Controls v8.1",
-        "control_id": "18.1 Establish penetration testing",
-        "control_name": "CIS 18 — Penetration Testing",
+        "control_id": "CIS 18",
+        "control_name": "Penetration Testing",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Rogue agent scenarios in penetration testing — persistent hidden goal simulation, detection verification"
@@ -19252,32 +19166,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Continuous monitoring for rogue agent behaviour — actions outside authorised scope detected and alerted",
-        "control_name": "CC7.2",
+        "control_id": "CC7.2",
+        "control_name": "Continuous monitoring for rogue agent behaviour — actions outside authorised scope detected and alerted",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Agent action audit log, anomaly alert records"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access controls define authorised agent scope — technical enforcement of what agents may and may not do",
-        "control_name": "CC6.1",
+        "control_id": "CC6.1",
+        "control_name": "Access controls define authorised agent scope — technical enforcement of what agents may and may not do",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Permission policy, access control configuration"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Rogue agent risk in risk assessment — autonomous agent operating outside scope is a documented risk",
-        "control_name": "CC3.3",
+        "control_id": "CC3.3",
+        "control_name": "Rogue agent risk in risk assessment — autonomous agent operating outside scope is a documented risk",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Risk register with rogue agent scenarios"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Rogue agent impact on availability — resource consumption by rogue agents does not degrade service for authorised operations",
-        "control_name": "A1.1",
+        "control_id": "A1.1",
+        "control_name": "Rogue agent impact on availability — resource consumption by rogue agents does not degrade service for authorised operations",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Resource monitoring, quota enforcement records"
@@ -19409,8 +19323,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Access Control",
-        "control_name": "CWE-284",
+        "control_id": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Rogue agent exceeds its permitted access scope — no scope enforcement"
@@ -19425,8 +19339,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "CWE/CVE",
-        "control_id": "Improper Control of Interaction Frequency",
-        "control_name": "CWE-799",
+        "control_id": "CWE-799",
+        "control_name": "Improper Control of Interaction Frequency",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Rogue agent evades detection by maintaining normal action frequency while biasing recommendations"
@@ -19553,32 +19467,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Review agent behaviour for rogue agent indicators — verify that agents cannot pursue hidden goals, execute undisclosed tool calls, or maintain hidden state between sessions",
-        "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+        "control_id": "PW.7.2-PS",
+        "control_name": "Review the software for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Catches rogue agent risks before production"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Conduct adversarial testing simulating rogue agent scenarios — persistent hidden goal pursuit, undisclosed tool invocations, systematic recommendation bias across extended sessions",
-        "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+        "control_id": "PW.8.2-PS",
+        "control_name": "Test for security vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Validates rogue agent detection under realistic conditions"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "Establish comprehensive monitoring for rogue agent behaviour — behavioural baseline deviation, hidden tool invocations, recommendation bias; define triage and containment procedures",
-        "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+        "control_id": "RV.1.1-PS",
+        "control_name": "Identify and confirm vulnerabilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Enables rapid detection and containment of rogue agents"
       },
       {
         "framework": "NIST SP 800-218A",
-        "control_id": "When rogue agent behaviour is detected, conduct root cause analysis to identify the trigger — model compromise, configuration tampering, emergent behaviour, or adversarial manipulation",
-        "control_name": "RV.3.1-PS – Analyse root causes",
+        "control_id": "RV.3.1-PS",
+        "control_name": "Analyse root causes",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Builds organisational knowledge of rogue agent risks"
@@ -19918,24 +19832,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training data must be relevant, representative, and subject to appropriate privacy measures",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Data governance controls preventing sensitive data ingestion and memorisation are Art. 10 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI must be resilient and implement cybersecurity measures",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Output scanning, DLP, and access controls on RAG retrieval are Art. 15 technical requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "GPAI providers must maintain technical documentation including training data governance",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Data governance for training data — sources, quality, privacy measures — is a GPAI documentation obligation"
@@ -19982,32 +19896,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data for AI — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data for AI — acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data for AI — preparation",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data for AI — preparation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — operational",
-        "control_name": "A.6.2.3",
+        "control_id": "A.6.2.3",
+        "control_name": "Lifecycle — operational",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Impact assessment",
-        "control_name": "A.5.2",
+        "control_id": "A.5.2",
+        "control_name": "Impact assessment",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -20042,36 +19956,36 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.1.1 — Sensitive data not transmitted in URL parameters",
+        "control_id": "V8.1.1",
+        "control_name": "Sensitive data not transmitted in URL parameters",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.4 — Sensitive data identified and classified",
+        "control_id": "V8.3.4",
+        "control_name": "Sensitive data identified and classified",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.3 — Deny by default access control",
+        "control_id": "V4.1.3",
+        "control_name": "Deny by default access control",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.2.8 — Output encoding for context",
+        "control_id": "V5",
+        "control_name": "Validation",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V6 Cryptography",
-        "control_name": "V6.1.1 — Sensitive data not stored in cleartext",
+        "control_id": "V6.1.1",
+        "control_name": "Sensitive data not stored in cleartext",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -20165,36 +20079,36 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Policy identifying confidential information in GenAI scope — training data, RAG corpus, embeddings, outputs",
-        "control_name": "C1.1 — Confidentiality policy",
+        "control_id": "C1.1",
+        "control_name": "Confidentiality policy",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Technical controls protecting confidential data in GenAI pipelines — encryption, access controls, output scanning",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access controls on RAG retrieval — users retrieve only data they are authorised to access",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information in GenAI scope used only for authorised purposes — LLM processing limited to agreed use cases",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "DLP monitoring on all GenAI output channels — sensitive patterns detected before delivery to users",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -20311,26 +20225,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information to Unauthorised Actor",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-359",
-        "control_name": "CWE-359",
+        "control_name": "Exposure of Private Personal Information",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/359.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-312",
-        "control_name": "CWE-312",
+        "control_name": "Cleartext Storage of Sensitive Information",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/312.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -20756,24 +20667,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Credential exposure must be identified as a foreseeable risk and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent credential lifecycle included in Art. 9 risk management system"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures protecting against credential theft and misuse",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Short-lived credentials, NHI inventory, and access controls are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented procedures for credential management and incident response",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Agent identity governance procedures documented in quality management system"
@@ -20820,16 +20731,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — operational",
-        "control_name": "A.6.2.3",
+        "control_id": "A.6.2.3",
+        "control_name": "Lifecycle — operational",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — design",
-        "control_name": "A.6.1.2",
+        "control_id": "A.6.1.2",
+        "control_name": "Lifecycle — design",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -20844,8 +20755,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Leadership",
-        "control_name": "Cl.5",
+        "control_id": "Cl.5",
+        "control_name": "Leadership",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -20880,29 +20791,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V2 Authentication",
-        "control_name": "V2.1.1 — Passwords minimum 12 characters",
+        "control_id": "V2.1.1",
+        "control_name": "Passwords minimum 12 characters",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V2 Authentication",
-        "control_name": "V2.10.1 — Integration secrets not hardcoded",
+        "control_id": "V2",
+        "control_name": "Authentication",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.2 — Least privilege for service accounts",
+        "control_id": "V4",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.7 — Data transferred using current TLS",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -20996,36 +20907,36 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent credentials managed as privileged access — minimum scope, documented justification, regular review",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent credentials revoked on decommission and anomaly detection — no dormant agent NHIs",
-        "control_name": "CC6.3 — Access removal",
+        "control_id": "CC6.3",
+        "control_name": "Access removal",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent tool providers assessed — data handling, credential security requirements in vendor agreements",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent credential anomaly monitoring — unusual usage patterns detected and alerted",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Agent credential lifecycle procedures — issuance, rotation, revocation documented",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -21149,26 +21060,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-312",
-        "control_name": "CWE-312",
+        "control_name": "Cleartext Storage of Sensitive Information",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/312.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-798",
-        "control_name": "CWE-798",
+        "control_name": "Use of Hard-coded Credentials",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/798.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-522",
-        "control_name": "CWE-522",
+        "control_name": "Insufficiently Protected Credentials",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/522.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -21541,16 +21449,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Shadow AI usage is a foreseeable risk requiring mitigation in the risk management system",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ungoverned AI tool usage mapped and treated in Art. 9 risk assessment"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Organisations deploying AI are responsible for AI used within their operations",
-        "control_name": "Art. 25 — Value chain responsibilities",
+        "control_id": "Art. 25",
+        "control_name": "Value chain responsibilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Shadow AI use by employees does not exempt the deployer from AI Act obligations triggered by that use"
@@ -21597,24 +21505,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Policies — acceptable use",
-        "control_name": "A.2.2",
+        "control_id": "Policies",
+        "control_name": "acceptable use",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Use of AI systems",
-        "control_name": "A.9.1",
+        "control_id": "A.9.1",
+        "control_name": "Use of AI systems",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Third-party relationships",
-        "control_name": "A.10.1",
+        "control_id": "A.10.1",
+        "control_name": "Third-party relationships",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -21657,29 +21565,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V1 Architecture",
-        "control_name": "V1.1.4 — Trust boundaries documented and enforced",
+        "control_id": "V1",
+        "control_name": "Architecture",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.5 — Access control failures logged",
+        "control_id": "V4",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V7 Logging",
-        "control_name": "V7.2.2 — Log entries contain required information",
+        "control_id": "V7.2.2",
+        "control_name": "Log entries contain required information",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V14 Configuration",
-        "control_name": "V14.1.4 — All components inventoried",
+        "control_id": "V14",
+        "control_name": "Configuration",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -21765,29 +21673,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Acceptable use procedures for AI tools — approved list, prohibited use cases, employee acknowledgement",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Shadow AI vendors not in vendor risk programme — shadow AI discovery identifies unapproved vendors",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Shadow AI usage identified as a risk in assessment — ungoverned data flows, training use by vendors",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Confidentiality policy covers AI tool use — employees informed of restrictions on sharing confidential data",
-        "control_name": "C1.1 — Confidentiality policy",
+        "control_id": "C1.1",
+        "control_name": "Confidentiality policy",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -21904,18 +21812,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-668",
-        "control_name": "CWE-668",
+        "control_name": "Exposure of Resource to Wrong Sphere",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/668.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
-        "control_name": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/284.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -22252,16 +22158,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training data must be subject to governance practices — relevant, representative, free of errors",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Data quality controls and provenance requirements preventing poisoning are binding Art. 10 obligations"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI must be resilient to attempts to alter performance through data manipulation",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Technical robustness against poisoning is a binding Art. 15 requirement with conformity assessment evidence"
@@ -22316,32 +22222,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — preparation",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data — preparation",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — testing",
-        "control_name": "A.6.2.6",
+        "control_id": "A.6.2.6",
+        "control_name": "Lifecycle — testing",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — design",
-        "control_name": "A.6.1.2",
+        "control_id": "A.6.1.2",
+        "control_name": "Lifecycle — design",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
@@ -22369,29 +22275,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.1.3 — Input validation server-side",
+        "control_id": "V5",
+        "control_name": "Validation",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V10 Malicious Code",
-        "control_name": "V10.2.1 — Application only uses official repositories",
+        "control_id": "V10.2.1",
+        "control_name": "Application only uses official repositories",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V10 Malicious Code",
-        "control_name": "V10.2.2 — Dependency managers check for vulnerabilities",
+        "control_id": "V10.2.2",
+        "control_name": "Dependency managers check for vulnerabilities",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V12 Files/Resources",
-        "control_name": "V12.1.1 — File upload size limits",
+        "control_id": "V12.1.1",
+        "control_name": "File upload size limits",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -22485,29 +22391,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Poisoning threats documented in GenAI risk assessment — training data, supply chain, model update vectors",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Model promotions through change management — integrity verification before production deployment",
-        "control_name": "CC8.1 — Change management",
+        "control_id": "CC8.1",
+        "control_name": "Change management",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Training data providers in vendor risk programme — provenance, quality, integrity requirements assessed",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Model output anomaly monitoring — poisoning indicators detected before operational impact",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -22631,26 +22537,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-345",
-        "control_name": "CWE-345",
+        "control_name": "Insufficient Verification of Data Authenticity",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/345.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-346",
-        "control_name": "CWE-346",
+        "control_name": "Origin Validation Error",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/346.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-20",
-        "control_name": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/20.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -23019,24 +22922,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Ingestion integrity risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Data ingestion attack surfaces included in Art. 9 risk management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI resilient against adversarial input manipulation",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Secure ingestion interfaces and path traversal prevention are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented procedures for data ingestion and pipeline integrity",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Ingestion validation procedures and CVE patching documented in quality management"
@@ -23075,32 +22978,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — preparation",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data — preparation",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — operational",
-        "control_name": "A.6.2.3",
+        "control_id": "A.6.2.3",
+        "control_name": "Lifecycle — operational",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Operation",
-        "control_name": "Cl.8",
+        "control_id": "Cl.8",
+        "control_name": "Operation",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
@@ -23121,22 +23024,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.1.1 — Input validation using allowlists",
+        "control_id": "V5.1.1",
+        "control_name": "Input validation using allowlists",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.2.1 — HTML/JS output sanitised",
+        "control_id": "V5.2.1",
+        "control_name": "HTML/JS output sanitised",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V7 Logging",
-        "control_name": "V7.4.1 — Generic error messages",
+        "control_id": "V7.4.1",
+        "control_name": "Generic error messages",
         "tier": "Foundational",
         "scope": "Build"
       },
@@ -23230,29 +23133,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Ingestion validation controls — schema and semantic validation ensuring only accurate inputs enter processing",
-        "control_name": "PI1.2 — System inputs complete and accurate",
+        "control_id": "PI1.2",
+        "control_name": "System inputs complete and accurate",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Documented ingestion validation procedures — multi-stage validation, path traversal prevention",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Ingestion anomaly detection — unusual payloads detected before pipeline completion",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Ingestion integrity risks in GenAI risk assessment — schema bypass, path traversal, adversarial payload vectors",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -23361,26 +23264,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-20",
-        "control_name": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/20.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-116",
-        "control_name": "CWE-116",
+        "control_name": "Improper Encoding or Escaping of Output",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/116.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-74",
-        "control_name": "CWE-74",
+        "control_name": "Improper Neutralisation of Special Elements",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/74.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -23720,24 +23620,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Third-party tool data exchange risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All tool integrations assessed in Art. 9 risk management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Providers document obligations flowing to deployers; deployers verify",
-        "control_name": "Art. 25 — Value chain responsibilities",
+        "control_id": "Art. 25",
+        "control_name": "Value chain responsibilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool data exchange obligations explicitly distributed along the value chain"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "GPAI providers document all third-party integrations",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Tool and plugin data exchange documented in GPAI technical documentation"
@@ -23776,32 +23676,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Third-party — AI supply chain",
-        "control_name": "A.10.1",
+        "control_id": "A.10.1",
+        "control_name": "Third-party — AI supply chain",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Third-party — customer data",
-        "control_name": "A.10.2",
+        "control_id": "A.10.2",
+        "control_name": "Third-party — customer data",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — design",
-        "control_name": "A.6.1.2",
+        "control_id": "A.6.1.2",
+        "control_name": "Lifecycle — design",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -23829,22 +23729,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.1 — Access control on every request",
+        "control_id": "V4.1.1",
+        "control_name": "Access control on every request",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V9 Communication",
-        "control_name": "V9.1.1 — TLS for all connections",
+        "control_id": "V9.1.1",
+        "control_name": "TLS for all connections",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V11 Business Logic",
-        "control_name": "V11.1.4 — Business logic limits on repeated actions",
+        "control_id": "V11.1.4",
+        "control_name": "Business logic limits on repeated actions",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -23930,29 +23830,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Tool and plugin providers assessed in vendor risk programme — what data they receive, retain, and use",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Contractual data handling obligations for tool providers — data minimisation, retention, training use restrictions",
-        "control_name": "CC9.2 — Vendor agreements",
+        "control_id": "CC9.2",
+        "control_name": "Vendor agreements",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Context minimisation for tool calls — tools receive minimum confidential data required for function",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Tool access scoped to minimum required — agent tool permissions as privileged access",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -24076,26 +23976,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
-        "control_name": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/284.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-269",
-        "control_name": "CWE-269",
+        "control_name": "Improper Privilege Management",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/269.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-602",
-        "control_name": "CWE-602",
+        "control_name": "Client-side Enforcement of Server-side Security",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/602.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -24455,24 +24352,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI training data subject to governance — relevant, representative, privacy-preserving",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Data governance policy covering the full AI data lifecycle is an Art. 10 compliance requirement"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented quality management system including data handling procedures",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Data lifecycle procedures — classification, retention, deletion — documented in quality management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "GPAI providers maintain technical documentation including training data governance",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Full data governance documentation for GPAI training data is a binding Art. 53 obligation"
@@ -24511,16 +24408,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — preparation",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data — preparation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -24535,8 +24432,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Planning — risk",
-        "control_name": "Cl.6.1",
+        "control_id": "Cl.6.1",
+        "control_name": "Planning — risk",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -24571,22 +24468,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.1.4 — Sensitive data minimisation",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.4 — Sensitive data identified and classified",
+        "control_id": "V8.3.4",
+        "control_name": "Sensitive data identified and classified",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.5 — Attribute-based access control",
+        "control_id": "V4",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -24664,29 +24561,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Policy identifies all confidential information in GenAI scope — including derived assets (embeddings, caches, traces)",
-        "control_name": "C1.1 — Confidentiality policy",
+        "control_id": "C1.1",
+        "control_name": "Confidentiality policy",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information lifecycle management covers GenAI-derived assets — embeddings inherit source data obligations",
-        "control_name": "P4.1 — Privacy information lifecycle",
+        "control_id": "P4.1",
+        "control_name": "Privacy information lifecycle",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Data lifecycle procedures documented — classification propagation, retention schedules, deletion procedures",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Ungoverned derived asset risks identified in assessment — embeddings, caches, agent memory outside governance scope",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -24803,18 +24700,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-359",
-        "control_name": "CWE-359",
+        "control_name": "Exposure of Private Personal Information",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/359.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-213",
-        "control_name": "CWE-213",
+        "control_name": "Exposure of Sensitive Information Due to Incompatible Policies",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/213.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -25133,24 +25028,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Mandatory risk management system for high-risk AI",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Absence of a documented risk management system is an Art. 9 violation"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented quality management system including post-market monitoring",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Absence of a quality management system is an Art. 17 violation"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Graduated fines based on violation type",
-        "control_name": "Art. 72 — Fines",
+        "control_id": "Art. 72",
+        "control_name": "Fines",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Understanding fine exposure is the starting point for compliance prioritisation"
@@ -25197,24 +25092,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Information for interested parties",
-        "control_name": "A.8.1",
+        "control_id": "A.8.1",
+        "control_name": "Information for interested parties",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Context — interested parties",
-        "control_name": "Cl.4.2",
+        "control_id": "Context",
+        "control_name": "interested parties",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Planning — risk",
-        "control_name": "Cl.6.1",
+        "control_id": "Cl.6.1",
+        "control_name": "Planning — risk",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -25242,22 +25137,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.3 — Consent obtained before PI processing",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.10 — Personal data not kept longer than needed",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V7 Logging",
-        "control_name": "V7.2.2 — Audit trail sufficient for compliance",
+        "control_id": "V7.2.2",
+        "control_name": "Audit trail sufficient for compliance",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -25335,29 +25230,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Commitment to compliance with applicable laws and regulations including AI-specific obligations",
-        "control_name": "CC5.1 — Control environment",
+        "control_id": "CC5.1",
+        "control_name": "Control environment",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Regulatory risks identified in GenAI risk assessment — GDPR, EU AI Act, sector-specific regulations",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Privacy programme covers GenAI processing of personal information — policies, notices, accountability",
-        "control_name": "P1.1 — Privacy management",
+        "control_id": "P1.1",
+        "control_name": "Privacy management",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Regulatory compliance status communicated to management — AI Act obligations, NIS2 requirements",
-        "control_name": "CC2.1 — Communication",
+        "control_id": "CC2.1",
+        "control_name": "Communication",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -25474,18 +25369,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-359",
-        "control_name": "CWE-359",
+        "control_name": "Exposure of Private Personal Information",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/359.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-778",
-        "control_name": "CWE-778",
+        "control_name": "Insufficient Logging",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/778.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -25893,24 +25786,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Data governance covers all input modalities — images, audio, video — not only text",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Multimodal input governance is an Art. 10 requirement for high-risk systems processing such inputs"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures covering all data channels including multimodal inputs",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "DLP and access controls on multimodal pipelines are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Technical documentation covers all input modalities processed by the model",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Multimodal data governance documented in GPAI technical documentation"
@@ -25949,32 +25842,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — operational",
-        "control_name": "A.6.2.3",
+        "control_id": "A.6.2.3",
+        "control_name": "Lifecycle — operational",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Impact assessment",
-        "control_name": "A.5.2",
+        "control_id": "A.5.2",
+        "control_name": "Impact assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Operation",
-        "control_name": "Cl.8",
+        "control_id": "Cl.8",
+        "control_name": "Operation",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
@@ -26002,22 +25895,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.2.5 — Unstructured data sanitised",
+        "control_id": "V5.2.5",
+        "control_name": "Unstructured data sanitised",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.1.4 — Sensitive data minimised",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V12 Files/Resources",
-        "control_name": "V12.1.3 — Malicious file detection on upload",
+        "control_id": "V12",
+        "control_name": "Files/Resources",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -26103,29 +25996,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Multimodal derived content (OCR output, transcripts) protected at same level as source uploads",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information extracted from multimodal inputs subject to same use restrictions as source data",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access controls on multimodal content stores — same rigour as equivalent text data stores",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "DLP monitoring on multimodal extraction pipelines — PII in OCR output and transcripts detected",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -26234,18 +26127,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information to Unauthorised Actor",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-201",
-        "control_name": "CWE-201",
+        "control_name": "Insertion of Sensitive Information Into Sent Data",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/201.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -26566,16 +26457,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training data must be subject to appropriate data governance — privacy measures must be effective",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Anonymisation effectiveness is an Art. 10 data governance requirement, not a self-certification"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "GPAI training data governance documented — privacy measures included",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Synthetic data generation methodology and re-identification risk assessment documented for GPAI"
@@ -26614,32 +26505,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Hardening",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Impact assessment",
-        "control_name": "A.5.2",
+        "control_id": "A.5.2",
+        "control_name": "Impact assessment",
         "tier": "Hardening",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — preparation",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data — preparation",
         "tier": "Hardening",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Planning — risk",
-        "control_name": "Cl.6.1",
+        "control_id": "Cl.6.1",
+        "control_name": "Planning — risk",
         "tier": "Hardening",
         "scope": "Build",
         "notes": "Hardening"
@@ -26660,15 +26551,15 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.4 — Sensitive data classified",
+        "control_id": "V8.3.4",
+        "control_name": "Sensitive data classified",
         "tier": "Hardening",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.2.6 — Defined output structure",
+        "control_id": "V5",
+        "control_name": "Validation",
         "tier": "Hardening",
         "scope": "Build"
       },
@@ -26753,22 +26644,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Synthetic data use must respect underlying privacy commitments if re-identification risk exists",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Re-identification risk in synthetic datasets identified in risk assessment",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Synthetic OT data and business data protected at source classification level until re-identification risk formally assessed",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -26870,18 +26761,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-359",
-        "control_name": "CWE-359",
+        "control_name": "Exposure of Private Personal Information",
         "tier": "Hardening",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/359.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-330",
-        "control_name": "CWE-330",
+        "control_name": "Use of Insufficiently Random Values",
         "tier": "Hardening",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/330.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -27180,24 +27069,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Data governance covering multi-tenant deployments — session isolation as a data handling requirement",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Session isolation controls are an Art. 10 data governance obligation for multi-user deployments"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures preventing cross-session data exposure",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Session isolation and tenant separation are Art. 15 technical requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring detecting and responding to session bleed incidents",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Cross-session leakage detection in post-market monitoring programme"
@@ -27236,32 +27125,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — operational",
-        "control_name": "A.6.2.3",
+        "control_id": "A.6.2.3",
+        "control_name": "Lifecycle — operational",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — testing",
-        "control_name": "A.6.2.6",
+        "control_id": "A.6.2.6",
+        "control_name": "Lifecycle — testing",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Operation",
-        "control_name": "Cl.8",
+        "control_id": "Cl.8",
+        "control_name": "Operation",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
@@ -27289,29 +27178,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V3 Session Management",
-        "control_name": "V3.1.1 — Session tokens unique and random",
+        "control_id": "V3",
+        "control_name": "Session Management",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V3 Session Management",
-        "control_name": "V3.3.1 — Sessions invalidated after logout",
+        "control_id": "V3.3.1",
+        "control_name": "Sessions invalidated after logout",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.1 — Access control enforced on every request",
+        "control_id": "V4.1.1",
+        "control_name": "Access control enforced on every request",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.1.3 — Sensitive data not in session storage",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Build"
       },
@@ -27397,29 +27286,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Strict session isolation — each user's context inaccessible to all other sessions",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "User session context classified as confidential — technical isolation controls",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information in user sessions used only for that user's authorised purposes — cross-session leakage is a P5 violation",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Cross-session access anomalies monitored — unusual retrieval patterns detected",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -27536,18 +27425,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-488",
-        "control_name": "CWE-488",
+        "control_name": "Exposure of Data Element to Wrong Session",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/488.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -27892,32 +27779,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "LLM gateway risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All LLM-to-database interfaces mapped in Art. 9 risk management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI designed to allow effective human oversight — ability to pause, stop, and override",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "LLM-generated destructive database queries executing autonomously are an Art. 14 human oversight failure"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures protecting against adversarial misuse",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Least-privilege execution, query allowlisting, and SQL injection prevention are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Documented procedures for LLM gateway security",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Security testing procedures and query log retention documented in quality management"
@@ -27956,32 +27843,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — operational",
-        "control_name": "A.6.2.3",
+        "control_id": "A.6.2.3",
+        "control_name": "Lifecycle — operational",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — testing",
-        "control_name": "A.6.2.6",
+        "control_id": "A.6.2.6",
+        "control_name": "Lifecycle — testing",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — access control",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — access control",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Use of AI systems",
-        "control_name": "A.9.1",
+        "control_id": "A.9.1",
+        "control_name": "Use of AI systems",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
@@ -28009,29 +27896,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.1.1 — Allowlist input validation",
+        "control_id": "V5.1.1",
+        "control_name": "Allowlist input validation",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.3.4 — SQL injection prevention",
+        "control_id": "V5",
+        "control_name": "Validation",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.1 — Access control on every request",
+        "control_id": "V4.1.1",
+        "control_name": "Access control on every request",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V13 API",
-        "control_name": "V13.1.1 — API protection against enumeration",
+        "control_id": "V13.1.1",
+        "control_name": "API protection against enumeration",
         "tier": "Foundational",
         "scope": "Build"
       },
@@ -28125,36 +28012,36 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM-generated queries execute under requesting user's permissions — least privilege, no shared high-privilege accounts",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Policy requiring LLM-generated queries to be validated before execution — only authorised processing permitted",
-        "control_name": "PI1.1 — Processing integrity policy",
+        "control_id": "PI1.1",
+        "control_name": "Processing integrity policy",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM-generated query results validated — destructive or over-broad queries blocked before execution",
-        "control_name": "PI1.3 — Outputs complete and accurate",
+        "control_id": "PI1.3",
+        "control_name": "Outputs complete and accurate",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM-generated query anomaly monitoring — bulk extraction, unusual patterns, out-of-scope queries alerted",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Query allowlisting and human confirmation procedures documented",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -28270,26 +28157,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-89",
-        "control_name": "CWE-89",
+        "control_name": "SQL Injection",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/89.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-20",
-        "control_name": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/20.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
-        "control_name": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/284.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -28639,24 +28523,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Vector store security risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "All vector store deployments assessed in Art. 9 risk management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI infrastructure protected against cybersecurity risks",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "RBAC, encryption, and CVE patching for vector stores are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring covering AI infrastructure components",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vector store security monitoring in post-market monitoring programme"
@@ -28695,32 +28579,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — acquisition",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — acquisition",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — preparation",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data — preparation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — design",
-        "control_name": "A.6.1.2",
+        "control_id": "A.6.1.2",
+        "control_name": "Lifecycle — design",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Third-party",
-        "control_name": "A.10.1",
+        "control_id": "A.10.1",
+        "control_name": "Third-party",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -28748,22 +28632,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.3 — Deny by default",
+        "control_id": "V4.1.3",
+        "control_name": "Deny by default",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V6 Cryptography",
-        "control_name": "V6.1.1 — Sensitive data not stored in cleartext",
+        "control_id": "V6.1.1",
+        "control_name": "Sensitive data not stored in cleartext",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V12 Files/Resources",
-        "control_name": "V12.1.1 — File upload validation",
+        "control_id": "V12.1.1",
+        "control_name": "File upload validation",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -28849,29 +28733,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Vector store content encrypted at rest — embeddings of confidential data protected",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "RBAC on all vector store collections — no unauthenticated access",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Vector database CVE patching managed through change management — timely remediation documented",
-        "control_name": "CC8.1 — Change management",
+        "control_id": "CC8.1",
+        "control_name": "Change management",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Vector store query anomaly monitoring — bulk extraction patterns detected",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -28995,18 +28879,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
-        "control_name": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/284.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-327",
-        "control_name": "CWE-327",
+        "control_name": "Use of a Broken or Risky Cryptographic Algorithm",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/327.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -29356,16 +29238,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Data governance applies to all data in AI system scope — including telemetry and monitoring data",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Telemetry data governance — classification, access controls, retention — is an Art. 10 requirement"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring required — but the monitoring infrastructure must itself be secured",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Telemetry security is both an Art. 17 obligation and an Art. 10 data governance requirement"
@@ -29404,8 +29286,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — governance",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — governance",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
@@ -29420,16 +29302,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — testing",
-        "control_name": "A.6.2.6",
+        "control_id": "A.6.2.6",
+        "control_name": "Lifecycle — testing",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Performance evaluation",
-        "control_name": "Cl.9",
+        "control_id": "Cl.9",
+        "control_name": "Performance evaluation",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Hardening"
@@ -29464,29 +29346,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V7 Logging",
-        "control_name": "V7.1.1 — No credential logging",
+        "control_id": "V7",
+        "control_name": "Logging",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V7 Logging",
-        "control_name": "V7.1.2 — No sensitive data in logs",
+        "control_id": "V7",
+        "control_name": "Logging",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.1.1 — Sensitive data not in URLs",
+        "control_id": "V8.1.1",
+        "control_name": "Sensitive data not in URLs",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.1 — Access control on log stores",
+        "control_id": "V4.1.1",
+        "control_name": "Access control on log stores",
         "tier": "Foundational",
         "scope": "Build"
       },
@@ -29572,29 +29454,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "GenAI telemetry classified and encrypted — content captured in traces protected at same level as source data",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information in telemetry used only for authorised purposes — same restrictions as production data",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access controls on telemetry stores — same rigour as production data stores",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Access anomaly monitoring on telemetry stores — bulk access patterns detected",
-        "control_name": "CC7.2 — Monitoring",
+        "control_id": "CC7.2",
+        "control_name": "Monitoring",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -29703,26 +29585,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-312",
-        "control_name": "CWE-312",
+        "control_name": "Cleartext Storage of Sensitive Information",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/312.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-532",
-        "control_name": "CWE-532",
+        "control_name": "Insertion of Sensitive Information Into Log File",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/532.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -30056,24 +29935,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Data governance applies to all data in AI system scope — including context window content",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Context window data governance — minimum content, classification tracking — is Art. 10 requirement"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity against adversarial exploitation of context window content",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Context minimisation and access controls are Art. 15 cybersecurity measures"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring covering context window exploitation incidents",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Context window security in post-market monitoring programme"
@@ -30112,32 +29991,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — minimisation",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — minimisation",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — operational",
-        "control_name": "A.6.2.3",
+        "control_id": "A.6.2.3",
+        "control_name": "Lifecycle — operational",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Impact assessment",
-        "control_name": "A.5.2",
+        "control_id": "A.5.2",
+        "control_name": "Impact assessment",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Operation",
-        "control_name": "Cl.8",
+        "control_id": "Cl.8",
+        "control_name": "Operation",
         "tier": "Foundational",
         "scope": "Build",
         "notes": "Foundational"
@@ -30165,22 +30044,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.3 — Deny by default access control",
+        "control_id": "V4.1.3",
+        "control_name": "Deny by default access control",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.1.4 — Data minimisation",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Build"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V3 Session Management",
-        "control_name": "V3.1.1 — Session isolation",
+        "control_id": "V3",
+        "control_name": "Session Management",
         "tier": "Foundational",
         "scope": "Build"
       },
@@ -30266,29 +30145,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Context window assembly respects user authorisation — no content from higher classification tier than user's access level",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Highest classification in context window drives handling — response treated as confidential if context contains confidential data",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Minimum-necessary context injection procedures — documented and enforced",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Over-broad context risks identified — cross-trust-domain aggregation assessed",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -30390,26 +30269,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-201",
-        "control_name": "CWE-201",
+        "control_name": "Insertion of Sensitive Information Into Sent Data",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/201.html"
+        "scope": "Build"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-285",
-        "control_name": "CWE-285",
+        "control_name": "Improper Authorisation",
         "tier": "Foundational",
-        "scope": "Build",
-        "url": "https://cwe.mitre.org/data/definitions/285.html"
+        "scope": "Build"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -30717,16 +30593,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Endpoint AI agent risks identified and mitigated",
-        "control_name": "Art. 9 — Risk management",
+        "control_id": "Art. 9",
+        "control_name": "Risk management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Browser and endpoint agent deployments assessed in Art. 9 risk management"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI designed to allow human oversight — users must be able to stop and override",
-        "control_name": "Art. 14 — Human oversight",
+        "control_id": "Art. 14",
+        "control_name": "Human oversight",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Users must be able to pause and override endpoint AI agents — Art. 14 human oversight requirement"
@@ -30773,16 +30649,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Use of AI systems",
-        "control_name": "A.9.1",
+        "control_id": "A.9.1",
+        "control_name": "Use of AI systems",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — design",
-        "control_name": "A.6.1.2",
+        "control_id": "A.6.1.2",
+        "control_name": "Lifecycle — design",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -30826,22 +30702,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.2 — Least privilege",
+        "control_id": "V4",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V11 Business Logic",
-        "control_name": "V11.1.5 — Business logic prevents excess data access",
+        "control_id": "V11",
+        "control_name": "Business Logic",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V1 Architecture",
-        "control_name": "V1.1.2 — Secure architecture and design",
+        "control_id": "V1.1.2",
+        "control_name": "Secure architecture and design",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -30927,29 +30803,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Approved AI assistants with scoped permissions — permission minimisation documented and enforced",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Browser AI extension providers assessed in vendor risk programme — data handling, telemetry, update security",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Endpoint AI acceptable use procedures — approved extension list, prohibited data access, employee acknowledgement",
-        "control_name": "CC5.2 — Control activities",
+        "control_id": "CC5.2",
+        "control_name": "Control activities",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Endpoint AI overreach risks identified — data access scope, exfiltration paths assessed",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -31058,26 +30934,23 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-668",
-        "control_name": "CWE-668",
+        "control_name": "Exposure of Resource to Wrong Sphere",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/668.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-272",
-        "control_name": "CWE-272",
+        "control_name": "Least Privilege Violation",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/272.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
-        "control_name": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/284.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -31410,16 +31283,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI must remain accurate and available under adverse conditions",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Vector store redundancy, circuit breakers, and staleness detection are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring covering availability and resilience",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "AI pipeline availability monitoring in quality management and post-market monitoring programme"
@@ -31458,24 +31331,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — decommissioning",
-        "control_name": "A.6.2.8",
+        "control_id": "A.6.2.8",
+        "control_name": "Lifecycle — decommissioning",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — testing",
-        "control_name": "A.6.2.6",
+        "control_id": "A.6.2.6",
+        "control_name": "Lifecycle — testing",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Operation",
-        "control_name": "Cl.8",
+        "control_id": "Cl.8",
+        "control_name": "Operation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -31511,15 +31384,15 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V11 Business Logic",
-        "control_name": "V11.1.7 — Anti-automation controls",
+        "control_id": "V11",
+        "control_name": "Business Logic",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V13 API",
-        "control_name": "V13.1.2 — API throttling",
+        "control_id": "V13",
+        "control_name": "API",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -31613,29 +31486,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM service availability commitments cover RAG freshness — stale data producing misinformation is an availability failure",
-        "control_name": "A1.1 — Availability policy",
+        "control_id": "A1.1",
+        "control_name": "Availability policy",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Circuit breakers and freshness monitoring protect availability commitments — graceful degradation over silent failure",
-        "control_name": "A1.2 — Environmental protections",
+        "control_id": "A1.2",
+        "control_name": "Environmental protections",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "RAG freshness monitoring — alert when index staleness exceeds threshold before misinformation reaches users",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Silent RAG degradation identified as availability risk in assessment",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -31737,18 +31610,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-400",
-        "control_name": "CWE-400",
+        "control_name": "Uncontrolled Resource Consumption",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/400.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-770",
-        "control_name": "CWE-770",
+        "control_name": "Allocation of Resources Without Limits",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/770.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -32096,16 +31967,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training data privacy measures required — protecting sensitive data used in training",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Differential privacy and inference attack resistance are Art. 10 data governance requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures protecting against attacks including inference attacks",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Output rate limiting, confidence score suppression, and embedding encryption are Art. 15 requirements"
@@ -32144,32 +32015,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — privacy-preserving",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — privacy-preserving",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Impact assessment",
-        "control_name": "A.5.2",
+        "control_id": "A.5.2",
+        "control_name": "Impact assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — testing",
-        "control_name": "A.6.2.6",
+        "control_id": "A.6.2.6",
+        "control_name": "Lifecycle — testing",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Advanced"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Planning — risk",
-        "control_name": "Cl.6.1",
+        "control_id": "Cl.6.1",
+        "control_name": "Planning — risk",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
@@ -32190,15 +32061,15 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.4 — Sensitive data identified",
+        "control_id": "V8.3.4",
+        "control_name": "Sensitive data identified",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V6 Cryptography",
-        "control_name": "V6.1.1 — Sensitive data not stored in cleartext",
+        "control_id": "V6.1.1",
+        "control_name": "Sensitive data not stored in cleartext",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -32284,29 +32155,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Inference attack resistance as confidentiality protection — technical measures limiting reconstruction success",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Using model outputs to reconstruct personal information beyond authorised purposes is a P5 violation",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Output monitoring for reconstruction indicators — systematic query patterns detected",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Inference attack risks identified in GenAI risk assessment — membership inference, model inversion vectors",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -32408,18 +32279,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-200",
-        "control_name": "CWE-200",
+        "control_name": "Exposure of Sensitive Information",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/200.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-327",
-        "control_name": "CWE-327",
+        "control_name": "Use of a Broken or Risky Cryptographic Algorithm",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/327.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -32729,16 +32598,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training data governance includes human annotation workflows",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Labeller data access controls and data minimisation are Art. 10 requirements for high-risk training data"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Labelling vendors are part of the AI value chain — obligations distributed accordingly",
-        "control_name": "Art. 25 — Value chain responsibilities",
+        "control_id": "Art. 25",
+        "control_name": "Value chain responsibilities",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Labelling vendor security requirements and contractual controls are Art. 25 value chain obligations"
@@ -32777,16 +32646,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — minimisation",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — minimisation",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Third-party",
-        "control_name": "A.10.1",
+        "control_id": "A.10.1",
+        "control_name": "Third-party",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Hardening"
@@ -32801,8 +32670,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Support",
-        "control_name": "Cl.7",
+        "control_id": "Cl.7",
+        "control_name": "Support",
         "tier": "Foundational",
         "scope": "Both",
         "notes": "Foundational"
@@ -32830,22 +32699,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.2 — Least privilege",
+        "control_id": "V4",
+        "control_name": "Access Control",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.3.3 — Consent for personal data processing",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V2 Authentication",
-        "control_name": "V2.1.1 — Strong authentication",
+        "control_id": "V2.1.1",
+        "control_name": "Strong authentication",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -32931,29 +32800,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Labelling vendors assessed in vendor risk programme — data access scope, handling requirements, sub-processor chain",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Contractual data handling obligations for labelling vendors — data minimisation, retention, permitted use",
-        "control_name": "CC9.2 — Vendor agreements",
+        "control_id": "CC9.2",
+        "control_name": "Vendor agreements",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Personal information accessed by labellers documented — purpose, scope, and safeguards",
-        "control_name": "P3.1 — Personal information collection",
+        "control_id": "P3.1",
+        "control_name": "Personal information collection",
         "tier": "Foundational",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Labelling vendor use of personal information restricted — no secondary use, training, or retention beyond task",
-        "control_name": "P5.1 — Personal information use",
+        "control_id": "P5.1",
+        "control_name": "Personal information use",
         "tier": "Foundational",
         "scope": "Both"
       },
@@ -33062,18 +32931,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-285",
-        "control_name": "CWE-285",
+        "control_name": "Improper Authorisation",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/285.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-359",
-        "control_name": "CWE-359",
+        "control_name": "Exposure of Private Personal Information",
         "tier": "Foundational",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/359.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -33407,24 +33274,24 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Cybersecurity measures protecting AI system integrity",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "API rate limiting, output perturbation, and extraction monitoring are Art. 15 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "GPAI technical documentation includes model architecture and capability details",
-        "control_name": "Art. 53(1)(a) — GPAI documentation",
+        "control_id": "Art. 53(1)(a)",
+        "control_name": "GPAI documentation",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Technical documentation must be protected — model extraction enables circumvention of documentation obligations"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Post-market monitoring covering security incidents",
-        "control_name": "Art. 17 — Quality management",
+        "control_id": "Art. 17",
+        "control_name": "Quality management",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Model extraction detection in post-market monitoring programme"
@@ -33463,32 +33330,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — model artefacts",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data — model artefacts",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — design",
-        "control_name": "A.6.1.2",
+        "control_id": "A.6.1.2",
+        "control_name": "Lifecycle — design",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Foundational"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Lifecycle — testing",
-        "control_name": "A.6.2.6",
+        "control_id": "A.6.2.6",
+        "control_name": "Lifecycle — testing",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Advanced"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Planning — risk",
-        "control_name": "Cl.6.1",
+        "control_id": "Cl.6.1",
+        "control_name": "Planning — risk",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
@@ -33516,22 +33383,22 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V4 Access Control",
-        "control_name": "V4.1.1 — Access control per request",
+        "control_id": "V4.1.1",
+        "control_name": "Access control per request",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V8 Data Protection",
-        "control_name": "V8.1.4 — Data minimisation in responses",
+        "control_id": "V8",
+        "control_name": "Data Protection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V10 Malicious Code",
-        "control_name": "V10.2.2 — Component integrity checking",
+        "control_id": "V10.2.2",
+        "control_name": "Component integrity checking",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -33617,29 +33484,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "Proprietary model artifacts classified as confidential — access controls, rate limiting, extraction detection",
-        "control_name": "C2.1 — Confidential information protection",
+        "control_id": "C2.1",
+        "control_name": "Confidential information protection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "API rate limiting as access control limiting systematic model extraction",
-        "control_name": "CC6.1 — Logical access",
+        "control_id": "CC6.1",
+        "control_name": "Logical access",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Model extraction pattern monitoring — unusual query diversity and volume detected",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "Model extraction risks identified in risk assessment — extraction vectors, IP exposure assessed",
-        "control_name": "CC3.2 — Risk assessment",
+        "control_id": "CC3.2",
+        "control_name": "Risk assessment",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -33756,18 +33623,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-284",
-        "control_name": "CWE-284",
+        "control_name": "Improper Access Control",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/284.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-201",
-        "control_name": "CWE-201",
+        "control_name": "Insertion of Sensitive Information Into Sent Data",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/201.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -34128,16 +33993,16 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "Training and retrieval data free from errors — source integrity required",
-        "control_name": "Art. 10 — Data and data governance",
+        "control_id": "Art. 10",
+        "control_name": "Data and data governance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "RAG corpus integrity controls and source verification are Art. 10 requirements"
       },
       {
         "framework": "EU AI Act",
-        "control_id": "High-risk AI accurate and resilient against adversarial data manipulation",
-        "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+        "control_id": "Art. 15",
+        "control_name": "Accuracy, robustness, cybersecurity",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Source trust scoring and ingestion validation are Art. 15 robustness requirements"
@@ -34152,8 +34017,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "EU AI Act",
-        "control_id": "AI-generated content that could be mistaken as human must be disclosed",
-        "control_name": "Art. 50 — Transparency",
+        "control_id": "Art. 50",
+        "control_name": "Transparency",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Disinformation risk amplified when users cannot distinguish AI-generated content — Art. 50 applies"
@@ -34192,32 +34057,32 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — provenance",
-        "control_name": "A.7.2",
+        "control_id": "A.7.2",
+        "control_name": "Data — provenance",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Data — quality",
-        "control_name": "A.7.3",
+        "control_id": "A.7.3",
+        "control_name": "Data — quality",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Impact assessment",
-        "control_name": "A.5.2",
+        "control_id": "A.5.2",
+        "control_name": "Impact assessment",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
       },
       {
         "framework": "ISO/IEC 42001:2023",
-        "control_id": "Transparency",
-        "control_name": "A.8.1",
+        "control_id": "A.8.1",
+        "control_name": "Transparency",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Hardening"
@@ -34245,15 +34110,15 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V5 Validation",
-        "control_name": "V5.1.3 — Server-side input validation",
+        "control_id": "V5",
+        "control_name": "Validation",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "OWASP ASVS 4.0.3",
-        "control_id": "V11 Business Logic",
-        "control_name": "V11.1.4 — Enforce business logic limits",
+        "control_id": "V11.1.4",
+        "control_name": "Enforce business logic limits",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -34347,29 +34212,29 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "SOC 2",
-        "control_id": "RAG corpus integrity controls — only accurate, verified content enters the retrieval index",
-        "control_name": "PI1.2 — System inputs complete and accurate",
+        "control_id": "PI1.2",
+        "control_name": "System inputs complete and accurate",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "LLM outputs derived from poisoned RAG are a processing integrity failure — detection before delivery",
-        "control_name": "PI1.3 — Outputs complete and accurate",
+        "control_id": "PI1.3",
+        "control_name": "Outputs complete and accurate",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "RAG corpus data source providers assessed — content quality, update process, integrity guarantees",
-        "control_name": "CC9.1 — Vendor risk",
+        "control_id": "CC9.1",
+        "control_name": "Vendor risk",
         "tier": "Hardening",
         "scope": "Both"
       },
       {
         "framework": "SOC 2",
-        "control_id": "RAG corpus anomaly detection — unusual content or modifications detected before reaching production",
-        "control_name": "CC7.2 — Anomaly detection",
+        "control_id": "CC7.2",
+        "control_name": "Anomaly detection",
         "tier": "Hardening",
         "scope": "Both"
       },
@@ -34432,7 +34297,7 @@ window.CROSSWALK_DATA = [
       {
         "framework": "ENISA Multilayer Framework",
         "control_id": "L3",
-        "control_name": "L3 — Sector-specific",
+        "control_name": "Sector-specific",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "For NIS2 essential entities and EU AI Act Annex III deployments — disinformation risk treated as a significant incident category"
@@ -34486,18 +34351,16 @@ window.CROSSWALK_DATA = [
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-345",
-        "control_name": "CWE-345",
+        "control_name": "Insufficient Verification of Data Authenticity",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/345.html"
+        "scope": "Both"
       },
       {
         "framework": "CWE/CVE",
         "control_id": "CWE-20",
-        "control_name": "CWE-20",
+        "control_name": "Improper Input Validation",
         "tier": "Hardening",
-        "scope": "Both",
-        "url": "https://cwe.mitre.org/data/definitions/20.html"
+        "scope": "Both"
       },
       {
         "framework": "OWASP AI Testing Guide",
@@ -34578,8 +34441,8 @@ window.CROSSWALK_DATA = [
       },
       {
         "framework": "AIUC-1",
-        "control_id": "Version",
-        "control_name": "Date",
+        "control_id": "Date",
+        "control_name": "Version",
         "tier": "Hardening",
         "scope": "Both",
         "notes": "Author"

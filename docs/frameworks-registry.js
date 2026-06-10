@@ -2554,6 +2554,13 @@ window.CROSSWALK_FRAMEWORKS = [
         "control_id": "Operational continuity procedures documented",
         "title": "Art. 17 � Quality management",
         "description": "Post-market monitoring and incident response for availability failures required"
+      },
+      {
+        "control_id": "Art. 53(1)(a)",
+        "title": "GPAI documentation",
+        "description": "Providers of general-purpose AI models shall draw up and keep up-to-date technical documentation of the model, including its training and testing process.",
+        "parent": "Art. 53",
+        "function": "GPAI"
       }
     ],
     "changelog": [
@@ -5564,6 +5571,11 @@ window.CROSSWALK_FRAMEWORKS = [
         "control_id": "RV.2.1-PS",
         "title": "Assess, prioritise, and remediate — deletion request remediation",
         "description": "Define procedures to assess and remediate data deletion requests including impact analysis on trained models and retraining requirements; Define remediation procedures for availability incidents including model rollback, rate limit tightening, and cost circuit breakers; Define and test remediation procedures for availability incidents — rate limit tightening, model rollback, cost circuit breaker activation"
+      },
+      {
+        "control_id": "PW.6.1-PS",
+        "title": "Secure configuration",
+        "description": "Configure the compilation, interpreter, and build processes to improve executable security for AI systems."
       }
     ]
   },
@@ -8692,6 +8704,27 @@ window.CROSSWALK_FRAMEWORKS = [
       {
         "control_id": "Resource exhaustion risks identified in LLM risk assessment � DoS and sponge attack vectors assessed",
         "title": "CC3.2 � Risk assessment"
+      },
+      {
+        "control_id": "C2.1",
+        "title": "Confidential information protection",
+        "description": "The entity protects confidential information during collection, use, retention, and disclosure to meet its objectives.",
+        "parent": null,
+        "function": "Confidentiality"
+      },
+      {
+        "control_id": "P5.1",
+        "title": "Personal information use",
+        "description": "The entity limits the use of personal information to the purposes identified in its privacy notice and for which the individual has provided consent.",
+        "parent": null,
+        "function": "Privacy"
+      },
+      {
+        "control_id": "PI1.3",
+        "title": "Outputs complete and accurate",
+        "description": "The entity implements policies and procedures over system processing to result in products, services, and reporting that are complete, accurate, and timely.",
+        "parent": null,
+        "function": "Processing Integrity"
       }
     ],
     "changelog": [

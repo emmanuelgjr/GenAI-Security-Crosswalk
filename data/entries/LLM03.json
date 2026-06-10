@@ -22,7 +22,6 @@
       "control_name": "Extract LLM System Prompt",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
       "notes": "Extracting system prompts that may reveal supply chain details, internal configurations, or security controls"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "External Harms",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0048",
       "notes": "Introducing persistent malicious behaviour into model through supply chain leading to downstream external harms"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "AI Supply Chain Compromise",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0010",
       "notes": "Compromising ML supply chain components — datasets, models, frameworks — to embed backdoors or malicious functionality"
     },
     {
@@ -77,32 +74,32 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Supply chain risks must be identified and mitigated in the risk management system",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Third-party component risks are in scope for Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Quality management must cover supply chain controls",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Documented supply chain security procedures required"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Responsibilities distributed along the AI value chain between providers and deployers",
-      "control_name": "Art. 25 — Value chain responsibilities",
+      "control_id": "Art. 25",
+      "control_name": "Value chain responsibilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Providers must document what deployers inherit — deployers must verify"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "GPAI providers must document training data governance including third-party sources",
-      "control_name": "Art. 53(1)(a) — GPAI documentation",
+      "control_id": "Art. 53(1)(a)",
+      "control_name": "GPAI documentation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Third-party training data provenance is a GPAI documentation obligation"
@@ -141,8 +138,8 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "A.10.1",
-      "control_name": "Third-party AI system acquisition",
+      "control_id": "Third-party",
+      "control_name": "AI system acquisition",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Security requirements applied to all LLM component vendors — model providers, dataset suppliers, inference runtime vendors"
@@ -173,24 +170,24 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "2.1 Establish and maintain software asset inventory",
-      "control_name": "CIS 2 — Inventory and Control of Software Assets",
+      "control_id": "CIS 2",
+      "control_name": "Inventory and Control of Software Assets",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "ML SBOM maintained as part of software asset inventory — model versions, libraries, adapters"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "7.1 Establish vulnerability management process",
-      "control_name": "CIS 7 — Continuous Vulnerability Management",
+      "control_id": "CIS 7",
+      "control_name": "Continuous Vulnerability Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Vulnerability management process covers LLM component CVEs and dependency risks"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.6 Use only up-to-date and trusted third-party components",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Only approved, verified LLM components used in production — unsigned components rejected"
@@ -333,29 +330,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM component vendors assessed before use — security questionnaires, SOC 2 reports reviewed, ongoing monitoring",
-      "control_name": "CC9.1 — Vendor risk management",
+      "control_id": "CC9.1",
+      "control_name": "Vendor risk management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Contractual security obligations for LLM vendors — data handling, vulnerability disclosure, incident notification",
-      "control_name": "CC9.2 — Vendor agreements",
+      "control_id": "CC9.2",
+      "control_name": "Vendor agreements",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "LLM model updates and component changes managed through change management — approval, testing, rollback",
-      "control_name": "CC8.1 — Change management",
+      "control_id": "CC8.1",
+      "control_name": "Change management",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Supply chain attack vectors identified in LLM risk assessment — training data sources, model providers, plugin vendors",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -479,26 +476,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-494",
-      "control_name": "CWE-494",
+      "control_name": "Download of Code Without Integrity Check",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/494.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-345",
-      "control_name": "CWE-345",
+      "control_name": "Insufficient Verification of Data Authenticity",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/345.html"
+      "scope": "Both"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-1357",
-      "control_name": "CWE-1357",
+      "control_name": "Reliance on Insufficiently Trustworthy Component",
       "tier": "Foundational",
-      "scope": "Both",
-      "url": "https://cwe.mitre.org/data/definitions/1357.html"
+      "scope": "Both"
     },
     {
       "framework": "OWASP AI Testing Guide",

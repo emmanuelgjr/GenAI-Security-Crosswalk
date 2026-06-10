@@ -22,7 +22,6 @@
       "control_name": "Output Manipulation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0067",
       "notes": "Crafting inputs that produce tool calls with destructive parameters"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "LLM Capability Escalation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0015",
       "notes": "Exploiting overly permissive tool access to exceed intended agent scope"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "AI Agent Tool Invocation",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0053",
       "notes": "Agent autonomously invoking tools beyond authorised scope, harvesting data through tool chains"
     },
     {
@@ -77,24 +74,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Tool misuse risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All agent tool integrations assessed in Art. 9 risk management — reversibility classification documented"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Human oversight over high-risk AI actions",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Irreversible tool invocations require human confirmation — Art. 14 binding requirement"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Cybersecurity measures preventing tool misuse",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Per-tool permission manifests and parameter validation are Art. 15 technical requirements"
@@ -157,40 +154,40 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "A.10.1",
-      "control_name": "Third-party AI system acquisition",
+      "control_id": "Third-party",
+      "control_name": "AI system acquisition",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool and MCP server providers assessed as third-party AI components — security obligations in contracts"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "5.4 Restrict administrator privileges",
-      "control_name": "CIS 5 — Account Management",
+      "control_id": "CIS 5",
+      "control_name": "Account Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent tool access managed as privileged access — minimum scope, regular review"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "6.1 Establish access granting process",
-      "control_name": "CIS 6 — Access Control Management",
+      "control_id": "CIS 6",
+      "control_name": "Access Control Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Formal process for granting agent tool access — documented justification per tool"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All tool invocations logged — tool identity, parameters, agent identity, timestamp"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "16.1 Establish secure development standards",
-      "control_name": "CIS 16 — Application Software Security",
+      "control_id": "CIS 16",
+      "control_name": "Application Software Security",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool parameter validation as secure development requirement"
@@ -333,32 +330,32 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Control activities define tool permission scope — which tools are permitted, which parameters are valid, which actions require confirmation",
-      "control_name": "CC5.2",
+      "control_id": "CC5.2",
+      "control_name": "Control activities define tool permission scope — which tools are permitted, which parameters are valid, which actions require confirmation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool permission policy, permitted action allowlist"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Logical access controls enforce tool permissions — agent cannot invoke tools outside authorised scope",
-      "control_name": "CC6.1",
+      "control_id": "CC6.1",
+      "control_name": "Logical access controls enforce tool permissions — agent cannot invoke tools outside authorised scope",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool invocation logs, access rejection records"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Monitoring for anomalous tool invocations — destructive parameters, out-of-scope tools, unexpected sequences detected",
-      "control_name": "CC7.2",
+      "control_id": "CC7.2",
+      "control_name": "Monitoring for anomalous tool invocations — destructive parameters, out-of-scope tools, unexpected sequences detected",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool call audit log, anomaly alert records"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Tool invocations are complete and accurate — parameter validation ensures tool calls match intended business operation",
-      "control_name": "PI1.2",
+      "control_id": "PI1.2",
+      "control_name": "Tool invocations are complete and accurate — parameter validation ensures tool calls match intended business operation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validation configuration, rejected call logs"
@@ -490,8 +487,8 @@
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Improper Access Control",
-      "control_name": "CWE-284",
+      "control_id": "CWE-284",
+      "control_name": "Improper Access Control",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent can invoke tools it should not have access to; tool parameters not range-validated"
@@ -522,8 +519,8 @@
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Improper Input Validation",
-      "control_name": "CWE-20",
+      "control_id": "CWE-20",
+      "control_name": "Improper Input Validation",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Tool parameters generated by LLM not validated against safe ranges before execution"
@@ -627,32 +624,32 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Define explicit security requirements specifying per-tool permission manifests, parameter validation rules, and irreversibility classification for each agent deployment",
-      "control_name": "PW.1.1-PS – Define security requirements",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Establishes tool access control as a mandatory deployment requirement"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Threat model all agent tool access paths; design least-privilege tool manifests and enforce human confirmation for irreversible operations by design",
-      "control_name": "PW.2.1-PS – Design software to meet security requirements",
+      "control_id": "PW.2.1-PS",
+      "control_name": "Design software to meet security requirements",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Ensures tool misuse prevention is designed before implementation"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Review agent tool access control enforcement — verify that tool permission manifests are correctly implemented and agents cannot be manipulated into destructive tool use",
-      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review the software for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validates tool controls before production deployment"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Protect agent tool configuration files, permission manifests, and MCP tool descriptors from unauthorised modification; verify descriptor integrity",
-      "control_name": "PS.1.1-PS – Protect all code from unauthorised access",
+      "control_id": "PS.1.1-PS",
+      "control_name": "Protect all code from unauthorised access",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Prevents tampering with tool access control configuration"

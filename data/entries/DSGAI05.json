@@ -75,24 +75,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Ingestion integrity risks identified and mitigated",
-      "control_name": "Art. 9 — Risk management",
+      "control_id": "Art. 9",
+      "control_name": "Risk management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Data ingestion attack surfaces included in Art. 9 risk management"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "High-risk AI resilient against adversarial input manipulation",
-      "control_name": "Art. 15 — Accuracy, robustness, cybersecurity",
+      "control_id": "Art. 15",
+      "control_name": "Accuracy, robustness, cybersecurity",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secure ingestion interfaces and path traversal prevention are Art. 15 requirements"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Documented procedures for data ingestion and pipeline integrity",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Ingestion validation procedures and CVE patching documented in quality management"
@@ -131,32 +131,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — acquisition",
-      "control_name": "A.7.2",
+      "control_id": "A.7.2",
+      "control_name": "Data — acquisition",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Data — preparation",
-      "control_name": "A.7.3",
+      "control_id": "A.7.3",
+      "control_name": "Data — preparation",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Hardening"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Lifecycle — operational",
-      "control_name": "A.6.2.3",
+      "control_id": "A.6.2.3",
+      "control_name": "Lifecycle — operational",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Foundational"
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Operation",
-      "control_name": "Cl.8",
+      "control_id": "Cl.8",
+      "control_name": "Operation",
       "tier": "Foundational",
       "scope": "Build",
       "notes": "Foundational"
@@ -177,22 +177,22 @@
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V5 Validation",
-      "control_name": "V5.1.1 — Input validation using allowlists",
+      "control_id": "V5.1.1",
+      "control_name": "Input validation using allowlists",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V5 Validation",
-      "control_name": "V5.2.1 — HTML/JS output sanitised",
+      "control_id": "V5.2.1",
+      "control_name": "HTML/JS output sanitised",
       "tier": "Foundational",
       "scope": "Build"
     },
     {
       "framework": "OWASP ASVS 4.0.3",
-      "control_id": "V7 Logging",
-      "control_name": "V7.4.1 — Generic error messages",
+      "control_id": "V7.4.1",
+      "control_name": "Generic error messages",
       "tier": "Foundational",
       "scope": "Build"
     },
@@ -286,29 +286,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "Ingestion validation controls — schema and semantic validation ensuring only accurate inputs enter processing",
-      "control_name": "PI1.2 — System inputs complete and accurate",
+      "control_id": "PI1.2",
+      "control_name": "System inputs complete and accurate",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Documented ingestion validation procedures — multi-stage validation, path traversal prevention",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "CC5.2",
+      "control_name": "Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Ingestion anomaly detection — unusual payloads detected before pipeline completion",
-      "control_name": "CC7.2 — Anomaly detection",
+      "control_id": "CC7.2",
+      "control_name": "Anomaly detection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Ingestion integrity risks in GenAI risk assessment — schema bypass, path traversal, adversarial payload vectors",
-      "control_name": "CC3.2 — Risk assessment",
+      "control_id": "CC3.2",
+      "control_name": "Risk assessment",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -417,26 +417,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-20",
-      "control_name": "CWE-20",
+      "control_name": "Improper Input Validation",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/20.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-116",
-      "control_name": "CWE-116",
+      "control_name": "Improper Encoding or Escaping of Output",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/116.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-74",
-      "control_name": "CWE-74",
+      "control_name": "Improper Neutralisation of Special Elements",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/74.html"
+      "scope": "Build"
     },
     {
       "framework": "OWASP AI Testing Guide",

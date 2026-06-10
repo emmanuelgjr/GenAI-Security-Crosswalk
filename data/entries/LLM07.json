@@ -22,7 +22,6 @@
       "control_name": "Extract LLM System Prompt",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0056",
       "notes": "Extraction of internal model configuration, instructions, or system prompts"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "Direct Prompt Injection",
       "tier": "Foundational",
       "scope": "Build",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0051.000",
       "notes": "Crafting inputs specifically designed to reveal or override system prompt content"
     },
     {
@@ -68,16 +66,16 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Users must receive sufficient information about the AI system — but this does not require disclosing system prompts",
-      "control_name": "Art. 13 — Transparency",
+      "control_id": "Art. 13",
+      "control_name": "Transparency",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Transparency obligation must be met without exposing security-sensitive system prompt content"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Configuration management documented",
-      "control_name": "Art. 17 — Quality management",
+      "control_id": "Art. 17",
+      "control_name": "Quality management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "System prompt versions, access controls, and change procedures are quality management artefacts"
@@ -148,32 +146,32 @@
     },
     {
       "framework": "ISO/IEC 42001:2023",
-      "control_id": "Cl.7",
-      "control_name": "Support",
+      "control_id": "Support",
+      "control_name": "Cl.7",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Documented information controls — system prompts managed as AIMS documented information with appropriate access controls"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "3.1 Establish data management process",
-      "control_name": "CIS 3 — Data Protection",
+      "control_id": "CIS 3",
+      "control_name": "Data Protection",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "System prompts classified as sensitive configuration — data handling policy applied"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "4.1 Establish secure configuration process",
-      "control_name": "CIS 4 — Secure Configuration",
+      "control_id": "CIS 4",
+      "control_name": "Secure Configuration",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Secure configuration for LLM deployments — system prompts not in cleartext config"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.2 Collect audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "System prompt access logged — unauthorised access attempts detectable"
@@ -316,29 +314,29 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "System prompts classified as confidential — encryption at rest, access-controlled, not in cleartext config",
-      "control_name": "C2.1 — Confidential information protection",
+      "control_id": "C2.1",
+      "control_name": "Confidential information protection",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access controls on system prompt storage — only authorised personnel can read or modify, all access logged",
-      "control_name": "CC6.1 — Logical access",
+      "control_id": "CC6.1",
+      "control_name": "Logical access",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "System prompt security procedures — version control, rotation, extraction resistance testing documented",
-      "control_name": "CC5.2 — Control activities",
+      "control_id": "CC5.2",
+      "control_name": "Control activities",
       "tier": "Foundational",
       "scope": "Both"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Access to system prompt storage monitored — anomalous access attempts detected and alerted",
-      "control_name": "CC7.2 — Monitoring",
+      "control_id": "CC7.2",
+      "control_name": "Monitoring",
       "tier": "Foundational",
       "scope": "Both"
     },
@@ -447,26 +445,23 @@
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-200",
-      "control_name": "CWE-200",
+      "control_name": "Exposure of Sensitive Information to an Unauthorised Actor",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/200.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-312",
-      "control_name": "CWE-312",
+      "control_name": "Cleartext Storage of Sensitive Information",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/312.html"
+      "scope": "Build"
     },
     {
       "framework": "CWE/CVE",
       "control_id": "CWE-215",
-      "control_name": "CWE-215",
+      "control_name": "Insertion of Sensitive Information Into Debugging Code",
       "tier": "Foundational",
-      "scope": "Build",
-      "url": "https://cwe.mitre.org/data/definitions/215.html"
+      "scope": "Build"
     },
     {
       "framework": "OWASP AI Testing Guide",

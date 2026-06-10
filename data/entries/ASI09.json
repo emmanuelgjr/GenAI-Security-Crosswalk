@@ -22,7 +22,6 @@
       "control_name": "Publish Hallucinated Entities",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0060",
       "notes": "Agent generates persuasive hallucinated content to manipulate human approvals"
     },
     {
@@ -31,7 +30,6 @@
       "control_name": "AI-Enabled Product or Service",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0047",
       "notes": "Agent produces high-volume, fluent content via AI-enabled services that overwhelms human critical assessment"
     },
     {
@@ -40,7 +38,6 @@
       "control_name": "Spearphishing via AI",
       "tier": "Foundational",
       "scope": "Both",
-      "url": "https://atlas.mitre.org/#/techniques/AML.T0049",
       "notes": "Compromised agent crafts highly personalised, convincing manipulation targeted at specific users"
     },
     {
@@ -77,24 +74,24 @@
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Users informed of capabilities, limitations, and AI nature",
-      "control_name": "Art. 13 — Transparency",
+      "control_id": "Art. 13",
+      "control_name": "Transparency",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agents must clearly communicate their AI nature and advisory limitations"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Effective human oversight over high-risk AI",
-      "control_name": "Art. 14 — Human oversight",
+      "control_id": "Art. 14",
+      "control_name": "Human oversight",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Humans must be able to override agent recommendations — trust exploitation undermines Art. 14 effectiveness"
     },
     {
       "framework": "EU AI Act",
-      "control_id": "Chatbots and AI-generated content must disclose AI nature",
-      "control_name": "Art. 50 — Transparency for certain AI systems",
+      "control_id": "Art. 50",
+      "control_name": "Transparency for certain AI systems",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All agent-user interactions require AI disclosure — universal obligation"
@@ -165,32 +162,32 @@
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "14.1 Establish security awareness programme",
-      "control_name": "CIS 14 — Security Awareness and Skills Training",
+      "control_id": "CIS 14",
+      "control_name": "Security Awareness and Skills Training",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "All users of agentic tools trained on AI limitations — verification requirements, how to identify manipulation"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "17.1 Designate personnel for incident response",
-      "control_name": "CIS 17 — Incident Response",
+      "control_id": "CIS 17",
+      "control_name": "Incident Response",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Defined response for trust exploitation incidents — operator retraining, pattern audit, interface redesign"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "5.4 Restrict administrator privileges",
-      "control_name": "CIS 5 — Account Management",
+      "control_id": "CIS 5",
+      "control_name": "Account Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Approval flows independent of agent interface — sensitive approvals cannot be completed via agent chat"
     },
     {
       "framework": "CIS Controls v8.1",
-      "control_id": "8.5 Collect detailed audit logs",
-      "control_name": "CIS 8 — Audit Log Management",
+      "control_id": "CIS 8",
+      "control_name": "Audit Log Management",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Agent-influenced operator decisions logged — aggregate over-trust patterns detectable"
@@ -309,24 +306,24 @@
     },
     {
       "framework": "SOC 2",
-      "control_id": "AI disclosure policy — users informed when interacting with AI agents; deceptive design patterns prohibited",
-      "control_name": "CC5.3",
+      "control_id": "CC5.3",
+      "control_name": "AI disclosure policy — users informed when interacting with AI agents; deceptive design patterns prohibited",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "AI disclosure policy, UI evidence"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Trust exploitation risk in risk assessment — social engineering, impersonation, false urgency scenarios documented",
-      "control_name": "CC3.3",
+      "control_id": "CC3.3",
+      "control_name": "Trust exploitation risk in risk assessment — social engineering, impersonation, false urgency scenarios documented",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Risk register with trust exploitation entries"
     },
     {
       "framework": "SOC 2",
-      "control_id": "Agent outputs are accurate and complete — outputs not designed to mislead; factual accuracy controls for high-stakes outputs",
-      "control_name": "PI1.3",
+      "control_id": "PI1.3",
+      "control_name": "Agent outputs are accurate and complete — outputs not designed to mislead; factual accuracy controls for high-stakes outputs",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Output quality controls, factual accuracy testing"
@@ -482,8 +479,8 @@
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Origin Validation Error",
-      "control_name": "CWE-346",
+      "control_id": "CWE-346",
+      "control_name": "Origin Validation Error",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "User cannot determine whether advice originates from AI or human — no origin verification"
@@ -498,8 +495,8 @@
     },
     {
       "framework": "CWE/CVE",
-      "control_id": "Exposure of Sensitive Information to an Unauthorised Actor",
-      "control_name": "CWE-200",
+      "control_id": "CWE-200",
+      "control_name": "Exposure of Sensitive Information to an Unauthorised Actor",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "System prompt and agent configuration not protected — extraction enables targeted trust exploitation"
@@ -595,32 +592,32 @@
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Review agent behaviour for trust manipulation patterns — verify that agents cannot build false authority, suppress safety warnings, or manipulate approval processes",
-      "control_name": "PW.7.2-PS – Review the software for security vulnerabilities",
+      "control_id": "PW.7.2-PS",
+      "control_name": "Review the software for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Catches trust exploitation risks before production"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Conduct adversarial testing targeting human-agent trust exploitation — test whether agents can manipulate operators into approving harmful actions through false confidence or urgency",
-      "control_name": "PW.8.2-PS – Test for security vulnerabilities",
+      "control_id": "PW.8.2-PS",
+      "control_name": "Test for security vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Validates trust controls under realistic conditions"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Establish monitoring for trust exploitation indicators — operators approving high-risk actions without verification, systematic over-reliance on agent recommendations",
-      "control_name": "RV.1.1-PS – Identify and confirm vulnerabilities",
+      "control_id": "RV.1.1-PS",
+      "control_name": "Identify and confirm vulnerabilities",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Enables detection of trust exploitation in production"
     },
     {
       "framework": "NIST SP 800-218A",
-      "control_id": "Define explicit requirements for human oversight — mandatory confirmation gates, independent approval flows, AI advisory labelling, and operator training requirements",
-      "control_name": "PW.1.1-PS – Define security requirements",
+      "control_id": "PW.1.1-PS",
+      "control_name": "Define security requirements",
       "tier": "Foundational",
       "scope": "Both",
       "notes": "Establishes human oversight as a mandatory requirement"
