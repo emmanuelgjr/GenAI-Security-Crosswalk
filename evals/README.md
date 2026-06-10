@@ -1,7 +1,7 @@
 <!--
   GenAI Security Crosswalk
   Document  : Evaluation Profiles — Setup and Usage
-  Version   : 2.0.0 — 2026-05-29
+  Version   : 2.0.1 — 2026-06-10
   License   : CC BY-SA 4.0
 -->
 
@@ -16,14 +16,17 @@ Runnable security test profiles mapped to OWASP GenAI vulnerability entries.
 >
 > **Reproducibility.** Tool APIs and probe catalogues change between releases.
 > All profiles are pinned and validated against the versions in
-> [`requirements.txt`](requirements.txt) (**garak 0.15.0**, **PyRIT 0.13.0**).
+> [`requirements.txt`](requirements.txt) (**garak 0.15.1**, **PyRIT 0.14.0**).
 > Install with `pip install -r evals/requirements.txt` and bump deliberately.
 
 ---
 
 ## Verification status
 
-Checked **2026-05-29/30** against the installed pinned tool versions.
+Checked **2026-05-29/30** against the then-pinned versions, and **re-verified
+2026-06-10** against the current pins (**garak 0.15.1**, **PyRIT 0.14.0**,
+**inspect-ai 0.3.237**) — all tracks still pass end-to-end vs `gpt-4o-mini`; the
+version bumps introduced no regressions.
 "Runtime-verified" means it was executed end-to-end (against `gpt-4o-mini` where a
 model is needed); "offline-verified" means the config/script was validated against
 the real installed package (probe registry, API surface, task build) **without** a
@@ -59,11 +62,11 @@ runtime *and* static, model · app · agent · data-pipeline:
 
 | Folder | Tool | Track | Contents |
 |---|---|---|---|
-| `garak/` | [Garak](https://github.com/NVIDIA/garak) 0.15.0 | offensive · model | **17** YAML profiles (10 LLM + 4 Agentic + 3 DSGAI) + auto-discovering `run_all.sh` |
-| `pyrit/` | [PyRIT](https://github.com/Azure/PyRIT) 0.13.0 | offensive · model | **6** scenario scripts + shared `_harness.py` (LLM-as-judge scoring) |
+| `garak/` | [Garak](https://github.com/NVIDIA/garak) 0.15.1 | offensive · model | **17** YAML profiles (10 LLM + 4 Agentic + 3 DSGAI) + auto-discovering `run_all.sh` |
+| `pyrit/` | [PyRIT](https://github.com/Azure/PyRIT) 0.14.0 | offensive · model | **6** scenario scripts + shared `_harness.py` (LLM-as-judge scoring) |
 | `laaf/` | [LAAF v2.0](https://github.com/qorvexconsulting1/laaf-V2.0) | offensive · LPCI | **6** LPCI stage configs (S1–S6) + `laaf_crosswalk.py` reporter |
 | `promptfoo/` | [promptfoo](https://www.promptfoo.dev/docs/red-team/) 0.121.15 | offensive · **app/CI** | OWASP LLM + Agentic red-team config for CI gating |
-| `inspect/` | [Inspect AI](https://inspect.aisi.org.uk/) 0.3.229 + AgentDojo/AgentHarm | offensive · **agent** | native ASI01 task + Agentic Top 10 → `inspect_evals` mapping |
+| `inspect/` | [Inspect AI](https://inspect.aisi.org.uk/) 0.3.237 + AgentDojo/AgentHarm | offensive · **agent** | native ASI01 task + Agentic Top 10 → `inspect_evals` mapping |
 | `modelscan/` | [ModelScan](https://github.com/protectai/modelscan) 0.8.8 | **static · supply chain** | model-artifact scanner (LLM03 / DSGAI17), no API key |
 | `guardrails/` | Prompt Guard 2 · [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) 0.22.0 | **defensive** | input/output guardrail evaluation |
 | `privacy/` | [Presidio](https://github.com/microsoft/presidio) · canary audit | **data security** | PII output scan (DSGAI01) + canary extraction audit (DSGAI18) |
@@ -81,7 +84,7 @@ profile references a valid OWASP ID and an existing crosswalk file.
 ## Prerequisites
 
 ```bash
-pip install -r evals/requirements.txt        # garak 0.15.0 + pyrit 0.13.0
+pip install -r evals/requirements.txt        # garak 0.15.1 + pyrit 0.14.0
 
 export OPENAI_API_KEY=sk-...                  # required
 export OPENAI_MODEL=gpt-4o-mini               # optional (PyRIT scripts)
@@ -114,7 +117,7 @@ GARAK_TARGET_TYPE=openai GARAK_TARGET_NAME=gpt-4o bash evals/garak/run_all.sh
 picked up automatically — there is no hardcoded list to drift out of sync.
 Results are written to `evals/results/<timestamp>/`.
 
-Config schema note (garak 0.15.0): probe and detector selection live **under
+Config schema note (garak 0.15.1): probe and detector selection live **under
 `plugins:`** (`plugins.probe_spec`, `plugins.detector_spec`,
 `plugins.extended_detectors`), and the target is set with
 `plugins.target_type` / `plugins.target_name`. Verify probe names for your
@@ -127,7 +130,7 @@ python evals/pyrit/llm01_prompt_injection.py
 ```
 
 The scripts share [`_harness.py`](pyrit/_harness.py), which owns the PyRIT
-0.13.0 API in one place (`initialize_pyrit_async`, `executor.attack`,
+0.14.0 API in one place (`initialize_pyrit_async`, `executor.attack`,
 `SelfAskTrueFalseScorer`). Attack success is judged by an **LLM scorer**, not by
 substring matching, and indirect-injection probes deliver their payload through
 a retrieved-context channel via `as_retrieved_context()`. Exit code `0` = pass,
