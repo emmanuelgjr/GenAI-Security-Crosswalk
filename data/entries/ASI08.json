@@ -778,6 +778,12 @@
       "incident_id": "INC-00924"
     },
     {
+      "name": "LangChain LLMMathChain prompt-injection RCE via Python exec",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01291.html",
+      "year": 2023,
+      "incident_id": "INC-01291"
+    },
+    {
       "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
       "year": 2026,

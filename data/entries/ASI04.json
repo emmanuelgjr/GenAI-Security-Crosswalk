@@ -742,6 +742,12 @@
   ],
   "incidents": [
     {
+      "name": "org.nokogiri:nekohtml vulnerable to Uncontrolled Resource Consumption",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00010.html",
+      "year": 2023,
+      "incident_id": "INC-00010"
+    },
+    {
       "name": "AnythingLLM Multiple CVEs",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00627.html",
       "year": 2026,
@@ -778,10 +784,22 @@
       "incident_id": "INC-00924"
     },
     {
+      "name": "Flowise v3.0.1 < 3.0.8 and all versions after with 'ALLOW_BUILTIN_DEP' enabled contain an authenticated remote code execution vulnerability and node VM sandbox escape due to ins...",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01015.html",
+      "year": 2025,
+      "incident_id": "INC-01015"
+    },
+    {
       "name": "GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01092.html",
       "year": 2026,
       "incident_id": "INC-01092"
+    },
+    {
+      "name": "LangChain LLMMathChain prompt-injection RCE via Python exec",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01291.html",
+      "year": 2023,
+      "incident_id": "INC-01291"
     },
     {
       "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
@@ -814,6 +832,12 @@
       "incident_id": "INC-01429"
     },
     {
+      "name": "Microsoft Semantic Kernel RCE (CVE-2026-26030)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01440.html",
+      "year": 2026,
+      "incident_id": "INC-01440"
+    },
+    {
       "name": "n8n Unauthenticated RCE \"Ni8mare\" (CVE-2026-21858)",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01471.html",
       "year": 2026,
@@ -821,21 +845,27 @@
     },
     {
       "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01592.html",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01589.html",
       "year": 2026,
-      "incident_id": "INC-01592"
+      "incident_id": "INC-01589"
+    },
+    {
+      "name": "PraisonAI Quadruple CVE Disclosure",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01666.html",
+      "year": 2026,
+      "incident_id": "INC-01666"
+    },
+    {
+      "name": "Anyscale Ray LFI via /static/ directory (missing authorization)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01723.html",
+      "year": 2023,
+      "incident_id": "INC-01723"
     },
     {
       "name": "SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989)",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01769.html",
       "year": 2026,
       "incident_id": "INC-01769"
-    },
-    {
-      "name": "vLLM RCE via Malicious Video URL (CVE-2026-22778)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02047.html",
-      "year": 2026,
-      "incident_id": "INC-02047"
     },
     {
       "name": "VS Code Forks OpenVSX Extension Recommendations Supply Chain Risk",
@@ -878,6 +908,12 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02435.html",
       "year": 2025,
       "incident_id": "INC-02435"
+    },
+    {
+      "name": "Vulnerable juju hook tool abstract UNIX domain socket",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02443.html",
+      "year": 2024,
+      "incident_id": "INC-02443"
     },
     {
       "name": "Claude Skills Data Exfiltration",
@@ -928,18 +964,6 @@
       "incident_id": "INC-02546"
     },
     {
-      "name": "Flowise CustomMCP code injection RCE — CVSS 10.0, 12,000 instances exposed",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02581.html",
-      "year": 2025,
-      "incident_id": "INC-02581"
-    },
-    {
-      "name": "Flowise Pre-Auth Arbitrary File Upload",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02582.html",
-      "year": 2025,
-      "incident_id": "INC-02582"
-    },
-    {
       "name": "ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02590.html",
       "year": 2025,
@@ -956,12 +980,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02607.html",
       "year": 2025,
       "incident_id": "INC-02607"
-    },
-    {
-      "name": "GitHub Copilot Multi-Root Workspace RCE",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02611.html",
-      "year": 2025,
-      "incident_id": "INC-02611"
     },
     {
       "name": "GPT-4.1 jailbreak via tool poisoning",
@@ -1012,12 +1030,6 @@
       "incident_id": "INC-02878"
     },
     {
-      "name": "NVIDIA Triton control-message manipulation -> RCE (Wiz chain final)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02971.html",
-      "year": 2025,
-      "incident_id": "INC-02971"
-    },
-    {
       "name": "Ollama GGUF Model File RCE",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02980.html",
       "year": 2025,
@@ -1054,18 +1066,6 @@
       "incident_id": "INC-03334"
     },
     {
-      "name": "vLLM Model Config Auto-Map RCE (CVE-2025-66448)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03335.html",
-      "year": 2025,
-      "incident_id": "INC-03335"
-    },
-    {
-      "name": "vLLM Unsafe Tensor Deserialization (CVE-2025-62164)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03337.html",
-      "year": 2025,
-      "incident_id": "INC-03337"
-    },
-    {
       "name": "WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03368.html",
       "year": 2025,
@@ -1076,24 +1076,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03572.html",
       "year": 2024,
       "incident_id": "INC-03572"
-    },
-    {
-      "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04715.html",
-      "year": 2023,
-      "incident_id": "INC-04715"
-    },
-    {
-      "name": "LangChain SSRF & PALChain RCE (CVE-2023-46229 & CVE-2023-44467)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04720.html",
-      "year": 2023,
-      "incident_id": "INC-04720"
-    },
-    {
-      "name": "ShadowRay: Anyscale Ray Dashboard RCE (CVE-2023-48022) exploited in the wild",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04862.html",
-      "year": 2023,
-      "incident_id": "INC-04862"
     }
   ],
   "crossrefs": {
