@@ -741,6 +741,12 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04142.html",
       "year": 2024,
       "incident_id": "INC-04142"
+    },
+    {
+      "name": "ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08181.html",
+      "year": 2023,
+      "incident_id": "INC-08181"
     }
   ],
   "crossrefs": {
