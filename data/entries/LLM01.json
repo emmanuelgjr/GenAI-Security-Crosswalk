@@ -837,16 +837,34 @@
       "incident_id": "INC-00928"
     },
     {
+      "name": "Flowise v3.0.1 < 3.0.8 and all versions after with 'ALLOW_BUILTIN_DEP' enabled contain an authenticated remote code execution vulnerability and node VM sandbox escape due to ins...",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01015.html",
+      "year": 2025,
+      "incident_id": "INC-01015"
+    },
+    {
       "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01064.html",
       "year": 2026,
       "incident_id": "INC-01064"
     },
     {
+      "name": "LangChain LLMMathChain prompt-injection RCE via Python exec",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01291.html",
+      "year": 2023,
+      "incident_id": "INC-01291"
+    },
+    {
       "name": "Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966)",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01297.html",
       "year": 2026,
       "incident_id": "INC-01297"
+    },
+    {
+      "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01298.html",
+      "year": 2026,
+      "incident_id": "INC-01298"
     },
     {
       "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
@@ -865,6 +883,12 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01637.html",
       "year": 2026,
       "incident_id": "INC-01637"
+    },
+    {
+      "name": "Anyscale Ray LFI via /static/ directory (missing authorization)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01723.html",
+      "year": 2023,
+      "incident_id": "INC-01723"
     },
     {
       "name": "Amazon Q Prompt Poisoning",
@@ -961,12 +985,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02607.html",
       "year": 2025,
       "incident_id": "INC-02607"
-    },
-    {
-      "name": "GitHub Copilot Multi-Root Workspace RCE",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02611.html",
-      "year": 2025,
-      "incident_id": "INC-02611"
     },
     {
       "name": "GitPublic Issue Repo Hijack",
@@ -1137,28 +1155,22 @@
       "incident_id": "INC-04208"
     },
     {
-      "name": "LangChain and LlamaIndex RCE — agent code execution via prompt injection",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04715.html",
-      "year": 2023,
-      "incident_id": "INC-04715"
-    },
-    {
-      "name": "LangChain SSRF & PALChain RCE (CVE-2023-46229 & CVE-2023-44467)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04720.html",
-      "year": 2023,
-      "incident_id": "INC-04720"
-    },
-    {
-      "name": "ShadowRay: Anyscale Ray Dashboard RCE (CVE-2023-48022) exploited in the wild",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04862.html",
-      "year": 2023,
-      "incident_id": "INC-04862"
-    },
-    {
       "name": "Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-05172.html",
       "year": 2022,
       "incident_id": "INC-05172"
+    },
+    {
+      "name": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08177.html",
+      "year": 2021,
+      "incident_id": "INC-08177"
+    },
+    {
+      "name": "ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08181.html",
+      "year": 2023,
+      "incident_id": "INC-08181"
     }
   ],
   "crossrefs": {
