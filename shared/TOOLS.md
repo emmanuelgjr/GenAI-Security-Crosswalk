@@ -233,6 +233,7 @@ server deployments.
 | MCP Inspector | Official MCP debugging and testing tool — inspect tool schemas, test tool calls, validate descriptor integrity | ASI02, ASI04, DSGAI06 | https://github.com/modelcontextprotocol/inspector |
 | MCP Python SDK | Official Python SDK for MCP servers — use as the base for building secure MCP servers with typed schemas and validation | ASI02, ASI04 | https://github.com/modelcontextprotocol/python-sdk |
 | MCP TypeScript SDK | Official TypeScript SDK — same as Python SDK for Node.js deployments | ASI02, ASI04 | https://github.com/modelcontextprotocol/typescript-sdk |
+| mastyf.ai | Runtime MCP proxy with policy enforcement, prompt injection detection, secret scanning, multi-agent swarm analysis, and full audit trail | LLM01, LLM06, LLM08, ASI02, ASI07 | https://github.com/mastyf-ai/mastyf.ai |
 
 ---
 
