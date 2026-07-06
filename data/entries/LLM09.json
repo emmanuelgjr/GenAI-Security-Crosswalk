@@ -661,6 +661,12 @@
   ],
   "incidents": [
     {
+      "name": "Critical security issues in XML encoding in github.com/dexidp/dex",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00004.html",
+      "year": 2021,
+      "incident_id": "INC-00004"
+    },
+    {
       "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
       "year": 2026,
@@ -691,12 +697,6 @@
       "incident_id": "INC-03152"
     },
     {
-      "name": "vLLM Model Config Auto-Map RCE (CVE-2025-66448)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03335.html",
-      "year": 2025,
-      "incident_id": "INC-03335"
-    },
-    {
       "name": "Microsoft-Powered New York City Chatbot Advises Illegal Practices",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04007.html",
       "year": 2024,
@@ -707,6 +707,12 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04179.html",
       "year": 2024,
       "incident_id": "INC-04179"
+    },
+    {
+      "name": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08177.html",
+      "year": 2021,
+      "incident_id": "INC-08177"
     }
   ],
   "crossrefs": {

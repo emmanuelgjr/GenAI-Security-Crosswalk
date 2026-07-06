@@ -802,6 +802,12 @@
   ],
   "incidents": [
     {
+      "name": "Critical security issues in XML encoding in github.com/dexidp/dex",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00004.html",
+      "year": 2021,
+      "incident_id": "INC-00004"
+    },
+    {
       "name": "AWS Bedrock AgentCore \"Agent God Mode\" Privilege Escalation",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00668.html",
       "year": 2026,
@@ -820,12 +826,6 @@
       "incident_id": "INC-00834"
     },
     {
-      "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01298.html",
-      "year": 2026,
-      "incident_id": "INC-01298"
-    },
-    {
       "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
       "year": 2026,
@@ -833,9 +833,9 @@
     },
     {
       "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01592.html",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01589.html",
       "year": 2026,
-      "incident_id": "INC-01592"
+      "incident_id": "INC-01589"
     },
     {
       "name": "XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent",
@@ -856,16 +856,16 @@
       "incident_id": "INC-02426"
     },
     {
+      "name": "Vulnerable juju hook tool abstract UNIX domain socket",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02443.html",
+      "year": 2024,
+      "incident_id": "INC-02443"
+    },
+    {
       "name": "Claude Skills ransomware deployment — MedusaLocker via malicious plugin",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02451.html",
       "year": 2025,
       "incident_id": "INC-02451"
-    },
-    {
-      "name": "NVIDIA Triton control-message manipulation -> RCE (Wiz chain final)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02971.html",
-      "year": 2025,
-      "incident_id": "INC-02971"
     },
     {
       "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
@@ -878,6 +878,12 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03572.html",
       "year": 2024,
       "incident_id": "INC-03572"
+    },
+    {
+      "name": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08177.html",
+      "year": 2021,
+      "incident_id": "INC-08177"
     }
   ],
   "crossrefs": {
