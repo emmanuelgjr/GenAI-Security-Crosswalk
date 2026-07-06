@@ -904,6 +904,18 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04208.html",
       "year": 2024,
       "incident_id": "INC-04208"
+    },
+    {
+      "name": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08177.html",
+      "year": 2021,
+      "incident_id": "INC-08177"
+    },
+    {
+      "name": "ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08181.html",
+      "year": 2023,
+      "incident_id": "INC-08181"
     }
   ],
   "crossrefs": {
