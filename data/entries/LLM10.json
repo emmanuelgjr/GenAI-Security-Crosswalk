@@ -671,22 +671,34 @@
   ],
   "incidents": [
     {
+      "name": "org.nokogiri:nekohtml vulnerable to Uncontrolled Resource Consumption",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00010.html",
+      "year": 2023,
+      "incident_id": "INC-00010"
+    },
+    {
+      "name": "LangChain LLMMathChain prompt-injection RCE via Python exec",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01291.html",
+      "year": 2023,
+      "incident_id": "INC-01291"
+    },
+    {
       "name": "Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02426.html",
       "year": 2025,
       "incident_id": "INC-02426"
     },
     {
-      "name": "vLLM Unsafe Tensor Deserialization (CVE-2025-62164)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03337.html",
-      "year": 2025,
-      "incident_id": "INC-03337"
-    },
-    {
       "name": "OpenAI GPT-4 system prompt extraction toolkit — systematic prompt leakage",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04067.html",
       "year": 2024,
       "incident_id": "INC-04067"
+    },
+    {
+      "name": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08177.html",
+      "year": 2021,
+      "incident_id": "INC-08177"
     }
   ],
   "crossrefs": {
