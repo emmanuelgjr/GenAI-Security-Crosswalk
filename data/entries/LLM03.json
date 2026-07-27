@@ -714,12 +714,6 @@
   ],
   "incidents": [
     {
-      "name": "org.nokogiri:nekohtml vulnerable to Uncontrolled Resource Consumption",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00010.html",
-      "year": 2023,
-      "incident_id": "INC-00010"
-    },
-    {
       "name": "AnythingLLM Multiple CVEs",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00627.html",
       "year": 2026,
@@ -772,12 +766,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01291.html",
       "year": 2023,
       "incident_id": "INC-01291"
-    },
-    {
-      "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01298.html",
-      "year": 2026,
-      "incident_id": "INC-01298"
     },
     {
       "name": "LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads",
@@ -880,12 +868,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02435.html",
       "year": 2025,
       "incident_id": "INC-02435"
-    },
-    {
-      "name": "Vulnerable juju hook tool abstract UNIX domain socket",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02443.html",
-      "year": 2024,
-      "incident_id": "INC-02443"
     },
     {
       "name": "Claude Skills Data Exfiltration",
