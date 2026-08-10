@@ -671,12 +671,6 @@
   ],
   "incidents": [
     {
-      "name": "org.nokogiri:nekohtml vulnerable to Uncontrolled Resource Consumption",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00010.html",
-      "year": 2023,
-      "incident_id": "INC-00010"
-    },
-    {
       "name": "LangChain LLMMathChain prompt-injection RCE via Python exec",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01291.html",
       "year": 2023,
