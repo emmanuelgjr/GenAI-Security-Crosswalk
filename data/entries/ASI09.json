@@ -773,12 +773,6 @@
       "incident_id": "INC-01064"
     },
     {
-      "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01298.html",
-      "year": 2026,
-      "incident_id": "INC-01298"
-    },
-    {
       "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
       "year": 2026,
