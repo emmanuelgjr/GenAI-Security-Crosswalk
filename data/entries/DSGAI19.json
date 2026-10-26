@@ -644,12 +644,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03210.html",
       "year": 2025,
       "incident_id": "INC-03210"
-    },
-    {
-      "name": "Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04179.html",
-      "year": 2024,
-      "incident_id": "INC-04179"
     }
   ],
   "crossrefs": {
