@@ -1,3 +1,12 @@
+> [!IMPORTANT]
+> **This repository has moved and is archived.** Active development continues at
+> **[GenAI-Security-Project/crosswalk](https://github.com/GenAI-Security-Project/crosswalk)**,
+> with the live web app at **<https://genai-security-project.github.io/crosswalk/>**.
+>
+> The data below is frozen as of June 2026 and is out of date: the canonical repo has more
+> frameworks, re-transcribed NIST registries, and corrected incident and mapping data.
+> Please open issues and pull requests there.
+
 <p align="center">
   <a href="https://emmanuelgjr.github.io/GenAI-Security-Crosswalk/">
     <img src="docs/banner.svg" alt="OWASP GenAI Security Crosswalk" width="100%">
