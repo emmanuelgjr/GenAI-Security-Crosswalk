@@ -755,12 +755,6 @@
   ],
   "incidents": [
     {
-      "name": "org.nokogiri:nekohtml vulnerable to Uncontrolled Resource Consumption",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00010.html",
-      "year": 2023,
-      "incident_id": "INC-00010"
-    },
-    {
       "name": "A2A Protocol -- Agent Card Poisoning Vulnerability",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00036.html",
       "year": 2026,
@@ -825,12 +819,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02878.html",
       "year": 2025,
       "incident_id": "INC-02878"
-    },
-    {
-      "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02899.html",
-      "year": 2025,
-      "incident_id": "INC-02899"
     },
     {
       "name": "OpenAI ChatGPT Operator Vulnerability",
