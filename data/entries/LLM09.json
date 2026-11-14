@@ -661,58 +661,76 @@
   ],
   "incidents": [
     {
-      "name": "org.nokogiri:nekohtml vulnerable to Uncontrolled Resource Consumption",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00010.html",
-      "year": 2023,
-      "incident_id": "INC-00010"
-    },
-    {
-      "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
+      "name": "Claude Cowork File Exfiltration",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00827.html",
       "year": 2026,
-      "incident_id": "INC-01411"
+      "incident_id": "INC-00827"
     },
     {
-      "name": "Agent-in-the-Middle — A2A protocol spoofing via fake agent cards",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02186.html",
+      "name": "CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00860.html",
+      "year": 2026,
+      "incident_id": "INC-00860"
+    },
+    {
+      "name": "Eight Attack Vectors in AWS Bedrock Agents",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00928.html",
+      "year": 2026,
+      "incident_id": "INC-00928"
+    },
+    {
+      "name": "Microsoft Semantic Kernel RCE (CVE-2026-26030)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01440.html",
+      "year": 2026,
+      "incident_id": "INC-01440"
+    },
+    {
+      "name": "Devin AI Agent Prompt Injection & Data Exfiltration",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02512.html",
       "year": 2025,
-      "incident_id": "INC-02186"
+      "incident_id": "INC-02512"
     },
     {
-      "name": "Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02426.html",
+      "name": "HashJack -- URL Fragment Prompt Injection for AI Browsers",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02686.html",
       "year": 2025,
-      "incident_id": "INC-02426"
+      "incident_id": "INC-02686"
     },
     {
-      "name": "GPT-4.1 jailbreak via tool poisoning",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02646.html",
+      "name": "PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03036.html",
       "year": 2025,
-      "incident_id": "INC-02646"
+      "incident_id": "INC-03036"
     },
     {
-      "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03152.html",
+      "name": "ToolShell RCE via SharePoint",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03300.html",
       "year": 2025,
-      "incident_id": "INC-03152"
+      "incident_id": "INC-03300"
     },
     {
-      "name": "Microsoft-Powered New York City Chatbot Advises Illegal Practices",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04007.html",
+      "name": "Windsurf Data Exfiltration & SpAIware (Multiple Vectors)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03376.html",
+      "year": 2025,
+      "incident_id": "INC-03376"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04027.html",
       "year": 2024,
-      "incident_id": "INC-04007"
+      "incident_id": "INC-04027"
     },
     {
-      "name": "Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04179.html",
+      "name": "RAG corpus poisoning — embedding-space manipulation to force retrieval",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04142.html",
       "year": 2024,
-      "incident_id": "INC-04179"
+      "incident_id": "INC-04142"
     },
     {
-      "name": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08177.html",
-      "year": 2021,
-      "incident_id": "INC-08177"
+      "name": "Slack AI indirect injection via channel content",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04208.html",
+      "year": 2024,
+      "incident_id": "INC-04208"
     }
   ],
   "crossrefs": {
