@@ -705,14 +705,7 @@
       "url": "https://www.splunk.com"
     }
   ],
-  "incidents": [
-    {
-      "name": "Clearview AI biometric bias — $50M class action settlement",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02454.html",
-      "year": 2025,
-      "incident_id": "INC-02454"
-    }
-  ],
+  "incidents": [],
   "crossrefs": {
     "llm_top10": [
       "LLM05",
