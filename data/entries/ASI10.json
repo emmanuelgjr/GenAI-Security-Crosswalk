@@ -820,12 +820,6 @@
       "incident_id": "INC-00834"
     },
     {
-      "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01298.html",
-      "year": 2026,
-      "incident_id": "INC-01298"
-    },
-    {
       "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
       "year": 2026,
@@ -854,12 +848,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02426.html",
       "year": 2025,
       "incident_id": "INC-02426"
-    },
-    {
-      "name": "Vulnerable juju hook tool abstract UNIX domain socket",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02443.html",
-      "year": 2024,
-      "incident_id": "INC-02443"
     },
     {
       "name": "Claude Skills ransomware deployment — MedusaLocker via malicious plugin",
