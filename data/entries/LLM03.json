@@ -714,40 +714,22 @@
   ],
   "incidents": [
     {
-      "name": "org.nokogiri:nekohtml vulnerable to Uncontrolled Resource Consumption",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00010.html",
-      "year": 2023,
-      "incident_id": "INC-00010"
-    },
-    {
-      "name": "AnythingLLM Multiple CVEs",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00627.html",
-      "year": 2026,
-      "incident_id": "INC-00627"
-    },
-    {
       "name": "Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00671.html",
       "year": 2026,
       "incident_id": "INC-00671"
     },
     {
-      "name": "Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00813.html",
+      "name": "ChatGPT Data Exfiltration via DNS Covert Channel",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00746.html",
       "year": 2026,
-      "incident_id": "INC-00813"
+      "incident_id": "INC-00746"
     },
     {
-      "name": "Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00834.html",
+      "name": "Claude Cowork File Exfiltration",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00827.html",
       "year": 2026,
-      "incident_id": "INC-00834"
-    },
-    {
-      "name": "CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-00860.html",
-      "year": 2026,
-      "incident_id": "INC-00860"
+      "incident_id": "INC-00827"
     },
     {
       "name": "EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection",
@@ -762,10 +744,16 @@
       "incident_id": "INC-01015"
     },
     {
-      "name": "GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01092.html",
+      "name": "Gemini Live in Chrome Hijacking (CVE-2026-0628)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01063.html",
       "year": 2026,
-      "incident_id": "INC-01092"
+      "incident_id": "INC-01063"
+    },
+    {
+      "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01064.html",
+      "year": 2026,
+      "incident_id": "INC-01064"
     },
     {
       "name": "LangChain LLMMathChain prompt-injection RCE via Python exec",
@@ -774,58 +762,10 @@
       "incident_id": "INC-01291"
     },
     {
-      "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01298.html",
+      "name": "Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01411.html",
       "year": 2026,
-      "incident_id": "INC-01298"
-    },
-    {
-      "name": "LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01340.html",
-      "year": 2026,
-      "incident_id": "INC-01340"
-    },
-    {
-      "name": "MCPJam Inspector RCE (CVE-2026-23744)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01390.html",
-      "year": 2026,
-      "incident_id": "INC-01390"
-    },
-    {
-      "name": "MCPwned -- Azure MCP Server SSRF & Cloud Takeover (CVE-2026-26118)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01391.html",
-      "year": 2026,
-      "incident_id": "INC-01391"
-    },
-    {
-      "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01429.html",
-      "year": 2026,
-      "incident_id": "INC-01429"
-    },
-    {
-      "name": "Microsoft Semantic Kernel RCE (CVE-2026-26030)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01440.html",
-      "year": 2026,
-      "incident_id": "INC-01440"
-    },
-    {
-      "name": "n8n Unauthenticated RCE \"Ni8mare\" (CVE-2026-21858)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01471.html",
-      "year": 2026,
-      "incident_id": "INC-01471"
-    },
-    {
-      "name": "OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01589.html",
-      "year": 2026,
-      "incident_id": "INC-01589"
-    },
-    {
-      "name": "PraisonAI Quadruple CVE Disclosure",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01666.html",
-      "year": 2026,
-      "incident_id": "INC-01666"
+      "incident_id": "INC-01411"
     },
     {
       "name": "Anyscale Ray LFI via /static/ directory (missing authorization)",
@@ -834,34 +774,10 @@
       "incident_id": "INC-01723"
     },
     {
-      "name": "SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01769.html",
+      "name": "XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02105.html",
       "year": 2026,
-      "incident_id": "INC-01769"
-    },
-    {
-      "name": "VS Code Forks OpenVSX Extension Recommendations Supply Chain Risk",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02058.html",
-      "year": 2026,
-      "incident_id": "INC-02058"
-    },
-    {
-      "name": "AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02190.html",
-      "year": 2025,
-      "incident_id": "INC-02190"
-    },
-    {
-      "name": "AgentSmith Prompt-Hub Proxy Attack",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02191.html",
-      "year": 2025,
-      "incident_id": "INC-02191"
-    },
-    {
-      "name": "Amazon Q Prompt Poisoning",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02300.html",
-      "year": 2025,
-      "incident_id": "INC-02300"
+      "incident_id": "INC-02105"
     },
     {
       "name": "Anthropic MCP Git Server Triple Flaw (CVE-2025-68143, -68144, -68145)",
@@ -870,28 +786,10 @@
       "incident_id": "INC-02321"
     },
     {
-      "name": "Anthropic SQLite MCP Server SQL Injection",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02324.html",
+      "name": "Chinese State-Linked Operator (GTG-1002) Reportedly Uses Claude Code for Autonomous Cyber Espionage",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02426.html",
       "year": 2025,
-      "incident_id": "INC-02324"
-    },
-    {
-      "name": "Claude Code DNS Exfiltration (CVE-2025-55284)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02435.html",
-      "year": 2025,
-      "incident_id": "INC-02435"
-    },
-    {
-      "name": "Vulnerable juju hook tool abstract UNIX domain socket",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02443.html",
-      "year": 2024,
-      "incident_id": "INC-02443"
-    },
-    {
-      "name": "Claude Skills Data Exfiltration",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02450.html",
-      "year": 2025,
-      "incident_id": "INC-02450"
+      "incident_id": "INC-02426"
     },
     {
       "name": "Claude Skills ransomware deployment — MedusaLocker via malicious plugin",
@@ -900,58 +798,22 @@
       "incident_id": "INC-02451"
     },
     {
-      "name": "Cursor \"Open-Folder\" Autorun Vulnerability",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02462.html",
+      "name": "Cursor Config Overwrite via Case Mismatch",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02468.html",
       "year": 2025,
-      "incident_id": "INC-02462"
-    },
-    {
-      "name": "Cursor & Windsurf Forked Chromium 94+ N-Day Vulnerabilities",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02463.html",
-      "year": 2025,
-      "incident_id": "INC-02463"
-    },
-    {
-      "name": "Cursor CLI Project Config RCE",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02467.html",
-      "year": 2025,
-      "incident_id": "INC-02467"
-    },
-    {
-      "name": "Dify SSRF via RemoteFileUploadApi (CVE-2025-56520)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02514.html",
-      "year": 2025,
-      "incident_id": "INC-02514"
-    },
-    {
-      "name": "Dify Unauthenticated Information Disclosure (CVE-2025-63387)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02515.html",
-      "year": 2025,
-      "incident_id": "INC-02515"
-    },
-    {
-      "name": "EscapeRoute -- Anthropic Filesystem MCP Sandbox Escape (CVE-2025-53109 & CVE-2025-53110)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02546.html",
-      "year": 2025,
-      "incident_id": "INC-02546"
-    },
-    {
-      "name": "ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02590.html",
-      "year": 2025,
-      "incident_id": "INC-02590"
-    },
-    {
-      "name": "Framelink Figma MCP RCE",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02592.html",
-      "year": 2025,
-      "incident_id": "INC-02592"
+      "incident_id": "INC-02468"
     },
     {
       "name": "GitHub Copilot & Cursor Code-Agent Exploit",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02607.html",
       "year": 2025,
       "incident_id": "INC-02607"
+    },
+    {
+      "name": "Google Antigravity IDE Vulnerabilities",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02629.html",
+      "year": 2025,
+      "incident_id": "INC-02629"
     },
     {
       "name": "GPT-4.1 jailbreak via tool poisoning",
@@ -966,46 +828,16 @@
       "incident_id": "INC-02700"
     },
     {
-      "name": "LangGrinch -- LangChain Core Serialization Injection (CVE-2025-68664)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02813.html",
-      "year": 2025,
-      "incident_id": "INC-02813"
-    },
-    {
-      "name": "Malicious MCP server backdoor on npm — dual reverse shells in mcp-runcommand-server",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02848.html",
-      "year": 2025,
-      "incident_id": "INC-02848"
-    },
-    {
-      "name": "Malicious MCP Server Impersonating Postmark",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02849.html",
-      "year": 2025,
-      "incident_id": "INC-02849"
-    },
-    {
-      "name": "MCP OAuth Response Exploit",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02871.html",
-      "year": 2025,
-      "incident_id": "INC-02871"
-    },
-    {
-      "name": "MCP tool poisoning — hidden instructions in Model Context Protocol tool descriptions",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02874.html",
-      "year": 2025,
-      "incident_id": "INC-02874"
-    },
-    {
       "name": "mcp-remote OAuth Command Injection (CVE-2025-6514)",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02878.html",
       "year": 2025,
       "incident_id": "INC-02878"
     },
     {
-      "name": "Ollama GGUF Model File RCE",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02980.html",
+      "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02899.html",
       "year": 2025,
-      "incident_id": "INC-02980"
+      "incident_id": "INC-02899"
     },
     {
       "name": "OpenAI ChatGPT Operator Vulnerability",
@@ -1014,40 +846,58 @@
       "incident_id": "INC-02997"
     },
     {
-      "name": "React2Shell Impacting Dify and AI Platforms (CVE-2025-55182)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03149.html",
-      "year": 2025,
-      "incident_id": "INC-03149"
-    },
-    {
-      "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03194.html",
-      "year": 2025,
-      "incident_id": "INC-03194"
-    },
-    {
-      "name": "ShadowMQ — critical RCE in Meta/NVIDIA/vLLM inference servers via pickle deserialization",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03211.html",
-      "year": 2025,
-      "incident_id": "INC-03211"
-    },
-    {
-      "name": "Visual Studio Code & Agentic AI workflows RCE",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03334.html",
-      "year": 2025,
-      "incident_id": "INC-03334"
-    },
-    {
-      "name": "Anthropic Sleeper Agents paper — models trained to hide malicious behaviour",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03572.html",
+      "name": "Crescendo: multi-turn escalation attack (Microsoft)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03687.html",
       "year": 2024,
-      "incident_id": "INC-03572"
+      "incident_id": "INC-03687"
+    },
+    {
+      "name": "Many-shot jailbreaking (Anthropic research)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03967.html",
+      "year": 2024,
+      "incident_id": "INC-03967"
+    },
+    {
+      "name": "Microsoft-Powered New York City Chatbot Advises Illegal Practices",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04007.html",
+      "year": 2024,
+      "incident_id": "INC-04007"
+    },
+    {
+      "name": "Nassi et al. \"ComPromptMized\" Morris II multi-agent worm",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04027.html",
+      "year": 2024,
+      "incident_id": "INC-04027"
     },
     {
       "name": "Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04179.html",
       "year": 2024,
       "incident_id": "INC-04179"
+    },
+    {
+      "name": "Skeleton Key: direct system prompt override (Microsoft)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04207.html",
+      "year": 2024,
+      "incident_id": "INC-04207"
+    },
+    {
+      "name": "Slack AI indirect injection via channel content",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04208.html",
+      "year": 2024,
+      "incident_id": "INC-04208"
+    },
+    {
+      "name": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08177.html",
+      "year": 2021,
+      "incident_id": "INC-08177"
+    },
+    {
+      "name": "ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red)",
+      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-08181.html",
+      "year": 2023,
+      "incident_id": "INC-08181"
     }
   ],
   "crossrefs": {
