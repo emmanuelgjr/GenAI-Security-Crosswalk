@@ -669,12 +669,6 @@
       "incident_id": "INC-00671"
     },
     {
-      "name": "Flowise v3.0.1 < 3.0.8 and all versions after with 'ALLOW_BUILTIN_DEP' enabled contain an authenticated remote code execution vulnerability and node VM sandbox escape due to ins...",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01015.html",
-      "year": 2025,
-      "incident_id": "INC-01015"
-    },
-    {
       "name": "GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01092.html",
       "year": 2026,
@@ -703,12 +697,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02646.html",
       "year": 2025,
       "incident_id": "INC-02646"
-    },
-    {
-      "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02899.html",
-      "year": 2025,
-      "incident_id": "INC-02899"
     },
     {
       "name": "Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments",
