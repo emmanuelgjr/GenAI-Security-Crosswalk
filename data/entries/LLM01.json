@@ -837,34 +837,16 @@
       "incident_id": "INC-00928"
     },
     {
-      "name": "Flowise v3.0.1 < 3.0.8 and all versions after with 'ALLOW_BUILTIN_DEP' enabled contain an authenticated remote code execution vulnerability and node VM sandbox escape due to ins...",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01015.html",
-      "year": 2025,
-      "incident_id": "INC-01015"
-    },
-    {
       "name": "GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01064.html",
       "year": 2026,
       "incident_id": "INC-01064"
     },
     {
-      "name": "LangChain LLMMathChain prompt-injection RCE via Python exec",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01291.html",
-      "year": 2023,
-      "incident_id": "INC-01291"
-    },
-    {
       "name": "Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966)",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01297.html",
       "year": 2026,
       "incident_id": "INC-01297"
-    },
-    {
-      "name": "Langflow Unauthenticated RCE (CVE-2026-33017)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-01298.html",
-      "year": 2026,
-      "incident_id": "INC-01298"
     },
     {
       "name": "Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions",
@@ -957,12 +939,6 @@
       "incident_id": "INC-02468"
     },
     {
-      "name": "Cursor Workspace File Injection",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02471.html",
-      "year": 2025,
-      "incident_id": "INC-02471"
-    },
-    {
       "name": "Cursorignore Bypass via New Cursorignore Write",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02480.html",
       "year": 2025,
@@ -1033,12 +1009,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02874.html",
       "year": 2025,
       "incident_id": "INC-02874"
-    },
-    {
-      "name": "Microsoft Copilot Studio agents public by default — unauthorized data exfiltration",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02899.html",
-      "year": 2025,
-      "incident_id": "INC-02899"
     },
     {
       "name": "Notion 3.0 AI Agent Data Exfiltration via Prompt Injection",
@@ -1141,12 +1111,6 @@
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04142.html",
       "year": 2024,
       "incident_id": "INC-04142"
-    },
-    {
-      "name": "Skeleton Key: direct system prompt override (Microsoft)",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-04207.html",
-      "year": 2024,
-      "incident_id": "INC-04207"
     },
     {
       "name": "Slack AI indirect injection via channel content",
