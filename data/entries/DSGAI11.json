@@ -675,12 +675,6 @@
   ],
   "incidents": [
     {
-      "name": "Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures",
-      "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-02774.html",
-      "year": 2025,
-      "incident_id": "INC-02774"
-    },
-    {
       "name": "Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes",
       "url": "https://emmanuelgjr.github.io/genai_incidents/incident/INC-03152.html",
       "year": 2025,
